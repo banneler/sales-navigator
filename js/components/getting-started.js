@@ -21,7 +21,7 @@ function orderedUserModules(manifest) {
 }
 
 /**
- * Guided click-through for learner-facing Sales-Navigator features (not admin).
+ * Guided click-through for Sales-Navigator features.
  * @param {HTMLElement} container
  * @param {object} manifest
  */
@@ -43,7 +43,7 @@ export function loadGettingStarted(container, manifest) {
           <strong>Sales-Navigator</strong> is your interactive training hub for GPC sales onboarding—modules, practice scenarios, and knowledge checks in one place.
         </p>
         <p class="text-slate-600 text-sm mt-3">
-          This short tour walks through how the app is organized so you can move through training with confidence. (Admin and content tools live elsewhere and are not part of this tour.)
+          This short tour walks through how the app is organized so you can move through training with confidence.
         </p>`,
     },
     {
