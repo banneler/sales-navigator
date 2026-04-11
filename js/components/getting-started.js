@@ -1,5 +1,6 @@
 import { setRouteModuleId } from '../router.js';
 import { buildHandoutToolbarHtml } from '../lib/handout-links.js';
+import { getModuleIconSvgHtml } from '../lib/module-icons.js';
 
 const GETTING_STARTED_ID = 'getting-started';
 const OVERLAY_ID = 'getting-started-tour-overlay';
@@ -34,7 +35,10 @@ function buildDemoMarkup() {
         <div class="w-full lg:flex-1 min-w-0 space-y-6 pointer-events-none" data-tour-target="module-core">
           <div class="rounded-xl border border-slate-200/90 bg-white/95 shadow-sm p-6 backdrop-blur-sm">
             <div class="flex flex-row flex-wrap items-center justify-between gap-x-4 gap-y-2">
-              <h2 class="text-2xl font-bold text-slate-900 tracking-tight min-w-0 flex-1">Welcome to Great Plains Communications</h2>
+              <div class="flex min-w-0 flex-1 items-start gap-3">
+                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200/90 bg-white text-blue-700 shadow-sm" aria-hidden="true">${getModuleIconSvgHtml('getting-started', 'w-6 h-6')}</span>
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight min-w-0 flex-1 pt-0.5">Welcome to Great Plains Communications</h2>
+              </div>
               ${buildHandoutToolbarHtml('getting-started')}
             </div>
             <p class="text-slate-600 mt-3 text-sm max-w-3xl leading-relaxed">

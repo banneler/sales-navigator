@@ -8,6 +8,7 @@ import {
   buildKnowledgeChecksCarouselHtml,
 } from './module-enrichment.js';
 import { buildHandoutToolbarHtml } from './handout-links.js';
+import { getModuleIconSvgHtml } from './module-icons.js';
 
 marked.use({ gfm: true, breaks: true });
 
@@ -89,22 +90,52 @@ export function renderSectionsToHtml(sections) {
 export function buildModuleHeaderBlockHtml(meta, handoutHtml = '') {
   const title = typeof meta.title === 'string' ? meta.title : 'Module';
   const summary = typeof meta.summary === 'string' ? meta.summary : '';
+  const mid = typeof meta.id === 'string' ? meta.id : '';
+  const pageIcon =
+    mid &&
+    `<span class="module-page-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200/90 bg-white text-blue-700 shadow-sm" aria-hidden="true">${getModuleIconSvgHtml(mid, 'w-6 h-6')}</span>`;
 
   if (!handoutHtml || !String(handoutHtml).trim()) {
-    return `
+    if (!pageIcon) {
+      return `
       <div>
         <h2 class="text-2xl font-bold text-slate-900 tracking-tight">${escapeHtml(title)}</h2>
         ${summary ? `<p class="text-slate-600 mt-2 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
       </div>`;
+    }
+    return `
+      <div class="flex items-start gap-3">
+        ${pageIcon}
+        <div class="min-w-0 flex-1">
+          <h2 class="text-2xl font-bold text-slate-900 tracking-tight">${escapeHtml(title)}</h2>
+          ${summary ? `<p class="text-slate-600 mt-2 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
+        </div>
+      </div>`;
   }
 
-  return `
+  if (!pageIcon) {
+    return `
       <div class="pb-4 border-b border-slate-200/90">
         <div class="flex flex-row flex-wrap items-center justify-between gap-x-4 gap-y-2">
           <h2 class="text-2xl font-bold text-slate-900 tracking-tight min-w-0 flex-1">${escapeHtml(title)}</h2>
           ${String(handoutHtml).trim()}
         </div>
         ${summary ? `<p class="text-slate-600 mt-3 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
+      </div>`;
+  }
+
+  return `
+      <div class="pb-4 border-b border-slate-200/90">
+        <div class="flex items-start gap-3">
+          ${pageIcon}
+          <div class="min-w-0 flex-1 space-y-3">
+            <div class="flex flex-row flex-wrap items-center justify-between gap-x-4 gap-y-2">
+              <h2 class="text-2xl font-bold text-slate-900 tracking-tight min-w-0 flex-1">${escapeHtml(title)}</h2>
+              ${String(handoutHtml).trim()}
+            </div>
+            ${summary ? `<p class="text-slate-600 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
+          </div>
+        </div>
       </div>`;
 }
 
@@ -114,12 +145,28 @@ export function buildModuleHeaderBlockHtml(meta, handoutHtml = '') {
 export function buildModuleIntroGateHeaderHtml(meta) {
   const title = typeof meta.title === 'string' ? meta.title : 'Module';
   const summary = typeof meta.summary === 'string' ? meta.summary : '';
+  const mid = typeof meta.id === 'string' ? meta.id : '';
+  const gateIcon =
+    mid &&
+    `<span class="module-intro-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-orange-200/95 shadow-inner" aria-hidden="true">${getModuleIconSvgHtml(mid, 'w-6 h-6')}</span>`;
 
-  return `
+  if (!gateIcon) {
+    return `
     <div class="min-w-0">
       <p class="mb-2 text-[10px] font-semibold uppercase tracking-wider text-orange-300/95">Module preview</p>
       <h2 id="module-intro-gate-heading" class="text-2xl font-bold tracking-tight text-white">${escapeHtml(title)}</h2>
       ${summary ? `<p class="mt-2 max-w-3xl text-sm leading-relaxed text-slate-300">${escapeHtml(summary)}</p>` : ''}
+    </div>`;
+  }
+
+  return `
+    <div class="flex items-start gap-3 min-w-0">
+      ${gateIcon}
+      <div class="min-w-0 flex-1">
+        <p class="mb-2 text-[10px] font-semibold uppercase tracking-wider text-orange-300/95">Module preview</p>
+        <h2 id="module-intro-gate-heading" class="text-2xl font-bold tracking-tight text-white">${escapeHtml(title)}</h2>
+        ${summary ? `<p class="mt-2 max-w-3xl text-sm leading-relaxed text-slate-300">${escapeHtml(summary)}</p>` : ''}
+      </div>
     </div>`;
 }
 
