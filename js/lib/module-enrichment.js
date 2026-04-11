@@ -181,10 +181,8 @@ export function buildKnowledgeChecksCarouselHtml(meta) {
   return `
       <section class="module-knowledge-checks border-t border-slate-200 pt-8 mt-2" aria-labelledby="kc-heading">
         <h3 id="kc-heading" class="text-lg font-bold text-slate-900 border-b border-slate-200 pb-2 mb-4">Knowledge checks</h3>
-        <p class="text-sm text-slate-500 mb-4">One question at a time — use the arrows or dots to move between questions. Your score updates when you check an answer (change options and check again to improve).</p>
         <div class="kc-carousel rounded-xl border border-slate-200 bg-slate-50/80 p-4 md:p-6" data-kc-active="0" data-kc-count="${n}">
-          <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-200/80">
-            <span class="text-xs font-semibold uppercase tracking-wide text-slate-500">Score</span>
+          <div class="flex flex-wrap items-center justify-end gap-3 mb-4 pb-4 border-b border-slate-200/80">
             <div class="js-kc-score flex items-baseline gap-1.5 rounded-lg bg-white border border-slate-200 px-4 py-2 shadow-sm" aria-live="polite" aria-atomic="true" title="Questions answered correctly on last check, out of total">
               <span class="js-kc-score-correct text-2xl font-bold text-orange-600 tabular-nums leading-none">0</span>
               <span class="text-slate-400 text-lg font-medium">/</span>
