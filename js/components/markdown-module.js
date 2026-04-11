@@ -1,4 +1,4 @@
-import { marked } from 'https://esm.sh/marked@15.1.0';
+import { marked } from 'https://esm.sh/marked@15.0.12';
 import DOMPurify from 'https://esm.sh/dompurify@3.2.2';
 import { parseFrontMatter } from '../lib/front-matter.js';
 
