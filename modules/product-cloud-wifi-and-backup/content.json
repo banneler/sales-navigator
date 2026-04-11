@@ -1,12 +1,48 @@
 {
   "id": "product-cloud-wifi-and-backup",
   "title": "Cloud, Wi-Fi & Backup",
-  "summary": "Cloud Connect, managed Wi-Fi, and wireless backup / 5G—positioning for continuity and cloud adjacency.",
+  "summary": "Cloud Connect (private cloud reach), Managed Wi-Fi (secure, scalable wireless), and 5G Wireless Internet Backup (continuity)—customer outcomes, discovery, and proof points aligned to GPC collateral.",
   "sensitivity": "public",
   "sections": [
     {
+      "heading": "Cloud Connect — customer outcomes",
+      "body": "Buyers want predictable performance to major clouds without building or maintaining their own long-haul network fabric. Outcomes to anchor: faster, more consistent access to SaaS and IaaS; lower latency vs best-effort Internet paths; security and control for traffic between sites and cloud regions; flexibility to connect to multiple providers (AWS, Azure, Google, Oracle, IBM, SAP, Nutanix, Salesforce, Alibaba) from GPC’s ecosystem; ability to add multi-region redundancy from a single interconnection mindset—supporting resilience without re-architecting everything on day one."
+    },
+    {
+      "heading": "Cloud Connect — discovery",
+      "body": "Which clouds or SaaS platforms are business-critical today and what is planned in the next 12–24 months? How are they reaching those services today (DIA, VPN, colo, third-party cloud exchange)? Where do they feel latency, jitter, or capacity limits (e.g., backup windows, real-time apps, large data movement)? Do they need connectivity across metros or regions, and is redundancy a board-level or compliance driver? Who owns cloud networking and security architecture—IT, security, DevOps, or a partner? Any requirements for isolating or prioritizing traffic vs general Internet browsing?"
+    },
+    {
+      "heading": "Cloud Connect — proof points",
+      "body": "GPC Cloud Connect offers a direct, private path to leading cloud and network providers on GPC’s cloud ecosystem, paired with Managed Ethernet as the on-ramp—so customers access cloud content over a secure, private connection rather than only public Internet. Collateral highlights: no need for the customer to own or manage the physical network to the ecosystem; secure traffic between metros and regions; multi-region redundancy by connecting to multiple cloud regions from a single interconnection point; direct cloud connections with speeds up to 10 Gbps; reliable, predictable performance and efficiency through reduced latency vs many Internet-only designs. Transport footprint includes interconnection into GPC’s cloud ecosystem (e.g., Omaha, Chicago, Denver as shown on the product sheet)."
+    },
+    {
+      "heading": "Managed Wi-Fi — customer outcomes",
+      "body": "Organizations need wireless that matches how people work and visit: reliable coverage, separation of guest vs corporate traffic, and security that does not fall to an overstretched internal team. Outcomes: employees and guests stay productive; consistent experience across offices, education, healthcare, retail, and venues; lower total cost of ownership through a fully managed lifecycle (design, install, turn-up, maintenance); visibility into how Wi-Fi is used for planning and accountability; optional brand presence on guest access."
+    },
+    {
+      "heading": "Managed Wi-Fi — discovery",
+      "body": "How many sites need Wi-Fi and what mix of indoor vs outdoor coverage? What user types (employees, students, patients, customers) and approximate concurrent devices? Do they need separate guest and private networks—and any compliance or policy constraints (HIPAA-style segmentation, PCI for guest Wi-Fi, etc.)? What throughput or application mix matters (video, VoIP, POS, e-learning)? Who operates the network today—in-house IT, MSP, or none—and what outages or support pain drove the conversation? Do they want analytics on usage and a branded captive portal for guests?"
+    },
+    {
+      "heading": "Managed Wi-Fi — proof points",
+      "body": "Managed Wi-Fi scales from small business to large environments with Internet-backed speeds from 10 Mbps to 2 Gbps per collateral. Engineering is positioned to fit current and future density and coverage. Integrated guest and private networks over a secure connection; indoor and outdoor options with multiple access-point choices. Security stack messaging: next-generation firewalls, advanced routing, intrusion detection and prevention, and multiple SSIDs. Full managed solution from installation through ongoing maintenance to reduce TCO and burden on internal IT. Industry-leading analytics and reporting for guest and employee usage; branded login portal capability."
+    },
+    {
+      "heading": "5G Wireless Internet Backup — customer outcomes",
+      "body": "When fiber or primary access fails, revenue and operations do not pause on schedule. Outcomes: maintain continuity during power events, fiber cuts, or provider issues; keep critical applications running with prioritization; operational peace of mind via proactive monitoring and support; optional extended runtime when power is lost; predictable commercial terms for backup usage (e.g., unlimited data without overage charges per product sheet)."
+    },
+    {
+      "heading": "5G Wireless Internet Backup — discovery",
+      "body": "What happens today when primary Internet fails—manual failover, no backup, or an aging solution? Which applications must stay up (POS, ERP, voice, security systems, cloud apps)? Acceptable downtime in minutes vs hours? Who gets alerted and how? Any site constraints for installing an outdoor antenna or router placement? Interest in battery backup for extended outages? Confirm geography and expectations for wireless performance (5G varies by site; collateral notes speed factors and deprioritization after certain monthly usage thresholds)."
+    },
+    {
+      "heading": "5G Wireless Internet Backup — proof points",
+      "body": "Automatic switch to a secure high-speed wireless path when primary service fails; automatic return when primary is restored. Prioritization for essential business applications. 24/7 Network Operations Center monitoring and management with alerts and support. Optional battery backup up to eight hours during power loss. Unlimited data with no overage charges per collateral; 5G speeds up to 100 Mbps and higher with location-dependent variability; professional configuration and installation including Cradlepoint router. Footnote-level honesty for sellers: wireless speeds depend on location, signal, tower proximity, and environment; stated tiered speeds after 12 GB / 20 GB / 30 GB of monthly usage and possible carrier slowdowns when the network is busy—set expectations in discovery."
+    },
+    {
       "heading": "Product collateral",
-      "body": "Pair Cloud Connect with customer cloud strategy conversations; Wi-Fi and backup with continuity and employee experience.",
+      "body": "Official product sheets from the OneDrive extract pair with loose PDF battle cards in the training folder for objection handling and competitive framing.",
       "resources": [
         {
           "label": "Cloud Connect product sheet",
@@ -36,7 +72,7 @@
     },
     {
       "heading": "Product-training shortcuts (.url)",
-      "body": "The small OneDrive extract contains .url shortcuts to hosted training pages—open on a machine with access.",
+      "body": "The OneDrive extract at `.../extracted/OneDrive_1_4-10-2026` contains `.url` shortcuts to hosted training pages—open on a machine with access to those hosts. Use them alongside this module for formal product training; datasheets and battle cards above support live customer conversations.",
       "resources": [
         {
           "label": "Training shortcuts bundle (folder)",

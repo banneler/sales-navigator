@@ -1,29 +1,51 @@
 {
   "id": "product-connectivity",
   "title": "Connectivity & Access",
-  "summary": "Dedicated internet, broadband/SIA, Ethernet, Wave, and fiber delivery concepts—aligned to datasheets and market-group PDFs.",
+  "summary": "Training: DIA vs SIA positioning, Managed Ethernet (E-Line/E-LAN), and competitive angles—synthesized from GPC product sheets and battle cards, with discovery questions.",
   "sensitivity": "public",
   "sections": [
     {
-      "heading": "Core collateral",
-      "body": "Use DIA vs SIA comparison and product sheets for positioning. Ethernet and Wave materials support transport-heavy deals.",
+      "heading": "Access types overview",
+      "body": "Position **Standard Internet Access (SIA)** when the customer needs flexible delivery and strong value: multiple access types (fiber, copper, and coax), asymmetrical or symmetrical speeds up to 2 Gbps, one included static IP, GPC network-level DDoS protection, 24x7/365 Tier 1 Internet Service Center support, and standard diversity options—latency is best-effort and bandwidth is shared on the access.\n\nPosition **Dedicated Internet Access (DIA)** when the business depends on predictable performance: a private Internet connection with **symmetrical** upload and download up to **100 Gbps**, **three static IPs**, **premium low latency** (datasheet cites average delay under about seven milliseconds), **multiple router and access diversity options**, **customer-specific proactive DDoS monitoring and mitigation** (beyond network-level protection), Network Performance Monitoring portal, and **24x7/365 NOC** support with notifications. DIA is the choice for organizations that treat Internet as critical infrastructure—cloud, voice/video, VPN, and large uploads—where dedicated bandwidth and operational visibility matter.\n\n**Discovery cues:** What applications are business-critical (POS, VoIP, video, ERP, backups)? How sensitive are they to upload speed, jitter, and outage windows? Do they need static IPs and how many? Is regulatory or insurance language pushing them toward monitored, dedicated service?",
       "resources": [
         {
           "label": "DIA Product Sheet",
           "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Internet/DIA Product Sheet 120424.pdf"
         },
         {
-          "label": "DIA vs SIA Comparison",
-          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Internet/DIA vs SIA Comparison 110424.pdf"
-        },
-        {
           "label": "SIA product sheet",
           "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Internet/SIA product sheet 120324.pdf"
+        }
+      ]
+    },
+    {
+      "heading": "DIA vs SIA in practice",
+      "body": "Use the comparison sheet to stay crisp in customer conversations. **SIA** tops out at symmetrical speeds up to **2 Gbps** in the comparison; **DIA** scales to **100 Gbps** symmetrical. **IPs:** one static included with SIA vs three with DIA. **Security:** network-level DDoS on SIA vs proactive, customer-specific DDoS monitoring and mitigation on DIA. **Latency:** standard / best-effort on SIA vs premium low-latency with stated performance objectives on DIA. **Support model:** Tier 1 ISC for SIA vs NOC-centric enhanced support and monitoring for DIA. **Access diversity:** standard options on SIA vs standard plus **multiple diverse access options** where designs require it. **Nature of service:** shared on SIA vs **dedicated** fiber path for DIA.\n\n**When to lead with SIA:** general business connectivity, cost sensitivity, workloads tolerant of shared access and best-effort latency. **When to lead with DIA:** symmetrical heavy use, SLA-style operations expectations, multi-site or diversity discussions, VoIP/video/cloud performance issues on “business broadband,” compliance or risk conversations around DDoS visibility, or when they have already outgrown shared Internet.\n\n**Discovery questions:** What are you running today—MPLS, VPN over broadband, direct Internet? Where do you see congestion (upload vs download)? Any recent DDoS or outage events? Do you need performance reporting for internal IT or auditors?",
+      "resources": [
+        {
+          "label": "DIA vs SIA Comparison",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Internet/DIA vs SIA Comparison 110424.pdf"
+        }
+      ]
+    },
+    {
+      "heading": "Ethernet / transport",
+      "body": "**E-Line (Ethernet Line)** is Layer 2, point-to-point or point-to-multipoint between Midwest locations, protected in the core. Order as **Ethernet Private Line (EPL)**—transparent, port-based, minimal frame manipulation, customer manages traffic inside frames—or **Ethernet Virtual Private Line (EVPL)**—VLAN-based, with GPC managing VLANs for point-to-point or point-to-multipoint.\n\n**E-LAN (Ethernet LAN)** is multipoint-to-multipoint: multiple UNIs in a mesh so any site can reach any other; GPC supports **EP-LAN** and **EVP-LAN** configurations.\n\n**Operational benefits (datasheet):** access to **29+ data centers and carrier hotels** across markets such as Omaha, Denver, Kansas City, Minneapolis, Des Moines, Chicago, Indianapolis and broader Midwest; speeds up to **100 Gbps** with predictable, low-latency transport; **MEF-certified** fiber network; **SLA** with **24x7/365 NOC** (Blair, NE); Network Performance Monitoring portal; optional proactive DDoS monitoring and mitigation.\n\n**Ethernet battle card context:** Many deals are won against nationwide fiber Ethernet providers. Emphasize GPC’s **16,500-mile** fiber footprint, **distinct Midwest routes**, and **local** engagement—private managed Ethernet is isolated from the public Internet end-to-end, which supports security and predictable performance vs Internet VPN. Scalable bandwidth **10 Mbps to 10 Gbps**; positioning often contrasts **cost-per-bit** favorably vs legacy MPLS for many designs.\n\n**Pain points Ethernet solves:** insufficient bandwidth or highly asymmetrical broadband degrading UX; Internet path variability (loss, delay, jitter) hurting real-time apps; security and segmentation needs between branches and hubs/DCs; low-throughput MPLS limiting apps; lack of redundant/diverse access exposing sites to fiber cuts.\n\n**Discovery questions (from Ethernet battle card):** How many locations total? How do sites connect today—MPLS and/or Internet VPN? How much bandwidth per site? Hub-and-spoke to one data center vs **any-to-any (full mesh)**? Where are critical apps hosted—data center vs cloud? What are the most latency-sensitive workloads?",
+      "resources": [
+        {
+          "label": "Managed Ethernet Product Sheet",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Ethernet/Managed Ethernet Product Sheet 060625.pdf"
         },
         {
-          "label": "Ethernet battle card (PDF in training folder)",
+          "label": "Ethernet Battle Card",
           "path": "/Users/ba/Documents/GPC Training Material/Ethernet Battle Card FINAL.pdf"
-        },
+        }
+      ]
+    },
+    {
+      "heading": "Competitive angles (fiber vs Starlink)",
+      "body": "Use this when satellite or “we can get internet anywhere” enters the conversation—especially rural or hard-to-serve addresses.\n\n**GPC story:** Business **fiber-to-the-premises** delivers **symmetrical** speeds, **fiber-level reliability** (not subject to rain fade, snow on dish, or line-of-sight issues), **ultra-low and stable latency** vs Low Earth Orbit satellite, **scalable** bandwidth for growth, and **local** technicians plus **24/7/365 NOC** monitoring—positioned as affordable business-grade service in the Midwest.\n\n**Starlink pain points to explore tactfully:** weather-related degradation when reliability matters most; **latency and variability** affecting POS, VoIP, and cloud apps; **peak-time congestion** as cells fill; hardware cost and **install complexity** (clear sky, roof placement, self-install risk). **GPC counter:** enterprise-grade reliability, consistent low latency for cloud/VPN/real-time comms, **dedicated symmetrical** capacity, professional evaluation and installation.\n\n**Qualifying / discovery:** How many employees or devices depend on Internet at this site? Which systems are critical (POS, VoIP, video)? Do they need **guaranteed uptime or SLAs**? (Battle card also repeats device/app questions—use them to quantify risk.)\n\n**Ideal fiber targets:** High upload profiles (healthcare, media, financial); predictable performance needs for POS/VoIP/cloud; public sector and education; long-term scalable Internet; rural sites needing **environmentally stable** connectivity.\n\n**Latency framing (battle card):** Illustrative ranges cited—**fiber ~5–15 ms** vs **Starlink ~21–30 ms**. Application thresholds in the battle card include video calls <50 ms, VoIP <150 ms, and POS/cloud/VPN/remote support often discussed around <100 ms (VPN can add latency; server location matters). Use these to explain *why* satellite can feel “fine” in a speed test but fail operational SLAs for real-time and cloud workflows—not as a substitute for customer-specific engineering.",
+      "resources": [
         {
           "label": "Fiber vs Starlink battlecard",
           "path": "/Users/ba/Documents/GPC Training Material/Fiber vs Starlink Battlecard.pdf"
@@ -32,7 +54,7 @@
     },
     {
       "heading": "Pricing (internal)",
-      "body": "Pricing PDFs and market groups live in the extracted pricing folder—treat as internal unless your leadership publishes customer-facing numbers.",
+      "body": "Customer-facing quotes come from your standard tools and approvals. The extracted **pricing pack** folder below holds DIA/SIA, Ethernet, Wave, and related market-group PDFs—**internal reference only** unless leadership publishes specific numbers for external use. Do not read numbers from training modules aloud to customers.",
       "resources": [
         {
           "label": "DIA & SIA / Ethernet / Wave pricing pack (folder)",

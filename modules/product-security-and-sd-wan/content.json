@@ -1,12 +1,37 @@
 {
   "id": "product-security-and-sd-wan",
   "title": "Security & SD-WAN",
-  "summary": "Managed security, DDoS, and SD-WAN: when to position, key differentiators, and partner/configuration notes.",
+  "summary": "Managed Firewall, Managed Network Security (MNS), DDoS, and SD-WAN: portfolio fit, buying triggers, discovery questions, positioning, and commitments to avoid—plus engineering handoff and internal pricing references.",
   "sensitivity": "public",
   "sections": [
     {
-      "heading": "Datasheets",
-      "body": "Start with product sheets, then use vertical SD-WAN briefs for financial, healthcare, and retail conversations.",
+      "heading": "Security portfolio overview",
+      "body": "GPC’s security story spans fully managed edge protection and broader MNS. Managed Firewall (Fortinet®) delivers FortiGate appliances with Enterprise/Unified Threat Protection, 24/7 SOC monitoring, IPS, malware prevention, ZTNA for hybrid access, centralized cloud management, and compliance support (e.g., HIPAA, PCI-DSS, GDPR) via logging and reporting—plus migration assistance from existing configs. Managed Network Security is the umbrella: (1) Managed Firewall—full NGFW as above; (2) Firewall Management—24/7 management of customer-owned firewalls (vendors such as Cisco, Fortinet, Palo Alto) including design, policy, and updates; (3) Firewall plus Managed SIEM—log analysis, prioritization, and retention; (4) Assessments and vulnerability scanning; (5) Managed Email Security—M365/Slack-oriented protection and DLP-style policy enforcement. Position MNS when the buyer needs SIEM, multi-vendor firewall ops, email security, or assessments—not only a new appliance. Buying triggers: audit or compliance pressure; lack of 24/7 security staff; recent incident or near-miss; sprawl of security vendors; hybrid workforce needing ZTNA; refresh of aging firewalls. Questions: What firewall brands and models are in production? Who patches and monitors today—internal, MSP, or carrier? Any compliance regimes (PCI, HIPAA, SOX) driving log retention or assessments? Is email security mostly cloud (M365) and who handles BEC/phishing/DLP? Do they want a fully managed appliance replacement or to keep existing gear?",
+      "resources": []
+    },
+    {
+      "heading": "DDoS positioning",
+      "body": "GPC DDoS Protection is cloud-based scrubbing with traffic analysis, bandwidth-based thresholds, and expert-backed mitigation—aligned to multi-vector attack patterns. Proactive includes 24×7 automated monitoring and 24×7 automated mitigation. On-demand includes 24×7 monitoring/notifications but mitigation on demand weekdays 8:00–17:00 (not 24×7)—qualify this explicitly. Scale is broadly 10 Mbps to 100 Gbps; capabilities include BGP FlowSpec and TMS (proactive path); reporting/analytics via the DDoS portal. Buying triggers: public-facing apps or e-commerce; prior saturation or outage; seasonal traffic spikes; dependency on a single Internet path; regulatory or brand risk from downtime. Questions: What assets must stay reachable (web, API, VPN)? Historical attacks or ISP “clean pipe” discussions? RTO/RPO expectations for an attack? Need always-on mitigation vs cost-sensitive on-demand? Do not promise: that attacks will never cause any outage; specific mitigation times without solution architecture; that on-demand equals 24×7 mitigation; customer-specific scrub capacity without validation.",
+      "resources": []
+    },
+    {
+      "heading": "SD-WAN use cases",
+      "body": "SD-WAN (VMware VeloCloud™) targets customers with at least one site on GPC fiber and multi-site footprints (including off-net U.S. branches). It replaces or augments MPLS with managed overlays, reduces backhaul to a central firewall, improves cloud/SaaS breakout, and consolidates routing, VPN, and optional security at the edge—no up-front CPE purchase in the managed model. Differentiators from the battle card: local GPC support plus a leading WAN-edge platform vs national carriers (Cox, Lumen, Windstream, Zayo, etc.)—use as positioning, not as a spec sheet. Pain points to probe: poor SaaS over Internet; expensive/low MPLS; no redundancy; manual per-router configs; inconsistent voice/video over WAN. Qualifying questions: Total locations and which are on GPC vs off-net? MPLS vs Internet VPN today? Local Internet breakout vs full backhaul? Bandwidth per site and growth plan? SD-WAN timeline (12–24 months)? Mission-critical SaaS (VoIP, M365, CRM)? Most critical apps—data center vs cloud? Product sheet notes Next-Gen Firewall with IDS/IPS and some security lines as optional—not in base package—confirm scope in every quote. Throughput/features in collateral are descriptive; edge performance depends on design. Do not promise: that every security feature on the sheet is in the base SD-WAN SKU; unlimited app identification accuracy; elimination of all MPLS without migration planning; feature parity with a competitor’s SD-WAN without SE review.",
+      "resources": []
+    },
+    {
+      "heading": "What not to promise (summary)",
+      "body": "Managed Firewall / MNS: Do not quote throughput figures (firewall, IPS, SSL inspection, VPN) as guarantees—datasheets state performance is “up to” and varies by configuration and features enabled. Do not promise compliance certification by GPC alone—position supporting controls and reporting; customer owns attestation. DDoS: Do not blur proactive (24×7 mitigation) vs on-demand (weekday mitigation hours). SD-WAN: Do not assume IDS/IPS, advanced firewall, or bundled DDoS are in base—mark optional and confirm. General: Avoid “100% uptime,” “zero breaches,” or unqualified Gartner/leader claims—cite materials accurately and defer detailed SLA, design, and pricing to approved artifacts and specialists.",
+      "resources": []
+    },
+    {
+      "heading": "Handoff to engineering / security",
+      "body": "Bring SE or security solutions early when: mixed vendors on firewall management; data center scale (high tunnel counts, 10G+); SD-WAN with complex routing (BGP/OSPF, many VRFs), high availability, or nonstandard apps; DDoS with BGP/ASN, multi-site announcements, or custom thresholds; any regulated environment needing written control mapping. Provide: site list, current WAN diagram or desc, bandwidth and circuit types, firewall brands/models, compliance drivers, and success criteria (apps, latency, security expectations). For pricing and SKU/feature confirmation, use internal fee schedules in the pricing folder—not customer-facing until approved. Escalate SLA, custom mitigation windows, and migration cutover plans—do not commit in discovery.",
+      "resources": []
+    },
+    {
+      "heading": "Datasheets & battle cards",
+      "body": "Primary product collateral and battle cards for customer conversations and internal prep.",
       "resources": [
         {
           "label": "Managed Firewall data sheet",
@@ -25,18 +50,18 @@
           "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/SD-WAN/SD-WAN Product Sheet 2024.pdf"
         },
         {
-          "label": "SD-WAN battle card (PDF)",
+          "label": "GPC SD-WAN Battle Card FINAL.pdf",
           "path": "/Users/ba/Documents/GPC Training Material/GPC SD-WAN Battle Card FINAL.pdf"
         },
         {
-          "label": "Managed Firewall battle card (PDF)",
+          "label": "Managed Firewall Battlecard FINAL.pdf",
           "path": "/Users/ba/Documents/GPC Training Material/Managed Firewall Battlecard FINAL.pdf"
         }
       ]
     },
     {
       "heading": "Pricing (internal)",
-      "body": "SD-WAN and managed security fee schedules—internal use.",
+      "body": "Internal fee schedules for SD-WAN, managed security, and related SKUs—not customer-facing until validated with your leadership or quoting team. Reference only; do not copy numbers into proposals without approval.",
       "resources": [
         {
           "label": "Pricing folder (SD-WAN / MNS / Business Security)",

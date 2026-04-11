@@ -1,24 +1,16 @@
 {
   "id": "product-uc-voice-and-collaboration",
   "title": "UC, Voice & Collaboration",
-  "summary": "Unified Communications, Teams, contact center, and traditional voice—plans, comparisons, and industry use cases.",
+  "summary": "Unified Communications at a glance: plan tiers, Teams attach, Contact Center motion, traditional voice, discovery prompts, handoffs, and internal pricing discipline.",
   "sensitivity": "public",
   "sections": [
     {
-      "heading": "UC & Teams",
-      "body": "Use plan comparison sheets for internal sizing; customer-facing brochures and industry PDFs for narrative.",
+      "heading": "UC overview",
+      "body": "Position GPC UC as one integrated platform for voice, AI-assisted calling, messaging, SMS/MMS to customers, HD meetings with AI recap, optional Contact Center, and file sync—plus mobile/desktop apps. Lead with outcomes: smarter employee collaboration and customers feeling valued through omni-channel touchpoints and automation.\n\nPlans (high level): differentiate by user needs and included storage—Essential and Pro carry smaller per-user file allowances; Unite Enterprise extends file storage significantly (brochure: up to 200 GB per user on Unite Enterprise; lower tiers 50 GB / 5 GB). Mix-and-match licensing per user and flexible contract options are part of the efficiency story. Triple Guard Security™ frames the trust narrative: secure datacenters, certified security team, encryption, password management, and 2FA.\n\nCore capabilities to speak to: cloud PBX with 100+ enterprise features, spam call protection, single admin portal; AI Call Recap (summaries, transcripts, sentiment, topics); file management with backup/recovery; team messaging plus external SMS/MMS on business numbers; meetings with AI Meeting Recap; Advanced Hunt Groups for lighter queue scenarios; optional full Contact Center (see Contact Center motion). Archiving: free 30-day retention of calls, meetings, chats, and SMS is a baseline talking point; longer retention is sold in stepped plans—say “archive tier details with your account team” rather than quoting years on a first call.\n\nDiscovery (UC): How do employees communicate today (desk phone, mobile, Teams only)? Where do calls, texts, and voicemails live—one pane or many tabs? What happens after a video meeting—are notes and follow-ups automated? Any compliance or retention requirements for calls and chats? How is file backup and ransomware recovery handled today?\n\nHandoff cues: Engage your Account Executive and/or UC specialist when the customer needs formal sizing, mixed plans across many sites, archiving beyond 30 days, Contact Center, or custom integrations. Escalate to product specialists for custom reports or complex hunt/queue design.\n\nCompetitive nuggets (prose): Versus meeting-first or CC-heavy brands, GPC UC is positioned for whole-business workflow—voice, video, chat, and included secure file backup with antivirus—not video alone or a patchwork of tabs. Local support and long-running J.D. Power recognition back the service story. When buyers compare “cheap” per-seat meeting or phone SKUs, stress all-in value: unlimited domestic calling patterns, collaboration, and included AI features without stacking separate AI add-ons. If they already use cloud storage elsewhere, contrast one-click rollback and integrated protection with “sync-only” storage. On reliability, the Intermedia-powered stack advertises 99.999% uptime—translate that to minutes of downtime per year in customer language.",
       "resources": [
         {
           "label": "UC Brochure (abbreviated)",
           "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/UC Brochure - Abbreviated 041026.pdf"
-        },
-        {
-          "label": "UC for Teams datasheet",
-          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/UC for Teams/UC for Teams datasheet 100325.pdf"
-        },
-        {
-          "label": "Contact Center datasheet",
-          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/Contact Center datasheet 050925.pdf"
         },
         {
           "label": "UC Competitor battle card (PDF)",
@@ -27,8 +19,28 @@
       ]
     },
     {
-      "heading": "Voice (non-UC)",
-      "body": "",
+      "heading": "Teams attach",
+      "body": "Motion: Keep Microsoft Teams as the collaboration hub (chat, files, meetings); add GPC’s enterprise-grade cloud PBX so users place and receive business calls from the Teams dialer with minimal retraining. Messaging: seamless UC telephony and SMS capability inside the Teams experience customers already use.\n\nDependencies to state clearly: Microsoft Teams licenses are purchased separately; a Microsoft Phone System license is required per user for native Teams calling integration. GPC provides the UC voice platform and local expertise—set expectations that Teams + UC is a joint licensing picture.\n\nDiscovery: Is Teams already standard for chat and meetings? Are they on Teams Phone today or bridged from another PBX? Do they need hunt groups, queues, paging, hot desking, or CRM screen pop from the same client? Any requirement for presence sync between customer-facing queues and internal Teams status?\n\nHandoff cues: Bring in UC/Teams solution architects when mapping coexistence, number porting, and Phone System prerequisites across many departments. Coordinate with Microsoft CSP context if the customer buys Teams through another channel.",
+      "resources": [
+        {
+          "label": "UC for Teams datasheet",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/UC for Teams/UC for Teams datasheet 100325.pdf"
+        }
+      ]
+    },
+    {
+      "heading": "Contact center motion",
+      "body": "Contact Center sits on the same UC platform: one application for employee collaboration and customer interactions, with centralized management from a single portal. Value pillars from the datasheet—productivity and simplicity (one app), customer convenience (voice, text, chat, email, self-service), personalization and insights (CRM, analytics), and revenue/engagement (outbound, notifications).\n\nPlans (high level): CC Pro and CC Elite are sold as concurrent-seat models, bundled with UC or standalone—both include admin portal, supervisor app, real-time agent status, inbound voice queues, ACD, queue position/ETA messaging, supervisor monitor/whisper/barge, reporting, and analytics dashboards. Elite extends capability in the comparison matrix (confirm current matrix before customer-facing commitments). Digital channels—chat, email, WhatsApp—and Dynamic Notifications are often add-on line items; note email/SMS channel add-ons where applicable. Bursting and elastic-demand rules exist for concurrent usage—treat as internal pricing/solution design, not napkin math on a first call.\n\nFeature story: skills-based routing, queued callback, preferred-agent routing, drag-and-drop IVR with advanced logic, CRM and WFM integrations, dashboards, wallboards, live monitoring, post-call surveys, outbound dialer, AI agent evaluator, screen recording—position the ones that match the buyer’s maturity.\n\nDiscovery (Contact Center): Volume and channel mix (voice vs digital)? Single site or many; work-from-home agents? Service-level targets and current abandon rates? Existing CRM and workforce management tools? Compliance needs for recording and archiving? Campaign or outbound requirements vs inbound-only?\n\nHandoff cues: Loop in Product specialists for custom reports, bespoke IVR/self-service, or custom CRM/WFM integrations (professional services in the datasheet). Use CC bursting/elastic-demand conversations with your AE and pricing team, not in isolation.",
+      "resources": [
+        {
+          "label": "Contact Center datasheet",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/Contact Center datasheet 050925.pdf"
+        }
+      ]
+    },
+    {
+      "heading": "Voice (non-UC) basics",
+      "body": "For customers not ready for full UC, GPC Voice Solutions covers SIP trunking, PRI, and POTS. SIP trunking: VoIP handoff between the customer PBX and GPC’s network toward the PSTN; trunks do not compete with other services for transport—they ride a common connection to consolidate voice and data. Benefits: lower operating cost, mix premise and cloud PBX with major vendors, scalability, and a managed enterprise Session Border Controller (eSBC) at the customer site.\n\nPRI: digital trunking for medium/large sites carrying multiple voice paths and features such as Caller ID. POTS: traditional landline—position clarity, reliability, and always-on 911 access independent of mobile battery, with DID, trunk hunting, digital quality, and security versus pure analog lines where relevant.\n\nDiscovery: What PBX or key system is in place? SIP-capable or TDM? Number of paths and growth? Fax or specialty lines? Regulatory or elevator/alarms lines that must stay POTS?\n\nHandoff cues: Technical scoping for eSBC placement, SIP interoperability, and cutover planning belongs with voice engineering or implementation—bring early when ports and downtime windows matter.",
       "resources": [
         {
           "label": "Voice Product Sheet",
@@ -37,8 +49,8 @@
       ]
     },
     {
-      "heading": "Pricing (internal)",
-      "body": "UC and voice pricing PDFs in the pricing extract—handle as internal.",
+      "heading": "Pricing / internal note",
+      "body": "UC, Contact Center, and voice quotes reference internal pricing books and matrices—never email customer-specific rates from memory. Use the abbreviated brochure and datasheets for capability conversations; use plan comparison and pricing extracts for internal-only sizing. CC concurrent licensing, add-on channels, archiving, bursting, and prof-services lines need AE or pricing desk alignment. When in doubt, confirm with your Account Executive before committing to dollars or contract terms.\n\nResources folder (internal pricing extract): keep PDFs in the pricing workspace below; treat all pricing documents as internal unless explicitly marked customer-ready.",
       "resources": [
         {
           "label": "UC / Voice pricing folder",
