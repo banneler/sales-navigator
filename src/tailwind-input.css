@@ -17,63 +17,59 @@
   background: #94a3b8;
 }
 
-.module-markdown {
+/* Prose inside each section card (split on ## in content.md) */
+.module-markdown-body {
   color: #334155;
   line-height: 1.65;
   font-size: 0.9375rem;
 }
-.module-markdown h2 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-.module-markdown h2:first-child {
-  margin-top: 0;
-}
-.module-markdown h3 {
+.module-markdown-body h2,
+.module-markdown-body h3 {
   font-size: 1rem;
   font-weight: 700;
   color: #0f172a;
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
 }
-.module-markdown p {
+.module-markdown-body h2:first-child,
+.module-markdown-body h3:first-child {
+  margin-top: 0;
+}
+.module-markdown-body p {
   margin-bottom: 0.75rem;
 }
-.module-markdown ul {
+.module-markdown-body ul {
   list-style: disc;
   padding-left: 1.25rem;
   margin: 0.5rem 0 0.75rem;
 }
-.module-markdown li {
+.module-markdown-body li {
   margin-bottom: 0.35rem;
 }
-.module-markdown strong {
+.module-markdown-body strong {
   font-weight: 600;
   color: #0f172a;
 }
-.module-markdown code {
+.module-markdown-body code {
   background: #f1f5f9;
   padding: 0.125rem 0.35rem;
   border-radius: 0.25rem;
   font-size: 0.875em;
 }
-.module-markdown a {
+.module-markdown-body a {
   color: #ea580c;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.module-markdown a:hover {
+.module-markdown-body a:hover {
   color: #c2410c;
 }
-.module-markdown hr {
+.module-markdown-body hr {
   border: 0;
   border-top: 1px solid #e2e8f0;
   margin: 1.25rem 0;
 }
-.module-markdown blockquote {
+.module-markdown-body blockquote {
   border-left: 4px solid #fdba74;
   padding-left: 1rem;
   margin: 0.75rem 0;

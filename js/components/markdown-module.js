@@ -13,6 +13,67 @@ function escapeHtml(s) {
     .replace(/"/g, '&quot;');
 }
 
+/** Level-2 heading only (`##`), not `###`. */
+function isH2Line(line) {
+  if (line.startsWith('###')) return false;
+  return /^##\s/.test(line);
+}
+
+/**
+ * Split markdown on `##` headings — each block becomes one section card (title + body).
+ * If there are no `##` lines, returns one segment with an empty title (full body).
+ */
+function splitMarkdownByH2(body) {
+  const lines = (body || '').split(/\r?\n/);
+  const sections = [];
+  let currentTitle = null;
+  let currentLines = [];
+
+  function pushSection() {
+    const md = currentLines.join('\n').trim();
+    if (currentTitle !== null || md) {
+      sections.push({ title: currentTitle ?? '', markdown: md });
+    }
+  }
+
+  for (const line of lines) {
+    if (isH2Line(line)) {
+      pushSection();
+      currentTitle = line.replace(/^##\s+/, '').trim();
+      currentLines = [];
+    } else {
+      currentLines.push(line);
+    }
+  }
+  pushSection();
+  return sections;
+}
+
+function renderMarkdownSections(sections) {
+  return sections
+    .map(({ title, markdown }) => {
+      let html;
+      try {
+        html = marked.parse(markdown || '');
+      } catch (e) {
+        return `
+      <section class="bg-white border border-red-200 rounded-xl p-6 shadow-sm">
+        <p class="text-sm text-red-800">${escapeHtml(e instanceof Error ? e.message : String(e))}</p>
+      </section>`;
+      }
+      const safe = DOMPurify.sanitize(html, { ADD_ATTR: ['target', 'rel'] });
+      const heading = title.trim()
+        ? `<h3 class="text-lg font-bold text-slate-900 mb-3">${escapeHtml(title)}</h3>`
+        : '';
+      return `
+      <section class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+        ${heading}
+        <div class="module-markdown-body">${safe}</div>
+      </section>`;
+    })
+    .join('');
+}
+
 /**
  * @param {HTMLElement} container
  * @param {string} markdownSource - Full file including optional YAML front matter
@@ -42,21 +103,8 @@ export default function renderMarkdownModule(container, markdownSource) {
   const title = typeof meta.title === 'string' ? meta.title : 'Module';
   const summary = typeof meta.summary === 'string' ? meta.summary : '';
 
-  let htmlBody = '';
-  try {
-    htmlBody = marked.parse(body || '');
-  } catch (e) {
-    container.innerHTML = `
-      <div class="bg-red-50 border border-red-200 text-red-800 rounded-xl p-6">
-        <p class="font-bold">Markdown parse error</p>
-        <p class="text-sm mt-2">${escapeHtml(e instanceof Error ? e.message : String(e))}</p>
-      </div>`;
-    return;
-  }
-
-  const safe = DOMPurify.sanitize(htmlBody, {
-    ADD_ATTR: ['target', 'rel'],
-  });
+  const sections = splitMarkdownByH2(body || '');
+  const sectionCardsHtml = renderMarkdownSections(sections);
 
   container.innerHTML = `
     <div class="space-y-6">
@@ -67,7 +115,7 @@ export default function renderMarkdownModule(container, markdownSource) {
         </div>
         <div class="flex-shrink-0">${badge}</div>
       </div>
-      <div class="module-markdown bg-white border border-slate-200 rounded-xl p-6 shadow-sm">${safe}</div>
+      <div class="space-y-6">${sectionCardsHtml}</div>
     </div>
   `;
 }
