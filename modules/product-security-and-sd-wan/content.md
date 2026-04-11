@@ -13,6 +13,12 @@ sensitivity: "public"
 
 **DDoS:** GPC DDoS Protection is **cloud-based scrubbing** with traffic analysis, bandwidth thresholds, and expert-backed mitigation. **Proactive** includes **24×7 automated monitoring and mitigation**. **On-demand** includes monitoring/notifications but mitigation **weekdays 8–17** on the on-demand SKU—**qualify explicitly** so customers don’t assume 24×7 mitigation. Scale broadly **10 Mbps–100 Gbps**; capabilities include BGP FlowSpec/TMS on proactive paths; portal reporting. **DDoS discovery:** What must stay reachable under attack? Past saturation or outage? Always-on vs cost-sensitive on-demand?
 
+![DDoS protection](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/ddos/ddos-product-sheet-012025/images/ddos-product-sheet-012025-p2-img0.png "From DDoS product sheet")
+
+![DDoS capabilities](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/ddos/ddos-product-sheet-012025/images/ddos-product-sheet-012025-p2-img1.png "From DDoS product sheet")
+
+![DDoS reporting context](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/ddos/ddos-product-sheet-012025/images/ddos-product-sheet-012025-p2-img2.png "From DDoS product sheet")
+
 **Do not promise:** firewall/IPS/SSL throughput as fixed guarantees (“up to” varies by features); that GPC “certifies” compliance alone; **DDoS:** don’t blur proactive vs on-demand mitigation windows.
 
 **Sources:**
@@ -33,6 +39,18 @@ SD-WAN (**VMware VeloCloud™**) fits customers with **at least one site on GPC 
 
 **Resources:** product sheet + battle card for competitive talk tracks.
 
+![GPC SD-WAN battle card](Proposal_Assets/training/from-pdfs/gpc-sd-wan-battle-card-final/images/gpc-sd-wan-battle-card-final-p2-img0.png "From GPC SD-WAN battle card")
+
+![SD-WAN positioning](Proposal_Assets/training/from-pdfs/gpc-sd-wan-battle-card-final/images/gpc-sd-wan-battle-card-final-p2-img3.png "From GPC SD-WAN battle card")
+
+![SD-WAN — VeloCloud context](Proposal_Assets/training/from-pdfs/gpc-sd-wan-battle-card-final/images/gpc-sd-wan-battle-card-final-p2-img5.png "From GPC SD-WAN battle card")
+
+![SD-WAN vertical — retail](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/sd-wan/2024-sd-wan-brief-retail/images/2024-sd-wan-brief-retail-p1-img0.jpeg "From SD-WAN brief — retail")
+
+![SD-WAN vertical — healthcare](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/sd-wan/2024-sd-wan-brief-healthcare/images/2024-sd-wan-brief-healthcare-p1-img0.jpeg "From SD-WAN brief — healthcare")
+
+![SD-WAN vertical — financial](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/sd-wan/2024-sd-wan-brief-financial-services/images/2024-sd-wan-brief-financial-services-p1-img0.jpeg "From SD-WAN brief — financial services")
+
 **Sources:**
 - **SD-WAN Product Sheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/SD-WAN/SD-WAN Product Sheet 2024.pdf`
 - **GPC SD-WAN Battle Card FINAL.pdf** — `/Users/ba/Documents/GPC Training Material/GPC SD-WAN Battle Card FINAL.pdf`
@@ -40,6 +58,8 @@ SD-WAN (**VMware VeloCloud™**) fits customers with **at least one site on GPC 
 ## What not to promise (summary)
 
 **Security / DDoS / SD-WAN:** Avoid quoting throughput or mitigation times as guarantees without SE and approved artifacts. **DDoS:** never equate on-demand with 24×7 mitigation. **SD-WAN:** don’t assume IDS/IPS or advanced firewall in base. **General:** no “100% uptime,” “zero breaches,” or unqualified “leader” claims—defer SLA, design, and dollars to specialists.
+
+![Guardrails](Proposal_Assets/training/from-pdfs/gpc-sd-wan-battle-card-final/images/gpc-sd-wan-battle-card-final-p2-img6.png "From GPC SD-WAN battle card — stay accurate on scope")
 
 ## Handoff to engineering / security
 
