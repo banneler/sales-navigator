@@ -75,6 +75,27 @@ function initKnowledgeCarousels(container) {
   });
 }
 
+function updateScenarioProgress(scenariosInner) {
+  const cards = scenariosInner.querySelectorAll('.scenario-card');
+  const total = cards.length;
+  const done = scenariosInner.querySelectorAll('.scenario-card[data-scenario-answered="true"]').length;
+  const prog = scenariosInner.querySelector('.js-scenarios-progress');
+  if (prog) {
+    prog.textContent = `${done} / ${total} scenario${total === 1 ? '' : 's'} reviewed`;
+  }
+  const completion = scenariosInner.querySelector('.js-scenarios-completion');
+  if (completion) {
+    const show = total > 0 && done === total;
+    completion.classList.toggle('hidden', !show);
+  }
+}
+
+function initScenarioProgress(container) {
+  container.querySelectorAll('.module-scenarios-inner').forEach((inner) => {
+    updateScenarioProgress(inner);
+  });
+}
+
 function handleClick(e) {
   const prevBtn = e.target.closest('.js-kc-carousel-prev');
   if (prevBtn) {
@@ -143,11 +164,30 @@ function handleClick(e) {
   const scBtn = e.target.closest('.js-sc-choice');
   if (scBtn) {
     const article = scBtn.closest('.scenario-card');
+    const scenariosInner = scBtn.closest('.module-scenarios-inner');
     if (!article) return;
     const idx = scBtn.getAttribute('data-sc-index');
-    article.querySelectorAll('.js-sc-feedback').forEach((el) => {
-      el.classList.toggle('hidden', el.getAttribute('data-sc-index') !== idx);
+
+    article.querySelectorAll('.js-sc-choice').forEach((btn) => {
+      const isSel = btn === scBtn;
+      btn.classList.toggle('ring-2', isSel);
+      btn.classList.toggle('ring-orange-500', isSel);
+      btn.classList.toggle('border-orange-500', isSel);
+      btn.classList.toggle('bg-orange-50', isSel);
+      btn.classList.toggle('shadow-sm', isSel);
+      btn.setAttribute('aria-pressed', isSel ? 'true' : 'false');
     });
+
+    article.querySelectorAll('.js-sc-feedback').forEach((el) => {
+      const match = el.getAttribute('data-sc-index') === idx;
+      el.classList.toggle('hidden', !match);
+    });
+
+    article.setAttribute('data-scenario-answered', 'true');
+    const badge = article.querySelector('.js-sc-reviewed-badge');
+    if (badge) badge.classList.remove('hidden');
+
+    if (scenariosInner) updateScenarioProgress(scenariosInner);
   }
 }
 
@@ -159,4 +199,5 @@ export function bindModuleInteractions(container) {
   container.addEventListener('click', fn);
   handlerByEl.set(container, fn);
   initKnowledgeCarousels(container);
+  initScenarioProgress(container);
 }

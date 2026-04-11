@@ -40,6 +40,7 @@ export function buildScenariosAsideHtml(meta) {
   const scenarios = meta.scenarios;
   if (!Array.isArray(scenarios) || scenarios.length === 0) return '';
 
+  const n = scenarios.length;
   const cards = scenarios
     .map((sc, si) => {
       const title = typeof sc?.title === 'string' ? sc.title : `Scenario ${si + 1}`;
@@ -51,28 +52,42 @@ export function buildScenariosAsideHtml(meta) {
           const label = typeof ch?.label === 'string' ? ch.label : '';
           const feedback = typeof ch?.feedback === 'string' ? ch.feedback : '';
           return `
-            <div class="space-y-1">
-              <button type="button" class="js-sc-choice w-full text-left border border-slate-200 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-800 bg-white hover:border-orange-400 hover:bg-orange-50/50 transition" data-sc-index="${ci}">
+            <div class="space-y-1.5 sc-choice-row">
+              <button type="button" class="js-sc-choice w-full text-left border border-slate-200 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-800 bg-white hover:border-orange-400 hover:bg-orange-50/50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-sc-index="${ci}" aria-pressed="false">
                 ${escapeHtml(label)}
               </button>
-              <div class="js-sc-feedback hidden text-xs text-slate-600 border-l-2 border-orange-400 pl-2 py-1" data-sc-index="${ci}">${mdToSafeHtml(feedback)}</div>
+              <div class="js-sc-feedback hidden rounded-md border border-orange-100 bg-orange-50/90 px-3 py-2.5 shadow-sm" data-sc-index="${ci}" role="region">
+                <p class="text-[10px] font-bold uppercase tracking-wide text-orange-900 mb-1.5">Feedback</p>
+                <div class="module-markdown-body text-xs text-slate-700 leading-relaxed">${mdToSafeHtml(feedback)}</div>
+              </div>
             </div>`;
         })
         .join('');
       return `
-        <article class="scenario-card border border-slate-200 rounded-xl p-4 bg-gradient-to-b from-white to-slate-50/80 shadow-sm">
-          <h4 class="text-sm font-bold text-slate-900 mb-2">${escapeHtml(title)}</h4>
+        <article class="scenario-card border border-slate-200 rounded-xl p-4 bg-gradient-to-b from-white to-slate-50/80 shadow-sm transition-shadow" data-scenario-index="${si}">
+          <div class="flex items-start justify-between gap-2 mb-2">
+            <h4 class="text-sm font-bold text-slate-900">${escapeHtml(title)}</h4>
+            <span class="js-sc-reviewed-badge hidden shrink-0 rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-green-800 border border-green-200" aria-hidden="true">Reviewed</span>
+          </div>
           <div class="module-markdown-body text-slate-700 text-sm mb-3">${situationHtml}</div>
           <p class="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-2">Choose a response</p>
-          <div class="space-y-2">${choiceBlocks}</div>
+          <div class="space-y-3 sc-choices">${choiceBlocks}</div>
         </article>`;
     })
     .join('');
 
   return `
-      <div class="module-scenarios-inner space-y-4" aria-labelledby="sc-heading">
+      <div class="module-scenarios-inner space-y-4" aria-labelledby="sc-heading" data-scenario-total="${n}">
         <h3 id="sc-heading" class="text-base font-bold text-slate-900 border-b border-slate-200 pb-2">Scenario cards</h3>
+        <p class="js-scenarios-progress text-xs font-medium text-slate-600 mb-1" aria-live="polite">0 / ${n} scenario${n === 1 ? '' : 's'} reviewed</p>
         <div class="flex flex-col gap-4">${cards}</div>
+        <div class="js-scenarios-completion hidden mt-2 rounded-xl border border-green-200 bg-green-50 px-3 py-3 text-sm text-green-950 shadow-sm" role="status" aria-live="polite">
+          <p class="font-bold flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-green-600" aria-hidden="true"></i>
+            All scenarios reviewed
+          </p>
+          <p class="text-green-900/90 mt-1.5 text-xs leading-relaxed">You’ve opened feedback for each practice scenario. Revisit the main sections anytime to connect these ideas to the full narrative.</p>
+        </div>
       </div>`;
 }
 
