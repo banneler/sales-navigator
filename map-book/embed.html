@@ -100,15 +100,7 @@
             <div class="h-1 w-14 bg-gpc-orange rounded-full"></div>
         </div>
         <nav class="flex-1 px-4 py-1.5 flex flex-col gap-0.5 overflow-y-auto" id="nav-menu"></nav>
-        <div class="px-4 py-3 border-t border-slate-700/50 shrink-0">
-            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Audience</p>
-            <div class="flex rounded-lg bg-slate-800/80 p-0.5">
-                <button id="audience-wholesale" type="button" class="flex-1 py-2 px-3 text-xs font-semibold rounded-md transition-colors text-slate-400">Wholesale</button>
-                <button id="audience-enterprise" type="button" class="flex-1 py-2 px-3 text-xs font-semibold rounded-md transition-colors text-slate-200 bg-gpc-blue">Enterprise</button>
-            </div>
-        </div>
-        <div class="p-4 text-sm text-slate-400 border-t border-slate-700/50 flex justify-between items-center font-semibold shrink-0 gap-2">
-            <span id="audience-label" class="truncate min-w-0">GPC Enterprise</span>
+        <div class="p-4 text-sm text-slate-400 border-t border-slate-700/50 flex justify-end items-center font-semibold shrink-0 gap-2">
             <div class="flex items-center gap-2 shrink-0">
                 <button type="button" id="admin-trigger" class="p-1.5 rounded text-slate-500 hover:text-white hover:bg-white/10 transition-colors" title="Configure client greeting (triple-click)">⋯</button>
                 <button id="btn-fullscreen" type="button" class="p-1.5 rounded text-slate-400 hover:text-white hover:bg-white/10 transition-colors" title="Toggle full screen">
@@ -148,16 +140,8 @@
                 <div id="html-layer" class="absolute inset-0 hidden overflow-y-auto p-12 bg-slate-50 z-0">
                     </div>
 
-                <canvas id="whiteboard" class="absolute inset-0 w-full h-full z-10 cursor-crosshair hidden"></canvas>
             </div>
                 </div>
-            </div>
-
-            <div id="draw-controls" class="absolute right-8 top-8 flex gap-3 z-20 transition-opacity duration-300">
-                <button id="btn-clear-draw" onclick="clearCanvas()" class="hidden px-4 py-2 bg-white text-slate-600 font-bold rounded-lg shadow-floating border border-slate-200 hover:text-red-500 text-sm transition-colors">Clear Ink</button>
-                <button id="btn-toggle-draw" onclick="toggleDrawing()" class="px-4 py-2 bg-white text-gpc-blue font-bold rounded-lg shadow-floating border border-slate-200 flex items-center gap-2 text-sm transition-colors">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg> Enable Draw
-                </button>
             </div>
 
             <div id="insight-container" class="absolute left-12 bottom-12 z-20 hidden flex-col items-start gap-4 transition-opacity duration-300">
@@ -201,12 +185,9 @@
         let mapData = {};
         let navOrder = [];
         let pageContent = {};
-        let audienceMode = 'enterprise'; // 'wholesale' | 'enterprise'
-        const WHOLESALE_HIDDEN = ['products'];
-        const ENTERPRISE_HIDDEN = ['indiana', 'illinois', 'minnesota'];
+        /** Full section list (wholesale + enterprise views merged). */
         function getFilteredNavOrder() {
-            const hidden = audienceMode === 'wholesale' ? WHOLESALE_HIDDEN : ENTERPRISE_HIDDEN;
-            return navOrder.filter(id => !hidden.includes(id));
+            return [...navOrder];
         }
 
         // --- SCALE TO FIT (1920x1080) ---
@@ -223,7 +204,6 @@
             startClock();
             setupScreensaver();
             setupFullscreen();
-            setupCanvas();
             buildKeyboard();
             setupAdminTrigger();
             
@@ -257,50 +237,31 @@
         function checkClientGreeting() {
             const savedClient = localStorage.getItem('gpc-client');
             if (savedClient) {
-                if (audienceMode === 'wholesale') {
-                    // --- WHOLESALE CLIENT PAYLOAD ---
-                    mapData['guest'] = {
-                        id: 'guest',
-                        title: `Welcome, ${savedClient}`,
-                        subtitle: 'Wholesale Network Capabilities',
-                        file: 'backbone.png',
-                        type: 'map',
-                        talkingPointsTitle: 'Wholesale Capabilities',
-                        talkingPoints: [
-                            `Extensive 20,000+ mile fiber footprint providing scalable middle-mile and last-mile connectivity for ${savedClient}'s regional expansion.`,
-                            "High-capacity Layer 1 Wavelength and Layer 2 transport with standard 400G routes between major Midwestern transit hubs.",
-                            "Dense rural and metro access, including fiber backhaul to over 650+ towers and 25+ critical data centers.",
-                            "Direct IP transit and peering with Tier 1 global networks to ensure zero-congestion and ultra-low latency routing.",
-                            "Carrier-grade infrastructure backed by our localized, 24/7/365 Network Operations Center (NOC)."
-                        ],
-                        stats: [
-                            { label: 'Network Footprint', value: '20,000+ Miles', color: 'text-gpc-green' },
-                            { label: 'Tower Backhaul', value: '650+ Towers', color: 'text-gpc-orange' },
-                            { label: 'Core Transport', value: '400G Standard', color: 'text-gpc-blue' }
-                        ]
-                    };
-                } else {
-                    // --- ENTERPRISE CLIENT PAYLOAD ---
-                    mapData['guest'] = {
-                        id: 'guest',
-                        title: `Welcome, ${savedClient}`,
-                        subtitle: 'Enterprise Network Capabilities',
-                        file: 'backbone.png',
-                        type: 'map',
-                        talkingPointsTitle: 'Strategic Capabilities',
-                        talkingPoints: [
-                            `Custom-engineered fiber solutions designed to scale with ${savedClient}'s specific data demands.`,
-                            "Access to over 20,000 miles of highly secure, resilient Layer 1 and Layer 2 infrastructure.",
-                            "Complete bypass of the public internet for maximum data security and regulatory compliance.",
-                            "Dedicated, localized account management backed by 24/7 proactive network monitoring."
-                        ],
-                        stats: [
-                            { label: 'Strategic Partner', value: savedClient, color: 'text-gpc-blue' },
-                            { label: 'Network Base', value: '100% Fiber', color: 'text-gpc-green' },
-                            { label: 'Core Capacity', value: 'Up to 400G', color: 'text-gpc-orange' }
-                        ]
-                    };
-                }
+                mapData['guest'] = {
+                    id: 'guest',
+                    title: `Welcome, ${savedClient}`,
+                    subtitle: 'Wholesale & enterprise network capabilities',
+                    file: 'backbone.png',
+                    type: 'map',
+                    talkingPointsTitle: 'Capabilities',
+                    talkingPoints: [
+                        `Extensive 20,000+ mile fiber footprint providing scalable middle-mile and last-mile connectivity for ${savedClient}'s regional expansion.`,
+                        "High-capacity Layer 1 Wavelength and Layer 2 transport with standard 400G routes between major Midwestern transit hubs.",
+                        "Dense rural and metro access, including fiber backhaul to over 650+ towers and 25+ critical data centers.",
+                        "Direct IP transit and peering with Tier 1 global networks to ensure zero-congestion and ultra-low latency routing.",
+                        "Carrier-grade infrastructure backed by our localized, 24/7/365 Network Operations Center (NOC).",
+                        `Custom-engineered fiber solutions designed to scale with ${savedClient}'s specific data demands.`,
+                        "Access to over 20,000 miles of highly secure, resilient Layer 1 and Layer 2 infrastructure.",
+                        "Complete bypass of the public internet for maximum data security and regulatory compliance.",
+                        "Dedicated, localized account management backed by 24/7 proactive network monitoring."
+                    ],
+                    stats: [
+                        { label: 'Partner', value: savedClient, color: 'text-gpc-blue' },
+                        { label: 'Network Footprint', value: '20,000+ Mi', color: 'text-gpc-green' },
+                        { label: 'Tower Backhaul', value: '650+', color: 'text-gpc-orange' },
+                        { label: 'Core Capacity', value: 'Up to 400G', color: 'text-slate-900' }
+                    ]
+                };
                 // Ensure guest is always the very first item in the nav
                 if (!navOrder.includes('guest')) navOrder.unshift('guest');
             } else {
@@ -360,7 +321,6 @@
             const mapLayer = document.getElementById('map-layer');
             const htmlLayer = document.getElementById('html-layer');
             const mapControls = document.getElementById('map-controls');
-            const drawControls = document.getElementById('draw-controls');
             const insightContainer = document.getElementById('insight-container');
             const insightModal = document.getElementById('insight-modal');
 
@@ -377,7 +337,6 @@
                 //     mapControls.classList.add('opacity-0', 'pointer-events-none');
                 // }
                 mapControls.classList.add('opacity-0', 'pointer-events-none');
-                drawControls.classList.remove('hidden'); 
                 
                 // Inject the actual image
                 const mapImg = document.getElementById('map-image');
@@ -416,10 +375,7 @@
             } else {
                 mapLayer.classList.add('hidden');
                 mapControls.classList.add('opacity-0', 'pointer-events-none');
-                drawControls.classList.add('hidden'); 
                 insightContainer.classList.add('hidden'); // Hide lightbulb on HTML pages
-                
-                if (drawMode) toggleDrawing();
 
                 htmlLayer.classList.remove('hidden');
                 renderHTMLContent(viewId, htmlLayer);
@@ -538,67 +494,6 @@
             }
         }
 
-        // --- WHITEBOARD CANVAS (HTML5 API) ---
-        const canvas = document.getElementById('whiteboard');
-        const ctx = canvas.getContext('2d');
-        let isDrawing = false, drawMode = false;
-
-        function setupCanvas() {
-            const resize = () => {
-                canvas.width = canvas.parentElement.clientWidth;
-                canvas.height = canvas.parentElement.clientHeight;
-                ctx.lineWidth = 4;
-                ctx.lineCap = 'round';
-                ctx.strokeStyle = '#EA580C';
-            };
-            window.addEventListener('resize', resize);
-            resize();
-
-            const toCanvasCoords = (e) => {
-                const rect = canvas.getBoundingClientRect();
-                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-                const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-                const scaleX = canvas.width / rect.width;
-                const scaleY = canvas.height / rect.height;
-                return {
-                    x: (clientX - rect.left) * scaleX,
-                    y: (clientY - rect.top) * scaleY
-                };
-            };
-            const startPos = (e) => {
-                isDrawing = true;
-                ctx.beginPath();
-                const { x, y } = toCanvasCoords(e);
-                ctx.moveTo(x, y);
-            };
-            const draw = (e) => {
-                if (!isDrawing) return;
-                e.preventDefault();
-                const { x, y } = toCanvasCoords(e);
-                ctx.lineTo(x, y);
-                ctx.stroke();
-            };
-            const stopPos = () => { isDrawing = false; ctx.closePath(); };
-
-            canvas.addEventListener('mousedown', startPos); canvas.addEventListener('mousemove', draw); canvas.addEventListener('mouseup', stopPos); canvas.addEventListener('mouseout', stopPos);
-            canvas.addEventListener('touchstart', startPos); canvas.addEventListener('touchmove', draw); canvas.addEventListener('touchend', stopPos);
-        }
-
-        function toggleDrawing() {
-            drawMode = !drawMode;
-            canvas.classList.toggle('hidden');
-            document.getElementById('btn-clear-draw').classList.toggle('hidden');
-            const btn = document.getElementById('btn-toggle-draw');
-            if (drawMode) {
-                btn.innerHTML = 'Disable Draw';
-                btn.classList.replace('text-gpc-blue', 'text-slate-400');
-            } else {
-                btn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg> Enable Draw';
-                btn.classList.replace('text-slate-400', 'text-gpc-blue');
-            }
-        }
-        function clearCanvas() { ctx.clearRect(0, 0, canvas.width, canvas.height); }
-
         // --- SCREENSAVER (ATTRACT MODE) ---
         let idleTime = 0;
         function setupScreensaver() {
@@ -693,33 +588,6 @@
             if (order.length > 0) updateView(order[0]);
             closeAdmin();
         }
-
-        // --- AUDIENCE TOGGLE (WHOLESALE / ENTERPRISE) ---
-        function setAudienceMode(mode) {
-            const activeEl = document.querySelector('[id^="nav-btn-"].nav-item-active');
-            const currentViewId = activeEl ? activeEl.id.replace('nav-btn-', '') : null;
-            audienceMode = mode;
-            document.getElementById('audience-label').innerText = mode === 'wholesale' ? 'GPC Wholesale' : 'GPC Enterprise';
-            const w = document.getElementById('audience-wholesale');
-            const e = document.getElementById('audience-enterprise');
-            if (mode === 'wholesale') {
-                w.classList.add('text-slate-200', 'bg-gpc-blue'); w.classList.remove('text-slate-400');
-                e.classList.remove('text-slate-200', 'bg-gpc-blue'); e.classList.add('text-slate-400');
-            } else {
-                e.classList.add('text-slate-200', 'bg-gpc-blue'); e.classList.remove('text-slate-400');
-                w.classList.remove('text-slate-200', 'bg-gpc-blue'); w.classList.add('text-slate-400');
-            }
-            checkClientGreeting(); // Refresh guest payload for wholesale vs enterprise
-            buildNavigation();
-            const order = getFilteredNavOrder();
-            if (currentViewId && order.includes(currentViewId)) {
-                updateView(currentViewId);
-            } else if (order.length > 0) {
-                updateView(order[0]);
-            }
-        }
-        document.getElementById('audience-wholesale').addEventListener('click', () => setAudienceMode('wholesale'));
-        document.getElementById('audience-enterprise').addEventListener('click', () => setAudienceMode('enterprise'));
 
         // --- HARDWARE BUTTONS & UTILS ---
         window.addEventListener('keydown', (e) => {
