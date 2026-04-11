@@ -26,64 +26,65 @@ function orderedUserModules(manifest) {
   );
 }
 
-/** @returns {{ left: number; top: number; width: number; height: number } | null} */
-function unionRectFromSelectors(selectors) {
-  let minL = Infinity;
-  let minT = Infinity;
-  let maxR = -Infinity;
-  let maxB = -Infinity;
-  let found = false;
-  for (const sel of selectors) {
-    const el = document.querySelector(sel);
-    if (!el) continue;
-    const r = el.getBoundingClientRect();
-    if (r.width === 0 && r.height === 0) continue;
-    found = true;
-    minL = Math.min(minL, r.left);
-    minT = Math.min(minT, r.top);
-    maxR = Math.max(maxR, r.right);
-    maxB = Math.max(maxB, r.bottom);
-  }
-  if (!found) return null;
-  return {
-    left: minL,
-    top: minT,
-    width: maxR - minL,
-    height: maxB - minT,
-  };
-}
-
-function buildDemoMarkup(categories) {
-  const catStr = categories.length ? escapeHtml(categories.join(', ')) : '';
+function buildDemoMarkup() {
   return `
     <div class="tour-demo-content max-w-[1600px] mx-auto space-y-6 pb-4 pointer-events-none select-none">
-      <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Preview layout</p>
       <div class="flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
         <div class="w-full lg:flex-1 min-w-0 space-y-6" data-tour-target="module-core">
           <div class="rounded-xl border border-slate-200/90 bg-white/95 shadow-sm p-6 backdrop-blur-sm">
-            <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Example training module</h2>
-            <p class="text-slate-600 mt-2 text-sm max-w-3xl">Summary text sets context—same pattern as live modules.</p>
+            <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Welcome to Great Plains Communications</h2>
+            <p class="text-slate-600 mt-3 text-sm max-w-3xl leading-relaxed">
+              We're glad you're here. This space is built to help you ramp with confidence—alongside teammates who remember their first customer call, their first complex quote, and the questions that used to keep them up at night.
+            </p>
           </div>
           <div class="rounded-xl border border-orange-100 bg-gradient-to-br from-orange-50/95 to-white/90 p-5 shadow-sm backdrop-blur-sm">
             <p class="text-xs font-bold text-orange-800 uppercase tracking-wide">Five-minute summary</p>
-            <ul class="mt-3 space-y-2 text-sm text-slate-700">
-              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span> Scan bullets before the deep dive.</li>
-              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span> Key takeaways appear here when the author adds them.</li>
+            <ul class="mt-3 space-y-2.5 text-sm text-slate-700">
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span> We're genuinely happy you chose to grow your career here—your wins matter to us.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span> Take training at your pace; come back to any module when you need a refresher or a talk track.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span> Showing up curious for customers beats memorizing slides—use this hub to prepare, then go have real conversations.</li>
             </ul>
           </div>
           <section class="rounded-xl border border-slate-200 bg-white/95 p-6 shadow-sm backdrop-blur-sm">
-            <h3 class="text-lg font-bold text-slate-900">Section card</h3>
-            <p class="text-sm text-slate-600 mt-2 leading-relaxed">Each <code class="text-xs bg-slate-100 px-1 rounded">##</code> heading in the source becomes its own card in the main column.</p>
+            <h3 class="text-lg font-bold text-slate-900">A note from the team</h3>
+            <div class="text-sm text-slate-700 mt-3 space-y-3 leading-relaxed">
+              <p>Dear teammate,</p>
+              <p>
+                Welcome to Great Plains Communications. Whether you're new to telecom or you've carried a bag for years, we're glad you're on the team. Sales-Navigator exists so you spend less time hunting for answers and more time listening to customers—rules of engagement, product depth, competitive positioning, and the workflows that keep deals moving are never more than a few clicks away.
+              </p>
+              <p>
+                Nobody expects you to know everything on day one. We do expect you to ask questions, use the resources here, and reach out when a deal needs an extra pair of eyes. That's how we get better together—and how our customers feel the difference between a vendor and a partner.
+              </p>
+              <p class="text-slate-600">With appreciation,<br><span class="text-slate-800 font-medium">Your GPC sales enablement team</span></p>
+            </div>
           </section>
         </div>
         <aside class="w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white/95 p-4 shadow-sm backdrop-blur-sm" data-tour-target="tour-scenarios">
           <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Scenarios</p>
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">When present, short situations and feedback appear in this column on wide screens.</p>
+          <p class="text-xs font-semibold text-slate-800 mt-3">Week two: the “why GPC?” question</p>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            You're grabbing coffee with a prospect who only knows you from email. They lean in and ask: <span class="text-slate-800">“So—why should I pick a regional provider over a big national brand?”</span>
+          </p>
+          <p class="text-xs text-slate-500 mt-3 uppercase tracking-wide">Pick a response</p>
+          <ul class="mt-2 space-y-2 text-sm">
+            <li class="rounded-lg border border-slate-200 bg-slate-50/80 px-3 py-2 text-slate-600">Lead with the lowest price per Mbps.</li>
+            <li class="rounded-lg border border-orange-200 bg-orange-50/90 px-3 py-2 text-slate-800 font-medium">Tie your answer to local accountability—who answers the phone when something breaks.</li>
+            <li class="rounded-lg border border-slate-200 bg-slate-50/80 px-3 py-2 text-slate-600">List three competitor weaknesses by name.</li>
+          </ul>
+          <p class="text-xs text-emerald-800 bg-emerald-50/90 border border-emerald-100 rounded-lg px-3 py-2 mt-3">
+            <strong>Coach's note:</strong> Customers remember how you sound when things go wrong—not just when everything works.
+          </p>
         </aside>
       </div>
       <div class="rounded-xl border border-slate-200 bg-white/95 p-5 shadow-sm backdrop-blur-sm max-w-4xl" data-tour-target="tour-knowledge">
         <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Knowledge checks</p>
-        <p class="text-sm text-slate-600 mt-2">Practice questions often sit in a carousel near the bottom of the module.</p>
+        <p class="text-sm font-medium text-slate-900 mt-3">Before your first customer meeting this week, what's the smartest 60-second investment?</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li class="flex gap-2 items-start rounded-lg border border-slate-200 px-3 py-2"><span class="text-slate-400">○</span> Memorize every SKU in the catalog.</li>
+          <li class="flex gap-2 items-start rounded-lg border border-orange-200 bg-orange-50/80 px-3 py-2"><span class="text-orange-600">○</span> Skim the five-minute summary so you know where to go deeper on the call.</li>
+          <li class="flex gap-2 items-start rounded-lg border border-slate-200 px-3 py-2"><span class="text-slate-400">○</span> Skip discovery so you have more time to demo.</li>
+        </ul>
+        <p class="text-xs text-slate-500 mt-3 italic">Not graded—just a nudge toward good habits. (The carousel in live modules may hold several questions like this.)</p>
         <div class="mt-4 flex gap-2">
           <span class="h-2 w-8 rounded-full bg-orange-400/90"></span>
           <span class="h-2 w-8 rounded-full bg-slate-200"></span>
@@ -107,19 +108,19 @@ function getSpotlightRect(stepIndex) {
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
     case 3: {
-      return unionRectFromSelectors([
-        '[data-tour-target="tour-scenarios"]',
-        '[data-tour-target="tour-knowledge"]',
-      ]);
+      const el = document.querySelector('[data-tour-target="tour-scenarios"]');
+      return el ? rectLike(el.getBoundingClientRect()) : null;
     }
     case 4: {
-      const el = document.querySelector('[data-module-id="map-book"]');
+      const el = document.querySelector('[data-tour-target="tour-knowledge"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
     case 5: {
-      const el = document.getElementById('module-host');
+      const el = document.querySelector('[data-module-id="map-book"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
+    case 6:
+      return null;
     default:
       return null;
   }
@@ -313,17 +314,26 @@ export function loadGettingStarted(container, manifest) {
         </ul>`,
     },
     {
-      title: 'Scenarios & knowledge checks',
-      icon: 'fa-lightbulb',
+      title: 'Scenarios',
+      icon: 'fa-comments',
       body: `
         <p class="text-slate-800 leading-relaxed mb-3">
-          Many modules include interactive practice—not graded, for learning:
+          <strong>Scenarios</strong> sit beside the main content on wider screens. You'll get a short situation, a few choices, and feedback—practice for real conversations, not a test score.
         </p>
-        <ul class="list-disc pl-5 text-slate-700 space-y-2 text-sm">
-          <li><strong>Scenarios</strong> may appear in a column beside the content: choose a response and read the feedback.</li>
-          <li><strong>Knowledge checks</strong> often appear as a carousel near the bottom: answer and reveal explanations to reinforce the material.</li>
-        </ul>
-        <p class="text-slate-600 text-sm mt-3">If a module does not include scenarios or checks, the layout may be a single column—same navigation, simpler page.</p>`,
+        <p class="text-slate-600 text-sm">
+          The sample on the left is a lighthearted “new hire” moment: coffee, a tough question, and a coach's nudge. Live modules follow the same idea with your actual products and talk tracks.
+        </p>`,
+    },
+    {
+      title: 'Knowledge checks',
+      icon: 'fa-circle-question',
+      body: `
+        <p class="text-slate-800 leading-relaxed mb-3">
+          <strong>Knowledge checks</strong> usually live in a carousel toward the bottom—quick questions with explanations so you can self-check without pressure.
+        </p>
+        <p class="text-slate-600 text-sm">
+          The example below is a playful nudge about good prep habits. In real modules, questions line up with the training you just read.
+        </p>`,
     },
     {
       title: 'Executive Map Book',
@@ -331,9 +341,12 @@ export function loadGettingStarted(container, manifest) {
       body: mapBook
         ? `
         <p class="text-slate-800 leading-relaxed mb-3">
-          <strong>${escapeHtml(mapBook.title)}</strong> opens a full-width embedded view for network maps and executive visuals—use the sidebar to switch back to standard training modules anytime.
+          <strong>${escapeHtml(mapBook.title)}</strong> is a digital version of our printed map book—often spread on the table as a backdrop for executive customer conversations about footprint, reach, and strategy.
         </p>
-        <p class="text-slate-600 text-sm">It uses the same header and sidebar as the rest of Sales-Navigator.</p>`
+        <p class="text-slate-600 text-sm mb-3">
+          Open it from the sidebar for full-width maps and executive views; switch back to any training module the same way you got here.
+        </p>
+        <p class="text-slate-600 text-sm">Same header and sidebar as the rest of Sales-Navigator.</p>`
         : `
         <p class="text-slate-800 leading-relaxed">Map-style resources appear in the navigation when enabled for your build.</p>`,
     },
@@ -361,7 +374,7 @@ export function loadGettingStarted(container, manifest) {
     },
   ];
 
-  container.innerHTML = buildDemoMarkup(categories);
+  container.innerHTML = buildDemoMarkup();
 
   const overlay = document.createElement('div');
   overlay.id = OVERLAY_ID;
@@ -419,7 +432,7 @@ export function loadGettingStarted(container, manifest) {
     const rect = getSpotlightRect(stepIndex);
     applySpotlightLayers(overlay, rect);
 
-    if (stepIndex === 4) {
+    if (stepIndex === 5) {
       document
         .querySelector('[data-module-id="map-book"]')
         ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
@@ -485,8 +498,8 @@ export function loadGettingStarted(container, manifest) {
   onResize = () => {
     const r = getSpotlightRect(stepIndex);
     applySpotlightLayers(overlay, r);
-    const card = overlay.querySelector('.tour-glass-inner');
-    if (card) positionGlassCard(card, stepIndex, r);
+    const host = overlay.querySelector('.tour-glass-card-host');
+    if (host) positionGlassCard(host, stepIndex, r);
   };
   window.addEventListener('resize', onResize);
   window.addEventListener('scroll', onResize, true);
