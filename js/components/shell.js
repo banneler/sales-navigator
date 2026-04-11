@@ -59,9 +59,6 @@ export function renderShell(manifest, onSelect) {
             <p class="text-xs text-slate-500 mt-1">Supplement to physical tours</p>
           </div>
           <nav class="flex-1 min-h-0 overflow-y-auto">${navHtml.join('')}</nav>
-          <div class="pt-4 mt-auto border-t border-slate-100">
-            <a href="admin.html" class="text-sm font-semibold text-orange-600 hover:text-orange-700">Content admin (GitHub)</a>
-          </div>
         </div>
       </aside>
       <main id="main-panel" class="flex-1 overflow-y-auto min-h-0 min-w-0 bg-slate-100 p-6 md:p-8">
