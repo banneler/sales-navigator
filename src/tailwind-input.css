@@ -75,3 +75,21 @@
   margin: 0.75rem 0;
   color: #64748b;
 }
+
+.module-md-figure {
+  margin: 1rem 0 1.25rem;
+}
+.module-md-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+.module-md-caption {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  color: #64748b;
+  line-height: 1.4;
+}

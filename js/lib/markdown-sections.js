@@ -4,6 +4,19 @@ import { parseFrontMatter } from './front-matter.js';
 
 marked.use({ gfm: true, breaks: true });
 
+marked.use({
+  renderer: {
+    image({ href, title, text }) {
+      const cap = title
+        ? `<figcaption class="module-md-caption">${escapeHtml(title)}</figcaption>`
+        : '';
+      const src = escapeHtml(href || '');
+      const alt = escapeHtml(text || '');
+      return `<figure class="module-md-figure"><img class="module-md-img" src="${src}" alt="${alt}" loading="lazy" decoding="async" />${cap}</figure>`;
+    },
+  },
+});
+
 function escapeHtml(s) {
   if (s == null) return '';
   return String(s)
@@ -61,7 +74,10 @@ export function renderSectionsToHtml(sections) {
         <p class="text-sm text-red-800">${escapeHtml(e instanceof Error ? e.message : String(e))}</p>
       </section>`;
       }
-      const safe = DOMPurify.sanitize(html, { ADD_ATTR: ['target', 'rel'] });
+      const safe = DOMPurify.sanitize(html, {
+        ADD_ATTR: ['target', 'rel', 'loading', 'decoding', 'src', 'alt'],
+        ADD_TAGS: ['figure', 'figcaption', 'img'],
+      });
       const heading = title.trim()
         ? `<h3 class="text-lg font-bold text-slate-900 mb-3">${escapeHtml(title)}</h3>`
         : '';

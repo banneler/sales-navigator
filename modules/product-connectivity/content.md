@@ -9,6 +9,8 @@ sensitivity: "public"
 
 Use **access** conversations to frame how traffic reaches the customer: GPC delivers business Internet and transport over a fiber-rich Midwest footprint. **Standard Internet Access (SIA)** fits flexible, cost-sensitive sites that can tolerate shared access and best-effort latency. **Dedicated Internet Access (DIA)** fits sites that need symmetrical throughput, premium latency, dedicated path, richer DDoS visibility, and NOC-style support. Position **Managed Ethernet** when the need is private Layer 2 transport between sites—not Internet breakout. **Wavelength (Wave)** when the need is raw, high-capacity Layer 1 optical transport between strategic endpoints (data centers, large hubs)—see the Wave section.
 
+![Abstract network paths](Proposal_Assets/training/abstract-network.svg "Illustrative — replace with diagrams extracted from your PDFs")
+
 **Discovery cues:** What applications are business-critical? Upload-heavy vs download-heavy? Need for static IPs, diversity, or SLA-style operations? Today’s access technology (cable, fiber, T1/MPLS legacy, wireless)? Growth plan over 24–36 months?
 
 **Sources:**
