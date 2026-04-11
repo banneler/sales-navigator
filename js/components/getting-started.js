@@ -28,9 +28,9 @@ function orderedUserModules(manifest) {
 
 function buildDemoMarkup() {
   return `
-    <div class="tour-demo-content max-w-[1600px] mx-auto space-y-6 pb-4 pointer-events-none select-none">
+    <div class="tour-demo-content max-w-[1600px] mx-auto space-y-6 pb-4 select-none">
       <div class="flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
-        <div class="w-full lg:flex-1 min-w-0 space-y-6" data-tour-target="module-core">
+        <div class="w-full lg:flex-1 min-w-0 space-y-6 pointer-events-none" data-tour-target="module-core">
           <div class="rounded-xl border border-slate-200/90 bg-white/95 shadow-sm p-6 backdrop-blur-sm">
             <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Welcome to Great Plains Communications</h2>
             <p class="text-slate-600 mt-3 text-sm max-w-3xl leading-relaxed">
@@ -59,32 +59,49 @@ function buildDemoMarkup() {
             </div>
           </section>
         </div>
-        <aside class="w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white/95 p-4 shadow-sm backdrop-blur-sm" data-tour-target="tour-scenarios">
+        <aside class="w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white/95 p-4 shadow-sm backdrop-blur-sm pointer-events-auto" data-tour-target="tour-scenarios">
           <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Scenarios</p>
           <p class="text-xs font-semibold text-slate-800 mt-3">Week two: the “why GPC?” question</p>
           <p class="text-sm text-slate-600 mt-2 leading-relaxed">
             You're grabbing coffee with a prospect who only knows you from email. They lean in and ask: <span class="text-slate-800">“So—why should I pick a regional provider over a big national brand?”</span>
           </p>
           <p class="text-xs text-slate-500 mt-3 uppercase tracking-wide">Pick a response</p>
-          <ul class="mt-2 space-y-2 text-sm">
-            <li class="rounded-lg border border-slate-200 bg-slate-50/80 px-3 py-2 text-slate-600">Lead with the lowest price per Mbps.</li>
-            <li class="rounded-lg border border-orange-200 bg-orange-50/90 px-3 py-2 text-slate-800 font-medium">Tie your answer to local accountability—who answers the phone when something breaks.</li>
-            <li class="rounded-lg border border-slate-200 bg-slate-50/80 px-3 py-2 text-slate-600">List three competitor weaknesses by name.</li>
-          </ul>
-          <p class="text-xs text-emerald-800 bg-emerald-50/90 border border-emerald-100 rounded-lg px-3 py-2 mt-3">
+          <div class="mt-2 space-y-2" role="group" aria-label="Scenario responses">
+            <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
+              Lead with the lowest price per Mbps.
+            </button>
+            <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="true">
+              Tie your answer to local accountability—who answers the phone when something breaks.
+            </button>
+            <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
+              List three competitor weaknesses by name.
+            </button>
+          </div>
+          <p class="text-xs text-red-700 mt-2 min-h-[1.25rem] hidden" data-tour-scenario-feedback="" role="status" aria-live="polite"></p>
+          <p class="text-xs text-emerald-800 bg-emerald-50/90 border border-emerald-100 rounded-lg px-3 py-2 mt-3 hidden" data-tour-coach-note="">
             <strong>Coach's note:</strong> Customers remember how you sound when things go wrong—not just when everything works.
           </p>
         </aside>
       </div>
-      <div class="rounded-xl border border-slate-200 bg-white/95 p-5 shadow-sm backdrop-blur-sm max-w-4xl" data-tour-target="tour-knowledge">
+      <div class="rounded-xl border border-slate-200 bg-white/95 p-5 shadow-sm backdrop-blur-sm max-w-4xl pointer-events-auto" data-tour-target="tour-knowledge">
         <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Knowledge checks</p>
         <p class="text-sm font-medium text-slate-900 mt-3">Before your first customer meeting this week, what's the smartest 60-second investment?</p>
-        <ul class="mt-3 space-y-2 text-sm">
-          <li class="flex gap-2 items-start rounded-lg border border-slate-200 px-3 py-2"><span class="text-slate-400">○</span> Memorize every SKU in the catalog.</li>
-          <li class="flex gap-2 items-start rounded-lg border border-orange-200 bg-orange-50/80 px-3 py-2"><span class="text-orange-600">○</span> Skim the five-minute summary so you know where to go deeper on the call.</li>
-          <li class="flex gap-2 items-start rounded-lg border border-slate-200 px-3 py-2"><span class="text-slate-400">○</span> Skip discovery so you have more time to demo.</li>
-        </ul>
-        <p class="text-xs text-slate-500 mt-3 italic">Not graded—just a nudge toward good habits. (The carousel in live modules may hold several questions like this.)</p>
+        <div class="mt-3 space-y-2 text-sm" role="group" aria-label="Knowledge check options">
+          <button type="button" class="tour-knowledge-opt flex w-full gap-2 items-start rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-left transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
+            <span class="text-slate-400 shrink-0" aria-hidden="true">○</span>
+            <span>Memorize every SKU in the catalog.</span>
+          </button>
+          <button type="button" class="tour-knowledge-opt flex w-full gap-2 items-start rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-left transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="true">
+            <span class="text-slate-400 shrink-0" aria-hidden="true">○</span>
+            <span>Skim the five-minute summary so you know where to go deeper on the call.</span>
+          </button>
+          <button type="button" class="tour-knowledge-opt flex w-full gap-2 items-start rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-left transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
+            <span class="text-slate-400 shrink-0" aria-hidden="true">○</span>
+            <span>Skip discovery so you have more time to demo.</span>
+          </button>
+        </div>
+        <p class="text-xs text-red-700 mt-2 min-h-[1.25rem] hidden" data-tour-knowledge-feedback="" role="status" aria-live="polite"></p>
+        <p class="text-xs text-slate-500 mt-3 italic" data-tour-knowledge-hint="">Not graded—just a nudge toward good habits. (The carousel in live modules may hold several questions like this.)</p>
         <div class="mt-4 flex gap-2">
           <span class="h-2 w-8 rounded-full bg-orange-400/90"></span>
           <span class="h-2 w-8 rounded-full bg-slate-200"></span>
@@ -320,8 +337,12 @@ export function loadGettingStarted(container, manifest) {
         <p class="text-slate-800 leading-relaxed mb-3">
           <strong>Scenarios</strong> sit beside the main content on wider screens. You'll get a short situation, a few choices, and feedback—practice for real conversations, not a test score.
         </p>
-        <p class="text-slate-600 text-sm">
-          The sample on the left is a lighthearted “new hire” moment: coffee, a tough question, and a coach's nudge. Live modules follow the same idea with your actual products and talk tracks.
+        <p class="text-slate-600 text-sm mb-3">
+          The sample in the highlighted area is a lighthearted “new hire” moment: coffee, a tough question, and a coach's nudge. Live modules follow the same idea with your actual products and talk tracks.
+        </p>
+        <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
+          <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
+          Choose the strongest response in the scenario to unlock <strong>Next</strong>.
         </p>`,
     },
     {
@@ -331,8 +352,12 @@ export function loadGettingStarted(container, manifest) {
         <p class="text-slate-800 leading-relaxed mb-3">
           <strong>Knowledge checks</strong> usually live in a carousel toward the bottom—quick questions with explanations so you can self-check without pressure.
         </p>
-        <p class="text-slate-600 text-sm">
-          The example below is a playful nudge about good prep habits. In real modules, questions line up with the training you just read.
+        <p class="text-slate-600 text-sm mb-3">
+          The example in the highlighted area is a playful nudge about good prep habits. In real modules, questions line up with the training you just read.
+        </p>
+        <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
+          <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
+          Pick the best answer to unlock <strong>Next</strong>.
         </p>`,
     },
     {
@@ -398,9 +423,109 @@ export function loadGettingStarted(container, manifest) {
 
   const glassRoot = overlay.querySelector('#tour-glass-root');
   let stepIndex = 0;
+  let scenarioComplete = false;
+  let knowledgeComplete = false;
+
+  function refreshNextGate() {
+    const host = glassRoot?.querySelector('.tour-glass-card-host');
+    const next = host?.querySelector('.gs-next');
+    if (!next) return;
+    const blocked =
+      (stepIndex === 3 && !scenarioComplete) ||
+      (stepIndex === 4 && !knowledgeComplete);
+    next.disabled = blocked;
+    next.classList.toggle('opacity-50', blocked);
+    next.classList.toggle('cursor-not-allowed', blocked);
+    next.title = blocked
+      ? 'Complete the activity in the highlighted area first.'
+      : '';
+  }
+
+  function bindDemoInteractions() {
+    const root = container;
+    const scenarioBtns = root.querySelectorAll('.tour-scenario-opt');
+    const knowledgeBtns = root.querySelectorAll('.tour-knowledge-opt');
+
+    scenarioBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const correct = btn.getAttribute('data-tour-correct') === 'true';
+        const feedback = root.querySelector('[data-tour-scenario-feedback]');
+        const coach = root.querySelector('[data-tour-coach-note]');
+        scenarioBtns.forEach((b) => {
+          b.classList.remove(
+            'ring-2',
+            'ring-emerald-500',
+            'bg-emerald-50/80',
+            'ring-red-400',
+            'bg-red-50'
+          );
+          b.disabled = false;
+        });
+        if (correct) {
+          btn.classList.add('ring-2', 'ring-emerald-500', 'bg-emerald-50/80');
+          scenarioComplete = true;
+          scenarioBtns.forEach((b) => {
+            b.disabled = true;
+          });
+          if (feedback) {
+            feedback.textContent = '';
+            feedback.classList.add('hidden');
+          }
+          if (coach) coach.classList.remove('hidden');
+        } else {
+          btn.classList.add('ring-2', 'ring-red-400', 'bg-red-50');
+          if (feedback) {
+            feedback.textContent = 'Not quite—pick the response that fits best.';
+            feedback.classList.remove('hidden');
+          }
+        }
+        refreshNextGate();
+      });
+    });
+
+    knowledgeBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const correct = btn.getAttribute('data-tour-correct') === 'true';
+        const feedback = root.querySelector('[data-tour-knowledge-feedback]');
+        knowledgeBtns.forEach((b) => {
+          b.classList.remove(
+            'ring-2',
+            'ring-emerald-500',
+            'bg-emerald-50/80',
+            'ring-red-400',
+            'bg-red-50'
+          );
+          b.disabled = false;
+        });
+        if (correct) {
+          btn.classList.add('ring-2', 'ring-emerald-500', 'bg-emerald-50/80');
+          knowledgeComplete = true;
+          knowledgeBtns.forEach((b) => {
+            b.disabled = true;
+          });
+          if (feedback) {
+            feedback.textContent = '';
+            feedback.classList.add('hidden');
+          }
+        } else {
+          btn.classList.add('ring-2', 'ring-red-400', 'bg-red-50');
+          knowledgeComplete = false;
+          if (feedback) {
+            feedback.textContent = 'Try again—that habit usually backfires.';
+            feedback.classList.remove('hidden');
+          }
+        }
+        refreshNextGate();
+      });
+    });
+  }
+
+  bindDemoInteractions();
 
   function bindCardActions(cardEl) {
     cardEl.querySelector('.gs-next')?.addEventListener('click', () => {
+      if (stepIndex === 3 && !scenarioComplete) return;
+      if (stepIndex === 4 && !knowledgeComplete) return;
       if (stepIndex < steps.length - 1) {
         stepIndex += 1;
         render();
@@ -428,6 +553,12 @@ export function loadGettingStarted(container, manifest) {
     const step = steps[stepIndex];
     const total = steps.length;
     const isLast = stepIndex === total - 1;
+    const nextBlocked =
+      (stepIndex === 3 && !scenarioComplete) ||
+      (stepIndex === 4 && !knowledgeComplete);
+    const nextTitle = nextBlocked
+      ? 'Complete the activity in the highlighted area first.'
+      : '';
 
     const rect = getSpotlightRect(stepIndex);
     applySpotlightLayers(overlay, rect);
@@ -473,7 +604,7 @@ export function loadGettingStarted(container, manifest) {
           <div class="flex flex-wrap gap-2">
             ${
               !isLast
-                ? `<button type="button" class="gs-next inline-flex items-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold px-4 py-2 text-xs shadow-md transition">
+                ? `<button type="button" class="gs-next inline-flex items-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 disabled:hover:bg-orange-500 text-white font-semibold px-4 py-2 text-xs shadow-md transition disabled:opacity-50 disabled:cursor-not-allowed" ${nextBlocked ? 'disabled' : ''} title="${escapeHtml(nextTitle)}">
               Next
               <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </button>`
@@ -493,6 +624,8 @@ export function loadGettingStarted(container, manifest) {
       positionGlassCard(host, stepIndex, rect);
       requestAnimationFrame(() => positionGlassCard(host, stepIndex, getSpotlightRect(stepIndex)));
     });
+
+    refreshNextGate();
   }
 
   onResize = () => {
