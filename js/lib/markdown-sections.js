@@ -90,12 +90,6 @@ export function buildModuleHeaderBlockHtml(meta, handoutHtml = '') {
   const title = typeof meta.title === 'string' ? meta.title : 'Module';
   const summary = typeof meta.summary === 'string' ? meta.summary : '';
 
-  const titleStack = `
-        <div class="min-w-0 flex-1">
-          <h2 class="text-2xl font-bold text-slate-900 tracking-tight">${escapeHtml(title)}</h2>
-          ${summary ? `<p class="text-slate-600 mt-2 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
-        </div>`;
-
   if (!handoutHtml || !String(handoutHtml).trim()) {
     return `
       <div>
@@ -105,9 +99,12 @@ export function buildModuleHeaderBlockHtml(meta, handoutHtml = '') {
   }
 
   return `
-      <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6 pb-4 border-b border-slate-200/90">
-        ${titleStack}
-        ${handoutHtml}
+      <div class="pb-4 border-b border-slate-200/90">
+        <div class="flex flex-row flex-wrap items-center justify-between gap-x-4 gap-y-2">
+          <h2 class="text-2xl font-bold text-slate-900 tracking-tight min-w-0 flex-1">${escapeHtml(title)}</h2>
+          ${String(handoutHtml).trim()}
+        </div>
+        ${summary ? `<p class="text-slate-600 mt-3 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
       </div>`;
 }
 
