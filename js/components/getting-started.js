@@ -441,6 +441,22 @@ export function loadGettingStarted(container, manifest) {
       : '';
   }
 
+  /** Recompute spotlight hole + glass card after demo content height changes (e.g. coach note). */
+  function syncSpotlightAndCard() {
+    const r = getSpotlightRect(stepIndex);
+    applySpotlightLayers(overlay, r);
+    const host = glassRoot?.querySelector('.tour-glass-card-host');
+    if (host) positionGlassCard(host, stepIndex, r);
+  }
+
+  function scheduleSpotlightReflow() {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        syncSpotlightAndCard();
+      });
+    });
+  }
+
   function bindDemoInteractions() {
     const root = container;
     const scenarioBtns = root.querySelectorAll('.tour-scenario-opt');
@@ -480,6 +496,7 @@ export function loadGettingStarted(container, manifest) {
           }
         }
         refreshNextGate();
+        scheduleSpotlightReflow();
       });
     });
 
@@ -516,6 +533,7 @@ export function loadGettingStarted(container, manifest) {
           }
         }
         refreshNextGate();
+        scheduleSpotlightReflow();
       });
     });
   }
@@ -629,10 +647,7 @@ export function loadGettingStarted(container, manifest) {
   }
 
   onResize = () => {
-    const r = getSpotlightRect(stepIndex);
-    applySpotlightLayers(overlay, r);
-    const host = overlay.querySelector('.tour-glass-card-host');
-    if (host) positionGlassCard(host, stepIndex, r);
+    syncSpotlightAndCard();
   };
   window.addEventListener('resize', onResize);
   window.addEventListener('scroll', onResize, true);
@@ -643,8 +658,12 @@ export function loadGettingStarted(container, manifest) {
     resizeObs = new ResizeObserver(() => onResize());
     const host = document.getElementById('module-host');
     const sb = document.getElementById('sidebar');
+    const scenarioEl = container.querySelector('[data-tour-target="tour-scenarios"]');
+    const knowledgeEl = container.querySelector('[data-tour-target="tour-knowledge"]');
     if (host) resizeObs.observe(host);
     if (sb) resizeObs.observe(sb);
+    if (scenarioEl) resizeObs.observe(scenarioEl);
+    if (knowledgeEl) resizeObs.observe(knowledgeEl);
   }
 
   render();
