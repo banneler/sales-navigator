@@ -1,5 +1,4 @@
 import { setRouteModuleId } from '../router.js';
-import { getModuleIconSvgHtml } from '../lib/module-icons.js';
 
 let manifestData = null;
 
@@ -31,9 +30,8 @@ export function renderShell(manifest, onSelect) {
           .map(
             (m) => `
         <li>
-          <button type="button" data-module-id="${escapeHtml(m.id)}" class="nav-module group w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-orange-50 hover:text-orange-900 transition border border-transparent hover:border-orange-100 flex items-center gap-2.5">
-            <span class="nav-module-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-200/90 bg-slate-50 text-slate-600 transition group-hover:border-orange-200 group-hover:bg-orange-50/90 group-hover:text-orange-800" aria-hidden="true">${getModuleIconSvgHtml(m.id, 'w-4 h-4')}</span>
-            <span class="min-w-0 flex-1 leading-snug">${escapeHtml(m.title)}</span>
+          <button type="button" data-module-id="${escapeHtml(m.id)}" class="nav-module w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-orange-50 hover:text-orange-900 transition border border-transparent hover:border-orange-100">
+            ${escapeHtml(m.title)}
           </button>
         </li>`
           )
@@ -97,15 +95,6 @@ export function highlightNav(activeId) {
     btn.classList.toggle('text-orange-900', isActive);
     btn.classList.toggle('border-orange-200', isActive);
     btn.classList.toggle('shadow-sm', isActive);
-    const iconWrap = btn.querySelector('.nav-module-icon');
-    if (iconWrap) {
-      iconWrap.classList.toggle('border-orange-300', isActive);
-      iconWrap.classList.toggle('bg-orange-100/90', isActive);
-      iconWrap.classList.toggle('text-orange-800', isActive);
-      iconWrap.classList.toggle('border-slate-200/90', !isActive);
-      iconWrap.classList.toggle('bg-slate-50', !isActive);
-      iconWrap.classList.toggle('text-slate-600', !isActive);
-    }
   });
 }
 
