@@ -55,7 +55,7 @@ function buildDemoMarkup() {
               <p>
                 Nobody expects you to know everything on day one. We do expect you to ask questions, use the resources here, and reach out when a deal needs an extra pair of eyes. That's how we get better together—and how our customers feel the difference between a vendor and a partner.
               </p>
-              <p class="text-slate-600">With appreciation,<br><span class="text-slate-800 font-medium">Your GPC sales enablement team</span></p>
+              <p class="text-slate-600">With appreciation,<br><span class="text-slate-800 font-medium">Your Sales Leader</span></p>
             </div>
           </section>
         </div>
