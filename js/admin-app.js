@@ -1,11 +1,19 @@
 import { getFile, putTextFile } from './lib/github-client.js';
 import { parseFrontMatter } from './lib/front-matter.js';
 import { renderModuleDocumentHtml } from './lib/markdown-sections.js';
+import {
+  filterImagesBySearch,
+  filterImagesForModule,
+  insertMarkdownAtCursor,
+  pathToAltText,
+} from './lib/training-assets.js';
 
 // Hardcoded — same pattern as Enterprise-Proposals admin (GITHUB_OWNER / GITHUB_REPO)
 const GITHUB_OWNER = 'banneler';
 const GITHUB_REPO = 'sales-navigator';
 const GITHUB_BRANCH = 'main';
+
+const ASSET_GRID_MAX = 200;
 
 let githubToken = '';
 
@@ -28,8 +36,92 @@ async function main() {
   const editor = document.getElementById('markdown-editor');
   const shaField = document.getElementById('file-sha');
   const previewEl = document.getElementById('admin-preview');
+  const assetGrid = document.getElementById('asset-picker-grid');
+  const assetCountEl = document.getElementById('asset-picker-count');
+  const assetSearch = document.getElementById('asset-search');
+  const assetShowAll = document.getElementById('asset-show-all');
 
   let previewTimer = 0;
+  let assetSearchTimer = 0;
+
+  /** @type {string[]} */
+  let trainingImages = [];
+  /** @type {{ routes?: Record<string, string[]> } | null} */
+  let routesConfig = null;
+  let assetSearchQuery = '';
+  let showAllAssets = false;
+
+  try {
+    const [mRes, rRes] = await Promise.all([
+      fetch('training-assets-manifest.json'),
+      fetch('modules-asset-routes.json'),
+    ]);
+    if (mRes.ok) {
+      const mJson = await mRes.json();
+      trainingImages = mJson.images || [];
+    }
+    if (rRes.ok) {
+      routesConfig = await rRes.json();
+    }
+  } catch (e) {
+    console.warn('Training assets metadata not loaded', e);
+  }
+
+  function renderAssetPicker() {
+    if (!assetGrid || !moduleSelect) return;
+
+    if (!trainingImages.length) {
+      assetGrid.innerHTML =
+        '<p class="text-sm text-slate-500 col-span-full">No training images found. Run <code class="bg-slate-100 px-1 rounded text-xs">python scripts/build_training_assets_manifest.py</code> from the repo root.</p>';
+      if (assetCountEl) assetCountEl.textContent = '';
+      return;
+    }
+
+    const moduleId = moduleSelect.value;
+    let list = filterImagesForModule(trainingImages, moduleId, routesConfig, showAllAssets);
+    list = filterImagesBySearch(list, assetSearchQuery);
+    const total = list.length;
+    const sliced = list.slice(0, ASSET_GRID_MAX);
+
+    if (assetCountEl) {
+      const scope = showAllAssets ? 'All images' : 'Module-routed';
+      assetCountEl.textContent = `${scope}: ${total} match · showing ${sliced.length}${total > ASSET_GRID_MAX ? ` (cap ${ASSET_GRID_MAX})` : ''} · ${trainingImages.length} total in manifest`;
+    }
+
+    assetGrid.innerHTML = '';
+    for (const p of sliced) {
+      const alt = pathToAltText(p);
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className =
+        'group border border-slate-200 rounded-lg overflow-hidden bg-white hover:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-500 text-left';
+      btn.setAttribute('aria-label', `Insert ${p.split('/').pop()}`);
+
+      const wrap = document.createElement('div');
+      wrap.className = 'h-24 flex items-center justify-center bg-slate-100 p-1';
+      const img = document.createElement('img');
+      img.src = encodeURI(p);
+      img.alt = '';
+      img.loading = 'lazy';
+      img.className = 'max-h-full max-w-full object-contain';
+      wrap.appendChild(img);
+
+      const cap = document.createElement('p');
+      cap.className = 'text-[10px] text-slate-500 truncate px-1 py-0.5 border-t border-slate-100';
+      cap.title = p;
+      cap.textContent = p.split('/').pop() || p;
+
+      btn.appendChild(wrap);
+      btn.appendChild(cap);
+      btn.addEventListener('click', () => {
+        if (!editor) return;
+        const md = `![${alt}](${p})`;
+        insertMarkdownAtCursor(editor, md);
+        showToast('Image Markdown inserted');
+      });
+      assetGrid.appendChild(btn);
+    }
+  }
 
   function schedulePreviewUpdate() {
     window.clearTimeout(previewTimer);
@@ -66,6 +158,7 @@ async function main() {
       if (editor) editor.value = content;
       if (shaField) shaField.value = sha;
       if (previewEl) previewEl.innerHTML = renderModuleDocumentHtml(content);
+      renderAssetPicker();
       showToast('Loaded from GitHub.');
     } catch (e) {
       console.error(e);
@@ -139,10 +232,24 @@ async function main() {
   document.getElementById('load-from-github-btn')?.addEventListener('click', loadModuleFromGithub);
 
   moduleSelect?.addEventListener('change', () => {
+    renderAssetPicker();
     loadModuleFromGithub();
   });
 
   editor?.addEventListener('input', schedulePreviewUpdate);
+
+  assetSearch?.addEventListener('input', () => {
+    assetSearchQuery = assetSearch.value || '';
+    window.clearTimeout(assetSearchTimer);
+    assetSearchTimer = window.setTimeout(renderAssetPicker, 200);
+  });
+
+  assetShowAll?.addEventListener('change', () => {
+    showAllAssets = assetShowAll.checked;
+    renderAssetPicker();
+  });
+
+  renderAssetPicker();
 
   document.getElementById('push-to-github-btn')?.addEventListener('click', async () => {
     if (!githubToken) {

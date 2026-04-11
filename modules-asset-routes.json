@@ -1,0 +1,94 @@
+{
+  "description": "Path substring matchers (case-sensitive) against training-assets-manifest image paths. Each module lists fragments that must appear in the repo-relative path to include an asset.",
+  "matchMode": "substring",
+  "routes": {
+    "sales-rules-of-engagement": [
+      "sales-rules-of-engagement-roe-revised-august-2025-1"
+    ],
+    "sales-process-and-salesforce": [
+      "extracted/onedrive-1-4-10-2026-3/salesforce",
+      "extracted/onedrive-1-4-10-2026-3/converting-leads",
+      "extracted/onedrive-1-4-10-2026-3/assigning-leads",
+      "extracted/onedrive-1-4-10-2026-3/forecasting-quick-reference",
+      "extracted/onedrive-1-4-10-2026-3/salesforce-101-manual",
+      "extracted/onedrive-1-4-10-2026-3/salesforce-add-in-for-outlook",
+      "extracted/onedrive-1-4-10-2026-3/salesforce-mobile-application",
+      "extracted/onedrive-1-4-10-2026-3/salesforce-sso",
+      "extracted/onedrive-1-4-10-2026-3/salesforce-docusign",
+      "extracted/onedrive-1-4-10-2026-3/salesforce-nisc",
+      "extracted/onedrive-1-4-10-2026-3/dashboards-quick-reference",
+      "extracted/onedrive-1-4-10-2026-3/create-a-custom-list-view",
+      "driver-training-pdf-2025-1-1"
+    ],
+    "sales-operations-and-approvals": [
+      "extracted/onedrive-1-4-10-2026-3/approval-overview-and-training-guide",
+      "extracted/onedrive-1-4-10-2026-3/approval-requirements-matrix",
+      "extracted/onedrive-1-4-10-2026-2/approval-requirements-matrix",
+      "extracted/onedrive-1-4-10-2026-3/change-order-process",
+      "extracted/onedrive-1-4-10-2026-3/costing-routing",
+      "extracted/onedrive-1-4-10-2026-3/move-add-change-processes",
+      "extracted/onedrive-1-4-10-2026-3/disconnection-process",
+      "extracted/onedrive-1-4-10-2026-3/pre-approved-order-process",
+      "extracted/onedrive-1-4-10-2026-3/parent-opportunity",
+      "extracted/onedrive-1-4-10-2026-3/off-net-quick-reference",
+      "extracted/onedrive-1-4-10-2026-3/dark-fiber-quick-reference",
+      "extracted/onedrive-1-4-10-2026-2/operational-business-review-obr",
+      "extracted/onedrive-1-4-10-2026-2/temporary-bandwidth-upgrade"
+    ],
+    "portfolio-and-business-capabilities": [
+      "business-capability-presentation"
+    ],
+    "product-connectivity": [
+      "extracted/onedrive-1-4-10-2026-1/internet",
+      "extracted/onedrive-1-4-10-2026-1/ethernet",
+      "extracted/onedrive-1-4-10-2026-1/wave",
+      "extracted/onedrive-1-4-10-2026-1/fiber-delivery",
+      "extracted/onedrive-1-4-10-2026-1/network-monitoring-portal",
+      "extracted/onedrive-1-4-10-2026-1/cloud-connect",
+      "extracted/onedrive-1-4-10-2026/wireless-internet-backup",
+      "ethernet-battle-card-final",
+      "fiber-vs-starlink-battlecard",
+      "gpc-cloud-connect-battle-card",
+      "extracted/onedrive-1-4-10-2026-4/dia-sia",
+      "extracted/onedrive-1-4-10-2026-4/ethernet",
+      "extracted/onedrive-1-4-10-2026-4/wave"
+    ],
+    "product-security-and-sd-wan": [
+      "extracted/onedrive-1-4-10-2026-1/ddos",
+      "extracted/onedrive-1-4-10-2026-1/managed-firewall",
+      "extracted/onedrive-1-4-10-2026-1/sd-wan",
+      "managed-firewall-battlecard-final",
+      "gpc-sd-wan-battle-card-final",
+      "extracted/onedrive-1-4-10-2026-4/managed-network-security",
+      "extracted/onedrive-1-4-10-2026-4/sd-wan",
+      "extracted/onedrive-1-4-10-2026-4/business-security"
+    ],
+    "product-cloud-wifi-and-backup": [
+      "extracted/onedrive-1-4-10-2026-1/managed-wi-fi",
+      "extracted/onedrive-1-4-10-2026-1/wireless-internet-backup",
+      "extracted/onedrive-1-4-10-2026-1/cloud-connect",
+      "battlecard-5g-wireless-backup",
+      "gpc-cloud-connect-battle-card",
+      "extracted/onedrive-1-4-10-2026-4/wifi",
+      "extracted/onedrive-1-4-10-2026-4/wireless-backup-broadband",
+      "extracted/onedrive-1-4-10-2026/wireless-internet-backup"
+    ],
+    "product-uc-voice-and-collaboration": [
+      "extracted/onedrive-1-4-10-2026-1/unified-communications",
+      "extracted/onedrive-1-4-10-2026-1/voice",
+      "extracted/onedrive-1-4-10-2026-4/unified-communications",
+      "extracted/onedrive-1-4-10-2026-4/voice",
+      "uc-competitor-battle-card"
+    ],
+    "competitive-positioning": [
+      "cox-acquisition-battle-card-v2",
+      "omaha-metro-competitive-battle-card-v3",
+      "fiber-vs-starlink-battlecard",
+      "ethernet-battle-card-final",
+      "battlecard-5g-wireless-backup",
+      "gpc-sd-wan-battle-card-final",
+      "managed-firewall-battlecard-final",
+      "gpc-cloud-connect-battle-card"
+    ]
+  }
+}

@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "build": "tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind.css --minify",
-    "dev:css": "tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind.css --watch"
+    "dev:css": "tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind.css --watch",
+    "build:manifest": "python3 scripts/build_training_assets_manifest.py"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
