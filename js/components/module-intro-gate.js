@@ -4,19 +4,38 @@ import { buildFiveMinuteSummaryIntroGateHtml } from '../lib/module-enrichment.js
 
 export const MODULE_INTRO_GATE_ID = 'module-intro-gate-overlay';
 
+let positionCleanup = null;
+
 export function destroyModuleIntroGate() {
+  if (positionCleanup) {
+    try {
+      positionCleanup();
+    } catch {
+      /* ignore */
+    }
+    positionCleanup = null;
+  }
   document.getElementById(MODULE_INTRO_GATE_ID)?.remove();
 }
 
+function positionIntroGateOverlay(overlay) {
+  const mp = document.getElementById('main-panel');
+  if (!mp || !overlay) return;
+  const r = mp.getBoundingClientRect();
+  overlay.style.top = `${r.top}px`;
+  overlay.style.left = `${r.left}px`;
+  overlay.style.width = `${r.width}px`;
+  overlay.style.height = `${r.height}px`;
+}
+
 /**
- * Full-screen glass overlay (same language as the guided tour): dark header holds title + intro;
- * scroll area holds a plain five-minute summary (no amber card / 5m icon). Full module unchanged.
+ * Glass preview over the main content area only (header + sidebar stay visible and clickable).
+ * Full module should already be rendered in `container` so it shows through the dimmed layer.
  *
- * @param {HTMLElement} container - #module-host (left empty until Start)
- * @param {string} markdownSource - Full content.md including front matter
- * @param {() => void} renderFullModule - Typically `() => renderMarkdownModule(container, markdownSource)`
+ * @param {HTMLElement} container - #module-host
+ * @param {string} markdownSource - Full content.md (for preview copy only)
  */
-export function mountModuleIntroGate(container, markdownSource, renderFullModule) {
+export function mountModuleIntroGate(container, markdownSource) {
   destroyModuleIntroGate();
 
   let meta = {};
@@ -24,7 +43,6 @@ export function mountModuleIntroGate(container, markdownSource, renderFullModule
     const parsed = parseFrontMatter(markdownSource || '');
     meta = parsed.meta || {};
   } catch {
-    renderFullModule();
     return;
   }
 
@@ -33,15 +51,15 @@ export function mountModuleIntroGate(container, markdownSource, renderFullModule
 
   const overlay = document.createElement('div');
   overlay.id = MODULE_INTRO_GATE_ID;
-  overlay.className = 'fixed inset-0 z-[100] pointer-events-none';
+  overlay.className = 'fixed z-[50] pointer-events-none';
   overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-modal', 'false');
   overlay.setAttribute('aria-labelledby', 'module-intro-gate-heading');
 
   overlay.innerHTML = `
-    <div class="fixed inset-0 bg-slate-900/55 backdrop-blur-[3px] pointer-events-auto" data-module-intro-dim></div>
-    <div class="fixed inset-0 z-[101] flex items-center justify-center p-4 sm:p-6 pointer-events-none">
-      <div class="module-intro-gate-panel pointer-events-auto flex max-h-[min(90vh,900px)] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-white/40 bg-white/70 shadow-2xl backdrop-blur-xl backdrop-saturate-150">
+    <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] pointer-events-auto" data-module-intro-dim></div>
+    <div class="absolute inset-0 z-[1] flex items-center justify-center overflow-y-auto p-4 sm:p-6 pointer-events-none">
+      <div class="module-intro-gate-panel pointer-events-auto my-auto flex max-h-[min(85vh,820px)] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-white/40 bg-white/75 shadow-2xl backdrop-blur-xl backdrop-saturate-150">
         <div class="flex-shrink-0 bg-gradient-to-r from-slate-900/95 to-slate-800/95 px-5 py-5 text-white">
           ${headerStripHtml}
         </div>
@@ -60,10 +78,27 @@ export function mountModuleIntroGate(container, markdownSource, renderFullModule
     </div>
   `;
 
+  function syncPosition() {
+    positionIntroGateOverlay(overlay);
+  }
+
+  syncPosition();
+  window.addEventListener('resize', syncPosition);
+  const mp = document.getElementById('main-panel');
+  const ro =
+    typeof ResizeObserver !== 'undefined' && mp
+      ? new ResizeObserver(() => syncPosition())
+      : null;
+  if (mp && ro) ro.observe(mp);
+
+  positionCleanup = () => {
+    window.removeEventListener('resize', syncPosition);
+    ro?.disconnect();
+  };
+
   document.body.appendChild(overlay);
 
   overlay.querySelector('.module-intro-start')?.addEventListener('click', () => {
     destroyModuleIntroGate();
-    renderFullModule();
   });
 }

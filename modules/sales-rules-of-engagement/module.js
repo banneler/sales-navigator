@@ -2,10 +2,9 @@ import renderMarkdownModule from '../../js/components/markdown-module.js';
 import { mountModuleIntroGate } from '../../js/components/module-intro-gate.js';
 
 /**
- * Trial: glass “module preview” gate (title, intro, five-minute summary) before full render.
+ * Full module renders first (visible under glass); preview gate covers main panel only.
  */
 export default function renderRoeWithIntroGate(container, markdownText) {
-  mountModuleIntroGate(container, markdownText, () => {
-    renderMarkdownModule(container, markdownText);
-  });
+  renderMarkdownModule(container, markdownText);
+  mountModuleIntroGate(container, markdownText);
 }
