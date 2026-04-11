@@ -17,12 +17,6 @@ Position GPC **UC** as one integrated platform for voice, AI-assisted calling, m
 
 **Handoff:** AE/UC specialist for formal sizing, mixed plans, archiving beyond 30 days, CC, integrations. **Competitive:** whole-business workflow vs meeting-only SKUs; local support; **99.999%** uptime story—translate to minutes/year in customer language.
 
-![UC brochure](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/unified-communications/uc-brochure-abbreviated-041026/images/uc-brochure-abbreviated-041026-p1-img0.png "From UC brochure (abbreviated)")
-
-![UC — K‑12 use case](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/unified-communications/industry-specific-collateral/uc-use-case-k-12-education/images/uc-use-case-k-12-education-p3-img0.png "From UC use case — K‑12")
-
-![UC archiving](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/unified-communications/uc-benefits-of-archiving-2025/images/uc-benefits-of-archiving-2025-p1-img0.jpeg "From UC benefits of archiving")
-
 **Sources:**
 - **UC Brochure (abbreviated)** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/UC Brochure - Abbreviated 041026.pdf`
 - **UC Competitor battle card (PDF)** — `/Users/ba/Documents/GPC Training Material/UC Competitor Battle Card 031226.pdf`
@@ -34,10 +28,6 @@ Keep **Microsoft Teams** as the collaboration hub; add GPC’s **enterprise-grad
 **Discovery:** Teams standard for chat/meetings? Teams Phone today or bridged PBX? Hunt groups, queues, paging, hot desking, CRM screen pop? Presence sync between queues and Teams status?
 
 **Handoff:** UC/Teams architects for coexistence, porting, and Phone System prerequisites across departments; coordinate CSP context if Teams is bought elsewhere.
-
-![UC for Teams](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/unified-communications/uc-for-teams/uc-for-teams-datasheet-100325/images/uc-for-teams-datasheet-100325-p1-img0.jpeg "From UC for Teams datasheet")
-
-![UC for Teams — advanced archiving](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/unified-communications/uc-for-teams/uc-for-teams-advanced-archiving-2025/images/uc-for-teams-advanced-archiving-2025-p1-img0.jpeg "From UC for Teams advanced archiving")
 
 **Sources:**
 - **UC for Teams datasheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/UC for Teams/UC for Teams datasheet 100325.pdf`
@@ -54,10 +44,6 @@ Contact Center on the **same UC platform**: one application for employee collabo
 
 **Handoff:** Product specialists for custom reports, bespoke IVR, custom integrations (prof services in datasheet). Bursting/elastic with AE/pricing desk.
 
-![Contact Center — workflow context](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/unified-communications/industry-specific-collateral/uc-use-case-k-12-education/images/uc-use-case-k-12-education-p3-img2.jpeg "From UC collateral — omni-channel story")
-
-![UC platform depth](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/unified-communications/industry-specific-collateral/uc-use-case-k-12-education/images/uc-use-case-k-12-education-p2-img0.jpeg "From UC use case collateral")
-
 **Sources:**
 - **Contact Center datasheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/Contact Center datasheet 050925.pdf`
 
@@ -71,18 +57,12 @@ For customers not ready for full UC: **SIP trunking**, **PRI**, and **POTS**. **
 
 **Handoff:** Voice engineering for eSBC placement, SIP interoperability, cutover windows.
 
-![UC Phone comparison](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/unified-communications/uc-phone-comparison-sheet/images/uc-phone-comparison-sheet-p2-img0.jpeg "From UC Phone comparison sheet")
-
-![Endpoints](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/unified-communications/uc-phone-comparison-sheet/images/uc-phone-comparison-sheet-p2-img1.jpeg "From UC Phone comparison sheet")
-
 **Sources:**
 - **Voice Product Sheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Voice - Non-UC/Voice Product Sheet 112524.pdf`
 
 ## Pricing (internal)
 
 UC, Contact Center, and voice quotes use **internal** pricing books—never email rates from memory. Use brochures/datasheets for capability; use pricing extracts for **internal** sizing only. CC concurrent licensing, add-on channels, archiving, bursting, and PS lines need **AE/pricing** alignment.
-
-![Archiving tiers (internal context)](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/unified-communications/uc-benefits-of-archiving-2025/images/uc-benefits-of-archiving-2025-p3-img0.jpeg "From UC benefits of archiving — internal sizing")
 
 **Sources:**
 - **UC / Voice pricing folder** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (4)`

@@ -15,12 +15,6 @@ sensitivity: "public"
 
 **Cautions:** Align scope with SE for cross-connect details, diversity, and security expectations—not every site needs full cloud exchange on day one.
 
-![Cloud Connect battle card](Proposal_Assets/training/from-pdfs/gpc-cloud-connect-battle-card-050321/images/gpc-cloud-connect-battle-card-050321-p2-img0.png "From Cloud Connect battle card")
-
-![Cloud ecosystem](Proposal_Assets/training/from-pdfs/gpc-cloud-connect-battle-card-050321/images/gpc-cloud-connect-battle-card-050321-p2-img4.png "From Cloud Connect battle card")
-
-![Cloud Connect — proof points](Proposal_Assets/training/from-pdfs/gpc-cloud-connect-battle-card-050321/images/gpc-cloud-connect-battle-card-050321-p2-img6.png "From Cloud Connect battle card")
-
 **Sources:**
 - **Cloud Connect product sheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Cloud Connect/Cloud Connect 011725.pdf`
 - **Cloud Connect battle card (PDF)** — `/Users/ba/Documents/GPC Training Material/GPC Cloud Connect Battle Card 050321.pdf`
@@ -35,12 +29,6 @@ sensitivity: "public"
 
 **Cautions:** Site survey and density assumptions belong with engineering—don’t promise AP counts from a first call.
 
-![Managed Wi‑Fi battle card](Proposal_Assets/training/from-pdfs/gpc-managed-wifi-battle-card/images/gpc-managed-wifi-battle-card-p2-img0.png "From Managed Wi‑Fi battle card")
-
-![Wi‑Fi coverage story](Proposal_Assets/training/from-pdfs/gpc-managed-wifi-battle-card/images/gpc-managed-wifi-battle-card-p2-img2.png "From Managed Wi‑Fi battle card")
-
-![Managed Wi‑Fi — enterprise](Proposal_Assets/training/from-pdfs/gpc-managed-wifi-battle-card/images/gpc-managed-wifi-battle-card-p2-img4.png "From Managed Wi‑Fi battle card")
-
 **Sources:**
 - **Managed Wi-Fi datasheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Managed Wi-Fi/Managed Wi-Fi datasheet 070725.pdf`
 - **GPC Managed WIFI battle card (PDF)** — `/Users/ba/Documents/GPC Training Material/GPC Managed WIFI Battle Card.pdf`
@@ -52,10 +40,6 @@ sensitivity: "public"
 **Discovery:** What happens on outage today—manual failover, none, or aging 4G? Which apps must survive? RTO in minutes vs hours? Alerting and ownership? Site constraints for **outdoor antenna** or router placement? Battery backup interest? Set expectations: **5G** performance varies by site; collateral notes **tiered speeds** after monthly usage thresholds and possible deprioritization when busy—honesty wins.
 
 **Proof points:** Automatic failover to secure **wireless** path and automatic fail-back; app prioritization; **24/7 NOC**; optional **battery up to ~8 hours**; **Cradlepoint**-class CPE and professional install per collateral; speeds cited **up to 100 Mbps+** location-dependent.
-
-![5G Wireless Internet backup](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026/wireless-internet-backup/gpc-wireless-internet-5g-product-launch/images/gpc-wireless-internet-5g-product-launch-p12-img1.png "From GPC Wireless Internet 5G product launch")
-
-![Wireless backup — continuity](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026/wireless-internet-backup/gpc-wireless-internet-5g-product-launch/images/gpc-wireless-internet-5g-product-launch-p18-img0.png "From GPC Wireless Internet 5G product launch")
 
 **Sources:**
 - **5G Wireless Internet Backup Product Sheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Wireless Internet Backup/5G Wireless Internet Backup Product Sheet 103025.pdf`

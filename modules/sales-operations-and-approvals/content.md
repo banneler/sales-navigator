@@ -15,10 +15,6 @@ Financial and deal-health criteria called out in training include: Payback Month
 
 Know who to ask: Product Management for product-specific approval rules, Sales Management for judgment on decisions, and the Salesforce team for workflow or system issues. On mobile (iPhone or Android), use the notification bell or the approval email link, review Details (View More as needed), return to Approval History, pick the action, enter comments, and confirm—same outcome as desktop.
 
-![Approval overview](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/approval-overview-and-training-guide-0725/images/approval-overview-and-training-guide-0725-p8-img0.png "From Approval overview and training guide")
-
-![Approval training](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/approval-overview-and-training-guide-0725/images/approval-overview-and-training-guide-0725-p2-img0.png "From Approval overview and training guide")
-
 **Sources:**
 - **Approval Overview and Training Guide - 0725** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Approval Overview and Training Guide - 0725.pdf`
 - **Approval Requirements Matrix v5.5 - 0725** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Approval Requirements Matrix v5.5 - 0725.pdf`
@@ -33,8 +29,6 @@ Treat “change order” as a narrow window: the customer changes the contract a
 
  After submission: Salesforce Administration performs the booking adjustment; PMO updates the project; CRC handles billing impacts. If the Solution Site project stage is “Pending Billing” or “7-10 Day Order,” Salesforce Admin must get PMO/CRC approval before executing the booking adjustment.
 
-![Change order process](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/change-order-process-sales-team-0325/images/change-order-process-sales-team-0325-p1-img0.png "From Change order process — Sales")
-
 **Sources:**
 - **Change Order Process - Sales Team - 0325** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Change Order Process - Sales Team - 0325.pdf`
 
@@ -48,10 +42,6 @@ Costing Routing drives which organizations estimate or validate spend for each S
 
  For edge cases (especially customer moves and New vs Existing), Business Customer Care can help interpret the right service classification.
 
-![Costing routing](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/costing-routing-quick-reference-guide-1123/images/costing-routing-quick-reference-guide-1123-p2-img0.png "From Costing routing quick reference")
-
-![Costing routing — detail](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/costing-routing-quick-reference-guide-1123/images/costing-routing-quick-reference-guide-1123-p4-img0.png "From Costing routing quick reference")
-
 **Sources:**
 - **Costing Routing Quick Reference Guide - 1123** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Costing Routing Quick Reference Guide - 1123.pdf`
 
@@ -62,12 +52,6 @@ Partner: for Enterprise referral mechanics and eligibility, use the Partner Refe
  MAC vs disconnect: after billing starts, partial in-life changes follow Move-Add-Change; removing all services post-billing follows Disconnection. Those are distinct from the pre-billing Change Order and Cancellation paths above. A separate Customer Move procedure PDF also lives under the extracted (2) library for relocation scenarios.
 
  OBR: Operational Business Review readiness (forms and SOP) remains under the OneDrive (2) OBR folder—use for account planning cadence with ops leadership, not as a substitute for SF approval or costing routing.
-
-![Partner referral](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/partner-referral-program-quick-reference-guide-enterprise-sales-only-1223/images/partner-referral-program-quick-reference-guide-enterprise-sales-only-1223-p2-img0.png "From Partner referral quick reference")
-
-![Move / Add / Change](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/move-add-change-processes-sales-team-1123/images/move-add-change-processes-sales-team-1123-p12-img0.png "From MAC processes — Sales")
-
-![Disconnection](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/disconnection-process-sales-team-1022/images/disconnection-process-sales-team-1022-p2-img0.png "From Disconnection process — Sales")
 
 **Sources:**
 - **Partner Referral Program Quick Reference (Enterprise Sales) - 1223** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Partner Referral Program Quick Reference Guide - Enterprise Sales Only - 1223.pdf`

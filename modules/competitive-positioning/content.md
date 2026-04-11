@@ -17,10 +17,6 @@ Landmines. Do not disparage competitors personally; do not cite battle-card stat
 
 When to pull SE or PM. Engage early for: multi-site WAN/SD-WAN or MPLS migration, integrated security/firewall design, off-net + on-net hybrid, DDoS or regulated workloads, fiber feasibility or diverse paths, and any RFP-style technical validation. Use PM for delivery timeline, construction, and contract alignment.
 
-![Business capability — competitive framing](Proposal_Assets/training/from-pdfs/business-capability-presentation/images/business-capability-presentation-p2-img3.png "From Business Capability Presentation")
-
-![Driver training — ops awareness](Proposal_Assets/training/from-pdfs/driver-training-pdf-2025-1-1/images/driver-training-pdf-2025-1-1-p2-img0.jpeg "From Driver Training PDF")
-
 ## Metro and local competition
 
 Local overbuilders and national entrants often lead on price, speed tiers, or speed of build. Your counter is not price alone—it is fit, experience, and operational reliability for business.
@@ -28,8 +24,6 @@ Local overbuilders and national entrants often lead on price, speed tiers, or sp
 Themes from the Omaha metro set: entrants may emphasize quick builds and community marketing; probe for install quality, support model (local vs remote), network redundancy, and whether they fully own or lease facilities. Where competitors lease fiber or have pocketed coverage, position GPC reach, streamlined installs inside your plant, and rate stability via contract. Where they offer only simple tiers or consumer-style Wi-Fi bundles, position full business suite, complex needs (healthcare, multi-site, security), and tailored bandwidth so customers do not overbuy.
 
 T-Mobile/Metronet context: separate consumer brand story from B2B; test for support consistency, local depth, aerial vs buried build quality, and post-merger stability. Against “lowest advertised price,” tie to total cost of downtime, billing surprises, and lack of local escalation.
-
-![Cox / M&A narrative (training extract)](Proposal_Assets/training/from-pdfs/cox-acquisition-battle-card-v2/images/cox-acquisition-battle-card-v2-p1-img0.png "From Cox acquisition battle card")
 
 ## Fiber versus satellite (Starlink and LEO)
 
@@ -41,10 +35,6 @@ Qualifying line of inquiry: employees/devices at site; critical apps; SLA needs;
 
 Ideal-fit businesses: high upload demand; predictable POS/VoIP/cloud; public-sector/education; long-term scalable landline replacement; rural sites where environmental factors would hurt satellite. Response to “Starlink is everywhere”: acknowledge coverage, then reframe to reliability, latency, and operational support for business applications.
 
-![Fiber vs Starlink](Proposal_Assets/training/from-pdfs/fiber-vs-starlink-battlecard/images/fiber-vs-starlink-battlecard-p3-img0.png "From Fiber vs Starlink battlecard")
-
-![Fiber vs Starlink — latency story](Proposal_Assets/training/from-pdfs/fiber-vs-starlink-battlecard/images/fiber-vs-starlink-battlecard-p8-img0.png "From Fiber vs Starlink battlecard")
-
 ## M&A and Cox (Charter/Spectrum acquisition narrative)
 
 When prospects hear acquisition messaging, they want stability, service quality, and honest comparison—not gossip.
@@ -55,8 +45,6 @@ Comparison dimensions useful in conversation: access technology (fiber depth vs 
 
 Speaking to “combined company benefits”: acknowledge the competitor’s stated commitments; pivot to what GPC already delivers (e.g., support model continuity, no need to “bring support home” if yours never left), consistency of service experience, and proactive monitoring. Keep the tone factual and customer-centric.
 
-![Cox acquisition — talking points](Proposal_Assets/training/from-pdfs/cox-acquisition-battle-card-v2/images/cox-acquisition-battle-card-v2-p1-img2.png "From Cox acquisition battle card")
-
 ## Technology battle cards (SD-WAN as the pattern)
 
 Technology battle cards follow a repeatable pattern: target customer profile → business pain (cloud performance, backhaul inefficiency, MPLS cost/redundancy, manual edge management, real-time app inconsistency) → how GPC wraps transport and services → qualifying questions → national-carrier challenge and response.
@@ -64,12 +52,6 @@ Technology battle cards follow a repeatable pattern: target customer profile →
 For SD-WAN specifically: qualify site count, current MPLS/VPN/backhaul behavior, bandwidth per site, cloud vs data center apps, migration horizon (12–24 months), and mission-critical SaaS. Key proof areas: centralized orchestration and visibility, application-aware routing and failover, security integration, performance over varied underlays, and combining nationwide reach with local engagement—while staying accurate on awards/ratings (verify year and scope before citing).
 
 Apply the same pattern to other technology cards: open with customer pain, tie features to outcomes, use discovery questions to earn the technical win, and bring SE for design validation instead of debating from the card alone.
-
-![GPC SD-WAN battle card](Proposal_Assets/training/from-pdfs/gpc-sd-wan-battle-card-final/images/gpc-sd-wan-battle-card-final-p2-img2.png "From GPC SD-WAN battle card")
-
-![Ethernet battle card](Proposal_Assets/training/from-pdfs/ethernet-battle-card-final/images/ethernet-battle-card-final-p2-img1.png "From Ethernet battle card")
-
-![Cloud Connect battle card](Proposal_Assets/training/from-pdfs/gpc-cloud-connect-battle-card-050321/images/gpc-cloud-connect-battle-card-050321-p2-img2.png "From Cloud Connect battle card")
 
 ## Battle card PDFs (training references)
 
@@ -90,8 +72,6 @@ Primary sources synthesized into this module appear below. Confirm dates and cla
 ## Field / ops note
 
 “Driver Training PDF 2025” in the training folder is operations-oriented; confirm with your manager before mapping it to sales onboarding objectives (ops TBD).
-
-![Field / ops — driver training extract](Proposal_Assets/training/from-pdfs/driver-training-pdf-2025-1-1/images/driver-training-pdf-2025-1-1-p4-img0.jpeg "From Driver Training PDF (confirm sales use with leadership)")
 
 **Sources:**
 - **Driver Training PDF 2025 (ops TBD — confirm before sales use)** — `/Users/ba/Documents/GPC Training Material/Driver Training PDF 2025 1 (1).pdf`

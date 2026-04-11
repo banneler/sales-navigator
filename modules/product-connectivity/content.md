@@ -9,12 +9,6 @@ sensitivity: "public"
 
 Use **access** conversations to frame how traffic reaches the customer: GPC delivers business Internet and transport over a fiber-rich Midwest footprint. **Standard Internet Access (SIA)** fits flexible, cost-sensitive sites that can tolerate shared access and best-effort latency. **Dedicated Internet Access (DIA)** fits sites that need symmetrical throughput, premium latency, dedicated path, richer DDoS visibility, and NOC-style support. Position **Managed Ethernet** when the need is private Layer 2 transport between sites—not Internet breakout. **Wavelength (Wave)** when the need is raw, high-capacity Layer 1 optical transport between strategic endpoints (data centers, large hubs)—see the Wave section.
 
-![Abstract network paths](Proposal_Assets/training/abstract-network.svg "Illustrative network paths")
-
-![5G wireless backup positioning](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026/wireless-internet-backup/gpc-wireless-internet-5g-product-launch/images/gpc-wireless-internet-5g-product-launch-p1-img6.png "From GPC Wireless Internet 5G product launch PDF")
-
-![Cloud Connect battle card](Proposal_Assets/training/from-pdfs/gpc-cloud-connect-battle-card-050321/images/gpc-cloud-connect-battle-card-050321-p2-img0.png "From Cloud Connect battle card")
-
 **Discovery cues:** What applications are business-critical? Upload-heavy vs download-heavy? Need for static IPs, diversity, or SLA-style operations? Today’s access technology (cable, fiber, T1/MPLS legacy, wireless)? Growth plan over 24–36 months?
 
 **Sources:**
@@ -24,10 +18,6 @@ Use **access** conversations to frame how traffic reaches the customer: GPC deli
 ## DIA vs SIA
 
 Use the comparison sheet to stay crisp in customer conversations. **SIA** tops out at symmetrical speeds up to **2 Gbps** in the comparison; **DIA** scales to **100 Gbps** symmetrical. **IPs:** one static included with SIA vs three with DIA. **Security:** network-level DDoS on SIA vs proactive, customer-specific DDoS monitoring and mitigation on DIA. **Latency:** standard / best-effort on SIA vs premium low-latency with stated performance objectives on DIA. **Support model:** Tier 1 ISC for SIA vs NOC-centric enhanced support and monitoring for DIA. **Access diversity:** standard options on SIA vs standard plus **multiple diverse access options** where designs require it. **Nature of service:** shared on SIA vs **dedicated** fiber path for DIA.
-
-![DIA vs SIA comparison](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/internet/dia-vs-sia-comparison-110424/images/dia-vs-sia-comparison-110424-p1-img0.png "From DIA vs SIA comparison PDF")
-
-![DDoS protection overview](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/ddos/ddos-product-sheet-012025/images/ddos-product-sheet-012025-p2-img0.png "From DDoS product sheet — ties to DIA security story")
 
 **When to lead with SIA:** general business connectivity, cost sensitivity, workloads tolerant of shared access and best-effort latency. **When to lead with DIA:** symmetrical heavy use, SLA-style operations expectations, multi-site or diversity discussions, VoIP/video/cloud performance issues on “business broadband,” compliance or risk conversations around DDoS visibility, or when they have already outgrown shared Internet.
 
@@ -41,8 +31,6 @@ Use the comparison sheet to stay crisp in customer conversations. **SIA** tops o
 **E-Line (Ethernet Line)** is Layer 2, point-to-point or point-to-multipoint between Midwest locations, protected in the core. Order as **Ethernet Private Line (EPL)**—transparent, port-based, minimal frame manipulation, customer manages traffic inside frames—or **Ethernet Virtual Private Line (EVPL)**—VLAN-based, with GPC managing VLANs for point-to-point or point-to-multipoint.
 
 **E-LAN (Ethernet LAN)** is multipoint-to-multipoint: multiple UNIs in a mesh so any site can reach any other; GPC supports **EP-LAN** and **EVP-LAN** configurations.
-
-![Ethernet battle card](Proposal_Assets/training/from-pdfs/ethernet-battle-card-final/images/ethernet-battle-card-final-p2-img0.png "From Ethernet battle card")
 
 **Operational benefits (datasheet):** access to **29+ data centers and carrier hotels** across markets such as Omaha, Denver, Kansas City, Minneapolis, Des Moines, Chicago, Indianapolis and broader Midwest; speeds up to **100 Gbps** with predictable, low-latency transport; **MEF-certified** fiber network; **SLA** with **24x7/365 NOC** (Blair, NE); Network Performance Monitoring portal; optional proactive DDoS monitoring and mitigation.
 
@@ -60,8 +48,6 @@ Use the comparison sheet to stay crisp in customer conversations. **SIA** tops o
 
 **Wavelength services** use optical networking and **DWDM** to deliver highly reliable, low-jitter **Layer 1** transport between locations—ideal when the customer needs a secure, low-latency, scalable pipe for **data-intensive** workloads linking data centers, enterprise sites, and storage across the Midwest.
 
-![Network monitoring / NOC context](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/network-monitoring-portal/network-monitoring-portal-product-sheet/images/network-monitoring-portal-product-sheet-p1-img0.png "From Network Monitoring Portal product sheet")
-
 **Scale & support:** GPC supports Wavelength from **10 Gbps to 400 Gbps** with **service-level commitments** and **24×7** support from the **Blair, NE NOC**.
 
 **Features & benefits (collateral):** optical **point-to-point**; **secure, private** network; **fully dedicated**, non-shared service; **predictable** performance; **flexible** bandwidth; **optional diverse routing**; **low latency**; **transparent** to higher-layer protocols such as Ethernet; standard handoff at **10, 100, or 400 Gbps** on **2-fiber single-mode** where designs require.
@@ -78,8 +64,6 @@ Use the comparison sheet to stay crisp in customer conversations. **SIA** tops o
 ## Competitive
 
 Use competitive framing when **satellite**, **national fiber**, or **“good enough broadband”** shows up—especially rural or hard-to-serve addresses.
-
-![Fiber vs Starlink battlecard](Proposal_Assets/training/from-pdfs/fiber-vs-starlink-battlecard/images/fiber-vs-starlink-battlecard-p2-img0.png "From Fiber vs Starlink battlecard")
 
 **Fiber vs satellite (Starlink example):** GPC **fiber-to-the-premises** delivers **symmetrical** speeds, **fiber-grade reliability** (not rain fade / dish snow / line-of-sight), **stable low latency** vs LEO satellite, **scalable** bandwidth, and **local** technicians plus **24/7/365 NOC** monitoring.
 
