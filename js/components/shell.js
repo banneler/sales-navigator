@@ -46,9 +46,9 @@ export function renderShell(manifest, onSelect) {
   root.innerHTML = `
     <div class="flex flex-1 overflow-hidden min-h-0 min-w-0">
       <aside id="sidebar" class="min-w-[220px] w-80 max-w-[90vw] shrink-0 bg-white border-r border-slate-200 shadow-inner flex flex-col min-h-0 h-full overflow-y-auto overflow-x-hidden transition-[width] duration-200 ease-out relative">
-        <button type="button" id="sidebar-toggle" class="absolute z-10 top-3 right-2 w-8 h-8 flex items-center justify-center rounded-lg transition text-slate-400 hover:text-slate-600 hover:bg-slate-100" title="Minimize sidebar">
-          <i id="sidebar-icon-minimize" class="fa-solid fa-grip-lines-vertical text-lg"></i>
-          <i id="sidebar-icon-expand" class="fa-solid fa-chevron-right text-lg hidden"></i>
+        <button type="button" id="sidebar-toggle" class="absolute z-10 top-3 right-2 w-8 h-8 flex items-center justify-center rounded-lg transition text-slate-400 hover:text-slate-600 hover:bg-slate-100" title="Collapse sidebar" aria-label="Collapse sidebar">
+          <i id="sidebar-icon-minimize" class="fa-solid fa-chevron-left text-lg" aria-hidden="true"></i>
+          <i id="sidebar-icon-expand" class="fa-solid fa-chevron-right text-lg hidden" aria-hidden="true"></i>
         </button>
         <div id="sidebar-content" class="flex flex-col w-full flex-1 min-h-0 p-4 pt-14">
           <nav class="flex-1 min-h-0 overflow-y-auto">${navHtml.join('')}</nav>
@@ -77,8 +77,11 @@ export function renderShell(manifest, onSelect) {
   const iconExp = document.getElementById('sidebar-icon-expand');
   toggle?.addEventListener('click', () => {
     sidebar?.classList.toggle('sidebar-collapsed');
-    iconMin?.classList.toggle('hidden');
-    iconExp?.classList.toggle('hidden');
+    const collapsed = sidebar?.classList.contains('sidebar-collapsed');
+    iconMin?.classList.toggle('hidden', !!collapsed);
+    iconExp?.classList.toggle('hidden', !collapsed);
+    toggle.setAttribute('aria-label', collapsed ? 'Expand sidebar' : 'Collapse sidebar');
+    toggle.setAttribute('title', collapsed ? 'Expand sidebar' : 'Collapse sidebar');
   });
 
   injectSidebarCollapseStyles();
