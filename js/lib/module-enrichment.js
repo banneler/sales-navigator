@@ -19,7 +19,7 @@ function mdToSafeHtml(md) {
 }
 
 /**
- * Dark-mode reference list: icon + hyperlink per file (new tab). Multiple `reference_files` supported.
+ * Dark-mode reference list: icon + hyperlink per file (new tab). Two-column grid from `sm` when there are multiple links.
  * Omit `reference_files` from front matter to hide this block; use `reference_files: []` for placeholder.
  *
  * Expects meta.reference_files: Array<{ label?: string, sharepoint_url: string }>
@@ -29,7 +29,7 @@ export function buildModuleReferenceFilesHtml(meta) {
 
   const files = Array.isArray(meta.reference_files) ? meta.reference_files : [];
 
-  const rows = files
+  const linkItems = files
     .map((f, i) => {
       const url = typeof f?.sharepoint_url === 'string' ? f.sharepoint_url.trim() : '';
       if (!url) return '';
@@ -39,18 +39,23 @@ export function buildModuleReferenceFilesHtml(meta) {
           : `Reference ${i + 1}`;
       const href = escapeHtml(url);
       return `
-        <a href="${href}" target="_blank" rel="noopener noreferrer" class="group ref-file-link flex items-start gap-3 rounded-lg border border-slate-700/70 bg-slate-950/40 px-3 py-2.5 transition hover:border-orange-500/35 hover:bg-slate-800/45 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60">
-          <span class="ref-file-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-600/80 bg-gradient-to-br from-slate-800 to-slate-950 text-orange-400 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]" aria-hidden="true">
-            <i class="fa-solid fa-file-lines text-lg"></i>
+        <a href="${href}" target="_blank" rel="noopener noreferrer" class="group ref-file-link flex min-w-0 items-start gap-2.5 rounded-lg border border-slate-700/70 bg-slate-950/40 px-2.5 py-2 transition hover:border-orange-500/35 hover:bg-slate-800/45 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60">
+          <span class="ref-file-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-600/80 bg-gradient-to-br from-slate-800 to-slate-950 text-orange-400 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]" aria-hidden="true">
+            <i class="fa-solid fa-file-lines text-base"></i>
           </span>
-          <span class="min-w-0 flex-1 pt-1.5 text-xs font-medium leading-snug text-orange-300 underline decoration-orange-500/40 underline-offset-2 group-hover:text-orange-200 group-hover:decoration-orange-400/70">${escapeHtml(label)}</span>
+          <span class="min-w-0 flex-1 pt-1 text-[11px] font-medium leading-snug text-orange-300 underline decoration-orange-500/40 underline-offset-2 group-hover:text-orange-200 group-hover:decoration-orange-400/70">${escapeHtml(label)}</span>
         </a>`;
     })
-    .filter(Boolean)
-    .join('');
+    .filter(Boolean);
+  const rows = linkItems.join('');
+  const nLinks = linkItems.length;
+  const gridClass =
+    nLinks > 1
+      ? 'module-ref-files-grid grid grid-cols-1 sm:grid-cols-2 gap-2'
+      : 'module-ref-files-grid grid grid-cols-1 gap-2';
 
   const bodyInner = rows
-    ? `<div class="p-3 space-y-2">${rows}</div>`
+    ? `<div class="p-3 ${gridClass}">${rows}</div>`
     : `<div class="p-3"><p class="text-[10px] text-slate-500 leading-relaxed">SharePoint links for this module will appear here as they are added.</p></div>`;
 
   return `
