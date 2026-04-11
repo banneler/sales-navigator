@@ -110,35 +110,27 @@ scenarios:
 
       - label: "Expect the lead may be reassigned per ROE; log first contact immediately going forward and clarify with your manager if it was already moved."
         feedback: "Right. First contact must be made and logged within five business days for assigned inbound leads; after that window, reassignment is allowed under the ROE."
+
+reference_files:
+  - label: "Sales Rules of Engagement (ROE) — Revised August 2025"
+    sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/gpcSales/ROE/Sales%20Rules%20of%20Engagement%20(ROE)%20-%20Revised%20August%202025.pdf?csf=1&web=1&e=7aw2jN"
 ---
 
 ## Purpose
 
-The Rules of Engagement (ROE) set shared expectations for how reps work accounts in Salesforce and avoid duplicate records and ownership disputes. Salesforce is the source of truth; leadership will use it to resolve conflicts, so data quality and timely logging matter as much as outreach. The ROE is meant to cover most situations; unusual cases are decided by sales management. The document evolves with the business—know the current revision date and check SharePoint for the official Strategic Accounts list, which is maintained separately from this PDF.
-
-**Sources:**
-- **Sales Rules of Engagement (ROE) — Revised August 2025** — `/Users/ba/Documents/GPC Training Material/Sales Rules of Engagement (ROE) - Revised August 2025 (1).pdf`
+The Rules of Engagement (ROE) set shared expectations for how reps work accounts in Salesforce and avoid duplicate records and ownership disputes. Salesforce is the source of truth; leadership will use it to resolve conflicts, so data quality and timely logging matter as much as outreach. The ROE is meant to cover most situations; unusual cases are decided by sales management. The document evolves with the business—know the current revision date and use **Module Reference Files** (sidebar) for the official PDF and check SharePoint for the Strategic Accounts list, which is maintained separately.
 
 ## Rules & boundaries
 
 Before creating accounts or contacts, search Salesforce by name and address to prevent duplicates; never open a second account for the same entity or add a contact whose email already exists on another record—coordinate with the owning rep. To move an account between reps, talk to the current owner first; once you agree, email your manager and sales leadership for approval to transfer. For general (non-strategic) accounts: Customer accounts with no logged activity for 121+ days may be worked by others; Prospect accounts open after 61+ days without activity. Notes alone do not protect an account; you need consistent contact (at least every 60 days) and current intel (e.g. projects, contract timing). Inbound leads assigned by sales or marketing can be reassigned if first contact is not made and logged within 5 business days; that clock does not apply to leads you self-source through prospecting. Strategic Accounts on the official list are protected by assignment, not by the 61/121-day activity rules. E-Rate and USAC-funded entities (schools, libraries, hospitals, etc.) are treated as Strategic regardless of list inclusion, except ENA (Education Networks of America) in Indiana stays with the Out-State Team. Strategic list changes are owned by Sales Managers and the VP of Sales and communicated from the ROE repository on Sales SharePoint.
 
-**Sources:**
-- **Sales Rules of Engagement (ROE) — Revised August 2025** — `/Users/ba/Documents/GPC Training Material/Sales Rules of Engagement (ROE) - Revised August 2025 (1).pdf`
-
 ## Escalation
 
 Bring account-transfer requests to your manager and sales leadership in writing after you and the incumbent rep align—do not reassign unilaterally. When the ROE does not clearly fit (~20% of cases), escalate to sales management for a case-by-case decision rather than improvising. If you believe an account should be added, removed, or clarified on the Strategic list, route that through Sales Managers and the VP of Sales; do not treat informal lists as authoritative. Cross-team friction on ownership or E-Rate/USAC coverage should be resolved with leadership using Salesforce history as evidence.
 
-**Sources:**
-- **Sales Rules of Engagement (ROE) — Revised August 2025** — `/Users/ba/Documents/GPC Training Material/Sales Rules of Engagement (ROE) - Revised August 2025 (1).pdf`
-
 ## What good looks like
 
 Strong reps search before they create, keep one account per entity, and log meaningful activity on a rhythm that beats the 60-day bar for prospects and the inactivity windows for customers. Even when an account looks "open" by the rules, reach out to the listed owner before engaging—relationships and context prevent avoidable conflict. On assigned inbound leads, prioritize first touch and log it within five business days. For strategic and E-Rate/USAC contexts, respect named assignment and team boundaries (including the ENA exception). Treat Salesforce hygiene as a professional habit: accurate stage, next steps, and contact data make the ROE enforceable and fair for everyone.
-
-**Sources:**
-- **Sales Rules of Engagement (ROE) — Revised August 2025** — `/Users/ba/Documents/GPC Training Material/Sales Rules of Engagement (ROE) - Revised August 2025 (1).pdf`
 
 ## Media (optional)
 

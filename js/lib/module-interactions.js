@@ -96,7 +96,50 @@ function initScenarioProgress(container) {
   });
 }
 
+function initReferenceFileViewers(container) {
+  container.querySelectorAll('[data-ref-viewer-root]').forEach((root) => {
+    const raw = root.getAttribute('data-ref-urls');
+    if (!raw) return;
+    let urls;
+    try {
+      urls = JSON.parse(raw);
+    } catch {
+      return;
+    }
+    if (!Array.isArray(urls)) return;
+    const iframe = root.querySelector('.js-ref-iframe');
+    root.querySelectorAll('.js-ref-tab').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const i = Number(tab.getAttribute('data-ref-index'));
+        if (!Number.isFinite(i) || urls[i] == null || !iframe) return;
+        iframe.src = urls[i];
+        const label = tab.textContent?.trim() || 'Reference';
+        iframe.setAttribute('title', label);
+        root.querySelectorAll('.js-ref-tab').forEach((t) => {
+          const on = t === tab;
+          t.classList.toggle('bg-slate-700', on);
+          t.classList.toggle('text-white', on);
+          t.classList.toggle('text-slate-400', !on);
+          t.classList.toggle('hover:bg-slate-800', !on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+      });
+    });
+  });
+}
+
 function handleClick(e) {
+  const focusBtn = e.target.closest('.js-ref-focus-toggle');
+  if (focusBtn) {
+    const section = focusBtn.closest('.module-reference-files');
+    if (section) {
+      section.classList.toggle('module-ref-focus');
+      const on = section.classList.contains('module-ref-focus');
+      focusBtn.textContent = on ? 'Exit focus' : 'Focus';
+    }
+    return;
+  }
+
   const prevBtn = e.target.closest('.js-kc-carousel-prev');
   if (prevBtn) {
     const root = prevBtn.closest('.kc-carousel');
@@ -200,4 +243,5 @@ export function bindModuleInteractions(container) {
   handlerByEl.set(container, fn);
   initKnowledgeCarousels(container);
   initScenarioProgress(container);
+  initReferenceFileViewers(container);
 }

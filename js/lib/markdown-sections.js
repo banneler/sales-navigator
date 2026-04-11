@@ -3,6 +3,7 @@ import DOMPurify from 'https://esm.sh/dompurify@3.2.2';
 import { parseFrontMatter } from './front-matter.js';
 import {
   buildFiveMinuteSummaryHtml,
+  buildModuleReferenceFilesHtml,
   buildScenariosAsideHtml,
   buildKnowledgeChecksCarouselHtml,
 } from './module-enrichment.js';
@@ -110,8 +111,10 @@ export function renderModuleDocumentHtml(markdownSource) {
   const sections = splitMarkdownByH2(body || '');
   const sectionCardsHtml = renderSectionsToHtml(sections);
   const fiveMinHtml = buildFiveMinuteSummaryHtml(meta);
+  const referenceFilesHtml = buildModuleReferenceFilesHtml(meta);
   const scenariosAsideInner = buildScenariosAsideHtml(meta);
   const knowledgeCarouselHtml = buildKnowledgeChecksCarouselHtml(meta);
+  const asideRailInner = [referenceFilesHtml, scenariosAsideInner].filter(Boolean).join('');
 
   const headerBlock = `
       <div class="flex flex-wrap items-start justify-between gap-4">
@@ -127,7 +130,7 @@ export function renderModuleDocumentHtml(markdownSource) {
       <div class="space-y-6 module-deep-dive">${sectionCardsHtml}</div>
       ${knowledgeCarouselHtml}`;
 
-  if (scenariosAsideInner) {
+  if (asideRailInner) {
     return `
     <div class="module-doc space-y-6">
       ${headerBlock}
@@ -135,8 +138,8 @@ export function renderModuleDocumentHtml(markdownSource) {
         <div class="module-layout-main w-full lg:flex-1 lg:min-w-0 space-y-6">
           ${mainColumnInner}
         </div>
-        <aside class="module-scenarios-aside w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white p-4 shadow-sm lg:sticky lg:top-4 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
-          ${scenariosAsideInner}
+        <aside class="module-scenarios-aside w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white p-3 shadow-sm lg:sticky lg:top-4 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
+          ${asideRailInner}
         </aside>
       </div>
     </div>`;

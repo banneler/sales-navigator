@@ -1,5 +1,6 @@
 import { marked } from 'https://esm.sh/marked@15.0.12';
 import DOMPurify from 'https://esm.sh/dompurify@3.2.2';
+import { toSharePointEmbedUrl } from './sharepoint-embed-url.js';
 
 marked.use({ gfm: true, breaks: true });
 
@@ -16,6 +17,62 @@ function mdToSafeHtml(md) {
   if (md == null || md === '') return '';
   const html = marked.parse(String(md));
   return DOMPurify.sanitize(html, { ADD_ATTR: ['target', 'rel'] });
+}
+
+/**
+ * Dark-mode reference viewer for SharePoint documents (iframe).
+ * Expects meta.reference_files: Array<{ label?: string, sharepoint_url: string }>
+ */
+export function buildModuleReferenceFilesHtml(meta) {
+  const files = meta.reference_files;
+  if (!Array.isArray(files) || files.length === 0) return '';
+
+  const items = files
+    .map((f, i) => {
+      const url = typeof f?.sharepoint_url === 'string' ? f.sharepoint_url.trim() : '';
+      if (!url) return null;
+      const label =
+        typeof f?.label === 'string' && f.label.trim()
+          ? f.label.trim()
+          : `Reference ${i + 1}`;
+      return { label, embedUrl: toSharePointEmbedUrl(url) };
+    })
+    .filter(Boolean);
+
+  if (items.length === 0) return '';
+
+  const first = items[0];
+  const tabsHtml =
+    items.length > 1
+      ? `<div class="flex flex-wrap gap-1 px-2 pt-2 pb-1 border-b border-slate-800 bg-slate-950/50" role="tablist" aria-label="Reference documents">
+          ${items
+            .map(
+              (it, i) => `
+            <button type="button" role="tab" class="js-ref-tab px-2.5 py-1 rounded-md text-[10px] font-semibold transition ${
+              i === 0
+                ? 'bg-slate-700 text-white'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
+            }" data-ref-index="${i}" aria-selected="${i === 0 ? 'true' : 'false'}">${escapeHtml(it.label)}</button>`
+            )
+            .join('')}
+        </div>`
+      : '';
+
+  const iframeSrc = escapeHtml(first.embedUrl);
+  const dataUrls = escapeHtml(JSON.stringify(items.map((it) => it.embedUrl)));
+
+  return `
+      <section class="module-reference-files rounded-xl border border-slate-600 bg-slate-900 text-slate-100 shadow-lg overflow-hidden mb-4" data-ref-viewer-root data-ref-urls="${dataUrls}">
+        <div class="flex items-center justify-between gap-2 px-3 py-2 border-b border-slate-700 bg-slate-950/80">
+          <h3 class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Module Reference Files</h3>
+          <button type="button" class="js-ref-focus-toggle text-[10px] font-bold uppercase tracking-wide text-orange-400 hover:text-orange-300 px-2 py-1 rounded-md border border-slate-600 hover:border-orange-500/50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60">Focus</button>
+        </div>
+        ${tabsHtml}
+        <div class="js-ref-viewer-frame relative bg-slate-950">
+          <iframe class="js-ref-iframe w-full border-0 bg-slate-950 block module-ref-iframe" style="min-height: 240px; height: 320px" src="${iframeSrc}" title="${escapeHtml(first.label)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <p class="text-[9px] text-slate-500 px-3 py-2 border-t border-slate-800 leading-relaxed">Uses your Microsoft 365 session. If the document does not appear, open it in SharePoint and return—some org policies restrict embedding.</p>
+      </section>`;
 }
 
 export function buildFiveMinuteSummaryHtml(meta) {
@@ -52,35 +109,35 @@ export function buildScenariosAsideHtml(meta) {
           const label = typeof ch?.label === 'string' ? ch.label : '';
           const feedback = typeof ch?.feedback === 'string' ? ch.feedback : '';
           return `
-            <div class="space-y-1.5 sc-choice-row">
-              <button type="button" class="js-sc-choice w-full text-left border border-slate-200 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-800 bg-white hover:border-orange-400 hover:bg-orange-50/50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-sc-index="${ci}" aria-pressed="false">
+            <div class="space-y-1 sc-choice-row">
+              <button type="button" class="js-sc-choice w-full text-left border border-slate-200 rounded-md px-2 py-1.5 text-[11px] font-medium text-slate-800 bg-white hover:border-orange-400 hover:bg-orange-50/50 transition leading-snug focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-sc-index="${ci}" aria-pressed="false">
                 ${escapeHtml(label)}
               </button>
-              <div class="js-sc-feedback hidden rounded-md border border-orange-100 bg-orange-50/90 px-3 py-2.5 shadow-sm" data-sc-index="${ci}" role="region">
-                <p class="text-[10px] font-bold uppercase tracking-wide text-orange-900 mb-1.5">Feedback</p>
-                <div class="module-markdown-body text-xs text-slate-700 leading-relaxed">${mdToSafeHtml(feedback)}</div>
+              <div class="js-sc-feedback hidden rounded border border-orange-100 bg-orange-50/90 px-2 py-1.5 shadow-sm" data-sc-index="${ci}" role="region">
+                <p class="text-[9px] font-bold uppercase tracking-wide text-orange-900 mb-1">Feedback</p>
+                <div class="module-markdown-body text-[10px] text-slate-700 leading-snug">${mdToSafeHtml(feedback)}</div>
               </div>
             </div>`;
         })
         .join('');
       return `
-        <article class="scenario-card border border-slate-200 rounded-xl p-4 bg-gradient-to-b from-white to-slate-50/80 shadow-sm transition-shadow" data-scenario-index="${si}">
-          <div class="flex items-start justify-between gap-2 mb-2">
-            <h4 class="text-sm font-bold text-slate-900">${escapeHtml(title)}</h4>
-            <span class="js-sc-reviewed-badge hidden shrink-0 rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-green-800 border border-green-200" aria-hidden="true">Reviewed</span>
+        <article class="scenario-card border border-slate-200 rounded-lg p-2.5 bg-gradient-to-b from-white to-slate-50/80 shadow-sm transition-shadow" data-scenario-index="${si}">
+          <div class="flex items-start justify-between gap-1.5 mb-1">
+            <h4 class="text-[11px] font-bold text-slate-900 leading-tight">${escapeHtml(title)}</h4>
+            <span class="js-sc-reviewed-badge hidden shrink-0 rounded-full bg-green-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-green-800 border border-green-200" aria-hidden="true">Reviewed</span>
           </div>
-          <div class="module-markdown-body text-slate-700 text-sm mb-3">${situationHtml}</div>
-          <p class="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-2">Choose a response</p>
-          <div class="space-y-3 sc-choices">${choiceBlocks}</div>
+          <div class="module-markdown-body text-slate-700 text-[11px] leading-snug mb-2">${situationHtml}</div>
+          <p class="text-[9px] font-semibold text-slate-500 uppercase tracking-wide mb-1">Choose a response</p>
+          <div class="space-y-2 sc-choices">${choiceBlocks}</div>
         </article>`;
     })
     .join('');
 
   return `
-      <div class="module-scenarios-inner space-y-4" aria-labelledby="sc-heading" data-scenario-total="${n}">
-        <h3 id="sc-heading" class="text-base font-bold text-slate-900 border-b border-slate-200 pb-2">Scenario cards</h3>
-        <p class="js-scenarios-progress text-xs font-medium text-slate-600 mb-1" aria-live="polite">0 / ${n} scenario${n === 1 ? '' : 's'} reviewed</p>
-        <div class="flex flex-col gap-4">${cards}</div>
+      <div class="module-scenarios-inner space-y-3" aria-labelledby="sc-heading" data-scenario-total="${n}">
+        <h3 id="sc-heading" class="text-xs font-bold text-slate-900 border-b border-slate-200 pb-1.5">Scenario cards</h3>
+        <p class="js-scenarios-progress text-[10px] font-medium text-slate-600 mb-0.5" aria-live="polite">0 / ${n} scenario${n === 1 ? '' : 's'} reviewed</p>
+        <div class="flex flex-col gap-3">${cards}</div>
         <div class="js-scenarios-completion hidden mt-2 rounded-xl border border-green-200 bg-green-50 px-3 py-3 text-sm text-green-950 shadow-sm" role="status" aria-live="polite">
           <p class="font-bold flex items-center gap-2">
             <i class="fa-solid fa-circle-check text-green-600" aria-hidden="true"></i>
