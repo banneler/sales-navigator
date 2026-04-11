@@ -61,25 +61,25 @@ function buildDemoMarkup() {
         </div>
         <aside class="w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white/95 p-4 shadow-sm backdrop-blur-sm pointer-events-auto" data-tour-target="tour-scenarios">
           <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Scenarios</p>
-          <p class="text-xs font-semibold text-slate-800 mt-3">Opening a joint customer call</p>
+          <p class="text-xs font-semibold text-slate-800 mt-3">Dial it in</p>
           <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            Your manager wants you to open tomorrow’s customer call. You’ve read the brief but haven’t met the customer yet. <span class="text-slate-800">What’s the strongest move?</span>
+            Your manager wants you to <strong>open</strong> tomorrow’s customer call. They say: “Let’s <strong>line up</strong> a clear story—we don’t want our pitch to <strong>ring</strong> hollow.” <span class="text-slate-800">What’s your move?</span>
           </p>
           <p class="text-xs text-slate-500 mt-3 uppercase tracking-wide">Pick a response</p>
           <div class="mt-2 space-y-2" role="group" aria-label="Scenario responses">
             <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-              Wing it—you’ll sound more natural if you don’t over-prepare.
+              Wing it—over-preparing is for robots, not reps.
             </button>
             <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="true">
-              Prep a short opening: why you’re meeting, what you want to learn, and one or two focused questions.
+              Prep a tight opener: why you’re meeting, what you want to learn, and a question or two—then actually listen.
             </button>
             <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-              Ask your manager to take the full opening so you can stay quiet.
+              Hand the whole opening to your manager—you’re just there to take notes.
             </button>
           </div>
           <p class="text-xs text-red-700 mt-2 min-h-[1.25rem] hidden" data-tour-scenario-feedback="" role="status" aria-live="polite"></p>
           <p class="text-xs text-emerald-800 bg-emerald-50/90 border border-emerald-100 rounded-lg px-3 py-2 mt-3 hidden" data-tour-coach-note="">
-            <strong>Coach's note:</strong> A clear purpose and good questions earn the next conversation—confidence follows preparation.
+            <strong>Coach's note:</strong> When you dial in the “why” first, the rest of the conversation has room to connect—no crossed wires.
           </p>
         </aside>
       </div>
@@ -106,7 +106,7 @@ function buildDemoMarkup() {
           <p class="text-sm font-semibold text-emerald-900">Blair has spoken—you’ve got great taste.</p>
           <p class="mt-1 text-xs text-emerald-800/90">El Vallarta would be proud.</p>
         </div>
-        <p class="text-xs text-slate-500 mt-3 italic" data-tour-knowledge-hint="">Field research is encouraged. Results may vary by hunger level.</p>
+        <p class="text-xs text-slate-500 mt-3 italic" data-tour-knowledge-hint="">Field research encouraged—extra chips optional.</p>
         <div class="mt-4 flex gap-2">
           <span class="h-2 w-8 rounded-full bg-orange-400/90"></span>
           <span class="h-2 w-8 rounded-full bg-slate-200"></span>
@@ -343,7 +343,7 @@ export function loadGettingStarted(container, manifest) {
           <strong>Scenarios</strong> sit beside the main content on wider screens. You'll get a short situation, a few choices, and feedback—practice for real conversations, not a test score.
         </p>
         <p class="text-slate-600 text-sm mb-3">
-          The sample in the highlighted area is a simple call-opening moment. Live modules use scenarios tied to your products and talk tracks.
+          The sample in the highlighted area is short, a little punny, and still about a real moment—live modules go deeper with your products and talk tracks.
         </p>
         <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
           <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
@@ -492,7 +492,7 @@ export function loadGettingStarted(container, manifest) {
         } else {
           btn.classList.add('ring-2', 'ring-red-400', 'bg-red-50');
           if (feedback) {
-            feedback.textContent = 'Not quite—pick the move that balances preparation with owning the moment.';
+            feedback.textContent = 'Close one—pick the answer that keeps the line clear, not fuzzy.';
             feedback.classList.remove('hidden');
           }
         }
