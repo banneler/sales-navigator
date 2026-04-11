@@ -83,6 +83,20 @@ export function buildFiveMinuteSummaryHtml(meta) {
 }
 
 /**
+ * Five-minute summary for the module intro gate only: no amber card, no “5m” icon.
+ * Full module view still uses {@link buildFiveMinuteSummaryHtml}.
+ */
+export function buildFiveMinuteSummaryIntroGateHtml(meta) {
+  const five = meta.five_minute_summary;
+  if (typeof five !== 'string' || !five.trim()) return '';
+  return `
+      <section class="module-five-min-gate" aria-labelledby="five-min-heading-gate">
+        <h3 id="five-min-heading-gate" class="text-lg font-bold text-slate-900 mb-2">5-minute summary</h3>
+        <div class="module-markdown-body text-slate-700">${mdToSafeHtml(five)}</div>
+      </section>`;
+}
+
+/**
  * Sticky right-rail: scenarios column. Empty string if no scenarios.
  */
 export function buildScenariosAsideHtml(meta) {

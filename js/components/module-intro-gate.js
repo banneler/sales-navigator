@@ -1,6 +1,6 @@
 import { parseFrontMatter } from '../lib/front-matter.js';
-import { buildModuleHeaderBlockHtml } from '../lib/markdown-sections.js';
-import { buildFiveMinuteSummaryHtml } from '../lib/module-enrichment.js';
+import { buildModuleIntroGateHeaderHtml } from '../lib/markdown-sections.js';
+import { buildFiveMinuteSummaryIntroGateHtml } from '../lib/module-enrichment.js';
 
 export const MODULE_INTRO_GATE_ID = 'module-intro-gate-overlay';
 
@@ -9,9 +9,8 @@ export function destroyModuleIntroGate() {
 }
 
 /**
- * Full-screen glass overlay (same language as the guided tour) showing only the module title,
- * intro summary, and five-minute summary — same HTML as the live module. Call `renderFullModule`
- * when the learner clicks Start Module.
+ * Full-screen glass overlay (same language as the guided tour): dark header holds title + intro;
+ * scroll area holds a plain five-minute summary (no amber card / 5m icon). Full module unchanged.
  *
  * @param {HTMLElement} container - #module-host (left empty until Start)
  * @param {string} markdownSource - Full content.md including front matter
@@ -29,8 +28,8 @@ export function mountModuleIntroGate(container, markdownSource, renderFullModule
     return;
   }
 
-  const headerHtml = buildModuleHeaderBlockHtml(meta);
-  const fiveMinHtml = buildFiveMinuteSummaryHtml(meta);
+  const headerStripHtml = buildModuleIntroGateHeaderHtml(meta);
+  const fiveMinHtml = buildFiveMinuteSummaryIntroGateHtml(meta);
 
   const overlay = document.createElement('div');
   overlay.id = MODULE_INTRO_GATE_ID;
@@ -43,14 +42,11 @@ export function mountModuleIntroGate(container, markdownSource, renderFullModule
     <div class="fixed inset-0 bg-slate-900/55 backdrop-blur-[3px] pointer-events-auto" data-module-intro-dim></div>
     <div class="fixed inset-0 z-[101] flex items-center justify-center p-4 sm:p-6 pointer-events-none">
       <div class="module-intro-gate-panel pointer-events-auto flex max-h-[min(90vh,900px)] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-white/40 bg-white/70 shadow-2xl backdrop-blur-xl backdrop-saturate-150">
-        <div class="flex-shrink-0 bg-gradient-to-r from-slate-900/95 to-slate-800/95 px-5 py-4 text-white">
-          <p class="mb-1 text-[10px] font-semibold uppercase tracking-wider text-orange-300/95">Module preview</p>
-          <h2 id="module-intro-gate-heading" class="text-base font-semibold leading-snug text-white">Before you begin</h2>
-          <p class="mt-1.5 text-xs text-slate-400">Same title, intro, and five-minute summary as the full module.</p>
+        <div class="flex-shrink-0 bg-gradient-to-r from-slate-900/95 to-slate-800/95 px-5 py-5 text-white">
+          ${headerStripHtml}
         </div>
         <div class="module-intro-gate-scroll min-h-0 flex-1 overflow-y-auto px-5 py-5">
           <div class="module-doc space-y-6">
-            ${headerHtml}
             ${fiveMinHtml}
           </div>
         </div>
