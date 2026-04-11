@@ -578,6 +578,12 @@ export function loadGettingStarted(container, manifest) {
       ? 'Complete the activity in the highlighted area first.'
       : '';
 
+    if (stepIndex === 4) {
+      document
+        .querySelector('[data-tour-target="tour-knowledge"]')
+        ?.scrollIntoView({ block: 'center', behavior: 'auto' });
+    }
+
     const rect = getSpotlightRect(stepIndex);
     applySpotlightLayers(overlay, rect);
 
