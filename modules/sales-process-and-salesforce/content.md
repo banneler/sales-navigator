@@ -3,7 +3,9 @@ id: "sales-process-and-salesforce"
 title: "Sales Process & Salesforce"
 summary: "How GPC runs deals in Salesforce: from leads and conversion through opportunities, GPC Solutions, approvals, and contracting with DocuSign. Drawn from Salesforce 101, the leads conversion quick reference, and the Salesforce\u2013DocuSign integration guide\u2014plus where to find weekly tips and video walkthroughs."
 sensitivity: "public"
-reference_files: []
+reference_files:
+  - label: "Sales Resources (enablement hub)"
+    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 five_minute_summary: |
   - Leads capture early interest; when you are ready to quote, **Convert Lead** creates or links the account, contact, and (usually) a new opportunity—exceptions need manager or admin alignment.
   - Opportunities move through solution design, **GPC Solution** build and costing, approvals, then contracting; Closed/Won spawns projects per solution site; do not delete Closed/Lost history.
@@ -112,56 +114,129 @@ scenarios:
       - label: "Pause and fix stage/signing prerequisites per the DocuSign integration guide (e.g. Contract Signer timing) before sending."
         feedback: "Right. Set Contract Signer early in the lifecycle; Approval Pending blocks adding Contract Signer, so align with process before Send to DocuSign."
 ---
-
 ## Lead and opportunity lifecycle
 
-Leads are prospects who showed interest or came from a campaign; reps or Home Office can enter them. When a lead is ready for a quote or pricing, convert the lead to an opportunity, which also creates the account (and contact as part of conversion). The Salesforce 101 sales cycle describes phases under the opportunity: solution design where sales works with other departments, then building the GPC Solution—sales enters the site address, service, and product details so the right groups (for example OSP, COE, Off-Net, IPE, BSOL) can assess build and install costs. Costing and approval may require product managers, sales managers, the CRO, or the COO depending on the deal. Contracting is where sales reviews and sends the agreement to the customer and adjusts as needed. Closed/Won moves the business forward; a project is created for each solution site in the GPC Solution, and that project phase continues outside this 101 overview (see Salesforce 201). For closed/lost, do not delete records in Salesforce—the opportunity may return later.
+- **Leads** capture early interest (campaigns, inbound, referrals). Enter them promptly so history and routing stay clear.
+- **Convert to opportunity** when you are ready to quote, price, or formally pursue the deal—not when you “might” get back to someone someday.
+- Conversion usually **creates or links the account and contact** and **creates a new opportunity**. That is the default path; exceptions need alignment (see below).
+- The **opportunity** is where stages, value, next steps, and handoffs live for leadership and delivery. Name it so anyone can tell what is being sold and to whom.
 
-For converting a lead: open the assigned lead from the notification email, use Convert Lead, and on the conversion screen choose an existing account or create new, existing contact or create new, and almost always create a new opportunity (including for employee business lead referrals). Rare exceptions to reusing an opportunity should be cleared with your sales manager or Salesforce admin. Do not check “Don’t create an opportunity upon conversion” in normal circumstances. Name the opportunity so it reflects this specific selling situation. After conversion, open the new opportunity from the confirmation screen. If the lead came from the employee business lead referral or partner referral program, verify referral fields on the opportunity (lead source, referred by, or partner referral fields as applicable) and keep the referrer updated on status and eligibility—relationship building and accurate referral data matter for those programs.
+### Stages (what “good” looks like)
 
-**Sources:**
-- **Converting Leads to an Opportunity Quick Reference Guide** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Converting Leads to an Opportunity Quick Reference Guide - 1123.pdf`
-- **Salesforce 101 Manual** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Salesforce 101 Manual - 0422.pdf`
+- **Early**: Problem, budget signal, decision process sketched; account/contact correct; lead source and referral fields complete if applicable.
+- **Solution design**: You are aligning technical and commercial shape with the customer and internal teams (network, security, voice, etc., as the deal requires).
+- **GPC Solution / CPQ work**: Sites, products, services, and costing are built in Salesforce so the right groups can price, approve, and document what was sold.
+- **Approvals**: Submitted when the package is real—numbers, scope, and exceptions are defensible. Avoid “approve twice because we changed the deal after submission.”
+- **Contracting**: Conga output, terms alignment, DocuSign when used—**Contract Signer** and recipients are set **early**, not at the last second.
+- **Closed/Won**: Triggers downstream work (e.g., projects per solution site). **Do not delete** history.
+- **Closed/Lost**: Capture **why** (competitor, timing, budget, no decision). **Do not delete** the opportunity—deals come back; history matters.
 
-## Hygiene and working the record every day
+### Lead conversion—standard vs exceptions
 
-Keep accounts and contacts clean: contacts belong to an account, and you can relate one contact to multiple accounts instead of duplicating people. Use the Tasks tab to see actions you logged and what to complete—useful for organizing what to do each day. On list views, pin the view you rely on so it opens by default until cache or cookies reset; customize tab order in the app so the objects you use most are easy to reach. Use Home dashboards and the refresh control so charts reflect current data. Universal Search helps you find any record containing your term. For opportunities that do not win, leave the data in place per process guidance.
+- Open the lead from workflow (e.g., notification), use **Convert Lead**, and on the conversion screen pick **account** (existing or new), **contact** (existing or new), and **almost always create a new opportunity**—including employee business lead referrals when that is the selling motion.
+- **Rare exceptions** (reuse an existing opportunity, or skip opportunity creation) must be cleared with **sales management** or the **Salesforce admin**. Do not use “Don’t create an opportunity upon conversion” for convenience.
+- **Employee / partner referrals**: After conversion, **verify referral fields** on the opportunity (lead source, referred by, partner referral fields as applicable) and **keep the referrer informed** on status and eligibility. Program integrity depends on it.
 
-The GPC Sales app tabs described in Salesforce 101 include Leads, Accounts, Contacts, Opportunities, Parent Opportunities (multi-party deals), GPC Solutions (quote status and approvals), Solution Sites (costing by site), Projects (after a solution is closed/won), Reports, Dashboards, Products, and Tasks—know which tab answers which question before you customize your navigation.
+**Where to read more**
 
-**Sources:**
-- **Salesforce 101 Manual** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Salesforce 101 Manual - 0422.pdf`
+- **Converting Leads** quick reference and **Salesforce 101**: **Sales Resources** (sidebar link in this module) or **GPCU**—same material as onboarding; ask Sales Ops if you need a direct link.
+- Bookmark what you use often; avoid saving stuff only on one laptop or a personal folder other people cannot reach.
+
+## Discovery (quick checklist)
+
+Use this so opportunities, GPC Solutions, and forecasts reflect reality—not optimism.
+
+- **Customer & scope**: Legal name, sites/locations, what they buy today, what is in/out of scope for this deal.
+- **Pain & success**: What breaks if they do nothing? What does “go-live success” mean for them?
+- **Decision process**: Economic buyer, technical approvers, procurement/legal timing, who can sign.
+- **Commercial**: Budget band or approval path, contract term, auto-renew or not, anything nonstandard (credits, SLAs, build timelines).
+- **Competition & status**: Incumbent, RFP or informal, your differentiators tied to their words (not generic slides).
+- **Next step**: Owner, date, and what “done” looks like—log it as a **Task** on the opportunity.
+
+If you cannot answer most of these, your stage and forecast are probably ahead of the customer.
+
+## Hygiene, forecasting, and CPQ / Salesforce expectations
+
+### Daily / weekly hygiene
+
+- **Tasks**: Log follow-ups you actually intend to do; clear or reschedule instead of letting them rot. Your book is in **Tasks**, not in your head.
+- **List views**: Pin the views you live in (My Opportunities, My Approvals, etc.) so you land on reality every login.
+- **Contacts**: Keep contacts on the right **account**; relate people across accounts instead of cloning contacts. Bad contact data breaks Conga, DocuSign routing, and handoffs.
+- **Home / dashboards**: Refresh when you need leadership-ready numbers; stale charts usually mean stale opportunity fields.
+- **Universal Search**: Find accounts, opportunities, and contacts fast—especially when a customer name is fuzzy or shared across regions.
+
+### Forecasting discipline
+
+- **Commit** only what you would defend on a live call with your manager: signed path, stakeholder alignment, and a dated next step.
+- **Stage, amount, and close date** should move together. If the deal slipped, update **close date** and **next step** the same day you learn—not at month-end panic.
+- **Risk flags**: Competitor wins, procurement delays, technical blockers—note them in the record (fields or activity) so Sales Ops and leadership are not surprised in QBRs.
+- **Pipeline hygiene**: Close or re-age stale opps; **do not delete** closed/lost—capture outcome and learn.
+
+### CPQ / GPC Solution expectations (Salesforce is the system of record)
+
+- **GPC Solution** is where quoting, costing, approvals, and contracting tie together. If it is not in Salesforce, it did not happen for reporting and delivery.
+- Build **solution sites** and line items so costing and approvals match what you will contract. Half-built solutions create emergency approvals and bad customer experience.
+- **Approvals**: Submit when the package is coherent. Rework costs time with approvers and can miss customer deadlines.
+- **Contract Signer** on the GPC Solution: set when you create the solution or **early** in the lifecycle. Late adds behave differently by stage, and **Approval Pending** blocks adding Contract Signer—plan ahead.
+- **DocuSign from Salesforce**: Signers should be **Contacts** on the account; use contact roles where helpful. Conga merge → save as needed → **Send to DocuSign** from the GPC Solution when the business process says it is time—not as a substitute for approvals or Legal on nonstandard terms.
+
+**Where to read more**
+
+- Tab list and daily habits: **Salesforce 101** in **Sales Resources** / GPCU.
+- **Salesforce & DocuSign Integration** guide: **Sales Resources** / GPCU (search “DocuSign”).
+
+## Handoffs (sales → delivery, partners, and leadership)
+
+- **Before you promise dates**: Align with solution design and costing so **install intervals** and **dependencies** in the GPC Solution match what you told the customer.
+- **At Closed/Won**: Ensure **sites, products, and contacts** are complete; downstream teams often inherit what you leave in the record.
+- **Internal threads**: Use **Tasks** and clear **activity** notes (what changed, who owns the next step). Avoid “called customer” with no outcome.
+- **Referral / partner deals**: Confirm referral fields still accurate at handoff; loop the referrer when status changes materially.
+- **DocuSign / Conga**: If Legal or Deal Desk touched the package, say so in the file or activity so delivery does not work off the wrong revision.
+
+## Common Salesforce mistakes (avoid these)
+
+- Converting a lead **without** creating an opportunity (normal deals)—then wondering why pipeline and reporting are wrong.
+- **Duplicate contacts** across accounts instead of relationships—breaks signing and reporting.
+- **Stale close dates** and **stages** that do not match the customer conversation—forecast surprises everyone.
+- **GPC Solutions** submitted for approval with **incomplete sites/lines**—drives rework and customer delay.
+- **Contract Signer** left blank until **Approval Pending**—then you cannot fix it in that state; you have to unwind stage/workflow per training.
+- **Deleting** Closed/Lost opportunities—throws away context when the deal revives.
+- **Recipients for DocuSign** who are not **Contacts** on the account—integration and audit trail suffer.
+- **Side-system tracking** (spreadsheet-only pipeline) that never makes it to Salesforce—leadership and support teams cannot help what they cannot see.
 
 ## DocuSign touchpoints from Salesforce
 
-The integration lets sales send documents for signature without leaving Salesforce; it does not replace your underlying business process—it is for convenience. Anyone who receives a document should exist in Salesforce as a contact on the relevant account; contact roles can help. DocuSign accounts are provisioned by IT; whether the integration is enabled for a user is managed in Salesforce by the Salesforce team—use the Service Desk for DocuSign account problems.
+- The integration is for **sending for signature from Salesforce**; it does not replace approvals, Legal review on nonstandard terms, or your manager’s judgment.
+- **Contacts**: Anyone signing or receiving should exist as a **Contact** on the relevant account; roles help when there are many stakeholders.
+- **IT / provisioning**: DocuSign accounts are provisioned by IT; whether the integration is on for you is managed in Salesforce—use the **Service Desk** for access issues.
 
-On the GPC Solution, set the Contract Signer field to the contact who will sign the contract (search by name in the lookup). Best practice is to add the contract signer when you first create the solution; adding it later may not behave the same across stages, and you cannot add contract signer while the solution is in Approval Pending. Continue the sales process until you are ready to send. From Conga Files, pick the template as usual; you may save a merged copy as a Salesforce File (Save a Copy → Merge and Download), return to the GPC Solution, then use Send to DocuSign in the action row. The first time, complete DocuSign authorization (login, allow access, use custom domain gpcom when prompted). Choose whether the document is the Conga output as-is or upload an edited file; any Terms and Conditions changes go through Legal. Add or verify recipients (each must be a Salesforce contact), adjust email subject and body, set reminders and envelope expiration if needed, place required fields for each signer, then send and monitor notifications as the envelope progresses.
+### GPC Solution → Conga → DocuSign (happy path)
 
-**Sources:**
-- **Salesforce & DocuSign Integration Training Guide** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Salesforce & DocuSign Integration Training Guide - 0623.pdf`
+- Set **Contract Signer** to the contact who will sign (lookup by name)—**when you create the solution or early**. You **cannot** add Contract Signer while the solution is in **Approval Pending**; late adds may not behave the same across stages.
+- Continue the sales process until sending is appropriate. From **Conga Files**, run the template; you may **Save a Copy** (Merge and Download) to Salesforce Files, return to the **GPC Solution**, then **Send to DocuSign** from the action row.
+- First-time send: complete **DocuSign authorization** (login, allow access, use the **gpcom** custom domain when prompted).
+- Choose Conga output as-is or upload an edited file; **Terms and Conditions** changes go through **Legal**.
+- **Recipients** must be Salesforce contacts; adjust email subject/body; set reminders/expiry if needed; place signature fields; send and monitor status.
+
+**Where to read more**
+
+- **Salesforce & DocuSign Integration** guide: **Sales Resources** / GPCU (search “DocuSign”).
 
 ## Weekly habits and deep dives
 
-Each week, read Salesforce Success Tips in the Salesforce Users team General channel—posts there update weekly. Keep tasks and opportunities current so dashboards and handoffs stay trustworthy. Block time to clear follow-ups on active opportunities, referral updates for program leads, and GPC Solution stages that need costing or approval attention. Pair this module with Salesforce 101 and 201 courses and quick references in GPCU and Teams as listed in the manual’s additional resources when you need the next level of detail.
+- Read **Salesforce Success Tips** in the **Salesforce Users** team **General** channel—content updates weekly.
+- Block time to: clear **Tasks**, refresh **stages/dates** on active opps, update **referral** deals, and advance **GPC Solutions** stuck in costing or approval.
+- Pair this module with **Salesforce 101** and **201** and the quick references in GPCU when you need the next level of detail.
 
-For proposal generation aligned to enterprise deals, watch the intro video on the enterprise proposal workflow. The Salesforce Training Videos folder groups walkthroughs for Salesforce 101 sections, creating a GPC Solution, and multi-site GPC Solutions—use them as structured practice after reading the PDFs.
+For **enterprise proposal** motions, watch the intro video on the enterprise proposal workflow. The **Salesforce Training Videos** folder groups walkthroughs for 101 sections, creating a GPC Solution, and multi-site solutions—use them as structured practice after reading the PDFs.
 
-**Sources:**
-- **GPC Enterprise Proposal Generator - Intro Video** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (2)/GPC Enterprise Proposal Generator - Intro Video.mp4`
-- **Salesforce Training Videos (folder)** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Salesforce Training Videos`
-- **Full SF training pack folder (PDFs and videos)** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)`
+**Where to read more**
+
+- **Salesforce Success Tips:** **Salesforce Users** team → **General** (weekly posts).
+- **Enterprise proposal** intro and **Salesforce Training Videos**: **Sales Resources** / enablement—not a private “Documents” folder only on your machine.
+- **Salesforce 201** and quick references in GPCU when you outgrow 101.
 
 ## Media (optional)
 
-*Guidde (reserved):* Suggested Guidde walkthroughs: convert a lead and verify referral fields; pin list views and task follow-up; Conga merge to Salesforce File and Send to DocuSign with contract signer set.
-
-- **Watch 1st - 101, Section 1 and 2** — *URL TBD*
-- **Watch 2nd - Section 3 pt 1** — *URL TBD*
-- **Watch 3rd - Section 3, pt 2** — *URL TBD*
-- **Watch 4th - Section 4** — *URL TBD*
-- **Watch 5th - Section 4 - Sales Cycle** — *URL TBD*
-- **Watch 6th - Section 5 intro** — *URL TBD*
-- **Watch 7th - Section 5 - additional resources** — *URL TBD*
-- **Creating a GPC Solution Video 2.2023** — *URL TBD*
-- **Creating a Multi-Site GPC Solution Video 2.2023** — *URL TBD*
+- **Guidde** (when published): lead conversion + referral fields; pinned views + tasks; Conga → Salesforce File → DocuSign with **Contract Signer** set early—ask enablement for links.
+- **Video playlist:** 101 walkthroughs and **GPC Solution** / multi-site videos are updated on **Sales Resources**; take the playlist from there instead of stale bookmarks.

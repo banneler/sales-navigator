@@ -3,7 +3,9 @@ id: "product-uc-voice-and-collaboration"
 title: "UC, Voice & Collaboration"
 summary: "Sections: UC, Teams attach, Contact Center, Voice, and internal pricing discipline."
 sensitivity: "public"
-reference_files: []
+reference_files:
+  - label: "Sales Resources (UC, voice, contact center)"
+    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 five_minute_summary: |
   - **UC:** One platform for PBX, messaging, SMS/MMS, meetings with AI recap, optional Contact Center, and files—differentiate plans (e.g., Unite Enterprise vs lower tiers on storage) and **Triple Guard Security™**; confirm archiving beyond **30 days** with the account team.
   - **Teams attach:** Keep Teams as the hub; GPC cloud PBX for enterprise voice from the Teams dialer; **Microsoft Teams licenses** and **Phone System** are **separate** purchases—set joint licensing expectations early.
@@ -104,24 +106,45 @@ scenarios:
       - label: "Quote CC Pro and Elite interchangeably at the same price."
         feedback: "Risky: Elite extends capability—confirm current matrix before commitments."
 ---
-
 ## UC
+
+**Personas:** IT leaders modernizing telephony; operations and office managers who own day-to-day comms; hybrid and frontline staff who need one place for voice, chat, and meetings; compliance-minded roles (legal, risk) when archiving and recording matter.
+
+**Pain:** Fragmented apps (separate phone, chat, SMS, file shares); weak visibility into customer SMS/MMS; meeting notes living only in someone’s head; hunt groups that don’t scale to real queue needs; uncertainty on retention vs compliance; “good enough” uptime that still hurts the business.
+
+**Talk track:**
+
+- Lead with one platform: enterprise voice, messaging, SMS/MMS on business numbers, HD meetings with AI recap, optional Contact Center, files—fewer logins, clearer ownership.
+- Differentiate plans by need and storage: Essential/Pro vs **Unite Enterprise** (brochure: up to **200 GB** per user on Unite Enterprise; lower tiers **50 GB / 5 GB**); mix-and-match where it helps efficiency.
+- Anchor trust with **Triple Guard Security™**: secure datacenters, certified security operations, encryption, password management, 2FA.
+- Set archiving expectations: free **30-day** baseline; longer retention is stepped—say “confirm tier with the account team” before quoting years.
+- Competitive: whole-business workflow vs meeting-only tools; local support; **99.999%** uptime—translate to minutes per year in plain language.
 
 Position GPC **UC** as one integrated platform for voice, AI-assisted calling, messaging, SMS/MMS to customers, HD meetings with AI recap, optional Contact Center, and file sync—plus mobile/desktop apps. Lead with outcomes: smarter employee collaboration and customers feeling valued through omni-channel touchpoints and automation.
 
-**Plans (high level):** differentiate by user needs and storage—Essential and Pro carry smaller per-user file allowances; **Unite Enterprise** extends file storage significantly (brochure cites up to **200 GB** per user on Unite Enterprise; lower tiers **50 GB / 5 GB**). Mix-and-match licensing and flexible contract options support efficiency. **Triple Guard Security™** frames trust: secure datacenters, certified security team, encryption, password management, 2FA.
+**Plans (high level):** Differentiate by user needs and storage—Essential and Pro carry smaller per-user file allowances; **Unite Enterprise** extends file storage significantly (brochure cites up to **200 GB** per user on Unite Enterprise; lower tiers **50 GB / 5 GB**). Mix-and-match licensing and flexible contract options support efficiency. **Triple Guard Security™** frames trust: secure datacenters, certified security team, encryption, password management, 2FA.
 
 **Capabilities:** cloud PBX with 100+ enterprise features, spam call protection, single admin portal; **AI Call Recap** (summaries, transcripts, sentiment, topics); file management with backup/recovery; team messaging + external SMS/MMS on business numbers; meetings with **AI Meeting Recap**; **Advanced Hunt Groups** for lighter queue scenarios; optional full **Contact Center** (see Contact Center section). **Archiving:** free **30-day** retention baseline—longer retention is stepped; say “confirm tier with account team” vs quoting years on a first call.
 
 **Discovery:** How do employees communicate today? Where do calls, texts, and voicemails live? Post-meeting notes automated? Compliance/retention for calls and chats? File backup and ransomware recovery today?
 
-**Handoff:** AE/UC specialist for formal sizing, mixed plans, archiving beyond 30 days, CC, integrations. **Competitive:** whole-business workflow vs meeting-only SKUs; local support; **99.999%** uptime story—translate to minutes/year in customer language.
+**Handoff:** AE/UC specialist for formal sizing, mixed plans, archiving beyond 30 days, CC, integrations.
 
-**Sources:**
-- **UC Brochure (abbreviated)** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/UC Brochure - Abbreviated 041026.pdf`
-- **UC Competitor battle card (PDF)** — `/Users/ba/Documents/GPC Training Material/UC Competitor Battle Card 031226.pdf`
+**Competitive:** whole-business workflow vs meeting-only SKUs; local support; **99.999%** uptime story—translate to minutes/year in customer language.
+
+**Collateral:** UC brochure + competitor battle card—**Sales Resources**.
 
 ## Teams attach
+
+**Personas:** Microsoft-first shops (M365/Teams as default); IT teams bridging legacy PBX to Teams Phone; department heads who want queues and hunt behavior without retraining users on a new UI.
+
+**Pain:** Assumption that one vendor invoice covers everything; Phone System not budgeted; coexistence during migration; presence and queue behavior that don’t line up with Teams; porting delays and dial-plan surprises.
+
+**Talk track:**
+
+- Keep **Teams** as the hub; add GPC’s **enterprise-grade cloud PBX** so users use the Teams dialer for business voice with minimal retraining.
+- State clearly: **Microsoft Teams licenses** and **Phone System** are **separate** purchases—align on the joint licensing picture early to protect the quarter.
+- Offer architect engagement for coexistence, porting, and **Phone System** prerequisites across departments; align CSP context if Teams is purchased outside your motion.
 
 Keep **Microsoft Teams** as the collaboration hub; add GPC’s **enterprise-grade cloud PBX** so users place/receive business calls from the Teams dialer with minimal retraining. **Microsoft Teams licenses** and **Phone System** are purchased **separately**—set expectations on the joint licensing picture.
 
@@ -129,10 +152,20 @@ Keep **Microsoft Teams** as the collaboration hub; add GPC’s **enterprise-grad
 
 **Handoff:** UC/Teams architects for coexistence, porting, and Phone System prerequisites across departments; coordinate CSP context if Teams is bought elsewhere.
 
-**Sources:**
-- **UC for Teams datasheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/UC for Teams/UC for Teams datasheet 100325.pdf`
+**Collateral:** UC for Teams datasheet—**Sales Resources**.
 
 ## Contact Center
+
+**Personas:** CX leaders and contact-center directors; operations owners measured on ASA, abandon rate, and CSAT; IT owners integrating CRM, WFM, and digital channels.
+
+**Pain:** Agents juggling multiple apps; supervisors blind to real-time state; digital channels bolted on inconsistently; concurrent licensing and bursting misunderstood on the first call; commitments made without specialist sizing.
+
+**Talk track:**
+
+- One platform story: employee collaboration and customer interactions together; centralized management and reporting.
+- License **CC Pro** / **CC Elite** as **concurrent** seats—confirm matrices and Elite extensions before customer commitments.
+- Treat digital channels (chat, email, WhatsApp) and Dynamic Notifications as often **add-on**; **bursting/elastic** rules are **internal** sizing with AE/pricing—not napkin math.
+- Use datasheets for capability; bring product specialists for custom reports, bespoke IVR, and heavy integrations (prof services where stated).
 
 Contact Center on the **same UC platform**: one application for employee collaboration and customer interactions; centralized management. **Value:** productivity (one app), customer convenience (voice, text, chat, email, self-service), personalization (CRM, analytics), revenue/engagement (outbound, notifications).
 
@@ -144,10 +177,20 @@ Contact Center on the **same UC platform**: one application for employee collabo
 
 **Handoff:** Product specialists for custom reports, bespoke IVR, custom integrations (prof services in datasheet). Bursting/elastic with AE/pricing desk.
 
-**Sources:**
-- **Contact Center datasheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/Contact Center datasheet 050925.pdf`
+**Collateral:** Contact Center datasheet—**Sales Resources**.
 
 ## Voice
+
+**Personas:** Customers staying on premises or hybrid PBX; multi-site organizations with legacy TDM; sites that still need POTS for alarm, elevator, or fax; buyers optimizing OPEX on trunking.
+
+**Pain:** Rising legacy costs; SIP interoperability anxiety; unclear path counts and growth; specialty lines that cannot move to VoIP; eSBC placement and cutover risk.
+
+**Talk track:**
+
+- For customers not ready for full UC: **SIP**, **PRI**, and **POTS** each have a clear role—match discovery to the path.
+- **SIP:** VoIP handoff from customer PBX toward PSTN; consolidate voice and data where it fits; highlight scalability and **managed eSBC** on-site when needed.
+- **PRI:** digital trunking for medium/large sites; multiple voice paths and features (e.g., Caller ID).
+- **POTS:** traditional landline where clarity, reliability, and **911** access independent of mobile battery still matter.
 
 For customers not ready for full UC: **SIP trunking**, **PRI**, and **POTS**. **SIP:** VoIP handoff between customer PBX and GPC toward PSTN; trunks don’t compete with other services for transport—**consolidate** voice and data. Benefits: lower OPEX, mix premise/cloud PBX with major vendors, scalability, **managed eSBC** on-site.
 
@@ -157,15 +200,13 @@ For customers not ready for full UC: **SIP trunking**, **PRI**, and **POTS**. **
 
 **Handoff:** Voice engineering for eSBC placement, SIP interoperability, cutover windows.
 
-**Sources:**
-- **Voice Product Sheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Voice - Non-UC/Voice Product Sheet 112524.pdf`
+**Collateral:** Voice (non-UC) product sheet—**Sales Resources**.
 
 ## Pricing (internal)
 
-UC, Contact Center, and voice quotes use **internal** pricing books—never email rates from memory. Use brochures/datasheets for capability; use pricing extracts for **internal** sizing only. CC concurrent licensing, add-on channels, archiving, bursting, and PS lines need **AE/pricing** alignment.
+UC, Contact Center, and voice quotes follow **internal** pricing books—never email rates from memory. Use brochures/datasheets for **capability**; use **AE/pricing** for concurrent seats, add-ons, archiving, and professional services.
 
-**Sources:**
-- **UC / Voice pricing folder** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (4)`
+When challenged on price, stay in discovery and escalate commercially through proper channels—don’t improvise from the pricing folder.
 
 ## Media (optional)
 

@@ -46,7 +46,7 @@ function ensureHandoutPreviewModal() {
   modal.setAttribute('aria-modal', 'true');
   modal.setAttribute('aria-labelledby', 'handout-preview-title');
   modal.className =
-    'fixed inset-0 z-[200] hidden flex items-center justify-center p-4 sm:p-6';
+    'fixed inset-0 z-[200] hidden flex items-center justify-center px-4 pb-8 pt-20 sm:px-6 sm:pb-10 sm:pt-24';
   modal.innerHTML = `
     <div class="absolute inset-0 bg-slate-900/60" data-handout-preview-dismiss tabindex="-1" aria-hidden="true"></div>
     <div class="relative z-10 flex w-full max-w-5xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl" style="height: min(90vh, 900px); max-height: min(90vh, 900px)">

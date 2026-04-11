@@ -127,41 +127,121 @@ scenarios:
 
 ## Approvals overview
 
-Approvals run from the GPC Solution in Salesforce. In Related List Quick Links, open Approval History, then choose Approve, Reject, Reassign, or Recall, add comments, and confirm—notification emails go to the assigned recipients automatically.
+- Approvals run from the **GPC Solution** in Salesforce—not from a random email thread. In **Related List Quick Links**, open **Approval History**, then use **Approve**, **Reject**, **Reassign**, or **Recall**, add clear comments, and confirm. Notification emails go to the assigned recipients automatically.
+- **What reviewers actually look at:** leadership review is not a single headline number. Expect scrutiny of **site-level** services, products, and quote math, plus whether the story on the record matches the customer situation.
+- **Record hygiene they will check:** each **Solution Site** should have **Solution Services** (except **A Locations** where that exception applies). Each **Service** should carry **Products** (product counts on related lists are a quick sanity check). On **Quote Lines**, discounts should reconcile with **Regular Unit Price**, **Customer Unit Price**, and totals—**quantity** may need manual math because columns are tight on screen.
+- **Financial and deal-health signals** called out in training include: **Payback Months** (Net Investment ÷ Gross Margin) versus **term**; **new vs renewal** context; **MTD/QTD/YTD** payback posture; **Net Investment** (build, equipment, CAC-style costs—generally excluding labor); **manual Product Discount** outside standard tier/EVPL rules; **Churn** as the percent drop from existing MRC to proposed MRC; and **Unfavorable Investment** when Gross Margin ≤ $0 and Net Contract Value < $0.
+- **Beyond the numbers:** strategic fit, adjacent opportunity, competitiveness, distance from fiber, and **Parent Opportunity** context still matter—approvals are judgment calls, not only a calculator output.
 
-Leadership review is not limited to a single metric. Expect scrutiny of record quality: each Solution Site should have Solution Services (except A Locations), each Service should carry Products (product count on the related lists is the quick check), and Quote Lines should reconcile discounts with Regular Unit Price, Customer Unit Price, and totals—quantity may require manual math because columns are tight.
+### Who to ask (approvals and systems)
 
-Financial and deal-health criteria called out in training include: Payback Months (Net Investment ÷ Gross Margin) versus term, new vs renewal context, and MTD/QTD/YTD payback posture; Net Investment (build, equipment, CAC-style costs—generally excluding labor); manual Product Discount outside standard tier/EVPL rules; Churn as the percent drop from existing MRC to proposed MRC; and Unfavorable Investment when Gross Margin ≤ $0 and Net Contract Value < $0. Non-Salesforce factors also matter: strategic fit, adjacent opportunity, competitiveness, distance from fiber, and Parent Opportunity context.
+- **Product Management:** product-specific approval rules, product behavior, and what belongs on the quote versus what does not.
+- **Sales Management:** judgment calls on the deal, escalation when MRC/payback/cost swings are material, and when to pause before you burn cycles downstream.
+- **Salesforce team:** workflow glitches, why an approval route looks wrong, and system issues that block Approve/Reject/Reassign/Recall from completing.
+- **Do not substitute OBR prep** (see below) for getting the GPC Solution right or for following costing routing rules—different purpose.
 
-Know who to ask: Product Management for product-specific approval rules, Sales Management for judgment on decisions, and the Salesforce team for workflow or system issues. On mobile (iPhone or Android), use the notification bell or the approval email link, review Details (View More as needed), return to Approval History, pick the action, enter comments, and confirm—same outcome as desktop.
+### Mobile approvals
+
+- On **iPhone** or **Android**, use the **notification bell** or the **approval email** link, open **Details** (use **View More** when needed), return to **Approval History**, pick the action, enter comments, and confirm—the outcome matches desktop.
+
+### What to expect (timing and follow-up)
+
+- **No fixed “hours to approve” promise in this module**—speed depends on approver availability, deal complexity, and how complete the record is on first submission.
+- **Expect** notification-driven back-and-forth: you may get questions via approval comments or email; answer in-thread with specifics so the next reviewer does not start cold.
+- **If something stalls**, confirm you are on the **GPC Solution**, check **Approval History** for the current step and assignee, then escalate through **Sales Management** or the **Salesforce team** for routing issues—avoid side-channel guesses.
+
+## Before you submit (checklist)
+
+Use this whether you are chasing **GPC Solution approval**, a **change order** package, or a **costing-heavy** site—clean inputs reduce rework.
+
+- **Right object, right stage:** you are working from the **GPC Solution** (and relevant **Solution Sites**) as training describes—not a one-off spreadsheet version of the deal.
+- **Sites and services:** each site has the services you are actually selling; nothing is “placeholder” that you intend to fix after approval.
+- **Products and links:** services that need products have them; for change orders involving new products, you have the correct **Salesforce Product** link for that site’s **Market Group** so MCOS/NCOS stay accurate.
+- **Quote integrity:** quote lines, discounts, and math tie out; you can explain any manual discount or non-standard structure.
+- **Story matches the record:** payback posture, churn, net investment, and strategic context in training align with what leadership will see in Salesforce.
+- **Attachments and identifiers:** signed documents are uploaded where required; **GPC Solution** identifiers stay on forms that rely on them so **Salesforce Administration**, **PMO**, and **CRC** can match work to the right record.
+- **Routing flags:** if you used **Request Manual Validation** or have **Zone Parent** / **New + Existing** combinations, you know **why** routing will look heavier—and you have not promised the customer an automated path that training rules out.
 
 ## Change orders
 
-Treat “change order” as a narrow window: the customer changes the contract after Closed/Won but before billing has started. If billing has already started and only part of the contract changes, that is Move/Add/Change (different process). Removing everything before billing is a Cancellation; removing everything after billing is a Disconnect—use those processes instead.
+- **Definition (narrow):** a **change order** here means the customer changes the contract **after Closed/Won** but **before billing has started**. Keep that window straight—it drives which template and which groups touch the work.
+- **If billing already started and only part of the contract changes:** that is **Move-Add-Change (MAC)**—not this change-order path.
+- **If the customer removes everything before billing:** use the **Cancellation** process, not a change order.
+- **If the customer removes everything after billing:** use **Disconnection**—not MAC for “small tweaks,” and not the pre-billing change-order template.
 
- Preconditions: GPC Solution must be Closed/Won, Booked, and not Billed—change orders cannot run once Billed is set.
+### Preconditions
 
- Motion: (1) If the change is significant for MRC, payback, or cost, notify your Sales Manager early. (2) From the GPC Solution, use Conga Files → Change Order template → Preview to validate the right solution and layout. (3) Enable editing: complete Solution Site affected, description, and specific changes; for new products, paste the correct Salesforce Product link for that Solution Site’s Market Group so MCOS/NCOS stay accurate. Do not delete the GPC Solution number from the form—it helps SF Admin, PMO, and CRC. (4) Obtain customer signature (and yours), upload the signed PDF to the GPC Solution, then email the completed form plus the GPC Solution link to Sales Manager (if step 1 applied), PMO, Salesforce Administrator, and CRC.
+- GPC Solution must be **Closed/Won**, **Booked**, and **not Billed**—change orders **cannot** run once **Billed** is set.
 
- After submission: Salesforce Administration performs the booking adjustment; PMO updates the project; CRC handles billing impacts. If the Solution Site project stage is “Pending Billing” or “7-10 Day Order,” Salesforce Admin must get PMO/CRC approval before executing the booking adjustment.
+### Motion (what you do)
+
+- **Early heads-up:** if the change is significant for **MRC**, **payback**, or **cost**, notify your **Sales Manager** before you polish paperwork nobody can approve.
+- **Conga:** from the GPC Solution, **Conga Files → Change Order template → Preview** to validate you have the right solution and layout.
+- **Edit carefully:** complete **Solution Site** affected, **description**, and **specific changes**; for new products, paste the correct **Salesforce Product** link for that Solution Site’s **Market Group** so MCOS/NCOS stay accurate.
+- **Do not strip identifiers:** do **not** delete the **GPC Solution** number from the form—it helps **Salesforce Administration**, **PMO**, and **CRC** tie documents to Salesforce.
+- **Signatures and routing:** obtain **customer** signature (and **yours**), upload the signed PDF to the GPC Solution, then email the completed form plus the **GPC Solution link** to **Sales Manager** (when step one applied), **PMO**, **Salesforce Administrator**, and **CRC**.
+
+### After submission (who does what)
+
+- **Salesforce Administration** performs the **booking adjustment**.
+- **PMO** updates the **project**.
+- **CRC** handles **billing** impacts.
+- **Extra gate:** if the Solution Site project stage is **“Pending Billing”** or **“7-10 Day Order,”** **Salesforce Admin** must get **PMO/CRC** approval before executing the booking adjustment—do not assume “submit” equals “instant booking change.”
+
+### What to expect (change-order follow-through)
+
+- **Handoffs are sequential by design:** booking, project, and billing each have their own checks; **same-day completion is not guaranteed** and depends on package quality, stage gates, and group workload.
+- **You own clarity:** incomplete packages or ambiguous site scope tend to bounce—use the checklist above and the **Change Order Process** PDF in **Module Reference Files** for the authoritative sequence.
 
 ## Costing / routing
 
-Costing Routing drives which organizations estimate or validate spend for each Solution Site based on Site Type, Services, and Products, layered with Salesforce automation—some paths show estimates for speed, others pull data supplied by departments. This is an overview: a given site may follow a different combination than another.
+- **What it is:** **Costing Routing** decides which organizations **estimate** or **validate** spend for each **Solution Site**, using **Site Type**, **Services**, and **Products**, plus **Salesforce automation**. Some paths show **estimates** for speed; others pull **department-supplied** data. Treat this section as an **overview**—your site mix can differ from another rep’s.
+- **Why it matters to you:** routing drives **how long** validation takes and **who** must touch the site before you promise install or margin to the customer—especially when automation is off or multiple services stack.
 
- If Request Manual Validation is checked on the Solution Site, automation is skipped and each participating department must review.
+### Request Manual Validation
 
- Rules of thumb from the quick reference: Solution Sites tied to a Zone Parent Opportunity may bypass automation; Reusable is not allowed when a Zone Parent is in play. Strategic Build flags when GPS falls inside preloaded boundaries, triggering Individual Drop Cost and Individual Equipment Cost systematically. If both New and Existing services are selected on one site, routing follows the New path. Multiple services on one site follow the path that requires the deepest review. OSP Automated Costing uses system estimates that OSP may override. Reusable lets OSP and Network Engineering complete routing automatically when eligibility criteria are met (see the Reusable matrix in the PDF). Wholesale bulk imports use a separate bulk-site routing pattern.
+- If **Request Manual Validation** is checked on the **Solution Site**, **automation is skipped** and **each participating department** must review. Use it when the scenario truly needs human eyes—not as a shortcut past customer discovery.
 
- For edge cases (especially customer moves and New vs Existing), Business Customer Care can help interpret the right service classification.
+### Rules of thumb (quick reference)
 
-## Partner, MAC, disconnect, and OBR pointers
+- **Zone Parent Opportunity:** Solution Sites may **bypass automation**; **Reusable** is **not** allowed when a **Zone Parent** is in play.
+- **Strategic Build:** when GPS falls inside preloaded boundaries, **Individual Drop Cost** and **Individual Equipment Cost** run systematically.
+- **New + Existing** on one site: routing follows the **New** path.
+- **Multiple services** on one site: routing follows the path that requires the **deepest review**—not the lightest common denominator.
+- **OSP Automated Costing:** system estimates that **OSP** may override.
+- **Reusable:** **OSP** and **Network Engineering** can complete routing automatically when **eligibility** criteria are met—see the **Reusable** matrix in the **Costing Routing** PDF.
+- **Wholesale bulk imports:** separate **bulk-site** routing pattern from standard retail-style entry.
 
-Partner: for Enterprise referral mechanics and eligibility, use the Partner Referral Program quick reference—keep partner-specific pricing and rules inside approved channels.
+### Who to ask (routing edge cases)
 
- MAC vs disconnect: after billing starts, partial in-life changes follow Move-Add-Change; removing all services post-billing follows Disconnection. Those are distinct from the pre-billing Change Order and Cancellation paths above. A separate Customer Move procedure PDF also lives under the extracted (2) library for relocation scenarios.
+- **Business Customer Care:** especially **customer moves** and **New vs Existing** classification questions when you are unsure which service bucket is honest on the record.
+- **Network / OSP / Engineering stakeholders:** when **Reusable**, **OSP Automated Costing**, or **Strategic Build** behavior looks wrong relative to the PDF matrices—bring **Solution Site** context and what you promised the customer.
 
- OBR: Operational Business Review readiness (forms and SOP) remains under the OneDrive (2) OBR folder—use for account planning cadence with ops leadership, not as a substitute for SF approval or costing routing.
+**At a glance (scan before you click)**
+
+- **Request Manual Validation** → automation off; each participating department reviews.
+- **Zone Parent** on the opportunity → Solution Sites may bypass automation; **Reusable** is **not** allowed with a Zone Parent.
+- **New + Existing** on the same site → routing follows **New**.
+- **Multiple services** on one site → expect the **deepest** review path.
+- Full matrices → **Costing Routing** PDF in **Module Reference Files** (sidebar).
+
+### What to expect (routing and validation)
+
+- **Deeper paths take longer**—multiple services, manual validation, or exceptions from the matrices expand the number of hands on the estimate.
+- **Automation is not a promise** of instant approval of the deal; it is a routing shortcut when **eligibility** and **data quality** hold. If fields or site facts are wrong, downstream teams may **re-open** or **re-route**—fix upstream to avoid churn.
+
+## OBR (Operational Business Review)
+
+- **What OBR is for:** **Operational Business Review** readiness—forms, cadence, and **account planning** with **ops leadership**. It helps you tell a coherent operational story about the account and priorities.
+- **What OBR is not:** a substitute for **GPC Solution** approval discipline, **Approval History** actions, or **costing routing** rules. Doing OBR prep does not “check the box” on Salesforce approvals or manual validation.
+- **Where to get assets:** use **Sales Resources**, your **ops contact**, and current **OBR** materials from approved channels—avoid one-off copies with stale fields or old owners.
+- **Who to ask:** your **Sales Manager** or **ops leadership** contact for **cadence** and **which** OBR package to use for a given account; **Salesforce team** only if a system link or report access blocks you from completing an internal template.
+
+## Partner, MAC, disconnect, and related pointers
+
+- **Partner:** for **Enterprise referral** mechanics and eligibility, use the **Partner Referral Program** quick reference—keep partner-specific pricing and rules inside **approved** channels.
+- **MAC vs disconnect:** after billing starts, **partial** in-life changes follow **Move-Add-Change**; **removing all services** post-billing follows **Disconnection**. Those paths are distinct from the pre-billing **Change Order** and **Cancellation** routes above.
+- **Customer Move:** has its own procedure—use the **training library** linked from **Sales Resources** / **PMO** materials rather than informal summaries.
 
 ## Media (optional)
 

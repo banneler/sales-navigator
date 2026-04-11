@@ -108,54 +108,81 @@ scenarios:
       - label: "Match their price verbally to keep the meeting moving."
         feedback: "Avoid improvising commercial commitments; reframe value and engage AE/leadership through proper channels."
 ---
-
 ## Framework: disciplined competitive conversations
 
-Discovery before claims. Ask what applications, sites, and outcomes matter (POS/VoIP/video, upload vs download, uptime/SLA, multi-location, how sites connect today, backhaul vs local breakout, migration timelines). Map what you hear to a competitor strength or weakness only after you know their reality—avoid generic “we’re better” without tying to their stated need.
+- **Discovery before claims.** Clarify applications, sites, and outcomes before you position: POS, VoIP, video, upload vs download, uptime and SLA expectations, multi-site topology, how sites connect today, backhaul vs local breakout, migration timelines, and who owns the network decision.
+- **Map only after you understand their reality.** Tie competitor strengths and weaknesses to what they said they need—avoid generic superiority or “we’re better” without a stated fit.
+- **Competitor → GPC response.** For each angle, pair: (1) what they will say or what is true in their pitch, (2) the business risk or gap *for this customer*, (3) proof you can support: local teams, 24×7 NOC monitoring, redundant fiber design, symmetrical speeds, contract and rate stability, full-service portfolio, referenceable customers—use only what matches discovery.
+- **Landmines.** No personal attacks; do not cite battle-card statistics externally until marketing confirms currency; avoid absolutes (“never,” “always”) about competitor networks; acknowledge legitimate competitor strengths and reframe to your fit; for architectural deals, stay in discovery and bring experts—do not improvise topology.
 
-Competitor → GPC response. For each competitor angle, pair: (1) what they will say or what is true in their pitch, (2) the business risk or gap for this customer, (3) your proof: local teams, 24x7 NOC monitoring, redundant fiber design, symmetrical speeds, contract/rate stability, full-service portfolio, or referenceable customers—use only what fits the discovery.
+## Proof points: what “good” looks like
 
-Proof-point patterns. Prefer concrete differentiators: network attributes (e.g., buried vs aerial, redundancy, leased vs owned where relevant), service model (local install/support vs remote-only), commercial terms (locks, fees, renewals), and experience metrics (references, tenure, NPS where appropriate). Lead with customer outcomes, not slides.
+- **Concrete over generic.** Prefer network attributes (buried vs aerial, redundancy, owned vs leased facilities where relevant), service model (local install and support vs remote-only), commercial terms (locks, fees, renewals), and experience signals (references, tenure, NPS where appropriate).
+- **Outcome-led.** Lead with customer outcomes—uptime, predictable performance, support reachability, time to restore—not slide headlines.
+- **Verifiable.** Before external claims on awards, analyst positions, or third-party scores: confirm year, scope, and that marketing approves the exact wording.
+- **Scoped honesty.** If a stat is directional or internal-only, keep it internal; offer qualitative proof (how you monitor, how escalations work) when numbers are not cleared.
 
-Landmines. Do not disparage competitors personally; do not cite battle-card stats externally without confirming currency with marketing; avoid absolutes (“never,” “always”) on competitor networks; acknowledge where a competitor is legitimately strong and reframe to your fit. If the deal is architectural (SD-WAN, security, multi-site, complex cloud pathing), stay in discovery and bring experts—don’t improvise topology.
+## Rebuttal discipline
 
-When to pull SE or PM. Engage early for: multi-site WAN/SD-WAN or MPLS migration, integrated security/firewall design, off-net + on-net hybrid, DDoS or regulated workloads, fiber feasibility or diverse paths, and any RFP-style technical validation. Use PM for delivery timeline, construction, and contract alignment.
+- **Anchor to outcomes, not stunts.** Tie replies to uptime, latency, support model, and total cost of downtime—not headline Mbps or sticker price alone.
+- **One beat at a time.** Acknowledge their point, ask one clarifying question if needed, then offer one proof-backed counter—avoid stacking every differentiator in one breath.
+- **M&A and market noise.** Stay factual and customer-centric; no gossip or personal digs at rival executives.
+- **Battle cards stay internal for numbers until cleared.** Do not quote statistics from memory in customer meetings.
+- **Reframe weak frames.** If the conversation is stuck on “speed test” or “cheapest rate,” reframe before you answer: confirm what success looks like for their apps, then align proof to that.
+- **No improvised commercial commitments.** Price, term, or exception requests go through proper channels—not verbal concessions to win a moment.
+
+## Trap questions (qualifying, not adversarial)
+
+Use these to surface risk the customer already feels and to earn a technical or business conversation—tone stays consultative, not prosecutorial.
+
+- **Reliability and operations:** “When that link degrades, who answers the phone at 2 a.m., and what’s the path to restore—ticket, NOC, field tech?”
+- **Fit vs headline speed:** “Which applications would hurt the business first if latency spiked or upload collapsed—POS, EMR, VoIP, video, VPN?”
+- **Total cost:** “Have you modeled cost of an hour of outage for this site vs saving on monthly recurring?”
+- **Satellite or wireless interest:** “Which apps need steady sub‑100 ms behavior vs best-effort browsing—and what happens in weather or obstruction?”
+- **Multi-site or WAN:** “How do you want routing and security enforced today—per site, centralized, hybrid—and who changes policy when something breaks?”
+- **M&A or vendor churn:** “What do you need to see in the next 90 days to feel stable—support, billing, field response—regardless of headlines?”
+
+## When to pull SE or PM
+
+- **SE early for:** multi-site WAN or SD-WAN, MPLS migration, integrated security or firewall design, hybrid on-net and off-net paths, DDoS or regulated workloads, fiber feasibility or diverse paths, RFP-style technical validation.
+- **PM for:** delivery timelines, construction realities, and contract alignment alongside SE for design.
+
+## When to disengage (or pause and reset)
+
+- **Bad-faith or purely destructive comparisons.** If the meeting is only about trashing a vendor or individuals, steer back to customer outcomes; if it persists, offer a follow-up with a clear agenda or include your SE/leadership rather than debating personalities.
+- **Requests for uncited or unapproved claims.** If they demand specific stats you cannot verify on the spot, do not invent—offer to follow up with approved materials.
+- **Pure price auctions with no discovery.** If they refuse any discussion of fit, SLA, or operations, clarify decision criteria and timeline; avoid repeated unprompted discounts or circular “beat this number” loops without stakeholder alignment.
+- **Technical depth without experts.** If design exceeds your lane (complex routing, security architecture, regulated environments), pause live design and schedule SE—or you risk inaccurate commitments.
+- **Harassment or unethical asks.** Disengage from requests to misrepresent competitors, forge references, or misstate contract terms; escalate through leadership.
 
 ## Metro and local competition
 
-Local overbuilders and national entrants often lead on price, speed tiers, or speed of build. Your counter is not price alone—it is fit, experience, and operational reliability for business.
-
-Themes from the Omaha metro set: entrants may emphasize quick builds and community marketing; probe for install quality, support model (local vs remote), network redundancy, and whether they fully own or lease facilities. Where competitors lease fiber or have pocketed coverage, position GPC reach, streamlined installs inside your plant, and rate stability via contract. Where they offer only simple tiers or consumer-style Wi-Fi bundles, position full business suite, complex needs (healthcare, multi-site, security), and tailored bandwidth so customers do not overbuy.
-
-T-Mobile/Metronet context: separate consumer brand story from B2B; test for support consistency, local depth, aerial vs buried build quality, and post-merger stability. Against “lowest advertised price,” tie to total cost of downtime, billing surprises, and lack of local escalation.
+- Local overbuilders and national entrants often lead on price, speed tiers, or speed of build. Counter with fit, experience, and operational reliability—not price alone.
+- **Themes useful in conversation:** install quality, support model (local vs remote), redundancy, whether facilities are owned or leased, pocketed vs deep coverage, contract and rate stability, full business suite vs consumer-style bundles.
+- **Against “lowest advertised price”:** tie to total cost of downtime, billing surprises, escalation paths, and lack of local ownership when that is true in discovery.
+- **Where consumer brands blur into B2B:** test support consistency, local depth, aerial vs buried build quality, and post-merger or post-integration stability—separate marketing story from how business tickets actually get resolved.
 
 ## Fiber versus satellite (Starlink and LEO)
 
-Position fiber when the business needs predictable latency, weather-immune uptime, symmetrical bandwidth, and local installation/support—not when “speed in a speed test” is the only criterion.
-
-Satellite pain themes: weather and obstruction sensitivity, variable latency under load, shared-airtime congestion, rooftop/dish constraints and self-install risk. Fiber response: enterprise-grade reliability, consistent ultra-low latency for POS/VoIP/cloud/VPN, scalable dedicated bandwidth, professional install and ongoing local + NOC support.
-
-Qualifying line of inquiry: employees/devices at site; critical apps; SLA needs; upload-heavy workflows (healthcare, media, finance); public-sector or education suitability; rural locations needing environmental stability. Use latency-sensitive use cases (video, VoIP, POS, VPN, cloud) to justify fiber where real-time performance is material.
-
-Ideal-fit businesses: high upload demand; predictable POS/VoIP/cloud; public-sector/education; long-term scalable landline replacement; rural sites where environmental factors would hurt satellite. Response to “Starlink is everywhere”: acknowledge coverage, then reframe to reliability, latency, and operational support for business applications.
+- Position fiber when the business needs predictable latency, weather-resilient uptime, symmetrical bandwidth, and professional install and support—not when a consumer-style speed test is the only criterion.
+- **Satellite pain themes:** weather and obstruction sensitivity, variable latency under load, shared-airtime congestion, rooftop and dish constraints, self-install risk.
+- **Fiber response themes:** enterprise-grade reliability, consistent low latency for POS, VoIP, cloud, VPN; scalable dedicated bandwidth; professional install and local plus NOC support.
+- **Qualifying lines:** employees and devices per site; critical apps; SLA needs; upload-heavy workflows; public-sector or education suitability; rural sites where environment would hurt satellite.
+- **Response to “Starlink is everywhere”:** acknowledge coverage, then reframe to reliability, latency, and operational support for business applications.
 
 ## M&A and Cox (Charter/Spectrum acquisition narrative)
 
-When prospects hear acquisition messaging, they want stability, service quality, and honest comparison—not gossip.
-
-GPC themes: long-tenure regional operator; redundant fiber monitored 24x7; local sales and support in-market. Where third-party scores or reputation are used internally, frame as directional—confirm before external quoting.
-
-Comparison dimensions useful in conversation: access technology (fiber depth vs coax-centric), symmetry and headline speeds where relevant, ease of doing business, renewal and price-lock behavior, install/activation fees, and whether support is local/regional vs offshore narratives in the market.
-
-Speaking to “combined company benefits”: acknowledge the competitor’s stated commitments; pivot to what GPC already delivers (e.g., support model continuity, no need to “bring support home” if yours never left), consistency of service experience, and proactive monitoring. Keep the tone factual and customer-centric.
+- Prospects want stability, service quality, and honest comparison—not gossip.
+- **GPC themes:** long-tenure regional operator; redundant monitored fiber; local sales and support in-market. Third-party scores: directional internally; confirm before any external quote.
+- **Useful comparison dimensions:** access technology depth, symmetry and headline speeds where relevant, ease of doing business, renewal and price-lock behavior, install and activation fees, local or regional support vs offshore narratives in the market.
+- **“Combined company benefits”:** acknowledge the competitor’s stated commitments; pivot to what GPC already delivers—support continuity, consistent experience, proactive monitoring. Keep tone factual and customer-centric.
 
 ## Technology battle cards (SD-WAN as the pattern)
 
-Technology battle cards follow a repeatable pattern: target customer profile → business pain (cloud performance, backhaul inefficiency, MPLS cost/redundancy, manual edge management, real-time app inconsistency) → how GPC wraps transport and services → qualifying questions → national-carrier challenge and response.
-
-For SD-WAN specifically: qualify site count, current MPLS/VPN/backhaul behavior, bandwidth per site, cloud vs data center apps, migration horizon (12–24 months), and mission-critical SaaS. Key proof areas: centralized orchestration and visibility, application-aware routing and failover, security integration, performance over varied underlays, and combining nationwide reach with local engagement—while staying accurate on awards/ratings (verify year and scope before citing).
-
-Apply the same pattern to other technology cards: open with customer pain, tie features to outcomes, use discovery questions to earn the technical win, and bring SE for design validation instead of debating from the card alone.
+- **Pattern:** customer profile → business pain (cloud performance, backhaul inefficiency, MPLS cost or redundancy, manual edge management, real-time app inconsistency) → how GPC wraps transport and services → qualifying questions → national-carrier challenge and response.
+- **SD-WAN discovery:** site count; current MPLS, VPN, or backhaul behavior; bandwidth per site; cloud vs data center apps; migration horizon (12–24 months); mission-critical SaaS.
+- **Proof areas:** centralized orchestration and visibility, application-aware routing and failover, security integration, performance over varied underlays, nationwide reach with local engagement—verify year and scope for awards and ratings before citing.
+- **Other technology cards:** same pattern—pain, outcome-tied features, discovery to earn the technical win, SE for design validation rather than debating from the card alone.
 
 ## Media (optional)
 

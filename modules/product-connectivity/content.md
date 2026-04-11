@@ -3,7 +3,9 @@ id: "product-connectivity"
 title: "Connectivity & Access"
 summary: "Training organized by topic: access strategy, DIA vs SIA, Managed Ethernet, Wavelength (Wave), competitive positioning, and internal pricing references."
 sensitivity: "public"
-reference_files: []
+reference_files:
+  - label: "Sales Resources (product collateral)"
+    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 five_minute_summary: |
   - **Access** frames how traffic reaches the customer: **SIA** for flexible, cost-sensitive shared access; **DIA** for symmetrical, dedicated paths, richer DDoS support, and NOC-style operations.
   - **Managed Ethernet** is private **Layer 2** site-to-site transport (E-Line/E-LAN); **Wave** is **Layer 1** optical for high-capacity DC/hub links—not a substitute for Internet access.
@@ -99,86 +101,183 @@ scenarios:
       - label: "Explore weather, latency, and congestion impacts; position fiber reliability, stable low latency, local support, and scalable symmetrical capacity."
         feedback: "Strong: matches the fiber vs satellite battlecard themes while staying professional."
 ---
-
 ## Access
 
-Use **access** conversations to frame how traffic reaches the customer: GPC delivers business Internet and transport over a fiber-rich Midwest footprint. **Standard Internet Access (SIA)** fits flexible, cost-sensitive sites that can tolerate shared access and best-effort latency. **Dedicated Internet Access (DIA)** fits sites that need symmetrical throughput, premium latency, dedicated path, richer DDoS visibility, and NOC-style support. Position **Managed Ethernet** when the need is private Layer 2 transport between sites—not Internet breakout. **Wavelength (Wave)** when the need is raw, high-capacity Layer 1 optical transport between strategic endpoints (data centers, large hubs)—see the Wave section.
+- **What “access” means here:** how business traffic reaches the customer—Internet services (SIA, DIA) vs private transport (Ethernet, Wave). GPC’s story is fiber-rich coverage and local engagement across the Midwest footprint.
+- **Standard Internet Access (SIA):** shared access, flexible sizing, cost-sensitive fit; best when workloads tolerate shared paths and best-effort latency.
+- **Dedicated Internet Access (DIA):** dedicated path, symmetrical throughput, premium latency posture, richer DDoS visibility, NOC-style operations—fit when performance, operations, or growth outgrow “good enough” shared Internet.
+- **Managed Ethernet:** private Layer 2 between sites (E-Line / E-LAN)—not a substitute for Internet breakout; use when the need is site-to-site private connectivity.
+- **Wavelength (Wave):** Layer 1 optical for very large, strategic pipes (e.g., DC/hub)—not generic Internet access; see the Wave section.
 
-**Discovery cues:** What applications are business-critical? Upload-heavy vs download-heavy? Need for static IPs, diversity, or SLA-style operations? Today’s access technology (cable, fiber, T1/MPLS legacy, wireless)? Growth plan over 24–36 months?
+**When to propose what**
 
-**Sources:**
-- **DIA Product Sheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Internet/DIA Product Sheet 120424.pdf`
-- **SIA product sheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Internet/SIA product sheet 120324.pdf`
+- Lead with **SIA** when the buyer prioritizes flexibility and cost, and apps are not latency- or upload-constrained.
+- Move to **DIA** when they describe symmetry needs, SLA-style expectations, diversity, VoIP/video/cloud pain on shared access, or stronger DDoS/operations requirements.
+- Introduce **Ethernet** when the conversation shifts to private connectivity between locations (VPN/MPLS replacement, hub/DC patterns, mesh).
+- Reserve **Wave** for high-capacity, optical, point-to-point transport between strategic endpoints—not because someone said “we need more Internet.”
+
+**Discovery questions**
+
+- Which applications are business-critical today, and which will be in the next 24–36 months?
+- Upload-heavy vs download-heavy? Any recurring upload congestion or jitter?
+- Do they need static IPs, route diversity, or formal performance/operations expectations?
+- What access do they run today (fiber, cable, wireless, legacy T1/MPLS)? Any recent outages or security events?
+- How fast are they growing headcount, sites, or cloud adoption?
+
+**Collateral:** DIA and SIA product sheets—**Sales Resources** (sidebar) under Internet / access.
+
+---
 
 ## DIA vs SIA
 
-Use the comparison sheet to stay crisp in customer conversations. **SIA** tops out at symmetrical speeds up to **2 Gbps** in the comparison; **DIA** scales to **100 Gbps** symmetrical. **IPs:** one static included with SIA vs three with DIA. **Security:** network-level DDoS on SIA vs proactive, customer-specific DDoS monitoring and mitigation on DIA. **Latency:** standard / best-effort on SIA vs premium low-latency with stated performance objectives on DIA. **Support model:** Tier 1 ISC for SIA vs NOC-centric enhanced support and monitoring for DIA. **Access diversity:** standard options on SIA vs standard plus **multiple diverse access options** where designs require it. **Nature of service:** shared on SIA vs **dedicated** fiber path for DIA.
+Use the comparison sheet as the single source of truth for numbers and differentiators in live conversations.
 
-**When to lead with SIA:** general business connectivity, cost sensitivity, workloads tolerant of shared access and best-effort latency. **When to lead with DIA:** symmetrical heavy use, SLA-style operations expectations, multi-site or diversity discussions, VoIP/video/cloud performance issues on “business broadband,” compliance or risk conversations around DDoS visibility, or when they have already outgrown shared Internet.
+- **Scale (per comparison):** SIA up to about **2 Gbps** symmetrical; DIA scales to **100 Gbps** symmetrical—use this to frame headroom and growth, not anecdotes.
+- **IPs:** one static included with SIA vs three with DIA—qualify how many public endpoints they need.
+- **Security / DDoS:** network-level DDoS on SIA vs proactive, customer-specific DDoS monitoring and mitigation on DIA—tie to risk and visibility expectations.
+- **Latency:** standard / best-effort on SIA vs premium low-latency with stated objectives on DIA—tie to real-time and cloud UX.
+- **Support:** Tier 1 ISC posture on SIA vs NOC-centric enhanced support and monitoring on DIA—tie to who answers at 2 a.m. and how incidents are handled.
+- **Diversity:** standard options on SIA vs standard plus **multiple diverse access options** where the design requires it—tie to resilience and compliance drivers.
+- **Service model:** shared on SIA vs **dedicated** fiber path on DIA—anchor the business case on predictability and growth.
 
-**Discovery questions:** What are you running today—MPLS, VPN over broadband, direct Internet? Where do you see congestion (upload vs download)? Any recent DDoS or outage events? Do you need performance reporting for internal IT or auditors?
+**When to lead with SIA**
 
-**Sources:**
-- **DIA vs SIA Comparison** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Internet/DIA vs SIA Comparison 110424.pdf`
+- General business connectivity, budget sensitivity, and workloads that tolerate shared access and best-effort latency.
+- Sites where symmetrical heavy use or NOC-style operations are not yet justified.
+
+**When to lead with DIA**
+
+- Symmetrical heavy use (cloud backup, large uploads, design/CAD, media).
+- SLA-style operations expectations, multi-site or diversity discussions, or compliance/risk conversations around DDoS visibility.
+- VoIP, video, or cloud performance issues on “business broadband” or shared Internet.
+- Clear trajectory of outgrowing shared Internet within the planning horizon.
+
+**Discovery questions**
+
+- What runs today—MPLS, SD-WAN, VPN over broadband, direct Internet? Where is the pain (upload vs download)?
+- Any recent DDoS, outage, or security events that changed expectations?
+- Do stakeholders need performance reporting for IT leadership or auditors?
+- How many public IPs and what types of endpoints (VPN concentrators, voice, guest, IoT)?
+
+**Collateral:** DIA vs SIA comparison sheet—**Sales Resources**.
+
+---
 
 ## Ethernet
 
-**E-Line (Ethernet Line)** is Layer 2, point-to-point or point-to-multipoint between Midwest locations, protected in the core. Order as **Ethernet Private Line (EPL)**—transparent, port-based, minimal frame manipulation, customer manages traffic inside frames—or **Ethernet Virtual Private Line (EVPL)**—VLAN-based, with GPC managing VLANs for point-to-point or point-to-multipoint.
+- **E-Line (Ethernet Line):** Layer 2, point-to-point or point-to-multipoint between Midwest locations, protected in the core. Order as **Ethernet Private Line (EPL)**—transparent, port-based, minimal frame manipulation, customer manages traffic inside frames—or **Ethernet Virtual Private Line (EVPL)**—VLAN-based, with GPC managing VLANs for point-to-point or point-to-multipoint.
+- **E-LAN (Ethernet LAN):** multipoint-to-multipoint—multiple UNIs in a mesh so any site can reach any other; GPC supports **EP-LAN** and **EVP-LAN** configurations.
 
-**E-LAN (Ethernet LAN)** is multipoint-to-multipoint: multiple UNIs in a mesh so any site can reach any other; GPC supports **EP-LAN** and **EVP-LAN** configurations.
+**Operational benefits (datasheet framing)**
 
-**Operational benefits (datasheet):** access to **29+ data centers and carrier hotels** across markets such as Omaha, Denver, Kansas City, Minneapolis, Des Moines, Chicago, Indianapolis and broader Midwest; speeds up to **100 Gbps** with predictable, low-latency transport; **MEF-certified** fiber network; **SLA** with **24x7/365 NOC** (Blair, NE); Network Performance Monitoring portal; optional proactive DDoS monitoring and mitigation.
+- Access to **29+ data centers and carrier hotels** across markets such as Omaha, Denver, Kansas City, Minneapolis, Des Moines, Chicago, Indianapolis, and the broader Midwest.
+- Speeds up to **100 Gbps** with predictable, low-latency transport.
+- **MEF-certified** fiber network; **SLA** with **24×7/365 NOC** (Blair, NE); Network Performance Monitoring portal; optional proactive DDoS monitoring and mitigation.
 
-**Ethernet battle card context:** Many deals are won against nationwide fiber Ethernet providers. Emphasize GPC’s **16,500-mile** fiber footprint, **distinct Midwest routes**, and **local** engagement—private managed Ethernet is isolated from the public Internet end-to-end, which supports security and predictable performance vs Internet VPN. Scalable bandwidth **10 Mbps to 10 Gbps**; positioning often contrasts **cost-per-bit** favorably vs legacy MPLS for many designs.
+**Competitor-neutral positioning**
 
-**Pain points Ethernet solves:** insufficient bandwidth or highly asymmetrical broadband degrading UX; Internet path variability (loss, delay, jitter) hurting real-time apps; security and segmentation needs between branches and hubs/DCs; low-throughput MPLS limiting apps; lack of redundant/diverse access exposing sites to fiber cuts.
+- Anchor on **customer outcomes**: predictable private paths, operational simplicity vs Internet VPN, scalable bandwidth, local engagement, and route diversity where designs require it.
+- When buyers mention **national carriers** or **legacy MPLS**, stay professional: compare on **routes, support model, cost-per-bit for the design, and who owns problem resolution**—validated through discovery and quoting, not slogans.
 
-**Discovery questions (from Ethernet battle card):** How many locations total? How do sites connect today—MPLS and/or Internet VPN? How much bandwidth per site? Hub-and-spoke to one data center vs **any-to-any (full mesh)**? Where are critical apps hosted—data center vs cloud? What are the most latency-sensitive workloads?
+**Pain points Ethernet often addresses**
 
-**Sources:**
-- **Managed Ethernet Product Sheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Ethernet/Managed Ethernet Product Sheet 060625.pdf`
-- **Ethernet Battle Card** — `/Users/ba/Documents/GPC Training Material/Ethernet Battle Card FINAL.pdf`
+- Insufficient bandwidth or highly asymmetrical broadband degrading UX.
+- Internet path variability (loss, delay, jitter) hurting real-time apps.
+- Security and segmentation needs between branches and hubs/DCs.
+- Low-throughput legacy private networks limiting modern apps.
+- Lack of redundant/diverse access exposing sites to single-fiber risk.
+
+**When to propose Ethernet**
+
+- Multi-site private connectivity (hub-and-spoke or mesh), DC extension, or “we’re tired of VPN over the public Internet” stories.
+- Latency-sensitive or high-throughput traffic between fixed endpoints where routed Internet is the bottleneck.
+- Designs where Layer 2 transparency or VLAN orchestration (EVPL) simplifies operations.
+
+**Discovery questions**
+
+- How many locations? How do sites connect today—MPLS and/or Internet VPN?
+- How much bandwidth per site today and at peak? Where are the bottlenecks?
+- Hub-and-spoke to one data center vs **any-to-any (full mesh)**?
+- Where are critical apps hosted—private DC, colo, or public cloud?
+- What are the most latency-sensitive workloads, and what happens when they degrade?
+
+**Collateral:** Managed Ethernet product sheet + Ethernet battle card—**Sales Resources**.
+
+---
 
 ## Wave
 
-**Wavelength services** use optical networking and **DWDM** to deliver highly reliable, low-jitter **Layer 1** transport between locations—ideal when the customer needs a secure, low-latency, scalable pipe for **data-intensive** workloads linking data centers, enterprise sites, and storage across the Midwest.
+- **What it is:** optical networking and **DWDM** for highly reliable, low-jitter **Layer 1** transport—private, dedicated pipe between locations for **data-intensive** workloads (e.g., DC-to-DC, large hub links) across the Midwest.
+- **Scale & support:** **10 Gbps to 400 Gbps** with service-level commitments and **24×7** support from the **Blair, NE NOC**.
 
-**Scale & support:** GPC supports Wavelength from **10 Gbps to 400 Gbps** with **service-level commitments** and **24×7** support from the **Blair, NE NOC**.
+**Features & benefits (collateral)**
 
-**Features & benefits (collateral):** optical **point-to-point**; **secure, private** network; **fully dedicated**, non-shared service; **predictable** performance; **flexible** bandwidth; **optional diverse routing**; **low latency**; **transparent** to higher-layer protocols such as Ethernet; standard handoff at **10, 100, or 400 Gbps** on **2-fiber single-mode** where designs require.
+- Optical **point-to-point**; **secure, private** network; **fully dedicated**, non-shared service.
+- **Predictable** performance; **flexible** bandwidth; **optional diverse routing**; **low latency**.
+- **Transparent** to higher-layer protocols such as Ethernet; standard handoff at **10, 100, or 400 Gbps** on **2-fiber single-mode** where designs require.
 
-**When to position Wave:** DC–DC or hub-to-hub **big pipes**; replication, storage sync, or latency-sensitive apps that outgrow routed Internet or even large Ethernet quotes; customers who speak in **optical** or **lambda** terms. **Discovery:** endpoints, distance/regions, current transport, growth to 100G/400G, diversity needs, and whether they need Layer 1 transparency vs routed IP services.
+**When to position Wave**
 
-**Cautions:** Wave is not a substitute for DIA/SIA Internet access—qualify whether they need **Internet** vs **private transport**. Pricing and market groups are **internal**—use the Wave folder in the pricing extract with your quoting team.
+- DC–DC or hub-to-hub **big pipes**; replication, storage sync, or latency-sensitive workloads that outgrow routed Internet or even large Ethernet in the design.
+- Buyers who speak in **optical** or **lambda** terms or who have already sized 100G/400G transport elsewhere.
 
-**Sources:**
-- **WAVE Product Sheet** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Wave/WAVE Product Sheet 120424.pdf`
-- **WAVE Market Groups (internal)** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (4)/Wave/202401 - WAVE Market Groups.pdf`
-- **WAVE Enterprise Pricing (internal)** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (4)/Wave/2025-07 WAVE Enterprise Pricing.pdf`
+**When not to position Wave**
+
+- Default answer for “we need better Internet” or branch guest Wi-Fi—those are **DIA/SIA** (and possibly SD-WAN) conversations first.
+- Any scenario where the requirement is public Internet access rather than private transport.
+
+**Discovery questions**
+
+- What are the two endpoints (regions, facilities, distance constraints)?
+- What transport do they use today, and where will bandwidth need to go (e.g., 100G/400G roadmap)?
+- Diversity and failover requirements—single path vs protected optical?
+- Do they need Layer 1 transparency vs routed IP services higher in the stack?
+
+**Internal coordination:** pricing and market-group materials are **internal**—partner with your **quoting team** and use approved sources on **Sales Resources**, not ad-hoc extracts.
+
+**Collateral:** Wave product sheet; internal market-group and pricing PDFs via **quoting team** / pricing library on **Sales Resources**.
+
+---
 
 ## Competitive
 
-Use competitive framing when **satellite**, **national fiber**, or **“good enough broadband”** shows up—especially rural or hard-to-serve addresses.
+Use competitive framing when **satellite**, **national fiber**, or **“good enough broadband”** appears—especially rural or hard-to-serve addresses.
 
-**Fiber vs satellite (Starlink example):** GPC **fiber-to-the-premises** delivers **symmetrical** speeds, **fiber-grade reliability** (not rain fade / dish snow / line-of-sight), **stable low latency** vs LEO satellite, **scalable** bandwidth, and **local** technicians plus **24/7/365 NOC** monitoring.
+**Fiber vs satellite (illustrative)**
 
-**Explore tactfully on satellite:** weather-related degradation; **latency and jitter** for POS, VoIP, cloud; **peak-time congestion**; hardware and **install** complexity. **GPC counter:** enterprise-grade reliability, consistent latency for cloud/VPN/real-time, **dedicated symmetrical** capacity, professional evaluation and installation.
+- **Outcome-based contrast:** enterprise fiber typically emphasizes **symmetrical** capacity, **fiber-grade reliability** vs weather/line-of-sight effects common with satellite, **stable low latency** vs variable satellite latency/jitter, **scalable** bandwidth, and **local** technicians plus **24/7/365 NOC** monitoring where offered.
+- **Explore tactfully (satellite):** weather-related degradation; latency and jitter for POS, VoIP, and cloud; peak-time congestion; hardware and install complexity—then map answers to **validated design** on fiber.
+- **GPC counter (professional):** reliability for real-time and cloud workloads, consistent latency for VPN and voice/video, dedicated symmetrical capacity where the design requires it, professional evaluation and installation.
 
-**Qualifying:** How many employees or devices depend on the site? Which systems are critical? **SLA** or uptime expectations? **Latency framing (battle card):** illustrative **fiber ~5–15 ms** vs **Starlink ~21–30 ms**; application thresholds for video, VoIP, POS—use to explain why speed tests don’t equal operational fit.
+**Competitor-neutral habits**
 
-**Broader competitive:** Ethernet battle card covers national fiber Ethernet competitors; keep discovery tight (routes, local support, cost-per-bit). Do not trash competitors—anchor on customer outcomes and validated design.
+- **Never** dismiss another provider without understanding the customer’s constraints (budget, geography, timeline).
+- Anchor on **their** apps, SLAs, and growth—then show how GPC’s fiber-rich approach fits **validated** requirements.
+- Use **illustrative** latency numbers (e.g., fiber vs satellite ranges) to explain **why** speed tests don’t equal operational fit—avoid declaring winners outside the customer’s context.
 
-**Sources:**
-- **Fiber vs Starlink battlecard** — `/Users/ba/Documents/GPC Training Material/Fiber vs Starlink Battlecard.pdf`
-- **Ethernet Battle Card** — `/Users/ba/Documents/GPC Training Material/Ethernet Battle Card FINAL.pdf`
+**Discovery questions**
+
+- How many employees or devices depend on the site? Which systems are non-negotiable if they fail?
+- What uptime or SLA expectations does the business assume—spoken or unspoken?
+- For retail or voice: what happens during peak hours or adverse weather?
+- What did they evaluate already, and what blocked or favored each option?
+
+**Broader competitive (Ethernet, national fiber)**
+
+- Keep discovery tight: routes, local support, cost-per-bit for the **specific** design, and operational ownership.
+- Win on **customer outcomes and validated design**, not on negative campaigning.
+
+**Collateral:** Fiber vs Starlink + Ethernet battle cards—**Sales Resources**.
+
+---
 
 ## Pricing (internal)
 
-Customer-facing quotes come from your standard tools and approvals. The extracted **pricing pack** folder holds DIA/SIA, Ethernet, Wave, and related market-group PDFs—**internal reference only** unless leadership publishes specific numbers for external use. Do not read training numbers aloud to customers.
+- Customer-facing quotes come from **standard tools and approvals**. Training PDFs are **context only**—never read unaudited numbers to a customer from a slide deck.
+- **Internal pricing:** DIA/SIA, Ethernet, Wave, market groups—use **quoting** workflows and **Sales Resources** (or your team’s approved pricing folder). Involve **AE/pricing** when scope or numbers are unclear.
 
-**Sources:**
-- **DIA & SIA / Ethernet / Wave pricing pack (folder)** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (4)`
+---
 
 ## Media (optional)
 
-*Guidde (reserved):* Guidde: qualifying bandwidth, access diversity, or quoting handoff.
+- *Guidde (reserved):* Guidde: qualifying bandwidth, access diversity, or quoting handoff.
