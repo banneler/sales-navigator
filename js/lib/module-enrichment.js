@@ -50,7 +50,7 @@ export function buildModuleReferenceFilesHtml(meta) {
   if (!rows) return '';
 
   return `
-      <section class="module-reference-files rounded-xl border border-slate-600 bg-slate-900 text-slate-100 shadow-lg overflow-hidden mb-4" aria-labelledby="module-ref-heading">
+      <section class="module-reference-files rounded-xl border border-slate-600 bg-slate-900 text-slate-100 shadow-lg overflow-hidden" aria-labelledby="module-ref-heading">
         <div class="px-3 py-2 border-b border-slate-700 bg-slate-950/80">
           <h3 id="module-ref-heading" class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Module Reference Files</h3>
         </div>

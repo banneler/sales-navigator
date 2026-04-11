@@ -114,7 +114,8 @@ export function renderModuleDocumentHtml(markdownSource) {
   const referenceFilesHtml = buildModuleReferenceFilesHtml(meta);
   const scenariosAsideInner = buildScenariosAsideHtml(meta);
   const knowledgeCarouselHtml = buildKnowledgeChecksCarouselHtml(meta);
-  const asideRailInner = [referenceFilesHtml, scenariosAsideInner].filter(Boolean).join('');
+  const hasRef = Boolean(referenceFilesHtml);
+  const hasScenarios = Boolean(scenariosAsideInner);
 
   const headerBlock = `
       <div class="flex flex-wrap items-start justify-between gap-4">
@@ -130,7 +131,30 @@ export function renderModuleDocumentHtml(markdownSource) {
       <div class="space-y-6 module-deep-dive">${sectionCardsHtml}</div>
       ${knowledgeCarouselHtml}`;
 
-  if (asideRailInner) {
+  if (hasRef || hasScenarios) {
+    let asideColumnHtml = '';
+    if (hasRef && hasScenarios) {
+      asideColumnHtml = `
+        <aside class="module-scenarios-aside w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] flex flex-col gap-3 lg:sticky lg:top-4 lg:self-start lg:max-h-[calc(100vh-6rem)] min-h-0">
+          <div class="module-reference-aside-slot shrink-0">
+            ${referenceFilesHtml}
+          </div>
+          <div class="module-scenarios-scroll flex-1 min-h-0 overflow-y-auto rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+            ${scenariosAsideInner}
+          </div>
+        </aside>`;
+    } else if (hasRef) {
+      asideColumnHtml = `
+        <aside class="module-scenarios-aside w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] lg:sticky lg:top-4 lg:self-start">
+          ${referenceFilesHtml}
+        </aside>`;
+    } else {
+      asideColumnHtml = `
+        <aside class="module-scenarios-aside w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white p-3 shadow-sm lg:sticky lg:top-4 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
+          ${scenariosAsideInner}
+        </aside>`;
+    }
+
     return `
     <div class="module-doc space-y-6">
       ${headerBlock}
@@ -138,9 +162,7 @@ export function renderModuleDocumentHtml(markdownSource) {
         <div class="module-layout-main w-full lg:flex-1 lg:min-w-0 space-y-6">
           ${mainColumnInner}
         </div>
-        <aside class="module-scenarios-aside w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white p-3 shadow-sm lg:sticky lg:top-4 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
-          ${asideRailInner}
-        </aside>
+        ${asideColumnHtml}
       </div>
     </div>`;
   }
