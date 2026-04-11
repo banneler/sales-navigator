@@ -3,6 +3,57 @@ id: "sales-process-and-salesforce"
 title: "Sales Process & Salesforce"
 summary: "How GPC runs deals in Salesforce: from leads and conversion through opportunities, GPC Solutions, approvals, and contracting with DocuSign. Drawn from Salesforce 101, the leads conversion quick reference, and the Salesforce\u2013DocuSign integration guide\u2014plus where to find weekly tips and video walkthroughs."
 sensitivity: "public"
+five_minute_summary: |
+  - Leads capture early interest; when you are ready to quote, **Convert Lead** creates or links the account, contact, and (usually) a new opportunity—exceptions need manager or admin alignment.
+  - Opportunities move through solution design, **GPC Solution** build and costing, approvals, then contracting; Closed/Won spawns projects per solution site; do not delete Closed/Lost history.
+  - Daily hygiene (tasks, pinned list views, clean contacts, Home dashboards) keeps handoffs and reporting trustworthy; Universal Search helps you find records quickly.
+  - DocuSign sends from Salesforce for convenience: set **Contract Signer** on the GPC Solution early, use Conga then **Send to DocuSign**, and keep recipients as Salesforce contacts.
+
+knowledge_checks:
+  - question: "When converting a lead in normal circumstances, what should you almost always do?"
+    options:
+      - "Create a new opportunity as part of conversion"
+      - "Check 'Do not create an opportunity upon conversion'"
+      - "Delete the lead record after conversion"
+    correct_index: 0
+    explanation: "Standard practice is to create a new opportunity when converting; skipping opportunity creation is for rare exceptions cleared with sales management or the admin."
+
+  - question: "For DocuSign from a GPC Solution, when is it problematic to add or rely on the Contract Signer field?"
+    options:
+      - "When the solution is already in Approval Pending (and adding late can behave differently by stage)"
+      - "Only when the customer uses Gmail"
+      - "Never; Contract Signer is optional for every stage"
+    correct_index: 0
+    explanation: "Best practice is to set Contract Signer when you create the solution; you cannot add contract signer while the solution is in Approval Pending, and late adds may not behave the same."
+
+  - question: "After an opportunity is Closed/Lost, what does process guidance say about the Salesforce record?"
+    options:
+      - "Leave the data in place; the opportunity may return later"
+      - "Delete the opportunity to keep the pipeline clean"
+      - "Archive it outside Salesforce only"
+    correct_index: 0
+    explanation: "Closed/lost opportunities should not be deleted—history and context matter if the deal revives."
+
+scenarios:
+  - title: "Employee business lead referral after conversion"
+    situation: |
+      You converted a lead that came through the employee business lead referral program. The new opportunity is open and you are updating stages.
+    choices:
+      - label: "Skip referral fields; they are only for reporting to HR."
+        feedback: "Wrong. Verify referral fields on the opportunity (lead source, referred by, or partner referral fields as applicable) and keep the referrer updated on status and eligibility."
+
+      - label: "Verify referral fields on the opportunity and keep the referrer informed on status and eligibility."
+        feedback: "Correct. Referral data and communication protect the program and the relationship."
+
+  - title: "First DocuSign envelope from Conga"
+    situation: |
+      You merged a Conga document and want to send it for signature from the GPC Solution. The Contract Signer lookup was never populated and the solution is now **Approval Pending**.
+    choices:
+      - label: "Add Contract Signer now and send immediately."
+        feedback: "You cannot add Contract Signer while the solution is in Approval Pending; you need to address stage/signing workflow per training rather than forcing the field in that state."
+
+      - label: "Pause and fix stage/signing prerequisites per the DocuSign integration guide (e.g. Contract Signer timing) before sending."
+        feedback: "Right. Set Contract Signer early in the lifecycle; Approval Pending blocks adding Contract Signer, so align with process before Send to DocuSign."
 ---
 
 ## Lead and opportunity lifecycle

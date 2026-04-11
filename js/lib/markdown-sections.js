@@ -1,6 +1,7 @@
 import { marked } from 'https://esm.sh/marked@15.0.12';
 import DOMPurify from 'https://esm.sh/dompurify@3.2.2';
 import { parseFrontMatter } from './front-matter.js';
+import { buildEnrichmentHtml } from './module-enrichment.js';
 
 marked.use({ gfm: true, breaks: true });
 
@@ -104,6 +105,7 @@ export function renderModuleDocumentHtml(markdownSource) {
 
   const sections = splitMarkdownByH2(body || '');
   const sectionCardsHtml = renderSectionsToHtml(sections);
+  const enrichmentHtml = buildEnrichmentHtml(meta);
 
   return `
     <div class="space-y-6">
@@ -114,6 +116,7 @@ export function renderModuleDocumentHtml(markdownSource) {
         </div>
         <div class="flex-shrink-0">${badge}</div>
       </div>
+      ${enrichmentHtml}
       <div class="space-y-6">${sectionCardsHtml}</div>
     </div>
   `;

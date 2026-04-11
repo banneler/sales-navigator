@@ -3,6 +3,51 @@ id: "product-connectivity"
 title: "Connectivity & Access"
 summary: "Training organized by topic: access strategy, DIA vs SIA, Managed Ethernet, Wavelength (Wave), competitive positioning, and internal pricing references."
 sensitivity: "public"
+five_minute_summary: |
+  - **Access** frames how traffic reaches the customer: **SIA** for flexible, cost-sensitive shared access; **DIA** for symmetrical, dedicated paths, richer DDoS support, and NOC-style operations.
+  - **Managed Ethernet** is private **Layer 2** site-to-site transport (E-Line/E-LAN); **Wave** is **Layer 1** optical for high-capacity DC/hub links—not a substitute for Internet access.
+  - **DIA vs SIA** differs on scale (e.g. SIA up to ~2 Gbps symmetrical in the comparison vs DIA to **100 Gbps**), static IPs, latency posture, diversity options, and support model—qualify with apps, upload needs, and outages.
+  - **Competitive**: contrast **fiber** to satellite on reliability, latency, and weather; keep discovery tight and avoid trashing competitors—anchor on validated design and outcomes.
+  - **Pricing PDFs** in training are **internal**; customer quotes come from standard tools and approved numbers.
+knowledge_checks:
+  - question: "When should you lead with Dedicated Internet Access (DIA) over Standard Internet Access (SIA)?"
+    options:
+      - "Whenever the customer wants the cheapest option regardless of workload."
+      - "When they need symmetrical heavy use, SLA-style operations, diversity, stronger DDoS visibility, or have outgrown shared/best-effort access."
+      - "Only when they have no fiber at the site."
+    correct_index: 1
+    explanation: "The module positions DIA for performance, operations, symmetry, and richer security/support—not for minimum cost."
+  - question: "What is Managed Ethernet primarily for?"
+    options:
+      - "Replacing all voice systems with UC only."
+      - "Private Layer 2 connectivity between sites (not Internet breakout), with EPL/EVPL and E-LAN options."
+      - "Consumer-grade Wi-Fi in the office."
+    correct_index: 1
+    explanation: "Ethernet is private site-to-site transport; Internet access is a different conversation (DIA/SIA)."
+  - question: "What is Wavelength (Wave) best positioned for?"
+    options:
+      - "Small-branch guest Wi-Fi only."
+      - "Layer 1 optical, high-capacity point-to-point between strategic endpoints (e.g., DC/hub), not as a substitute for DIA/SIA Internet."
+      - "Email hosting for ten users."
+    correct_index: 1
+    explanation: "Wave is big-pipe optical transport; qualify Internet vs private transport and involve quoting teams for internal pricing."
+scenarios:
+  - title: "Branch complains about VPN and video over ‘business broadband’"
+    situation: |
+      A site uses **shared Internet** and sees **jitter and upload congestion** for **VoIP and cloud apps**. Budget is tight but the business is growing.
+    choices:
+      - label: "Automatically quote Wave between every site."
+        feedback: "Wrong fit: Wave is Layer 1 optical for large hub/DC pipes—here you likely need DIA vs SIA and possibly Ethernet/SD-WAN discovery, not Wave by default."
+      - label: "Qualify SIA vs DIA (symmetry, latency, DDoS, support), uplink pain, and whether private Ethernet fits site-to-site needs."
+        feedback: "Strong: follows DIA vs SIA guidance and discovery cues before over-specifying transport."
+  - title: "Prospect compares GPC fiber to satellite for stores"
+    situation: |
+      They mention **Starlink** or satellite for **rural** sites and want **POS and VoIP** to work reliably.
+    choices:
+      - label: "Dismiss satellite without asking any questions."
+        feedback: "Too sharp: explore weather, latency, jitter, and peak-time behavior tactfully, then contrast fiber reliability and symmetrical enterprise-grade paths."
+      - label: "Explore weather, latency, and congestion impacts; position fiber reliability, stable low latency, local support, and scalable symmetrical capacity."
+        feedback: "Strong: matches the fiber vs satellite battlecard themes while staying professional."
 ---
 
 ## Access

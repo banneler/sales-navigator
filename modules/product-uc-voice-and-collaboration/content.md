@@ -3,6 +3,56 @@ id: "product-uc-voice-and-collaboration"
 title: "UC, Voice & Collaboration"
 summary: "Sections: UC, Teams attach, Contact Center, Voice, and internal pricing discipline."
 sensitivity: "public"
+five_minute_summary: |
+  - **UC:** One platform for PBX, messaging, SMS/MMS, meetings with AI recap, optional Contact Center, and files—differentiate plans (e.g., Unite Enterprise vs lower tiers on storage) and **Triple Guard Security™**; confirm archiving beyond **30 days** with the account team.
+  - **Teams attach:** Keep Teams as the hub; GPC cloud PBX for enterprise voice from the Teams dialer; **Microsoft Teams licenses** and **Phone System** are **separate** purchases—set joint licensing expectations early.
+  - **Contact Center:** **CC Pro** / **CC Elite** concurrent seats, queues, supervisor tools; digital channels and bursting rules need specialist/AE alignment—not napkin math.
+  - **Voice (non-UC):** **SIP**, **PRI**, **POTS** with clear discovery on PBX, paths, and specialty lines; **pricing books are internal**—never email rates from memory.
+knowledge_checks:
+  - question: "For Microsoft Teams integration, what must the customer understand about licensing?"
+    options:
+      - "GPC UC includes all Microsoft Teams and Phone System entitlements in one SKU"
+      - "Microsoft Teams licenses and Phone System are purchased separately from GPC\u2019s cloud PBX story"
+      - "Teams Phone is never used with GPC; only SIP trunks apply"
+    correct_index: 1
+    explanation: "The module states Teams and Phone System are purchased **separately**\u2014set expectations on the joint licensing picture."
+  - question: "What is the baseline call/chat archiving position you should state before quoting years of retention?"
+    options:
+      - "Free unlimited retention for all tiers on day one"
+      - "Free **30-day** retention baseline; longer retention is stepped\u2014confirm tier with the account team"
+      - "Archiving is not offered on the UC platform"
+    correct_index: 1
+    explanation: "Collateral cites free **30-day** retention baseline; longer retention is stepped\u2014confirm with the account team vs quoting years on a first call."
+  - question: "Contact Center \u201cbursting\u201d or elastic concurrency should be handled how in customer conversations?"
+    options:
+      - "Quote burst seats from memory using a simple spreadsheet"
+      - "Treat bursting/elastic rules as internal sizing aligned with AE/pricing\u2014not napkin math"
+      - "Promise unlimited concurrent agents for a flat monthly fee"
+    correct_index: 1
+    explanation: "Bursting/elastic rules are **internal** sizing\u2014coordinate with AE/pricing rather than improvising."
+scenarios:
+  - title: "Customer wants Teams Phone and GPC voice this quarter"
+    situation: |
+      A mid-market firm uses Teams for chat and meetings. They want business voice from the Teams dialer next quarter
+      and assume one invoice covers Microsoft and GPC. They have not budgeted Phone System.
+    choices:
+      - label: "Confirm that a single GPC SKU replaces all Microsoft licensing."
+        feedback: "Incorrect: Teams and Phone System are separate from GPC\u2019s PBX positioning\u2014clarify the joint licensing picture."
+      - label: "Explain Teams + Phone System prerequisites, separate Microsoft purchases, and involve UC/Teams architects for coexistence and porting."
+        feedback: "Correct: matches Teams attach discovery and handoff guidance."
+      - label: "Tell them to abandon Teams and use only the UC softphone."
+        feedback: "Too rigid: the motion is Teams as hub plus GPC enterprise PBX, not forcing a platform swap on day one."
+  - title: "Contact Center seat count on a first call"
+    situation: |
+      A prospect asks for **CC Elite** with digital channels and wants a firm concurrent seat count and burst policy
+      before you've validated volume, channels, or WFM. They want an email with pricing today.
+    choices:
+      - label: "Email internal rate tables from the pricing folder to win speed."
+        feedback: "Violates internal discipline: pricing books are not for external email from memory; involve AE/pricing."
+      - label: "Stay in discovery on volume, channel mix, SLAs, and integrations; hand off concurrent licensing, add-ons, and bursting to product specialists and AE/pricing."
+        feedback: "Correct: CC concurrent licensing and bursting need AE alignment; use datasheets for capability only."
+      - label: "Quote CC Pro and Elite interchangeably at the same price."
+        feedback: "Risky: Elite extends capability—confirm current matrix before commitments."
 ---
 
 ## UC

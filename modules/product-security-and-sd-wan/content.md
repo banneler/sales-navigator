@@ -3,6 +3,50 @@ id: "product-security-and-sd-wan"
 title: "Security & SD-WAN"
 summary: "Structured as Security (edge + DDoS) and SD-WAN, with guardrails, handoffs, and internal pricing references."
 sensitivity: "public"
+five_minute_summary: |
+  - **Managed Firewall / MNS**: FortiGate-based managed edge protection plus broader **Managed Network Security** (customer-owned firewall mgmt, SIEM, assessments, email security)—match the scope to buyer needs.
+  - **DDoS**: **Proactive** includes **24×7** automated monitoring and mitigation; **on-demand** has **weekday business-hours** mitigation on that SKU—**qualify explicitly** so expectations match the product.
+  - **SD-WAN (VeloCloud)**: Multi-site, at least one site on **GPC fiber**, overlay to improve cloud/SaaS breakout and reduce backhaul—**optional** next-gen security features are not assumed in base; confirm in every quote.
+  - **Handoffs**: Engage SE/security early for complex routing, HA, BGP/ASN DDoS designs, or regulated environments; **internal pricing** PDFs are not customer-facing until approved.
+knowledge_checks:
+  - question: "How does DDoS Protection proactive differ from on-demand for mitigation windows?"
+    options:
+      - "There is no difference; both are always 24×7 mitigation."
+      - "Proactive includes 24×7 automated monitoring and mitigation; on-demand mitigation on the on-demand SKU is weekdays 8–17—qualify so customers don’t assume 24×7."
+      - "On-demand always includes faster mitigation than proactive."
+    correct_index: 1
+    explanation: "The module warns not to blur proactive vs on-demand—on-demand has defined weekday mitigation hours on that SKU."
+  - question: "What must be true for the standard SD-WAN positioning in this module?"
+    options:
+      - "Single home office on any broadband with no GPC sites."
+      - "At least one site on GPC fiber and a multi-site WAN footprint (including possible off-net U.S. branches)."
+      - "DDoS proactive service on every circuit automatically."
+    correct_index: 1
+    explanation: "SD-WAN is framed for multi-site designs with at least one GPC fiber site; confirm optional security add-ons in quotes."
+  - question: "What should you avoid promising on SD-WAN without SE review?"
+    options:
+      - "That every advanced security feature on collateral is in the base SKU, or feature parity vs any competitor SD-WAN without validation."
+      - "That MPLS migration always finishes in one weekend with zero planning."
+      - "Both of the above."
+    correct_index: 2
+    explanation: "The module lists multiple guardrails: don’t assume IDS/IPS or all security features in base, unlimited app-ID accuracy, or overnight MPLS replacement without migration planning."
+scenarios:
+  - title: "Customer wants ‘24/7 DDoS’ but budgets for on-demand"
+    situation: |
+      They ask for **always-on mitigation** and picked the **on-demand** DDoS option based on price. You need to set expectations before signature.
+    choices:
+      - label: "Tell them on-demand is the same as proactive for mitigation timing."
+        feedback: "Risky: mis-sets expectations. Clarify proactive vs on-demand mitigation windows and document what they are buying."
+      - label: "Explain proactive vs on-demand mitigation windows, confirm business-hour constraints on on-demand, and align SKU to their uptime needs."
+        feedback: "Strong: matches the module’s explicit qualify rule and protects the customer and GPC."
+  - title: "RFP assumes full next-gen firewall in base SD-WAN"
+    situation: |
+      Procurement pasted **IDS/IPS and advanced firewall** bullets into the RFP and assumes they are **included in base SD-WAN** at one price.
+    choices:
+      - label: "Bid base SD-WAN and assume all security lines are included."
+        feedback: "Incorrect: optional add-ons may apply—confirm scope with SE/quoting and the product sheet, don’t assume base includes every security feature."
+      - label: "Review optional NGFW/IDS lines with SE, map RFP lines to quoted SKUs, and document what is in base vs add-on."
+        feedback: "Strong: follows the module’s ‘do not promise’ guidance and drives a clean handoff."
 ---
 
 ## Security

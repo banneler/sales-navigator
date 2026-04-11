@@ -1,4 +1,5 @@
 import { renderModuleDocumentHtml } from '../lib/markdown-sections.js';
+import { bindModuleInteractions } from '../lib/module-interactions.js';
 
 /**
  * @param {HTMLElement} container
@@ -6,4 +7,5 @@ import { renderModuleDocumentHtml } from '../lib/markdown-sections.js';
  */
 export default function renderMarkdownModule(container, markdownSource) {
   container.innerHTML = renderModuleDocumentHtml(markdownSource);
+  bindModuleInteractions(container);
 }

@@ -1,0 +1,17 @@
+---
+description: Sales-Navigator module YAML — 5-minute summary, knowledge checks, scenarios
+globs: modules/*/content.md
+alwaysApply: false
+---
+
+# Module `content.md` enrichment
+
+Each module’s front matter may include (keep `id`, `title`, `summary`, `sensitivity`):
+
+- **`five_minute_summary`**: block scalar (`|`) with short markdown bullets for a ~5-minute read.
+- **`knowledge_checks`**: list of objects with `question`, `options` (3 strings), `correct_index` (0-based), `explanation` (plain text).
+- **`scenarios`**: list of objects with `title`, `situation` (`|` markdown), `choices` with `label` and `feedback` (strings; feedback can use light markdown).
+
+The app renders these above the `##` section cards. Invalid YAML breaks the admin preview and push validation.
+
+Module slugs (see `modules-manifest.json`): `sales-rules-of-engagement`, `sales-process-and-salesforce`, `sales-operations-and-approvals`, `portfolio-and-business-capabilities`, `product-connectivity`, `product-security-and-sd-wan`, `product-cloud-wifi-and-backup`, `product-uc-voice-and-collaboration`, `competitive-positioning`.

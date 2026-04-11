@@ -3,6 +3,57 @@ id: "sales-rules-of-engagement"
 title: "Sales Rules of Engagement"
 summary: "Official GPC sales governance: Salesforce as system of record, account ownership and activity windows for general vs strategic accounts, inbound lead follow-up, and how to request transfers or escalate edge cases."
 sensitivity: "public"
+five_minute_summary: |
+  - Salesforce is the system of record; search before you create accounts or contacts to avoid duplicates and ownership fights.
+  - General accounts have activity windows (e.g. customer 121+ days, prospect 61+ days) so idle records can be worked by others; Strategic Accounts and E-Rate/USAC entities follow different rules.
+  - Inbound leads assigned by sales or marketing must get first contact **and** a logged touch within 5 business days or they may be reassigned (not the same clock as self-sourced prospecting).
+  - Transfers and edge cases go through your manager and sales leadership in writing after you align with the current owner—do not reassign unilaterally.
+
+knowledge_checks:
+  - question: "Before creating a new account or contact in Salesforce, what should you do first?"
+    options:
+      - "Search Salesforce by name and address to avoid duplicates"
+      - "Create the account and merge duplicates later"
+      - "Ask IT to pre-approve every new record"
+    correct_index: 0
+    explanation: "The ROE requires searching first so one entity maps to one account and contacts are not duplicated across records."
+
+  - question: "For an inbound lead assigned by sales or marketing, within how many business days should first contact be made and logged?"
+    options:
+      - "5 business days"
+      - "60 calendar days"
+      - "121 business days"
+    correct_index: 0
+    explanation: "Assigned inbound leads can be reassigned if first contact is not made and logged within five business days; that rule does not apply to self-sourced leads."
+
+  - question: "Who ultimately maintains and communicates changes to the official Strategic Accounts list?"
+    options:
+      - "Sales Managers and the VP of Sales"
+      - "Individual account executives only"
+      - "The Salesforce admin team alone"
+    correct_index: 0
+    explanation: "Strategic list changes are owned by Sales Managers and the VP of Sales and are communicated from the official repository—informal lists are not authoritative."
+
+scenarios:
+  - title: "Working a customer account with no logged activity for 130 days"
+    situation: |
+      You found a **Customer** account that shows no logged activity for more than 121 days. The account is **not** on the Strategic Accounts list and is not an E-Rate/USAC-funded entity called out in the ROE. You want to start outreach this week.
+    choices:
+      - label: "Start calling and emailing without contacting the listed owner first."
+        feedback: "Even when windows may allow working the record, reach out to the listed owner first—relationships and context prevent conflict; leadership uses Salesforce to resolve disputes."
+
+      - label: "Coordinate with the current owner or follow ROE transfer steps before treating the account as yours."
+        feedback: "Correct. Align with the owner or use approved transfer/escalation paths; do not reassign or bypass collaboration when ownership is unclear."
+
+  - title: "Inbound lead from marketing sits untouched"
+    situation: |
+      Marketing assigned you an inbound lead on Monday. It is now the following Tuesday—six business days later—and you have not logged any contact in Salesforce. Another rep asks to work it.
+    choices:
+      - label: "The lead is still exclusively yours because you were busy; notes in email count as logged activity."
+        feedback: "Notes alone do not replace logged activity in Salesforce for ROE purposes; assigned inbound leads have a five business day expectation for first contact and logging."
+
+      - label: "Expect the lead may be reassigned per ROE; log first contact immediately going forward and clarify with your manager if it was already moved."
+        feedback: "Right. First contact must be made and logged within five business days for assigned inbound leads; after that window, reassignment is allowed under the ROE."
 ---
 
 ## Purpose

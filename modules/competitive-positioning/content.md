@@ -3,6 +3,56 @@ id: "competitive-positioning"
 title: "Competitive Positioning"
 summary: "Training: how to run a disciplined competitive conversation\u2014discovery before claims, competitor-to-response mapping, landmines, proof-point patterns, and when to engage SE/PM. Sections mirror metro, fiber vs satellite, M&A, and technology battle-card playbooks."
 sensitivity: "public"
+five_minute_summary: |
+  - **Framework:** Discovery before claims; map **competitor → GPC response** with business risk, customer reality, and proof you can support (local teams, NOC, redundancy, portfolio)—avoid generic superiority.
+  - **Landmines:** No personal attacks; don't cite battle-card stats externally without confirming currency; avoid absolutes; pull **SE/PM** early for architecture-heavy deals.
+  - **Metro / fiber vs LEO / M&A:** Tie rebuttals to outcomes (uptime, latency, support model, total cost of downtime)—not price or speed tests alone; keep acquisition talk factual and customer-centric.
+  - **Technology cards (e.g., SD-WAN):** Pain → GPC wrap → qualifying questions → proof; verify awards and ratings before citing.
+knowledge_checks:
+  - question: "Before positioning against a competitor\u2019s strength, what should you do first?"
+    options:
+      - "Lead with your best battle-card stat regardless of their stack"
+      - "Run discovery on applications, sites, and outcomes so claims map to their stated needs"
+      - "Assume their network is always inferior to yours"
+    correct_index: 1
+    explanation: "The framework is **discovery before claims**\u2014map strengths and weaknesses only after you understand their reality."
+  - question: "Which behavior is a stated \u201clandmine\u201d to avoid?"
+    options:
+      - "Citing battle-card statistics externally without confirming currency with marketing"
+      - "Acknowledging where a competitor is legitimately strong"
+      - "Using qualifying questions to earn a technical conversation"
+    correct_index: 0
+    explanation: "Do not cite battle-card stats externally without confirming currency; acknowledging competitor strengths and using discovery are encouraged."
+  - question: "When should you engage SE early?"
+    options:
+      - "Only after the customer signs an order"
+      - "For multi-site WAN/SD-WAN, integrated security, hybrid on/off-net, regulated workloads, fiber feasibility, or RFP-style validation"
+      - "Never\u2014sales should own all topology design alone"
+    correct_index: 1
+    explanation: "The module lists WAN/SD-WAN, security, hybrid designs, regulated workloads, fiber feasibility, and RFP validation as reasons to pull SE early."
+scenarios:
+  - title: "Starlink vs fiber at a rural clinic"
+    situation: |
+      A prospect loves **Starlink** marketing and wants the lowest monthly cost for VPN and telehealth.
+      They say fiber is "overkill" and ask you to prove you are faster on a speed test only.
+    choices:
+      - label: "Dismiss satellite and refuse to discuss their interest."
+        feedback: "Too blunt: acknowledge coverage, then reframe to reliability, latency, weather, and business apps—per fiber vs LEO section."
+      - label: "Acknowledge LEO coverage; qualify latency-sensitive apps, SLA needs, and weather/obstruction risk; position fiber for predictable performance and local support."
+        feedback: "Correct: discovery-led response using qualifying lines and fiber strengths without a speed-test-only debate."
+      - label: "Quote battle-card latency numbers as guaranteed contractual SLAs."
+        feedback: "Risky: confirm stats and scope before external claims—landmine on uncited battle-card use."
+  - title: "Competitor drops a low price in a multi-site deal"
+    situation: |
+      A national entrant undercuts your proposal on headline price. The CFO asks why they should pay more for GPC
+      on the spot in a group meeting.
+    choices:
+      - label: "Attack the competitor's CEO and call their network unreliable."
+        feedback: "Violates landmines: no personal disparagement; stay factual and customer-centric."
+      - label: "Tie the conversation to fit, operational reliability, local support, redundancy, and total cost of downtime—using only proof that matches prior discovery."
+        feedback: "Correct: counter price-alone narratives with outcomes and proof-point patterns from the framework."
+      - label: "Match their price verbally to keep the meeting moving."
+        feedback: "Avoid improvising commercial commitments; reframe value and engage AE/leadership through proper channels."
 ---
 
 ## Framework: disciplined competitive conversations

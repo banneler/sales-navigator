@@ -3,6 +3,50 @@ id: "portfolio-and-business-capabilities"
 title: "Portfolio & Business Capabilities"
 summary: "How to tell the GPC business-capability story: network foundation, layered services, and where to go for product-level collateral."
 sensitivity: "public"
+five_minute_summary: |
+  - Lead with **outcomes** (uptime, growth, cloud performance), not SKU lists—GPC is positioned as a **partner** with local teams, monitoring, and Midwest IP reach.
+  - Map any deal to **layers**: access (fiber + backup) → WAN (Ethernet/SD-WAN) → **security** → **UC, Cloud Connect, Wi-Fi, Video**—so customers see a system, not a menu.
+  - Anchor proof on the **network story**: fiber-first access, Tier-1 and IX relationships, and paths tuned for efficient routes to cloud, SaaS, and end users.
+  - Run discovery on **locations, critical apps, uptime tolerance**, and cloud/voice moves; then summarize the fit as one sentence before pointing to datasheets.
+knowledge_checks:
+  - question: "What is the best opening for a portfolio conversation?"
+    options:
+      - "Lead with a full list of product SKUs and speeds."
+      - "Lead with business outcomes and GPC as a partner with a layered network story."
+      - "Start only with pricing and contract terms."
+    correct_index: 1
+    explanation: "The module emphasizes outcomes and partnership first; layer the stack (access → WAN → security → apps) and save SKU detail for follow-up collateral."
+  - question: "How should you describe how GPC products fit together?"
+    options:
+      - "As unrelated add-ons the customer picks from a catalog."
+      - "As layers—access, WAN, security, then collaboration and cloud adjacency—so it reads as one system."
+      - "As only Internet access with no connection to other services."
+    correct_index: 1
+    explanation: "Use the layered portfolio map (foundation through apps) so the customer sees integrated design, not a random menu."
+  - question: "Where should you send someone for product-specific datasheets after this storyline?"
+    options:
+      - "Only the Business Capability PDF; ignore other folders."
+      - "The deep collateral library (extracted OneDrive tree) organized by product, while this module stays the narrative spine."
+      - "Generic web search only."
+    correct_index: 1
+    explanation: "The module points to the Business Capability deck for the story and the extracted library for per-product evidence."
+scenarios:
+  - title: "Retail chain, cloud POS, hates ‘just another ISP’"
+    situation: |
+      A multi-site retailer wants reliable connectivity and says all carriers sound the same. They care about **uptime**, **local support**, and **paths to cloud POS and SaaS**.
+    choices:
+      - label: "Pitch a SKU list and lowest price first."
+        feedback: "Weak: you sound like a commodity. Open with outcomes, Midwest IP reach, monitoring, and local teams—then map layers to their sites."
+      - label: "Open with outcomes, partnership, and layered access + WAN + security + apps; offer collateral for proof."
+        feedback: "Strong: matches the executive storyline and portfolio map, and sets up discovery on sites and critical workloads."
+  - title: "CFO joins the call halfway through"
+    situation: |
+      You were walking through services and the CFO asks **“Why GPC vs anyone else?”** in one sentence before they drop off.
+    choices:
+      - label: "Answer with fiber miles and technical jargon only."
+        feedback: "Incomplete: add the business angle—competitive connectivity through a resilient Midwest network, partnership, and paths tuned for cloud/SaaS."
+      - label: "Summarize: reliable Midwest foundation, fiber-first access, layered services, and accountable local support—then offer the capability deck."
+        feedback: "Strong: ties network proof points to partnership and gives them a concrete next artifact."
 ---
 
 ## Executive storyline

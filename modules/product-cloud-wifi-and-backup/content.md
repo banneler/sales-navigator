@@ -3,6 +3,56 @@ id: "product-cloud-wifi-and-backup"
 title: "Cloud, Wi-Fi & Backup"
 summary: "Three pillars\u2014Cloud, Wi\u2011Fi, and Backup\u2014with collateral references and training shortcuts."
 sensitivity: "public"
+five_minute_summary: |
+  - **Cloud:** Position **Cloud Connect** plus **Managed Ethernet** as a private, predictable path to major clouds and SaaS—not Internet-only— and align scope with SE for cross-connects and diversity.
+  - **Wi-Fi:** Sell managed lifecycle, guest vs corporate SSIDs, security stack (firewall, IDS/IPS), and analytics; defer AP counts and density to engineering until after survey.
+  - **Backup:** **5G Wireless Internet Backup** with automatic failover/fail-back, NOC monitoring, optional battery, and app prioritization; set honest expectations on speed tiers and deprioritization.
+  - Use datasheets and battle cards for proof points; **.url** shortcuts in the extract folder point to formal product training when on-network.
+knowledge_checks:
+  - question: "What best describes Cloud Connect\u2019s primary value story in discovery?"
+    options:
+      - "A best-effort public Internet link sized for peak cloud usage"
+      - "A direct, private connection into GPC\u2019s cloud ecosystem with Managed Ethernet as the on-ramp"
+      - "Customer-owned long-haul fiber to every cloud region"
+    correct_index: 1
+    explanation: "Collateral positions a **direct, private** path via Cloud Connect with **Managed Ethernet** as the on-ramp versus relying on public Internet only."
+  - question: "Before quoting access point counts on Wi\u2011Fi, what should you do?"
+    options:
+      - "Promise a standard density from the first call to move the deal"
+      - "Defer AP counts and density assumptions to engineering after site survey"
+      - "Match the competitor\u2019s AP count from their proposal"
+    correct_index: 1
+    explanation: "The module cautions that site survey and density assumptions belong with engineering\u2014don\u2019t promise AP counts from a first call."
+  - question: "For 5G Wireless Internet Backup, what is a fair caution to set with the customer?"
+    options:
+      - "Speeds are identical at every site regardless of RF environment"
+      - "Performance can vary by location; tiered speeds and deprioritization may apply per collateral"
+      - "Battery runtime is unlimited on all SKUs"
+    correct_index: 1
+    explanation: "Be honest that **5G** performance varies by site and collateral notes **tiered speeds** after thresholds and possible deprioritization when busy."
+scenarios:
+  - title: "Retail chain wants cloud ERP and guest Wi-Fi"
+    situation: |
+      A multi-site retailer is moving ERP to the cloud and wants guest Wi-Fi with a branded portal.
+      They ask you to guarantee twelve indoor APs per store on the first call so they can budget hardware.
+    choices:
+      - label: "Quote twelve APs per store to match their budget request."
+        feedback: "Risky: AP counts depend on survey and density. Defer counts to engineering and keep the conversation on outcomes, SSIDs, and managed lifecycle."
+      - label: "Explain that AP counts follow a site survey and engineering-sized design; offer discovery on coverage, guests vs corporate, and compliance."
+        feedback: "Correct: the module says not to promise AP counts from a first call—anchor on managed design and hand off sizing."
+      - label: "Decline Wi-Fi and only sell DIA."
+        feedback: "Too narrow: you can still position Managed Wi-Fi with proper engineering handoff rather than walking away."
+  - title: "Branch needs uptime when fiber fails"
+    situation: |
+      A branch says their fiber went down last month and they had no failover. They want "full speed 5G forever"
+      with no caveats for a board presentation.
+    choices:
+      - label: "Agree to unlimited headline speed at every site with no variability."
+        feedback: "Misaligned: be transparent that 5G performance varies by site and commercial terms may include tiered speeds."
+      - label: "Position automatic failover, NOC monitoring, and app prioritization; explain location-dependent speeds and confirm battery and data terms with quoting."
+        feedback: "Correct: match proof points (failover, NOC, prioritization, optional battery) while setting realistic expectations on speed and tiers."
+      - label: "Recommend only redundant fiber and skip wireless backup."
+        feedback: "Incomplete: backup wireless is exactly for fiber outage scenarios; pair transport diversity with honest 5G messaging."
 ---
 
 ## Cloud

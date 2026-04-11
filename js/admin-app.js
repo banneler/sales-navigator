@@ -1,6 +1,7 @@
 import { getFile, putTextFile } from './lib/github-client.js';
 import { parseFrontMatter } from './lib/front-matter.js';
 import { renderModuleDocumentHtml } from './lib/markdown-sections.js';
+import { bindModuleInteractions } from './lib/module-interactions.js';
 
 // Hardcoded — same pattern as Enterprise-Proposals admin (GITHUB_OWNER / GITHUB_REPO)
 const GITHUB_OWNER = 'banneler';
@@ -36,6 +37,7 @@ async function main() {
     previewTimer = window.setTimeout(() => {
       if (previewEl && editor) {
         previewEl.innerHTML = renderModuleDocumentHtml(editor.value);
+        bindModuleInteractions(previewEl);
       }
     }, 250);
   }
@@ -65,7 +67,10 @@ async function main() {
       );
       if (editor) editor.value = content;
       if (shaField) shaField.value = sha;
-      if (previewEl) previewEl.innerHTML = renderModuleDocumentHtml(content);
+      if (previewEl) {
+        previewEl.innerHTML = renderModuleDocumentHtml(content);
+        bindModuleInteractions(previewEl);
+      }
       showToast('Loaded from GitHub.');
     } catch (e) {
       console.error(e);
@@ -177,7 +182,10 @@ async function main() {
         `Update ${path} via Sales-Navigator admin`
       );
       if (shaField && newSha) shaField.value = newSha;
-      if (previewEl) previewEl.innerHTML = renderModuleDocumentHtml(mdString);
+      if (previewEl) {
+        previewEl.innerHTML = renderModuleDocumentHtml(mdString);
+        bindModuleInteractions(previewEl);
+      }
       showToast('Pushed to GitHub.');
     } catch (e) {
       console.error(e);

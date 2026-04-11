@@ -3,6 +3,57 @@ id: "sales-operations-and-approvals"
 title: "Sales Operations & Approvals"
 summary: "Internal playbook for when GPC Solutions hit approval, how change orders differ from MAC/disconnect/cancel paths, and how costing routing behaves at the Solution Site level. Pair with the Approval Requirements Matrix, PMO/SF Admin/CRC handoffs, and OBR materials in the cited folders."
 sensitivity: "internal"
+five_minute_summary: |
+  - Approvals run from the **GPC Solution** via **Approval History** (Approve, Reject, Reassign, Recall); expect leadership to scrutinize site-level services, products, and quote math—not a single headline number.
+  - **Change orders** are only for contract changes after Closed/Won but **before billing starts**; after billing, partial changes use MAC and full removal uses Disconnect—different playbooks.
+  - **Costing Routing** at the Solution Site depends on site type, services, products, and automation; **Request Manual Validation** skips automation and forces departmental review.
+  - Partner, MAC/Disconnect, Customer Move, and **OBR** materials answer adjacent questions—do not substitute OBR readiness for Salesforce approval or costing rules.
+
+knowledge_checks:
+  - question: "When is a 'change order' appropriate in the narrow sense used here?"
+    options:
+      - "After Closed/Won and before billing has started"
+      - "Any time the customer changes their mind, including after billing"
+      - "Only before the GPC Solution is approved the first time"
+    correct_index: 0
+    explanation: "Change orders apply when the customer changes the contract after Closed/Won but before billing starts; post-billing partial changes follow MAC, and other paths use Cancellation or Disconnect as applicable."
+
+  - question: "What does checking Request Manual Validation on a Solution Site do to costing routing?"
+    options:
+      - "Skips automation so each participating department must review"
+      - "Speeds up routing by accepting all system estimates"
+      - "Removes the need for Solution Services on the site"
+    correct_index: 0
+    explanation: "Manual validation bypasses automation and requires participating departments to review—use when the scenario needs human validation."
+
+  - question: "After you submit a signed change order package, who typically performs the booking adjustment in Salesforce?"
+    options:
+      - "Salesforce Administration"
+      - "The account executive alone"
+      - "The customer via self-service"
+    correct_index: 0
+    explanation: "Salesforce Administration performs the booking adjustment; PMO updates the project and CRC handles billing impacts per the change order process."
+
+scenarios:
+  - title: "Customer wants pricing changes after billing started"
+    situation: |
+      A deal is **Closed/Won** and **billing has started**. The customer now wants to change MRC on **part** of the contract—not remove all services.
+    choices:
+      - label: "Use the pre-billing Change Order Conga path from the GPC Solution."
+        feedback: "Wrong path. Change orders are for before billing; after billing starts, partial in-life changes follow Move-Add-Change, not the narrow change-order window."
+
+      - label: "Follow Move-Add-Change (MAC) process materials—not the pre-billing change order template."
+        feedback: "Correct. Post-billing partial changes use MAC; change orders apply only before billing for that narrow scenario."
+
+  - title: "Deepest review path on a multi-service site"
+    situation: |
+      One Solution Site has **multiple services** selected. Automation would normally route costing, and you are deciding how departments engage.
+    choices:
+      - label: "Routing follows the path that requires the deepest review when multiple services apply."
+        feedback: "Correct. Multiple services on one site follow the path requiring the deepest review, per the costing routing overview."
+
+      - label: "Each service is costed in parallel with no consolidation rule."
+        feedback: "Incorrect. The quick reference calls out that multiple services follow the path requiring the deepest review—not independent parallel paths with no rule."
 ---
 
 ## Approvals overview
