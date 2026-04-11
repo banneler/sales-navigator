@@ -58,8 +58,10 @@ export function mountModuleIntroGate(container, markdownSource) {
 
   overlay.innerHTML = `
     <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] pointer-events-auto" data-module-intro-dim></div>
-    <div class="absolute inset-0 z-[1] flex items-center justify-center overflow-y-auto p-4 sm:p-6 pointer-events-none">
-      <div class="module-intro-gate-panel pointer-events-auto my-auto flex max-h-[min(85vh,820px)] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-white/40 bg-white/75 shadow-2xl backdrop-blur-xl backdrop-saturate-150">
+    <div class="absolute inset-0 z-[1] overflow-y-auto pointer-events-none">
+      <div class="mx-auto grid min-h-full w-full max-w-[1600px] grid-cols-1 gap-6 p-0 lg:grid-cols-[minmax(0,7fr)_minmax(0,3fr)] lg:gap-8">
+        <div class="flex items-center justify-center p-4 sm:p-6 pointer-events-none lg:min-h-0">
+      <div class="module-intro-gate-panel pointer-events-auto flex max-h-[min(85vh,820px)] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-white/40 bg-white/75 shadow-2xl backdrop-blur-xl backdrop-saturate-150">
         <div class="flex-shrink-0 bg-gradient-to-r from-slate-900/95 to-slate-800/95 px-5 py-5 text-white">
           ${headerStripHtml}
         </div>
@@ -74,6 +76,9 @@ export function mountModuleIntroGate(container, markdownSource) {
             <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           </button>
         </div>
+      </div>
+        </div>
+        <div class="hidden min-h-0 lg:block" aria-hidden="true"></div>
       </div>
     </div>
   `;
