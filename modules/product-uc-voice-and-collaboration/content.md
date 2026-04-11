@@ -3,6 +3,7 @@ id: "product-uc-voice-and-collaboration"
 title: "UC, Voice & Collaboration"
 summary: "Sections: UC, Teams attach, Contact Center, Voice, and internal pricing discipline."
 sensitivity: "public"
+reference_files: []
 five_minute_summary: |
   - **UC:** One platform for PBX, messaging, SMS/MMS, meetings with AI recap, optional Contact Center, and files—differentiate plans (e.g., Unite Enterprise vs lower tiers on storage) and **Triple Guard Security™**; confirm archiving beyond **30 days** with the account team.
   - **Teams attach:** Keep Teams as the hub; GPC cloud PBX for enterprise voice from the Teams dialer; **Microsoft Teams licenses** and **Phone System** are **separate** purchases—set joint licensing expectations early.

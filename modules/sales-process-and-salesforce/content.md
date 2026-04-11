@@ -3,6 +3,7 @@ id: "sales-process-and-salesforce"
 title: "Sales Process & Salesforce"
 summary: "How GPC runs deals in Salesforce: from leads and conversion through opportunities, GPC Solutions, approvals, and contracting with DocuSign. Drawn from Salesforce 101, the leads conversion quick reference, and the Salesforce\u2013DocuSign integration guide\u2014plus where to find weekly tips and video walkthroughs."
 sensitivity: "public"
+reference_files: []
 five_minute_summary: |
   - Leads capture early interest; when you are ready to quote, **Convert Lead** creates or links the account, contact, and (usually) a new opportunity—exceptions need manager or admin alignment.
   - Opportunities move through solution design, **GPC Solution** build and costing, approvals, then contracting; Closed/Won spawns projects per solution site; do not delete Closed/Lost history.

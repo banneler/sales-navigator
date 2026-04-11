@@ -3,6 +3,7 @@ id: "product-security-and-sd-wan"
 title: "Security & SD-WAN"
 summary: "Structured as Security (edge + DDoS) and SD-WAN, with guardrails, handoffs, and internal pricing references."
 sensitivity: "public"
+reference_files: []
 five_minute_summary: |
   - **Managed Firewall / MNS**: FortiGate-based managed edge protection plus broader **Managed Network Security** (customer-owned firewall mgmt, SIEM, assessments, email security)—match the scope to buyer needs.
   - **DDoS**: **Proactive** includes **24×7** automated monitoring and mitigation; **on-demand** has **weekday business-hours** mitigation on that SKU—**qualify explicitly** so expectations match the product.

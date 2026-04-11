@@ -3,6 +3,7 @@ id: "product-cloud-wifi-and-backup"
 title: "Cloud, Wi-Fi & Backup"
 summary: "Three pillars\u2014Cloud, Wi\u2011Fi, and Backup\u2014with collateral references and training shortcuts."
 sensitivity: "public"
+reference_files: []
 five_minute_summary: |
   - **Cloud:** Position **Cloud Connect** plus **Managed Ethernet** as a private, predictable path to major clouds and SaaS—not Internet-only— and align scope with SE for cross-connects and diversity.
   - **Wi-Fi:** Sell managed lifecycle, guest vs corporate SSIDs, security stack (firewall, IDS/IPS), and analytics; defer AP counts and density to engineering until after survey.

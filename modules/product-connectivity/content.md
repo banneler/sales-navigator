@@ -3,6 +3,7 @@ id: "product-connectivity"
 title: "Connectivity & Access"
 summary: "Training organized by topic: access strategy, DIA vs SIA, Managed Ethernet, Wavelength (Wave), competitive positioning, and internal pricing references."
 sensitivity: "public"
+reference_files: []
 five_minute_summary: |
   - **Access** frames how traffic reaches the customer: **SIA** for flexible, cost-sensitive shared access; **DIA** for symmetrical, dedicated paths, richer DDoS support, and NOC-style operations.
   - **Managed Ethernet** is private **Layer 2** site-to-site transport (E-Line/E-LAN); **Wave** is **Layer 1** optical for high-capacity DC/hub links—not a substitute for Internet access.

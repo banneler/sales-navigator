@@ -3,6 +3,7 @@ id: "portfolio-and-business-capabilities"
 title: "Portfolio & Business Capabilities"
 summary: "How to tell the GPC business-capability story: network foundation, layered services, and where to go for product-level collateral."
 sensitivity: "public"
+reference_files: []
 five_minute_summary: |
   - Lead with **outcomes** (uptime, growth, cloud performance), not SKU lists—GPC is positioned as a **partner** with local teams, monitoring, and Midwest IP reach.
   - Map any deal to **layers**: access (fiber + backup) → WAN (Ethernet/SD-WAN) → **security** → **UC, Cloud Connect, Wi-Fi, Video**—so customers see a system, not a menu.

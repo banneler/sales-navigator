@@ -3,6 +3,7 @@ id: "sales-operations-and-approvals"
 title: "Sales Operations & Approvals"
 summary: "Internal playbook for when GPC Solutions hit approval, how change orders differ from MAC/disconnect/cancel paths, and how costing routing behaves at the Solution Site level. Pair with the Approval Requirements Matrix, PMO/SF Admin/CRC handoffs, and OBR materials in the cited folders."
 sensitivity: "internal"
+reference_files: []
 five_minute_summary: |
   - Approvals run from the **GPC Solution** via **Approval History** (Approve, Reject, Reassign, Recall); expect leadership to scrutinize site-level services, products, and quote math—not a single headline number.
   - **Change orders** are only for contract changes after Closed/Won but **before billing starts**; after billing, partial changes use MAC and full removal uses Disconnect—different playbooks.

@@ -20,12 +20,14 @@ function mdToSafeHtml(md) {
 
 /**
  * Dark-mode reference list: icon + hyperlink per file (new tab). Multiple `reference_files` supported.
+ * Omit `reference_files` from front matter to hide this block; use `reference_files: []` for placeholder.
  *
  * Expects meta.reference_files: Array<{ label?: string, sharepoint_url: string }>
  */
 export function buildModuleReferenceFilesHtml(meta) {
-  const files = meta.reference_files;
-  if (!Array.isArray(files) || files.length === 0) return '';
+  if (!('reference_files' in meta)) return '';
+
+  const files = Array.isArray(meta.reference_files) ? meta.reference_files : [];
 
   const rows = files
     .map((f, i) => {
@@ -47,14 +49,16 @@ export function buildModuleReferenceFilesHtml(meta) {
     .filter(Boolean)
     .join('');
 
-  if (!rows) return '';
+  const bodyInner = rows
+    ? `<div class="p-3 space-y-2">${rows}</div>`
+    : `<div class="p-3"><p class="text-[10px] text-slate-500 leading-relaxed">SharePoint links for this module will appear here as they are added.</p></div>`;
 
   return `
       <section class="module-reference-files rounded-xl border border-slate-600 bg-slate-900 text-slate-100 shadow-lg overflow-hidden" aria-labelledby="module-ref-heading">
         <div class="px-3 py-2 border-b border-slate-700 bg-slate-950/80">
           <h3 id="module-ref-heading" class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Module Reference Files</h3>
         </div>
-        <div class="p-3 space-y-2">${rows}</div>
+        ${bodyInner}
       </section>`;
 }
 
