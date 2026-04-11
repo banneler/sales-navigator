@@ -5,6 +5,27 @@
 
 const handlerByEl = new WeakMap();
 
+/** @type {WeakMap<Element, (boolean | null)[]>} Last check result per question index; null = not checked yet */
+const scoreStateByCarousel = new WeakMap();
+
+function getScoreState(carousel) {
+  if (!scoreStateByCarousel.has(carousel)) {
+    const n = Number(carousel.getAttribute('data-kc-count')) || 0;
+    scoreStateByCarousel.set(carousel, Array.from({ length: n }, () => null));
+  }
+  return scoreStateByCarousel.get(carousel);
+}
+
+function updateKnowledgeScoreUI(carousel) {
+  const results = getScoreState(carousel);
+  const total = results.length;
+  const correct = results.filter((r) => r === true).length;
+  const elC = carousel.querySelector('.js-kc-score-correct');
+  const elT = carousel.querySelector('.js-kc-score-total');
+  if (elC) elC.textContent = String(correct);
+  if (elT) elT.textContent = String(total);
+}
+
 function escapeHtml(s) {
   if (s == null) return '';
   return String(s)
@@ -49,6 +70,8 @@ function initKnowledgeCarousels(container) {
   container.querySelectorAll('.kc-carousel').forEach((carousel) => {
     const active = Number(carousel.getAttribute('data-kc-active')) || 0;
     updateKnowledgeCarousel(carousel, active);
+    getScoreState(carousel);
+    updateKnowledgeScoreUI(carousel);
   });
 }
 
@@ -103,6 +126,17 @@ function handleClick(e) {
     feedback.innerHTML = ok
       ? `<p class="text-green-800 font-semibold mb-1">Correct.</p><p class="text-slate-700">${escapeHtml(explanation)}</p>`
       : `<p class="text-amber-900 font-semibold mb-1">Not quite — review the rationale below.</p><p class="text-slate-700">${escapeHtml(explanation)}</p>`;
+
+    const slide = card.closest('.kc-slide');
+    const carousel = card.closest('.kc-carousel');
+    if (slide && carousel) {
+      const qIdx = Number(slide.getAttribute('data-kc-slide'));
+      const results = getScoreState(carousel);
+      if (Number.isFinite(qIdx) && qIdx >= 0 && qIdx < results.length) {
+        results[qIdx] = ok;
+        updateKnowledgeScoreUI(carousel);
+      }
+    }
     return;
   }
 
