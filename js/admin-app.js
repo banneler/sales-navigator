@@ -1,19 +1,11 @@
 import { getFile, putJsonFile } from './lib/github-client.js';
 
-const STORAGE_KEY = 'sales-navigator-github-config';
+// Hardcoded — same pattern as Enterprise-Proposals admin (GITHUB_OWNER / GITHUB_REPO)
+const GITHUB_OWNER = 'banneler';
+const GITHUB_REPO = 'sales-navigator';
+const GITHUB_BRANCH = 'main';
 
-function loadConfig() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
-  }
-}
-
-function saveConfig(cfg) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(cfg));
-}
+let githubToken = '';
 
 function showToast(message, type = 'success') {
   const container = document.getElementById('toast-container');
@@ -29,19 +21,60 @@ function currentPath(moduleId) {
   return `modules/${moduleId}/content.json`;
 }
 
+async function attemptLogin() {
+  const tokenInput = document.getElementById('pat-input');
+  const errEl = document.getElementById('error-msg');
+  const token = tokenInput?.value.trim() || '';
+  if (!token) {
+    errEl.textContent = 'Passcode required.';
+    errEl.classList.remove('hidden');
+    return;
+  }
+
+  const overlay = document.getElementById('loading-overlay');
+  const loadingText = document.getElementById('loading-text');
+  if (loadingText) loadingText.textContent = 'Verifying…';
+  overlay?.classList.remove('hidden');
+  errEl.classList.add('hidden');
+
+  try {
+    const res = await fetch('https://api.github.com/user', {
+      headers: {
+        Authorization: `token ${token}`,
+        Accept: 'application/vnd.github.v3+json',
+      },
+    });
+    if (!res.ok) {
+      const t = await res.text();
+      throw new Error(t || `HTTP ${res.status}`);
+    }
+    githubToken = token;
+    const authScreen = document.getElementById('auth-screen');
+    authScreen.style.opacity = '0';
+    setTimeout(() => {
+      authScreen.classList.add('hidden');
+      document.getElementById('main-content')?.classList.remove('hidden');
+    }, 500);
+    showToast('Authenticated.');
+  } catch (e) {
+    console.error(e);
+    errEl.textContent = 'Invalid token or could not reach GitHub.';
+    errEl.classList.remove('hidden');
+  } finally {
+    overlay?.classList.add('hidden');
+    if (loadingText) loadingText.textContent = 'Working…';
+  }
+}
+
 async function main() {
-  const ownerEl = document.getElementById('cfg-owner');
-  const repoEl = document.getElementById('cfg-repo');
-  const branchEl = document.getElementById('cfg-branch');
-  const tokenEl = document.getElementById('pat-input');
+  document.getElementById('unlock-btn')?.addEventListener('click', attemptLogin);
+  document.getElementById('pat-input')?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') attemptLogin();
+  });
+
   const moduleSelect = document.getElementById('module-select');
   const editor = document.getElementById('json-editor');
   const shaField = document.getElementById('file-sha');
-
-  const cfg = loadConfig();
-  if (ownerEl) ownerEl.value = cfg.owner || '';
-  if (repoEl) repoEl.value = cfg.repo || '';
-  if (branchEl) branchEl.value = cfg.branch || 'main';
 
   const manifestRes = await fetch('modules-manifest.json');
   const manifest = await manifestRes.json();
@@ -53,30 +86,27 @@ async function main() {
     moduleSelect?.appendChild(opt);
   }
 
-  document.getElementById('save-config-btn')?.addEventListener('click', () => {
-    saveConfig({
-      owner: ownerEl?.value.trim(),
-      repo: repoEl?.value.trim(),
-      branch: branchEl?.value.trim() || 'main',
-    });
-    showToast('Repository settings saved locally.');
-  });
-
   document.getElementById('load-from-github-btn')?.addEventListener('click', async () => {
-    const token = tokenEl?.value.trim();
-    const owner = ownerEl?.value.trim();
-    const repo = repoEl?.value.trim();
-    const branch = branchEl?.value.trim() || 'main';
+    if (!githubToken) {
+      showToast('Session expired — refresh and sign in again.', 'error');
+      return;
+    }
     const moduleId = moduleSelect?.value;
-    if (!token || !owner || !repo || !moduleId) {
-      showToast('Fill in PAT, owner, repo, and module.', 'error');
+    if (!moduleId) {
+      showToast('Select a module.', 'error');
       return;
     }
     const overlay = document.getElementById('loading-overlay');
     overlay?.classList.remove('hidden');
     try {
       const path = currentPath(moduleId);
-      const { content, sha } = await getFile(owner, repo, path, branch, token);
+      const { content, sha } = await getFile(
+        GITHUB_OWNER,
+        GITHUB_REPO,
+        path,
+        GITHUB_BRANCH,
+        githubToken
+      );
       if (editor) editor.value = content;
       if (shaField) shaField.value = sha;
       showToast('Loaded from GitHub.');
@@ -89,14 +119,14 @@ async function main() {
   });
 
   document.getElementById('push-to-github-btn')?.addEventListener('click', async () => {
-    const token = tokenEl?.value.trim();
-    const owner = ownerEl?.value.trim();
-    const repo = repoEl?.value.trim();
-    const branch = branchEl?.value.trim() || 'main';
+    if (!githubToken) {
+      showToast('Session expired — refresh and sign in again.', 'error');
+      return;
+    }
     const moduleId = moduleSelect?.value;
     const sha = shaField?.value.trim();
-    if (!token || !owner || !repo || !moduleId || !sha) {
-      showToast('Load from GitHub first (need file SHA), and fill PAT, owner, repo.', 'error');
+    if (!moduleId || !sha) {
+      showToast('Load from GitHub first (need file SHA).', 'error');
       return;
     }
     let jsonString = editor?.value || '';
@@ -111,11 +141,11 @@ async function main() {
     try {
       const path = currentPath(moduleId);
       const { sha: newSha } = await putJsonFile(
-        owner,
-        repo,
+        GITHUB_OWNER,
+        GITHUB_REPO,
         path,
-        branch,
-        token,
+        GITHUB_BRANCH,
+        githubToken,
         jsonString,
         sha,
         `Update ${path} via Sales-Navigator admin`
