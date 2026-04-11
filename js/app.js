@@ -7,6 +7,7 @@ import {
   destroyGettingStartedOverlay,
 } from './components/getting-started.js';
 import { destroyModuleIntroGate } from './components/module-intro-gate.js';
+import { setMainHeaderInternalBadge } from './lib/header-internal-badge.js';
 
 const MAP_BOOK_MODULE_ID = 'map-book';
 const GETTING_STARTED_ID = 'getting-started';
@@ -32,6 +33,10 @@ async function main() {
 
     destroyGettingStartedOverlay();
     destroyModuleIntroGate();
+
+    if (id === MAP_BOOK_MODULE_ID || id === GETTING_STARTED_ID) {
+      setMainHeaderInternalBadge(false);
+    }
 
     const subtitle = document.querySelector('#main-header p');
     if (subtitle) {

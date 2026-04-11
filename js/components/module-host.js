@@ -1,10 +1,14 @@
 import renderMarkdownModule from './markdown-module.js';
+import { parseFrontMatter } from '../lib/front-matter.js';
+import { setMainHeaderInternalBadge } from '../lib/header-internal-badge.js';
 
 /**
  * @param {string} moduleId
  * @param {HTMLElement} container
  */
 export async function loadAndRenderModule(moduleId, container) {
+  setMainHeaderInternalBadge(false);
+
   container.innerHTML = `
     <div class="flex items-center justify-center py-16 text-slate-500 gap-3">
       <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500"></div>
@@ -20,6 +24,7 @@ export async function loadAndRenderModule(moduleId, container) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     markdownText = await res.text();
   } catch (e) {
+    setMainHeaderInternalBadge(false);
     container.innerHTML = `
       <div class="bg-red-50 border border-red-200 text-red-800 rounded-xl p-6">
         <p class="font-bold">Could not load content for module <code>${escapeHtml(moduleId)}</code>.</p>
@@ -27,6 +32,14 @@ export async function loadAndRenderModule(moduleId, container) {
       </div>`;
     console.error(e);
     return;
+  }
+
+  try {
+    const parsed = parseFrontMatter(markdownText);
+    const sensitivity = parsed.meta?.sensitivity || 'public';
+    setMainHeaderInternalBadge(sensitivity === 'internal');
+  } catch {
+    setMainHeaderInternalBadge(false);
   }
 
   try {

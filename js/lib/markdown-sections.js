@@ -85,22 +85,13 @@ export function renderSectionsToHtml(sections) {
  * @param {Record<string, unknown>} meta - Parsed YAML front matter
  */
 export function buildModuleHeaderBlockHtml(meta) {
-  const sensitivity = meta.sensitivity || 'public';
-  const badge =
-    sensitivity === 'internal'
-      ? '<span class="inline-flex items-center rounded-full bg-amber-100 text-amber-900 text-xs font-bold px-2 py-0.5 border border-amber-200">Internal</span>'
-      : '';
-
   const title = typeof meta.title === 'string' ? meta.title : 'Module';
   const summary = typeof meta.summary === 'string' ? meta.summary : '';
 
   return `
-      <div class="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900 tracking-tight">${escapeHtml(title)}</h2>
-          ${summary ? `<p class="text-slate-600 mt-2 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
-        </div>
-        <div class="flex-shrink-0">${badge}</div>
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 tracking-tight">${escapeHtml(title)}</h2>
+        ${summary ? `<p class="text-slate-600 mt-2 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
       </div>`;
 }
 
@@ -108,23 +99,14 @@ export function buildModuleHeaderBlockHtml(meta) {
  * Title, intro, and badge for the module intro gate’s dark header strip (light text on slate).
  */
 export function buildModuleIntroGateHeaderHtml(meta) {
-  const sensitivity = meta.sensitivity || 'public';
-  const badge =
-    sensitivity === 'internal'
-      ? '<span class="inline-flex items-center rounded-full bg-amber-500/20 text-amber-100 text-xs font-bold px-2 py-0.5 border border-amber-400/35">Internal</span>'
-      : '';
-
   const title = typeof meta.title === 'string' ? meta.title : 'Module';
   const summary = typeof meta.summary === 'string' ? meta.summary : '';
 
   return `
-    <div class="flex flex-wrap items-start justify-between gap-4">
-      <div class="min-w-0 flex-1">
-        <p class="mb-2 text-[10px] font-semibold uppercase tracking-wider text-orange-300/95">Module preview</p>
-        <h2 id="module-intro-gate-heading" class="text-2xl font-bold tracking-tight text-white">${escapeHtml(title)}</h2>
-        ${summary ? `<p class="mt-2 max-w-3xl text-sm leading-relaxed text-slate-300">${escapeHtml(summary)}</p>` : ''}
-      </div>
-      <div class="flex-shrink-0">${badge}</div>
+    <div class="min-w-0">
+      <p class="mb-2 text-[10px] font-semibold uppercase tracking-wider text-orange-300/95">Module preview</p>
+      <h2 id="module-intro-gate-heading" class="text-2xl font-bold tracking-tight text-white">${escapeHtml(title)}</h2>
+      ${summary ? `<p class="mt-2 max-w-3xl text-sm leading-relaxed text-slate-300">${escapeHtml(summary)}</p>` : ''}
     </div>`;
 }
 
