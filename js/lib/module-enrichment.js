@@ -109,7 +109,7 @@ export function buildScenariosAsideHtml(meta) {
             <h4 class="text-[11px] font-bold text-slate-900 leading-tight">${escapeHtml(title)}</h4>
             <span class="js-sc-reviewed-badge hidden shrink-0 rounded-full bg-green-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-green-800 border border-green-200" aria-hidden="true">Reviewed</span>
           </div>
-          <div class="module-markdown-body text-slate-700 text-[11px] leading-snug mb-2">${situationHtml}</div>
+          <div class="module-markdown-body scenario-situation-text text-slate-700 leading-snug mb-2">${situationHtml}</div>
           <p class="text-[9px] font-semibold text-slate-500 uppercase tracking-wide mb-1">Choose a response</p>
           <div class="space-y-2 sc-choices">${choiceBlocks}</div>
         </article>`;

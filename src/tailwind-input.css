@@ -75,3 +75,27 @@
   margin: 0.75rem 0;
   color: #64748b;
 }
+
+/* Scenario cards: situation block must match rail type (11px); global .module-markdown-body is 15px */
+.scenario-situation-text.module-markdown-body {
+  font-size: 0.6875rem;
+  line-height: 1.45;
+}
+.scenario-situation-text.module-markdown-body p,
+.scenario-situation-text.module-markdown-body li {
+  font-size: inherit;
+  line-height: inherit;
+}
+.scenario-situation-text.module-markdown-body strong {
+  font-weight: 600;
+  font-size: inherit;
+}
+.scenario-situation-text.module-markdown-body ul {
+  margin: 0.35rem 0 0.5rem;
+}
+.scenario-situation-text.module-markdown-body p {
+  margin-bottom: 0.45rem;
+}
+.scenario-situation-text.module-markdown-body p:last-child {
+  margin-bottom: 0;
+}
