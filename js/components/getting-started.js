@@ -61,47 +61,47 @@ function buildDemoMarkup() {
         </div>
         <aside class="w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white/95 p-4 shadow-sm backdrop-blur-sm pointer-events-auto" data-tour-target="tour-scenarios">
           <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Scenarios</p>
-          <p class="text-xs font-semibold text-slate-800 mt-3">Week two: the “why GPC?” question</p>
+          <p class="text-xs font-semibold text-slate-800 mt-3">The great coffee-machine debate</p>
           <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            You're grabbing coffee with a prospect who only knows you from email. They lean in and ask: <span class="text-slate-800">“So—why should I pick a regional provider over a big national brand?”</span>
+            It's 7:47 a.m. The office Keurig is making a noise like a sad trombone. A crowd is forming. Someone asks you: <span class="text-slate-800">“Do we wait for IT or start a GoFundMe for a French press?”</span>
           </p>
           <p class="text-xs text-slate-500 mt-3 uppercase tracking-wide">Pick a response</p>
           <div class="mt-2 space-y-2" role="group" aria-label="Scenario responses">
             <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-              Lead with the lowest price per Mbps.
+              Filibuster until someone admits they unplugged it by accident.
             </button>
             <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="true">
-              Tie your answer to local accountability—who answers the phone when something breaks.
+              Pour water, say “we’ve got this,” and restart the machine like a calm adult.
             </button>
             <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-              List three competitor weaknesses by name.
+              Declare a “no caffeine until Monday” policy and walk away.
             </button>
           </div>
           <p class="text-xs text-red-700 mt-2 min-h-[1.25rem] hidden" data-tour-scenario-feedback="" role="status" aria-live="polite"></p>
           <p class="text-xs text-emerald-800 bg-emerald-50/90 border border-emerald-100 rounded-lg px-3 py-2 mt-3 hidden" data-tour-coach-note="">
-            <strong>Coach's note:</strong> Customers remember how you sound when things go wrong—not just when everything works.
+            <strong>Coach's note:</strong> Hot beverages are a team sport—lead with empathy, not drama.
           </p>
         </aside>
       </div>
       <div class="rounded-xl border border-slate-200 bg-white/95 p-5 shadow-sm backdrop-blur-sm max-w-4xl pointer-events-auto" data-tour-target="tour-knowledge">
         <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Knowledge checks</p>
-        <p class="text-sm font-medium text-slate-900 mt-3">Before your first customer meeting this week, what's the smartest 60-second investment?</p>
+        <p class="text-sm font-medium text-slate-900 mt-3">What is the best Mexican restaurant in Blair, NE?</p>
         <div class="mt-3 space-y-2 text-sm" role="group" aria-label="Knowledge check options">
           <button type="button" class="tour-knowledge-opt flex w-full gap-2 items-start rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-left transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
             <span class="text-slate-400 shrink-0" aria-hidden="true">○</span>
-            <span>Memorize every SKU in the catalog.</span>
+            <span>Taco Bell</span>
           </button>
           <button type="button" class="tour-knowledge-opt flex w-full gap-2 items-start rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-left transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="true">
             <span class="text-slate-400 shrink-0" aria-hidden="true">○</span>
-            <span>Skim the five-minute summary so you know where to go deeper on the call.</span>
+            <span>El Vallarta Mexican Restaurant</span>
           </button>
           <button type="button" class="tour-knowledge-opt flex w-full gap-2 items-start rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-left transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
             <span class="text-slate-400 shrink-0" aria-hidden="true">○</span>
-            <span>Skip discovery so you have more time to demo.</span>
+            <span>Justin's leftover tacos in the fridge on floor 2</span>
           </button>
         </div>
         <p class="text-xs text-red-700 mt-2 min-h-[1.25rem] hidden" data-tour-knowledge-feedback="" role="status" aria-live="polite"></p>
-        <p class="text-xs text-slate-500 mt-3 italic" data-tour-knowledge-hint="">Not graded—just a nudge toward good habits. (The carousel in live modules may hold several questions like this.)</p>
+        <p class="text-xs text-slate-500 mt-3 italic" data-tour-knowledge-hint="">Field research is encouraged. Results may vary by hunger level.</p>
         <div class="mt-4 flex gap-2">
           <span class="h-2 w-8 rounded-full bg-orange-400/90"></span>
           <span class="h-2 w-8 rounded-full bg-slate-200"></span>
@@ -338,7 +338,7 @@ export function loadGettingStarted(container, manifest) {
           <strong>Scenarios</strong> sit beside the main content on wider screens. You'll get a short situation, a few choices, and feedback—practice for real conversations, not a test score.
         </p>
         <p class="text-slate-600 text-sm mb-3">
-          The sample in the highlighted area is a lighthearted “new hire” moment: coffee, a tough question, and a coach's nudge. Live modules follow the same idea with your actual products and talk tracks.
+          The sample in the highlighted area is deliberately unserious (Keurig diplomacy, not quota planning). Live modules use real customer scenarios.
         </p>
         <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
           <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
@@ -353,7 +353,7 @@ export function loadGettingStarted(container, manifest) {
           <strong>Knowledge checks</strong> usually live in a carousel toward the bottom—quick questions with explanations so you can self-check without pressure.
         </p>
         <p class="text-slate-600 text-sm mb-3">
-          The example in the highlighted area is a playful nudge about good prep habits. In real modules, questions line up with the training you just read.
+          The example in the highlighted area is a highly scientific Blair dining survey. Real modules quiz you on the training you just read.
         </p>
         <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
           <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
@@ -487,7 +487,7 @@ export function loadGettingStarted(container, manifest) {
         } else {
           btn.classList.add('ring-2', 'ring-red-400', 'bg-red-50');
           if (feedback) {
-            feedback.textContent = 'Not quite—pick the response that fits best.';
+            feedback.textContent = 'Not quite—pick the option that keeps the break room friendships intact.';
             feedback.classList.remove('hidden');
           }
         }
@@ -524,7 +524,7 @@ export function loadGettingStarted(container, manifest) {
           btn.classList.add('ring-2', 'ring-red-400', 'bg-red-50');
           knowledgeComplete = false;
           if (feedback) {
-            feedback.textContent = 'Try again—that habit usually backfires.';
+            feedback.textContent = 'Nice try—unless you’re really craving Justin’s tacos.';
             feedback.classList.remove('hidden');
           }
         }
