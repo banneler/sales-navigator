@@ -1,5 +1,4 @@
 import renderMarkdownModule from './markdown-module.js';
-import { parseFrontMatter } from '../lib/front-matter.js';
 import { setMainHeaderInternalBadge } from '../lib/header-internal-badge.js';
 
 /**
@@ -34,13 +33,8 @@ export async function loadAndRenderModule(moduleId, container) {
     return;
   }
 
-  try {
-    const parsed = parseFrontMatter(markdownText);
-    const sensitivity = parsed.meta?.sensitivity || 'public';
-    setMainHeaderInternalBadge(sensitivity === 'internal');
-  } catch {
-    setMainHeaderInternalBadge(false);
-  }
+  // Sales-Navigator modules are an internal training surface—show the header pill on every module.
+  setMainHeaderInternalBadge(true);
 
   try {
     const moduleUrl = new URL(`modules/${moduleId}/module.js`, baseUrl).href;
