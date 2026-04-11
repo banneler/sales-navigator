@@ -30,6 +30,55 @@ knowledge_checks:
       - "Promise unlimited concurrent agents for a flat monthly fee"
     correct_index: 1
     explanation: "Bursting/elastic rules are **internal** sizing\u2014coordinate with AE/pricing rather than improvising."
+  - question: "How are CC Pro and CC Elite seats generally licensed in positioning?"
+    options:
+      - "Concurrent seats\u2014confirm matrices and add-ons before customer commitments"
+      - "Named user seats only with no supervisor tools"
+      - "Unlimited agents on a single mailbox"
+    correct_index: 0
+    explanation: "**CC Pro** and **CC Elite** are **concurrent** seats; Elite extends capability\u2014confirm the current matrix before commitments."
+  - question: "What does **Triple Guard Security\u2122** frame on the UC platform?"
+    options:
+      - "Trust themes: datacenters, certified security team, encryption, password management, 2FA"
+      - "Guaranteed on-site guard patrols at every customer site"
+      - "Removal of all encryption to speed migrations"
+    correct_index: 0
+    explanation: "**Triple Guard Security\u2122** summarizes secure datacenters, certified security operations, encryption, password management, and 2FA in the UC story."
+  - question: "For non-UC voice, what does SIP trunking primarily provide?"
+    options:
+      - "VoIP handoff between customer PBX and GPC toward the PSTN with managed eSBC options"
+      - "Analog-only connectivity that cannot scale"
+      - "Cellular voice with no PBX involvement"
+    correct_index: 0
+    explanation: "**SIP** connects the customer PBX to GPC toward PSTN; collateral notes **managed eSBC** on-site and consolidation with data."
+  - question: "When should you involve UC/Teams architects per the Teams attach section?"
+    options:
+      - "For coexistence, porting, and Phone System prerequisites across departments"
+      - "Only after the customer decommissions Microsoft 365 entirely"
+      - "Never\u2014sales alone owns all dial-plan design"
+    correct_index: 0
+    explanation: "Handoff calls for UC/Teams architects on coexistence, porting, and **Phone System** prerequisites; coordinate CSP context if Teams is bought elsewhere."
+  - question: "Where should internal rate tables and pricing books be used?"
+    options:
+      - "Internal sizing with AE/pricing alignment\u2014never email ad-hoc rates from memory"
+      - "Paste into customer emails to win speed"
+      - "Post publicly on social media for transparency"
+    correct_index: 0
+    explanation: "**Pricing** sections stress **internal** books and discipline\u2014use brochures for capability and pricing extracts only internally with AE alignment."
+  - question: "Unite Enterprise vs lower UC tiers differ in part by what file-storage headline?"
+    options:
+      - "Brochure cites up to **200 GB** per user on Unite Enterprise vs lower tiers (e.g., 50 GB / 5 GB)"
+      - "All tiers include identical unlimited storage with no differences"
+      - "File storage is not part of UC at any tier"
+    correct_index: 0
+    explanation: "Plans differentiate storage\u2014**Unite Enterprise** reaches up to **200 GB** per user in brochure terms; lower tiers are smaller."
+  - question: "What uptime story does the UC section cite as a competitive talking point?"
+    options:
+      - "**99.999%** uptime\u2014translate to minutes/year in customer language"
+      - "50% uptime is the published SLA"
+      - "Uptime is not discussed in collateral"
+    correct_index: 0
+    explanation: "Competitive notes reference **99.999%** uptime\u2014help customers understand what that means in minutes of downtime per year."
 scenarios:
   - title: "Customer wants Teams Phone and GPC voice this quarter"
     situation: |

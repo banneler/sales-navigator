@@ -18,10 +18,10 @@ knowledge_checks:
     explanation: "The module emphasizes outcomes and partnership first; layer the stack (access → WAN → security → apps) and save SKU detail for follow-up collateral."
   - question: "How should you describe how GPC products fit together?"
     options:
-      - "As unrelated add-ons the customer picks from a catalog."
       - "As layers—access, WAN, security, then collaboration and cloud adjacency—so it reads as one system."
+      - "As unrelated add-ons the customer picks from a catalog."
       - "As only Internet access with no connection to other services."
-    correct_index: 1
+    correct_index: 0
     explanation: "Use the layered portfolio map (foundation through apps) so the customer sees integrated design, not a random menu."
   - question: "Where should you send someone for product-specific datasheets after this storyline?"
     options:
@@ -30,6 +30,55 @@ knowledge_checks:
       - "Generic web search only."
     correct_index: 1
     explanation: "The module points to the Business Capability deck for the story and the extracted library for per-product evidence."
+  - question: "What proof points anchor the “why GPC” network story?"
+    options:
+      - "Fiber-first access, Midwest IP reach, Tier-1 and IX relationships, and paths tuned for cloud/SaaS and end users."
+      - "Only the number of years in business, with no network specifics."
+      - "A guarantee that every site worldwide has identical latency."
+    correct_index: 0
+    explanation: "Lead with resilient Midwest foundation, fiber-first access, and efficient routes to cloud and SaaS—not generic longevity claims alone."
+  - question: "In discovery, what should you clarify before you summarize fit in one sentence?"
+    options:
+      - "Only the customer’s favorite brand of router."
+      - "Locations, critical apps, uptime tolerance, and cloud/voice moves—then reflect the layered stack."
+      - "Whether they prefer PDF or Word for internal memos."
+    correct_index: 1
+    explanation: "The module ties discovery to footprint, workloads, and resilience so the recommended stack matches real operations."
+  - question: "How does this module relate to the Business Capability PDF versus the deep collateral library?"
+    options:
+      - "Ignore the PDF; the library replaces the storyline entirely."
+      - "Use this module and the Business Capability deck for the narrative spine; use the extracted library for per-product evidence."
+      - "Use only this module and never reference external collateral."
+    correct_index: 1
+    explanation: "Keep the executive storyline in the capability materials; pull datasheets and vertical proof from the organized extract when needed."
+  - question: "When a CFO asks “Why GPC vs anyone else?” in one sentence, what is a strong response?"
+    options:
+      - "List fiber miles with no business outcome."
+      - "Reliable Midwest foundation, fiber-first access, layered services, and accountable local support—then offer the capability deck."
+      - "Decline to answer until they attend a three-day workshop."
+    correct_index: 1
+    explanation: "Tie network differentiation to partnership and outcomes, then give a concrete next step (e.g., the capability presentation)."
+  - question: "Which stack order matches the portfolio map taught here?"
+    options:
+      - "Security first, then access, then WAN, then apps—with no ordering rules."
+      - "Access (fiber + backup) → WAN → security → UC, Cloud Connect, Wi-Fi, Video."
+      - "Apps only; transport is irrelevant to the conversation."
+    correct_index: 1
+    explanation: "Layer from foundation through applications so the customer sees a designed system, not a random SKU list."
+  - question: "What role should local support and monitoring play in the storyline?"
+    options:
+      - "They are optional talking points only if the customer complains."
+      - "They reinforce GPC as a partner—local teams and 24/7 monitoring differentiate from commodity ISP positioning."
+      - "They should never be mentioned to avoid setting expectations."
+    correct_index: 1
+    explanation: "Partnership and operational accountability are core to moving beyond “just another carrier.”"
+  - question: "What is a practical way to describe any deal using this module?"
+    options:
+      - "Quote random SKUs until something sticks."
+      - "Map the opportunity to “access + path + policy + apps” against their sites and workloads."
+      - "Focus exclusively on a single product name regardless of discovery."
+    correct_index: 1
+    explanation: "Framing deals across access, path, policy, and apps aligns conversation with the layered portfolio map."
 scenarios:
   - title: "Retail chain, cloud POS, hates ‘just another ISP’"
     situation: |

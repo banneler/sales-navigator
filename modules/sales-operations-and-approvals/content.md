@@ -34,6 +34,62 @@ knowledge_checks:
     correct_index: 0
     explanation: "Salesforce Administration performs the booking adjustment; PMO updates the project and CRC handles billing impacts per the change order process."
 
+  - question: "From the GPC Solution, where do you run Approve, Reject, Reassign, or Recall actions?"
+    options:
+      - "Approval History on the GPC Solution record"
+      - "Only the Leads tab"
+      - "Only the customer’s email inbox"
+    correct_index: 0
+    explanation: "Approvals are executed from the GPC Solution via Approval History; notifications support mobile and desktop review."
+
+  - question: "If billing has already started and the customer wants a partial in-life contract change, which path applies instead of a pre-billing change order?"
+    options:
+      - "Move-Add-Change (MAC) materials and process"
+      - "The same Conga change order template used before billing"
+      - "Only the Cancellation playbook"
+    correct_index: 0
+    explanation: "After billing, partial changes follow MAC; narrow change orders apply before billing starts."
+
+  - question: "If the customer wants all services removed after billing has started, what family of process should you use rather than MAC for partial tweaks?"
+    options:
+      - "Disconnection process materials"
+      - "Pre-billing Cancellation only"
+      - "A new lead record with no opportunity"
+    correct_index: 0
+    explanation: "Full removal post-billing follows Disconnection; MAC covers partial in-life changes."
+
+  - question: "When multiple services are selected on one Solution Site, how does costing routing typically consolidate paths?"
+    options:
+      - "It follows the path that requires the deepest review"
+      - "Each service is ignored if another is cheaper"
+      - "Routing always picks the fastest automated estimate only"
+    correct_index: 0
+    explanation: "Multiple services on a site follow the deepest-review path per the costing routing overview."
+
+  - question: "If both New and Existing services are selected on one site, which routing path applies per common rules of thumb?"
+    options:
+      - "The New service path"
+      - "The Existing path only"
+      - "No routing runs until the customer sends a fax"
+    correct_index: 0
+    explanation: "When New and Existing are both in play on one site, routing follows the New path."
+
+  - question: "For change order submissions, which groups are typically in the loop alongside Sales Management when required?"
+    options:
+      - "PMO, Salesforce Administration, and CRC"
+      - "Only the customer’s legal counsel"
+      - "Only product marketing"
+    correct_index: 0
+    explanation: "Completed packages route to PMO, Salesforce Administration, and CRC for project, booking, and billing impacts."
+
+  - question: "What is OBR readiness material intended for relative to Salesforce approvals and costing?"
+    options:
+      - "Account planning cadence with ops leadership—not a substitute for SF approval or costing rules"
+      - "Replacing Approval History entirely"
+      - "Automating all Solution Site costing without review"
+    correct_index: 0
+    explanation: "OBR supports operational business review preparation; it does not replace GPC Solution approvals or costing routing discipline."
+
 scenarios:
   - title: "Customer wants pricing changes after billing started"
     situation: |

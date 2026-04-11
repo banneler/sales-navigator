@@ -30,6 +30,55 @@ knowledge_checks:
       - "Battery runtime is unlimited on all SKUs"
     correct_index: 1
     explanation: "Be honest that **5G** performance varies by site and collateral notes **tiered speeds** after thresholds and possible deprioritization when busy."
+  - question: "On Cloud Connect scope, what should you align with a solutions engineer before over-promising?"
+    options:
+      - "Cross-connect details, diversity, and security expectations"
+      - "Only the customer\u2019s logo colors for slide decks"
+      - "Retail gift-card budgets unrelated to transport"
+    correct_index: 0
+    explanation: "The module says to align scope with SE for cross-connects, diversity, and security expectations\u2014not every site needs full cloud exchange on day one."
+  - question: "In Managed Wi\u2011Fi discovery, which separation should you clarify early?"
+    options:
+      - "Guest vs corporate SSIDs and traffic separation"
+      - "Only consumer smart-TV brands at each site"
+      - "Whether employees prefer light or dark UI themes"
+    correct_index: 0
+    explanation: "Outcomes include separating **guest vs corporate** traffic; discovery should cover SSIDs, compliance, and app mix."
+  - question: "What security stack elements does collateral associate with Managed Wi\u2011Fi positioning?"
+    options:
+      - "Next-gen firewall, routing, and IDS/IPS alongside multiple SSIDs"
+      - "Open guest networks with no segmentation"
+      - "DNS over HTTPS as the only control plane"
+    correct_index: 0
+    explanation: "Proof points cite integrated **firewall**, routing, **IDS/IPS**, and multiple SSIDs as part of the managed story."
+  - question: "For 5G Wireless Internet Backup, which operational proof point is accurate?"
+    options:
+      - "Automatic failover to wireless and automatic fail-back when primary returns"
+      - "Manual SIM swaps required for every outage"
+      - "No monitoring; customer self-diagnoses all events"
+    correct_index: 0
+    explanation: "Collateral highlights automatic failover/fail-back plus **24/7 NOC** monitoring and alerting."
+  - question: "What optional continuity feature is cited for 5G backup CPE deployments?"
+    options:
+      - "Optional battery runtime (collateral cites up to ~8 hours)"
+      - "Unlimited runtime on every router without checking SKU"
+      - "Solar panels bundled at no cost on all quotes"
+    correct_index: 0
+    explanation: "Proof points include optional **battery** runtime\u2014about eight hours per collateral\u2014confirm SKU and terms with quoting."
+  - question: "Where should sellers look for formal Cloud, Wi\u2011Fi, and Backup product training shortcuts?"
+    options:
+      - "The extracted training folder\u2019s .url shortcuts to hosted pages (on-network)"
+      - "Random search-engine results updated hourly"
+      - "Only unofficial third-party forums"
+    correct_index: 0
+    explanation: "The module points to **.url** shortcuts in the extract folder for hosted product training when on-network, alongside datasheets."
+  - question: "Which cloud/SaaS ecosystem framing matches the Cloud section\u2019s positioning?"
+    options:
+      - "Name major providers and multi-region redundancy mindset from a single interconnection strategy"
+      - "Assume every workload must use consumer broadband only"
+      - "Discourage any private paths to cloud regions"
+    correct_index: 0
+    explanation: "Discovery and proof emphasize ecosystem reach (AWS, Azure, Google, etc.) and predictable paths vs Internet-only, with multi-region redundancy in mind."
 scenarios:
   - title: "Retail chain wants cloud ERP and guest Wi-Fi"
     situation: |

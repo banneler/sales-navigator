@@ -18,13 +18,6 @@ function mdToSafeHtml(md) {
   return DOMPurify.sanitize(html, { ADD_ATTR: ['target', 'rel'] });
 }
 
-/** Responsive grid: 1 col → 2 cols for two items → 3 cols for three or more. */
-function scenarioGridClass(count) {
-  if (count <= 1) return 'grid grid-cols-1 gap-4';
-  if (count === 2) return 'grid grid-cols-1 md:grid-cols-2 gap-4';
-  return 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4';
-}
-
 export function buildFiveMinuteSummaryHtml(meta) {
   const five = meta.five_minute_summary;
   if (typeof five !== 'string' || !five.trim()) return '';
@@ -40,11 +33,13 @@ export function buildFiveMinuteSummaryHtml(meta) {
       </section>`;
 }
 
-export function buildScenariosSectionHtml(meta) {
+/**
+ * Sticky right-rail: single-column scenario cards. Empty string if no scenarios.
+ */
+export function buildScenariosAsideHtml(meta) {
   const scenarios = meta.scenarios;
   if (!Array.isArray(scenarios) || scenarios.length === 0) return '';
 
-  const gridClass = scenarioGridClass(scenarios.length);
   const cards = scenarios
     .map((sc, si) => {
       const title = typeof sc?.title === 'string' ? sc.title : `Scenario ${si + 1}`;
@@ -57,28 +52,28 @@ export function buildScenariosSectionHtml(meta) {
           const feedback = typeof ch?.feedback === 'string' ? ch.feedback : '';
           return `
             <div class="space-y-1">
-              <button type="button" class="js-sc-choice w-full text-left border border-slate-200 rounded-lg px-4 py-3 text-sm font-medium text-slate-800 bg-white hover:border-orange-400 hover:bg-orange-50/50 transition" data-sc-index="${ci}">
+              <button type="button" class="js-sc-choice w-full text-left border border-slate-200 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-800 bg-white hover:border-orange-400 hover:bg-orange-50/50 transition" data-sc-index="${ci}">
                 ${escapeHtml(label)}
               </button>
-              <div class="js-sc-feedback hidden text-sm text-slate-600 pl-1 border-l-2 border-orange-400 pl-3 py-1" data-sc-index="${ci}">${mdToSafeHtml(feedback)}</div>
+              <div class="js-sc-feedback hidden text-xs text-slate-600 border-l-2 border-orange-400 pl-2 py-1" data-sc-index="${ci}">${mdToSafeHtml(feedback)}</div>
             </div>`;
         })
         .join('');
       return `
-        <article class="scenario-card border border-slate-200 rounded-xl p-5 bg-gradient-to-b from-white to-slate-50/80 shadow-sm h-full flex flex-col">
-          <h4 class="text-base font-bold text-slate-900 mb-2">${escapeHtml(title)}</h4>
-          <div class="module-markdown-body text-slate-700 mb-4 flex-1">${situationHtml}</div>
-          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Choose a response</p>
-          <div class="space-y-3">${choiceBlocks}</div>
+        <article class="scenario-card border border-slate-200 rounded-xl p-4 bg-gradient-to-b from-white to-slate-50/80 shadow-sm">
+          <h4 class="text-sm font-bold text-slate-900 mb-2">${escapeHtml(title)}</h4>
+          <div class="module-markdown-body text-slate-700 text-sm mb-3">${situationHtml}</div>
+          <p class="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-2">Choose a response</p>
+          <div class="space-y-2">${choiceBlocks}</div>
         </article>`;
     })
     .join('');
 
   return `
-      <section class="space-y-4 module-scenarios" aria-labelledby="sc-heading">
-        <h3 id="sc-heading" class="text-lg font-bold text-slate-900 border-b border-slate-200 pb-2">Scenario cards</h3>
-        <div class="${gridClass}">${cards}</div>
-      </section>`;
+      <div class="module-scenarios-inner space-y-4" aria-labelledby="sc-heading">
+        <h3 id="sc-heading" class="text-base font-bold text-slate-900 border-b border-slate-200 pb-2">Scenario cards</h3>
+        <div class="flex flex-col gap-4">${cards}</div>
+      </div>`;
 }
 
 function buildSingleKnowledgeCard(kc, slideIndex) {
@@ -120,7 +115,7 @@ export function buildKnowledgeChecksCarouselHtml(meta) {
   const dots = checks
     .map((_, i) => {
       const active = i === 0 ? 'bg-orange-500 ring-2 ring-orange-200' : 'bg-slate-300 hover:bg-slate-400';
-      return `<button type="button" class="js-kc-carousel-dot h-2.5 w-2.5 rounded-full transition ${active}" data-kc-dot="${i}" aria-label="Question ${i + 1} of ${n}" aria-current="${i === 0 ? 'true' : 'false'}"></button>`;
+      return `<button type="button" class="js-kc-carousel-dot h-2 w-2 shrink-0 rounded-full transition ${active}" data-kc-dot="${i}" aria-label="Question ${i + 1} of ${n}" aria-current="${i === 0 ? 'true' : 'false'}"></button>`;
     })
     .join('');
 
@@ -141,7 +136,7 @@ export function buildKnowledgeChecksCarouselHtml(meta) {
               Next <i class="fa-solid fa-chevron-right text-xs" aria-hidden="true"></i>
             </button>
           </div>
-          <div class="flex justify-center gap-2 mt-4 js-kc-carousel-dots-wrap">${dots}</div>
+          <div class="flex flex-wrap justify-center gap-1.5 mt-4 px-1 js-kc-carousel-dots-wrap max-w-full">${dots}</div>
         </div>
       </section>`;
 }

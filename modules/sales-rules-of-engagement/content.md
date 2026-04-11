@@ -34,6 +34,62 @@ knowledge_checks:
     correct_index: 0
     explanation: "Strategic list changes are owned by Sales Managers and the VP of Sales and are communicated from the official repository—informal lists are not authoritative."
 
+  - question: "For a general (non-strategic) Customer account with no logged activity, after roughly how many days may others work the account per typical ROE windows?"
+    options:
+      - "121+ days"
+      - "61+ days"
+      - "5 business days"
+    correct_index: 0
+    explanation: "General Customer accounts with no logged activity for 121+ days may be worked by others; Prospect windows use a shorter inactivity threshold (61+ days)."
+
+  - question: "For a general Prospect account with no logged activity, which window typically applies before others may work it?"
+    options:
+      - "61+ days without activity"
+      - "121+ days without activity"
+      - "Only after the fiscal year ends"
+    correct_index: 0
+    explanation: "Prospect accounts on general (non-strategic) paths follow the 61+ day inactivity window described in the ROE, distinct from the Customer 121+ day window."
+
+  - question: "Does the five-business-day first-contact rule for assigned inbound leads apply the same way to leads you self-source through prospecting?"
+    options:
+      - "No; that clock is specific to sales- or marketing-assigned inbound leads"
+      - "Yes; every lead type uses the same five-business-day clock"
+      - "Self-sourced leads have a 121-day clock instead"
+    correct_index: 0
+    explanation: "The five-business-day expectation applies to inbound leads assigned by sales or marketing; it is not the same rule as for self-sourced prospecting."
+
+  - question: "When you want to transfer an account to another rep, what does the ROE expect before leadership approval?"
+    options:
+      - "Align with the current owner and involve your manager and sales leadership in writing"
+      - "Reassign the account in Salesforce first, then notify the prior owner"
+      - "Post in a team chat only; no written approval is needed"
+    correct_index: 0
+    explanation: "Transfers require alignment with the incumbent owner and written approval through your manager and sales leadership—do not reassign unilaterally."
+
+  - question: "Are E-Rate and USAC-funded entities treated like ordinary general accounts for the 61/121-day activity rules?"
+    options:
+      - "No; they follow Strategic-style treatment regardless of list inclusion (with noted exceptions)"
+      - "Yes; they always follow the same 61/121 rules as any Prospect or Customer"
+      - "They are excluded from Salesforce entirely"
+    correct_index: 0
+    explanation: "E-Rate and USAC-funded entities are called out as Strategic for ROE purposes regardless of list inclusion, subject to any documented exceptions."
+
+  - question: "If Salesforce is the system of record for ownership disputes, what should strong reps prioritize alongside outreach?"
+    options:
+      - "Data quality, timely logging, and consistent meaningful activity"
+      - "Keeping deals only in email to avoid clutter"
+      - "Deleting old tasks so the record looks inactive"
+    correct_index: 0
+    explanation: "Leadership uses Salesforce to resolve conflicts; accurate records and logged activity make the ROE fair and enforceable."
+
+  - question: "Where should you look for the authoritative Strategic Accounts list rather than informal spreadsheets?"
+    options:
+      - "The official Sales SharePoint repository referenced in the ROE"
+      - "Any rep’s personal bookmark folder"
+      - "Only the footer of customer emails"
+    correct_index: 0
+    explanation: "The ROE points to the official repository on Sales SharePoint; informal lists are not authoritative."
+
 scenarios:
   - title: "Working a customer account with no logged activity for 130 days"
     situation: |

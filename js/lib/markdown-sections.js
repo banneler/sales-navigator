@@ -3,7 +3,7 @@ import DOMPurify from 'https://esm.sh/dompurify@3.2.2';
 import { parseFrontMatter } from './front-matter.js';
 import {
   buildFiveMinuteSummaryHtml,
-  buildScenariosSectionHtml,
+  buildScenariosAsideHtml,
   buildKnowledgeChecksCarouselHtml,
 } from './module-enrichment.js';
 
@@ -80,7 +80,7 @@ export function renderSectionsToHtml(sections) {
 }
 
 /**
- * Full module document HTML: header, 5-minute summary, ## sections, scenarios grid, knowledge carousel.
+ * Full module document HTML: header; then main column (~70%) with 5-minute summary, ## sections, knowledge carousel; optional sticky scenarios aside (~30%) when scenarios exist.
  * Used by the main app and the admin preview. Returns error markup if front matter is invalid.
  */
 export function renderModuleDocumentHtml(markdownSource) {
@@ -110,22 +110,42 @@ export function renderModuleDocumentHtml(markdownSource) {
   const sections = splitMarkdownByH2(body || '');
   const sectionCardsHtml = renderSectionsToHtml(sections);
   const fiveMinHtml = buildFiveMinuteSummaryHtml(meta);
-  const scenariosHtml = buildScenariosSectionHtml(meta);
+  const scenariosAsideInner = buildScenariosAsideHtml(meta);
   const knowledgeCarouselHtml = buildKnowledgeChecksCarouselHtml(meta);
 
-  return `
-    <div class="space-y-6">
+  const headerBlock = `
       <div class="flex flex-wrap items-start justify-between gap-4">
         <div>
           <h2 class="text-2xl font-bold text-slate-900 tracking-tight">${escapeHtml(title)}</h2>
           ${summary ? `<p class="text-slate-600 mt-2 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
         </div>
         <div class="flex-shrink-0">${badge}</div>
-      </div>
+      </div>`;
+
+  const mainColumnInner = `
       ${fiveMinHtml}
       <div class="space-y-6 module-deep-dive">${sectionCardsHtml}</div>
-      ${scenariosHtml}
-      ${knowledgeCarouselHtml}
+      ${knowledgeCarouselHtml}`;
+
+  if (scenariosAsideInner) {
+    return `
+    <div class="module-doc space-y-6">
+      ${headerBlock}
+      <div class="module-layout-row flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
+        <div class="module-layout-main w-full lg:flex-1 lg:min-w-0 space-y-6">
+          ${mainColumnInner}
+        </div>
+        <aside class="module-scenarios-aside w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white p-4 shadow-sm lg:sticky lg:top-4 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
+          ${scenariosAsideInner}
+        </aside>
+      </div>
+    </div>`;
+  }
+
+  return `
+    <div class="module-doc space-y-6">
+      ${headerBlock}
+      ${mainColumnInner}
     </div>
   `;
 }

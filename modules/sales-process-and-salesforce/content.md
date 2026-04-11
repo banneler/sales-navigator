@@ -34,6 +34,62 @@ knowledge_checks:
     correct_index: 0
     explanation: "Closed/lost opportunities should not be deleted—history and context matter if the deal revives."
 
+  - question: "Who should clear rare exceptions where you skip creating an opportunity on lead conversion?"
+    options:
+      - "Your sales manager or Salesforce admin"
+      - "Only the customer’s IT department"
+      - "No one; reps decide alone"
+    correct_index: 0
+    explanation: "Skipping opportunity creation is for unusual cases aligned with sales management or the Salesforce administrator."
+
+  - question: "For employee business lead referral opportunities after conversion, what should you verify and maintain?"
+    options:
+      - "Referral fields on the opportunity and communication with the referrer on status and eligibility"
+      - "Only the opportunity name; referral data is optional"
+      - "Delete referral fields to protect privacy"
+    correct_index: 0
+    explanation: "Referral program integrity depends on accurate referral fields and keeping the referrer informed."
+
+  - question: "What is a practical daily habit for working your book in Salesforce per Salesforce 101-style guidance?"
+    options:
+      - "Use Tasks, pinned list views, and Home dashboards to keep follow-ups and reporting current"
+      - "Avoid list views so no one sees your pipeline"
+      - "Rely only on paper notes outside Salesforce"
+    correct_index: 0
+    explanation: "Daily hygiene with tasks, views, and dashboards keeps handoffs and leadership reporting trustworthy."
+
+  - question: "Before Send to DocuSign from a GPC Solution, where should signers exist in Salesforce?"
+    options:
+      - "As contacts on the relevant account (roles can help)"
+      - "Only as leads that are never converted"
+      - "Only in an external spreadsheet"
+    correct_index: 0
+    explanation: "Recipients should be Salesforce contacts tied to the account; the integration assumes proper contact records."
+
+  - question: "When merging a Conga document and sending for signature, what is the recommended early step on the GPC Solution?"
+    options:
+      - "Set Contract Signer when you create or early in the solution lifecycle"
+      - "Wait until Closed/Won to pick any signer"
+      - "Skip Conga and email a blank PDF"
+    correct_index: 0
+    explanation: "Set Contract Signer early; late changes behave differently by stage and Approval Pending blocks adding the field."
+
+  - question: "What does Universal Search help you do in the GPC Sales experience?"
+    options:
+      - "Find records containing your search term across objects"
+      - "Replace approval workflows automatically"
+      - "Delete closed opportunities in bulk"
+    correct_index: 0
+    explanation: "Universal Search helps locate records quickly; it supports hygiene and navigation, not bulk destructive actions."
+
+  - question: "After Closed/Won on an opportunity, what typically happens in the solution lifecycle per Salesforce 101?"
+    options:
+      - "A project is created for each solution site in the GPC Solution"
+      - "The GPC Solution is deleted to save space"
+      - "All contacts are removed from the account"
+    correct_index: 0
+    explanation: "Closed/Won advances delivery: projects spin up per solution site as described in the sales-cycle overview."
+
 scenarios:
   - title: "Employee business lead referral after conversion"
     situation: |

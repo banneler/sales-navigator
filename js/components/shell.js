@@ -62,7 +62,7 @@ export function renderShell(manifest, onSelect) {
         </div>
       </aside>
       <main id="main-panel" class="flex-1 overflow-y-auto min-h-0 min-w-0 bg-slate-100 p-6 md:p-8">
-        <div id="module-host" class="max-w-[1100px] mx-auto min-h-[200px]"></div>
+        <div id="module-host" class="w-full max-w-[1600px] mx-auto min-h-[200px] px-0"></div>
       </main>
     </div>
   `;

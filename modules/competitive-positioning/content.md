@@ -30,6 +30,55 @@ knowledge_checks:
       - "Never\u2014sales should own all topology design alone"
     correct_index: 1
     explanation: "The module lists WAN/SD-WAN, security, hybrid designs, regulated workloads, fiber feasibility, and RFP validation as reasons to pull SE early."
+  - question: "What should competitor \u2192 GPC responses pair for each angle?"
+    options:
+      - "Their pitch or truth, business risk for this customer, and proof you can support (local teams, NOC, redundancy, portfolio)"
+      - "Only a slogan and no customer specifics"
+      - "Personal attacks on the competitor\u2019s executives"
+    correct_index: 0
+    explanation: "Map competitor angles to customer risk and **proof** you can substantiate\u2014avoid generic superiority without fit."
+  - question: "Against fiber vs LEO satellite interest, what reframe beats a speed-test-only debate?"
+    options:
+      - "Reliability, latency, weather/obstruction risk, and operational support for business apps"
+      - "Monthly sticker price as the only decision factor"
+      - "Ignore their interest and refuse to discuss satellite"
+    correct_index: 0
+    explanation: "Acknowledge coverage, then qualify latency-sensitive apps and SLA needs; position fiber for predictable performance and support\u2014not headline Mbps alone."
+  - question: "What does the framework say about personal disparagement of competitors?"
+    options:
+      - "Avoid it\u2014stay factual and customer-centric"
+      - "Encourage it whenever you are behind on price"
+      - "Require it in every competitive meeting"
+    correct_index: 0
+    explanation: "**Landmines** forbid personal attacks; keep comparisons factual and tied to customer outcomes."
+  - question: "When prospects hear M&A messaging, what do they typically want?"
+    options:
+      - "Stability, service quality, and honest comparison\u2014not gossip"
+      - "Rumors and speculation without business relevance"
+      - "A guarantee their vendor will exit the market next week"
+    correct_index: 0
+    explanation: "Acquisition talk should stay factual and customer-centric; pivot to continuity, support model, and monitoring you deliver."
+  - question: "For SD-WAN battle-card use, what must you verify before citing awards or ratings?"
+    options:
+      - "Year and scope\u2014confirm accuracy before external claims"
+      - "Nothing\u2014repeat any headline from memory"
+      - "Only the competitor\u2019s stock price"
+    correct_index: 0
+    explanation: "Technology cards stress verifying **awards and ratings** before citing; stay accurate on scope and timeframe."
+  - question: "What dimensions help compare operators during metro/local competition beyond headline price?"
+    options:
+      - "Install quality, support model, redundancy, fiber depth vs pocketed coverage, and rate stability"
+      - "Only the color of the competitor\u2019s logo"
+      - "Wi-Fi router aesthetics in consumer reviews only"
+    correct_index: 0
+    explanation: "Probe install quality, local vs remote support, redundancy, ownership vs leased facilities, and contract stability\u2014not price alone."
+  - question: "What is PM engagement used for per the module?"
+    options:
+      - "Delivery timelines, construction, and contract alignment"
+      - "Replacing all sales discovery on the first call"
+      - "Writing competitor press releases"
+    correct_index: 0
+    explanation: "Use **PM** for delivery timeline, construction realities, and contract alignment alongside SE for technical design."
 scenarios:
   - title: "Starlink vs fiber at a rural clinic"
     situation: |

@@ -19,10 +19,10 @@ knowledge_checks:
     explanation: "The module positions DIA for performance, operations, symmetry, and richer security/support—not for minimum cost."
   - question: "What is Managed Ethernet primarily for?"
     options:
-      - "Replacing all voice systems with UC only."
       - "Private Layer 2 connectivity between sites (not Internet breakout), with EPL/EVPL and E-LAN options."
+      - "Replacing all voice systems with UC only."
       - "Consumer-grade Wi-Fi in the office."
-    correct_index: 1
+    correct_index: 0
     explanation: "Ethernet is private site-to-site transport; Internet access is a different conversation (DIA/SIA)."
   - question: "What is Wavelength (Wave) best positioned for?"
     options:
@@ -31,6 +31,55 @@ knowledge_checks:
       - "Email hosting for ten users."
     correct_index: 1
     explanation: "Wave is big-pipe optical transport; qualify Internet vs private transport and involve quoting teams for internal pricing."
+  - question: "Per the DIA vs SIA comparison in this module, which statement is accurate?"
+    options:
+      - "SIA and DIA both scale to the same documented maximum in the comparison sheet."
+      - "In the comparison, SIA tops out around 2 Gbps symmetrical while DIA scales up to 100 Gbps symmetrical—use that to frame scale and growth."
+      - "SIA always includes richer customer-specific DDoS monitoring than DIA."
+    correct_index: 1
+    explanation: "Use the comparison sheet for scale, IP counts, latency posture, support model, and DDoS differences—not assumptions."
+  - question: "How should you use training PDFs that live in the pricing or internal folders?"
+    options:
+      - "Email them verbatim to customers as final quotes."
+      - "Treat them as internal references; customer-facing numbers and quotes come from standard tools and approved processes."
+      - "Ignore them completely even for internal planning."
+    correct_index: 1
+    explanation: "The module marks internal pricing extracts as not customer-facing until validated through proper quoting."
+  - question: "When comparing GPC fiber to satellite for POS and VoIP, what is sound positioning?"
+    options:
+      - "Dismiss satellite without understanding their constraints."
+      - "Explore weather, latency, jitter, and congestion tactfully; contrast fiber reliability, stable low latency, and scalable symmetrical enterprise paths."
+      - "Promise identical performance in every geography without discovery."
+    correct_index: 1
+    explanation: "Stay professional: qualify constraints, then anchor on validated design and outcomes—not trash talk."
+  - question: "What problem does E-LAN (Ethernet LAN) address in the module’s framing?"
+    options:
+      - "Single home-user email only."
+      - "Multipoint-to-multipoint Layer 2 reach so multiple UNIs can mesh—any site to any site within the service."
+      - "Public Internet breakout for guest Wi-Fi only."
+    correct_index: 1
+    explanation: "E-LAN is multipoint-to-multipoint private Ethernet; don’t confuse it with Internet access services."
+  - question: "A branch suffers upload congestion and jitter on shared Internet for cloud apps. What is a sensible first step?"
+    options:
+      - "Automatically quote Wave between every site without qualification."
+      - "Qualify SIA vs DIA (symmetry, latency, DDoS, support), pain points, and whether private Ethernet fits site-to-site needs."
+      - "Recommend only consumer broadband upgrades."
+    correct_index: 1
+    explanation: "Discovery drives whether DIA vs SIA and transport choices fit before defaulting to large optical builds like Wave."
+  - question: "What is the right mental model for **access** in this module?"
+    options:
+      - "Access is how traffic reaches the customer—SIA for flexible shared access, DIA for dedicated symmetrical paths and richer operations."
+      - "Access means only MPLS forever, with no Internet options."
+      - "Access is identical to SD-WAN policy routing in every case."
+    correct_index: 0
+    explanation: "Frame SIA vs DIA by workload, symmetry, operations, and security posture—then align Ethernet/Wave where private transport fits."
+  - question: "When should Wave be positioned instead of simply upsizing DIA/SIA?"
+    options:
+      - "Whenever the customer mentions the word Internet."
+      - "For DC–DC or hub-to-hub big pipes, replication, or latency-sensitive workloads that need Layer 1 optical—not as a substitute for Internet access."
+      - "Only for sites under 10 Mbps total usage."
+    correct_index: 1
+    explanation: "Qualify Internet vs private transport; Wave addresses large optical point-to-point needs, not generic Internet access."
 scenarios:
   - title: "Branch complains about VPN and video over ‘business broadband’"
     situation: |
