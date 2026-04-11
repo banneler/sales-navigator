@@ -3,7 +3,11 @@ id: "competitive-positioning"
 title: "Competitive Positioning"
 summary: "Training: how to run a disciplined competitive conversation\u2014discovery before claims, competitor-to-response mapping, landmines, proof-point patterns, and when to engage SE/PM. Sections mirror metro, fiber vs satellite, M&A, and technology battle-card playbooks."
 sensitivity: "public"
-reference_files: []
+reference_files:
+  - label: "Product battle cards"
+    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx#product-battle-cards"
+  - label: "Competitive battle cards"
+    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx#competitive-battle-cards"
 five_minute_summary: |
   - **Framework:** Discovery before claims; map **competitor → GPC response** with business risk, customer reality, and proof you can support (local teams, NOC, redundancy, portfolio)—avoid generic superiority.
   - **Landmines:** No personal attacks; don't cite battle-card stats externally without confirming currency; avoid absolutes; pull **SE/PM** early for architecture-heavy deals.
