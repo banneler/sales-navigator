@@ -83,7 +83,7 @@ export function buildFiveMinuteSummaryHtml(meta) {
 }
 
 /**
- * Sticky right-rail: single-column scenario cards. Empty string if no scenarios.
+ * Sticky right-rail: scenarios column. Empty string if no scenarios.
  */
 export function buildScenariosAsideHtml(meta) {
   const scenarios = meta.scenarios;
@@ -127,7 +127,7 @@ export function buildScenariosAsideHtml(meta) {
 
   return `
       <div class="module-scenarios-inner space-y-3" aria-labelledby="sc-heading" data-scenario-total="${n}">
-        <h3 id="sc-heading" class="text-xs font-bold text-slate-900 border-b border-slate-200 pb-1.5">Scenario cards</h3>
+        <h3 id="sc-heading" class="text-xs font-bold text-slate-900 border-b border-slate-200 pb-1.5">Scenarios</h3>
         <p class="js-scenarios-progress text-[10px] font-medium text-slate-600 mb-0.5" aria-live="polite">0 / ${n} scenario${n === 1 ? '' : 's'} reviewed</p>
         <div class="flex flex-col gap-3">${cards}</div>
         <div class="js-scenarios-completion hidden mt-2 rounded-xl border border-green-200 bg-green-50 px-3 py-3 text-sm text-green-950 shadow-sm" role="status" aria-live="polite">

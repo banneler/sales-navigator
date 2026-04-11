@@ -76,7 +76,7 @@
   color: #64748b;
 }
 
-/* Scenario cards: situation block must match rail type (11px); global .module-markdown-body is 15px */
+/* Scenarios rail: situation block must match rail type (11px); global .module-markdown-body is 15px */
 .scenario-situation-text.module-markdown-body {
   font-size: 0.6875rem;
   line-height: 1.45;
