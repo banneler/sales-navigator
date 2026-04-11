@@ -43,8 +43,15 @@ export default function renderStandardModule(container, content) {
     })
     .join('');
 
-  const guidde = content.media?.guidde;
-  const guiddeBlock = `
+  /* -------------------------------------------------------------------------- */
+  /* Guidde walkthrough panel — OFF. Set SHOW_GUIDDE = true to show again.       */
+  /* Each content.json may still list media.guidde { notes, embedUrl } unchanged.*/
+  /* -------------------------------------------------------------------------- */
+  const SHOW_GUIDDE = false;
+  let guiddeBlock = '';
+  if (SHOW_GUIDDE) {
+    const guidde = content.media?.guidde;
+    guiddeBlock = `
     <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm border-l-4 border-l-orange-500">
       <h3 class="text-lg font-bold text-slate-900 mb-2 flex items-center gap-2">
         <i class="fa-solid fa-circle-play text-orange-500"></i> Guidde walkthrough
@@ -56,6 +63,7 @@ export default function renderStandardModule(container, content) {
           : '<div class="rounded-lg border-2 border-dashed border-slate-200 bg-slate-50 p-8 text-center text-slate-500 text-sm">Embed URL not set — add <code class="bg-slate-200 px-1 rounded">media.guidde.embedUrl</code> in content.json</div>'
       }
     </div>`;
+  }
 
   const videos = (content.media?.videos || [])
     .map(
