@@ -61,25 +61,25 @@ function buildDemoMarkup() {
         </div>
         <aside class="w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white/95 p-4 shadow-sm backdrop-blur-sm pointer-events-auto" data-tour-target="tour-scenarios">
           <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Scenarios</p>
-          <p class="text-xs font-semibold text-slate-800 mt-3">“What’s actually different?”</p>
+          <p class="text-xs font-semibold text-slate-800 mt-3">Where is Waldo?</p>
           <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            A customer says: <span class="text-slate-800">“We’ve heard a lot of promises—what’s actually different about working with you?”</span> You’re on the spot. What do you lead with?
+            You aren’t sure where to find the most recent product collateral for <strong>Unified Communications</strong>. What should you do?
           </p>
           <p class="text-xs text-slate-500 mt-3 uppercase tracking-wide">Pick a response</p>
           <div class="mt-2 space-y-2" role="group" aria-label="Scenario responses">
             <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-              Walk through every product feature you can remember—more is more.
+              Send an email to Everyone@gpcom.com and ask where to find it.
             </button>
             <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="true">
-              Name one concrete next step you’ll own, then ask what “different” would look like for them.
+              Check the Sales SharePoint site and look inside Sales Resources.
             </button>
             <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-              Smile and say “We’re the best”—confidence closes deals.
+              Email, call, and IM Sarah Tinkham relentlessly until she gives it up.
             </button>
           </div>
           <p class="text-xs text-red-700 mt-2 min-h-[1.25rem] hidden" data-tour-scenario-feedback="" role="status" aria-live="polite"></p>
           <p class="text-xs text-emerald-800 bg-emerald-50/90 border border-emerald-100 rounded-lg px-3 py-2 mt-3 hidden" data-tour-coach-note="">
-            <strong>Coach's note:</strong> Specific beats slick—tie your answer to something they can verify or experience next.
+            <strong>Coach's note:</strong> Official hubs beat broadcast email—Sales Resources is there so you (and Sarah) aren’t playing hide-and-seek.
           </p>
         </aside>
       </div>
@@ -340,10 +340,10 @@ export function loadGettingStarted(container, manifest) {
       icon: 'fa-comments',
       body: `
         <p class="text-slate-800 leading-relaxed mb-3">
-          <strong>Scenarios</strong> sit beside the main content on wider screens. You'll get a short situation, a few choices, and feedback—practice for real conversations, not a test score.
+          <strong>Scenarios</strong> sit beside the main content on wider screens. You'll get a short situation, a few choices, and feedback—practice for real moments (customer or internal), not a test score.
         </p>
         <p class="text-slate-600 text-sm mb-3">
-          The sample in the highlighted area is a short customer moment—live modules use scenarios built from your actual training.
+          The sample in the highlighted area is a quick “find the collateral” moment—live modules use scenarios from your real training.
         </p>
         <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
           <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
@@ -492,7 +492,7 @@ export function loadGettingStarted(container, manifest) {
         } else {
           btn.classList.add('ring-2', 'ring-red-400', 'bg-red-50');
           if (feedback) {
-            feedback.textContent = 'Not quite—pick the response that’s specific and customer-led.';
+            feedback.textContent = 'Not quite—Waldo is in Sales Resources, not in everyone’s inbox.';
             feedback.classList.remove('hidden');
           }
         }
