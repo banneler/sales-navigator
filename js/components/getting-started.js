@@ -380,22 +380,18 @@ export function loadGettingStarted(container, manifest) {
       icon: 'fa-circle-check',
       body: `
         <p class="text-slate-800 leading-relaxed mb-4">
-          You know how to navigate modules, find practice, and use the map book when needed. Pick any topic from the left to continue—or jump straight into training below.
+          You know how to navigate modules, find practice, and use the map book when needed. When you're ready, jump into your first training module below.
         </p>
-        <div class="flex flex-wrap gap-3">
-          ${
-            firstTraining
-              ? `<button type="button" data-goto="${escapeHtml(firstTraining.id)}" class="gs-goto inline-flex items-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold px-4 py-2.5 text-sm shadow-sm transition">
+        ${
+          firstTraining
+            ? `<div class="flex flex-wrap gap-3">
+          <button type="button" data-goto="${escapeHtml(firstTraining.id)}" class="gs-goto inline-flex items-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold px-4 py-2.5 text-sm shadow-sm transition">
             <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             Open ${escapeHtml(firstTraining.title)}
-          </button>`
-              : ''
-          }
-          <button type="button" data-goto-sidebar class="inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white/50 hover:bg-white/80 text-slate-800 font-medium px-4 py-2.5 text-sm transition">
-            Browse the sidebar
           </button>
-        </div>
-        <p class="text-slate-500 text-xs mt-4">Tip: bookmark a specific module with the URL in your browser—it updates when you change modules.</p>`,
+        </div>`
+            : ''
+        }`,
     },
   ];
 
@@ -560,10 +556,6 @@ export function loadGettingStarted(container, manifest) {
         const id = btn.getAttribute('data-goto');
         if (id) setRouteModuleId(id);
       });
-    });
-    cardEl.querySelector('[data-goto-sidebar]')?.addEventListener('click', () => {
-      document.getElementById('sidebar')?.classList.remove('sidebar-collapsed');
-      document.getElementById('sidebar-toggle')?.focus();
     });
   }
 
