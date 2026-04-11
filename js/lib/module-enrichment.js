@@ -19,9 +19,7 @@ function mdToSafeHtml(md) {
 }
 
 /**
- * Dark-mode reference panel for SharePoint documents.
- * Opens in a new tab — Microsoft 365 / SharePoint typically blocks cross-origin iframes
- * (X-Frame-Options / frame-ancestors), so embedding is not reliable even with a session.
+ * Dark-mode reference list: icon + hyperlink per file (new tab). Multiple `reference_files` supported.
  *
  * Expects meta.reference_files: Array<{ label?: string, sharepoint_url: string }>
  */
@@ -39,13 +37,12 @@ export function buildModuleReferenceFilesHtml(meta) {
           : `Reference ${i + 1}`;
       const href = escapeHtml(url);
       return `
-        <div class="flex flex-col gap-2 rounded-lg border border-slate-700/80 bg-slate-950/50 px-3 py-2.5">
-          <p class="text-xs font-semibold text-slate-200 leading-snug">${escapeHtml(label)}</p>
-          <a href="${href}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2 px-3 shadow-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300">
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i>
-            Open in SharePoint
-          </a>
-        </div>`;
+        <a href="${href}" target="_blank" rel="noopener noreferrer" class="group ref-file-link flex items-start gap-3 rounded-lg border border-slate-700/70 bg-slate-950/40 px-3 py-2.5 transition hover:border-orange-500/35 hover:bg-slate-800/45 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60">
+          <span class="ref-file-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-600/80 bg-gradient-to-br from-slate-800 to-slate-950 text-orange-400 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]" aria-hidden="true">
+            <i class="fa-solid fa-file-lines text-lg"></i>
+          </span>
+          <span class="min-w-0 flex-1 pt-1.5 text-xs font-medium leading-snug text-orange-300 underline decoration-orange-500/40 underline-offset-2 group-hover:text-orange-200 group-hover:decoration-orange-400/70">${escapeHtml(label)}</span>
+        </a>`;
     })
     .filter(Boolean)
     .join('');
@@ -57,10 +54,7 @@ export function buildModuleReferenceFilesHtml(meta) {
         <div class="px-3 py-2 border-b border-slate-700 bg-slate-950/80">
           <h3 id="module-ref-heading" class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Module Reference Files</h3>
         </div>
-        <div class="p-3 space-y-3">${rows}</div>
-        <p class="text-[9px] text-slate-500 px-3 py-2 border-t border-slate-800 leading-relaxed">
-          SharePoint does not allow embedding this library in other sites. Your session applies in the new tab—keep this training app open and switch back when you are done.
-        </p>
+        <div class="p-3 space-y-2">${rows}</div>
       </section>`;
 }
 
