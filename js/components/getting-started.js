@@ -30,14 +30,18 @@ function orderedUserModules(manifest) {
 function buildDemoMarkup() {
   return `
     <div class="tour-demo-content max-w-[1600px] mx-auto space-y-6 pb-4 select-none">
-      ${buildHandoutToolbarHtml('getting-started')}
       <div class="flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
         <div class="w-full lg:flex-1 min-w-0 space-y-6 pointer-events-none" data-tour-target="module-core">
           <div class="rounded-xl border border-slate-200/90 bg-white/95 shadow-sm p-6 backdrop-blur-sm">
-            <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Welcome to Great Plains Communications</h2>
-            <p class="text-slate-600 mt-3 text-sm max-w-3xl leading-relaxed">
-              We're glad you're here. This space is built to help you ramp with confidence—alongside teammates who remember their first customer call, their first complex quote, and the questions that used to keep them up at night.
-            </p>
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+              <div class="min-w-0 flex-1">
+                <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Welcome to Great Plains Communications</h2>
+                <p class="text-slate-600 mt-3 text-sm max-w-3xl leading-relaxed">
+                  We're glad you're here. This space is built to help you ramp with confidence—alongside teammates who remember their first customer call, their first complex quote, and the questions that used to keep them up at night.
+                </p>
+              </div>
+              ${buildHandoutToolbarHtml('getting-started')}
+            </div>
           </div>
           <div class="rounded-xl border border-orange-100 bg-gradient-to-br from-orange-50/95 to-white/90 p-5 shadow-sm backdrop-blur-sm">
             <p class="text-xs font-bold text-orange-800 uppercase tracking-wide">Five-minute summary</p>

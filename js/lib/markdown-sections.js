@@ -82,17 +82,32 @@ export function renderSectionsToHtml(sections) {
 }
 
 /**
- * Title, intro summary line, and sensitivity badge — same markup as the top of a rendered module.
+ * Title, intro summary, and optional handout actions on one row (title left, handout right).
  * @param {Record<string, unknown>} meta - Parsed YAML front matter
+ * @param {string} [handoutHtml] - From `buildHandoutToolbarHtml` (empty = title block only)
  */
-export function buildModuleHeaderBlockHtml(meta) {
+export function buildModuleHeaderBlockHtml(meta, handoutHtml = '') {
   const title = typeof meta.title === 'string' ? meta.title : 'Module';
   const summary = typeof meta.summary === 'string' ? meta.summary : '';
 
-  return `
+  const titleStack = `
+        <div class="min-w-0 flex-1">
+          <h2 class="text-2xl font-bold text-slate-900 tracking-tight">${escapeHtml(title)}</h2>
+          ${summary ? `<p class="text-slate-600 mt-2 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
+        </div>`;
+
+  if (!handoutHtml || !String(handoutHtml).trim()) {
+    return `
       <div>
         <h2 class="text-2xl font-bold text-slate-900 tracking-tight">${escapeHtml(title)}</h2>
         ${summary ? `<p class="text-slate-600 mt-2 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
+      </div>`;
+  }
+
+  return `
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6 pb-4 border-b border-slate-200/90">
+        ${titleStack}
+        ${handoutHtml}
       </div>`;
 }
 
@@ -142,7 +157,7 @@ export function renderModuleDocumentHtml(markdownSource) {
   const handoutToolbar = buildHandoutToolbarHtml(
     typeof meta.id === 'string' ? meta.id : ''
   );
-  const headerBlock = buildModuleHeaderBlockHtml(meta);
+  const headerBlock = buildModuleHeaderBlockHtml(meta, handoutToolbar);
 
   const mainColumnInner = `
       ${fiveMinHtml}
@@ -175,7 +190,6 @@ export function renderModuleDocumentHtml(markdownSource) {
 
     return `
     <div class="module-doc space-y-6">
-      ${handoutToolbar}
       ${headerBlock}
       <div class="module-layout-row flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
         <div class="module-layout-main w-full lg:flex-1 lg:min-w-0 space-y-6">
@@ -188,7 +202,6 @@ export function renderModuleDocumentHtml(markdownSource) {
 
   return `
     <div class="module-doc space-y-6">
-      ${handoutToolbar}
       ${headerBlock}
       ${mainColumnInner}
     </div>
