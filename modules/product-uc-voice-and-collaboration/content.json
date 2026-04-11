@@ -10,15 +10,15 @@
       "resources": [
         {
           "label": "UC Brochure (abbreviated)",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Unified Communications/UC Brochure - Abbreviated 041026.pdf"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/UC Brochure - Abbreviated 041026.pdf"
         },
         {
           "label": "UC for Teams datasheet",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Unified Communications/UC for Teams/UC for Teams datasheet 100325.pdf"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/UC for Teams/UC for Teams datasheet 100325.pdf"
         },
         {
           "label": "Contact Center datasheet",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Unified Communications/Contact Center datasheet 050925.pdf"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Unified Communications/Contact Center datasheet 050925.pdf"
         },
         {
           "label": "UC Competitor battle card (PDF)",
@@ -32,17 +32,17 @@
       "resources": [
         {
           "label": "Voice Product Sheet",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Voice - Non-UC/Voice Product Sheet 112524.pdf"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Voice - Non-UC/Voice Product Sheet 112524.pdf"
         }
       ]
     },
     {
       "heading": "Pricing (internal)",
-      "body": "UC and voice pricing PDFs in the pricing zip—handle as internal.",
+      "body": "UC and voice pricing PDFs in the pricing extract—handle as internal.",
       "resources": [
         {
-          "label": "UC / Voice pricing pack",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (4).zip"
+          "label": "UC / Voice pricing folder",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (4)"
         }
       ]
     }

@@ -10,15 +10,15 @@
       "resources": [
         {
           "label": "DIA Product Sheet",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Internet/DIA Product Sheet 120424.pdf"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Internet/DIA Product Sheet 120424.pdf"
         },
         {
           "label": "DIA vs SIA Comparison",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Internet/DIA vs SIA Comparison 110424.pdf"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Internet/DIA vs SIA Comparison 110424.pdf"
         },
         {
           "label": "SIA product sheet",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Internet/SIA product sheet 120324.pdf"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Internet/SIA product sheet 120324.pdf"
         },
         {
           "label": "Ethernet battle card (PDF in training folder)",
@@ -32,11 +32,11 @@
     },
     {
       "heading": "Pricing (internal)",
-      "body": "Pricing PDFs and market groups live in the pricing zip—treat as internal unless your leadership publishes customer-facing numbers.",
+      "body": "Pricing PDFs and market groups live in the extracted pricing folder—treat as internal unless your leadership publishes customer-facing numbers.",
       "resources": [
         {
-          "label": "DIA & SIA / Ethernet / Wave pricing pack",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (4).zip"
+          "label": "DIA & SIA / Ethernet / Wave pricing pack (folder)",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (4)"
         }
       ]
     }

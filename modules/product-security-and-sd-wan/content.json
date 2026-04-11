@@ -10,19 +10,19 @@
       "resources": [
         {
           "label": "Managed Firewall data sheet",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Managed Firewall & Security/Managed Firewall data sheet 032026.pdf"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Managed Firewall & Security/Managed Firewall data sheet 032026.pdf"
         },
         {
           "label": "Managed Network Security data sheet",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Managed Firewall & Security/Managed Network Security data sheet 062025.pdf"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Managed Firewall & Security/Managed Network Security data sheet 062025.pdf"
         },
         {
           "label": "DDoS Product Sheet",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → DDoS/DDoS Product Sheet 012025.pdf"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/DDoS/DDoS Product Sheet 012025.pdf"
         },
         {
           "label": "SD-WAN Product Sheet",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → SD-WAN/SD-WAN Product Sheet 2024.pdf"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/SD-WAN/SD-WAN Product Sheet 2024.pdf"
         },
         {
           "label": "SD-WAN battle card (PDF)",
@@ -39,8 +39,8 @@
       "body": "SD-WAN and managed security fee schedules—internal use.",
       "resources": [
         {
-          "label": "Pricing zip (SD-WAN / MNS)",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (4).zip"
+          "label": "Pricing folder (SD-WAN / MNS / Business Security)",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (4)"
         }
       ]
     }

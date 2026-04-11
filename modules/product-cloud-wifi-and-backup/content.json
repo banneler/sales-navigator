@@ -9,8 +9,8 @@
       "body": "Pair Cloud Connect with customer cloud strategy conversations; Wi-Fi and backup with continuity and employee experience.",
       "resources": [
         {
-          "label": "Cloud Connect product sheet (zip tree)",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Cloud Connect/Cloud Connect 011725.pdf"
+          "label": "Cloud Connect product sheet",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Cloud Connect/Cloud Connect 011725.pdf"
         },
         {
           "label": "Cloud Connect battle card (PDF)",
@@ -18,7 +18,7 @@
         },
         {
           "label": "Managed Wi-Fi datasheet",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Managed Wi-Fi/Managed Wi-Fi datasheet 070725.pdf"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Managed Wi-Fi/Managed Wi-Fi datasheet 070725.pdf"
         },
         {
           "label": "GPC Managed WIFI battle card (PDF)",
@@ -26,7 +26,7 @@
         },
         {
           "label": "5G Wireless Internet Backup Product Sheet",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Wireless Internet Backup/5G Wireless Internet Backup Product Sheet 103025.pdf"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)/Wireless Internet Backup/5G Wireless Internet Backup Product Sheet 103025.pdf"
         },
         {
           "label": "5G Wireless Backup battle card (PDF)",
@@ -35,12 +35,16 @@
       ]
     },
     {
-      "heading": "Short product-training links (SharePoint shortcuts)",
-      "body": "The small OneDrive zip contains .url shortcuts to hosted training pages—open from an extracted folder on a machine with access.",
+      "heading": "Product-training shortcuts (.url)",
+      "body": "The small OneDrive extract contains .url shortcuts to hosted training pages—open on a machine with access.",
       "resources": [
         {
-          "label": "Training shortcuts bundle",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026.zip"
+          "label": "Training shortcuts bundle (folder)",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026"
+        },
+        {
+          "label": "Example: Cloud Connect training shortcut",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026/Cloud Connect/Product Training - Cloud Connect.url"
         }
       ]
     }

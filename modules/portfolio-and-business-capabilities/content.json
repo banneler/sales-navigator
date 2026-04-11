@@ -16,11 +16,11 @@
     },
     {
       "heading": "Product marketing library (extracted)",
-      "body": "The “(1)” zip is the broad datasheet library organized by product folder (Internet, Ethernet, SD-WAN, UC, etc.). Use it as the canonical collateral index when building customer-facing decks.",
+      "body": "The “(1)” extract is the broad datasheet library organized by product folder (Internet, Ethernet, SD-WAN, UC, etc.). Use it as the canonical collateral index when building customer-facing decks.",
       "resources": [
         {
-          "label": "Product datasheets & collateral (zip)",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip"
+          "label": "Product datasheets & collateral (root folder)",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (1)"
         }
       ]
     }

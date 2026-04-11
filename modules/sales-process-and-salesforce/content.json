@@ -10,16 +10,20 @@
       "resources": []
     },
     {
-      "heading": "Training pack (zip)",
-      "body": "Large archive includes MP4s and PDF quick-reference guides.",
+      "heading": "Salesforce training pack (extracted)",
+      "body": "Large folder includes MP4s and PDF quick-reference guides.",
       "resources": [
         {
-          "label": "Salesforce training videos & manuals",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (3).zip"
+          "label": "Salesforce 101 Manual",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Salesforce 101 Manual - 0422.pdf"
         },
         {
-          "label": "Salesforce 101 Manual (also in zip root if extracted)",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (3).zip → Salesforce 101 Manual - 0422.pdf"
+          "label": "Salesforce Training Videos (folder — MP4s)",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Salesforce Training Videos"
+        },
+        {
+          "label": "Full SF pack folder (PDFs + videos root)",
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)"
         }
       ]
     },
@@ -29,7 +33,7 @@
       "resources": [
         {
           "label": "GPC Enterprise Proposal Generator - Intro Video",
-          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (2).zip → GPC Enterprise Proposal Generator - Intro Video.mp4"
+          "path": "/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (2)/GPC Enterprise Proposal Generator - Intro Video.mp4"
         }
       ]
     }
