@@ -2,7 +2,10 @@ import { getRouteModuleId, onRouteChange, setRouteModuleId } from './router.js';
 import { renderShell, highlightNav } from './components/shell.js';
 import { loadAndRenderModule } from './components/module-host.js';
 import { loadMapBook } from './components/map-book-host.js';
-import { loadGettingStarted } from './components/getting-started.js';
+import {
+  loadGettingStarted,
+  destroyGettingStartedOverlay,
+} from './components/getting-started.js';
 
 const MAP_BOOK_MODULE_ID = 'map-book';
 const GETTING_STARTED_ID = 'getting-started';
@@ -25,6 +28,8 @@ async function main() {
     if (!id) return;
     const host = document.getElementById('module-host');
     if (!host) return;
+
+    destroyGettingStartedOverlay();
 
     const subtitle = document.querySelector('#main-header p');
     if (subtitle) {

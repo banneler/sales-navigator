@@ -1,6 +1,12 @@
 import { setRouteModuleId } from '../router.js';
 
 const GETTING_STARTED_ID = 'getting-started';
+const OVERLAY_ID = 'getting-started-tour-overlay';
+
+let overlayEl = null;
+let resizeObs = null;
+let onResize = null;
+let onMainScroll = null;
 
 function escapeHtml(s) {
   if (s == null) return '';
@@ -20,12 +26,245 @@ function orderedUserModules(manifest) {
   );
 }
 
+/** @returns {{ left: number; top: number; width: number; height: number } | null} */
+function unionRectFromSelectors(selectors) {
+  let minL = Infinity;
+  let minT = Infinity;
+  let maxR = -Infinity;
+  let maxB = -Infinity;
+  let found = false;
+  for (const sel of selectors) {
+    const el = document.querySelector(sel);
+    if (!el) continue;
+    const r = el.getBoundingClientRect();
+    if (r.width === 0 && r.height === 0) continue;
+    found = true;
+    minL = Math.min(minL, r.left);
+    minT = Math.min(minT, r.top);
+    maxR = Math.max(maxR, r.right);
+    maxB = Math.max(maxB, r.bottom);
+  }
+  if (!found) return null;
+  return {
+    left: minL,
+    top: minT,
+    width: maxR - minL,
+    height: maxB - minT,
+  };
+}
+
+function buildDemoMarkup(categories) {
+  const catStr = categories.length ? escapeHtml(categories.join(', ')) : '';
+  return `
+    <div class="tour-demo-content max-w-[1600px] mx-auto space-y-6 pb-4 pointer-events-none select-none">
+      <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Preview layout</p>
+      <div class="flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
+        <div class="w-full lg:flex-1 min-w-0 space-y-6" data-tour-target="module-core">
+          <div class="rounded-xl border border-slate-200/90 bg-white/95 shadow-sm p-6 backdrop-blur-sm">
+            <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Example training module</h2>
+            <p class="text-slate-600 mt-2 text-sm max-w-3xl">Summary text sets context—same pattern as live modules.</p>
+          </div>
+          <div class="rounded-xl border border-orange-100 bg-gradient-to-br from-orange-50/95 to-white/90 p-5 shadow-sm backdrop-blur-sm">
+            <p class="text-xs font-bold text-orange-800 uppercase tracking-wide">Five-minute summary</p>
+            <ul class="mt-3 space-y-2 text-sm text-slate-700">
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span> Scan bullets before the deep dive.</li>
+              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span> Key takeaways appear here when the author adds them.</li>
+            </ul>
+          </div>
+          <section class="rounded-xl border border-slate-200 bg-white/95 p-6 shadow-sm backdrop-blur-sm">
+            <h3 class="text-lg font-bold text-slate-900">Section card</h3>
+            <p class="text-sm text-slate-600 mt-2 leading-relaxed">Each <code class="text-xs bg-slate-100 px-1 rounded">##</code> heading in the source becomes its own card in the main column.</p>
+          </section>
+        </div>
+        <aside class="w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white/95 p-4 shadow-sm backdrop-blur-sm" data-tour-target="tour-scenarios">
+          <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Scenarios</p>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">When present, short situations and feedback appear in this column on wide screens.</p>
+        </aside>
+      </div>
+      <div class="rounded-xl border border-slate-200 bg-white/95 p-5 shadow-sm backdrop-blur-sm max-w-4xl" data-tour-target="tour-knowledge">
+        <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Knowledge checks</p>
+        <p class="text-sm text-slate-600 mt-2">Practice questions often sit in a carousel near the bottom of the module.</p>
+        <div class="mt-4 flex gap-2">
+          <span class="h-2 w-8 rounded-full bg-orange-400/90"></span>
+          <span class="h-2 w-8 rounded-full bg-slate-200"></span>
+          <span class="h-2 w-8 rounded-full bg-slate-200"></span>
+        </div>
+      </div>
+    </div>`;
+}
+
+/** @returns {{ left: number; top: number; width: number; height: number } | null} */
+function getSpotlightRect(stepIndex) {
+  switch (stepIndex) {
+    case 0:
+      return null;
+    case 1: {
+      const el = document.getElementById('sidebar');
+      return el ? rectLike(el.getBoundingClientRect()) : null;
+    }
+    case 2: {
+      const el = document.querySelector('[data-tour-target="module-core"]');
+      return el ? rectLike(el.getBoundingClientRect()) : null;
+    }
+    case 3: {
+      return unionRectFromSelectors([
+        '[data-tour-target="tour-scenarios"]',
+        '[data-tour-target="tour-knowledge"]',
+      ]);
+    }
+    case 4: {
+      const el = document.querySelector('[data-module-id="map-book"]');
+      return el ? rectLike(el.getBoundingClientRect()) : null;
+    }
+    case 5: {
+      const el = document.getElementById('module-host');
+      return el ? rectLike(el.getBoundingClientRect()) : null;
+    }
+    default:
+      return null;
+  }
+}
+
+function rectLike(r) {
+  return { left: r.left, top: r.top, width: r.width, height: r.height };
+}
+
+function padRect(r, pad) {
+  return {
+    left: r.left - pad,
+    top: r.top - pad,
+    width: r.width + pad * 2,
+    height: r.height + pad * 2,
+  };
+}
+
 /**
- * Guided click-through for Sales-Navigator features.
- * @param {HTMLElement} container
+ * Remove tour overlay and listeners (call when leaving Getting started route).
+ */
+export function destroyGettingStartedOverlay() {
+  if (resizeObs) {
+    try {
+      resizeObs.disconnect();
+    } catch (_) {
+      /* ignore */
+    }
+    resizeObs = null;
+  }
+  if (onResize) {
+    window.removeEventListener('resize', onResize);
+    window.removeEventListener('scroll', onResize, true);
+    onResize = null;
+  }
+  if (onMainScroll) {
+    document.getElementById('main-panel')?.removeEventListener('scroll', onMainScroll);
+    onMainScroll = null;
+  }
+  document.getElementById(OVERLAY_ID)?.remove();
+  overlayEl = null;
+}
+
+function applySpotlightLayers(root, rect, pad = 8) {
+  const dim = root.querySelector('[data-tour-dim]');
+  const slices = root.querySelectorAll('[data-tour-slice]');
+  const ring = root.querySelector('[data-tour-ring]');
+
+  if (!dim || !ring) return;
+
+  if (!rect || rect.width <= 0 || rect.height <= 0) {
+    dim.classList.remove('hidden');
+    slices.forEach((s) => s.classList.add('hidden'));
+    ring.classList.add('hidden');
+    return;
+  }
+
+  const r = padRect(rect, pad);
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const left = Math.max(0, r.left);
+  const top = Math.max(0, r.top);
+  const right = Math.min(vw, left + r.width);
+  const bottom = Math.min(vh, top + r.height);
+  const w = right - left;
+  const h = bottom - top;
+
+  dim.classList.add('hidden');
+
+  const [topEl, rightEl, bottomEl, leftEl] = slices;
+  if (topEl) {
+    topEl.classList.remove('hidden');
+    topEl.style.cssText = `top:0;left:0;width:100%;height:${top}px;`;
+  }
+  if (leftEl) {
+    leftEl.classList.remove('hidden');
+    leftEl.style.cssText = `top:${top}px;left:0;width:${left}px;height:${h}px;`;
+  }
+  if (rightEl) {
+    rightEl.classList.remove('hidden');
+    rightEl.style.cssText = `top:${top}px;left:${right}px;width:${Math.max(0, vw - right)}px;height:${h}px;`;
+  }
+  if (bottomEl) {
+    bottomEl.classList.remove('hidden');
+    bottomEl.style.cssText = `top:${bottom}px;left:0;width:100%;height:${Math.max(0, vh - bottom)}px;`;
+  }
+
+  ring.classList.remove('hidden');
+  ring.style.cssText = `left:${left}px;top:${top}px;width:${w}px;height:${h}px;`;
+}
+
+function positionGlassCard(hostEl, stepIndex, rect) {
+  if (!hostEl) return;
+
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  if (stepIndex === 0 || !rect) {
+    hostEl.style.left = '50%';
+    hostEl.style.top = '50%';
+    hostEl.style.transform = 'translate(-50%, -50%)';
+    hostEl.style.right = 'auto';
+    return;
+  }
+
+  if (rect.width > vw * 0.55 || rect.height > vh * 0.72) {
+    hostEl.style.left = '50%';
+    hostEl.style.top = '50%';
+    hostEl.style.transform = 'translate(-50%, -50%)';
+    hostEl.style.right = 'auto';
+    return;
+  }
+
+  const gap = 16;
+  const cardW = Math.min(448, vw - 32);
+  const cardH = hostEl.offsetHeight || 380;
+
+  let left = rect.left + rect.width + gap;
+  if (left + cardW > vw - gap) {
+    left = rect.left - cardW - gap;
+  }
+  if (left < gap) {
+    left = Math.max(gap, (vw - cardW) / 2);
+  }
+
+  let top = rect.top;
+  if (top + cardH > vh - gap) {
+    top = Math.max(gap, vh - cardH - gap);
+  }
+  top = Math.max(gap, Math.min(top, vh - cardH - gap));
+
+  hostEl.style.left = `${left}px`;
+  hostEl.style.top = `${top}px`;
+  hostEl.style.transform = 'none';
+  hostEl.style.right = 'auto';
+}
+
+/**
+ * Guided click-through with glassmorphism card and spotlight highlights.
+ * @param {HTMLElement} container - #module-host
  * @param {object} manifest
  */
 export function loadGettingStarted(container, manifest) {
+  destroyGettingStartedOverlay();
+
   const modules = orderedUserModules(manifest);
   const firstTraining = modules.find(
     (m) => m.id !== GETTING_STARTED_ID && m.id !== 'map-book'
@@ -39,7 +278,7 @@ export function loadGettingStarted(container, manifest) {
       title: 'Welcome',
       icon: 'fa-compass',
       body: `
-        <p class="text-slate-700 leading-relaxed">
+        <p class="text-slate-800 leading-relaxed">
           <strong>Sales-Navigator</strong> is your interactive training hub for GPC sales onboarding—modules, practice scenarios, and knowledge checks in one place.
         </p>
         <p class="text-slate-600 text-sm mt-3">
@@ -50,7 +289,7 @@ export function loadGettingStarted(container, manifest) {
       title: 'Left navigation',
       icon: 'fa-bars',
       body: `
-        <p class="text-slate-700 leading-relaxed mb-3">
+        <p class="text-slate-800 leading-relaxed mb-3">
           Use the <strong>sidebar on the left</strong> to open any module. Items are grouped by category${categories.length ? ` (${escapeHtml(categories.join(', '))})` : ''}.
         </p>
         <ul class="list-disc pl-5 text-slate-700 space-y-2 text-sm">
@@ -63,21 +302,21 @@ export function loadGettingStarted(container, manifest) {
       title: 'Inside a module',
       icon: 'fa-book-open',
       body: `
-        <p class="text-slate-700 leading-relaxed mb-3">
+        <p class="text-slate-800 leading-relaxed mb-3">
           Each training module is built from structured content:
         </p>
         <ul class="list-disc pl-5 text-slate-700 space-y-2 text-sm">
           <li><strong>Title and summary</strong> at the top set context.</li>
           <li><strong>Five-minute summary</strong> bullets give a fast scan when present.</li>
-          <li>Major topics appear as <strong>section cards</strong> (each <code class="text-xs bg-slate-100 px-1 rounded">##</code> heading in the source becomes a card).</li>
-          <li>Some modules include <strong>reference links</strong> (for example PDFs or SharePoint resources) in a side area when provided.</li>
+          <li>Major topics appear as <strong>section cards</strong> (each <code class="text-xs bg-slate-100/90 px-1 rounded">##</code> heading in the source becomes a card).</li>
+          <li>Some modules include <strong>reference links</strong> in a side area when provided.</li>
         </ul>`,
     },
     {
       title: 'Scenarios & knowledge checks',
       icon: 'fa-lightbulb',
       body: `
-        <p class="text-slate-700 leading-relaxed mb-3">
+        <p class="text-slate-800 leading-relaxed mb-3">
           Many modules include interactive practice—not graded, for learning:
         </p>
         <ul class="list-disc pl-5 text-slate-700 space-y-2 text-sm">
@@ -91,18 +330,18 @@ export function loadGettingStarted(container, manifest) {
       icon: 'fa-map',
       body: mapBook
         ? `
-        <p class="text-slate-700 leading-relaxed mb-3">
+        <p class="text-slate-800 leading-relaxed mb-3">
           <strong>${escapeHtml(mapBook.title)}</strong> opens a full-width embedded view for network maps and executive visuals—use the sidebar to switch back to standard training modules anytime.
         </p>
         <p class="text-slate-600 text-sm">It uses the same header and sidebar as the rest of Sales-Navigator.</p>`
         : `
-        <p class="text-slate-700 leading-relaxed">Map-style resources appear in the navigation when enabled for your build.</p>`,
+        <p class="text-slate-800 leading-relaxed">Map-style resources appear in the navigation when enabled for your build.</p>`,
     },
     {
       title: 'You are set',
       icon: 'fa-circle-check',
       body: `
-        <p class="text-slate-700 leading-relaxed mb-4">
+        <p class="text-slate-800 leading-relaxed mb-4">
           You know how to navigate modules, find practice, and use the map book when needed. Pick any topic from the left to continue—or jump straight into training below.
         </p>
         <div class="flex flex-wrap gap-3">
@@ -114,7 +353,7 @@ export function loadGettingStarted(container, manifest) {
           </button>`
               : ''
           }
-          <button type="button" data-goto-sidebar class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-medium px-4 py-2.5 text-sm transition">
+          <button type="button" data-goto-sidebar class="inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white/50 hover:bg-white/80 text-slate-800 font-medium px-4 py-2.5 text-sm transition">
             Browse the sidebar
           </button>
         </div>
@@ -122,92 +361,144 @@ export function loadGettingStarted(container, manifest) {
     },
   ];
 
+  container.innerHTML = buildDemoMarkup(categories);
+
+  const overlay = document.createElement('div');
+  overlay.id = OVERLAY_ID;
+  overlay.className = 'fixed inset-0 z-[100] pointer-events-none';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Sales-Navigator quick tour');
+
+  overlay.innerHTML = `
+    <div data-tour-dim class="fixed inset-0 bg-slate-900/55 backdrop-blur-[3px] pointer-events-auto transition-opacity"></div>
+    <div data-tour-slice class="fixed bg-slate-900/60 backdrop-blur-[2px] pointer-events-auto hidden"></div>
+    <div data-tour-slice class="fixed bg-slate-900/60 backdrop-blur-[2px] pointer-events-auto hidden"></div>
+    <div data-tour-slice class="fixed bg-slate-900/60 backdrop-blur-[2px] pointer-events-auto hidden"></div>
+    <div data-tour-slice class="fixed bg-slate-900/60 backdrop-blur-[2px] pointer-events-auto hidden"></div>
+    <div data-tour-ring class="fixed rounded-xl pointer-events-none border-2 border-orange-400/95 shadow-[0_0_0_1px_rgba(251,146,60,0.35),0_0_32px_rgba(251,146,60,0.2)] hidden z-[101]"></div>
+    <div id="tour-glass-root" class="fixed inset-0 z-[102] pointer-events-none"></div>
+  `;
+
+  document.body.appendChild(overlay);
+  overlayEl = overlay;
+
+  const glassRoot = overlay.querySelector('#tour-glass-root');
   let stepIndex = 0;
+
+  function bindCardActions(cardEl) {
+    cardEl.querySelector('.gs-next')?.addEventListener('click', () => {
+      if (stepIndex < steps.length - 1) {
+        stepIndex += 1;
+        render();
+      }
+    });
+    cardEl.querySelector('.gs-prev')?.addEventListener('click', () => {
+      if (stepIndex > 0) {
+        stepIndex -= 1;
+        render();
+      }
+    });
+    cardEl.querySelectorAll('.gs-goto').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-goto');
+        if (id) setRouteModuleId(id);
+      });
+    });
+    cardEl.querySelector('[data-goto-sidebar]')?.addEventListener('click', () => {
+      document.getElementById('sidebar')?.classList.remove('sidebar-collapsed');
+      document.getElementById('sidebar-toggle')?.focus();
+    });
+  }
 
   function render() {
     const step = steps[stepIndex];
     const total = steps.length;
     const isLast = stepIndex === total - 1;
 
-    container.innerHTML = `
-      <div class="getting-started max-w-3xl mx-auto">
-        <div class="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-          <div class="bg-gradient-to-r from-slate-900 to-slate-800 text-white px-6 py-5">
-            <p class="text-xs font-semibold uppercase tracking-wider text-orange-300 mb-1">Quick tour</p>
-            <h2 class="text-2xl font-bold flex items-center gap-3">
-              <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10">
-                <i class="fa-solid ${escapeHtml(step.icon)}" aria-hidden="true"></i>
-              </span>
-              ${escapeHtml(step.title)}
-            </h2>
-            <div class="mt-4 flex items-center gap-1.5" role="tablist" aria-label="Tour progress">
-              ${steps
-                .map(
-                  (_, i) => `
-                <span class="h-1.5 flex-1 rounded-full transition-colors ${
-                  i === stepIndex
-                    ? 'bg-orange-400'
-                    : i < stepIndex
-                      ? 'bg-white/40'
-                      : 'bg-white/15'
-                }" title="Step ${i + 1} of ${total}"></span>`
-                )
-                .join('')}
-            </div>
-            <p class="text-slate-400 text-sm mt-2">Step ${stepIndex + 1} of ${total}</p>
+    const rect = getSpotlightRect(stepIndex);
+    applySpotlightLayers(overlay, rect);
+
+    if (stepIndex === 4) {
+      document
+        .querySelector('[data-module-id="map-book"]')
+        ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    const html = `
+      <div class="tour-glass-inner rounded-2xl overflow-hidden border border-white/30 bg-gradient-to-b from-white/75 to-white/55 shadow-inner">
+        <div class="bg-gradient-to-r from-slate-900/95 to-slate-800/95 text-white px-5 py-4 backdrop-blur-sm">
+          <p class="text-[10px] font-semibold uppercase tracking-wider text-orange-300/95 mb-1">Quick tour</p>
+          <h2 class="text-lg font-bold flex items-center gap-2">
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-white/15 ring-1 ring-white/20">
+              <i class="fa-solid ${escapeHtml(step.icon)} text-sm" aria-hidden="true"></i>
+            </span>
+            ${escapeHtml(step.title)}
+          </h2>
+          <div class="mt-3 flex items-center gap-1" role="tablist" aria-label="Tour progress">
+            ${steps
+              .map(
+                (_, i) => `
+              <span class="h-1 flex-1 rounded-full transition-colors ${
+                i === stepIndex
+                  ? 'bg-orange-400'
+                  : i < stepIndex
+                    ? 'bg-white/45'
+                    : 'bg-white/15'
+              }"></span>`
+              )
+              .join('')}
           </div>
-          <div class="px-6 py-6 getting-started-body">${step.body}</div>
-          <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
-            <button type="button" class="gs-prev inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-800 hover:bg-slate-100 disabled:opacity-40 disabled:pointer-events-none transition" ${stepIndex === 0 ? 'disabled' : ''}>
-              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-              Back
-            </button>
-            <div class="flex flex-wrap gap-2">
-              ${
-                !isLast
-                  ? `<button type="button" class="gs-next inline-flex items-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold px-5 py-2 text-sm shadow-sm transition">
-                Next
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-              </button>`
-                  : ''
-              }
-            </div>
+          <p class="text-slate-400/90 text-xs mt-1.5">Step ${stepIndex + 1} of ${total}</p>
+        </div>
+        <div class="px-5 py-4 getting-started-body text-sm max-h-[min(52vh,420px)] overflow-y-auto">${step.body}</div>
+        <div class="px-5 py-3 bg-slate-900/[0.03] border-t border-slate-900/10 flex flex-wrap items-center justify-between gap-2 backdrop-blur-sm">
+          <button type="button" class="gs-prev inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white/40 px-3 py-2 text-xs font-medium text-slate-800 hover:bg-white/70 disabled:opacity-40 disabled:pointer-events-none transition" ${stepIndex === 0 ? 'disabled' : ''}>
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            Back
+          </button>
+          <div class="flex flex-wrap gap-2">
+            ${
+              !isLast
+                ? `<button type="button" class="gs-next inline-flex items-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold px-4 py-2 text-xs shadow-md transition">
+              Next
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>`
+                : ''
+            }
           </div>
         </div>
       </div>`;
 
-    const nextBtn = container.querySelector('.gs-next');
-    const prevBtn = container.querySelector('.gs-prev');
+    if (!glassRoot) return;
+    glassRoot.innerHTML = `<div class="tour-glass-card-host fixed pointer-events-auto max-w-md w-[min(calc(100vw-2rem),28rem)] transition-[left,top,transform] duration-300 ease-out">${html}</div>`;
+    bindCardActions(glassRoot);
 
-    nextBtn?.addEventListener('click', () => {
-      if (stepIndex < total - 1) {
-        stepIndex += 1;
-        render();
-        container.querySelector('.getting-started-body')?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-        });
-      }
+    requestAnimationFrame(() => {
+      const host = glassRoot.querySelector('.tour-glass-card-host');
+      if (!host) return;
+      positionGlassCard(host, stepIndex, rect);
+      requestAnimationFrame(() => positionGlassCard(host, stepIndex, getSpotlightRect(stepIndex)));
     });
+  }
 
-    prevBtn?.addEventListener('click', () => {
-      if (stepIndex > 0) {
-        stepIndex -= 1;
-        render();
-      }
-    });
+  onResize = () => {
+    const r = getSpotlightRect(stepIndex);
+    applySpotlightLayers(overlay, r);
+    const card = overlay.querySelector('.tour-glass-inner');
+    if (card) positionGlassCard(card, stepIndex, r);
+  };
+  window.addEventListener('resize', onResize);
+  window.addEventListener('scroll', onResize, true);
+  onMainScroll = onResize;
+  document.getElementById('main-panel')?.addEventListener('scroll', onMainScroll);
 
-    container.querySelectorAll('.gs-goto').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-goto');
-        if (id) setRouteModuleId(id);
-      });
-    });
-
-    container.querySelector('[data-goto-sidebar]')?.addEventListener('click', () => {
-      document.getElementById('sidebar')?.classList.remove('sidebar-collapsed');
-      document.getElementById('sidebar-toggle')?.focus();
-    });
+  if (window.ResizeObserver) {
+    resizeObs = new ResizeObserver(() => onResize());
+    const host = document.getElementById('module-host');
+    const sb = document.getElementById('sidebar');
+    if (host) resizeObs.observe(host);
+    if (sb) resizeObs.observe(sb);
   }
 
   render();
