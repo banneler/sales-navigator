@@ -81,6 +81,30 @@ export function renderSectionsToHtml(sections) {
 }
 
 /**
+ * Title, intro summary line, and sensitivity badge — same markup as the top of a rendered module.
+ * @param {Record<string, unknown>} meta - Parsed YAML front matter
+ */
+export function buildModuleHeaderBlockHtml(meta) {
+  const sensitivity = meta.sensitivity || 'public';
+  const badge =
+    sensitivity === 'internal'
+      ? '<span class="inline-flex items-center rounded-full bg-amber-100 text-amber-900 text-xs font-bold px-2 py-0.5 border border-amber-200">Internal</span>'
+      : '';
+
+  const title = typeof meta.title === 'string' ? meta.title : 'Module';
+  const summary = typeof meta.summary === 'string' ? meta.summary : '';
+
+  return `
+      <div class="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 tracking-tight">${escapeHtml(title)}</h2>
+          ${summary ? `<p class="text-slate-600 mt-2 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
+        </div>
+        <div class="flex-shrink-0">${badge}</div>
+      </div>`;
+}
+
+/**
  * Full module document HTML: header; then main column (~70%) with 5-minute summary, ## sections, knowledge carousel; optional sticky scenarios aside (~30%) when scenarios exist.
  * Used by the main app and the admin preview. Returns error markup if front matter is invalid.
  */
@@ -99,15 +123,6 @@ export function renderModuleDocumentHtml(markdownSource) {
       </div>`;
   }
 
-  const sensitivity = meta.sensitivity || 'public';
-  const badge =
-    sensitivity === 'internal'
-      ? '<span class="inline-flex items-center rounded-full bg-amber-100 text-amber-900 text-xs font-bold px-2 py-0.5 border border-amber-200">Internal</span>'
-      : '';
-
-  const title = typeof meta.title === 'string' ? meta.title : 'Module';
-  const summary = typeof meta.summary === 'string' ? meta.summary : '';
-
   const sections = splitMarkdownByH2(body || '');
   const sectionCardsHtml = renderSectionsToHtml(sections);
   const fiveMinHtml = buildFiveMinuteSummaryHtml(meta);
@@ -117,14 +132,7 @@ export function renderModuleDocumentHtml(markdownSource) {
   const hasRef = Boolean(referenceFilesHtml);
   const hasScenarios = Boolean(scenariosAsideInner);
 
-  const headerBlock = `
-      <div class="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900 tracking-tight">${escapeHtml(title)}</h2>
-          ${summary ? `<p class="text-slate-600 mt-2 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
-        </div>
-        <div class="flex-shrink-0">${badge}</div>
-      </div>`;
+  const headerBlock = buildModuleHeaderBlockHtml(meta);
 
   const mainColumnInner = `
       ${fiveMinHtml}

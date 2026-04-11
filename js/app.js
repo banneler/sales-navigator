@@ -6,6 +6,7 @@ import {
   loadGettingStarted,
   destroyGettingStartedOverlay,
 } from './components/getting-started.js';
+import { destroyModuleIntroGate } from './components/module-intro-gate.js';
 
 const MAP_BOOK_MODULE_ID = 'map-book';
 const GETTING_STARTED_ID = 'getting-started';
@@ -30,6 +31,7 @@ async function main() {
     if (!host) return;
 
     destroyGettingStartedOverlay();
+    destroyModuleIntroGate();
 
     const subtitle = document.querySelector('#main-header p');
     if (subtitle) {
