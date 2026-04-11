@@ -2,6 +2,12 @@
   "appTitle": "Sales-Navigator",
   "modules": [
     {
+      "id": "getting-started",
+      "title": "Getting started",
+      "order": 0,
+      "category": "Welcome"
+    },
+    {
       "id": "sales-rules-of-engagement",
       "title": "Sales Rules of Engagement",
       "order": 1,

@@ -2,8 +2,10 @@ import { getRouteModuleId, onRouteChange, setRouteModuleId } from './router.js';
 import { renderShell, highlightNav } from './components/shell.js';
 import { loadAndRenderModule } from './components/module-host.js';
 import { loadMapBook } from './components/map-book-host.js';
+import { loadGettingStarted } from './components/getting-started.js';
 
 const MAP_BOOK_MODULE_ID = 'map-book';
+const GETTING_STARTED_ID = 'getting-started';
 
 async function main() {
   const res = await fetch('modules-manifest.json', { cache: 'no-store' });
@@ -26,15 +28,21 @@ async function main() {
 
     const subtitle = document.querySelector('#main-header p');
     if (subtitle) {
-      subtitle.textContent =
-        id === MAP_BOOK_MODULE_ID
-          ? 'Network maps & executive views'
-          : 'Interactive training modules';
+      if (id === MAP_BOOK_MODULE_ID) {
+        subtitle.textContent = 'Network maps & executive views';
+      } else if (id === GETTING_STARTED_ID) {
+        subtitle.textContent = 'Quick tour of Sales-Navigator';
+      } else {
+        subtitle.textContent = 'Interactive training modules';
+      }
     }
 
     if (id === MAP_BOOK_MODULE_ID) {
       document.body.classList.add('map-book-active');
       await loadMapBook(host);
+    } else if (id === GETTING_STARTED_ID) {
+      document.body.classList.remove('map-book-active');
+      loadGettingStarted(host, manifest);
     } else {
       document.body.classList.remove('map-book-active');
       await loadAndRenderModule(id, host);
