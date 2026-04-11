@@ -1,5 +1,6 @@
 import { getFile, putTextFile } from './lib/github-client.js';
 import { parseFrontMatter } from './lib/front-matter.js';
+import { renderModuleDocumentHtml } from './lib/markdown-sections.js';
 
 // Hardcoded — same pattern as Enterprise-Proposals admin (GITHUB_OWNER / GITHUB_REPO)
 const GITHUB_OWNER = 'banneler';
@@ -22,72 +23,24 @@ function currentPath(moduleId) {
   return `modules/${moduleId}/content.md`;
 }
 
-async function attemptLogin() {
-  const tokenInput = document.getElementById('pat-input');
-  const errEl = document.getElementById('error-msg');
-  const token = tokenInput?.value.trim() || '';
-  if (!token) {
-    errEl.textContent = 'Passcode required.';
-    errEl.classList.remove('hidden');
-    return;
-  }
-
-  const overlay = document.getElementById('loading-overlay');
-  const loadingText = document.getElementById('loading-text');
-  if (loadingText) loadingText.textContent = 'Verifying…';
-  overlay?.classList.remove('hidden');
-  errEl.classList.add('hidden');
-
-  try {
-    const res = await fetch('https://api.github.com/user', {
-      headers: {
-        Authorization: `token ${token}`,
-        Accept: 'application/vnd.github.v3+json',
-      },
-    });
-    if (!res.ok) {
-      const t = await res.text();
-      throw new Error(t || `HTTP ${res.status}`);
-    }
-    githubToken = token;
-    const authScreen = document.getElementById('auth-screen');
-    authScreen.style.opacity = '0';
-    setTimeout(() => {
-      authScreen.classList.add('hidden');
-      document.getElementById('main-content')?.classList.remove('hidden');
-    }, 500);
-    showToast('Authenticated.');
-  } catch (e) {
-    console.error(e);
-    errEl.textContent = 'Invalid token or could not reach GitHub.';
-    errEl.classList.remove('hidden');
-  } finally {
-    overlay?.classList.add('hidden');
-    if (loadingText) loadingText.textContent = 'Working…';
-  }
-}
-
 async function main() {
-  document.getElementById('unlock-btn')?.addEventListener('click', attemptLogin);
-  document.getElementById('pat-input')?.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') attemptLogin();
-  });
-
   const moduleSelect = document.getElementById('module-select');
   const editor = document.getElementById('markdown-editor');
   const shaField = document.getElementById('file-sha');
+  const previewEl = document.getElementById('admin-preview');
 
-  const manifestRes = await fetch('modules-manifest.json');
-  const manifest = await manifestRes.json();
-  const modules = [...(manifest.modules || [])].sort((a, b) => (a.order || 0) - (b.order || 0));
-  for (const m of modules) {
-    const opt = document.createElement('option');
-    opt.value = m.id;
-    opt.textContent = m.title;
-    moduleSelect?.appendChild(opt);
+  let previewTimer = 0;
+
+  function schedulePreviewUpdate() {
+    window.clearTimeout(previewTimer);
+    previewTimer = window.setTimeout(() => {
+      if (previewEl && editor) {
+        previewEl.innerHTML = renderModuleDocumentHtml(editor.value);
+      }
+    }, 250);
   }
 
-  document.getElementById('load-from-github-btn')?.addEventListener('click', async () => {
+  async function loadModuleFromGithub() {
     if (!githubToken) {
       showToast('Session expired — refresh and sign in again.', 'error');
       return;
@@ -98,6 +51,8 @@ async function main() {
       return;
     }
     const overlay = document.getElementById('loading-overlay');
+    const loadingText = document.getElementById('loading-text');
+    if (loadingText) loadingText.textContent = 'Loading module…';
     overlay?.classList.remove('hidden');
     try {
       const path = currentPath(moduleId);
@@ -110,14 +65,84 @@ async function main() {
       );
       if (editor) editor.value = content;
       if (shaField) shaField.value = sha;
+      if (previewEl) previewEl.innerHTML = renderModuleDocumentHtml(content);
       showToast('Loaded from GitHub.');
     } catch (e) {
       console.error(e);
       showToast(String(e.message || e), 'error');
     } finally {
       overlay?.classList.add('hidden');
+      if (loadingText) loadingText.textContent = 'Working…';
     }
+  }
+
+  async function attemptLogin() {
+    const tokenInput = document.getElementById('pat-input');
+    const errEl = document.getElementById('error-msg');
+    const token = tokenInput?.value.trim() || '';
+    if (!token) {
+      errEl.textContent = 'Passcode required.';
+      errEl.classList.remove('hidden');
+      return;
+    }
+
+    const overlay = document.getElementById('loading-overlay');
+    const loadingText = document.getElementById('loading-text');
+    if (loadingText) loadingText.textContent = 'Verifying…';
+    overlay?.classList.remove('hidden');
+    errEl.classList.add('hidden');
+
+    try {
+      const res = await fetch('https://api.github.com/user', {
+        headers: {
+          Authorization: `token ${token}`,
+          Accept: 'application/vnd.github.v3+json',
+        },
+      });
+      if (!res.ok) {
+        const t = await res.text();
+        throw new Error(t || `HTTP ${res.status}`);
+      }
+      githubToken = token;
+      const authScreen = document.getElementById('auth-screen');
+      authScreen.style.opacity = '0';
+      setTimeout(() => {
+        authScreen.classList.add('hidden');
+        document.getElementById('main-content')?.classList.remove('hidden');
+      }, 500);
+      await loadModuleFromGithub();
+    } catch (e) {
+      console.error(e);
+      errEl.textContent = 'Invalid token or could not reach GitHub.';
+      errEl.classList.remove('hidden');
+    } finally {
+      overlay?.classList.add('hidden');
+      if (loadingText) loadingText.textContent = 'Working…';
+    }
+  }
+
+  document.getElementById('unlock-btn')?.addEventListener('click', attemptLogin);
+  document.getElementById('pat-input')?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') attemptLogin();
   });
+
+  const manifestRes = await fetch('modules-manifest.json');
+  const manifest = await manifestRes.json();
+  const modules = [...(manifest.modules || [])].sort((a, b) => (a.order || 0) - (b.order || 0));
+  for (const m of modules) {
+    const opt = document.createElement('option');
+    opt.value = m.id;
+    opt.textContent = m.title;
+    moduleSelect?.appendChild(opt);
+  }
+
+  document.getElementById('load-from-github-btn')?.addEventListener('click', loadModuleFromGithub);
+
+  moduleSelect?.addEventListener('change', () => {
+    loadModuleFromGithub();
+  });
+
+  editor?.addEventListener('input', schedulePreviewUpdate);
 
   document.getElementById('push-to-github-btn')?.addEventListener('click', async () => {
     if (!githubToken) {
@@ -152,6 +177,7 @@ async function main() {
         `Update ${path} via Sales-Navigator admin`
       );
       if (shaField && newSha) shaField.value = newSha;
+      if (previewEl) previewEl.innerHTML = renderModuleDocumentHtml(mdString);
       showToast('Pushed to GitHub.');
     } catch (e) {
       console.error(e);
@@ -160,7 +186,6 @@ async function main() {
       overlay?.classList.add('hidden');
     }
   });
-
 }
 
 main().catch(console.error);
