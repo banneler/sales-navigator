@@ -40,8 +40,6 @@ export function renderShell(manifest, onSelect) {
     </div>`);
   }
 
-  const appTitle = manifest.appTitle || 'Sales-Navigator';
-
   const root = document.getElementById('app-root');
   if (!root) return;
 
@@ -53,11 +51,6 @@ export function renderShell(manifest, onSelect) {
           <i id="sidebar-icon-expand" class="fa-solid fa-chevron-right text-lg hidden"></i>
         </button>
         <div id="sidebar-content" class="flex flex-col w-full flex-1 min-h-0 p-4 pt-14">
-          <div class="border-b border-slate-100 pb-4 mb-6">
-            <p class="text-xs text-slate-500 mb-1">Onboarding</p>
-            <h2 class="text-lg font-bold text-slate-900">${escapeHtml(appTitle)}</h2>
-            <p class="text-xs text-slate-500 mt-1">Supplement to physical tours</p>
-          </div>
           <nav class="flex-1 min-h-0 overflow-y-auto">${navHtml.join('')}</nav>
         </div>
       </aside>
