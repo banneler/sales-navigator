@@ -1,6 +1,5 @@
 import { marked } from 'https://esm.sh/marked@15.0.12';
 import DOMPurify from 'https://esm.sh/dompurify@3.2.2';
-import { toSharePointEmbedUrl } from './sharepoint-embed-url.js';
 
 marked.use({ gfm: true, breaks: true });
 
@@ -20,58 +19,48 @@ function mdToSafeHtml(md) {
 }
 
 /**
- * Dark-mode reference viewer for SharePoint documents (iframe).
+ * Dark-mode reference panel for SharePoint documents.
+ * Opens in a new tab — Microsoft 365 / SharePoint typically blocks cross-origin iframes
+ * (X-Frame-Options / frame-ancestors), so embedding is not reliable even with a session.
+ *
  * Expects meta.reference_files: Array<{ label?: string, sharepoint_url: string }>
  */
 export function buildModuleReferenceFilesHtml(meta) {
   const files = meta.reference_files;
   if (!Array.isArray(files) || files.length === 0) return '';
 
-  const items = files
+  const rows = files
     .map((f, i) => {
       const url = typeof f?.sharepoint_url === 'string' ? f.sharepoint_url.trim() : '';
-      if (!url) return null;
+      if (!url) return '';
       const label =
         typeof f?.label === 'string' && f.label.trim()
           ? f.label.trim()
           : `Reference ${i + 1}`;
-      return { label, embedUrl: toSharePointEmbedUrl(url) };
+      const href = escapeHtml(url);
+      return `
+        <div class="flex flex-col gap-2 rounded-lg border border-slate-700/80 bg-slate-950/50 px-3 py-2.5">
+          <p class="text-xs font-semibold text-slate-200 leading-snug">${escapeHtml(label)}</p>
+          <a href="${href}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2 px-3 shadow-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300">
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i>
+            Open in SharePoint
+          </a>
+        </div>`;
     })
-    .filter(Boolean);
+    .filter(Boolean)
+    .join('');
 
-  if (items.length === 0) return '';
-
-  const first = items[0];
-  const tabsHtml =
-    items.length > 1
-      ? `<div class="flex flex-wrap gap-1 px-2 pt-2 pb-1 border-b border-slate-800 bg-slate-950/50" role="tablist" aria-label="Reference documents">
-          ${items
-            .map(
-              (it, i) => `
-            <button type="button" role="tab" class="js-ref-tab px-2.5 py-1 rounded-md text-[10px] font-semibold transition ${
-              i === 0
-                ? 'bg-slate-700 text-white'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
-            }" data-ref-index="${i}" aria-selected="${i === 0 ? 'true' : 'false'}">${escapeHtml(it.label)}</button>`
-            )
-            .join('')}
-        </div>`
-      : '';
-
-  const iframeSrc = escapeHtml(first.embedUrl);
-  const dataUrls = escapeHtml(JSON.stringify(items.map((it) => it.embedUrl)));
+  if (!rows) return '';
 
   return `
-      <section class="module-reference-files rounded-xl border border-slate-600 bg-slate-900 text-slate-100 shadow-lg overflow-hidden mb-4" data-ref-viewer-root data-ref-urls="${dataUrls}">
-        <div class="flex items-center justify-between gap-2 px-3 py-2 border-b border-slate-700 bg-slate-950/80">
-          <h3 class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Module Reference Files</h3>
-          <button type="button" class="js-ref-focus-toggle text-[10px] font-bold uppercase tracking-wide text-orange-400 hover:text-orange-300 px-2 py-1 rounded-md border border-slate-600 hover:border-orange-500/50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60">Focus</button>
+      <section class="module-reference-files rounded-xl border border-slate-600 bg-slate-900 text-slate-100 shadow-lg overflow-hidden mb-4" aria-labelledby="module-ref-heading">
+        <div class="px-3 py-2 border-b border-slate-700 bg-slate-950/80">
+          <h3 id="module-ref-heading" class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Module Reference Files</h3>
         </div>
-        ${tabsHtml}
-        <div class="js-ref-viewer-frame relative bg-slate-950">
-          <iframe class="js-ref-iframe w-full border-0 bg-slate-950 block module-ref-iframe" style="min-height: 240px; height: 320px" src="${iframeSrc}" title="${escapeHtml(first.label)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-        </div>
-        <p class="text-[9px] text-slate-500 px-3 py-2 border-t border-slate-800 leading-relaxed">Uses your Microsoft 365 session. If the document does not appear, open it in SharePoint and return—some org policies restrict embedding.</p>
+        <div class="p-3 space-y-3">${rows}</div>
+        <p class="text-[9px] text-slate-500 px-3 py-2 border-t border-slate-800 leading-relaxed">
+          SharePoint does not allow embedding this library in other sites. Your session applies in the new tab—keep this training app open and switch back when you are done.
+        </p>
       </section>`;
 }
 
