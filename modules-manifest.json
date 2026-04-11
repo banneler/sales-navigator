@@ -54,6 +54,12 @@
       "title": "Competitive Positioning",
       "order": 9,
       "category": "Sales"
+    },
+    {
+      "id": "map-book",
+      "title": "Executive Map Book",
+      "order": 10,
+      "category": "Product"
     }
   ]
 }

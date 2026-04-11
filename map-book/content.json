@@ -1,0 +1,308 @@
+{
+  "navOrder": [
+    "national",
+    "layer2",
+    "ip-network",
+    "towers",
+    "nebraska",
+    "omaha-metro",
+    "buffalo",
+    "indiana",
+    "illinois",
+    "minnesota",
+    "data-centers",
+    "products",
+    "why-gpc",
+    "case-studies"
+  ],
+  "mapData": {
+    "national": {
+      "id": "national",
+      "title": "The Network",
+      "subtitle": "National Footprint & Coverages",
+      "placeholder": "Load National_Map.svg",
+      "file": "backbone.png",
+      "type": "map",
+      "stats": [
+        { "label": "Fiber Miles", "value": "20,000+", "color": "text-gpc-green" },
+        { "label": "Markets Served", "value": "200+", "color": "text-slate-900" },
+        { "label": "Data Centers", "value": "25+", "color": "text-gpc-blue" }
+      ]
+    },
+    "layer2": {
+      "id": "layer2",
+      "title": "Layer 2 Core",
+      "subtitle": "High-Availability Redundant Architecture",
+      "placeholder": "Load Layer_2_Rings.svg",
+      "file": "layer_2.png",
+      "type": "map",
+      "insight": "Our high-availability network is engineered to meet the mission-critical demands of enterprises, wholesale clients, and FTTT customers, offering 200G and 400G city-to-city routes, a redundant ring architecture and seamless scalability across 1G, 10G, and 100G services.",
+      "stats": [
+        { "label": "Core Capacity", "value": "400G Standard", "color": "text-gpc-orange" },
+        { "label": "Scalability", "value": "1G to 100G", "color": "text-gpc-green" }
+      ]
+    },
+    "ip-network": {
+      "id": "ip-network",
+      "title": "IP Network & Peering",
+      "subtitle": "Connected and Resilient Cloud Access",
+      "placeholder": "Load IP_Network_Map.svg",
+      "file": "ip.png",
+      "type": "map",
+      "stats": [
+        { "label": "Traffic Routing", "value": "Localized", "color": "text-gpc-blue" },
+        { "label": "Latency", "value": "Ultra-Low", "color": "text-gpc-green" }
+      ]
+    },
+    "towers": {
+      "id": "towers",
+      "title": "Fiber to the Tower",
+      "subtitle": "Fast & Reliable Wireless Backhaul",
+      "placeholder": "Load Towers_Map.svg",
+      "file": "cell_towers.png",
+      "type": "map",
+      "stats": [
+        { "label": "Total Towers", "value": "650+", "color": "text-gpc-orange" },
+        { "label": "States Served", "value": "13", "color": "text-slate-900" }
+      ]
+    },
+    "nebraska": {
+      "id": "nebraska",
+      "title": "Nebraska Market",
+      "subtitle": "Statewide Infrastructure Detail",
+      "placeholder": "Load Nebraska_Detail.svg",
+      "file": "nebraska.png",
+      "type": "map",
+      "stats": [
+        { "label": "State Fiber Miles", "value": "10,000+", "color": "text-gpc-green" },
+        { "label": "Communities", "value": "163", "color": "text-slate-900" }
+      ]
+    },
+    "omaha-metro": {
+      "id": "omaha-metro",
+      "title": "Omaha / Council Bluffs",
+      "subtitle": "Metro Area Street Level Routing",
+      "placeholder": "Load Omaha_Metro.svg",
+      "file": "omaha.png",
+      "type": "map",
+      "stats": [
+        { "label": "Metro Fiber Miles", "value": "800+", "color": "text-gpc-green" }
+      ]
+    },
+    "buffalo": {
+      "id": "buffalo",
+      "title": "Buffalo & Surrounding Counties",
+      "navLabel": "Buffalo & Surrounding",
+      "subtitle": "Regional Infrastructure Detail",
+      "placeholder": "Load Buffalo_Map.svg",
+      "file": "buffalo.png",
+      "type": "map",
+      "stats": []
+    },
+    "indiana": {
+      "id": "indiana",
+      "title": "Indiana Market",
+      "subtitle": "Regional Infrastructure Detail",
+      "placeholder": "Load Indiana_Map.svg",
+      "file": "indiana.png",
+      "type": "map",
+      "stats": [
+        { "label": "State Fiber Miles", "value": "3,500", "color": "text-gpc-green" },
+        { "label": "Communities", "value": "32", "color": "text-slate-900" },
+        { "label": "Data Centers", "value": "3", "color": "text-gpc-blue" }
+      ]
+    },
+    "illinois": {
+      "id": "illinois",
+      "title": "Illinois & Kentucky",
+      "subtitle": "Regional Infrastructure Detail",
+      "placeholder": "Load Illinois_Kentucky_Map.svg",
+      "file": "il&ky.png",
+      "type": "map",
+      "stats": [
+        { "label": "State Fiber Miles", "value": "1,960+", "color": "text-gpc-green" },
+        { "label": "Chicago DCs", "value": "4", "color": "text-gpc-blue" }
+      ]
+    },
+    "minnesota": {
+      "id": "minnesota",
+      "title": "Minnesota, Colorado, & Wyoming",
+      "navLabel": "Minnesota & CO/WY",
+      "subtitle": "Regional Infrastructure Detail",
+      "placeholder": "Load Minnesota_Colorado_Map.svg",
+      "file": "mn&co.png",
+      "type": "map",
+      "stats": [
+        { "label": "State Fiber Miles", "value": "1,900+", "color": "text-gpc-green" },
+        { "label": "Key Hubs", "value": "Minneapolis/Denver/Cheyenne", "color": "text-slate-900" }
+      ]
+    },
+    "data-centers": {
+      "id": "data-centers",
+      "title": "Data Centers",
+      "subtitle": "Colocation & Interconnection Facilities",
+      "type": "html",
+      "stats": [
+        { "label": "Total Facilities", "value": "25+", "color": "text-gpc-blue" },
+        { "label": "Network Integration", "value": "100% Fiber", "color": "text-gpc-green" }
+      ]
+    },
+    "products": {
+      "id": "products",
+      "title": "Product Portfolio",
+      "subtitle": "Fiber-Driven Enterprise Services",
+      "type": "html",
+      "stats": []
+    },
+    "why-gpc": {
+      "id": "why-gpc",
+      "title": "The GPC Advantage",
+      "subtitle": "Partner with Experience",
+      "type": "html",
+      "stats": [
+        { "label": "Dedicated Team", "value": "400+ Employees", "color": "text-slate-900" },
+        { "label": "Support", "value": "Unmatched Local", "color": "text-gpc-blue" },
+        { "label": "Reliability", "value": "24/7 Monitoring", "color": "text-gpc-green" }
+      ]
+    },
+    "case-studies": {
+      "id": "case-studies",
+      "title": "Client Success",
+      "subtitle": "Proven Solutions in Action",
+      "type": "html",
+      "stats": [
+        { "label": "Delivery Timeline", "value": "Fast Turn-Up", "color": "text-gpc-orange" },
+        { "label": "Connection Type", "value": "100% Fiber", "color": "text-gpc-green" }
+      ]
+    }
+  },
+  "pageContent": {
+    "data-centers": [
+      { "city": "Denver, CO", "name": "910 Telecom" },
+      { "city": "Denver, CO", "name": "Coresite" },
+      { "city": "Denver, CO", "name": "Champa" },
+      { "city": "Des Moines, IA", "name": "Connect Des Moines" },
+      { "city": "Sioux City, IA", "name": "Long Lines WIT" },
+      { "city": "Sioux City, IA", "name": "FiberComm" },
+      { "city": "Davenport, IA", "name": "South Front" },
+      { "city": "Chicago, IL", "name": "Digital Realty Federal" },
+      { "city": "Chicago, IL", "name": "Digital Realty Cermak" },
+      { "city": "Chicago, IL", "name": "Equinix Cermak" },
+      { "city": "Chicago, IL", "name": "Coresite" },
+      { "city": "Minneapolis, MN", "name": "Cologix Minneapolis" },
+      { "city": "Kansas City, MO", "name": "Netrality KC" },
+      { "city": "St. Louis, MO", "name": "Netrality St. Louis" },
+      { "city": "Bellevue, NE", "name": "TierPoint-Bellevue" },
+      { "city": "Bellevue, NE", "name": "Offutt AFB" },
+      { "city": "Papillion, NE", "name": "TierPoint-Midlands" },
+      { "city": "Papillion, NE", "name": "Light Edge Solutions" },
+      { "city": "Lincoln, NE", "name": "Lincoln Edge Facility" },
+      { "city": "Omaha, NE", "name": "1623 Farnam" },
+      { "city": "Omaha, NE", "name": "Scott Tech" },
+      { "city": "Cincinnati, OH", "name": "CyrusOne" },
+      { "city": "Yankton, SD", "name": "Dataware Green" },
+      { "city": "South Bend, IN", "name": "Union Station Tech" },
+      { "city": "Indianapolis, IN", "name": "GPC Suite-Indy Telecom" },
+      { "city": "Indianapolis, IN", "name": "Lifeline" },
+      { "city": "Cheyenne, WY", "name": "ACT" }
+    ],
+    "products": [
+      {
+        "title": "Fiber Internet",
+        "desc": "Get reliable fiber business internet backed by 24/7 network monitoring and support.",
+        "icon": "M3 9h4v6H3z M7 10l3-1v6l-3-1 M10 10c3-3 5-4 7.5-4 M17.5 6a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0 M10 12h9 M19 12a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0 M10 14c3 3 5 4 7.5 4 M17.5 18a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0"
+      },
+      {
+        "title": "SD-WAN",
+        "desc": "Improve your network performance and lower your costs, no matter the delivery method.",
+        "icon": "M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+      },
+      {
+        "title": "Managed Firewall",
+        "desc": "Safeguard sensitive data and secure your connection with round-the-clock network protection.",
+        "icon": "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+      },
+      {
+        "title": "Voice & Unified Comms",
+        "desc": "Keep your team connected no matter their location, with traditional and Cloud-based voice solutions.",
+        "icon": "M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+      },
+      {
+        "title": "Managed Ethernet",
+        "desc": "Ensure efficiency and cost savings with scalable, secure connectivity across all your locations.",
+        "icon": "M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+      },
+      {
+        "title": "5G Wireless Internet",
+        "desc": "Keep your business running during outages with automatic failover, professional setup and 24/7 support.",
+        "icon": "M12 11a1.5 1.5 0 110-3 1.5 1.5 0 010 3z M11 12.5l-2 9h6l-2-9 M10 16h4 M9.5 19h5 M8.5 7.5a5 5 0 000 4 M15.5 7.5a5 5 0 010 4 M6 5a8.5 8.5 0 000 9 M18 5a8.5 8.5 0 010 9"
+      },
+      {
+        "title": "Managed Wi-Fi",
+        "desc": "Provide seamless Wi-Fi connectivity for your entire team and every customer.",
+        "icon": "M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"
+      },
+      {
+        "title": "DDoS Protection",
+        "desc": "Avoid network disruptions and block high-volume attacks before they impact your customers.",
+        "icon": "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+      },
+      {
+        "title": "Cloud Connect",
+        "desc": "Ensure high performance with secure, reliable and direct connections to leading Cloud providers.",
+        "icon": "M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+      }
+    ],
+    "why-gpc": {
+      "intro": "Your choice of provider is not just about speed; it's about reliability, robust support and peace of mind. At Great Plains Communications (GPC) we deliver more than just internet service. We offer a true partnership.",
+      "pillars": [
+        {
+          "title": "Over a Century of Experience",
+          "desc": "Partner with a proven provider that delivers stable, future-proof solutions built on over 100 years of expertise.",
+          "icon": "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+        },
+        {
+          "title": "Unmatched Local Support",
+          "desc": "Get faster resolutions and minimal downtime by working with a dedicated, local team.",
+          "icon": "M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+        },
+        {
+          "title": "24/7 Network Monitoring",
+          "desc": "Get peace of mind that comes from constant monitoring that keeps your business connected and protected.",
+          "icon": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+        },
+        {
+          "title": "Flexible, Scalable Solutions",
+          "desc": "Grow and customize your services precisely as your business demands evolve.",
+          "icon": "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
+        }
+      ]
+    },
+    "case-studies": [
+      {
+        "image": "boystown.webp",
+        "industry": "Healthcare & Education",
+        "client": "Boys Town",
+        "need": "A nationally recognized healthcare and educational campus required a highly secure, scalable, and redundant network to handle explosive data growth and ensure uninterrupted connectivity across its medical research facilities.",
+        "solution": "GPC engineered a customized, highly available fiber architecture featuring two dedicated 40 Gbps transport links between critical data centers, ensuring maximum uptime for life-saving medical data.",
+        "quote": "Great Plains Communications provides the dependable, high-capacity fiber backbone we need to seamlessly connect our data centers and ensure our staff can focus entirely on the children and families we serve."
+      },
+      {
+        "image": "aerospace.webp",
+        "industry": "Aerospace",
+        "client": "Global Manufacturer",
+        "need": "Due to the extreme demands of aerospace engineering, the client required massive bandwidth availability, an intricate custom network design, and an aggressive installation timeline to support mission-critical operations.",
+        "solution": "GPC navigated complex permitting and rapidly deployed a custom-built fiber infrastructure, delivering four dedicated 400G optical waves to a major Western data center—fully operational ahead of schedule.",
+        "quote": "GPC's ability to deliver reliable connectivity for our most critical operations, combined with their dedicated support and attention to detail, resulted in a flawlessly executed deployment."
+      },
+      {
+        "image": "hospitality.webp",
+        "industry": "Restaurants & Hospitality",
+        "client": "Regional Franchise Group",
+        "need": "Managing rapid expansion across 14 regional locations, the hospitality group faced connectivity bottlenecks. Consistent upload speeds and unified network performance were vital for modernizing their operational systems.",
+        "solution": "GPC deployed a 100% fiber-optic network delivering 100x100 Mbps symmetrical broadband and enterprise voice services, enabling the seamless rollout of upgraded firewalls and advanced WiFi infrastructure.",
+        "quote": "GPC's tailored approach provided the robust, uniform connectivity we desperately needed. We gained superior network performance that instantly elevated operations across every single location."
+      }
+    ]
+  }
+}

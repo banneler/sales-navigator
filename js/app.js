@@ -1,6 +1,9 @@
 import { getRouteModuleId, onRouteChange, setRouteModuleId } from './router.js';
 import { renderShell, highlightNav } from './components/shell.js';
 import { loadAndRenderModule } from './components/module-host.js';
+import { loadMapBook } from './components/map-book-host.js';
+
+const MAP_BOOK_MODULE_ID = 'map-book';
 
 async function main() {
   const res = await fetch('modules-manifest.json', { cache: 'no-store' });
@@ -20,7 +23,22 @@ async function main() {
     if (!id) return;
     const host = document.getElementById('module-host');
     if (!host) return;
-    await loadAndRenderModule(id, host);
+
+    const subtitle = document.querySelector('#main-header p');
+    if (subtitle) {
+      subtitle.textContent =
+        id === MAP_BOOK_MODULE_ID
+          ? 'Network maps & executive views'
+          : 'Interactive training modules';
+    }
+
+    if (id === MAP_BOOK_MODULE_ID) {
+      document.body.classList.add('map-book-active');
+      await loadMapBook(host);
+    } else {
+      document.body.classList.remove('map-book-active');
+      await loadAndRenderModule(id, host);
+    }
     highlightNav(id);
   }
 
