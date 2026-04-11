@@ -1,12 +1,12 @@
 /**
- * GitHub Contents API helpers for per-file JSON updates.
+ * GitHub Contents API helpers for per-file text updates (Markdown, JSON, etc.).
  * @see https://docs.github.com/en/rest/repos/contents
  */
 
 /**
  * @param {string} owner
  * @param {string} repo
- * @param {string} path - Repo-relative path (e.g. modules/foo/content.json)
+ * @param {string} path - Repo-relative path (e.g. modules/foo/content.md)
  * @param {string} branch
  * @param {string} token - GitHub PAT
  * @returns {Promise<{ content: string, sha: string, encoding: string }>}
@@ -43,21 +43,21 @@ export async function getFile(owner, repo, path, branch, token) {
  * @param {string} path
  * @param {string} branch
  * @param {string} token
- * @param {string} jsonString - Raw JSON string (UTF-8)
+ * @param {string} fileContents - Raw UTF-8 string
  * @param {string} sha - Existing blob SHA (required for update)
  * @param {string} message - Commit message
  */
-export async function putJsonFile(
+export async function putTextFile(
   owner,
   repo,
   path,
   branch,
   token,
-  jsonString,
+  fileContents,
   sha,
   message = 'Update content via Sales-Navigator admin'
 ) {
-  const base64Content = btoa(unescape(encodeURIComponent(jsonString)));
+  const base64Content = btoa(unescape(encodeURIComponent(fileContents)));
   const res = await fetch(
     `https://api.github.com/repos/${owner}/${repo}/contents/${path.split('/').map(encodeURIComponent).join('/')}`,
     {
@@ -82,3 +82,6 @@ export async function putJsonFile(
   const data = await res.json();
   return { sha: data.content?.sha || null, commit: data.commit };
 }
+
+/** @deprecated Use putTextFile — same behavior; name kept for older imports. */
+export const putJsonFile = putTextFile;

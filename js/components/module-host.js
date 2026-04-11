@@ -1,4 +1,4 @@
-import renderStandardModule from './standard-module.js';
+import renderMarkdownModule from './markdown-module.js';
 
 /**
  * @param {string} moduleId
@@ -12,18 +12,18 @@ export async function loadAndRenderModule(moduleId, container) {
     </div>`;
 
   const baseUrl = new URL('.', window.location.href);
-  const jsonUrl = new URL(`modules/${moduleId}/content.json`, baseUrl).href;
+  const mdUrl = new URL(`modules/${moduleId}/content.md`, baseUrl).href;
 
-  let content;
+  let markdownText;
   try {
-    const res = await fetch(jsonUrl, { cache: 'no-store' });
+    const res = await fetch(mdUrl, { cache: 'no-store' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    content = await res.json();
+    markdownText = await res.text();
   } catch (e) {
     container.innerHTML = `
       <div class="bg-red-50 border border-red-200 text-red-800 rounded-xl p-6">
         <p class="font-bold">Could not load content for module <code>${escapeHtml(moduleId)}</code>.</p>
-        <p class="text-sm mt-2">Serve from a local web server (e.g. <code>npx serve .</code>) so <code>modules/</code> JSON can be fetched.</p>
+        <p class="text-sm mt-2">Serve from a local web server (e.g. <code>npx serve .</code>) so <code>modules/&lt;id&gt;/content.md</code> can be fetched.</p>
       </div>`;
     console.error(e);
     return;
@@ -32,13 +32,13 @@ export async function loadAndRenderModule(moduleId, container) {
   try {
     const moduleUrl = new URL(`modules/${moduleId}/module.js`, baseUrl).href;
     const mod = await import(moduleUrl);
-    const render = mod.default || renderStandardModule;
+    const render = mod.default || renderMarkdownModule;
     container.innerHTML = '';
-    render(container, content);
+    render(container, markdownText);
   } catch (e) {
     container.innerHTML = '';
-    renderStandardModule(container, content);
-    console.warn('Falling back to standard renderer:', e);
+    renderMarkdownModule(container, markdownText);
+    console.warn('Falling back to default markdown renderer:', e);
   }
 }
 

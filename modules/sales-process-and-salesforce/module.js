@@ -1,2 +1,2 @@
-import renderStandardModule from '../../js/components/standard-module.js';
-export default renderStandardModule;
+import renderMarkdownModule from '../../js/components/markdown-module.js';
+export default renderMarkdownModule;

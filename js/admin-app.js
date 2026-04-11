@@ -1,4 +1,5 @@
-import { getFile, putJsonFile } from './lib/github-client.js';
+import { getFile, putTextFile } from './lib/github-client.js';
+import { parseFrontMatter } from './lib/front-matter.js';
 
 // Hardcoded — same pattern as Enterprise-Proposals admin (GITHUB_OWNER / GITHUB_REPO)
 const GITHUB_OWNER = 'banneler';
@@ -18,7 +19,7 @@ function showToast(message, type = 'success') {
 }
 
 function currentPath(moduleId) {
-  return `modules/${moduleId}/content.json`;
+  return `modules/${moduleId}/content.md`;
 }
 
 async function attemptLogin() {
@@ -73,7 +74,7 @@ async function main() {
   });
 
   const moduleSelect = document.getElementById('module-select');
-  const editor = document.getElementById('json-editor');
+  const editor = document.getElementById('markdown-editor');
   const shaField = document.getElementById('file-sha');
 
   const manifestRes = await fetch('modules-manifest.json');
@@ -129,24 +130,24 @@ async function main() {
       showToast('Load from GitHub first (need file SHA).', 'error');
       return;
     }
-    let jsonString = editor?.value || '';
+    const mdString = editor?.value || '';
     try {
-      JSON.parse(jsonString);
-    } catch {
-      showToast('Invalid JSON — fix syntax before saving.', 'error');
+      parseFrontMatter(mdString);
+    } catch (e) {
+      showToast(e instanceof Error ? e.message : String(e), 'error');
       return;
     }
     const overlay = document.getElementById('loading-overlay');
     overlay?.classList.remove('hidden');
     try {
       const path = currentPath(moduleId);
-      const { sha: newSha } = await putJsonFile(
+      const { sha: newSha } = await putTextFile(
         GITHUB_OWNER,
         GITHUB_REPO,
         path,
         GITHUB_BRANCH,
         githubToken,
-        jsonString,
+        mdString,
         sha,
         `Update ${path} via Sales-Navigator admin`
       );
@@ -160,15 +161,6 @@ async function main() {
     }
   });
 
-  document.getElementById('format-json-btn')?.addEventListener('click', () => {
-    try {
-      const parsed = JSON.parse(editor?.value || '{}');
-      if (editor) editor.value = JSON.stringify(parsed, null, 2);
-      showToast('JSON formatted.');
-    } catch {
-      showToast('Invalid JSON.', 'error');
-    }
-  });
 }
 
 main().catch(console.error);

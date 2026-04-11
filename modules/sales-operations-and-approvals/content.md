@@ -1,0 +1,69 @@
+---
+id: "sales-operations-and-approvals"
+title: "Sales Operations & Approvals"
+summary: "Internal playbook for when GPC Solutions hit approval, how change orders differ from MAC/disconnect/cancel paths, and how costing routing behaves at the Solution Site level. Pair with the Approval Requirements Matrix, PMO/SF Admin/CRC handoffs, and OBR materials in the cited folders."
+sensitivity: "internal"
+---
+
+## Approvals overview
+
+Approvals run from the GPC Solution in Salesforce. In Related List Quick Links, open Approval History, then choose Approve, Reject, Reassign, or Recall, add comments, and confirm—notification emails go to the assigned recipients automatically.
+
+Leadership review is not limited to a single metric. Expect scrutiny of record quality: each Solution Site should have Solution Services (except A Locations), each Service should carry Products (product count on the related lists is the quick check), and Quote Lines should reconcile discounts with Regular Unit Price, Customer Unit Price, and totals—quantity may require manual math because columns are tight.
+
+Financial and deal-health criteria called out in training include: Payback Months (Net Investment ÷ Gross Margin) versus term, new vs renewal context, and MTD/QTD/YTD payback posture; Net Investment (build, equipment, CAC-style costs—generally excluding labor); manual Product Discount outside standard tier/EVPL rules; Churn as the percent drop from existing MRC to proposed MRC; and Unfavorable Investment when Gross Margin ≤ $0 and Net Contract Value < $0. Non-Salesforce factors also matter: strategic fit, adjacent opportunity, competitiveness, distance from fiber, and Parent Opportunity context.
+
+Know who to ask: Product Management for product-specific approval rules, Sales Management for judgment on decisions, and the Salesforce team for workflow or system issues. On mobile (iPhone or Android), use the notification bell or the approval email link, review Details (View More as needed), return to Approval History, pick the action, enter comments, and confirm—same outcome as desktop.
+
+**Sources:**
+- **Approval Overview and Training Guide - 0725** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Approval Overview and Training Guide - 0725.pdf`
+- **Approval Requirements Matrix v5.5 - 0725** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Approval Requirements Matrix v5.5 - 0725.pdf`
+
+## Change orders
+
+Treat “change order” as a narrow window: the customer changes the contract after Closed/Won but before billing has started. If billing has already started and only part of the contract changes, that is Move/Add/Change (different process). Removing everything before billing is a Cancellation; removing everything after billing is a Disconnect—use those processes instead.
+
+ Preconditions: GPC Solution must be Closed/Won, Booked, and not Billed—change orders cannot run once Billed is set.
+
+ Motion: (1) If the change is significant for MRC, payback, or cost, notify your Sales Manager early. (2) From the GPC Solution, use Conga Files → Change Order template → Preview to validate the right solution and layout. (3) Enable editing: complete Solution Site affected, description, and specific changes; for new products, paste the correct Salesforce Product link for that Solution Site’s Market Group so MCOS/NCOS stay accurate. Do not delete the GPC Solution number from the form—it helps SF Admin, PMO, and CRC. (4) Obtain customer signature (and yours), upload the signed PDF to the GPC Solution, then email the completed form plus the GPC Solution link to Sales Manager (if step 1 applied), PMO, Salesforce Administrator, and CRC.
+
+ After submission: Salesforce Administration performs the booking adjustment; PMO updates the project; CRC handles billing impacts. If the Solution Site project stage is “Pending Billing” or “7-10 Day Order,” Salesforce Admin must get PMO/CRC approval before executing the booking adjustment.
+
+**Sources:**
+- **Change Order Process - Sales Team - 0325** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Change Order Process - Sales Team - 0325.pdf`
+
+## Costing / routing
+
+Costing Routing drives which organizations estimate or validate spend for each Solution Site based on Site Type, Services, and Products, layered with Salesforce automation—some paths show estimates for speed, others pull data supplied by departments. This is an overview: a given site may follow a different combination than another.
+
+ If Request Manual Validation is checked on the Solution Site, automation is skipped and each participating department must review.
+
+ Rules of thumb from the quick reference: Solution Sites tied to a Zone Parent Opportunity may bypass automation; Reusable is not allowed when a Zone Parent is in play. Strategic Build flags when GPS falls inside preloaded boundaries, triggering Individual Drop Cost and Individual Equipment Cost systematically. If both New and Existing services are selected on one site, routing follows the New path. Multiple services on one site follow the path that requires the deepest review. OSP Automated Costing uses system estimates that OSP may override. Reusable lets OSP and Network Engineering complete routing automatically when eligibility criteria are met (see the Reusable matrix in the PDF). Wholesale bulk imports use a separate bulk-site routing pattern.
+
+ For edge cases (especially customer moves and New vs Existing), Business Customer Care can help interpret the right service classification.
+
+**Sources:**
+- **Costing Routing Quick Reference Guide - 1123** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Costing Routing Quick Reference Guide - 1123.pdf`
+
+## Partner, MAC, disconnect, and OBR pointers
+
+Partner: for Enterprise referral mechanics and eligibility, use the Partner Referral Program quick reference—keep partner-specific pricing and rules inside approved channels.
+
+ MAC vs disconnect: after billing starts, partial in-life changes follow Move-Add-Change; removing all services post-billing follows Disconnection. Those are distinct from the pre-billing Change Order and Cancellation paths above. A separate Customer Move procedure PDF also lives under the extracted (2) library for relocation scenarios.
+
+ OBR: Operational Business Review readiness (forms and SOP) remains under the OneDrive (2) OBR folder—use for account planning cadence with ops leadership, not as a substitute for SF approval or costing routing.
+
+**Sources:**
+- **Partner Referral Program Quick Reference (Enterprise Sales) - 1223** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Partner Referral Program Quick Reference Guide - Enterprise Sales Only - 1223.pdf`
+- **Move-Add-Change Processes - Sales Team - 1123** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Move-Add-Change Processes - Sales Team - 1123.pdf`
+- **Disconnection Process - Sales Team - 1022** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/Disconnection Process - Sales Team - 1022.pdf`
+- **Customer Move Process / Procedure** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (2)/Customer Move Process.Procedure.pdf`
+- **GPC training library — OneDrive extract (2) root** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (2)/`
+- **Operational Business Review (OBR) folder** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (2)/Operational Business Review - OBR/`
+- **OBR Sales Readiness Form - Fillable** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (2)/Operational Business Review - OBR/OBR Sales Readiness Form - Fillable.pdf`
+- **OBR SOP v1.2** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (2)/Operational Business Review - OBR/OBR SOP v1.2.pdf`
+- **GPC training library — OneDrive extract (3) root** — `/Users/ba/Documents/GPC Training Material/extracted/OneDrive_1_4-10-2026 (3)/`
+
+## Media (optional)
+
+*Guidde (reserved):* Guidde idea: walk through Approval History actions on a sample GPC Solution, then show Conga Change Order vs where MAC/Disconnect PDFs apply.
