@@ -4,7 +4,9 @@
   "scripts": {
     "build": "tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind.css --minify",
     "dev:css": "tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind.css --watch",
-    "build:manifest": "python3 scripts/build_training_assets_manifest.py"
+    "build:manifest": "python3 scripts/build_training_assets_manifest.py",
+    "prune:images": "python3 scripts/prune_training_images.py",
+    "prune:images:apply": "python3 scripts/prune_training_images.py --apply && python3 scripts/build_training_assets_manifest.py"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
