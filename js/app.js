@@ -8,6 +8,7 @@ import {
 } from './components/getting-started.js';
 import { destroyModuleIntroGate } from './components/module-intro-gate.js';
 import { setMainHeaderInternalBadge } from './lib/header-internal-badge.js';
+import { initHandoutPreview } from './lib/handout-links.js';
 
 const MAP_BOOK_MODULE_ID = 'map-book';
 const GETTING_STARTED_ID = 'getting-started';
@@ -22,6 +23,8 @@ async function main() {
     }
     return;
   }
+  initHandoutPreview();
+
   const manifest = await res.json();
   const modules = manifest.modules || [];
   const firstId = modules.sort((a, b) => (a.order || 0) - (b.order || 0))[0]?.id;

@@ -2,16 +2,66 @@
 
 *Sales-Navigator · Great Plains Communications*
 
-## At a glance
+Pair this handout with **Salesforce 101 / 201**, quick references, **GPCU**, and **Teams** channels cited in the official training pack. Video walkthroughs live in the **Salesforce Training Videos** folder—use them after reading PDFs for structured practice.
 
-This module connects **how GPC sells** to **how work shows up in Salesforce**: opportunities, solutions, sites, quoting touchpoints, and where to find training resources. It is meant to shorten the path from “what do I click?” to “what happens next for the customer?”
+## Lead → opportunity lifecycle
 
-## Key ideas
+- **Leads:** interest / campaign entry; reps or Home Office.
+- **Convert** when ready for quote/pricing → typically creates **account**, **contact**, and **(usually) a new opportunity** (per 101 cycle).
+- **Phases:** solution design (cross-functional) → **GPC Solution** (site address, service, product) → costing groups (**OSP, COE, Off-Net, IPE, BSOL**, etc.) → approvals → contracting.
+- **Approval / costing** may involve **product managers, sales managers, CRO, COO** depending on deal.
+- **Closed/Won** → **project per solution site** inside the GPC Solution; delivery continues beyond 101 (**Salesforce 201**).
+- **Closed/Lost:** **do not delete** the opportunity—history matters if the deal returns.
 
-- **Process before tooling**—understand the customer journey, then map your actions in Salesforce.
-- **GPC Solutions** and related objects structure multi-site and complex deals; learn the pattern, not one-off clicks.
-- **Training videos and PDFs** cited in the module are the canonical references—pair reading with practice in a sandbox or test records where available.
+### Convert Lead (critical defaults)
 
-## In the app
+- **Almost always create a new opportunity** on conversion—including employee / partner referral leads.
+- **Rare** exceptions to skip or reuse an opportunity: only with **sales manager** or **Salesforce admin** alignment.
+- Do **not** check **“Don’t create an opportunity upon conversion”** in normal cases.
+- Name the opportunity for **this** selling situation; open it from the conversion confirmation.
+- **Referral programs:** populate **referral fields** (lead source, referred by, partner referral as applicable); keep referrers updated on **status and eligibility**.
 
-Open **Sales Process & Salesforce** for the full narrative, scenarios, and links to the Salesforce training library.
+## Hygiene & daily working rhythm
+
+- Contacts belong to **accounts**; **one contact** can relate to **multiple accounts**—avoid duplicating people.
+- **Tasks** tab: logged actions and completions—use daily.
+- **List views:** **pin** your default until cache/cookies reset; order tabs for objects you use most.
+- **Home dashboards:** refresh so charts stay current.
+- **Universal Search** to find records by term.
+- Lost deals: **leave data in place** per guidance—no casual deletes.
+
+## GPC Sales app tabs (101 overview)
+
+Leads, Accounts, Contacts, Opportunities, **Parent Opportunities** (multi-party), **GPC Solutions** (quote / approval status), **Solution Sites** (costing by site), **Projects** (post Closed/Won), Reports, Dashboards, Products, Tasks.
+
+## DocuSign from Salesforce
+
+- Integration adds convenience; it **does not replace** the underlying sales process.
+- Signers / recipients should be **Salesforce contacts** on the relevant account; **contact roles** can help routing.
+- DocuSign accounts: **IT** provisions; Salesforce integration enabled per user by the **Salesforce team**—**Service Desk** for account issues.
+- **GPC Solution → Contract Signer:** best practice is to set **when first creating** the solution; **later** adds may not behave the same across stages.
+- **Cannot add Contract Signer** while the solution is **Approval Pending**—fix stage / prerequisites before **Send to DocuSign**.
+- Flow: Conga / template → optional **Save a Copy → Merge and Download** as a Salesforce File → return to GPC Solution → **Send to DocuSign**.
+- First-time users: DocuSign authorization (login, allow access; **custom domain gpcom** when prompted).
+- Document: use Conga output as-is or upload edited file; **Terms and Conditions** changes → **Legal**.
+
+## Weekly habits
+
+- **Salesforce Success Tips** in **Salesforce Users team → General**—updates **weekly**.
+- Keep tasks and opportunities current for dashboards and handoffs.
+- Block time for active opps, **referral updates**, and GPC Solution stages waiting on costing or approval.
+
+## Enterprise proposal workflow
+
+For proposal generation aligned to enterprise deals, use the **enterprise proposal workflow** intro video referenced in the training library.
+
+## Landmines
+
+- **Skip opportunity on conversion** without manager/admin alignment.
+- **Contract Signer** empty or blocked in **Approval Pending**—resolve before DocuSign.
+- **Recipients** must be **Salesforce contacts**, not ad-hoc email-only lists.
+- **Wrong or empty referral fields** break program integrity and referrer relationships.
+
+---
+
+*Conga, DocuSign, and object names follow GPC’s Salesforce configuration—confirm current UI labels with the latest 101 materials.*
