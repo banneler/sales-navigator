@@ -31,9 +31,6 @@
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #1E40AF; border-radius: 10px; }
         
-        .key { transition: all 0.1s; cursor: pointer; user-select: none; }
-        .key:active { transform: scale(0.95); background-color: #CBD5E1; }
-        
         /* When dismissed, screensaver stays in layout so grid animation never stops; we hide with visibility */
         .screensaver-dismissed { visibility: hidden; pointer-events: none; }
         .screensaver-layer { will-change: transform; transform: translateZ(0); backface-visibility: hidden; }
@@ -74,42 +71,18 @@
         </div>
     </div>
 
-    <div id="admin-modal" class="fixed inset-0 z-40 bg-gpc-navy/90 backdrop-blur-md hidden items-center justify-center">
-        <div class="bg-white rounded-2xl shadow-floating w-[800px] p-8">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-slate-800">Configure Client Greeting</h2>
-                <button onclick="closeAdmin()" class="text-slate-400 hover:text-red-500 font-bold text-xl">✕</button>
-            </div>
-            <input type="text" id="client-name-input" class="w-full text-4xl font-bold text-center text-gpc-blue border-b-2 border-slate-200 focus:border-gpc-orange outline-none bg-transparent mb-8 pb-2" placeholder="Enter Client Name..." readonly>
-            <div class="flex flex-col gap-2 bg-slate-100 p-4 rounded-xl">
-                <div class="flex justify-center gap-2" id="row-1"></div>
-                <div class="flex justify-center gap-2" id="row-2"></div>
-                <div class="flex justify-center gap-2" id="row-3"></div>
-                <div class="flex justify-center gap-2 mt-2"><div class="key bg-white shadow rounded-lg h-14 w-96 flex items-center justify-center font-bold text-slate-700 text-xl" onclick="typeKey(' ')">SPACE</div></div>
-            </div>
-            <div class="flex justify-end gap-4 mt-8 border-t border-slate-100 pt-6">
-                <button onclick="clearClient()" class="px-6 py-3 rounded-lg font-bold text-slate-500 hover:bg-slate-100 transition-colors">Clear Saved Data</button>
-                <button onclick="saveClient()" class="px-8 py-3 rounded-lg font-bold text-white bg-gpc-orange hover:bg-orange-700 transition-colors shadow-lg">Save & Initialize</button>
-            </div>
-        </div>
-    </div>
-
     <aside class="w-72 sm:w-80 bg-gpc-navy flex flex-col z-20 shadow-floating relative shrink-0">
-        <div class="px-5 py-5 border-b border-slate-700/50 shrink-0">
-            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Map sections</p>
-            <div class="h-1 w-14 bg-gpc-orange rounded-full"></div>
+        <div class="px-4 py-4 border-b border-slate-700/50 shrink-0 flex items-start gap-3">
+            <button id="btn-fullscreen" type="button" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors shrink-0 mt-0.5" title="Toggle full screen">
+                <svg id="icon-fullscreen" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1v4m0 0h-4m4 0l-5-5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+                <svg id="icon-exit-fullscreen" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5l5.25 5.25"></path></svg>
+            </button>
+            <div class="min-w-0 flex-1">
+                <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Map sections</p>
+                <div class="h-1 w-14 bg-gpc-orange rounded-full"></div>
+            </div>
         </div>
         <nav class="flex-1 px-4 py-1.5 flex flex-col gap-0.5 overflow-y-auto" id="nav-menu"></nav>
-        <div class="p-4 text-sm text-slate-400 border-t border-slate-700/50 flex justify-end items-center font-semibold shrink-0 gap-2">
-            <div class="flex items-center gap-2 shrink-0">
-                <button type="button" id="admin-trigger" class="p-1.5 rounded text-slate-500 hover:text-white hover:bg-white/10 transition-colors" title="Configure client greeting (triple-click)">⋯</button>
-                <button id="btn-fullscreen" type="button" class="p-1.5 rounded text-slate-400 hover:text-white hover:bg-white/10 transition-colors" title="Toggle full screen">
-                    <svg id="icon-fullscreen" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1v4m0 0h-4m4 0l-5-5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
-                    <svg id="icon-exit-fullscreen" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5l5.25 5.25"></path></svg>
-                </button>
-                <span id="clock" class="text-slate-300">00:00</span>
-            </div>
-        </div>
     </aside>
 
     <main class="flex-1 flex flex-col relative bg-gpc-light overflow-hidden min-h-0">
@@ -201,11 +174,8 @@
 
         // --- INITIALIZATION ---
         async function init() {
-            startClock();
             setupScreensaver();
             setupFullscreen();
-            buildKeyboard();
-            setupAdminTrigger();
             
             await loadJSONData();
             
@@ -523,84 +493,12 @@
             window.addEventListener('click', resetTimer);
         }
 
-        // --- HIDDEN ADMIN & OSK ---
-        let clickCount = 0;
-        let clickTimer;
-        function setupAdminTrigger() {
-            document.getElementById('admin-trigger').addEventListener('click', () => {
-                clickCount++;
-                clearTimeout(clickTimer);
-                if (clickCount >= 3) {
-                    document.getElementById('admin-modal').classList.replace('hidden', 'flex');
-                    document.getElementById('client-name-input').value = '';
-                    clickCount = 0;
-                }
-                clickTimer = setTimeout(() => { clickCount = 0; }, 1000);
-            });
-        }
-
-        function closeAdmin() { document.getElementById('admin-modal').classList.replace('flex', 'hidden'); }
-
-        function buildKeyboard() {
-            const rows = [ ['Q','W','E','R','T','Y','U','I','O','P'], ['A','S','D','F','G','H','J','K','L'], ['Z','X','C','V','B','N','M', 'DEL'] ];
-            rows.forEach((r, i) => {
-                const target = document.getElementById(`row-${i+1}`);
-                r.forEach(k => {
-                    target.innerHTML += `<div class="key bg-white shadow rounded-lg h-14 w-14 flex items-center justify-center font-bold text-slate-700 text-xl" onclick="typeKey('${k}')">${k}</div>`;
-                });
-            });
-        }
-
-        function toTitleCase(str) {
-            return str.split(' ').map(w => w.length ? w.charAt(0).toUpperCase() + w.slice(1).toLowerCase() : w).join(' ');
-        }
-        function typeKey(k) {
-            const input = document.getElementById('client-name-input');
-            if (k === 'DEL') {
-                input.value = input.value.slice(0, -1);
-                input.value = toTitleCase(input.value);
-            } else if (k.length === 1 && k >= 'A' && k <= 'Z') {
-                input.value += k.toLowerCase();
-                input.value = toTitleCase(input.value);
-            } else {
-                input.value += k;
-            }
-        }
-
-        async function saveClient() {
-            const val = document.getElementById('client-name-input').value.trim();
-            if (val) {
-                localStorage.setItem('gpc-client', val);
-                
-                checkClientGreeting();
-                buildNavigation();
-                updateView('guest');
-                
-                closeAdmin();
-            }
-        }
-
-        function clearClient() {
-            localStorage.removeItem('gpc-client');
-            checkClientGreeting();
-            buildNavigation();
-            const order = getFilteredNavOrder();
-            if (order.length > 0) updateView(order[0]);
-            closeAdmin();
-        }
-
         // --- HARDWARE BUTTONS & UTILS ---
         window.addEventListener('keydown', (e) => {
             const order = getFilteredNavOrder();
             const num = parseInt(e.key);
             if (num > 0 && num <= 9 && num <= order.length) updateView(order[num - 1]);
         });
-
-        function startClock() {
-            setInterval(() => {
-                document.getElementById('clock').innerText = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
-            }, 1000);
-        }
 
         // --- FULLSCREEN TOGGLE ---
         function setupFullscreen() {
