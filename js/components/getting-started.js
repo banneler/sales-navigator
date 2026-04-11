@@ -61,25 +61,25 @@ function buildDemoMarkup() {
         </div>
         <aside class="w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white/95 p-4 shadow-sm backdrop-blur-sm pointer-events-auto" data-tour-target="tour-scenarios">
           <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Scenarios</p>
-          <p class="text-xs font-semibold text-slate-800 mt-3">The great coffee-machine debate</p>
+          <p class="text-xs font-semibold text-slate-800 mt-3">The leftover lasagna incident</p>
           <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            It's 7:47 a.m. The office Keurig is making a noise like a sad trombone. A crowd is forming. Someone asks you: <span class="text-slate-800">“Do we wait for IT or start a GoFundMe for a French press?”</span>
+            The team chat has 47 unread messages. The only clue is: <span class="text-slate-800">“Who took my labeled leftovers?”</span> You’re the first one in the kitchen. What do you do?
           </p>
           <p class="text-xs text-slate-500 mt-3 uppercase tracking-wide">Pick a response</p>
           <div class="mt-2 space-y-2" role="group" aria-label="Scenario responses">
             <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-              Filibuster until someone admits they unplugged it by accident.
+              Launch a full HR investigation and freeze the fridge as a crime scene.
             </button>
             <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="true">
-              Pour water, say “we’ve got this,” and restart the machine like a calm adult.
+              Reset the vibe: suggest a clean fridge day, labels, and no public shaming.
             </button>
             <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-              Declare a “no caffeine until Monday” policy and walk away.
+              Reply-all with a GIF of someone eating popcorn.
             </button>
           </div>
           <p class="text-xs text-red-700 mt-2 min-h-[1.25rem] hidden" data-tour-scenario-feedback="" role="status" aria-live="polite"></p>
           <p class="text-xs text-emerald-800 bg-emerald-50/90 border border-emerald-100 rounded-lg px-3 py-2 mt-3 hidden" data-tour-coach-note="">
-            <strong>Coach's note:</strong> Hot beverages are a team sport—lead with empathy, not drama.
+            <strong>Coach's note:</strong> Drama rarely pairs well with marinara—lead with norms, not noise.
           </p>
         </aside>
       </div>
@@ -101,6 +101,11 @@ function buildDemoMarkup() {
           </button>
         </div>
         <p class="text-xs text-red-700 mt-2 min-h-[1.25rem] hidden" data-tour-knowledge-feedback="" role="status" aria-live="polite"></p>
+        <div class="mt-3 hidden rounded-xl border-2 border-emerald-400/80 bg-gradient-to-br from-emerald-50 via-white to-orange-50 px-4 py-3 text-center shadow-lg ring-2 ring-emerald-400/30" data-tour-knowledge-affirmation role="status" aria-live="polite">
+          <p class="text-base" aria-hidden="true">✨</p>
+          <p class="text-sm font-semibold text-emerald-900">Blair has spoken—you’ve got great taste.</p>
+          <p class="mt-1 text-xs text-emerald-800/90">El Vallarta would be proud. Next unlocks when you’re ready.</p>
+        </div>
         <p class="text-xs text-slate-500 mt-3 italic" data-tour-knowledge-hint="">Field research is encouraged. Results may vary by hunger level.</p>
         <div class="mt-4 flex gap-2">
           <span class="h-2 w-8 rounded-full bg-orange-400/90"></span>
@@ -338,7 +343,7 @@ export function loadGettingStarted(container, manifest) {
           <strong>Scenarios</strong> sit beside the main content on wider screens. You'll get a short situation, a few choices, and feedback—practice for real conversations, not a test score.
         </p>
         <p class="text-slate-600 text-sm mb-3">
-          The sample in the highlighted area is deliberately unserious (Keurig diplomacy, not quota planning). Live modules use real customer scenarios.
+          The sample in the highlighted area is deliberately unserious (fridge diplomacy, not quota planning). Live modules use real customer scenarios.
         </p>
         <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
           <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
@@ -487,7 +492,7 @@ export function loadGettingStarted(container, manifest) {
         } else {
           btn.classList.add('ring-2', 'ring-red-400', 'bg-red-50');
           if (feedback) {
-            feedback.textContent = 'Not quite—pick the option that keeps the break room friendships intact.';
+            feedback.textContent = 'Not quite—pick the move that stops Slack from boiling over.';
             feedback.classList.remove('hidden');
           }
         }
@@ -519,6 +524,12 @@ export function loadGettingStarted(container, manifest) {
           if (feedback) {
             feedback.textContent = '';
             feedback.classList.add('hidden');
+          }
+          const affirm = root.querySelector('[data-tour-knowledge-affirmation]');
+          if (affirm) {
+            affirm.classList.remove('hidden');
+            affirm.classList.add('animate-pulse');
+            window.setTimeout(() => affirm.classList.remove('animate-pulse'), 900);
           }
         } else {
           btn.classList.add('ring-2', 'ring-red-400', 'bg-red-50');
