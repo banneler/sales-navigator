@@ -1,0 +1,59 @@
+{
+  "appTitle": "Sales-Navigator",
+  "modules": [
+    {
+      "id": "sales-rules-of-engagement",
+      "title": "Sales Rules of Engagement",
+      "order": 1,
+      "category": "Sales"
+    },
+    {
+      "id": "sales-process-and-salesforce",
+      "title": "Sales Process & Salesforce",
+      "order": 2,
+      "category": "Sales"
+    },
+    {
+      "id": "sales-operations-and-approvals",
+      "title": "Sales Operations & Approvals",
+      "order": 3,
+      "category": "Sales"
+    },
+    {
+      "id": "portfolio-and-business-capabilities",
+      "title": "Portfolio & Business Capabilities",
+      "order": 4,
+      "category": "Product"
+    },
+    {
+      "id": "product-connectivity",
+      "title": "Connectivity & Access",
+      "order": 5,
+      "category": "Product"
+    },
+    {
+      "id": "product-security-and-sd-wan",
+      "title": "Security & SD-WAN",
+      "order": 6,
+      "category": "Product"
+    },
+    {
+      "id": "product-cloud-wifi-and-backup",
+      "title": "Cloud, Wi-Fi & Backup",
+      "order": 7,
+      "category": "Product"
+    },
+    {
+      "id": "product-uc-voice-and-collaboration",
+      "title": "UC, Voice & Collaboration",
+      "order": 8,
+      "category": "Product"
+    },
+    {
+      "id": "competitive-positioning",
+      "title": "Competitive Positioning",
+      "order": 9,
+      "category": "Sales"
+    }
+  ]
+}

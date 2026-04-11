@@ -1,0 +1,31 @@
+{
+  "id": "sales-rules-of-engagement",
+  "title": "Sales Rules of Engagement",
+  "summary": "Governance, boundaries, and expectations for enterprise sales at GPC. Pair with your physical tour and manager coaching.",
+  "sensitivity": "public",
+  "sections": [
+    {
+      "heading": "Purpose",
+      "body": "Use this module to align on how we engage prospects and partners: roles, escalation, and approved motions before you run opportunities in Salesforce.",
+      "resources": []
+    },
+    {
+      "heading": "Source materials",
+      "body": "Primary document on disk from the training library:",
+      "resources": [
+        {
+          "label": "Sales Rules of Engagement (ROE)",
+          "path": "/Users/ba/Documents/GPC Training Material/Sales Rules of Engagement (ROE) - Revised August 2025 (1).pdf"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "guidde": {
+      "embedUrl": null,
+      "notes": "Reserve a Guidde walkthrough: e.g. how to apply ROE during discovery and when to loop in leadership."
+    },
+    "videos": [],
+    "worksheets": []
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "competitive-positioning",
+  "title": "Competitive Positioning",
+  "summary": "Metro, technology, and M&A competitive angles—use battle cards alongside discovery questions from the portfolio modules.",
+  "sensitivity": "public",
+  "sections": [
+    {
+      "heading": "Battle cards (PDFs in training folder)",
+      "body": "Keep positioning tight: customer problem, GPC fit, proof points, and landmines. Confirm dates on each PDF with marketing before external use.",
+      "resources": [
+        {
+          "label": "Omaha Metro competitive battle card",
+          "path": "/Users/ba/Documents/GPC Training Material/Omaha Metro competitive battle card v3.pdf"
+        },
+        {
+          "label": "Cox Acquisition battle card",
+          "path": "/Users/ba/Documents/GPC Training Material/Cox Acquisition Battle Card v2.pdf"
+        },
+        {
+          "label": "Fiber vs Starlink",
+          "path": "/Users/ba/Documents/GPC Training Material/Fiber vs Starlink Battlecard.pdf"
+        },
+        {
+          "label": "UC competitor",
+          "path": "/Users/ba/Documents/GPC Training Material/UC Competitor Battle Card 031226.pdf"
+        },
+        {
+          "label": "Ethernet battle card",
+          "path": "/Users/ba/Documents/GPC Training Material/Ethernet Battle Card FINAL.pdf"
+        },
+        {
+          "label": "SD-WAN battle card",
+          "path": "/Users/ba/Documents/GPC Training Material/GPC SD-WAN Battle Card FINAL.pdf"
+        },
+        {
+          "label": "Managed Firewall battle card",
+          "path": "/Users/ba/Documents/GPC Training Material/Managed Firewall Battlecard FINAL.pdf"
+        },
+        {
+          "label": "Cloud Connect battle card",
+          "path": "/Users/ba/Documents/GPC Training Material/GPC Cloud Connect Battle Card 050321.pdf"
+        },
+        {
+          "label": "Managed Wi-Fi battle card",
+          "path": "/Users/ba/Documents/GPC Training Material/GPC Managed WIFI Battle Card.pdf"
+        },
+        {
+          "label": "5G Wireless Backup battle card",
+          "path": "/Users/ba/Documents/GPC Training Material/Battlecard - 5G Wireless Backup.pdf"
+        }
+      ]
+    },
+    {
+      "heading": "Field / ops note",
+      "body": "“Driver Training PDF 2025” in the training folder may be operations-specific—confirm with your manager before mapping it to sales onboarding objectives.",
+      "resources": [
+        {
+          "label": "Driver Training PDF 2025",
+          "path": "/Users/ba/Documents/GPC Training Material/Driver Training PDF 2025 1 (1).pdf"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "guidde": {
+      "embedUrl": null,
+      "notes": "Guidde: competitive talk track or battle-card walkthrough for a single vertical."
+    },
+    "videos": [],
+    "worksheets": []
+  }
+}

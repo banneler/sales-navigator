@@ -1,0 +1,58 @@
+{
+  "id": "product-uc-voice-and-collaboration",
+  "title": "UC, Voice & Collaboration",
+  "summary": "Unified Communications, Teams, contact center, and traditional voice—plans, comparisons, and industry use cases.",
+  "sensitivity": "public",
+  "sections": [
+    {
+      "heading": "UC & Teams",
+      "body": "Use plan comparison sheets for internal sizing; customer-facing brochures and industry PDFs for narrative.",
+      "resources": [
+        {
+          "label": "UC Brochure (abbreviated)",
+          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Unified Communications/UC Brochure - Abbreviated 041026.pdf"
+        },
+        {
+          "label": "UC for Teams datasheet",
+          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Unified Communications/UC for Teams/UC for Teams datasheet 100325.pdf"
+        },
+        {
+          "label": "Contact Center datasheet",
+          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Unified Communications/Contact Center datasheet 050925.pdf"
+        },
+        {
+          "label": "UC Competitor battle card (PDF)",
+          "path": "/Users/ba/Documents/GPC Training Material/UC Competitor Battle Card 031226.pdf"
+        }
+      ]
+    },
+    {
+      "heading": "Voice (non-UC)",
+      "body": "",
+      "resources": [
+        {
+          "label": "Voice Product Sheet",
+          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Voice - Non-UC/Voice Product Sheet 112524.pdf"
+        }
+      ]
+    },
+    {
+      "heading": "Pricing (internal)",
+      "body": "UC and voice pricing PDFs in the pricing zip—handle as internal.",
+      "resources": [
+        {
+          "label": "UC / Voice pricing pack",
+          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (4).zip"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "guidde": {
+      "embedUrl": null,
+      "notes": "Guidde: CCaaS discovery flow or Teams attach motion."
+    },
+    "videos": [],
+    "worksheets": []
+  }
+}

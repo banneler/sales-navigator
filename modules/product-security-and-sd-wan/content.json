@@ -1,0 +1,56 @@
+{
+  "id": "product-security-and-sd-wan",
+  "title": "Security & SD-WAN",
+  "summary": "Managed security, DDoS, and SD-WAN: when to position, key differentiators, and partner/configuration notes.",
+  "sensitivity": "public",
+  "sections": [
+    {
+      "heading": "Datasheets",
+      "body": "Start with product sheets, then use vertical SD-WAN briefs for financial, healthcare, and retail conversations.",
+      "resources": [
+        {
+          "label": "Managed Firewall data sheet",
+          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Managed Firewall & Security/Managed Firewall data sheet 032026.pdf"
+        },
+        {
+          "label": "Managed Network Security data sheet",
+          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → Managed Firewall & Security/Managed Network Security data sheet 062025.pdf"
+        },
+        {
+          "label": "DDoS Product Sheet",
+          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → DDoS/DDoS Product Sheet 012025.pdf"
+        },
+        {
+          "label": "SD-WAN Product Sheet",
+          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip → SD-WAN/SD-WAN Product Sheet 2024.pdf"
+        },
+        {
+          "label": "SD-WAN battle card (PDF)",
+          "path": "/Users/ba/Documents/GPC Training Material/GPC SD-WAN Battle Card FINAL.pdf"
+        },
+        {
+          "label": "Managed Firewall battle card (PDF)",
+          "path": "/Users/ba/Documents/GPC Training Material/Managed Firewall Battlecard FINAL.pdf"
+        }
+      ]
+    },
+    {
+      "heading": "Pricing (internal)",
+      "body": "SD-WAN and managed security fee schedules—internal use.",
+      "resources": [
+        {
+          "label": "Pricing zip (SD-WAN / MNS)",
+          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (4).zip"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "guidde": {
+      "embedUrl": null,
+      "notes": "Guidde: SD-WAN discovery questions or security upsell from DIA."
+    },
+    "videos": [],
+    "worksheets": []
+  }
+}

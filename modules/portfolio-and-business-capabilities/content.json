@@ -1,0 +1,36 @@
+{
+  "id": "portfolio-and-business-capabilities",
+  "title": "Portfolio & Business Capabilities",
+  "summary": "Executive view of GPC capabilities and how portfolio pieces fit together before you deep-dive individual products.",
+  "sensitivity": "public",
+  "sections": [
+    {
+      "heading": "Capability narrative",
+      "body": "Start with the business capability story, then branch into product modules (connectivity, security, UC, etc.).",
+      "resources": [
+        {
+          "label": "Business Capability Presentation",
+          "path": "/Users/ba/Documents/GPC Training Material/Business Capability Presentation.pdf"
+        }
+      ]
+    },
+    {
+      "heading": "Product marketing library (extracted)",
+      "body": "The “(1)” zip is the broad datasheet library organized by product folder (Internet, Ethernet, SD-WAN, UC, etc.). Use it as the canonical collateral index when building customer-facing decks.",
+      "resources": [
+        {
+          "label": "Product datasheets & collateral (zip)",
+          "path": "/Users/ba/Documents/GPC Training Material/OneDrive_1_4-10-2026 (1).zip"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "guidde": {
+      "embedUrl": null,
+      "notes": "Optional Guidde: map a customer problem to a portfolio stack (DIA + managed security + UC)."
+    },
+    "videos": [],
+    "worksheets": []
+  }
+}
