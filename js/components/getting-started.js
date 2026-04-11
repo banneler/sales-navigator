@@ -1,4 +1,5 @@
 import { setRouteModuleId } from '../router.js';
+import { buildHandoutToolbarHtml } from '../lib/handout-links.js';
 
 const GETTING_STARTED_ID = 'getting-started';
 const OVERLAY_ID = 'getting-started-tour-overlay';
@@ -29,6 +30,7 @@ function orderedUserModules(manifest) {
 function buildDemoMarkup() {
   return `
     <div class="tour-demo-content max-w-[1600px] mx-auto space-y-6 pb-4 select-none">
+      ${buildHandoutToolbarHtml('getting-started')}
       <div class="flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
         <div class="w-full lg:flex-1 min-w-0 space-y-6 pointer-events-none" data-tour-target="module-core">
           <div class="rounded-xl border border-slate-200/90 bg-white/95 shadow-sm p-6 backdrop-blur-sm">
@@ -287,6 +289,8 @@ function positionGlassCard(hostEl, stepIndex, rect) {
  */
 export function loadGettingStarted(container, manifest) {
   destroyGettingStartedOverlay();
+
+  container.className = 'w-full max-w-[1600px] mx-auto min-h-[200px] px-0';
 
   const modules = orderedUserModules(manifest);
   const firstTraining = modules.find(

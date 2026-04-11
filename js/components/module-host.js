@@ -8,6 +8,8 @@ import { setMainHeaderInternalBadge } from '../lib/header-internal-badge.js';
 export async function loadAndRenderModule(moduleId, container) {
   setMainHeaderInternalBadge(false);
 
+  container.className = 'w-full max-w-[1600px] mx-auto min-h-[200px] px-0';
+
   container.innerHTML = `
     <div class="flex items-center justify-center py-16 text-slate-500 gap-3">
       <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500"></div>

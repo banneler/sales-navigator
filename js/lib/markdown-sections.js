@@ -7,6 +7,7 @@ import {
   buildScenariosAsideHtml,
   buildKnowledgeChecksCarouselHtml,
 } from './module-enrichment.js';
+import { buildHandoutToolbarHtml } from './handout-links.js';
 
 marked.use({ gfm: true, breaks: true });
 
@@ -138,6 +139,9 @@ export function renderModuleDocumentHtml(markdownSource) {
   const hasRef = Boolean(referenceFilesHtml);
   const hasScenarios = Boolean(scenariosAsideInner);
 
+  const handoutToolbar = buildHandoutToolbarHtml(
+    typeof meta.id === 'string' ? meta.id : ''
+  );
   const headerBlock = buildModuleHeaderBlockHtml(meta);
 
   const mainColumnInner = `
@@ -171,6 +175,7 @@ export function renderModuleDocumentHtml(markdownSource) {
 
     return `
     <div class="module-doc space-y-6">
+      ${handoutToolbar}
       ${headerBlock}
       <div class="module-layout-row flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
         <div class="module-layout-main w-full lg:flex-1 lg:min-w-0 space-y-6">
@@ -183,6 +188,7 @@ export function renderModuleDocumentHtml(markdownSource) {
 
   return `
     <div class="module-doc space-y-6">
+      ${handoutToolbar}
       ${headerBlock}
       ${mainColumnInner}
     </div>
