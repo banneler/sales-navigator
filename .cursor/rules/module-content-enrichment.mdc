@@ -12,6 +12,6 @@ Each module’s front matter may include (keep `id`, `title`, `summary`, `sensit
 - **`knowledge_checks`**: list of objects with `question`, `options` (3 strings), `correct_index` (0-based), `explanation` (plain text).
 - **`scenarios`**: list of objects with `title`, `situation` (`|` markdown), `choices` with `label` and `feedback` (strings; feedback can use light markdown).
 
-The app renders these above the `##` section cards. Invalid YAML breaks the admin preview and push validation.
+Render order: **5-minute summary** (top) → **`##` section cards** → **scenario cards** (responsive 2–3 column grid) → **knowledge checks** (carousel, one question at a time, at the end). Invalid YAML breaks the admin preview and push validation.
 
 Module slugs (see `modules-manifest.json`): `sales-rules-of-engagement`, `sales-process-and-salesforce`, `sales-operations-and-approvals`, `portfolio-and-business-capabilities`, `product-connectivity`, `product-security-and-sd-wan`, `product-cloud-wifi-and-backup`, `product-uc-voice-and-collaboration`, `competitive-positioning`.

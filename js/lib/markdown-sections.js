@@ -1,7 +1,11 @@
 import { marked } from 'https://esm.sh/marked@15.0.12';
 import DOMPurify from 'https://esm.sh/dompurify@3.2.2';
 import { parseFrontMatter } from './front-matter.js';
-import { buildEnrichmentHtml } from './module-enrichment.js';
+import {
+  buildFiveMinuteSummaryHtml,
+  buildScenariosSectionHtml,
+  buildKnowledgeChecksCarouselHtml,
+} from './module-enrichment.js';
 
 marked.use({ gfm: true, breaks: true });
 
@@ -76,7 +80,7 @@ export function renderSectionsToHtml(sections) {
 }
 
 /**
- * Full module document HTML: header (title, summary, badge) + section cards.
+ * Full module document HTML: header, 5-minute summary, ## sections, scenarios grid, knowledge carousel.
  * Used by the main app and the admin preview. Returns error markup if front matter is invalid.
  */
 export function renderModuleDocumentHtml(markdownSource) {
@@ -105,7 +109,9 @@ export function renderModuleDocumentHtml(markdownSource) {
 
   const sections = splitMarkdownByH2(body || '');
   const sectionCardsHtml = renderSectionsToHtml(sections);
-  const enrichmentHtml = buildEnrichmentHtml(meta);
+  const fiveMinHtml = buildFiveMinuteSummaryHtml(meta);
+  const scenariosHtml = buildScenariosSectionHtml(meta);
+  const knowledgeCarouselHtml = buildKnowledgeChecksCarouselHtml(meta);
 
   return `
     <div class="space-y-6">
@@ -116,8 +122,10 @@ export function renderModuleDocumentHtml(markdownSource) {
         </div>
         <div class="flex-shrink-0">${badge}</div>
       </div>
-      ${enrichmentHtml}
-      <div class="space-y-6">${sectionCardsHtml}</div>
+      ${fiveMinHtml}
+      <div class="space-y-6 module-deep-dive">${sectionCardsHtml}</div>
+      ${scenariosHtml}
+      ${knowledgeCarouselHtml}
     </div>
   `;
 }

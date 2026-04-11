@@ -1,11 +1,88 @@
 /**
- * Wire up knowledge-check and scenario buttons inside a module (or admin preview) root.
+ * Wire up knowledge-check answers, scenario choices, and knowledge carousel nav.
  * Safe to call repeatedly: replaces the previous click handler on the same element.
  */
 
 const handlerByEl = new WeakMap();
 
+function escapeHtml(s) {
+  if (s == null) return '';
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function updateKnowledgeCarousel(root, index) {
+  const count = Number(root.getAttribute('data-kc-count')) || 0;
+  if (count === 0) return;
+  const i = Math.max(0, Math.min(index, count - 1));
+  root.setAttribute('data-kc-active', String(i));
+
+  root.querySelectorAll('.kc-slide').forEach((el) => {
+    const si = Number(el.getAttribute('data-kc-slide'));
+    el.classList.toggle('hidden', si !== i);
+  });
+
+  const ind = root.querySelector('.js-kc-carousel-indicator');
+  if (ind) ind.textContent = `${i + 1} / ${count}`;
+
+  const prev = root.querySelector('.js-kc-carousel-prev');
+  const next = root.querySelector('.js-kc-carousel-next');
+  if (prev) prev.disabled = i === 0;
+  if (next) next.disabled = i === count - 1;
+
+  root.querySelectorAll('.js-kc-carousel-dot').forEach((dot) => {
+    const di = Number(dot.getAttribute('data-kc-dot'));
+    const on = di === i;
+    dot.classList.toggle('bg-orange-500', on);
+    dot.classList.toggle('ring-2', on);
+    dot.classList.toggle('ring-orange-200', on);
+    dot.classList.toggle('bg-slate-300', !on);
+    dot.classList.toggle('hover:bg-slate-400', !on);
+    dot.setAttribute('aria-current', on ? 'true' : 'false');
+  });
+}
+
+function initKnowledgeCarousels(container) {
+  container.querySelectorAll('.kc-carousel').forEach((carousel) => {
+    const active = Number(carousel.getAttribute('data-kc-active')) || 0;
+    updateKnowledgeCarousel(carousel, active);
+  });
+}
+
 function handleClick(e) {
+  const prevBtn = e.target.closest('.js-kc-carousel-prev');
+  if (prevBtn) {
+    const root = prevBtn.closest('.kc-carousel');
+    if (root) {
+      const cur = Number(root.getAttribute('data-kc-active')) || 0;
+      updateKnowledgeCarousel(root, cur - 1);
+    }
+    return;
+  }
+
+  const nextBtn = e.target.closest('.js-kc-carousel-next');
+  if (nextBtn) {
+    const root = nextBtn.closest('.kc-carousel');
+    if (root) {
+      const cur = Number(root.getAttribute('data-kc-active')) || 0;
+      updateKnowledgeCarousel(root, cur + 1);
+    }
+    return;
+  }
+
+  const dotBtn = e.target.closest('.js-kc-carousel-dot');
+  if (dotBtn) {
+    const root = dotBtn.closest('.kc-carousel');
+    if (root) {
+      const di = Number(dotBtn.getAttribute('data-kc-dot'));
+      updateKnowledgeCarousel(root, di);
+    }
+    return;
+  }
+
   const checkBtn = e.target.closest('.js-kc-check');
   if (checkBtn) {
     const card = checkBtn.closest('.knowledge-check-card');
@@ -40,15 +117,6 @@ function handleClick(e) {
   }
 }
 
-function escapeHtml(s) {
-  if (s == null) return '';
-  return String(s)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
-
 export function bindModuleInteractions(container) {
   if (!container) return;
   const prev = handlerByEl.get(container);
@@ -56,4 +124,5 @@ export function bindModuleInteractions(container) {
   const fn = handleClick;
   container.addEventListener('click', fn);
   handlerByEl.set(container, fn);
+  initKnowledgeCarousels(container);
 }
