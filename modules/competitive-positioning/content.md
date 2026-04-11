@@ -157,29 +157,6 @@ For SD-WAN specifically: qualify site count, current MPLS/VPN/backhaul behavior,
 
 Apply the same pattern to other technology cards: open with customer pain, tie features to outcomes, use discovery questions to earn the technical win, and bring SE for design validation instead of debating from the card alone.
 
-## Battle card PDFs (training references)
-
-Primary sources synthesized into this module appear below. Confirm dates and claims with marketing before external use. Additional portfolio battle cards are listed for extended reading.
-
-**Sources:**
-- **Omaha Metro competitive battle card v3 (primary source)** — `/Users/ba/Documents/GPC Training Material/Omaha Metro competitive battle card v3.pdf`
-- **Fiber vs Starlink Battlecard (primary source)** — `/Users/ba/Documents/GPC Training Material/Fiber vs Starlink Battlecard.pdf`
-- **Cox Acquisition Battle Card v2 (primary source)** — `/Users/ba/Documents/GPC Training Material/Cox Acquisition Battle Card v2.pdf`
-- **GPC SD-WAN Battle Card FINAL (primary source)** — `/Users/ba/Documents/GPC Training Material/GPC SD-WAN Battle Card FINAL.pdf`
-- **UC competitor battle card** — `/Users/ba/Documents/GPC Training Material/UC Competitor Battle Card 031226.pdf`
-- **Ethernet battle card** — `/Users/ba/Documents/GPC Training Material/Ethernet Battle Card FINAL.pdf`
-- **Managed Firewall battle card** — `/Users/ba/Documents/GPC Training Material/Managed Firewall Battlecard FINAL.pdf`
-- **Cloud Connect battle card** — `/Users/ba/Documents/GPC Training Material/GPC Cloud Connect Battle Card 050321.pdf`
-- **Managed Wi-Fi battle card** — `/Users/ba/Documents/GPC Training Material/GPC Managed WIFI Battle Card.pdf`
-- **5G Wireless Backup battle card** — `/Users/ba/Documents/GPC Training Material/Battlecard - 5G Wireless Backup.pdf`
-
-## Field / ops note
-
-“Driver Training PDF 2025” in the training folder is operations-oriented; confirm with your manager before mapping it to sales onboarding objectives (ops TBD).
-
-**Sources:**
-- **Driver Training PDF 2025 (ops TBD — confirm before sales use)** — `/Users/ba/Documents/GPC Training Material/Driver Training PDF 2025 1 (1).pdf`
-
 ## Media (optional)
 
 *Guidde (reserved):* Guidde: competitive talk track or battle-card walkthrough for a single vertical.
