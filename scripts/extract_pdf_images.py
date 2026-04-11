@@ -39,6 +39,47 @@ def slug(s: str) -> str:
     return s.strip("-") or "image"
 
 
+def extract_images_from_pdf(
+    pdf_path: Path,
+    out_dir: Path,
+    prefix: str | None = None,
+    *,
+    max_per_page: int = 12,
+    min_pixels: int = 9000,
+) -> int:
+    """Write images under out_dir. Returns count extracted."""
+    pdf_path = pdf_path.expanduser().resolve()
+    if not pdf_path.is_file():
+        raise FileNotFoundError(pdf_path)
+
+    out_dir = out_dir.expanduser().resolve()
+    prefix = prefix or slug(pdf_path.stem)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    doc = fitz.open(pdf_path)
+    total = 0
+    try:
+        for page_index in range(len(doc)):
+            page = doc[page_index]
+            image_list = page.get_images(full=True)
+            for img_index, img in enumerate(image_list[:max_per_page]):
+                xref = img[0]
+                try:
+                    base = doc.extract_image(xref)
+                except Exception:
+                    continue
+                w, h = base.get("width", 0), base.get("height", 0)
+                if w * h < min_pixels:
+                    continue
+                name = f"{prefix}-p{page_index + 1}-img{img_index}.{base['ext']}"
+                path = out_dir / name
+                path.write_bytes(base["image"])
+                total += 1
+    finally:
+        doc.close()
+    return total
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Extract images from PDF pages.")
     ap.add_argument("--pdf", required=True, type=Path, help="Path to a .pdf file")
@@ -79,29 +120,14 @@ def main() -> None:
         out_dir = out_dir.expanduser().resolve()
 
     prefix = args.prefix or slug(pdf_path.stem)
-    out_dir.mkdir(parents=True, exist_ok=True)
-
-    doc = fitz.open(pdf_path)
-    total = 0
-    for page_index in range(len(doc)):
-        page = doc[page_index]
-        image_list = page.get_images(full=True)
-        for img_index, img in enumerate(image_list[: args.max_per_page]):
-            xref = img[0]
-            try:
-                base = doc.extract_image(xref)
-            except Exception:
-                continue
-            w, h = base.get("width", 0), base.get("height", 0)
-            if w * h < args.min_pixels:
-                continue
-            name = f"{prefix}-p{page_index + 1}-img{img_index}.{base['ext']}"
-            path = out_dir / name
-            path.write_bytes(base["image"])
-            print(path)
-            total += 1
-    doc.close()
-    print(f"Extracted {total} image(s) -> {out_dir}", file=sys.stderr)
+    n = extract_images_from_pdf(
+        pdf_path,
+        out_dir,
+        prefix,
+        max_per_page=args.max_per_page,
+        min_pixels=args.min_pixels,
+    )
+    print(f"Extracted {n} image(s) -> {out_dir}", file=sys.stderr)
 
 
 if __name__ == "__main__":
