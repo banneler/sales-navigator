@@ -568,6 +568,9 @@ export function loadGettingStarted(container, manifest) {
         render();
       }
     });
+    cardEl.querySelector('.gs-exit-tour')?.addEventListener('click', () => {
+      destroyGettingStartedOverlay();
+    });
     cardEl.querySelectorAll('.gs-goto').forEach((btn) => {
       btn.addEventListener('click', () => {
         const id = btn.getAttribute('data-goto');
@@ -630,10 +633,16 @@ export function loadGettingStarted(container, manifest) {
         </div>
         <div class="px-5 py-4 getting-started-body text-sm max-h-[min(52vh,420px)] overflow-y-auto">${step.body}</div>
         <div class="px-5 py-3 bg-slate-900/[0.03] border-t border-slate-900/10 flex flex-wrap items-center justify-between gap-2 backdrop-blur-sm">
-          <button type="button" class="gs-prev inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white/40 px-3 py-2 text-xs font-medium text-slate-800 hover:bg-white/70 disabled:opacity-40 disabled:pointer-events-none transition" ${stepIndex === 0 ? 'disabled' : ''}>
-            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-            Back
-          </button>
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" class="gs-prev inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white/40 px-3 py-2 text-xs font-medium text-slate-800 hover:bg-white/70 disabled:opacity-40 disabled:pointer-events-none transition" ${stepIndex === 0 ? 'disabled' : ''}>
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+              Back
+            </button>
+            <button type="button" class="gs-exit-tour inline-flex items-center gap-1.5 rounded-lg border border-slate-300/70 bg-white/30 px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white/60 hover:text-slate-800 transition" aria-label="Exit quick tour and return to the page">
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              Exit tour
+            </button>
+          </div>
           <div class="flex flex-wrap gap-2">
             ${
               !isLast
