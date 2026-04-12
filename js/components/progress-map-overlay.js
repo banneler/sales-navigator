@@ -248,11 +248,18 @@ export function openProgressMap(manifest, currentModuleId, options = {}) {
     }
 
     const litEl = overlay.querySelector('[data-pm-lit]');
-    function setLitWidth(nodeIdx) {
+    /** @param {boolean} [instant] - no CSS transition (for “already lit” initial state) */
+    function setLitToNode(nodeIdx, instant = false) {
       const node = overlay.querySelector(`[data-pm-node="${nodeIdx}"]`);
-      if (node && litEl) {
-        const width = node.offsetLeft + node.offsetWidth / 2 - 64;
-        litEl.style.width = `${Math.max(0, width)}px`;
+      if (!node || !litEl) return;
+      const width = node.offsetLeft + node.offsetWidth / 2 - 64;
+      if (instant) {
+        litEl.style.transition = 'none';
+      }
+      litEl.style.width = `${Math.max(0, width)}px`;
+      if (instant) {
+        void litEl.offsetHeight;
+        litEl.style.transition = '';
       }
     }
     function scrollToIdx(idx, behavior) {
@@ -281,19 +288,20 @@ export function openProgressMap(manifest, currentModuleId, options = {}) {
       return;
     }
 
-    setLitWidth(completedIdx);
+    /* Path is already “live” to the module you finished — snap the lit trunk there (no grow-in). */
+    setLitToNode(completedIdx, true);
     scrollToIdx(completedIdx, 'auto');
 
-    await delay(500);
-    pulseNode(completedIdx);
-
-    await delay(850);
-
     if (nextIdx >= 0 && nextIdx !== completedIdx) {
-      setLitWidth(nextIdx);
+      /* Only animate the new segment: extend fiber toward the next stop. */
+      await delay(220);
+      setLitToNode(nextIdx, false);
       scrollToIdx(nextIdx, 'smooth');
       await delay(1200);
       pulseNode(nextIdx);
+    } else {
+      await delay(200);
+      pulseNode(completedIdx);
     }
 
     await delay(200);
