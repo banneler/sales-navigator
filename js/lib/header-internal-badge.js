@@ -1,7 +1,7 @@
 const BADGE_ID = 'header-internal-badge';
 
 /**
- * Show or hide the "Internal" pill in the app chrome (#main-header).
+ * Show or hide the "Internal" pill at the bottom of the sidebar nav.
  * @param {boolean} visible
  */
 export function setMainHeaderInternalBadge(visible) {

@@ -52,6 +52,9 @@ export function renderShell(manifest, onSelect) {
         </button>
         <div id="sidebar-content" class="flex flex-col w-full flex-1 min-h-0 p-4 pt-14">
           <nav class="flex-1 min-h-0 overflow-y-auto">${navHtml.join('')}</nav>
+          <div class="shrink-0 mt-4 pt-4 border-t border-slate-200 flex justify-center">
+            <span id="header-internal-badge" class="hidden inline-flex items-center rounded-full bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-1 border border-amber-200/90" aria-hidden="true">Internal</span>
+          </div>
         </div>
       </aside>
       <main id="main-panel" class="flex-1 overflow-y-auto min-h-0 min-w-0 bg-slate-100 p-6 md:p-8">
