@@ -5,22 +5,60 @@ const OVERLAY_ID = 'progress-map-overlay';
 const BASE_NODE_WIDTH = 200;
 const PADDING_OFFSET = 128;
 
-const MODULE_ICONS = {
-  'getting-started': 'fa-circle-play',
-  'sales-rules-of-engagement': 'fa-file-lines',
-  'sales-process-and-salesforce': 'fa-diagram-project',
-  'sales-operations-and-approvals': 'fa-clipboard-check',
-  'portfolio-and-business-capabilities': 'fa-briefcase',
-  'product-connectivity': 'fa-wifi',
-  'product-security-and-sd-wan': 'fa-shield-halved',
-  'product-cloud-wifi-and-backup': 'fa-cloud',
-  'product-uc-voice-and-collaboration': 'fa-headset',
-  'competitive-positioning': 'fa-chess-knight',
-  'map-book': 'fa-map',
-};
+/**
+ * Minimal building façade for map cards and modal (CSS-only).
+ * @param {'completed' | 'active' | 'available'} kind
+ * @param {'map' | 'modal'} size
+ */
+function buildingFaceHtml(kind, size = 'map') {
+  const modal = size === 'modal';
+  const peakL = modal ? 'border-l-[22px]' : 'border-l-[28px]';
+  const peakR = modal ? 'border-r-[22px]' : 'border-r-[28px]';
+  const peakB = modal ? 'border-b-[11px]' : 'border-b-[14px]';
 
-function iconFor(id) {
-  return MODULE_ICONS[id] || 'fa-book';
+  let roof;
+  let face;
+  let win;
+  let door;
+  if (kind === 'active') {
+    roof = `${peakL} ${peakR} ${peakB} border-l-transparent border-r-transparent border-b-orange-500`;
+    face =
+      'border-orange-500 ring-2 ring-orange-300/60 shadow-md bg-gradient-to-b from-orange-50 to-white';
+    win = 'bg-amber-200 shadow-[0_0_8px_rgba(251,146,60,0.85)]';
+    door = 'bg-orange-500';
+  } else if (kind === 'completed') {
+    roof = `${peakL} ${peakR} ${peakB} border-l-transparent border-r-transparent border-b-orange-400`;
+    face =
+      'border-orange-400 bg-gradient-to-b from-orange-50/90 to-slate-50 shadow-sm';
+    win = 'bg-orange-200';
+    door = 'bg-orange-400';
+  } else {
+    roof = `${peakL} ${peakR} ${peakB} border-l-transparent border-r-transparent border-b-slate-300`;
+    face = 'border-slate-200 bg-gradient-to-b from-slate-100 to-slate-50';
+    win = 'bg-slate-300';
+    door = 'bg-slate-500';
+  }
+
+  const faceH = modal ? 'min-h-[52px]' : 'min-h-[58px]';
+  const w = modal ? 'w-14' : 'w-16';
+
+  const windows = [0, 1, 2, 3]
+    .map(
+      () =>
+        `<span class="w-2 h-2 rounded-[2px] ${win} shrink-0"></span>`
+    )
+    .join('');
+
+  return `
+    <div class="${modal ? 'mb-0' : 'mb-2'} flex flex-col items-center ${w} mx-auto" aria-hidden="true">
+      <div class="w-0 h-0 ${roof}"></div>
+      <div class="w-full ${faceH} border-2 rounded-t-sm rounded-b-md ${face} flex flex-col justify-between px-1 pt-1 pb-1">
+        <div class="grid grid-cols-2 gap-0.5 place-items-center flex-1 content-start py-0.5">
+          ${windows}
+        </div>
+        <div class="h-1.5 w-3 rounded-sm ${door} mx-auto opacity-95"></div>
+      </div>
+    </div>`;
 }
 
 function escapeHtml(s) {
@@ -74,7 +112,7 @@ export function openProgressMap(manifest, currentModuleId) {
     'fixed inset-0 z-[200] flex items-center justify-center p-4 bg-slate-800/80 backdrop-blur-sm antialiased';
   overlay.setAttribute('role', 'dialog');
   overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-label', 'Fiber path training progress');
+  overlay.setAttribute('aria-label', 'Fiber path — training progress map');
 
   overlay.innerHTML = `
     <div class="bg-white w-full max-w-[90vw] h-[85vh] max-h-[900px] rounded-2xl shadow-2xl flex flex-col relative overflow-hidden border border-slate-200">
@@ -82,18 +120,18 @@ export function openProgressMap(manifest, currentModuleId) {
         <div class="min-w-0">
           <h2 class="text-xl md:text-2xl font-bold text-slate-800 flex items-center gap-3">
             <span class="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-orange-100 flex items-center justify-center border border-orange-200 text-orange-500 shrink-0">
-              <i class="fa-solid fa-route" aria-hidden="true"></i>
+              <i class="fa-solid fa-building" aria-hidden="true"></i>
             </span>
             <span class="truncate">Fiber path</span>
           </h2>
-          <p class="text-sm text-slate-500 mt-1 font-medium truncate">Your progress across training modules</p>
+          <p class="text-sm text-slate-500 mt-1 font-medium truncate">Each building is a module along the route</p>
         </div>
         <div class="flex items-center gap-4 md:gap-8 shrink-0">
           <div class="text-right">
             <div class="text-2xl md:text-3xl font-black text-slate-800 tabular-nums leading-none tracking-tight">
               <span data-pm-visited class="text-orange-500">${visitedCount}</span><span class="text-slate-300 text-lg md:text-xl">/${total}</span>
             </div>
-            <div class="text-[10px] uppercase font-bold text-slate-400 tracking-widest mt-1">Nodes lit</div>
+            <div class="text-[10px] uppercase font-bold text-slate-400 tracking-widest mt-1">Buildings lit</div>
           </div>
           <div class="h-8 md:h-10 w-px bg-slate-200 hidden sm:block" aria-hidden="true"></div>
           <button type="button" data-pm-close class="w-10 h-10 rounded-full hover:bg-slate-200 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors" aria-label="Close map">
@@ -135,7 +173,7 @@ export function openProgressMap(manifest, currentModuleId) {
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
           </span>
-          <span class="text-sm font-medium text-slate-500 truncate">Tap a node to open or review a module</span>
+          <span class="text-sm font-medium text-slate-500 truncate">Tap a building to open or review a module</span>
         </div>
         <button type="button" data-pm-close-footer class="px-5 md:px-6 py-2.5 bg-slate-800 hover:bg-slate-900 text-white font-medium rounded-lg transition-all flex items-center gap-2 shadow-sm shrink-0">
           Close map
@@ -151,9 +189,7 @@ export function openProgressMap(manifest, currentModuleId) {
           <button type="button" data-pm-modal-x class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors" aria-label="Close">
             <i class="fa-solid fa-xmark w-5 h-5" aria-hidden="true"></i>
           </button>
-          <div data-pm-modal-icon-wrap class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mb-4">
-            <i data-pm-modal-icon class="fa-solid fa-book w-6 h-6 text-slate-500" aria-hidden="true"></i>
-          </div>
+          <div data-pm-modal-icon-wrap class="mb-4 flex min-h-[72px] items-center justify-center"></div>
           <h3 data-pm-modal-title class="text-xl font-bold text-slate-800 mb-2 leading-tight pr-8">Module</h3>
           <div class="flex items-center gap-2 mt-4 mb-6">
             <span data-pm-modal-badge class="px-2.5 py-1 rounded text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-500">—</span>
@@ -174,7 +210,6 @@ export function openProgressMap(manifest, currentModuleId) {
   let modulesData = modules.map((m) => ({
     id: m.id,
     title: m.title,
-    icon: iconFor(m.id),
     visited: visited.has(m.id),
     active: m.id === currentModuleId,
   }));
@@ -216,11 +251,12 @@ export function openProgressMap(manifest, currentModuleId) {
           ? 'border-orange-500 ring-4 ring-orange-500/20 shadow-md z-30'
           : 'border-slate-200 opacity-80 hover:opacity-100';
 
-      const iconBox = isCompleted
-        ? 'bg-orange-50 text-orange-500'
+      const buildingKind = isCompleted
+        ? 'completed'
         : isActive
-          ? 'bg-orange-500 text-white shadow-inner'
-          : 'bg-slate-100 text-slate-400';
+          ? 'active'
+          : 'available';
+      const building = buildingFaceHtml(buildingKind, 'map');
 
       const badge =
         isCompleted && !isActive
@@ -247,12 +283,10 @@ export function openProgressMap(manifest, currentModuleId) {
             ${packetAnim}
           </div>
           <div class="absolute w-[180px] left-1/2 -translate-x-1/2 ${cardPosition} ${cardHoverAnim} transition-transform duration-300 z-30 py-4 cursor-pointer pm-clickable" data-pm-open="${safeId}" role="button" tabindex="0">
-            <div class="relative bg-white border-2 ${cardBorder} rounded-2xl p-5 flex flex-col items-center justify-center text-center h-[160px] transition-all duration-300">
+            <div class="relative bg-white border-2 ${cardBorder} rounded-2xl p-4 flex flex-col items-center justify-center text-center min-h-[168px] transition-all duration-300">
               ${badge}
-              <div class="w-12 h-12 rounded-full ${iconBox} flex items-center justify-center mb-3 transition-colors">
-                <i class="fa-solid ${mod.icon} w-6 h-6" aria-hidden="true"></i>
-              </div>
-              <h3 class="font-bold text-slate-800 text-sm leading-tight">${safeTitle}</h3>
+              ${building}
+              <h3 class="font-bold text-slate-800 text-sm leading-tight mt-1 px-0.5">${safeTitle}</h3>
             </div>
           </div>
         </div>`;
@@ -326,11 +360,21 @@ export function openProgressMap(manifest, currentModuleId) {
     const action = overlay.querySelector('[data-pm-modal-action]');
     const accent = overlay.querySelector('[data-pm-modal-accent]');
     const iconWrap = overlay.querySelector('[data-pm-modal-icon-wrap]');
-    const iconEl = overlay.querySelector('[data-pm-modal-icon]');
 
     if (titleEl) titleEl.textContent = mod.title;
 
-    if (mod.active && action && badge && accent && iconWrap && iconEl) {
+    const modalKind = mod.active
+      ? 'active'
+      : mod.visited
+        ? 'completed'
+        : 'available';
+    if (iconWrap) {
+      iconWrap.innerHTML = buildingFaceHtml(modalKind, 'modal');
+      iconWrap.className =
+        'mb-4 flex min-h-[80px] w-full items-center justify-center';
+    }
+
+    if (mod.active && action && badge && accent) {
       badge.textContent = 'Current module';
       badge.className =
         'px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-widest bg-orange-500 text-white shadow-sm';
@@ -339,14 +383,11 @@ export function openProgressMap(manifest, currentModuleId) {
       action.className =
         'w-full py-3.5 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold transition-all shadow-[0_4px_14px_rgba(249,115,22,0.4)] flex items-center justify-center gap-2';
       accent.className = 'h-1.5 w-full bg-orange-500';
-      iconWrap.className =
-        'w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center text-orange-500';
-      iconEl.className = `fa-solid ${mod.icon} w-6 h-6 text-orange-500`;
       action.onclick = () => {
         closeModal();
         destroyProgressMapOverlay();
       };
-    } else if (mod.visited && action && badge && accent && iconWrap && iconEl) {
+    } else if (mod.visited && action && badge && accent) {
       badge.textContent = 'Visited';
       badge.className =
         'px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-widest bg-orange-100 text-orange-600 border border-orange-200';
@@ -355,15 +396,12 @@ export function openProgressMap(manifest, currentModuleId) {
       action.className =
         'w-full py-3.5 bg-slate-800 hover:bg-slate-900 text-white rounded-xl font-semibold transition-all shadow-md flex items-center justify-center gap-2';
       accent.className = 'h-1.5 w-full bg-orange-500';
-      iconWrap.className =
-        'w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center text-orange-500';
-      iconEl.className = `fa-solid ${mod.icon} w-6 h-6 text-orange-500`;
       action.onclick = () => {
         markModuleVisited(mod.id);
         setRouteModuleId(mod.id);
         destroyProgressMapOverlay();
       };
-    } else if (action && badge && accent && iconWrap && iconEl) {
+    } else if (action && badge && accent) {
       badge.textContent = 'Not started';
       badge.className =
         'px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-widest bg-slate-100 text-slate-500 border border-slate-200';
@@ -372,9 +410,6 @@ export function openProgressMap(manifest, currentModuleId) {
       action.className =
         'w-full py-3.5 bg-slate-800 hover:bg-slate-900 text-white rounded-xl font-semibold transition-all flex items-center justify-center gap-2 shadow-md';
       accent.className = 'h-1.5 w-full bg-slate-300';
-      iconWrap.className =
-        'w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-400';
-      iconEl.className = `fa-solid ${mod.icon} w-6 h-6 text-slate-400`;
       action.onclick = () => {
         markModuleVisited(mod.id);
         setRouteModuleId(mod.id);
