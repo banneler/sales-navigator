@@ -123,7 +123,11 @@ export function openProgressMap(manifest, currentModuleId, options = {}) {
     ? 'The fiber carries your progress—open the full map anytime from the header.'
     : 'Tap a node to open or review a module';
 
-  const footerBtnLabel = isCelebration ? 'Got it' : 'Close map';
+  const footerBtnLabel = isCelebration
+    ? celebrationOpts?.nextModule?.title
+      ? `Continue to ${escapeHtml(celebrationOpts.nextModule.title)}`
+      : 'Close'
+    : 'Close map';
 
   const overlay = document.createElement('div');
   overlay.id = OVERLAY_ID;
@@ -233,7 +237,7 @@ export function openProgressMap(manifest, currentModuleId, options = {}) {
       ? modulesData.findIndex((m) => m.id === nextModule.id)
       : -1;
 
-    currentZoom = 1.38;
+    currentZoom = 1.12;
     const nodesEl = overlay.querySelector('[data-pm-nodes]');
     const wrapper = overlay.querySelector('[data-pm-zoom-wrap]');
     if (nodesEl) nodesEl.style.transform = `scale(${currentZoom})`;
