@@ -246,6 +246,6 @@ Start with their business context: locations, critical apps, uptime tolerance, a
 - This module is the **story**; **Sales Resources** is the **evidence locker**—pair them on every deal.
 - Ask **Sales Ops** or your manager if you can’t find a specific PDF; paths on one machine won’t match everyone’s laptop.
 
-## Media (optional)
+## Media (optional) [deep]
 
 *Guidde (reserved):* Optional Guidde: map a customer problem to a portfolio stack (DIA + managed security + UC).

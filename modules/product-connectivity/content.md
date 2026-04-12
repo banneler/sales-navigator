@@ -271,13 +271,13 @@ Use competitive framing when **satellite**, **national fiber**, or **“good eno
 
 ---
 
-## Pricing (internal)
+## Pricing (internal) [deep]
 
 - Customer-facing quotes come from **standard tools and approvals**. Training PDFs are **context only**—never read unaudited numbers to a customer from a slide deck.
 - **Internal pricing:** DIA/SIA, Ethernet, Wave, market groups—use **quoting** workflows and **Sales Resources** (or your team’s approved pricing folder). Involve **AE/pricing** when scope or numbers are unclear.
 
 ---
 
-## Media (optional)
+## Media (optional) [deep]
 
 - *Guidde (reserved):* Guidde: qualifying bandwidth, access diversity, or quoting handoff.

@@ -27,6 +27,28 @@ function isH2Line(line) {
 }
 
 /**
+ * Optional suffix on H2 lines: `## Title [deep]` — collapsed by default in the app when
+ * the module has more than one `##` section (single-section modules ignore `[deep]` so
+ * content is never fully hidden).
+ */
+const H2_DEEP_SUFFIX = /\s*\[deep\]$/i;
+
+/**
+ * @param {string} title - Raw H2 title from markdown (may end with `[deep]`)
+ * @returns {{ displayTitle: string; requestsDeep: boolean }}
+ */
+export function parseH2DeepMarker(title) {
+  const t = (title || '').trim();
+  if (!H2_DEEP_SUFFIX.test(t)) {
+    return { displayTitle: t, requestsDeep: false };
+  }
+  return {
+    displayTitle: t.replace(H2_DEEP_SUFFIX, '').trim(),
+    requestsDeep: true,
+  };
+}
+
+/**
  * Split markdown on `##` headings — each block becomes one section card (title + body).
  * If there are no `##` lines, returns one segment with an empty title (full body).
  */
@@ -56,27 +78,65 @@ export function splitMarkdownByH2(body) {
   return sections;
 }
 
-export function renderSectionsToHtml(sections) {
-  return sections
-    .map(({ title, markdown }) => {
-      let html;
-      try {
-        html = marked.parse(markdown || '');
-      } catch (e) {
-        return `
+function renderOneSectionCard(markdown, options) {
+  const { useDeepCollapse, displayTitle } = options;
+  let html;
+  try {
+    html = marked.parse(markdown || '');
+  } catch (e) {
+    return `
       <section class="bg-white border border-red-200 rounded-xl p-6 shadow-sm">
         <p class="text-sm text-red-800">${escapeHtml(e instanceof Error ? e.message : String(e))}</p>
       </section>`;
-      }
-      const safe = DOMPurify.sanitize(html, { ADD_ATTR: ['target', 'rel'] });
-      const heading = title.trim()
-        ? `<h3 class="text-lg font-bold text-slate-900 mb-3">${escapeHtml(title)}</h3>`
-        : '';
-      return `
+  }
+  const safe = DOMPurify.sanitize(html, { ADD_ATTR: ['target', 'rel'] });
+
+  if (!displayTitle.trim()) {
+    return `
+      <section class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+        <div class="module-markdown-body">${safe}</div>
+      </section>`;
+  }
+
+  if (useDeepCollapse) {
+    return `
+      <details class="module-section-deep bg-white border border-slate-200 rounded-xl shadow-sm">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-6 text-left outline-none [&::-webkit-details-marker]:hidden marker:content-none">
+          <span class="min-w-0 flex-1">
+            <span class="block text-lg font-bold text-slate-900">${escapeHtml(displayTitle)}</span>
+            <span class="mt-0.5 block text-xs font-medium text-slate-500">Optional deep dive — expand to read</span>
+          </span>
+          <i class="fa-solid fa-chevron-down module-section-deep-chevron shrink-0 text-slate-400 transition-transform duration-200" aria-hidden="true"></i>
+        </summary>
+        <div class="border-t border-slate-200 px-6 pb-6 pt-4">
+          <div class="module-markdown-body">${safe}</div>
+        </div>
+      </details>`;
+  }
+
+  const heading = `<h3 class="text-lg font-bold text-slate-900 mb-3">${escapeHtml(displayTitle)}</h3>`;
+  return `
       <section class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
         ${heading}
         <div class="module-markdown-body">${safe}</div>
       </section>`;
+}
+
+/**
+ * @param {Array<{ title: string | null; markdown: string }>} sections
+ */
+export function renderSectionsToHtml(sections) {
+  const total = sections.length;
+  return sections
+    .map(({ title, markdown }) => {
+      const rawTitle = title ?? '';
+      const { displayTitle, requestsDeep } = parseH2DeepMarker(rawTitle);
+      const useDeepCollapse =
+        requestsDeep && total > 1 && Boolean(displayTitle.trim());
+      return renderOneSectionCard(markdown, {
+        displayTitle,
+        useDeepCollapse,
+      });
     })
     .join('');
 }

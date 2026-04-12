@@ -243,6 +243,6 @@ Use this whether you are chasing **GPC Solution approval**, a **change order** p
 - **MAC vs disconnect:** after billing starts, **partial** in-life changes follow **Move-Add-Change**; **removing all services** post-billing follows **Disconnection**. Those paths are distinct from the pre-billing **Change Order** and **Cancellation** routes above.
 - **Customer Move:** has its own procedure—use the **training library** linked from **Sales Resources** / **PMO** materials rather than informal summaries.
 
-## Media (optional)
+## Media (optional) [deep]
 
 *Guidde (reserved):* Guidde idea: walk through Approval History actions on a sample GPC Solution, then show Conga Change Order vs where MAC/Disconnect PDFs apply.

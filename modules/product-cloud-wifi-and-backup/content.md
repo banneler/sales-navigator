@@ -215,12 +215,12 @@ scenarios:
 - **Managed Wi‑Fi + security stack + transport**: One story for **segmented SSIDs**, **IDS/IPS** and **firewall** adjacent to Wi‑Fi, and **clean** egress to cloud and SaaS.
 - **Discovery first, size second**: Lock **outcomes** and **who owns what** before quoting **counts**, **speeds**, or **SLA** language you cannot defend.
 
-## Product training (hosted shortcuts)
+## Product training (hosted shortcuts) [deep]
 
 - Some teams use **.url** shortcuts on a **synced drive** to open vendor training pages—works only when synced and **on-network** as IT allows.
 - If you do not have those shortcuts, use **Sales Resources** + **GPCU** for the same product training paths; ask **enablement** for the current playlist.
 
-## Media (optional)
+## Media (optional) [deep]
 
 *Guidde (reserved):* Guidde: failover story or Wi-Fi site survey handoff.
 

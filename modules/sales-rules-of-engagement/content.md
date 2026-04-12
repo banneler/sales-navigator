@@ -380,6 +380,6 @@ Use this as a **cheat sheet** on calls; full detail stays in the **ROE PDF** (Sa
 
 ---
 
-## Media (optional)
+## Media (optional) [deep]
 
 *Guidde (reserved):* Optional walkthrough—search before account create, log first contact on assigned inbound leads within five business days, and when to ping the **current owner** vs **your manager / leadership** for transfers or Strategic-list questions.

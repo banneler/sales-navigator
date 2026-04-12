@@ -1,113 +1,117 @@
 ---
+
 id: "competitive-positioning"
 title: "Competitive Positioning"
 summary: "Training: how to run a disciplined competitive conversation\u2014discovery before claims, competitor-to-response mapping, landmines, proof-point patterns, and when to engage SE/PM. Sections mirror metro, fiber vs satellite, M&A, and technology battle-card playbooks."
 sensitivity: "public"
 reference_files:
-  - label: "Product battle cards"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx#product-battle-cards"
-  - label: "Competitive battle cards"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx#competitive-battle-cards"
+
+- label: "Product battle cards"
+sharepoint_url: "[https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx#product-battle-cards](https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx#product-battle-cards)"
+- label: "Competitive battle cards"
+sharepoint_url: "[https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx#competitive-battle-cards](https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx#competitive-battle-cards)"
 five_minute_summary: |
-  - **Framework:** Discovery before claims; map **competitor → GPC response** with business risk, customer reality, and proof you can support (local teams, NOC, redundancy, portfolio)—avoid generic superiority.
-  - **Landmines:** No personal attacks; don't cite battle-card stats externally without confirming currency; avoid absolutes; pull **SE/PM** early for architecture-heavy deals.
-  - **Metro / fiber vs LEO / M&A:** Tie rebuttals to outcomes (uptime, latency, support model, total cost of downtime)—not price or speed tests alone; keep acquisition talk factual and customer-centric.
-  - **Technology cards (e.g., SD-WAN):** Pain → GPC wrap → qualifying questions → proof; verify awards and ratings before citing.
+- **Framework:** Discovery before claims; map **competitor → GPC response** with business risk, customer reality, and proof you can support (local teams, NOC, redundancy, portfolio)—avoid generic superiority.
+- **Landmines:** No personal attacks; don't cite battle-card stats externally without confirming currency; avoid absolutes; pull **SE/PM** early for architecture-heavy deals.
+- **Metro / fiber vs LEO / M&A:** Tie rebuttals to outcomes (uptime, latency, support model, total cost of downtime)—not price or speed tests alone; keep acquisition talk factual and customer-centric.
+- **Technology cards (e.g., SD-WAN):** Pain → GPC wrap → qualifying questions → proof; verify awards and ratings before citing.
 knowledge_checks:
-  - question: "Before positioning against a competitor\u2019s strength, what should you do first?"
-    options:
-      - "Lead with your best battle-card stat regardless of their stack"
-      - "Run discovery on applications, sites, and outcomes so claims map to their stated needs"
-      - "Assume their network is always inferior to yours"
-    correct_index: 1
-    explanation: "The framework is **discovery before claims**\u2014map strengths and weaknesses only after you understand their reality."
-  - question: "Which behavior is a stated \u201clandmine\u201d to avoid?"
-    options:
-      - "Citing battle-card statistics externally without confirming currency with marketing"
-      - "Acknowledging where a competitor is legitimately strong"
-      - "Using qualifying questions to earn a technical conversation"
-    correct_index: 0
-    explanation: "Do not cite battle-card stats externally without confirming currency; acknowledging competitor strengths and using discovery are encouraged."
-  - question: "When should you engage SE early?"
-    options:
-      - "Only after the customer signs an order"
-      - "For multi-site WAN/SD-WAN, integrated security, hybrid on/off-net, regulated workloads, fiber feasibility, or RFP-style validation"
-      - "Never\u2014sales should own all topology design alone"
-    correct_index: 1
-    explanation: "The module lists WAN/SD-WAN, security, hybrid designs, regulated workloads, fiber feasibility, and RFP validation as reasons to pull SE early."
-  - question: "What should competitor \u2192 GPC responses pair for each angle?"
-    options:
-      - "Their pitch or truth, business risk for this customer, and proof you can support (local teams, NOC, redundancy, portfolio)"
-      - "Only a slogan and no customer specifics"
-      - "Personal attacks on the competitor\u2019s executives"
-    correct_index: 0
-    explanation: "Map competitor angles to customer risk and **proof** you can substantiate\u2014avoid generic superiority without fit."
-  - question: "Against fiber vs LEO satellite interest, what reframe beats a speed-test-only debate?"
-    options:
-      - "Reliability, latency, weather/obstruction risk, and operational support for business apps"
-      - "Monthly sticker price as the only decision factor"
-      - "Ignore their interest and refuse to discuss satellite"
-    correct_index: 0
-    explanation: "Acknowledge coverage, then qualify latency-sensitive apps and SLA needs; position fiber for predictable performance and support\u2014not headline Mbps alone."
-  - question: "What does the framework say about personal disparagement of competitors?"
-    options:
-      - "Avoid it\u2014stay factual and customer-centric"
-      - "Encourage it whenever you are behind on price"
-      - "Require it in every competitive meeting"
-    correct_index: 0
-    explanation: "**Landmines** forbid personal attacks; keep comparisons factual and tied to customer outcomes."
-  - question: "When prospects hear M&A messaging, what do they typically want?"
-    options:
-      - "Stability, service quality, and honest comparison\u2014not gossip"
-      - "Rumors and speculation without business relevance"
-      - "A guarantee their vendor will exit the market next week"
-    correct_index: 0
-    explanation: "Acquisition talk should stay factual and customer-centric; pivot to continuity, support model, and monitoring you deliver."
-  - question: "For SD-WAN battle-card use, what must you verify before citing awards or ratings?"
-    options:
-      - "Year and scope\u2014confirm accuracy before external claims"
-      - "Nothing\u2014repeat any headline from memory"
-      - "Only the competitor\u2019s stock price"
-    correct_index: 0
-    explanation: "Technology cards stress verifying **awards and ratings** before citing; stay accurate on scope and timeframe."
-  - question: "What dimensions help compare operators during metro/local competition beyond headline price?"
-    options:
-      - "Install quality, support model, redundancy, fiber depth vs pocketed coverage, and rate stability"
-      - "Only the color of the competitor\u2019s logo"
-      - "Wi-Fi router aesthetics in consumer reviews only"
-    correct_index: 0
-    explanation: "Probe install quality, local vs remote support, redundancy, ownership vs leased facilities, and contract stability\u2014not price alone."
-  - question: "What is PM engagement used for per the module?"
-    options:
-      - "Delivery timelines, construction, and contract alignment"
-      - "Replacing all sales discovery on the first call"
-      - "Writing competitor press releases"
-    correct_index: 0
-    explanation: "Use **PM** for delivery timeline, construction realities, and contract alignment alongside SE for technical design."
-scenarios:
-  - title: "Starlink vs fiber at a rural clinic"
-    situation: |
-      A prospect loves **Starlink** marketing and wants the lowest monthly cost for VPN and telehealth.
-      They say fiber is "overkill" and ask you to prove you are faster on a speed test only.
-    choices:
-      - label: "Dismiss satellite and refuse to discuss their interest."
-        feedback: "Too blunt: acknowledge coverage, then reframe to reliability, latency, weather, and business apps—per fiber vs LEO section."
-      - label: "Acknowledge LEO coverage; qualify latency-sensitive apps, SLA needs, and weather/obstruction risk; position fiber for predictable performance and local support."
-        feedback: "Correct: discovery-led response using qualifying lines and fiber strengths without a speed-test-only debate."
-      - label: "Quote battle-card latency numbers as guaranteed contractual SLAs."
-        feedback: "Risky: confirm stats and scope before external claims—landmine on uncited battle-card use."
-  - title: "Competitor drops a low price in a multi-site deal"
-    situation: |
-      A national entrant undercuts your proposal on headline price. The CFO asks why they should pay more for GPC
-      on the spot in a group meeting.
-    choices:
-      - label: "Attack the competitor's CEO and call their network unreliable."
-        feedback: "Violates landmines: no personal disparagement; stay factual and customer-centric."
-      - label: "Tie the conversation to fit, operational reliability, local support, redundancy, and total cost of downtime—using only proof that matches prior discovery."
-        feedback: "Correct: counter price-alone narratives with outcomes and proof-point patterns from the framework."
-      - label: "Match their price verbally to keep the meeting moving."
-        feedback: "Avoid improvising commercial commitments; reframe value and engage AE/leadership through proper channels."
+- question: "Before positioning against a competitor\u2019s strength, what should you do first?"
+options:
+  - "Lead with your best battle-card stat regardless of their stack"
+  - "Run discovery on applications, sites, and outcomes so claims map to their stated needs"
+  - "Assume their network is always inferior to yours"
+  correct_index: 1
+  explanation: "The framework is **discovery before claims**\u2014map strengths and weaknesses only after you understand their reality."
+- question: "Which behavior is a stated \u201clandmine\u201d to avoid?"
+options:
+  - "Citing battle-card statistics externally without confirming currency with marketing"
+  - "Acknowledging where a competitor is legitimately strong"
+  - "Using qualifying questions to earn a technical conversation"
+  correct_index: 0
+  explanation: "Do not cite battle-card stats externally without confirming currency; acknowledging competitor strengths and using discovery are encouraged."
+- question: "When should you engage SE early?"
+options:
+  - "Only after the customer signs an order"
+  - "For multi-site WAN/SD-WAN, integrated security, hybrid on/off-net, regulated workloads, fiber feasibility, or RFP-style validation"
+  - "Never\u2014sales should own all topology design alone"
+  correct_index: 1
+  explanation: "The module lists WAN/SD-WAN, security, hybrid designs, regulated workloads, fiber feasibility, and RFP validation as reasons to pull SE early."
+- question: "What should competitor \u2192 GPC responses pair for each angle?"
+options:
+  - "Their pitch or truth, business risk for this customer, and proof you can support (local teams, NOC, redundancy, portfolio)"
+  - "Only a slogan and no customer specifics"
+  - "Personal attacks on the competitor\u2019s executives"
+  correct_index: 0
+  explanation: "Map competitor angles to customer risk and **proof** you can substantiate\u2014avoid generic superiority without fit."
+- question: "Against fiber vs LEO satellite interest, what reframe beats a speed-test-only debate?"
+options:
+  - "Reliability, latency, weather/obstruction risk, and operational support for business apps"
+  - "Monthly sticker price as the only decision factor"
+  - "Ignore their interest and refuse to discuss satellite"
+  correct_index: 0
+  explanation: "Acknowledge coverage, then qualify latency-sensitive apps and SLA needs; position fiber for predictable performance and support\u2014not headline Mbps alone."
+- question: "What does the framework say about personal disparagement of competitors?"
+options:
+  - "Avoid it\u2014stay factual and customer-centric"
+  - "Encourage it whenever you are behind on price"
+  - "Require it in every competitive meeting"
+  correct_index: 0
+  explanation: "**Landmines** forbid personal attacks; keep comparisons factual and tied to customer outcomes."
+- question: "When prospects hear M&A messaging, what do they typically want?"
+options:
+  - "Stability, service quality, and honest comparison\u2014not gossip"
+  - "Rumors and speculation without business relevance"
+  - "A guarantee their vendor will exit the market next week"
+  correct_index: 0
+  explanation: "Acquisition talk should stay factual and customer-centric; pivot to continuity, support model, and monitoring you deliver."
+- question: "For SD-WAN battle-card use, what must you verify before citing awards or ratings?"
+options:
+  - "Year and scope\u2014confirm accuracy before external claims"
+  - "Nothing\u2014repeat any headline from memory"
+  - "Only the competitor\u2019s stock price"
+  correct_index: 0
+  explanation: "Technology cards stress verifying **awards and ratings** before citing; stay accurate on scope and timeframe."
+- question: "What dimensions help compare operators during metro/local competition beyond headline price?"
+options:
+  - "Install quality, support model, redundancy, fiber depth vs pocketed coverage, and rate stability"
+  - "Only the color of the competitor\u2019s logo"
+  - "Wi-Fi router aesthetics in consumer reviews only"
+  correct_index: 0
+  explanation: "Probe install quality, local vs remote support, redundancy, ownership vs leased facilities, and contract stability\u2014not price alone."
+- question: "What is PM engagement used for per the module?"
+options:
+  - "Delivery timelines, construction, and contract alignment"
+  - "Replacing all sales discovery on the first call"
+  - "Writing competitor press releases"
+  correct_index: 0
+  explanation: "Use **PM** for delivery timeline, construction realities, and contract alignment alongside SE for technical design."
+  scenarios:
+- title: "Starlink vs fiber at a rural clinic"
+situation: |
+  A prospect loves **Starlink** marketing and wants the lowest monthly cost for VPN and telehealth.
+  They say fiber is "overkill" and ask you to prove you are faster on a speed test only.
+choices:
+  - label: "Dismiss satellite and refuse to discuss their interest."
+  feedback: "Too blunt: acknowledge coverage, then reframe to reliability, latency, weather, and business apps—per fiber vs LEO section."
+  - label: "Acknowledge LEO coverage; qualify latency-sensitive apps, SLA needs, and weather/obstruction risk; position fiber for predictable performance and local support."
+  feedback: "Correct: discovery-led response using qualifying lines and fiber strengths without a speed-test-only debate."
+  - label: "Quote battle-card latency numbers as guaranteed contractual SLAs."
+  feedback: "Risky: confirm stats and scope before external claims—landmine on uncited battle-card use."
+- title: "Competitor drops a low price in a multi-site deal"
+situation: |
+  A national entrant undercuts your proposal on headline price. The CFO asks why they should pay more for GPC
+  on the spot in a group meeting.
+choices:
+  - label: "Attack the competitor's CEO and call their network unreliable."
+  feedback: "Violates landmines: no personal disparagement; stay factual and customer-centric."
+  - label: "Tie the conversation to fit, operational reliability, local support, redundancy, and total cost of downtime—using only proof that matches prior discovery."
+  feedback: "Correct: counter price-alone narratives with outcomes and proof-point patterns from the framework."
+  - label: "Match their price verbally to keep the meeting moving."
+  feedback: "Avoid improvising commercial commitments; reframe value and engage AE/leadership through proper channels."
+
 ---
+
 ## Framework: disciplined competitive conversations
 
 - **Discovery before claims.** Clarify applications, sites, and outcomes before you position: POS, VoIP, video, upload vs download, uptime and SLA expectations, multi-site topology, how sites connect today, backhaul vs local breakout, migration timelines, and who owns the network decision.
@@ -184,6 +188,6 @@ Use these to surface risk the customer already feels and to earn a technical or 
 - **Proof areas:** centralized orchestration and visibility, application-aware routing and failover, security integration, performance over varied underlays, nationwide reach with local engagement—verify year and scope for awards and ratings before citing.
 - **Other technology cards:** same pattern—pain, outcome-tied features, discovery to earn the technical win, SE for design validation rather than debating from the card alone.
 
-## Media (optional)
+## Media (optional) [deep]
 
 *Guidde (reserved):* Guidde: competitive talk track or battle-card walkthrough for a single vertical.

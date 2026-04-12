@@ -202,12 +202,12 @@ For customers not ready for full UC: **SIP trunking**, **PRI**, and **POTS**. **
 
 **Collateral:** Voice (non-UC) product sheet—**Sales Resources**.
 
-## Pricing (internal)
+## Pricing (internal) [deep]
 
 UC, Contact Center, and voice quotes follow **internal** pricing books—never email rates from memory. Use brochures/datasheets for **capability**; use **AE/pricing** for concurrent seats, add-ons, archiving, and professional services.
 
 When challenged on price, stay in discovery and escalate commercially through proper channels—don’t improvise from the pricing folder.
 
-## Media (optional)
+## Media (optional) [deep]
 
 *Guidde (reserved):* Guidde: CCaaS discovery flow or Teams attach motion.

@@ -255,12 +255,12 @@ scenarios:
 
 ---
 
-## Pricing (internal reference)
+## Pricing (internal reference) [deep]
 
 - Internal fee schedules for SD-WAN, managed security, and related SKUs are **pre-quote tools** for you and quoting—not customer-facing until validated through **quoting** and approved processes.
 
 ---
 
-## Media (optional)
+## Media (optional) [deep]
 
 - *Guidde (reserved):* Guidde walkthroughs—for example SD-WAN discovery questions or security upsell from DIA.

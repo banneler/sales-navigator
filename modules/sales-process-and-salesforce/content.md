@@ -222,7 +222,7 @@ If you cannot answer most of these, your stage and forecast are probably ahead o
 
 - **Salesforce & DocuSign Integration** guide: **Sales Resources** / GPCU (search “DocuSign”).
 
-## Weekly habits and deep dives
+## Weekly habits and deep dives [deep]
 
 - Read **Salesforce Success Tips** in the **Salesforce Users** team **General** channel—content updates weekly.
 - Block time to: clear **Tasks**, refresh **stages/dates** on active opps, update **referral** deals, and advance **GPC Solutions** stuck in costing or approval.
@@ -236,7 +236,7 @@ For **enterprise proposal** motions, watch the intro video on the enterprise pro
 - **Enterprise proposal** intro and **Salesforce Training Videos**: **Sales Resources** / enablement—not a private “Documents” folder only on your machine.
 - **Salesforce 201** and quick references in GPCU when you outgrow 101.
 
-## Media (optional)
+## Media (optional) [deep]
 
 - **Guidde** (when published): lead conversion + referral fields; pinned views + tasks; Conga → Salesforce File → DocuSign with **Contract Signer** set early—ask enablement for links.
 - **Video playlist:** 101 walkthroughs and **GPC Solution** / multi-site videos are updated on **Sales Resources**; take the playlist from there instead of stale bookmarks.
