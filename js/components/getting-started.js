@@ -130,22 +130,26 @@ function getSpotlightRect(stepIndex) {
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
     case 2: {
-      const el = document.querySelector('[data-tour-target="module-core"]');
+      const el = document.getElementById('fiber-path-btn');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
     case 3: {
-      const el = document.querySelector('[data-tour-target="tour-scenarios"]');
+      const el = document.querySelector('[data-tour-target="module-core"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
     case 4: {
-      const el = document.querySelector('[data-tour-target="tour-knowledge"]');
+      const el = document.querySelector('[data-tour-target="tour-scenarios"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
     case 5: {
+      const el = document.querySelector('[data-tour-target="tour-knowledge"]');
+      return el ? rectLike(el.getBoundingClientRect()) : null;
+    }
+    case 6: {
       const el = document.querySelector('[data-module-id="map-book"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
-    case 6:
+    case 7:
       return null;
     default:
       return null;
@@ -328,6 +332,17 @@ export function loadGettingStarted(container, manifest) {
         </ul>`,
     },
     {
+      title: 'Fiber path',
+      icon: 'fa-route',
+      body: `
+        <p class="text-slate-800 leading-relaxed mb-3">
+          <strong>Fiber path</strong> in the header shows your progress across training modules—what you have opened, what is next, and how the route fits together.
+        </p>
+        <p class="text-slate-600 text-sm">
+          Open it anytime for a full-screen map; close it to return here or jump to another module from the sidebar.
+        </p>`,
+    },
+    {
       title: 'Inside a module',
       icon: 'fa-book-open',
       body: `
@@ -391,7 +406,7 @@ export function loadGettingStarted(container, manifest) {
       icon: 'fa-circle-check',
       body: `
         <p class="text-slate-800 leading-relaxed mb-4">
-          You know how to navigate modules, find practice, and use the map book when needed. When you're ready, jump into your first training module below.
+          You know how to navigate modules, check progress with Fiber path, find practice, and use the map book when needed. When you're ready, jump into your first training module below.
         </p>
         ${
           firstTraining
@@ -438,8 +453,8 @@ export function loadGettingStarted(container, manifest) {
     const next = host?.querySelector('.gs-next');
     if (!next) return;
     const blocked =
-      (stepIndex === 3 && !scenarioComplete) ||
-      (stepIndex === 4 && !knowledgeComplete);
+      (stepIndex === 4 && !scenarioComplete) ||
+      (stepIndex === 5 && !knowledgeComplete);
     next.disabled = blocked;
     next.classList.toggle('opacity-50', blocked);
     next.classList.toggle('cursor-not-allowed', blocked);
@@ -555,8 +570,8 @@ export function loadGettingStarted(container, manifest) {
 
   function bindCardActions(cardEl) {
     cardEl.querySelector('.gs-next')?.addEventListener('click', () => {
-      if (stepIndex === 3 && !scenarioComplete) return;
-      if (stepIndex === 4 && !knowledgeComplete) return;
+      if (stepIndex === 4 && !scenarioComplete) return;
+      if (stepIndex === 5 && !knowledgeComplete) return;
       if (stepIndex < steps.length - 1) {
         stepIndex += 1;
         render();
@@ -584,13 +599,13 @@ export function loadGettingStarted(container, manifest) {
     const total = steps.length;
     const isLast = stepIndex === total - 1;
     const nextBlocked =
-      (stepIndex === 3 && !scenarioComplete) ||
-      (stepIndex === 4 && !knowledgeComplete);
+      (stepIndex === 4 && !scenarioComplete) ||
+      (stepIndex === 5 && !knowledgeComplete);
     const nextTitle = nextBlocked
       ? 'Complete the activity in the highlighted area first.'
       : '';
 
-    if (stepIndex === 4) {
+    if (stepIndex === 5) {
       document
         .querySelector('[data-tour-target="tour-knowledge"]')
         ?.scrollIntoView({ block: 'center', behavior: 'auto' });
@@ -599,7 +614,7 @@ export function loadGettingStarted(container, manifest) {
     const rect = getSpotlightRect(stepIndex);
     applySpotlightLayers(overlay, rect);
 
-    if (stepIndex === 5) {
+    if (stepIndex === 6) {
       document
         .querySelector('[data-module-id="map-book"]')
         ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
@@ -682,10 +697,12 @@ export function loadGettingStarted(container, manifest) {
     resizeObs = new ResizeObserver(() => onResize());
     const host = document.getElementById('module-host');
     const sb = document.getElementById('sidebar');
+    const fiberBtn = document.getElementById('fiber-path-btn');
     const scenarioEl = container.querySelector('[data-tour-target="tour-scenarios"]');
     const knowledgeEl = container.querySelector('[data-tour-target="tour-knowledge"]');
     if (host) resizeObs.observe(host);
     if (sb) resizeObs.observe(sb);
+    if (fiberBtn) resizeObs.observe(fiberBtn);
     if (scenarioEl) resizeObs.observe(scenarioEl);
     if (knowledgeEl) resizeObs.observe(knowledgeEl);
   }
