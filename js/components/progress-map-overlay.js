@@ -80,7 +80,7 @@ export function openProgressMap(manifest, currentModuleId, options = {}) {
   const visitedCount = modules.filter((m) => visited.has(m.id)).length;
 
   const shellClass = isCelebration
-    ? 'bg-white w-full max-w-[min(94vw,880px)] h-[min(58vh,520px)] max-h-[520px] rounded-2xl shadow-2xl flex flex-col relative overflow-hidden border border-slate-200 ring-2 ring-orange-300/30 shadow-[0_0_50px_-8px_rgba(249,115,22,0.28)]'
+    ? 'bg-white w-full max-w-[min(96vw,960px)] h-[min(68vh,620px)] max-h-[620px] rounded-2xl shadow-2xl flex flex-col relative overflow-hidden border border-slate-200 ring-2 ring-orange-300/30 shadow-[0_0_50px_-8px_rgba(249,115,22,0.28)]'
     : 'bg-white w-full max-w-[90vw] h-[85vh] max-h-[900px] rounded-2xl shadow-2xl flex flex-col relative overflow-hidden border border-slate-200';
 
   const headerTitleHtml = isCelebration
@@ -237,7 +237,8 @@ export function openProgressMap(manifest, currentModuleId, options = {}) {
       ? modulesData.findIndex((m) => m.id === nextModule.id)
       : -1;
 
-    currentZoom = 1.12;
+    /* <1 zooms the strip out so more nodes fit (was 1.12–1.38 which magnified). */
+    currentZoom = 0.78;
     const nodesEl = overlay.querySelector('[data-pm-nodes]');
     const wrapper = overlay.querySelector('[data-pm-zoom-wrap]');
     if (nodesEl) nodesEl.style.transform = `scale(${currentZoom})`;
