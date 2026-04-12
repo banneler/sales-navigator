@@ -1,16 +1,16 @@
 ---
 id: "portfolio-and-business-capabilities"
 title: "Portfolio & Business Capabilities"
-summary: "How to tell the GPC business-capability story: network foundation, layered services, and where to go for product-level collateral."
+summary: "Outcome-led GPC story: layered stack (access → WAN → security → apps); partner + Midwest IP proof; Sales Resources for datasheets."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (collateral hub)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 five_minute_summary: |
-  - Lead with **outcomes** (uptime, growth, cloud performance), not SKU lists—GPC is positioned as a **partner** with local teams, monitoring, and Midwest IP reach.
-  - Map any deal to **layers**: access (fiber + backup) → WAN (Ethernet/SD-WAN) → **security** → **UC, Cloud Connect, Wi-Fi, Video**—so customers see a system, not a menu.
-  - Anchor proof on the **network story**: fiber-first access, Tier-1 and IX relationships, and paths tuned for efficient routes to cloud, SaaS, and end users.
-  - Run discovery on **locations, critical apps, uptime tolerance**, and cloud/voice moves; then summarize the fit as one sentence before pointing to datasheets.
+  - **Open:** outcomes + partner (local + monitoring + Midwest IP)—not SKU dumps.
+  - **Stack:** access → WAN → security → UC / Cloud Connect / Wi‑Fi / video = one system.
+  - **Proof:** capability deck for narrative; **Sales Resources** for per-product evidence.
+  - **Discovery:** sites, critical apps, uptime, cloud/voice moves—then one-sentence fit.
 knowledge_checks:
   - question: "What is the best opening for a portfolio conversation?"
     options:
@@ -102,150 +102,35 @@ scenarios:
 ---
 ## Executive storyline
 
-Open with outcomes, not SKUs: GPC helps businesses grow by making connectivity a competitive advantage—fiber-first access, a resilient Midwest IP network, and services that stack from transport through security and collaboration. Position GPC as a partner, not a commodity ISP: local teams who resolve issues fast, 24/7 network monitoring, more than a century of operating experience, and solutions that scale as the customer’s footprint and applications change. When you need proof points, emphasize the network story: purpose-built IP reach, direct relationships with Tier-1 providers and Internet exchanges, and paths tuned so traffic takes efficient, low-latency routes to the cloud, SaaS, and end customers. That narrative bridges “why GPC” to “what we sell” without drowning the room in product names.
+- **Open:** outcomes (uptime, growth, cloud)—not SKU lists.
+- **Partner:** local + monitoring + Midwest IP; fiber-first; Tier‑1/IX paths to cloud/SaaS.
+- **Outcomes:** reliability, predictable performance, one accountable foundation, headroom to grow.
+- **Position:** business problem → stack (access → WAN → security → apps).
+- **Hooks:** uptime/cloud → backup, SD‑WAN, security, Cloud Connect; voice → UC after transport/security land.
+- **Deck:** Business Capability + **Sales Resources**.
 
-**Customer outcomes this storyline supports**
+## Portfolio map (layers)
 
-- **Reliability and uptime:** fewer outages and faster recovery when something breaks.
-- **Performance:** predictable paths for cloud, SaaS, and real-time apps.
-- **Simplicity:** one accountable partner for the network foundation instead of a patchwork of vendors.
-- **Growth:** room to add sites, bandwidth, and services without re-architecting from scratch.
+| Layer | What | Position / hook |
+| --- | --- | --- |
+| **Access + continuity** | Fiber primary; **wireless backup** when continuity matters | Fiber = capacity/perf; backup = **continuity**—not “second Internet.” Backup → SD‑WAN + security; multi‑site → **Ethernet** |
+| **WAN** | **Ethernet** mesh; **SD‑WAN** for policy + multi‑link | Ethernet = predictable site mesh; SD‑WAN = orchestration + cloud breakout. → firewall/DDoS, **Cloud Connect**; new sites → fiber + Wi‑Fi |
+| **Protect** | Managed firewall, DDoS | Policy on the pipe—tie to ransomware, PCI, guest Wi‑Fi. → SD‑WAN, UC (SBC) where relevant; guest Wi‑Fi → **Managed Wi‑Fi** |
+| **Enable** | UC, **Cloud Connect**, Wi‑Fi, video (when vertical cares) | UC + experience; Cloud Connect = predictable cloud paths. Voice/video pain → check access/WAN/QoS + SD‑WAN; heavy SaaS → Cloud Connect + security |
 
-**How to position**
+**Practice line:** any deal = **access + path + policy + apps** mapped to sites/workloads.
 
-- Lead with the business problem (growth, risk, cost of downtime, cloud migration), then attach GPC as the **layered stack** (access → WAN → security → apps).
-- Use “partner” language: local accountability + monitoring + Midwest IP story—not price-per-megabit first.
+## Conversation flow (short)
 
-**Cross-sell hooks (story-level)**
-
-- Any conversation about **uptime** or **cloud** naturally opens **backup**, **SD-WAN**, **security**, and **Cloud Connect**.
-- Any mention of **voice or collaboration** pulls **UC** after transport and security are credible.
-
-**Collateral**
-
-- **Business Capability** deck: **Sales Resources** (sidebar link)—same story in slide form for exec rooms.
-
-## Portfolio map (how products fit)
-
-Think in layers so customers see a system, not a menu. Below, each layer ties to **customer outcomes**, **how to position** it, and **cross-sell hooks** into the rest of the stack.
-
-### Foundation (access + continuity)
-
-- **What it is:** Fiber Internet as primary access; **Wireless Internet Backup** when continuity matters (failover story, not a second full network pitch unless they need it).
-
-**Outcomes**
-
-- Stable day-to-day operations; fewer “store is dark” or “plant is offline” events.
-- Controlled downtime when the primary fails; faster return to normal after incidents.
-
-**How to position**
-
-- Primary fiber = **performance and capacity** for today’s apps; backup = **insurance** for revenue and reputation when the main line fails.
-- Avoid selling backup as “more Internet”—sell it as **business continuity** aligned to their critical hours and transactions.
-
-**Cross-sell hooks**
-
-- Strong backup story → **SD-WAN** (policy over multiple links) and **managed security** (consistent policy across primary and failover).
-- Multi-site footprint → **Ethernet WAN** for site-to-site consistency.
-
-### WAN (scale and agility)
-
-- **What it is:** Managed Ethernet for site-to-site scale; **SD-WAN** when policy-based routing and multi-link agility drive savings and performance.
-
-**Outcomes**
-
-- Predictable performance between sites; simpler operations as they add locations.
-- Better use of multiple connections (cost control + resilience + application-aware routing).
-
-**How to position**
-
-- Ethernet = **predictable, high-capacity** site mesh when they outgrow VPN-over-broadband or need QoS between sites.
-- SD-WAN = **orchestration** when they have several links, cloud-heavy traffic, or need centralized policy without truck rolls.
-
-**Cross-sell hooks**
-
-- SD-WAN or multi-link designs → **managed firewall/DDoS** (policy at the edge) and **Cloud Connect** (optimize paths to SaaS and hyperscalers).
-- New sites or M&A → revisit **fiber access** and **Wi-Fi** per location.
-
-### Protect (security on the pipe)
-
-- **What it is:** Managed Firewall and DDoS Protection on top of connectivity—security as part of the pipe.
-
-**Outcomes**
-
-- Fewer successful attacks and faster containment; less firefighting for IT.
-- Compliance-friendly posture when connectivity is managed end-to-end with security services.
-
-**How to position**
-
-- Firewall/DDoS are not “extra products”—they are **how you enforce policy** on the connectivity you already sold.
-- Tie to their risk: ransomware, PCI, remote access, guest Wi-Fi, and public-facing apps.
-
-**Cross-sell hooks**
-
-- Security discussion → **SD-WAN** (segmentation, regional policy) and **UC** (toll fraud, SBC posture) where relevant.
-- Guest or operational Wi-Fi → **Managed Wi-Fi** with appropriate segmentation behind the same policy story.
-
-### Enable (collaboration, cloud, premises, video)
-
-- **What it is:** Unified Communications; **Cloud Connect** to hyperscalers/SaaS; **Managed Wi-Fi** for premises coverage; **Video** where guest or line-of-business video is part of the experience—name it when the vertical cares (hospitality, retail floor, etc.).
-
-**Outcomes**
-
-- Better employee and customer experience (voice, video, Wi-Fi) without brittle DIY setups.
-- Smoother cloud and SaaS performance when traffic is handled with intent, not “best effort only.”
-
-**How to position**
-
-- **UC** = productivity and customer experience; **Cloud Connect** = **application performance and predictability** for cloud-first operations.
-- **Wi-Fi** = operational and guest experience on-site; **Video** = safety, operations, or guest experience—only when the vertical cares.
-
-**Cross-sell hooks**
-
-- UC or video quality issues → confirm **access bandwidth**, **WAN**, and **QoS** path; offer **SD-WAN** if voice/video is competing with bulk data.
-- Heavy SaaS or multi-cloud → pair **Cloud Connect** with **security** and **monitoring** as one accountable stack.
-
-**Practice line**
-
-- Describe any deal as **“access + path + policy + apps,”** mapping sites and workloads into these layers—even when you only quote two or three items.
-
-**Collateral**
-
-- Capability deck + product folders: **Sales Resources** (see sidebar)—bookmark it once; avoid relying on personal drive copies.
-
-## Customer conversation flow
-
-Start with their business context: locations, critical apps, uptime tolerance, and whether they are consolidating voice or moving workloads to the cloud. Reflect GPC’s partnership angle—local support and proactive monitoring—early so objections about “another carrier” shift to “who will actually answer at 2 a.m.” Map needs to layers: primary access and failover, then WAN design, then security, then UC and cloud adjacency. Close gaps with questions: Who owns firewall policy? Is Wi-Fi guest vs corporate split required? Do they need direct cloud paths vs public internet only? Summarize back in one sentence: the right stack of GPC services for their footprint, with a single accountable provider for the network foundation. Offer the collateral library when they want datasheets or vertical-specific proof; keep the live conversation focused on outcomes and fit.
-
-**Outcome checkpoints (use as bullets in discovery notes)**
-
-- **Sites and footprint:** growth, seasonality, remote workers—drives access, WAN, and Wi-Fi scope.
-- **Critical apps:** POS, ERP, EMR, CCaaS, custom—drives performance, Cloud Connect, and security.
-- **Uptime and RTO/RPO language:** drives backup, SD-WAN, and managed services depth.
-- **Ownership:** who runs network, security, and voice—drives managed vs DIY positioning.
-
-**How to position the conversation**
-
-- **First:** outcomes and fit (one sentence).
-- **Second:** layered map (access → WAN → security → apps).
-- **Third:** proof (capability deck, then product collateral)—not the reverse.
-
-**Cross-sell hooks (conversation stage)**
-
-- After **access** is agreed in principle → introduce **continuity** and **WAN** if multi-site or cloud-heavy.
-- After **WAN** → **security** and **Cloud Connect** as policy and path completion.
-- After **security** is credible → **UC**, **Wi-Fi**, and **video** as experience layers on the same foundation.
-
-**Collateral**
-
-- Same **Business Capability** deck on **Sales Resources** when you need slides after the conversation.
+- **Discovery:** sites, critical apps, uptime, cloud/voice moves, owners (network/security/voice).
+- **Order:** one-sentence fit → layered map → capability deck + **Sales Resources**.
+- **Checkpoints:** footprint → apps → RTO/RPO → ownership.
 
 ## What to read next
 
-- Use **Sales Resources** as your index: product folders (Internet, Ethernet, SD-WAN, UC, etc.) hold datasheets and battle cards.
-- This module is the **story**; **Sales Resources** is the **evidence locker**—pair them on every deal.
-- Ask **Sales Ops** or your manager if you can’t find a specific PDF; paths on one machine won’t match everyone’s laptop.
+- **Sales Resources** = datasheets/battle cards index; this module = story spine.
+- **Lost a PDF?** Sales Ops / manager—don’t rely on one-off laptop paths.
 
 ## Media (optional) [deep]
 
-*Guidde (reserved):* Optional Guidde: map a customer problem to a portfolio stack (DIA + managed security + UC).
+*Guidde:* map a customer problem to a portfolio stack (e.g. DIA + managed security + UC).
