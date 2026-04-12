@@ -17,7 +17,7 @@
 
 ## Tour behavior
 
-On **Scenarios** and **Knowledge checks** tour steps, **Next** stays disabled until you complete the highlighted activity—this mirrors how real modules gate progress until you engage the practice.
+On **Fiber path**, **Scenarios**, and **Knowledge checks** tour steps, **Next** stays disabled until you complete the highlighted action (open Fiber path, or complete the sample activity)—this mirrors how real modules gate progress until you engage the practice.
 
 ## Scenario drill (collateral)
 

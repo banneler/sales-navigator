@@ -338,8 +338,12 @@ export function loadGettingStarted(container, manifest) {
         <p class="text-slate-800 leading-relaxed mb-3">
           <strong>Fiber path</strong> in the header shows your progress across training modules—what you have opened, what is next, and how the route fits together.
         </p>
-        <p class="text-slate-600 text-sm">
+        <p class="text-slate-600 text-sm mb-3">
           Open it anytime for a full-screen map; close it to return here or jump to another module from the sidebar.
+        </p>
+        <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
+          <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
+          Click <strong>Fiber path</strong> in the header (the highlighted control) to unlock <strong>Next</strong>.
         </p>`,
     },
     {
@@ -445,6 +449,7 @@ export function loadGettingStarted(container, manifest) {
 
   const glassRoot = overlay.querySelector('#tour-glass-root');
   let stepIndex = 0;
+  let fiberPathComplete = false;
   let scenarioComplete = false;
   let knowledgeComplete = false;
 
@@ -453,13 +458,16 @@ export function loadGettingStarted(container, manifest) {
     const next = host?.querySelector('.gs-next');
     if (!next) return;
     const blocked =
+      (stepIndex === 2 && !fiberPathComplete) ||
       (stepIndex === 4 && !scenarioComplete) ||
       (stepIndex === 5 && !knowledgeComplete);
     next.disabled = blocked;
     next.classList.toggle('opacity-50', blocked);
     next.classList.toggle('cursor-not-allowed', blocked);
     next.title = blocked
-      ? 'Complete the activity in the highlighted area first.'
+      ? stepIndex === 2 && !fiberPathComplete
+        ? 'Click Fiber path in the header first.'
+        : 'Complete the activity in the highlighted area first.'
       : '';
   }
 
@@ -566,10 +574,23 @@ export function loadGettingStarted(container, manifest) {
     });
   }
 
+  function bindFiberPathTourGate() {
+    const btn = document.getElementById('fiber-path-btn');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      if (stepIndex !== 2) return;
+      fiberPathComplete = true;
+      refreshNextGate();
+      scheduleSpotlightReflow();
+    });
+  }
+
   bindDemoInteractions();
+  bindFiberPathTourGate();
 
   function bindCardActions(cardEl) {
     cardEl.querySelector('.gs-next')?.addEventListener('click', () => {
+      if (stepIndex === 2 && !fiberPathComplete) return;
       if (stepIndex === 4 && !scenarioComplete) return;
       if (stepIndex === 5 && !knowledgeComplete) return;
       if (stepIndex < steps.length - 1) {
@@ -599,10 +620,13 @@ export function loadGettingStarted(container, manifest) {
     const total = steps.length;
     const isLast = stepIndex === total - 1;
     const nextBlocked =
+      (stepIndex === 2 && !fiberPathComplete) ||
       (stepIndex === 4 && !scenarioComplete) ||
       (stepIndex === 5 && !knowledgeComplete);
     const nextTitle = nextBlocked
-      ? 'Complete the activity in the highlighted area first.'
+      ? stepIndex === 2 && !fiberPathComplete
+        ? 'Click Fiber path in the header first.'
+        : 'Complete the activity in the highlighted area first.'
       : '';
 
     if (stepIndex === 5) {
