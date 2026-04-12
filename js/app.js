@@ -6,6 +6,11 @@ import {
   loadGettingStarted,
   destroyGettingStartedOverlay,
 } from './components/getting-started.js';
+import {
+  openProgressMap,
+  destroyProgressMapOverlay,
+} from './components/progress-map-overlay.js';
+import { markModuleVisited } from './lib/progress-state.js';
 import { destroyModuleIntroGate } from './components/module-intro-gate.js';
 import { setMainHeaderInternalBadge } from './lib/header-internal-badge.js';
 import { initHandoutPreview } from './lib/handout-links.js';
@@ -35,6 +40,7 @@ async function main() {
     if (!host) return;
 
     destroyGettingStartedOverlay();
+    destroyProgressMapOverlay();
     destroyModuleIntroGate();
 
     if (id === MAP_BOOK_MODULE_ID || id === GETTING_STARTED_ID) {
@@ -63,9 +69,15 @@ async function main() {
       await loadAndRenderModule(id, host);
     }
     highlightNav(id);
+    markModuleVisited(id);
   }
 
   renderShell(manifest, (id) => show(id));
+
+  document.getElementById('fiber-path-btn')?.addEventListener('click', () => {
+    const id = getRouteModuleId();
+    openProgressMap(manifest, id || firstId || '');
+  });
 
   function route() {
     let id = getRouteModuleId();
