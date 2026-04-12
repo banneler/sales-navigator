@@ -66,7 +66,7 @@ async function main() {
       loadGettingStarted(host, manifest);
     } else {
       document.body.classList.remove('map-book-active');
-      await loadAndRenderModule(id, host);
+      await loadAndRenderModule(id, host, manifest);
     }
     highlightNav(id);
     markModuleVisited(id);

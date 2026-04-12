@@ -8,8 +8,24 @@ module.exports = {
         'data-flow-x': 'data-flow-x 2s linear infinite',
         'data-flow-up': 'data-flow-up 1.5s linear infinite',
         'data-flow-down': 'data-flow-down 1.5s linear infinite',
+        'celebrate-node':
+          'celebrate-node 0.95s cubic-bezier(0.34, 1.45, 0.64, 1) both',
       },
       keyframes: {
+        'celebrate-node': {
+          '0%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 0 0 rgba(249, 115, 22, 0.35)',
+          },
+          '45%': {
+            transform: 'scale(1.06)',
+            boxShadow: '0 12px 40px -8px rgba(249, 115, 22, 0.45)',
+          },
+          '100%': {
+            transform: 'scale(1)',
+            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.08)',
+          },
+        },
         'pulse-glow': {
           '0%, 100%': { boxShadow: '0 0 0 0 rgba(249, 115, 22, 0.5)' },
           '50%': { boxShadow: '0 0 0 12px rgba(249, 115, 22, 0)' },

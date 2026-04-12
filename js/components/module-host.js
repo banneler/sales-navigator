@@ -1,11 +1,13 @@
 import renderMarkdownModule from './markdown-module.js';
 import { setMainHeaderInternalBadge } from '../lib/header-internal-badge.js';
+import { mountModuleCompletionBar } from './module-completion-bar.js';
 
 /**
  * @param {string} moduleId
  * @param {HTMLElement} container
+ * @param {object} manifest - modules-manifest.json
  */
-export async function loadAndRenderModule(moduleId, container) {
+export async function loadAndRenderModule(moduleId, container, manifest) {
   setMainHeaderInternalBadge(false);
 
   container.className = 'w-full max-w-[1600px] mx-auto min-h-[200px] px-0';
@@ -44,9 +46,11 @@ export async function loadAndRenderModule(moduleId, container) {
     const render = mod.default || renderMarkdownModule;
     container.innerHTML = '';
     render(container, markdownText);
+    if (manifest) mountModuleCompletionBar(container, manifest, moduleId);
   } catch (e) {
     container.innerHTML = '';
     renderMarkdownModule(container, markdownText);
+    if (manifest) mountModuleCompletionBar(container, manifest, moduleId);
     console.warn('Falling back to default markdown renderer:', e);
   }
 }

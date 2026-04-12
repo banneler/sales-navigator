@@ -43,7 +43,14 @@ function injectStylesOnce() {
       background: linear-gradient(90deg, #ea580c 0%, #f97316 50%, #ea580c 100%);
       background-size: 200% 100%;
       box-shadow: 0 0 10px rgba(249,115,22,0.6);
-      transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: width 1.15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .pm-celebration-shimmer .lit-fiber-trunk {
+      animation: pm-fiber-shimmer 1.2s ease-in-out 1;
+    }
+    @keyframes pm-fiber-shimmer {
+      0%, 100% { filter: brightness(1); box-shadow: 0 0 10px rgba(249,115,22,0.6); }
+      50% { filter: brightness(1.15); box-shadow: 0 0 18px rgba(249,115,22,0.85); }
     }
   `;
   document.head.appendChild(style);
@@ -56,10 +63,14 @@ export function destroyProgressMapOverlay() {
 /**
  * @param {object} manifest - modules-manifest.json
  * @param {string} currentModuleId
+ * @param {{ celebration?: { completedId: string, nextModule: { id: string, title: string } | null } }} [options]
  */
-export function openProgressMap(manifest, currentModuleId) {
+export function openProgressMap(manifest, currentModuleId, options = {}) {
   destroyProgressMapOverlay();
   injectStylesOnce();
+
+  const celebrationOpts = options.celebration || null;
+  const isCelebration = !!celebrationOpts;
 
   const modules = [...(manifest.modules || [])].sort(
     (a, b) => (a.order || 0) - (b.order || 0)
@@ -68,25 +79,68 @@ export function openProgressMap(manifest, currentModuleId) {
   const total = modules.length;
   const visitedCount = modules.filter((m) => visited.has(m.id)).length;
 
+  const shellClass = isCelebration
+    ? 'bg-white w-full max-w-[min(94vw,880px)] h-[min(58vh,520px)] max-h-[520px] rounded-2xl shadow-2xl flex flex-col relative overflow-hidden border border-slate-200 ring-2 ring-orange-300/30 shadow-[0_0_50px_-8px_rgba(249,115,22,0.28)]'
+    : 'bg-white w-full max-w-[90vw] h-[85vh] max-h-[900px] rounded-2xl shadow-2xl flex flex-col relative overflow-hidden border border-slate-200';
+
+  const headerTitleHtml = isCelebration
+    ? `<h2 class="text-xl md:text-2xl font-bold text-slate-800 flex items-center gap-3">
+            <span class="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white shadow-md shrink-0">
+              <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+            </span>
+            <span class="truncate">Nice work!</span>
+          </h2>
+          <p class="text-sm text-slate-500 mt-1 font-medium truncate">Your Fiber path is lighting up — watch the route advance.</p>`
+    : `<h2 class="text-xl md:text-2xl font-bold text-slate-800 flex items-center gap-3">
+            <span class="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-orange-100 flex items-center justify-center border border-orange-200 text-orange-500 shrink-0">
+              <i class="fa-solid fa-route" aria-hidden="true"></i>
+            </span>
+            <span class="truncate">Fiber path</span>
+          </h2>
+          <p class="text-sm text-slate-500 mt-1 font-medium truncate">Your progress across training modules</p>`;
+
+  const mapAreaClass = isCelebration
+    ? 'flex-1 relative overflow-hidden bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] min-h-0 pm-celebration-shimmer'
+    : 'flex-1 relative overflow-hidden bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] min-h-0';
+
+  const controlsHtml = isCelebration
+    ? ''
+    : `<div class="absolute bottom-4 md:bottom-6 right-4 md:right-6 flex flex-col gap-2 z-40">
+          <button type="button" data-pm-center class="bg-white p-2.5 rounded-lg shadow-lg border border-slate-200 hover:bg-slate-50 text-slate-600 transition-colors" title="Center on current module">
+            <i class="fa-solid fa-crosshairs w-5 h-5" aria-hidden="true"></i>
+          </button>
+          <div class="bg-white rounded-lg shadow-lg border border-slate-200 overflow-hidden flex flex-col">
+            <button type="button" data-pm-zoom="1" class="p-2.5 hover:bg-slate-50 text-slate-600 border-b border-slate-100 transition-colors" title="Zoom in">
+              <i class="fa-solid fa-plus w-5 h-5" aria-hidden="true"></i>
+            </button>
+            <button type="button" data-pm-zoom="-1" class="p-2.5 hover:bg-slate-50 text-slate-600 transition-colors" title="Zoom out">
+              <i class="fa-solid fa-minus w-5 h-5" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>`;
+
+  const footerHint = isCelebration
+    ? 'The fiber carries your progress—open the full map anytime from the header.'
+    : 'Tap a node to open or review a module';
+
+  const footerBtnLabel = isCelebration ? 'Got it' : 'Close map';
+
   const overlay = document.createElement('div');
   overlay.id = OVERLAY_ID;
   overlay.className =
     'fixed inset-0 z-[200] flex items-center justify-center p-4 bg-slate-800/80 backdrop-blur-sm antialiased';
   overlay.setAttribute('role', 'dialog');
   overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-label', 'Fiber path training progress');
+  overlay.setAttribute(
+    'aria-label',
+    isCelebration ? 'Module completion — Fiber path' : 'Fiber path training progress'
+  );
 
   overlay.innerHTML = `
-    <div class="bg-white w-full max-w-[90vw] h-[85vh] max-h-[900px] rounded-2xl shadow-2xl flex flex-col relative overflow-hidden border border-slate-200">
+    <div class="${shellClass}">
       <div class="px-6 md:px-8 py-4 md:py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50 z-30 gap-4">
         <div class="min-w-0">
-          <h2 class="text-xl md:text-2xl font-bold text-slate-800 flex items-center gap-3">
-            <span class="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-orange-100 flex items-center justify-center border border-orange-200 text-orange-500 shrink-0">
-              <i class="fa-solid fa-route" aria-hidden="true"></i>
-            </span>
-            <span class="truncate">Fiber path</span>
-          </h2>
-          <p class="text-sm text-slate-500 mt-1 font-medium truncate">Your progress across training modules</p>
+          ${headerTitleHtml}
         </div>
         <div class="flex items-center gap-4 md:gap-8 shrink-0">
           <div class="text-right">
@@ -102,20 +156,8 @@ export function openProgressMap(manifest, currentModuleId) {
         </div>
       </div>
 
-      <div class="flex-1 relative overflow-hidden bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] min-h-0">
-        <div class="absolute bottom-4 md:bottom-6 right-4 md:right-6 flex flex-col gap-2 z-40">
-          <button type="button" data-pm-center class="bg-white p-2.5 rounded-lg shadow-lg border border-slate-200 hover:bg-slate-50 text-slate-600 transition-colors" title="Center on current module">
-            <i class="fa-solid fa-crosshairs w-5 h-5" aria-hidden="true"></i>
-          </button>
-          <div class="bg-white rounded-lg shadow-lg border border-slate-200 overflow-hidden flex flex-col">
-            <button type="button" data-pm-zoom="1" class="p-2.5 hover:bg-slate-50 text-slate-600 border-b border-slate-100 transition-colors" title="Zoom in">
-              <i class="fa-solid fa-plus w-5 h-5" aria-hidden="true"></i>
-            </button>
-            <button type="button" data-pm-zoom="-1" class="p-2.5 hover:bg-slate-50 text-slate-600 transition-colors" title="Zoom out">
-              <i class="fa-solid fa-minus w-5 h-5" aria-hidden="true"></i>
-            </button>
-          </div>
-        </div>
+      <div class="${mapAreaClass}">
+        ${controlsHtml}
 
         <div class="w-full h-full overflow-x-auto overflow-y-hidden progress-map-scroll cursor-grab" data-pm-scroll>
           <div data-pm-zoom-wrap class="relative h-full transition-[width] duration-300 ease-out" style="width:0">
@@ -135,10 +177,10 @@ export function openProgressMap(manifest, currentModuleId) {
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
           </span>
-          <span class="text-sm font-medium text-slate-500 truncate">Tap a node to open or review a module</span>
+          <span class="text-sm font-medium text-slate-500 truncate">${footerHint}</span>
         </div>
         <button type="button" data-pm-close-footer class="px-5 md:px-6 py-2.5 bg-slate-800 hover:bg-slate-900 text-white font-medium rounded-lg transition-all flex items-center gap-2 shadow-sm shrink-0">
-          Close map
+          ${footerBtnLabel}
           <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1" aria-hidden="true"></i>
         </button>
       </div>
@@ -178,6 +220,80 @@ export function openProgressMap(manifest, currentModuleId) {
     visited: visited.has(m.id),
     active: m.id === currentModuleId,
   }));
+
+  function delay(ms) {
+    return new Promise((r) => setTimeout(r, ms));
+  }
+
+  async function runCelebrationSequence() {
+    if (!celebrationOpts) return;
+    const { completedId, nextModule } = celebrationOpts;
+    const completedIdx = modulesData.findIndex((m) => m.id === completedId);
+    const nextIdx = nextModule
+      ? modulesData.findIndex((m) => m.id === nextModule.id)
+      : -1;
+
+    currentZoom = 1.38;
+    const nodesEl = overlay.querySelector('[data-pm-nodes]');
+    const wrapper = overlay.querySelector('[data-pm-zoom-wrap]');
+    if (nodesEl) nodesEl.style.transform = `scale(${currentZoom})`;
+    if (wrapper) {
+      const baseWidth = total * BASE_NODE_WIDTH + PADDING_OFFSET;
+      wrapper.style.width = `${baseWidth * currentZoom}px`;
+    }
+
+    const litEl = overlay.querySelector('[data-pm-lit]');
+    function setLitWidth(nodeIdx) {
+      const node = overlay.querySelector(`[data-pm-node="${nodeIdx}"]`);
+      if (node && litEl) {
+        const width = node.offsetLeft + node.offsetWidth / 2 - 64;
+        litEl.style.width = `${Math.max(0, width)}px`;
+      }
+    }
+    function scrollToIdx(idx, behavior) {
+      const node = overlay.querySelector(`[data-pm-node="${idx}"]`);
+      if (node && scrollArea) {
+        const scaledLeft = node.offsetLeft * currentZoom;
+        const scaledWidth = node.offsetWidth * currentZoom;
+        const targetScroll =
+          scaledLeft - scrollArea.offsetWidth / 2 + scaledWidth / 2;
+        scrollArea.scrollTo({
+          left: Math.max(0, targetScroll),
+          behavior: behavior || 'smooth',
+        });
+      }
+    }
+    function pulseNode(idx) {
+      const wrap = overlay.querySelector(`[data-pm-node="${idx}"]`);
+      const card = wrap?.querySelector('.rounded-2xl.p-5');
+      card?.classList.add('animate-celebrate-node');
+      window.setTimeout(() => card?.classList.remove('animate-celebrate-node'), 1100);
+    }
+
+    if (completedIdx < 0) {
+      updateBackbone();
+      centerActiveNode();
+      return;
+    }
+
+    setLitWidth(completedIdx);
+    scrollToIdx(completedIdx, 'auto');
+
+    await delay(500);
+    pulseNode(completedIdx);
+
+    await delay(850);
+
+    if (nextIdx >= 0 && nextIdx !== completedIdx) {
+      setLitWidth(nextIdx);
+      scrollToIdx(nextIdx, 'smooth');
+      await delay(1200);
+      pulseNode(nextIdx);
+    }
+
+    await delay(200);
+    updateBackbone();
+  }
 
   function renderNodes() {
     if (!nodesContainer) return;
@@ -269,8 +385,12 @@ export function openProgressMap(manifest, currentModuleId) {
     if (zoomWrap) zoomWrap.style.width = `${baseWidth * currentZoom}px`;
 
     requestAnimationFrame(() => {
-      updateBackbone();
-      centerActiveNode();
+      if (celebrationOpts) {
+        void runCelebrationSequence();
+      } else {
+        updateBackbone();
+        centerActiveNode();
+      }
     });
   }
 
