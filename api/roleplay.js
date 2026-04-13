@@ -14,7 +14,6 @@ export default async function handler(req) {
       return new Response('Missing or invalid messages array', { status: 400 });
     }
 
-    // System prompt instructing the AI how to act
     const systemPrompt = `You are playing the role of a customer in a sales roleplay simulation.
 Your persona is: ${persona}
 Your current scenario is: ${scenario}
@@ -27,30 +26,42 @@ Instructions:
 4. If the rep is off track, push back realistically based on your persona.
 5. Do not make it too easy, but be reasonable if they use good sales tactics.`;
 
+    const contents = messages.map(msg => ({
+      role: msg.role === 'assistant' ? 'model' : 'user',
+      parts: [{ text: msg.content }]
+    }));
+
     const payload = {
-      model: 'gpt-4o-mini',
-      messages: [
-        { role: 'system', content: systemPrompt },
-        ...messages
-      ],
-      temperature: 0.7,
-      max_tokens: 150,
-      stream: true,
+      systemInstruction: {
+        parts: [{ text: systemPrompt }]
+      },
+      contents: contents,
+      generationConfig: {
+        temperature: 0.7,
+        maxOutputTokens: 150,
+      }
     };
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      return new Response(JSON.stringify({ error: 'GEMINI_API_KEY is not configured in the environment variables' }), { 
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:streamGenerateContent?alt=sse&key=${apiKey}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
       },
       body: JSON.stringify(payload),
     });
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('OpenAI API Error:', errorText);
-      return new Response(JSON.stringify({ error: 'OpenAI API Error', details: errorText }), { 
+      console.error('Gemini API Error:', errorText);
+      return new Response(JSON.stringify({ error: 'Gemini API Error', details: errorText }), { 
         status: 500,
         headers: { 'Content-Type': 'application/json' }
       });
