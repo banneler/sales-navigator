@@ -134,19 +134,34 @@ function handleClick(e) {
     const correct = Number(card.getAttribute('data-kc-correct')) || 0;
     const selected = card.querySelector('input[type="radio"]:checked');
     const feedback = card.querySelector('.js-kc-feedback');
+    const affirmation = card.querySelector('.js-kc-affirmation');
+    const explDisplay = card.querySelector('.js-kc-explanation-display');
     if (!feedback) return;
     const explEl = card.querySelector('.js-kc-explanation-text');
     const explanation = explEl?.textContent?.trim() || '';
-    feedback.classList.remove('hidden');
     if (!selected) {
+      feedback.classList.remove('hidden');
+      if (affirmation) affirmation.classList.add('hidden');
       feedback.innerHTML = `<p class="text-amber-800 font-medium">Pick an option, then check again.</p>`;
       return;
     }
     const picked = Number(selected.value);
     const ok = picked === correct;
-    feedback.innerHTML = ok
-      ? `<p class="text-green-800 font-semibold mb-1">Correct.</p><p class="text-slate-700">${escapeHtml(explanation)}</p>`
-      : `<p class="text-amber-900 font-semibold mb-1">Not quite — review the rationale below.</p><p class="text-slate-700">${escapeHtml(explanation)}</p>`;
+    if (ok) {
+      feedback.classList.add('hidden');
+      if (affirmation) {
+        affirmation.classList.remove('hidden');
+        if (explDisplay) explDisplay.textContent = explanation;
+        affirmation.classList.remove('animate-pulse');
+        void affirmation.offsetWidth;
+        affirmation.classList.add('animate-pulse');
+        window.setTimeout(() => affirmation.classList.remove('animate-pulse'), 900);
+      }
+    } else {
+      if (affirmation) affirmation.classList.add('hidden');
+      feedback.classList.remove('hidden');
+      feedback.innerHTML = `<p class="text-amber-900 font-semibold mb-1">Not quite — review the rationale below.</p><p class="text-slate-700">${escapeHtml(explanation)}</p>`;
+    }
 
     const slide = card.closest('.kc-slide');
     const carousel = card.closest('.kc-carousel');

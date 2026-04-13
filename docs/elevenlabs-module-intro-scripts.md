@@ -14,11 +14,13 @@ Use with the **Play module intro** control in the opening preview modal. Target 
 
 ## competitive-positioning
 
-| | |
-| --- | --- |
-| **title** | Competitive Positioning |
-| **words** | ~132 |
-| **~seconds** | ~56 |
+
+|              |                         |
+| ------------ | ----------------------- |
+| **title**    | Competitive Positioning |
+| **words**    | ~132                    |
+| **~seconds** | ~56                     |
+
 
 **Script**
 
@@ -28,11 +30,13 @@ In competitive deals, credibility comes from tying proof to what the customer al
 
 ## portfolio-and-business-capabilities
 
-| | |
-| --- | --- |
-| **title** | Portfolio & Business Capabilities |
-| **words** | ~128 |
-| **~seconds** | ~55 |
+
+|              |                                   |
+| ------------ | --------------------------------- |
+| **title**    | Portfolio & Business Capabilities |
+| **words**    | ~128                              |
+| **~seconds** | ~55                               |
+
 
 **Script**
 
@@ -42,11 +46,13 @@ Customers rarely open with a feature matrix—they want to know you understand t
 
 ## product-connectivity
 
-| | |
-| --- | --- |
-| **title** | Connectivity & Access |
-| **words** | ~130 |
-| **~seconds** | ~56 |
+
+|              |                       |
+| ------------ | --------------------- |
+| **title**    | Connectivity & Access |
+| **words**    | ~130                  |
+| **~seconds** | ~56                   |
+
 
 **Script**
 
@@ -56,11 +62,13 @@ Everything upstream—voice, security, and cloud—depends on how you qualify an
 
 ## product-cloud-wifi-and-backup
 
-| | |
-| --- | --- |
-| **title** | Cloud, Wi-Fi & Backup |
-| **words** | ~126 |
-| **~seconds** | ~54 |
+
+|              |                       |
+| ------------ | --------------------- |
+| **title**    | Cloud, Wi-Fi & Backup |
+| **words**    | ~126                  |
+| **~seconds** | ~54                   |
+
 
 **Script**
 
@@ -70,11 +78,13 @@ When cloud apps and branch uptime decide whether you win, the story has to match
 
 ## product-security-and-sd-wan
 
-| | |
-| --- | --- |
-| **title** | Security & SD-WAN |
-| **words** | ~133 |
-| **~seconds** | ~57 |
+
+|              |                   |
+| ------------ | ----------------- |
+| **title**    | Security & SD-WAN |
+| **words**    | ~133              |
+| **~seconds** | ~57               |
+
 
 **Script**
 
@@ -84,11 +94,13 @@ In security and SD-WAN, one fuzzy line item can unwind trust on the whole quote.
 
 ## product-uc-voice-and-collaboration
 
-| | |
-| --- | --- |
-| **title** | UC, Voice & Collaboration |
-| **words** | ~128 |
-| **~seconds** | ~55 |
+
+|              |                           |
+| ------------ | ------------------------- |
+| **title**    | UC, Voice & Collaboration |
+| **words**    | ~128                      |
+| **~seconds** | ~55                       |
+
 
 **Script**
 
@@ -98,11 +110,13 @@ Voice, messaging, meetings, and contact center often sit in the same conversatio
 
 ## sales-rules-of-engagement
 
-| | |
-| --- | --- |
-| **title** | Sales Rules of Engagement |
-| **words** | ~135 |
-| **~seconds** | ~58 |
+
+|              |                           |
+| ------------ | ------------------------- |
+| **title**    | Sales Rules of Engagement |
+| **words**    | ~135                      |
+| **~seconds** | ~58                       |
+
 
 **Script**
 
@@ -112,11 +126,13 @@ When more than one seller touches the same account, unclear rules waste time and
 
 ## sales-operations-and-approvals
 
-| | |
-| --- | --- |
-| **title** | Sales Operations & Approvals |
-| **words** | ~124 |
-| **~seconds** | ~53 |
+
+|              |                              |
+| ------------ | ---------------------------- |
+| **title**    | Sales Operations & Approvals |
+| **words**    | ~124                         |
+| **~seconds** | ~53                          |
+
 
 **Script**
 
@@ -126,11 +142,13 @@ Nothing stalls a deal like the wrong approval step—or a change package sent af
 
 ## sales-process-and-salesforce
 
-| | |
-| --- | --- |
-| **title** | Sales Process & Salesforce |
-| **words** | ~122 |
-| **~seconds** | ~52 |
+
+|              |                            |
+| ------------ | -------------------------- |
+| **title**    | Sales Process & Salesforce |
+| **words**    | ~122                       |
+| **~seconds** | ~52                        |
+
 
 **Script**
 
@@ -153,3 +171,4 @@ A clean Salesforce rhythm turns leads into opportunities, signed agreements, and
   {"module_id": "sales-process-and-salesforce", "title": "Sales Process & Salesforce", "approx_words": 122, "approx_seconds": 52}
 ]
 ```
+

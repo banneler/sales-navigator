@@ -161,6 +161,11 @@ function buildSingleKnowledgeCard(kc, slideIndex) {
           <div class="space-y-2 mb-4">${optsHtml}</div>
           <button type="button" class="js-kc-check bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg text-sm transition">Check answer</button>
           <div class="js-kc-feedback hidden mt-3 text-sm text-slate-700 border-t border-slate-100 pt-3"></div>
+          <div class="js-kc-affirmation hidden mt-3 rounded-xl border-2 border-emerald-400/80 bg-gradient-to-br from-emerald-50 via-white to-orange-50 px-4 py-3 text-center shadow-lg ring-2 ring-emerald-400/30" role="status" aria-live="polite">
+            <p class="text-base" aria-hidden="true">✨</p>
+            <p class="text-sm font-semibold text-emerald-900">Correct — nice work.</p>
+            <p class="js-kc-explanation-display mt-2 text-xs text-emerald-800/90 leading-relaxed text-left sm:text-center"></p>
+          </div>
           <div class="js-kc-explanation-text hidden" aria-hidden="true">${escapeHtml(explanation)}</div>
         </div>`;
 }
