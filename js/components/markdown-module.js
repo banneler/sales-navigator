@@ -9,7 +9,9 @@ import { mountModuleIntroGate } from './module-intro-gate.js';
  */
 export default function renderMarkdownModule(container, markdownSource) {
   container.innerHTML = renderModuleDocumentHtml(markdownSource);
-  initScrollAnimations(container);
+  container.dataset.scrollAnimationsInit = '';
   bindModuleInteractions(container);
-  mountModuleIntroGate(container, markdownSource);
+  mountModuleIntroGate(container, markdownSource, () => {
+    initScrollAnimations(container);
+  });
 }

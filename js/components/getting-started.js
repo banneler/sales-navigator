@@ -165,6 +165,15 @@ function padRect(r, pad) {
   };
 }
 
+function rectsOverlap(a, b) {
+  if (!a || !b) return false;
+  const aRight = a.left + a.width;
+  const aBottom = a.top + a.height;
+  const bRight = b.left + b.width;
+  const bBottom = b.top + b.height;
+  return !(aRight <= b.left || bRight <= a.left || aBottom <= b.top || bBottom <= a.top);
+}
+
 /**
  * Remove tour overlay and listeners (call when leaving Getting started route).
  */
@@ -263,23 +272,44 @@ function positionGlassCard(hostEl, stepIndex, rect) {
   const gap = 16;
   const cardW = Math.min(448, vw - 32);
   const cardH = hostEl.offsetHeight || 380;
+  const clampX = (x) => Math.max(gap, Math.min(x, vw - cardW - gap));
+  const clampY = (y) => Math.max(gap, Math.min(y, vh - cardH - gap));
+  const spotlight = { left: rect.left, top: rect.top, width: rect.width, height: rect.height };
 
-  let left = rect.left + rect.width + gap;
-  if (left + cardW > vw - gap) {
-    left = rect.left - cardW - gap;
-  }
-  if (left < gap) {
-    left = Math.max(gap, (vw - cardW) / 2);
+  const candidates = [
+    { left: rect.left + rect.width + gap, top: rect.top }, // right
+    { left: rect.left - cardW - gap, top: rect.top }, // left
+    { left: rect.left, top: rect.top + rect.height + gap }, // below
+    { left: rect.left, top: rect.top - cardH - gap }, // above
+  ].map((c) => ({ left: clampX(c.left), top: clampY(c.top) }));
+
+  // Mid widths are where overlap is most noticeable; bias toward below/above.
+  if (vw < 1280) {
+    candidates.unshift(
+      { left: clampX(rect.left), top: clampY(rect.top + rect.height + gap) },
+      { left: clampX(rect.left), top: clampY(rect.top - cardH - gap) }
+    );
   }
 
-  let top = rect.top;
-  if (top + cardH > vh - gap) {
-    top = Math.max(gap, vh - cardH - gap);
+  let best = null;
+  for (const c of candidates) {
+    const cardRect = { left: c.left, top: c.top, width: cardW, height: cardH };
+    if (!rectsOverlap(cardRect, spotlight)) {
+      best = c;
+      break;
+    }
   }
-  top = Math.max(gap, Math.min(top, vh - cardH - gap));
 
-  hostEl.style.left = `${left}px`;
-  hostEl.style.top = `${top}px`;
+  // Fallback: dock near bottom so spotlighted hero remains visible.
+  if (!best) {
+    best = {
+      left: clampX((vw - cardW) / 2),
+      top: clampY(vh - cardH - gap),
+    };
+  }
+
+  hostEl.style.left = `${best.left}px`;
+  hostEl.style.top = `${best.top}px`;
   hostEl.style.transform = 'none';
   hostEl.style.right = 'auto';
 }

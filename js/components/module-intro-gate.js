@@ -34,8 +34,9 @@ function positionIntroGateOverlay(overlay) {
  *
  * @param {HTMLElement} container - #module-host
  * @param {string} markdownSource - Full content.md (for preview copy only)
+ * @param {(() => void) | undefined} onStartModule
  */
-export function mountModuleIntroGate(container, markdownSource) {
+export function mountModuleIntroGate(container, markdownSource, onStartModule) {
   destroyModuleIntroGate();
 
   let meta = {};
@@ -105,5 +106,6 @@ export function mountModuleIntroGate(container, markdownSource) {
 
   overlay.querySelector('.module-intro-start')?.addEventListener('click', () => {
     destroyModuleIntroGate();
+    if (typeof onStartModule === 'function') onStartModule();
   });
 }
