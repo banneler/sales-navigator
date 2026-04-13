@@ -113,46 +113,49 @@ scenarios:
 
       - label: "Pause and fix stage/signing prerequisites per the DocuSign integration guide (e.g. Contract Signer timing) before sending."
         feedback: "Correct."
-
-roleplay:
-  persona: "New Account Executive, 30 days in"
-  scenario: "Has a hot inbound lead who is ready to receive a quote. Is about to convert the lead in Salesforce but isn't sure whether to create an opportunity or skip it. Also hasn't set a Contract Signer on the GPC Solution yet."
-  goal: "Walk through the correct lead conversion default (always create the opportunity unless manager approves otherwise), and reinforce the importance of setting Contract Signer early—before the solution reaches Approval Pending."
 ---
 
-## Elevator Pitch
+## Overview
 
 Salesforce is GPC's **system of record for every deal**—from first contact to installed revenue. The process is a straight line: convert leads when ready to quote (always create the opportunity), build the GPC Solution, get approvals, merge with Conga, and send via DocuSign. Every step has a rule. Skipping steps—not creating the opportunity, deleting Closed/Lost records, setting Contract Signer late, or keeping contacts outside Salesforce—creates downstream problems in approvals, billing, and commission. Clean data in, clean revenue out.
 
 ---
 
-## Discovery Questions
+## Key Guidelines
 
-*(For internal pipeline reviews and coaching)*
-
-1. **Has this lead been searched in Salesforce before converting?** — Duplicates cause ownership disputes and data quality problems.
-2. **Is the opportunity stage accurate—does it reflect where the customer actually is in the buying process?** — Inflated stages distort forecast; if you can't answer most discovery questions, the stage is likely ahead of the customer.
-3. **Are all contacts associated with the right account, and is the Contract Signer set on the GPC Solution?** — Missing signers block DocuSign before Approval Pending.
-4. **Are all Solution Sites complete with services and products before submitting for approval?** — Incomplete records stall approvals and delay installs.
-5. **If this is a referral deal, are the referral fields accurate and has the referrer been updated on status?** — Referral eligibility depends on clean field data.
+1. **Always search first:** Duplicates cause ownership disputes and data quality problems. Search Salesforce before converting a lead.
+2. **Convert to Opportunity:** The default is always to create an opportunity upon conversion. Exceptions require manager or admin approval.
+3. **Accurate Pipeline Stages:** Stage, amount, and close date should move together and reflect reality you'd defend to leadership. Inflated stages distort the forecast.
+4. **Set Contract Signer early:** Missing signers block DocuSign. Set the Contract Signer when you create the GPC Solution, well before it reaches Approval Pending.
+5. **Contacts must exist in Salesforce:** DocuSign recipients must be Contacts on the account before sending. You cannot send an envelope to an email address that isn't attached to a Contact record.
 
 ---
 
-## Objection Handling
+## Common Pitfalls
 
-*(Common process mistakes and how to correct them)*
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-| Mistake | Correct Behavior |
-| --- | --- |
-| **"I'll skip creating the opportunity on conversion—less work."** | Default is always create the opportunity. Exceptions require manager or admin approval. Skipping on your own causes reporting gaps and approval issues. |
-| **"I deleted the Closed/Lost record to clean up my pipeline."** | Never delete Closed/Lost opportunities. The history matters for forecasting, win/loss analysis, and potential re-engagement. |
-| **"I'll add the Contract Signer right before I send to DocuSign."** | Set Contract Signer when you create the GPC Solution or early in its lifecycle. Adding it during Approval Pending behaves differently and can block the envelope. |
-| **"My signers are saved in a spreadsheet—I'll add them to Salesforce later."** | DocuSign recipients must be Contacts on the account before sending. Contacts not in Salesforce = envelope can't be sent. |
-| **"I updated the stage to Commit to show momentum."** | Stage, amount, and close date should move together and reflect reality you'd defend to leadership. Inflated stages hurt forecast credibility and your coaching relationship. |
+::: flip ["I'll skip creating the opportunity on conversion—less work."]
+Default is always create the opportunity. Exceptions require manager or admin approval. Skipping on your own causes reporting gaps and approval issues.
+:::
+
+::: flip ["I deleted the Closed/Lost record to clean up my pipeline."]
+Never delete Closed/Lost opportunities. The history matters for forecasting, win/loss analysis, and potential re-engagement.
+:::
+
+::: flip ["I'll add the Contract Signer right before I send to DocuSign."]
+Set Contract Signer when you create the GPC Solution or early in its lifecycle. Adding it during Approval Pending behaves differently and can block the envelope.
+:::
+
+::: flip ["My signers are saved in a spreadsheet—I'll add them to Salesforce later."]
+DocuSign recipients must be Contacts on the account before sending. Contacts not in Salesforce = envelope can't be sent.
+:::
+
+</div>
 
 ---
 
-## Technical Deep Dive [deep]
+## Process Deep Dive [deep]
 
 **Lifecycle flow:**
 1. **Leads** → Convert when ready to quote. Default: creates account + contact + new opportunity. Exception (skip opportunity): manager or admin only.

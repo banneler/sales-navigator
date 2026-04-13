@@ -123,46 +123,49 @@ scenarios:
 
       - label: "Each service is costed in parallel with no consolidation rule."
         feedback: "Incorrect—deepest-review path applies."
-
-roleplay:
-  persona: "New Account Executive, 60 days in"
-  scenario: "A customer signed last month (Closed/Won, billing started). They now want to swap one service for a different product. The AE is about to use the Conga Change Order template from the GPC Solution, thinking that's the right path."
-  goal: "Identify that the correct process after billing has started is MAC (Move-Add-Change)—not the pre-billing change order—and route to the right materials before taking any action in Salesforce."
 ---
 
-## Elevator Pitch
+## Overview
 
 Getting a deal right in Salesforce is as important as winning it. The **approval process** exists to catch errors before orders go to delivery—reviewers check site-level services, products, and quote math. The **change order vs MAC vs disconnect** distinction prevents billing errors, stalled installs, and customer escalations. **Costing routing** ensures the right teams estimate and validate spend. Know which path to use at each stage, and your deals will move cleanly from approval to revenue.
 
 ---
 
-## Discovery Questions
+## Key Guidelines
 
-*(For internal use in deal reviews and pre-submission checklists)*
-
-1. **Is the GPC Solution Booked or Billed?** — Determines whether a change order, MAC, or disconnect process applies.
-2. **Does each Solution Site have the correct services and products attached?** — Reviewers validate site-level completeness, not just headline MRC.
-3. **Does the quote math tie out?** — Mismatches between line items and totals stall approvals and delay projects.
-4. **Have all required attachments been uploaded and does each form carry the GPC Solution ID?** — Missing IDs cause booking delays post-approval.
-5. **Is Request Manual Validation checked only when human review is genuinely needed?** — Checking it unnecessarily slows costing routing for every participating department.
+1. **Check the Billing Status:** This determines your path. Pre-billing changes use the Change Order process. Post-billing partial changes require a MAC (Move-Add-Change). Full removals are Disconnects.
+2. **Verify Site-Level Data:** Reviewers validate site-level completeness, not just the headline MRC. Ensure each Solution Site has the correct services and products attached.
+3. **Check the Math:** Mismatches between line items and totals stall approvals and delay projects.
+4. **Include the GPC Solution ID:** Every form and required attachment must carry the GPC Solution ID. Missing IDs cause booking delays post-approval.
+5. **Use Manual Validation Sparingly:** Checking "Request Manual Validation" skips automation and routes the deal to every participating department. Only check it when human review is genuinely required.
 
 ---
 
-## Objection Handling
+## Common Pitfalls
 
-*(Common internal misconceptions and how to correct them)*
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-| Misconception | Correct Path |
-| --- | --- |
-| **"I'll just submit a change order—the customer wants to adjust services."** | First ask: has billing started? If yes, a change order is not the right tool. Partial in-life changes → MAC; full removal → Disconnect. |
-| **"The approval is stuck—I'll fix it in a side channel with the reviewer."** | Check Approval History for the current step and assignee. Escalate through Sales Management or the SF team—not Slack or email outside the record. |
-| **"I checked Manual Validation to be safe."** | Manual Validation skips automation and routes to every participating department. Only check it when you genuinely need human review—not as a default. |
-| **"OBR is part of the approval process."** | OBR is an account/ops planning cadence—completely separate from GPC Solution approvals and costing routing. Don't substitute one for the other. |
-| **"New and Existing services on the same site will just pick the faster path."** | New + Existing on one site always routes via the New path. Know the rules before building the Solution Site. |
+::: flip ["I'll just submit a change order—the customer wants to adjust services."]
+First ask: has billing started? If yes, a change order is not the right tool. Partial in-life changes → MAC; full removal → Disconnect.
+:::
+
+::: flip ["The approval is stuck—I'll fix it in a side channel with the reviewer."]
+Check Approval History for the current step and assignee. Escalate through Sales Management or the SF team—not Slack or email outside the record.
+:::
+
+::: flip ["I checked Manual Validation to be safe."]
+Manual Validation skips automation and routes to every participating department. Only check it when you genuinely need human review—not as a default.
+:::
+
+::: flip ["New and Existing services on the same site will just pick the faster path."]
+New + Existing on one site always routes via the New path. Know the rules before building the Solution Site.
+:::
+
+</div>
 
 ---
 
-## Technical Deep Dive [deep]
+## Process Deep Dive [deep]
 
 **Approval flow:**
 - Work from **GPC Solution → Approval History** → Approve / Reject / Reassign / Recall; add comments
