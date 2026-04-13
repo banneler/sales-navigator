@@ -9,6 +9,11 @@ export function addXP(amount) {
   return newTotal;
 }
 
+/** Clears stored XP (header updates on next updateXpDisplays / reload). */
+export function resetXP() {
+  localStorage.removeItem('sn:xp');
+}
+
 export function awardXP(amount, reason) {
   const newTotal = addXP(amount);
   showXPToast(amount, reason);

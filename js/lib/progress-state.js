@@ -52,3 +52,9 @@ export function isModuleCompleted(moduleId) {
   if (!moduleId) return false;
   return getCompletedModuleIds().has(moduleId);
 }
+
+/** Clears visited + completed module lists (Fiber path and completion checkmarks). */
+export function resetModuleProgress() {
+  localStorage.removeItem(STORAGE_KEY);
+  localStorage.removeItem(COMPLETED_KEY);
+}

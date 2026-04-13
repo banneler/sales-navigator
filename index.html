@@ -50,6 +50,18 @@
     </header>
     <div id="app-root" class="flex-1 flex overflow-hidden min-h-0"></div>
   </div>
+  <!-- Classic script so console reset works in all browsers (Safari may not expose ES-module globals as bare names). Keys: see js/lib/progress-state.js + gamification.js -->
+  <script>
+    (function () {
+      function resetSalesNavigatorGameState() {
+        localStorage.removeItem('sn:module-visited:v1');
+        localStorage.removeItem('sn:module-completed:v1');
+        localStorage.removeItem('sn:xp');
+        location.reload();
+      }
+      globalThis.resetSalesNavigatorGameState = resetSalesNavigatorGameState;
+    })();
+  </script>
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
