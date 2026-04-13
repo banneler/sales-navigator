@@ -124,11 +124,44 @@ export function mountModuleIntroGate(container, markdownSource, onStartModule, m
   document.body.appendChild(overlay);
 
   overlay.querySelector('.module-intro-start')?.addEventListener('click', () => {
+    if (window.currentIntroAudio) {
+      window.currentIntroAudio.pause();
+      window.currentIntroAudio = null;
+    }
     destroyModuleIntroGate();
     if (typeof onStartModule === 'function') onStartModule();
   });
 
-  overlay.querySelector('.module-intro-play-intro')?.addEventListener('click', () => {
-    alert('Audio coming soon!');
+  overlay.querySelector('.module-intro-play-intro')?.addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    const icon = btn.querySelector('i');
+    
+    if (window.currentIntroAudio) {
+      window.currentIntroAudio.pause();
+      window.currentIntroAudio = null;
+      icon.className = 'fa-solid fa-play';
+      btn.innerHTML = '<i class="fa-solid fa-play" aria-hidden="true"></i> Play Intro';
+      return;
+    }
+
+    const audio = new Audio(`assets/audio/${moduleId}.mp3`);
+    window.currentIntroAudio = audio;
+    
+    icon.className = 'fa-solid fa-pause';
+    btn.innerHTML = '<i class="fa-solid fa-pause" aria-hidden="true"></i> Pause Intro';
+    
+    audio.play().catch(err => {
+      console.error('Audio playback failed:', err);
+      alert('Audio file not found or playback blocked. Ensure assets/audio/' + moduleId + '.mp3 exists.');
+      icon.className = 'fa-solid fa-play';
+      btn.innerHTML = '<i class="fa-solid fa-play" aria-hidden="true"></i> Play Intro';
+      window.currentIntroAudio = null;
+    });
+
+    audio.onended = () => {
+      icon.className = 'fa-solid fa-play';
+      btn.innerHTML = '<i class="fa-solid fa-play" aria-hidden="true"></i> Play Intro';
+      window.currentIntroAudio = null;
+    };
   });
 }
