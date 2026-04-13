@@ -138,7 +138,7 @@ reference_files:
 ::: accordion ROE Overview Reference
 Rules of engagement at a glance — ownership, idle windows, and escalation paths.
 
-![ROE overview](Proposal_Assets/training/from-pdfs/driver-training-pdf-2025-1-1/images/driver-training-pdf-2025-1-1-p5-img4.jpeg)
+*Collateral image — coming soon*
 :::
 
 ---
@@ -160,7 +160,7 @@ Rules of engagement at a glance — ownership, idle windows, and escalation path
 ::: accordion Activity Tracking in Salesforce
 Logged activity is what counts for idle-window calculations — calls, tasks, meetings, and emails on the record.
 
-![Activity tracking](Proposal_Assets/training/from-pdfs/driver-training-pdf-2025-1-1/images/driver-training-pdf-2025-1-1-p6-img2.jpeg)
+*Collateral image — coming soon*
 :::
 
 ---
@@ -179,7 +179,7 @@ ROE doesn’t fit the facts; transfer dispute; Strategic or E‑Rate boundary; r
 ::: accordion Idle Window Reference
 General account idle windows — 61 days for Prospects, 121 days for Customers.
 
-![Idle windows](Proposal_Assets/training/from-pdfs/driver-training-pdf-2025-1-1/images/driver-training-pdf-2025-1-1-p8-img4.jpeg)
+*Collateral image — coming soon*
 :::
 
 - *Optional Guidde:* search-before-create, inbound 5-day logging, owner vs leadership paths for transfers / Strategic.

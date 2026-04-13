@@ -142,7 +142,7 @@ scenarios:
 ::: accordion M&A / Cox Acquisition Battle Card
 Reference for positioning against acquisition-driven competitors—stability, service continuity, and factual comparison points.
 
-![Cox acquisition battle card](Proposal_Assets/training/from-pdfs/cox-acquisition-battle-card-v2/images/cox-acquisition-battle-card-v2-p1-img0.png)
+*Collateral image — coming soon*
 :::
 
 ---
@@ -157,9 +157,9 @@ Reference for positioning against acquisition-driven competitors—stability, se
 ::: accordion Fiber vs LEO Satellite Battle Card
 Side-by-side comparison of fiber vs Starlink/LEO—latency, weather risk, SLAs, and enterprise support.
 
-![Fiber vs Starlink overview](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/fiber-delivery/fiber-vs-starlink-battlecard/images/fiber-vs-starlink-battlecard-p1-img0.png)
+*Collateral image — coming soon*
 
-![Fiber vs Starlink detail](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/fiber-delivery/fiber-vs-starlink-battlecard/images/fiber-vs-starlink-battlecard-p2-img0.png)
+*Collateral image — coming soon*
 :::
 
 | **M&A / churn** | Stability, billing, field response—factual; GPC continuity themes |
@@ -172,7 +172,7 @@ Side-by-side comparison of fiber vs Starlink/LEO—latency, weather risk, SLAs, 
 ::: accordion Ethernet Competitive Battle Card
 Key differentiators for Ethernet positioning—use alongside the tech-card pattern when qualifying multi-site WAN opportunities.
 
-![Ethernet battle card](Proposal_Assets/training/from-pdfs/ethernet-battle-card-final/images/ethernet-battle-card-final-p2-img0.png)
+*Collateral image — coming soon*
 :::
 
 ---

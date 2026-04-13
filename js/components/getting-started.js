@@ -175,6 +175,24 @@ function rectsOverlap(a, b) {
 }
 
 /**
+ * Extra regions the tour card must not cover (viewport coords).
+ * Step 3: scenarios sit under a tall stacked hero — avoid covering module-core on mid widths.
+ * @param {number} stepIndex
+ * @param {number} vw
+ * @returns {Array<{ left: number; top: number; width: number; height: number }>}
+ */
+function getTourCardAvoidRects(stepIndex, vw) {
+  if (stepIndex !== 3 || vw >= 1280) return [];
+  const el = document.querySelector('[data-tour-target="module-core"]');
+  if (!el) return [];
+  return [rectLike(el.getBoundingClientRect())];
+}
+
+function cardOverlapsAny(cardRect, rects) {
+  return rects.some((r) => rectsOverlap(cardRect, r));
+}
+
+/**
  * Remove tour overlay and listeners (call when leaving Getting started route).
  */
 export function destroyGettingStartedOverlay() {
@@ -252,6 +270,7 @@ function positionGlassCard(hostEl, stepIndex, rect) {
 
   const vw = window.innerWidth;
   const vh = window.innerHeight;
+  const avoidRects = getTourCardAvoidRects(stepIndex, vw);
 
   if (stepIndex === 0 || !rect) {
     hostEl.style.left = '50%';
@@ -294,7 +313,10 @@ function positionGlassCard(hostEl, stepIndex, rect) {
   let best = null;
   for (const c of candidates) {
     const cardRect = { left: c.left, top: c.top, width: cardW, height: cardH };
-    if (!rectsOverlap(cardRect, spotlight)) {
+    if (
+      !rectsOverlap(cardRect, spotlight) &&
+      !cardOverlapsAny(cardRect, avoidRects)
+    ) {
       best = c;
       break;
     }
@@ -306,6 +328,35 @@ function positionGlassCard(hostEl, stepIndex, rect) {
       left: clampX((vw - cardW) / 2),
       top: clampY(vh - cardH - gap),
     };
+  }
+
+  // Step 3 mid-width: fallback bottom-center can sit on the stacked hero; pin under hero + spotlight.
+  if (stepIndex === 3 && vw < 1280 && avoidRects.length) {
+    const chosen = { left: best.left, top: best.top, width: cardW, height: cardH };
+    if (cardOverlapsAny(chosen, avoidRects)) {
+      const hero = avoidRects[0];
+      const stackBottom = Math.max(
+        hero.top + hero.height,
+        spotlight.top + spotlight.height
+      );
+      const underStack = {
+        left: clampX((vw - cardW) / 2),
+        top: clampY(stackBottom + gap),
+      };
+      const underRect = {
+        left: underStack.left,
+        top: underStack.top,
+        width: cardW,
+        height: cardH,
+      };
+      if (
+        underRect.top + underRect.height <= vh - gap &&
+        !rectsOverlap(underRect, spotlight) &&
+        !cardOverlapsAny(underRect, avoidRects)
+      ) {
+        best = underStack;
+      }
+    }
   }
 
   hostEl.style.left = `${best.left}px`;
@@ -655,6 +706,12 @@ export function loadGettingStarted(container, manifest) {
         : 'Complete the activity in the highlighted area first.'
       : '';
 
+    if (stepIndex === 3) {
+      document
+        .querySelector('[data-tour-target="tour-scenarios"]')
+        ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
     if (stepIndex === 4) {
       document
         .querySelector('[data-tour-target="tour-knowledge"]')
@@ -756,11 +813,13 @@ export function loadGettingStarted(container, manifest) {
     const fiberBtn = document.getElementById('fiber-path-btn');
     const scenarioEl = container.querySelector('[data-tour-target="tour-scenarios"]');
     const knowledgeEl = container.querySelector('[data-tour-target="tour-knowledge"]');
+    const moduleCoreEl = container.querySelector('[data-tour-target="module-core"]');
     if (host) resizeObs.observe(host);
     if (sb) resizeObs.observe(sb);
     if (fiberBtn) resizeObs.observe(fiberBtn);
     if (scenarioEl) resizeObs.observe(scenarioEl);
     if (knowledgeEl) resizeObs.observe(knowledgeEl);
+    if (moduleCoreEl) resizeObs.observe(moduleCoreEl);
   }
 
   render();

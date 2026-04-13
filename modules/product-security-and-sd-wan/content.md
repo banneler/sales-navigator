@@ -125,7 +125,7 @@ scenarios:
 **Proactive:** 24×7 monitoring + mitigation.**On-demand:** on that SKU, mitigation **weekdays 8–17**—state explicitly.**Discovery:** what must stay up; history; always-on vs cost; BGP.**Landmines:** never equate on-demand with proactive timing; no promised mitigation times without approved materials.**Collateral:** **Sales Resources**.
 
 ::: accordion DDoS Protection Overview
-![DDoS product sheet](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/ddos/ddos-product-sheet-012025/images/ddos-product-sheet-012025-p2-img0.png)
+*Collateral image — coming soon*
 :::
 
 ## SD-WAN
@@ -133,11 +133,11 @@ scenarios:
 **What:** VeloCloud; **≥1 GPC fiber site** + multi-site WAN (off-net US ok); improves cloud breakout, backhaul, optional edge security.**Discovery:** footprint on/off GPC; today’s WAN; traffic; QoS; migration; **map every security line in RFP to SKU**.**Position:** local GPC support + platform fit—not unverified spec battles.**Landmines:** NGFW/IDS not assumed in base; no perfect app-ID forever; no overnight MPLS death without plan; no competitor parity without SE review.**Collateral:** sheet + battle card—**Sales Resources**.
 
 ::: accordion SD-WAN Retail Brief
-![SD-WAN retail use case](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/sd-wan/2024-sd-wan-brief-retail/images/2024-sd-wan-brief-retail-p1-img0.jpeg)
+*Collateral image — coming soon*
 :::
 
 ::: accordion SD-WAN Healthcare Brief
-![SD-WAN healthcare use case](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/sd-wan/2024-sd-wan-brief-healthcare/images/2024-sd-wan-brief-healthcare-p1-img0.jpeg)
+*Collateral image — coming soon*
 :::
 
 ## Cross-cutting

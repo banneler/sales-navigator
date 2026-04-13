@@ -38,12 +38,15 @@ export function escapeHtml(s) {
 
 const CHEVRON_SVG = `<svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200 group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>`;
 
-const OPEN_PREFIX = '::: accordion [';
+const OPEN_BRACKET = '::: accordion [';
+const OPEN_BARE = '::: accordion ';
 
 /** @returns {boolean} */
 function isAccordionOpenLine(lineRaw) {
   const t = lineRaw.replace(/\r$/, '').trimStart();
-  return t.startsWith(OPEN_PREFIX) && t.includes(']', OPEN_PREFIX.length);
+  if (t.startsWith(OPEN_BRACKET) && t.includes(']', OPEN_BRACKET.length))
+    return true;
+  return t.startsWith(OPEN_BARE) && t.length > OPEN_BARE.length;
 }
 
 /**
@@ -66,11 +69,23 @@ function isAccordionCloseLine(lineRaw) {
  * @returns {{ end: number; title: string; body: string } | null}
  */
 function extractAccordionBlock(s, start) {
-  if (!s.slice(start).startsWith(OPEN_PREFIX)) return null;
-  const titleEnd = s.indexOf(']', start + OPEN_PREFIX.length);
-  if (titleEnd === -1) return null;
-  const title = s.slice(start + OPEN_PREFIX.length, titleEnd);
-  let pos = titleEnd + 1;
+  let title;
+  let pos;
+
+  if (s.slice(start).startsWith(OPEN_BRACKET)) {
+    const titleEnd = s.indexOf(']', start + OPEN_BRACKET.length);
+    if (titleEnd === -1) return null;
+    title = s.slice(start + OPEN_BRACKET.length, titleEnd);
+    pos = titleEnd + 1;
+  } else if (s.slice(start).startsWith(OPEN_BARE)) {
+    const eol = s.indexOf('\n', start);
+    const lineEnd = eol === -1 ? s.length : eol;
+    title = s.slice(start + OPEN_BARE.length, lineEnd).replace(/\r$/, '').trim();
+    if (!title) return null;
+    pos = lineEnd;
+  } else {
+    return null;
+  }
   while (pos < s.length && (s[pos] === ' ' || s[pos] === '\t')) pos++;
   if (s[pos] === '\r') pos++;
   if (s[pos] !== '\n') return null;
@@ -117,11 +132,18 @@ function buildAccordionShell(title, innerHtml) {
  */
 export function preprocessAccordionShortcodes(md) {
   const s = String(md ?? '');
-  if (!s.includes(OPEN_PREFIX)) return s;
+  if (!s.includes('::: accordion')) return s;
   let out = '';
   let i = 0;
   while (i < s.length) {
-    const j = s.indexOf(OPEN_PREFIX, i);
+    const jBracket = s.indexOf(OPEN_BRACKET, i);
+    const jBare = s.indexOf(OPEN_BARE, i);
+    const j =
+      jBracket === -1
+        ? jBare
+        : jBare === -1
+          ? jBracket
+          : Math.min(jBracket, jBare);
     if (j === -1) {
       out += s.slice(i);
       break;

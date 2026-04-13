@@ -112,7 +112,7 @@ scenarios:
 ::: accordion Business Capability Overview
 Cover slide from the GPC Business Capability presentation—use as the opening visual when framing outcomes and partnership.
 
-![Business Capability cover](Proposal_Assets/training/from-pdfs/business-capability-presentation/images/business-capability-presentation-p1-img1.png)
+*Collateral image — coming soon*
 :::
 
 ## Portfolio map (layers)
@@ -129,9 +129,9 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
 ::: accordion Portfolio Stack Layers
 Visual breakdown of the layered portfolio—access through applications—from the capability deck.
 
-![Portfolio layer 1](Proposal_Assets/training/from-pdfs/business-capability-presentation/images/business-capability-presentation-p2-img0.png)
+*Collateral image — coming soon*
 
-![Portfolio layer 2](Proposal_Assets/training/from-pdfs/business-capability-presentation/images/business-capability-presentation-p2-img1.png)
+*Collateral image — coming soon*
 :::
 
 ## Conversation flow (short)
@@ -143,7 +143,7 @@ Visual breakdown of the layered portfolio—access through applications—from t
 ::: accordion Network Story & Proof Points
 Midwest IP, fiber-first access, and Tier-1/IX relationships—anchor the "why GPC" conversation with this network narrative slide.
 
-![Network story](Proposal_Assets/training/from-pdfs/business-capability-presentation/images/business-capability-presentation-p3-img1.jpeg)
+*Collateral image — coming soon*
 :::
 
 ## What to read next
