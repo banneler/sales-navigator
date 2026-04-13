@@ -48,9 +48,12 @@ Instructions:
     });
 
     if (!response.ok) {
-      const error = await response.text();
-      console.error('OpenAI API Error:', error);
-      return new Response('Error communicating with AI service', { status: 500 });
+      const errorText = await response.text();
+      console.error('OpenAI API Error:', errorText);
+      return new Response(JSON.stringify({ error: 'OpenAI API Error', details: errorText }), { 
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      });
     }
 
     // Return the streaming response directly to the client
@@ -63,6 +66,9 @@ Instructions:
     });
   } catch (error) {
     console.error('Roleplay API Error:', error);
-    return new Response('Internal Server Error', { status: 500 });
+    return new Response(JSON.stringify({ error: 'Internal Server Error', message: error.message }), { 
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 }

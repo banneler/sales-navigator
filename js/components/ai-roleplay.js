@@ -55,7 +55,10 @@ export function bindRoleplayInteractions(container) {
         body: JSON.stringify({ messages, persona, scenario, goal })
       });
 
-      if (!res.ok) throw new Error('Network response was not ok');
+      if (!res.ok) {
+        const errText = await res.text();
+        throw new Error(`Server returned ${res.status}: ${errText}`);
+      }
 
       // Handle streaming response
       const reader = res.body.getReader();
