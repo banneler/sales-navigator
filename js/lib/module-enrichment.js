@@ -170,7 +170,7 @@ function buildSingleKnowledgeCard(kc, slideIndex) {
         </div>`;
 }
 
-export function buildKnowledgeChecksCarouselHtml(meta) {
+export function buildRoleplayHtml(meta) {
   const rp = meta.roleplay;
   if (!rp || !rp.persona || !rp.scenario) return '';
 
