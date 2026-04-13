@@ -84,30 +84,30 @@ function renderOneSectionCard(markdown, options) {
 
   if (!displayTitle.trim()) {
     return `
-      <section class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+      <section class="bg-gradient-to-b from-white to-slate-50/50 border border-slate-200/80 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow">
         <div class="module-markdown-body">${safe}</div>
       </section>`;
   }
 
   if (useDeepCollapse) {
     return `
-      <details class="module-section-deep bg-white border border-slate-200 rounded-xl shadow-sm">
-        <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-6 text-left outline-none [&::-webkit-details-marker]:hidden marker:content-none">
+      <details class="module-section-deep bg-gradient-to-b from-white to-slate-50/50 border border-slate-200/80 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-6 md:p-8 text-left outline-none [&::-webkit-details-marker]:hidden marker:content-none">
           <span class="min-w-0 flex-1">
-            <span class="block text-lg font-bold text-slate-900">${escapeHtml(displayTitle)}</span>
-            <span class="mt-0.5 block text-xs font-medium text-slate-500">Optional deep dive — expand to read</span>
+            <span class="block text-xl font-bold text-slate-900">${escapeHtml(displayTitle)}</span>
+            <span class="mt-1 block text-sm font-medium text-slate-500">Optional deep dive — expand to read</span>
           </span>
           <i class="fa-solid fa-chevron-down module-section-deep-chevron shrink-0 text-slate-400 transition-transform duration-200" aria-hidden="true"></i>
         </summary>
-        <div class="border-t border-slate-200 px-6 pb-6 pt-4">
+        <div class="border-t border-slate-200/80 px-6 md:px-8 pb-6 md:pb-8 pt-6">
           <div class="module-markdown-body">${safe}</div>
         </div>
       </details>`;
   }
 
-  const heading = `<h3 class="text-lg font-bold text-slate-900 mb-3">${escapeHtml(displayTitle)}</h3>`;
+  const heading = `<h3 class="text-xl font-bold text-slate-900 mb-5">${escapeHtml(displayTitle)}</h3>`;
   return `
-      <section class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+      <section class="bg-gradient-to-b from-white to-slate-50/50 border border-slate-200/80 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow">
         ${heading}
         <div class="module-markdown-body">${safe}</div>
       </section>`;

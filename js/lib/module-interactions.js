@@ -183,6 +183,15 @@ function handleClick(e) {
     return;
   }
 
+  const flipBtn = e.target.closest('.js-flip-card');
+  if (flipBtn) {
+    const inner = flipBtn.querySelector('.js-flip-inner');
+    if (inner) {
+      inner.classList.toggle('rotate-y-180');
+    }
+    return;
+  }
+
   const scBtn = e.target.closest('.js-sc-choice');
   if (scBtn) {
     const article = scBtn.closest('.scenario-card');

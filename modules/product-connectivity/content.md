@@ -138,13 +138,25 @@ GPC's connectivity stack matches the right access technology to each customer's 
 
 ## Objection Handling
 
-| Objection | Pivot |
-| --- | --- |
-| **"Just bump up our shared Internet—that'll fix the jitter."** | More shared bandwidth doesn't guarantee upload symmetry or latency. Qualify what's actually causing jitter—often it's the shared nature, not raw capacity. DIA is the right answer for VoIP and cloud workloads. |
-| **"DIA is too expensive."** | Frame TCO: what does an hour of dropped VoIP calls, failed payment processing, or inaccessible cloud ERP cost? DIA delivers dedicated symmetry and a stronger ops posture. |
-| **"Starlink is cheaper for our rural stores."** | Acknowledge coverage; then qualify: does payment processing or VoIP tolerate 20–40ms variable latency, weather disruptions, or congestion during peak hours? Fiber delivers predictable, stable paths. |
-| **"We already have MPLS—why change?"** | Ask when the contract expires and what it costs vs. throughput. SD-WAN over DIA often delivers better performance at lower cost with cloud breakout capability. |
-| **"I don't understand the difference between Ethernet and DIA."** | DIA = your Internet connection to the world. Ethernet = private Layer 2 pipe between your own sites. They solve different problems and often work together. |
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+::: flip ["Just bump up our shared Internet—that'll fix the jitter."]
+More shared bandwidth doesn't guarantee upload symmetry or latency. Qualify what's actually causing jitter—often it's the shared nature, not raw capacity. DIA is the right answer for VoIP and cloud workloads.
+:::
+
+::: flip ["DIA is too expensive."]
+Frame TCO: what does an hour of dropped VoIP calls, failed payment processing, or inaccessible cloud ERP cost? DIA delivers dedicated symmetry and a stronger ops posture.
+:::
+
+::: flip ["Starlink is cheaper for our rural stores."]
+Acknowledge coverage; then qualify: does payment processing or VoIP tolerate 20–40ms variable latency, weather disruptions, or congestion during peak hours? Fiber delivers predictable, stable paths.
+:::
+
+::: flip ["We already have MPLS—why change?"]
+Ask when the contract expires and what it costs vs. throughput. SD-WAN over DIA often delivers better performance at lower cost with cloud breakout capability.
+:::
+
+</div>
 
 ---
 

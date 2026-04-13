@@ -76,6 +76,28 @@
   color: #64748b;
 }
 
+/* 3D Flip Cards */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.flip-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.flip-grid > * {
+  grid-row: 1;
+  grid-column: 1;
+}
+
 /* Collapsible H2 sections marked with [deep] in content.md */
 .module-section-deep summary:hover {
   background: rgba(248, 250, 252, 0.85);
