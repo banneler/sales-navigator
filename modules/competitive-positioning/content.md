@@ -9,10 +9,10 @@ reference_files:
   - label: "Competitive battle cards"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx#competitive-battle-cards"
 five_minute_summary: |
-  - **Framework:** Discovery → map **competitor → GPC** with business risk + proof (local, NOC, redundancy, portfolio)—no generic superiority.
-  - **Landmines:** No personal attacks; don't cite battle-card stats externally until marketing confirms; avoid absolutes; **SE/PM** early on architecture.
-  - **Metro / fiber vs LEO / M&A:** Tie rebuttals to uptime, latency, support, TCO of downtime—not price or speed tests alone.
-  - **Tech cards (e.g. SD-WAN):** Pain → GPC wrap → qualifying Qs → proof; verify awards/ratings before citing.
+  - **The Framework:** Map competitor weaknesses to GPC strengths using business risk and proof points (local support, NOC, redundancy). Avoid generic claims of superiority.
+  - **Avoid Landmines:** Never make personal attacks or use absolutes. Verify battle-card stats with marketing before sharing externally, and bring in SEs early for architecture discussions.
+  - **Handling Objections:** When countering LEO satellite or M&A concerns, anchor the conversation on uptime, latency, and the total cost of downtime rather than just price or speed.
+  - **Using Tech Cards:** Lead with the customer's pain, wrap it in a GPC solution, ask qualifying questions, and provide verified proof.
 
 knowledge_checks:
   - question: "Before positioning against a competitor's strength, what should you do first?"

@@ -17,10 +17,10 @@ reference_files:
   - label: "Salesforce Roadmap — shared link"
     sharepoint_url: "https://gpcom.sharepoint.com/:b:/s/SalesforceRoadmap/IQCEYPLtQTCVS7H8aEnrSTrLARzxb0p97NTo17Rj8DeB_gg?e=RyiZUS"
 five_minute_summary: |
-  - **GPC Solution → Approval History:** Approve / Reject / Reassign / Recall; reviewers look at **sites, services, products, quote math**—not one headline number.
-  - **Change order (narrow):** after **Closed/Won**, **before billing**. After billing: **partial** changes → **MAC**; **full removal** → **Disconnect**—not the pre-billing change-order template.
-  - **Request Manual Validation** on a Solution Site skips automation → each participating department reviews.
-  - **OBR** materials = account/ops cadence—not a substitute for SF approval or costing rules.
+  - **The Approval Process:** Reviewers evaluate site-level services, products, and quote math—not just the headline total. Track progress via the Approval History on the GPC Solution.
+  - **Handling Changes:** Use Change Orders only for pre-billing adjustments. Once billing has started, use the MAC (Move-Add-Change) process for partial updates or Disconnect for full removals.
+  - **Manual Validation:** Checking "Request Manual Validation" skips automated routing and forces every department to review. Use this sparingly.
+  - **OBR Cadence:** Operations Business Reviews are for account planning and do not replace standard Salesforce approval or costing rules.
 
 knowledge_checks:
   - question: "When is a 'change order' appropriate in the narrow sense used here?"

@@ -7,10 +7,10 @@ reference_files:
   - label: "Sales Resources (UC, voice, contact center)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 five_minute_summary: |
-  - **UC:** One stack—PBX, messaging, SMS/MMS, meetings + AI recap, optional CC, files; **Unite Enterprise** vs lower tiers (storage); **Triple Guard**; **30-day** archiving baseline—longer = confirm with account team.
-  - **Teams:** Hub = Teams; GPC cloud PBX from Teams dialer; **Teams + Phone System = separate** from GPC—set expectations early.
-  - **CC:** **CC Pro / Elite** concurrent; digital/burst = **AE/pricing**—not napkin math.
-  - **Voice:** SIP/PRI/POTS—discovery on PBX/paths/specialty lines; **pricing books internal**.
+  - **Unified Communications:** A single stack for PBX, messaging, meetings, and file sharing. Be aware of storage differences between tiers and the standard 30-day archiving baseline.
+  - **Microsoft Teams Integration:** Customers can use Teams as their hub while leveraging GPC's cloud PBX for routing. Clarify early that Microsoft's Phone System licensing is separate.
+  - **Contact Center:** CC Pro and Elite are based on concurrent users. Always work with pricing for digital channels or burst capacity rather than guessing.
+  - **Traditional Voice:** Run thorough discovery on existing PBX equipment, SIP/PRI paths, and specialty lines before quoting.
 
 knowledge_checks:
   - question: "For Microsoft Teams integration, what must the customer understand about licensing?"

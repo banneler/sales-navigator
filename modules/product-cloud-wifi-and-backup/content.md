@@ -7,10 +7,10 @@ reference_files:
   - label: "Sales Resources (cloud, Wi‑Fi, backup collateral)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 five_minute_summary: |
-  - **Cloud:** Cloud Connect + Managed Ethernet = private path to clouds/SaaS—align **cross-connect, diversity, security** with **SE**.
-  - **Wi‑Fi:** Managed lifecycle; guest vs corporate; firewall/IDS/IPS—**no AP counts** until survey.
-  - **Backup:** 5G failover/fail-back, NOC, optional battery, app prioritize—**tiered speeds / deprioritization** vary by site.
-  - Proof: datasheets; **.url** training shortcuts (on-network) in extract folder.
+  - **Cloud Connect:** Combine with Managed Ethernet to provide a private, predictable path to cloud providers and SaaS. Always align with an SE on cross-connects and diversity.
+  - **Managed Wi-Fi:** We manage the entire lifecycle including security (firewall, IDS/IPS) and network separation. Never quote access point counts before a proper site survey.
+  - **5G Backup:** Provides automatic failover and fail-back with 24/7 NOC monitoring. Be transparent that speeds and deprioritization will vary by location.
+  - **Resources:** Rely on official datasheets and on-network training shortcuts for detailed proof points.
 
 knowledge_checks:
   - question: "What best describes Cloud Connect's primary value story in discovery?"

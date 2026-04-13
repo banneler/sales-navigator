@@ -7,10 +7,10 @@ reference_files:
   - label: "Sales Resources (security & SD-WAN collateral)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 five_minute_summary: |
-  - **Firewall / MNS:** FortiGate managed edge; **MNS** = umbrella (customer FW mgmt, SIEM, assessments, email security)—scope to buyer.
-  - **DDoS:** **Proactive** = 24×7 auto mitigation; **on-demand** SKU = **weekday 8–17** mitigation—**qualify**—don't blur.
-  - **SD-WAN (VeloCloud):** multi-site + **≥1 site on GPC fiber**; optional NGFW/IDS lines **not** assumed in base—confirm every quote.
-  - **Handoffs:** SE/security for HA, BGP/ASN DDoS, regulated stacks; pricing PDFs = internal until quoting approves.
+  - **Managed Security:** We offer FortiGate managed edge firewalls and a broader Managed Network Security (MNS) umbrella that includes SIEM, assessments, and email security.
+  - **DDoS Protection:** Be clear on the tiers. Proactive offers 24/7 automatic mitigation, while On-Demand is limited to weekday business hours.
+  - **SD-WAN:** Powered by VeloCloud for multi-site deployments (requiring at least one site on GPC fiber). Advanced firewall features are optional and must be explicitly quoted.
+  - **Engineering Handoffs:** Bring in an SE early for high availability setups, BGP routing, or highly regulated security environments.
 
 knowledge_checks:
   - question: "How does DDoS Protection proactive differ from on-demand for mitigation windows?"

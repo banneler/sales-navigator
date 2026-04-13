@@ -7,10 +7,10 @@ reference_files:
   - label: "Sales Resources (product collateral)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 five_minute_summary: |
-  - **SIA** = shared, cost-flexible; **DIA** = dedicated, symmetrical, stronger ops/DDoS—use comparison sheet for numbers.
-  - **Ethernet** = private L2 site-to-site (E-Line/E-LAN); **Wave** = L1 optical hub/DC pipes—not Internet access.
-  - **Competitive:** fiber vs satellite on reliability/latency/weather; discovery first.
-  - Training PDFs = **internal** until quoting approves customer numbers.
+  - **Internet Access:** Use SIA for flexible, cost-sensitive shared access. Lead with DIA when the customer needs dedicated symmetrical bandwidth, SLA-grade operations, or stronger DDoS protection.
+  - **Private Transport:** Position Managed Ethernet for private Layer 2 site-to-site connectivity. Use Wave for high-capacity Layer 1 optical transport between data centers or hubs.
+  - **Fiber vs. Satellite:** When competing against satellite, focus discovery on reliability, latency, and weather vulnerabilities.
+  - **Pricing:** Treat training PDFs as internal references. Always use official quoting tools for customer-facing numbers.
 
 knowledge_checks:
   - question: "When should you lead with Dedicated Internet Access (DIA) over Standard Internet Access (SIA)?"

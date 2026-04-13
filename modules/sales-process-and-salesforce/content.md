@@ -7,10 +7,10 @@ reference_files:
   - label: "Sales Resources (enablement hub)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 five_minute_summary: |
-  - **Convert Lead** when ready to quote—usually creates account, contact, **new opportunity** (exceptions: manager/admin).
-  - Stages: discovery → GPC Solution / CPQ → approvals → contract; **Closed/Won** → projects per site; **never delete** Closed/Lost history.
-  - Hygiene: Tasks, pinned views, clean contacts, Home dashboards; **Universal Search** for fast lookup.
-  - **Contract Signer** on GPC Solution **early**; **Send to DocuSign** after Conga; signers = **Contacts** on the account.
+  - **Lead Conversion:** Convert leads only when they are ready for a quote. This should default to creating a new opportunity, account, and contact.
+  - **Pipeline Management:** Keep stages accurate to the buying process. Never delete Closed/Lost opportunities, as that history is critical for forecasting and analysis.
+  - **DocuSign Workflows:** Set the Contract Signer early on the GPC Solution. Ensure all signers exist as Contacts in Salesforce before sending the envelope.
+  - **Data Hygiene:** Keep your pipeline clean by logging tasks, maintaining accurate close dates, and using the Salesforce Home dashboards to track follow-ups.
 
 knowledge_checks:
   - question: "When converting a lead in normal circumstances, what should you almost always do?"

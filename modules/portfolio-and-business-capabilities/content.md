@@ -7,10 +7,10 @@ reference_files:
   - label: "Sales Resources (collateral hub)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 five_minute_summary: |
-  - **Open:** outcomes + partner (local + monitoring + Midwest IP)—not SKU dumps.
-  - **Stack:** access → WAN → security → UC / Cloud Connect / Wi‑Fi / video = one system.
-  - **Proof:** capability deck for narrative; **Sales Resources** for per-product evidence.
-  - **Discovery:** sites, critical apps, uptime, cloud/voice moves—then one-sentence fit.
+  - **The Opening:** Focus on business outcomes and partnership (local support, proactive monitoring, Midwest presence) rather than dumping a list of SKUs.
+  - **The GPC Stack:** Position our services as one cohesive system, layering access, WAN, security, and unified communications.
+  - **Providing Proof:** Use the capability deck to tell the high-level narrative, and lean on Sales Resources for specific product evidence.
+  - **Running Discovery:** Uncover site counts, critical applications, uptime requirements, and cloud migrations before pitching a specific fit.
 knowledge_checks:
   - question: "What is the best opening for a portfolio conversation?"
     options:

@@ -4,10 +4,10 @@ title: "Sales Rules of Engagement"
 summary: "Salesforce as system of record: search-before-create, 61/121 idle windows (general accounts), 5-day assigned inbound clock, Strategic/E‑Rate rules, transfers via leadership."
 sensitivity: "public"
 five_minute_summary: |
-  - Search before creating accounts/contacts; SF is the system of record.
-  - General: Prospect **61+** / Customer **121+** days idle → others may work; Strategic & E‑Rate/USAC differ.
-  - **Assigned inbound:** first contact + Salesforce log within **5 business days** (not the self-sourced clock).
-  - Transfers: align with owner → manager + sales leadership **in writing**—never reassign alone.
+  - **Search Before Creating:** Salesforce is the system of record. Always search for existing accounts and contacts before creating new ones to prevent duplicates.
+  - **Idle Windows:** Prospect accounts open up after 61 days of no logged activity, while Customer accounts open after 121 days. Strategic and E-Rate accounts have strict exceptions.
+  - **Assigned Inbound Leads:** You must make first contact and log it in Salesforce within 5 business days. This is non-negotiable.
+  - **Account Transfers:** Never reassign an account unilaterally. Align with the current owner first, then secure written approval from sales leadership.
 
 knowledge_checks:
   - question: "Before creating a new account or contact in Salesforce, what should you do first?"
