@@ -27,7 +27,7 @@ export function bindRoleplayInteractions(container) {
     const bubble = document.createElement('div');
     bubble.className = `max-w-[85%] rounded-2xl px-4 py-2.5 text-sm ${
       role === 'user' 
-        ? 'bg-indigo-600 text-white rounded-br-none' 
+        ? 'bg-orange-500 text-white rounded-br-none shadow-sm' 
         : 'bg-white border border-slate-200 text-slate-800 rounded-bl-none shadow-sm'
     }`;
     bubble.innerHTML = escapeHtml(text).replace(/\n/g, '<br>');
