@@ -67,16 +67,20 @@ export function bindRoleplayInteractions(container) {
       bubble.innerHTML = '';
       bubble.classList.remove('animate-pulse');
 
+      let buffer = '';
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
         
-        const chunk = decoder.decode(value);
-        const lines = chunk.split('\n').filter(line => line.trim() !== '');
+        buffer += decoder.decode(value, { stream: true });
         
-        for (const line of lines) {
+        let boundary = buffer.indexOf('\n');
+        while (boundary !== -1) {
+          const line = buffer.slice(0, boundary).trim();
+          buffer = buffer.slice(boundary + 1);
+          
           if (line.startsWith('data: ')) {
-            const data = line.slice(6);
+            const data = line.slice(6).trim();
             if (data === '[DONE]') continue;
             
             try {
@@ -86,9 +90,11 @@ export function bindRoleplayInteractions(container) {
               bubble.innerHTML = escapeHtml(aiText).replace(/\n/g, '<br>');
               chatArea.scrollTop = chatArea.scrollHeight;
             } catch (e) {
-              console.error('Error parsing stream chunk', e);
+              console.error('Error parsing stream chunk', e, data);
             }
           }
+          
+          boundary = buffer.indexOf('\n');
         }
       }
 
