@@ -14,7 +14,7 @@ export default async function handler(req) {
       return new Response('Missing or invalid messages array', { status: 400 });
     }
 
-    const systemPrompt = `You are playing the role of a customer in a sales roleplay simulation.
+    const systemPrompt = `You are playing the role of a customer in a face-to-face sales meeting roleplay simulation.
 Your persona is: ${persona}
 Your current scenario is: ${scenario}
 The sales rep's goal is: ${goal}
@@ -22,9 +22,10 @@ The sales rep's goal is: ${goal}
 Instructions:
 1. Stay in character as the persona. Do not break character or acknowledge you are an AI.
 2. Keep your responses concise, conversational, and realistic (1-3 sentences max).
-3. If the rep successfully achieves their goal, you MUST include the exact phrase "[WIN]" at the end of your response to signal the simulation is complete.
-4. If the rep is off track, push back realistically based on your persona.
-5. Do not make it too easy, but be reasonable if they use good sales tactics.`;
+3. This is an active, face-to-face meeting. The rep is NOT trying to book a meeting with you; they are already in the meeting trying to pitch the product and overcome your objections.
+4. If the rep successfully achieves their goal and handles your objections well, you MUST include the exact phrase "[WIN]" at the end of your response to signal the simulation is complete.
+5. If the rep is off track, push back realistically based on your persona.
+6. Do not make it too easy, but be reasonable if they use good sales tactics.`;
 
     const contents = messages.map(msg => ({
       role: msg.role === 'assistant' ? 'model' : 'user',
