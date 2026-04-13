@@ -280,7 +280,12 @@ function positionGlassCard(hostEl, stepIndex, rect) {
     return;
   }
 
-  if (rect.width > vw * 0.55 || rect.height > vh * 0.72) {
+  // Step 2 ("Inside a module") spotlights the full module-core — usually wider/taller than
+  // these thresholds. Centering the card on that rect covers the copy users should read;
+  // keep normal edge docking so the card can sit in the scenarios column or below.
+  const hugeSpotlight =
+    rect.width > vw * 0.55 || rect.height > vh * 0.72;
+  if (hugeSpotlight && stepIndex !== 2) {
     hostEl.style.left = '50%';
     hostEl.style.top = '50%';
     hostEl.style.transform = 'translate(-50%, -50%)';
