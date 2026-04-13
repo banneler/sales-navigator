@@ -125,6 +125,14 @@ scenarios:
 
 **Read more:** Converting Leads ref, **Salesforce 101**—**Sales Resources** / GPCU.
 
+::: accordion Lead Conversion Quick Reference
+Converting a lead creates the account, contact, and opportunity in one step.
+
+![Lead conversion](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/converting-leads-to-an-opportunity-quick-reference-guide-1123/images/converting-leads-to-an-opportunity-quick-reference-guide-1123-p2-img0.png)
+
+![Opportunities view](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/salesforce-101-manual-0422/images/salesforce-101-manual-0422-p7-img0.png)
+:::
+
 ---
 
 ## Discovery (quick)
@@ -141,6 +149,14 @@ Customer/scope, pain/success, decision process, commercial, competition, **next 
 
 **GPC Solution:** Sites/lines complete before approval; **Contract Signer early**; **DocuSign** recipients = **Contacts**; Conga → Send to DocuSign when process allows—not a substitute for approvals/Legal.
 
+::: accordion Salesforce Home & Dashboards
+Use the Salesforce Home page and dashboards to keep your pipeline and follow-ups current.
+
+![Salesforce Home](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/salesforce-101-manual-0422/images/salesforce-101-manual-0422-p3-img1.png)
+
+![Dashboards](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/dashboards-quick-reference-guide-sales-0224/images/dashboards-quick-reference-guide-sales-0224-p1-img0.png)
+:::
+
 ---
 
 ## DocuSign from Salesforce
@@ -148,6 +164,12 @@ Customer/scope, pain/success, decision process, commercial, competition, **next 
 Set **Contract Signer** early (**not** in **Approval Pending**). Conga → **Send to DocuSign**; recipients = Contacts; first-time DocuSign auth may be required. **Terms** changes → Legal.
 
 **Read:** Salesforce & DocuSign Integration—**Sales Resources** / GPCU.
+
+::: accordion DocuSign Integration Reference
+Setting up Contract Signer and sending envelopes from Salesforce via Conga.
+
+![DocuSign integration](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/salesforce-docusign-integration-training-guide-0623/images/salesforce-docusign-integration-training-guide-0623-p4-img0.png)
+:::
 
 ---
 

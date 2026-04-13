@@ -135,6 +135,14 @@ Work from the **GPC Solution** → **Approval History** → Approve / Reject / R
 
 **Stalls:** Check **Approval History** for step/assignee; escalate via Sales Management or SF team—don’t guess in side channels.
 
+::: accordion Approval Flow & History
+How approvals route through the GPC Solution and where to find Approval History.
+
+![Approval flow](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/approval-overview-and-training-guide-0725/images/approval-overview-and-training-guide-0725-p5-img0.png)
+
+![Approval history](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/approval-overview-and-training-guide-0725/images/approval-overview-and-training-guide-0725-p8-img0.png)
+:::
+
 ---
 
 ## Change orders (narrow definition)
@@ -147,6 +155,12 @@ Work from the **GPC Solution** → **Approval History** → Approve / Reject / R
 
 **After submit:** SF Admin **booking adjustment**; PMO **project**; CRC **billing**. If site stage is **Pending Billing** or **7–10 Day Order**, Admin may need **PMO/CRC** approval before booking change—**not** instant.
 
+::: accordion Change Order Process
+Pre-billing change order workflow — from Conga template through SF Admin booking adjustment.
+
+![Change order process](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/change-order-process-sales-team-0325/images/change-order-process-sales-team-0325-p1-img0.png)
+:::
+
 ---
 
 ## Costing routing
@@ -156,6 +170,12 @@ Work from the **GPC Solution** → **Approval History** → Approve / Reject / R
 **Rules of thumb:** Zone Parent → sites may bypass automation; **Reusable** not allowed with Zone Parent. **New + Existing** on one site → **New** path. **Multiple services** → **deepest review** path. **Reusable** / **OSP** matrices → see **Costing Routing** PDF.
 
 **Edge cases:** Business Customer Care (moves, New vs Existing); Network/OSP if matrices look wrong vs site facts.
+
+::: accordion Costing Routing Reference
+How costing routing selects review paths based on site type, services, and products.
+
+![Costing routing](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-3/costing-routing-quick-reference-guide-1123/images/costing-routing-quick-reference-guide-1123-p2-img0.png)
+:::
 
 ---
 

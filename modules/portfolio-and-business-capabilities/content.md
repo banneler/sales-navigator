@@ -109,6 +109,12 @@ scenarios:
 - **Hooks:** uptime/cloud → backup, SD‑WAN, security, Cloud Connect; voice → UC after transport/security land.
 - **Deck:** Business Capability + **Sales Resources**.
 
+::: accordion Business Capability Overview
+Cover slide from the GPC Business Capability presentation—use as the opening visual when framing outcomes and partnership.
+
+![Business Capability cover](Proposal_Assets/training/from-pdfs/business-capability-presentation/images/business-capability-presentation-p1-img1.png)
+:::
+
 ## Portfolio map (layers)
 
 | Layer | What | Position / hook |
@@ -120,11 +126,25 @@ scenarios:
 
 **Practice line:** any deal = **access + path + policy + apps** mapped to sites/workloads.
 
+::: accordion Portfolio Stack Layers
+Visual breakdown of the layered portfolio—access through applications—from the capability deck.
+
+![Portfolio layer 1](Proposal_Assets/training/from-pdfs/business-capability-presentation/images/business-capability-presentation-p2-img0.png)
+
+![Portfolio layer 2](Proposal_Assets/training/from-pdfs/business-capability-presentation/images/business-capability-presentation-p2-img1.png)
+:::
+
 ## Conversation flow (short)
 
 - **Discovery:** sites, critical apps, uptime, cloud/voice moves, owners (network/security/voice).
 - **Order:** one-sentence fit → layered map → capability deck + **Sales Resources**.
 - **Checkpoints:** footprint → apps → RTO/RPO → ownership.
+
+::: accordion Network Story & Proof Points
+Midwest IP, fiber-first access, and Tier-1/IX relationships—anchor the "why GPC" conversation with this network narrative slide.
+
+![Network story](Proposal_Assets/training/from-pdfs/business-capability-presentation/images/business-capability-presentation-p3-img1.jpeg)
+:::
 
 ## What to read next
 

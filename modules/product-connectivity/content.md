@@ -130,11 +130,19 @@ scenarios:
 
 **Collateral:** DIA/SIA/Ethernet/Wave sheets—**Sales Resources**.
 
+::: accordion Ethernet Battle Card
+![Ethernet battle card overview](Proposal_Assets/training/from-pdfs/ethernet-battle-card-final/images/ethernet-battle-card-final-p2-img0.png)
+:::
+
 ---
 
 ## DIA vs SIA
 
 Use the **comparison sheet** for scale, IPs, DDoS, latency, support—**SIA ~2 Gbps** vs **DIA to 100 Gbps** symmetrical in that doc.
+
+::: accordion DIA vs SIA Comparison
+![DIA vs SIA comparison](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/internet/dia-vs-sia-comparison-110424/images/dia-vs-sia-comparison-110424-p1-img0.png)
+:::
 
 ---
 
@@ -143,6 +151,12 @@ Use the **comparison sheet** for scale, IPs, DDoS, latency, support—**SIA ~2 G
 Acknowledge satellite constraints (weather, latency, jitter). Contrast **fiber**: reliability, stable latency, symmetrical enterprise paths, local + NOC support. No trash talk—**validated design**.
 
 **Collateral:** fiber vs Starlink / Ethernet battle cards—**Sales Resources**.
+
+::: accordion Fiber vs Starlink Battlecard
+![Fiber vs Starlink — page 1](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/fiber-delivery/fiber-vs-starlink-battlecard/images/fiber-vs-starlink-battlecard-p1-img0.png)
+
+![Fiber vs Starlink — page 2](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/fiber-delivery/fiber-vs-starlink-battlecard/images/fiber-vs-starlink-battlecard-p2-img0.png)
+:::
 
 ---
 

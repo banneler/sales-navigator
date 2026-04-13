@@ -139,6 +139,12 @@ scenarios:
 
 **Disengage / pause** — bad-faith trash talk; unapproved stats; pure price auction with zero fit; design past your lane without experts; unethical asks.
 
+::: accordion M&A / Cox Acquisition Battle Card
+Reference for positioning against acquisition-driven competitors—stability, service continuity, and factual comparison points.
+
+![Cox acquisition battle card](Proposal_Assets/training/from-pdfs/cox-acquisition-battle-card-v2/images/cox-acquisition-battle-card-v2-p1-img0.png)
+:::
+
 ---
 
 ## Playbooks (compressed)
@@ -147,12 +153,27 @@ scenarios:
 | --- | --- |
 | **Metro / local** | Install quality, support model, redundancy, owned vs leased, rate stability—not price alone |
 | **Fiber vs LEO** | Weather, jitter, congestion; fiber = predictable latency, symmetrical enterprise paths, pro install + support |
+
+::: accordion Fiber vs LEO Satellite Battle Card
+Side-by-side comparison of fiber vs Starlink/LEO—latency, weather risk, SLAs, and enterprise support.
+
+![Fiber vs Starlink overview](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/fiber-delivery/fiber-vs-starlink-battlecard/images/fiber-vs-starlink-battlecard-p1-img0.png)
+
+![Fiber vs Starlink detail](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/fiber-delivery/fiber-vs-starlink-battlecard/images/fiber-vs-starlink-battlecard-p2-img0.png)
+:::
+
 | **M&A / churn** | Stability, billing, field response—factual; GPC continuity themes |
 | **Tech cards (SD-WAN pattern)** | Profile → pain → GPC wrap → qualifying Qs → proof; verify awards; SE validates design |
 
 **Qualifying lines (samples):** who answers at 2 a.m.? which apps break first if upload/latency fails? TCO of an hour down vs MRC savings?
 
 **Collateral:** battle cards—**Sales Resources** (links in front matter).
+
+::: accordion Ethernet Competitive Battle Card
+Key differentiators for Ethernet positioning—use alongside the tech-card pattern when qualifying multi-site WAN opportunities.
+
+![Ethernet battle card](Proposal_Assets/training/from-pdfs/ethernet-battle-card-final/images/ethernet-battle-card-final-p2-img0.png)
+:::
 
 ---
 

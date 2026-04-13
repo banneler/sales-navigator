@@ -126,9 +126,17 @@ scenarios:
 
 **Position:** one platform—voice, messaging, SMS/MMS, HD meetings + AI recap, optional CC, files.**Plans:** Essential/Pro vs **Unite Enterprise** (brochure: up to **200 GB**/user Enterprise; lower **50 / 5 GB**).**Trust:** **Triple Guard Security™**.**Archiving:** **30-day** free baseline; longer = stepped—**confirm tier** before quoting years.**Discovery:** how they communicate today; compliance; file backup.**Competitive:** workflow vs meetings-only; local support; **99.999%** → minutes/year.**Handoff:** AE/UC for sizing, mixed plans, long retention, CC.**Collateral:** brochure + battle card—**Sales Resources**.
 
+::: accordion UC Platform Brochure
+![UC brochure overview](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/unified-communications/uc-brochure-abbreviated-041026/images/uc-brochure-abbreviated-041026-p1-img0.png)
+:::
+
 ## Teams attach
 
 **Position:** Teams = hub; GPC **cloud PBX** from Teams dialer.**Licensing:** **Teams + Phone System purchased separately**—align early.**Discovery:** Teams adoption; Phone vs bridged PBX; hunt/queues; presence.**Handoff:** UC/Teams architects—coexistence, porting, Phone System.**Collateral:** UC for Teams—**Sales Resources**.
+
+::: accordion UC for Teams Datasheet
+![UC for Teams datasheet](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/unified-communications/uc-for-teams/uc-for-teams-datasheet-100325/images/uc-for-teams-datasheet-100325-p1-img0.jpeg)
+:::
 
 ## Contact Center
 
@@ -137,6 +145,10 @@ scenarios:
 ## Voice (non-UC)
 
 **SIP:** PBX → GPC → PSTN; **managed eSBC** when needed.**PRI:** digital trunks—larger sites.**POTS:** legacy/specialty (alarm, fax) where TDM still fits.**Discovery:** PBX type, paths, growth, specialty lines.**Handoff:** voice engineering—eSBC, cutover.**Collateral:** voice sheet—**Sales Resources**.
+
+::: accordion Phone Comparison
+![UC phone comparison sheet](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/unified-communications/uc-phone-comparison-sheet/images/uc-phone-comparison-sheet-p1-img0.jpeg)
+:::
 
 ## Pricing (internal) [deep]
 

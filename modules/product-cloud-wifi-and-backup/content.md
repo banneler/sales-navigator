@@ -126,13 +126,29 @@ scenarios:
 
 **Position:** **Cloud Connect** + **Managed Ethernet** on-ramp → predictable paths to AWS/Azure/Google/etc. and SaaS vs Internet-only.**Discovery:** which clouds/SaaS critical now + 12–24 mo; how they reach today; pain (latency, jitter, capacity); multi-region; owners.**Proof:** direct private path; sheet cites e.g. **up to 10 Gbps**, metros (Omaha, Chicago, Denver).**Caution:** SE for XC, diversity, security scope.**Collateral:** Cloud Connect sheet + battle card—**Sales Resources**.
 
+::: accordion Cloud Connect Battle Card
+![Cloud Connect battle card](Proposal_Assets/training/from-pdfs/gpc-cloud-connect-battle-card-050321/images/gpc-cloud-connect-battle-card-050321-p2-img0.png)
+:::
+
 ## Wi‑Fi
 
 **Position:** managed lifecycle—design/install/maintain; **guest vs corporate** SSIDs; stack with firewall/IDS/IPS.**Discovery:** sites, indoor/outdoor, peak devices, compliance, app mix, who runs Wi‑Fi today.**Proof:** engineering-sized density; firewall + IDS/IPS + SSIDs; analytics/branded portal where needed.**Caution:** **no AP counts** until survey.**Collateral:** Managed Wi‑Fi—**Sales Resources**.
 
+::: accordion Managed Wi-Fi Collateral
+![Managed Wi-Fi datasheet](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026-1/managed-wi-fi/managed-wi-fi-datasheet-070725/images/managed-wi-fi-datasheet-070725-p1-img0.jpeg)
+
+![Managed Wi-Fi battle card](Proposal_Assets/training/from-pdfs/gpc-managed-wifi-battle-card/images/gpc-managed-wifi-battle-card-p2-img0.png)
+:::
+
 ## Backup
 
 **Position:** **5G wireless backup**—auto failover/fail-back, app prioritize, **24/7 NOC**, optional **battery** (~8h per collateral—confirm SKU).**Discovery:** last outage; apps that must survive; RTO; alerting; site constraints; set **5G variability** + tier/deprioritization expectations early.**Proof:** failover/fail-back, NOC; speeds **location-dependent** (e.g. up to 100 Mbps+ cited).**Collateral:** 5G backup sheet + battle card—**Sales Resources**.
+
+::: accordion 5G Wireless Internet Backup
+![5G backup product launch](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026/wireless-internet-backup/gpc-wireless-internet-5g-product-launch/images/gpc-wireless-internet-5g-product-launch-p1-img1.jpeg)
+
+![5G backup features](Proposal_Assets/training/from-pdfs/extracted/onedrive-1-4-10-2026/wireless-internet-backup/gpc-wireless-internet-5g-product-launch/images/gpc-wireless-internet-5g-product-launch-p8-img1.jpeg)
+:::
 
 ## Bundling (one-liners)
 
