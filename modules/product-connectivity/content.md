@@ -43,7 +43,7 @@ knowledge_checks:
       - "In the comparison, SIA tops out around 2 Gbps symmetrical while DIA scales up to 100 Gbps symmetrical—use that to frame scale and growth."
       - "SIA always includes richer customer-specific DDoS monitoring than DIA."
     correct_index: 1
-    explanation: "Use the comparison sheet—don’t assume."
+    explanation: "Use the comparison sheet—don't assume."
 
   - question: "How should you use training PDFs that live in the pricing or internal folders?"
     options:
@@ -61,7 +61,7 @@ knowledge_checks:
     correct_index: 1
     explanation: "Qualify constraints; stay professional."
 
-  - question: "What problem does E-LAN (Ethernet LAN) address in the module’s framing?"
+  - question: "What problem does E-LAN (Ethernet LAN) address in the module's framing?"
     options:
       - "Single home-user email only."
       - "Multipoint-to-multipoint Layer 2 reach so multiple UNIs can mesh—any site to any site within the service."
@@ -94,7 +94,7 @@ knowledge_checks:
     explanation: "Not default Internet uplift."
 
 scenarios:
-  - title: "Branch complains about VPN and video over ‘business broadband’"
+  - title: "Branch complains about VPN and video over 'business broadband'"
     situation: |
       Shared Internet; **jitter and upload** pain for VoIP/cloud. Budget tight.
     choices:
@@ -113,59 +113,79 @@ scenarios:
 
       - label: "Explore weather, latency, congestion; position fiber reliability and symmetrical paths."
         feedback: "Correct."
+
+roleplay:
+  persona: "Skeptical IT Director"
+  scenario: "Complaining about VPN jitter over shared broadband at three branch locations. Wants the cheapest fix and assumes upgrading bandwidth on the same SIA circuit will solve it."
+  goal: "Pivot from price to reliability—qualify the symmetry and latency requirements for VoIP and cloud apps, then position DIA or Managed Ethernet as the right solution rather than simply more shared bandwidth."
 ---
 
-## Access stack
+## Elevator Pitch
+
+GPC's connectivity stack matches the right access technology to each customer's workload—not just the cheapest pipe available. **SIA** (Standard Internet Access) is the right fit for cost-sensitive, flexible needs. **DIA** (Dedicated Internet Access) delivers symmetrical bandwidth, stronger DDoS posture, and SLA-grade operations for businesses that can't afford jitter or downtime. **Managed Ethernet** provides private Layer 2 connectivity between sites. **Wave** moves large optical volumes between data centers and hubs. Discovery first—then quote the right product.
+
+---
+
+## Discovery Questions
+
+1. **What are your most critical applications—VoIP, cloud ERP, video conferencing, payment terminals? How much upload traffic do they generate compared to download?**
+2. **How are your locations connected today—shared broadband, MPLS, Ethernet, or SD-WAN? When does that contract expire?**
+3. **Have you experienced jitter, latency spikes, or outages? What broke first, and what did it cost you?**
+4. **Do you need static IPs, diversity (dual-path), or DDoS monitoring as part of your access design?**
+5. **Are any sites data-center or hub locations where high-capacity optical transport between strategic endpoints might be relevant?**
+
+---
+
+## Objection Handling
+
+| Objection | Pivot |
+| --- | --- |
+| **"Just bump up our shared Internet—that'll fix the jitter."** | More shared bandwidth doesn't guarantee upload symmetry or latency. Qualify what's actually causing jitter—often it's the shared nature, not raw capacity. DIA is the right answer for VoIP and cloud workloads. |
+| **"DIA is too expensive."** | Frame TCO: what does an hour of dropped VoIP calls, failed payment processing, or inaccessible cloud ERP cost? DIA delivers dedicated symmetry and a stronger ops posture. |
+| **"Starlink is cheaper for our rural stores."** | Acknowledge coverage; then qualify: does payment processing or VoIP tolerate 20–40ms variable latency, weather disruptions, or congestion during peak hours? Fiber delivers predictable, stable paths. |
+| **"We already have MPLS—why change?"** | Ask when the contract expires and what it costs vs. throughput. SD-WAN over DIA often delivers better performance at lower cost with cloud breakout capability. |
+| **"I don't understand the difference between Ethernet and DIA."** | DIA = your Internet connection to the world. Ethernet = private Layer 2 pipe between your own sites. They solve different problems and often work together. |
+
+---
+
+## Technical Deep Dive [deep]
+
+**Access stack:**
 
 | Layer | Role |
 | --- | --- |
-| **SIA** | Shared, flexible, cost-sensitive |
-| **DIA** | Dedicated, symmetrical, stronger DDoS/NOC posture |
-| **Ethernet** | Private L2 (E-Line/EVPL/E-LAN) |
-| **Wave** | L1 optical DC/hub links—not “more Internet” |
+| **SIA** | Shared, flexible, cost-sensitive; up to ~2 Gbps symmetrical per comparison sheet |
+| **DIA** | Dedicated, symmetrical; up to 100 Gbps symmetrical; stronger DDoS/NOC posture |
+| **Ethernet** | Private L2 (E-Line/EVPL/E-LAN); site-to-site—not Internet breakout |
+| **Wave** | L1 optical DC/hub links—not "more Internet"; qualify vs Internet |
 
-**When to lead:** **SIA** = budget + tolerable shared path.**DIA** = symmetry, SLA-ish ops, diversity, VoIP/video pain on shared access.**Ethernet** = site-to-site private.**Wave** = big optical P2P when discovery proves it—not branch Wi‑Fi default.
+**When to lead:**
+- **SIA** = budget + tolerable shared path
+- **DIA** = symmetry, SLA-ish ops, diversity, VoIP/video pain on shared access
+- **Ethernet** = site-to-site private
+- **Wave** = big optical P2P when discovery proves it—not branch Wi‑Fi default
 
-**Discovery (short):** critical apps; upload vs download; static IPs / diversity; incumbent access; outages.
+**DIA pricing reference (from SD-WAN training doc—internal only):**
+- 50×50 Mbps DIA: ~$354/mo list
+- 100×100 Mbps DIA: ~$547/mo list
+- 500×500 Mbps DIA: ~$860/mo list
+- 1000×1000 Mbps DIA: ~$1,060/mo list
+- Customer-facing quotes: use standard quoting tools only
 
-**Collateral:** DIA/SIA/Ethernet/Wave sheets—**Sales Resources**.
+**Discovery:** critical apps; upload vs download; static IPs / diversity; incumbent access; outages.
 
-::: accordion Ethernet Battle Card
-*Collateral image — coming soon*
-:::
-
----
-
-## DIA vs SIA
-
-Use the **comparison sheet** for scale, IPs, DDoS, latency, support—**SIA ~2 Gbps** vs **DIA to 100 Gbps** symmetrical in that doc.
+**Pricing:** Quotes = standard tools + approvals. DIA/SIA/Ethernet/Wave pricing via quoting + Sales Resources—involve AE/pricing when scope is fuzzy.
 
 ::: accordion DIA vs SIA Comparison
 *Collateral image — coming soon*
 :::
 
----
-
-## Competitive (fiber vs satellite)
-
-Acknowledge satellite constraints (weather, latency, jitter). Contrast **fiber**: reliability, stable latency, symmetrical enterprise paths, local + NOC support. No trash talk—**validated design**.
-
-**Collateral:** fiber vs Starlink / Ethernet battle cards—**Sales Resources**.
+::: accordion Ethernet Battle Card
+*Collateral image — coming soon*
+:::
 
 ::: accordion Fiber vs Starlink Battlecard
 *Collateral image — coming soon*
 
 *Collateral image — coming soon*
 :::
-
----
-
-## Pricing & nuance [deep]
-
-Quotes = **standard tools + approvals**. DIA/SIA/Ethernet/Wave pricing via **quoting** + **Sales Resources**—involve AE/pricing when scope is fuzzy.
-
----
-
-## Media (optional) [deep]
-
-*Guidde:* bandwidth qualification or quoting handoff.

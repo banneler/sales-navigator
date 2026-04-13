@@ -1,5 +1,13 @@
 # Module authoring (`content.md`)
 
+## Standardized Module Structure (Micro-Learning)
+To ensure all modules focus purely on sales execution, follow this strict structure for the main content body (after the YAML frontmatter):
+
+1. **Elevator Pitch:** A concise, punchy summary of the product/solution and its core value proposition.
+2. **Discovery Questions:** 3-5 high-impact questions to ask the customer to uncover pain points and qualify the opportunity.
+3. **Objection Handling:** Common customer pushbacks and how to pivot or reframe the conversation.
+4. **Technical Deep Dive `[deep]`:** All technical specifications, speeds, feeds, and granular details must be placed in a collapsed `[deep]` section or an accordion.
+
 ## Collapsed sections (`[deep]`)
 
 Append **`[deep]`** to an H2 line to render that section **collapsed by default** (expand to read). Use for long policy, internal pricing notes, or anything that shouldn’t block a quick read.

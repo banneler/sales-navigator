@@ -51,7 +51,7 @@ knowledge_checks:
     options:
       - "Approval History on the GPC Solution record"
       - "Only the Leads tab"
-      - "Only the customer’s email inbox"
+      - "Only the customer's email inbox"
     correct_index: 0
     explanation: "Approval History on the GPC Solution."
 
@@ -90,7 +90,7 @@ knowledge_checks:
   - question: "For change order submissions, which groups are typically in the loop alongside Sales Management when required?"
     options:
       - "PMO, Salesforce Administration, and CRC"
-      - "Only the customer’s legal counsel"
+      - "Only the customer's legal counsel"
       - "Only product marketing"
     correct_index: 0
     explanation: "PMO, SF Admin, CRC for project, booking, billing."
@@ -123,17 +123,70 @@ scenarios:
 
       - label: "Each service is costed in parallel with no consolidation rule."
         feedback: "Incorrect—deepest-review path applies."
+
+roleplay:
+  persona: "New Account Executive, 60 days in"
+  scenario: "A customer signed last month (Closed/Won, billing started). They now want to swap one service for a different product. The AE is about to use the Conga Change Order template from the GPC Solution, thinking that's the right path."
+  goal: "Identify that the correct process after billing has started is MAC (Move-Add-Change)—not the pre-billing change order—and route to the right materials before taking any action in Salesforce."
 ---
 
-## Approvals
+## Elevator Pitch
 
-Work from the **GPC Solution** → **Approval History** → Approve / Reject / Reassign / Recall; add comments. Reviewers judge **site-level** services, products, and quote math, plus record hygiene (Solution Services on sites, products on services, quote line sanity).
+Getting a deal right in Salesforce is as important as winning it. The **approval process** exists to catch errors before orders go to delivery—reviewers check site-level services, products, and quote math. The **change order vs MAC vs disconnect** distinction prevents billing errors, stalled installs, and customer escalations. **Costing routing** ensures the right teams estimate and validate spend. Know which path to use at each stage, and your deals will move cleanly from approval to revenue.
 
-**Who:** Product Management (product rules); Sales Management (judgment, escalation); Salesforce team (routing/workflow bugs). **Not** OBR prep instead of fixing the record.
+---
 
-**Mobile:** Same actions from approval notifications/email links.
+## Discovery Questions
 
-**Stalls:** Check **Approval History** for step/assignee; escalate via Sales Management or SF team—don’t guess in side channels.
+*(For internal use in deal reviews and pre-submission checklists)*
+
+1. **Is the GPC Solution Booked or Billed?** — Determines whether a change order, MAC, or disconnect process applies.
+2. **Does each Solution Site have the correct services and products attached?** — Reviewers validate site-level completeness, not just headline MRC.
+3. **Does the quote math tie out?** — Mismatches between line items and totals stall approvals and delay projects.
+4. **Have all required attachments been uploaded and does each form carry the GPC Solution ID?** — Missing IDs cause booking delays post-approval.
+5. **Is Request Manual Validation checked only when human review is genuinely needed?** — Checking it unnecessarily slows costing routing for every participating department.
+
+---
+
+## Objection Handling
+
+*(Common internal misconceptions and how to correct them)*
+
+| Misconception | Correct Path |
+| --- | --- |
+| **"I'll just submit a change order—the customer wants to adjust services."** | First ask: has billing started? If yes, a change order is not the right tool. Partial in-life changes → MAC; full removal → Disconnect. |
+| **"The approval is stuck—I'll fix it in a side channel with the reviewer."** | Check Approval History for the current step and assignee. Escalate through Sales Management or the SF team—not Slack or email outside the record. |
+| **"I checked Manual Validation to be safe."** | Manual Validation skips automation and routes to every participating department. Only check it when you genuinely need human review—not as a default. |
+| **"OBR is part of the approval process."** | OBR is an account/ops planning cadence—completely separate from GPC Solution approvals and costing routing. Don't substitute one for the other. |
+| **"New and Existing services on the same site will just pick the faster path."** | New + Existing on one site always routes via the New path. Know the rules before building the Solution Site. |
+
+---
+
+## Technical Deep Dive [deep]
+
+**Approval flow:**
+- Work from **GPC Solution → Approval History** → Approve / Reject / Reassign / Recall; add comments
+- Reviewers judge: site-level services, products, quote math, record hygiene (Solution Services on sites, products on services, quote line sanity)
+- Who reviews: Product Management (product rules); Sales Management (judgment, escalation); Salesforce team (routing/workflow bugs)
+- Mobile: same actions available from approval notifications/email links
+- Stalls: check Approval History for step/assignee; escalate via Sales Management or SF team
+
+**Change order (narrow definition):**
+- When: contract change **after Closed/Won** and **before billing starts**; Solution must be Booked, not Billed
+- Not: post-billing partial change → **MAC**; pre-billing full removal → **Cancellation**; post-billing full removal → **Disconnect**
+- Motion: Conga Change Order template from GPC Solution → complete sites/changes → keep GPC Solution ID on forms → signatures → upload → email package to Sales Manager (when required), PMO, SF Administrator, CRC
+- After submit: SF Admin booking adjustment; PMO project; CRC billing
+- Note: if site stage is Pending Billing or 7–10 Day Order, Admin may need PMO/CRC approval before booking change—not instant
+
+**Costing routing rules of thumb:**
+- Zone Parent → sites may bypass automation; Reusable not allowed with Zone Parent
+- New + Existing on one site → **New** path
+- Multiple services on one site → **deepest review** path
+- Reusable / OSP matrices → see Costing Routing PDF
+- Request Manual Validation = skip automation → every participating department reviews manually
+
+**Pre-submission checklist:**
+Right object, real sites/services/products, quote math ties, story matches payback/churn context, attachments + GPC Solution IDs on forms, Request Manual Validation only when human review is really needed.
 
 ::: accordion Approval Flow & History
 How approvals route through the GPC Solution and where to find Approval History.
@@ -143,56 +196,14 @@ How approvals route through the GPC Solution and where to find Approval History.
 *Collateral image — coming soon*
 :::
 
----
-
-## Change orders (narrow definition)
-
-**When:** Contract change **after Closed/Won** and **before billing starts**. Solution must be **Booked**, **not Billed**.
-
-**Not:** Post-billing partial change → **MAC**. Pre-billing full removal → **Cancellation**. Post-billing full removal → **Disconnect**.
-
-**Motion:** Conga Change Order template from GPC Solution; complete sites/changes; **keep GPC Solution ID** on forms; signatures → upload → email package to Sales Manager (when required), **PMO**, **SF Administrator**, **CRC**.
-
-**After submit:** SF Admin **booking adjustment**; PMO **project**; CRC **billing**. If site stage is **Pending Billing** or **7–10 Day Order**, Admin may need **PMO/CRC** approval before booking change—**not** instant.
-
 ::: accordion Change Order Process
 Pre-billing change order workflow — from Conga template through SF Admin booking adjustment.
 
 *Collateral image — coming soon*
 :::
 
----
-
-## Costing routing
-
-**Costing Routing** picks which orgs **estimate** or **validate** spend per **Solution Site** (site type, services, products, automation). **Request Manual Validation** = **skip automation** → each participating department reviews.
-
-**Rules of thumb:** Zone Parent → sites may bypass automation; **Reusable** not allowed with Zone Parent. **New + Existing** on one site → **New** path. **Multiple services** → **deepest review** path. **Reusable** / **OSP** matrices → see **Costing Routing** PDF.
-
-**Edge cases:** Business Customer Care (moves, New vs Existing); Network/OSP if matrices look wrong vs site facts.
-
 ::: accordion Costing Routing Reference
 How costing routing selects review paths based on site type, services, and products.
 
 *Collateral image — coming soon*
 :::
-
----
-
-## OBR & partner pointers
-
-**OBR:** Operational readiness / account planning with ops—**not** a substitute for GPC Solution approvals or costing.
-
-**Partner / MAC / disconnect / customer move:** Use **Partner Referral** quick ref, **MAC** vs **Disconnect** PDFs, **Customer Move** training—**Sales Resources** / PMO—not informal summaries.
-
----
-
-## Checklist before submit [deep]
-
-Right object, real sites/services/products, quote math ties, story matches payback/churn context, attachments + GPC Solution IDs on forms, **Request Manual Validation** only when human review is really needed.
-
----
-
-## Media (optional) [deep]
-
-*Guidde:* Approval History on a sample GPC Solution; Conga change order vs MAC/Disconnect entry points.

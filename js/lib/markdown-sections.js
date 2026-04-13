@@ -8,6 +8,7 @@ import {
   buildModuleReferenceFilesHtml,
   buildScenariosAsideHtml,
   buildKnowledgeChecksCarouselHtml,
+  buildRoleplayHtml,
 } from './module-enrichment.js';
 import { buildHandoutToolbarHtml } from './handout-links.js';
 
@@ -198,6 +199,7 @@ export function renderModuleDocumentHtml(markdownSource) {
   const referenceFilesHtml = buildModuleReferenceFilesHtml(meta);
   const scenariosAsideInner = buildScenariosAsideHtml(meta);
   const knowledgeCarouselHtml = buildKnowledgeChecksCarouselHtml(meta);
+  const roleplayHtml = buildRoleplayHtml(meta);
   const hasRef = Boolean(referenceFilesHtml);
   const hasScenarios = Boolean(scenariosAsideInner);
 
@@ -209,7 +211,8 @@ export function renderModuleDocumentHtml(markdownSource) {
   const mainColumnInner = `
       ${fiveMinHtml}
       <div class="space-y-6 module-deep-dive">${sectionCardsHtml}</div>
-      ${knowledgeCarouselHtml}`;
+      ${knowledgeCarouselHtml}
+      ${roleplayHtml}`;
 
   if (hasRef || hasScenarios) {
     let asideColumnHtml = '';

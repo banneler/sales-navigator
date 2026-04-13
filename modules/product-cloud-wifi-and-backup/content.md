@@ -13,10 +13,10 @@ five_minute_summary: |
   - Proof: datasheets; **.url** training shortcuts (on-network) in extract folder.
 
 knowledge_checks:
-  - question: "What best describes Cloud Connect’s primary value story in discovery?"
+  - question: "What best describes Cloud Connect's primary value story in discovery?"
     options:
       - "A best-effort public Internet link sized for peak cloud usage"
-      - "A direct, private connection into GPC’s cloud ecosystem with Managed Ethernet as the on-ramp"
+      - "A direct, private connection into GPC's cloud ecosystem with Managed Ethernet as the on-ramp"
       - "Customer-owned long-haul fiber to every cloud region"
     correct_index: 1
     explanation: "Private path via Cloud Connect; Ethernet on-ramp—not Internet-only."
@@ -25,9 +25,9 @@ knowledge_checks:
     options:
       - "Promise a standard density from the first call to move the deal"
       - "Defer AP counts and density assumptions to engineering after site survey"
-      - "Match the competitor’s AP count from their proposal"
+      - "Match the competitor's AP count from their proposal"
     correct_index: 1
-    explanation: "Survey + engineering own density—don’t promise counts on call one."
+    explanation: "Survey + engineering own density—don't promise counts on call one."
 
   - question: "For 5G Wireless Internet Backup, what is a fair caution to set with the customer?"
     options:
@@ -40,7 +40,7 @@ knowledge_checks:
   - question: "On Cloud Connect scope, what should you align with a solutions engineer before over-promising?"
     options:
       - "Cross-connect details, diversity, and security expectations"
-      - "Only the customer’s logo colors for slide decks"
+      - "Only the customer's logo colors for slide decks"
       - "Retail gift-card budgets unrelated to transport"
     correct_index: 0
     explanation: "SE aligns XC, diversity, security—not every site needs full exchange day one."
@@ -79,13 +79,13 @@ knowledge_checks:
 
   - question: "Where should sellers look for formal Cloud, Wi‑Fi, and Backup product training shortcuts?"
     options:
-      - "The extracted training folder’s .url shortcuts to hosted pages (on-network)"
+      - "The extracted training folder's .url shortcuts to hosted pages (on-network)"
       - "Random search-engine results updated hourly"
       - "Only unofficial third-party forums"
     correct_index: 0
     explanation: ".url shortcuts when on-network; else Sales Resources / GPCU."
 
-  - question: "Which cloud/SaaS ecosystem framing matches the Cloud section’s positioning?"
+  - question: "Which cloud/SaaS ecosystem framing matches the Cloud section's positioning?"
     options:
       - "Name major providers and multi-region redundancy mindset from a single interconnection strategy"
       - "Assume every workload must use consumer broadband only"
@@ -120,19 +120,68 @@ scenarios:
       - label: "Recommend only redundant fiber and skip wireless backup."
         feedback: "Backup is for fiber failure—pair honesty on 5G."
 
+roleplay:
+  persona: "IT Manager at a healthcare clinic network"
+  scenario: "Had a fiber outage last month that took down patient scheduling and e-prescribing for four hours. Wants a solution but is skeptical of wireless backup speeds and worried about HIPAA data on a cellular network."
+  goal: "Position 5G backup as a managed, automatic failover solution with app prioritization and NOC monitoring—set honest speed/tier expectations while tying reliability to patient care continuity."
 ---
 
-## Cloud
+## Elevator Pitch
 
-**Position:** **Cloud Connect** + **Managed Ethernet** on-ramp → predictable paths to AWS/Azure/Google/etc. and SaaS vs Internet-only.**Discovery:** which clouds/SaaS critical now + 12–24 mo; how they reach today; pain (latency, jitter, capacity); multi-region; owners.**Proof:** direct private path; sheet cites e.g. **up to 10 Gbps**, metros (Omaha, Chicago, Denver).**Caution:** SE for XC, diversity, security scope.**Collateral:** Cloud Connect sheet + battle card—**Sales Resources**.
+Three products that extend the value of GPC fiber access: **Cloud Connect** gives SaaS-heavy and cloud-first businesses a private, predictable path to AWS, Azure, Google, and other platforms—no more Internet-only jitter for critical workloads. **Managed Wi-Fi** covers the last ten feet with a fully managed lifecycle (design, install, maintain), guest/corporate segmentation, and integrated firewall/IDS/IPS. **5G Wireless Backup** keeps the business running during fiber outages with automatic failover, automatic fail-back, 24/7 NOC monitoring, and optional battery protection—no manual intervention required.
+
+---
+
+## Discovery Questions
+
+1. **Which cloud platforms or SaaS apps are most critical to your business—AWS, Azure, O365, Salesforce? How do you reach them today, and where do you feel latency or reliability pain?**
+2. **When your primary Internet circuit went down last—how long were you out, what broke first, and what did that cost the business?**
+3. **Who manages your Wi-Fi today? Do you have separate guest and corporate networks, and are you dealing with any compliance requirements like PCI or HIPAA?**
+4. **How many sites need coverage, and do any have outdoor or high-density requirements that a standard AP count might undersize?**
+5. **Do you have applications—VoIP, payment terminals, patient records—that must stay up even during a fiber outage?**
+
+---
+
+## Objection Handling
+
+| Objection | Pivot |
+| --- | --- |
+| **"5G is fast enough to be my primary Internet."** | Position honestly: wireless is best-effort, not symmetrical, and speeds vary by site. For primary access, fiber is the right answer; 5G backup is the continuity layer. |
+| **"Just tell me how many APs we need."** | A site survey is required before any AP count—density depends on floor plan, device count, use case, and compliance. Promising counts on call one leads to under-engineered installs. |
+| **"We already connect to AWS directly."** | Ask how—public Internet or a private path? Cloud Connect's private Ethernet on-ramp eliminates Internet jitter for latency-sensitive workloads and adds multi-region resilience. |
+| **"We don't want cellular data leaving our building for compliance reasons."** | The Kajeet Sentinel portal filters non-business traffic during failover; GPC NOC monitors and manages the connection. Align specifics with SE and compliance team. |
+| **"5G backup is too expensive for a circuit we almost never use."** | Frame as insurance: the 5G Backup SKU starts at $68/month—compare to the cost of one four-hour outage for payment processing, patient care, or customer service. |
+
+---
+
+## Technical Deep Dive [deep]
+
+**Cloud Connect specs:**
+- Private path to AWS, Azure, Google, and other clouds/SaaS via GPC's cloud ecosystem
+- Managed Ethernet on-ramp; up to 10 Gbps cited in collateral
+- Metro access: Omaha, Chicago, Denver
+- SE alignment required for cross-connect details, diversity, and security scope
+
+**5G Backup pricing & tiers (from product launch collateral):**
+- LTE Wireless Internet Backup: $45 MRC, 1 GB included, $9/GB overage, 2-year minimum term
+- 5G Wireless Internet Backup: $68 MRC, unlimited data, carrier deprioritization applies
+- Wireless Internet Broadband (full-time): $175 MRC, unlimited, best-effort
+- Optional battery backup: up to 8 hours runtime during power failure (NRC TBD)
+- After failover data thresholds: >12 GB/day → up to 50 Mbps; >20 GB/day → up to 25 Mbps; >30 GB/day → up to 3 Mbps
+- Failover time: approximately one minute; automatic fail-back when primary restores
+- Hardware: Cradlepoint X20 5G router; dual SIMs (Verizon + AT&T); best signal auto-selected at install
+- No static IP during wireless failover; static IPs work on landline only
+
+**Managed Wi-Fi:** engineering-sized density post-survey; next-gen firewall, IDS/IPS, multiple SSIDs; analytics/branded portal available.
+
+**Business rules for 5G backup:**
+- Must be sold with new or existing SIA, DIA, or SD-WAN customers
+- Do not sell outside GPC territory (exception: multi-location customers with off-net sites within driving distance—approval required)
+- No SLA guarantees on wireless—all best-effort
 
 ::: accordion Cloud Connect Battle Card
 *Collateral image — coming soon*
 :::
-
-## Wi‑Fi
-
-**Position:** managed lifecycle—design/install/maintain; **guest vs corporate** SSIDs; stack with firewall/IDS/IPS.**Discovery:** sites, indoor/outdoor, peak devices, compliance, app mix, who runs Wi‑Fi today.**Proof:** engineering-sized density; firewall + IDS/IPS + SSIDs; analytics/branded portal where needed.**Caution:** **no AP counts** until survey.**Collateral:** Managed Wi‑Fi—**Sales Resources**.
 
 ::: accordion Managed Wi-Fi Collateral
 *Collateral image — coming soon*
@@ -140,24 +189,8 @@ scenarios:
 *Collateral image — coming soon*
 :::
 
-## Backup
-
-**Position:** **5G wireless backup**—auto failover/fail-back, app prioritize, **24/7 NOC**, optional **battery** (~8h per collateral—confirm SKU).**Discovery:** last outage; apps that must survive; RTO; alerting; site constraints; set **5G variability** + tier/deprioritization expectations early.**Proof:** failover/fail-back, NOC; speeds **location-dependent** (e.g. up to 100 Mbps+ cited).**Collateral:** 5G backup sheet + battle card—**Sales Resources**.
-
 ::: accordion 5G Wireless Internet Backup
 *Collateral image — coming soon*
 
 *Collateral image — coming soon*
 :::
-
-## Bundling (one-liners)
-
-Cloud path + **resilience:** Ethernet/Cloud Connect + 5G backup when last-mile failure kills the business.**Wi‑Fi + security + transport:** segmented SSIDs + IDS/IPS + clean egress.**Rule:** outcomes and owners before quoting counts or SLAs you can’t defend.
-
-## Product training [deep]
-
-**.url** shortcuts in synced extract (on-network); else **Sales Resources** + **GPCU**; ask enablement for playlist.
-
-## Media (optional) [deep]
-
-*Guidde:* failover story or Wi‑Fi survey handoff.

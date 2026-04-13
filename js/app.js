@@ -14,6 +14,7 @@ import { markModuleVisited } from './lib/progress-state.js';
 import { destroyModuleIntroGate } from './components/module-intro-gate.js';
 import { setMainHeaderInternalBadge } from './lib/header-internal-badge.js';
 import { initHandoutPreview } from './lib/handout-links.js';
+import { updateXpDisplays } from './lib/gamification.js';
 
 const MAP_BOOK_MODULE_ID = 'map-book';
 const GETTING_STARTED_ID = 'getting-started';
@@ -29,6 +30,7 @@ async function main() {
     return;
   }
   initHandoutPreview();
+  updateXpDisplays();
 
   const manifest = await res.json();
   const modules = manifest.modules || [];

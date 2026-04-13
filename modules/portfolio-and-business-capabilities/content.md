@@ -33,7 +33,7 @@ knowledge_checks:
       - "Generic web search only."
     correct_index: 1
     explanation: "The module points to the Business Capability deck for the story and the extracted library for per-product evidence."
-  - question: "What proof points anchor the “why GPC” network story?"
+  - question: "What proof points anchor the "why GPC" network story?"
     options:
       - "Fiber-first access, Midwest IP reach, Tier-1 and IX relationships, and paths tuned for cloud/SaaS and end users."
       - "Only the number of years in business, with no network specifics."
@@ -42,7 +42,7 @@ knowledge_checks:
     explanation: "Lead with resilient Midwest foundation, fiber-first access, and efficient routes to cloud and SaaS—not generic longevity claims alone."
   - question: "In discovery, what should you clarify before you summarize fit in one sentence?"
     options:
-      - "Only the customer’s favorite brand of router."
+      - "Only the customer's favorite brand of router."
       - "Locations, critical apps, uptime tolerance, and cloud/voice moves—then reflect the layered stack."
       - "Whether they prefer PDF or Word for internal memos."
     correct_index: 1
@@ -54,7 +54,7 @@ knowledge_checks:
       - "Use only this module and never reference external collateral."
     correct_index: 1
     explanation: "Keep the executive storyline in the capability materials; pull datasheets and vertical proof from the organized extract when needed."
-  - question: "When a CFO asks “Why GPC vs anyone else?” in one sentence, what is a strong response?"
+  - question: "When a CFO asks "Why GPC vs anyone else?" in one sentence, what is a strong response?"
     options:
       - "List fiber miles with no business outcome."
       - "Reliable Midwest foundation, fiber-first access, layered services, and accountable local support—then offer the capability deck."
@@ -74,16 +74,16 @@ knowledge_checks:
       - "They reinforce GPC as a partner—local teams and 24/7 monitoring differentiate from commodity ISP positioning."
       - "They should never be mentioned to avoid setting expectations."
     correct_index: 1
-    explanation: "Partnership and operational accountability are core to moving beyond “just another carrier.”"
+    explanation: "Partnership and operational accountability are core to moving beyond "just another carrier.""
   - question: "What is a practical way to describe any deal using this module?"
     options:
       - "Quote random SKUs until something sticks."
-      - "Map the opportunity to “access + path + policy + apps” against their sites and workloads."
+      - "Map the opportunity to "access + path + policy + apps" against their sites and workloads."
       - "Focus exclusively on a single product name regardless of discovery."
     correct_index: 1
     explanation: "Framing deals across access, path, policy, and apps aligns conversation with the layered portfolio map."
 scenarios:
-  - title: "Retail chain, cloud POS, hates ‘just another ISP’"
+  - title: "Retail chain, cloud POS, hates 'just another ISP'"
     situation: |
       A multi-site retailer wants reliable connectivity and says all carriers sound the same. They care about **uptime**, **local support**, and **paths to cloud POS and SaaS**.
     choices:
@@ -93,21 +93,21 @@ scenarios:
         feedback: "Strong: matches the executive storyline and portfolio map, and sets up discovery on sites and critical workloads."
   - title: "CFO joins the call halfway through"
     situation: |
-      You were walking through services and the CFO asks **“Why GPC vs anyone else?”** in one sentence before they drop off.
+      You were walking through services and the CFO asks **"Why GPC vs anyone else?"** in one sentence before they drop off.
     choices:
       - label: "Answer with fiber miles and technical jargon only."
         feedback: "Incomplete: add the business angle—competitive connectivity through a resilient Midwest network, partnership, and paths tuned for cloud/SaaS."
       - label: "Summarize: reliable Midwest foundation, fiber-first access, layered services, and accountable local support—then offer the capability deck."
         feedback: "Strong: ties network proof points to partnership and gives them a concrete next artifact."
+roleplay:
+  persona: "Skeptical CFO at a mid-size Midwest manufacturer"
+  scenario: "Just sat through two carrier pitches that sounded identical. Asks point-blank why GPC is different before walking out of the room."
+  goal: "Deliver a one-sentence 'why GPC' answer grounded in outcomes and partnership, then anchor the conversation on the layered stack and offer the capability deck as a concrete next step."
 ---
-## Executive storyline
 
-- **Open:** outcomes (uptime, growth, cloud)—not SKU lists.
-- **Partner:** local + monitoring + Midwest IP; fiber-first; Tier‑1/IX paths to cloud/SaaS.
-- **Outcomes:** reliability, predictable performance, one accountable foundation, headroom to grow.
-- **Position:** business problem → stack (access → WAN → security → apps).
-- **Hooks:** uptime/cloud → backup, SD‑WAN, security, Cloud Connect; voice → UC after transport/security land.
-- **Deck:** Business Capability + **Sales Resources**.
+## Elevator Pitch
+
+GPC is not just an ISP—it's a **layered technology partner** built on a resilient Midwest fiber network. The portfolio runs from access (fiber + backup) through WAN, security, and all the way to UC, Cloud Connect, and Wi-Fi—designed as **one integrated system**, not a menu of unrelated add-ons. Midwest IP, Tier-1 and IX relationships, local teams, and 24/7 NOC monitoring are the proof points that separate GPC from commodity carriers.
 
 ::: accordion Business Capability Overview
 Cover slide from the GPC Business Capability presentation—use as the opening visual when framing outcomes and partnership.
@@ -115,16 +115,46 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
 *Collateral image — coming soon*
 :::
 
-## Portfolio map (layers)
+---
+
+## Discovery Questions
+
+1. **How many locations do you have, and how are they connected today—shared Internet, MPLS, Ethernet, or SD-WAN?**
+2. **What are your most critical applications? Are any of them SaaS or cloud-hosted (O365, Salesforce, ERP)?**
+3. **What does an hour of downtime cost your business—and what was your last significant outage?**
+4. **Are you planning any cloud migrations or voice modernization in the next 12–24 months?**
+5. **Who owns network, security, and voice decisions—are those the same team or separate?**
+
+---
+
+## Objection Handling
+
+| Objection | Pivot |
+| --- | --- |
+| **"You all sound the same."** | Anchor on the layered stack: access → WAN → security → apps as one designed system—then ask what their current provider does when something breaks at 2 a.m. |
+| **"We just need basic Internet."** | Ask about cloud apps, VoIP, and growth plans—then show how basic access becomes a foundation for the full stack. |
+| **"We already have a national carrier."** | Midwest IP reach, local field teams, NOC monitoring, and portfolio breadth—not price. Tie to TCO of downtime. |
+| **"We're not ready for a full solution."** | Start with access; plant flags for WAN, security, and UC as next conversations once trust is established. |
+
+---
+
+## Technical Deep Dive [deep]
+
+**Portfolio map (layers):**
 
 | Layer | What | Position / hook |
 | --- | --- | --- |
-| **Access + continuity** | Fiber primary; **wireless backup** when continuity matters | Fiber = capacity/perf; backup = **continuity**—not “second Internet.” Backup → SD‑WAN + security; multi‑site → **Ethernet** |
+| **Access + continuity** | Fiber primary; **wireless backup** when continuity matters | Fiber = capacity/perf; backup = **continuity**—not "second Internet." Backup → SD‑WAN + security; multi‑site → **Ethernet** |
 | **WAN** | **Ethernet** mesh; **SD‑WAN** for policy + multi‑link | Ethernet = predictable site mesh; SD‑WAN = orchestration + cloud breakout. → firewall/DDoS, **Cloud Connect**; new sites → fiber + Wi‑Fi |
 | **Protect** | Managed firewall, DDoS | Policy on the pipe—tie to ransomware, PCI, guest Wi‑Fi. → SD‑WAN, UC (SBC) where relevant; guest Wi‑Fi → **Managed Wi‑Fi** |
 | **Enable** | UC, **Cloud Connect**, Wi‑Fi, video (when vertical cares) | UC + experience; Cloud Connect = predictable cloud paths. Voice/video pain → check access/WAN/QoS + SD‑WAN; heavy SaaS → Cloud Connect + security |
 
 **Practice line:** any deal = **access + path + policy + apps** mapped to sites/workloads.
+
+**Conversation flow:**
+- **Discovery:** sites, critical apps, uptime, cloud/voice moves, owners (network/security/voice).
+- **Order:** one-sentence fit → layered map → capability deck + **Sales Resources**.
+- **Checkpoints:** footprint → apps → RTO/RPO → ownership.
 
 ::: accordion Portfolio Stack Layers
 Visual breakdown of the layered portfolio—access through applications—from the capability deck.
@@ -134,23 +164,8 @@ Visual breakdown of the layered portfolio—access through applications—from t
 *Collateral image — coming soon*
 :::
 
-## Conversation flow (short)
-
-- **Discovery:** sites, critical apps, uptime, cloud/voice moves, owners (network/security/voice).
-- **Order:** one-sentence fit → layered map → capability deck + **Sales Resources**.
-- **Checkpoints:** footprint → apps → RTO/RPO → ownership.
-
 ::: accordion Network Story & Proof Points
 Midwest IP, fiber-first access, and Tier-1/IX relationships—anchor the "why GPC" conversation with this network narrative slide.
 
 *Collateral image — coming soon*
 :::
-
-## What to read next
-
-- **Sales Resources** = datasheets/battle cards index; this module = story spine.
-- **Lost a PDF?** Sales Ops / manager—don’t rely on one-off laptop paths.
-
-## Media (optional) [deep]
-
-*Guidde:* map a customer problem to a portfolio stack (e.g. DIA + managed security + UC).

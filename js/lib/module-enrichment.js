@@ -171,6 +171,45 @@ function buildSingleKnowledgeCard(kc, slideIndex) {
 }
 
 export function buildKnowledgeChecksCarouselHtml(meta) {
+  const rp = meta.roleplay;
+  if (!rp || !rp.persona || !rp.scenario) return '';
+
+  return `
+      <section class="module-roleplay border-t border-slate-200 pt-8 mt-2" aria-labelledby="rp-heading">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-4">
+          <h3 id="rp-heading" class="text-lg font-bold text-slate-900">AI Roleplay</h3>
+          <span class="inline-flex items-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10">Beta</span>
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col" style="height: 500px;" data-roleplay-container>
+          <!-- Roleplay Header -->
+          <div class="bg-slate-50 border-b border-slate-200 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shrink-0">
+            <div>
+              <p class="text-sm font-bold text-slate-900">Persona: <span class="font-normal text-slate-700">${escapeHtml(rp.persona)}</span></p>
+              <p class="text-xs text-slate-600 mt-1"><strong>Scenario:</strong> ${escapeHtml(rp.scenario)}</p>
+              ${rp.goal ? `<p class="text-xs text-slate-600 mt-1"><strong>Goal:</strong> ${escapeHtml(rp.goal)}</p>` : ''}
+            </div>
+            <button type="button" class="js-rp-start shrink-0 inline-flex items-center gap-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 text-sm shadow-sm transition">
+              <i class="fa-solid fa-play" aria-hidden="true"></i> Start Roleplay
+            </button>
+          </div>
+          
+          <!-- Chat Area -->
+          <div class="js-rp-chat-area flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50 hidden">
+            <!-- Messages will be injected here -->
+          </div>
+          
+          <!-- Input Area -->
+          <div class="js-rp-input-area border-t border-slate-200 p-3 bg-white hidden shrink-0">
+            <form class="js-rp-form flex gap-2">
+              <input type="text" class="js-rp-input flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="Type your response..." disabled>
+              <button type="submit" class="js-rp-send inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-50 transition" disabled>
+                Send
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>`;
+export function buildKnowledgeChecksCarouselHtml(meta) {
   const checks = meta.knowledge_checks;
   if (!Array.isArray(checks) || checks.length === 0) return '';
 

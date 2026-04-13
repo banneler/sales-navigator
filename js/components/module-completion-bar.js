@@ -3,6 +3,7 @@ import {
   isModuleCompleted,
   markModuleCompleted,
 } from '../lib/progress-state.js';
+import { awardXP } from '../lib/gamification.js';
 
 function escapeHtml(s) {
   if (s == null) return '';
@@ -71,6 +72,7 @@ export function mountModuleCompletionBar(container, manifest, moduleId) {
 
     slot.querySelector('.module-complete-btn')?.addEventListener('click', () => {
       markModuleCompleted(moduleId);
+      awardXP(100, 'Module Completed');
       render();
       openProgressMap(manifest, next?.id || moduleId, {
         celebration: {

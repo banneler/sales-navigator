@@ -85,10 +85,10 @@ knowledge_checks:
   - question: "Where should you look for the authoritative Strategic Accounts list rather than informal spreadsheets?"
     options:
       - "The official Sales SharePoint repository referenced in the ROE"
-      - "Any rep’s personal bookmark folder"
+      - "Any rep's personal bookmark folder"
       - "Only the footer of customer emails"
     correct_index: 0
-    explanation: "Official Sales SharePoint—informal lists don’t count."
+    explanation: "Official Sales SharePoint—informal lists don't count."
 
 scenarios:
   - title: "Working a customer account with no logged activity for 130 days"
@@ -114,26 +114,79 @@ scenarios:
 reference_files:
   - label: "Sales Rules of Engagement (ROE) — Revised August 2025"
     sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/gpcSales/ROE/Sales%20Rules%20of%20Engagement%20(ROE)%20-%20Revised%20August%202025.pdf?csf=1&web=1&e=7aw2jN"
+
+roleplay:
+  persona: "Competitive Account Executive, 18 months in"
+  scenario: "Spots a promising Customer account in Salesforce that hasn't had any logged activity in 135 days. Wants to start working it immediately and is considering reassigning it to themselves to lock it in before a peer notices."
+  goal: "Understand the 121-day Customer idle window, but reinforce that the right path is to contact the listed owner first and follow the written transfer process through leadership—not a unilateral Salesforce reassignment."
 ---
 
-## What the ROE is
+## Elevator Pitch
 
-**Salesforce = system of record** for ownership and disputes—log real touches (calls/tasks/meetings/email **on the record**). Email/Teams alone doesn’t replace a required log.
+The Rules of Engagement exist to protect everyone's pipeline and keep Salesforce trustworthy as the **system of record**. Three principles cover 90% of situations: **search before you create** (one entity, one account); **log meaningful activity** (Salesforce activity, not just email sent); and **transfer through leadership in writing** (never reassign unilaterally). Strategic and E-Rate accounts follow different rules. Know the windows, own your activity log, and disputes get resolved cleanly.
 
-**Source of truth:** ROE PDF (Sales Resources / sidebar) + **Strategic** list on **Sales SharePoint**—not screenshots or side spreadsheets. Note **revision date** on the PDF.
+---
 
-| Topic | Rule (typical general path) |
-|-------|-------------------------------|
+## Discovery Questions
+
+*(For internal compliance reviews and coaching conversations)*
+
+1. **Did you search Salesforce before creating this account or contact?** — Duplicate accounts are the most common ROE violation and the hardest to unwind.
+2. **When was the last meaningful logged activity on this account—call, meeting, task—logged directly in Salesforce?** — Email in your sent folder does not count.
+3. **Is this account on the Strategic list or an E-Rate/USAC-funded entity?** — If yes, the general 61/121 idle-window rules do not apply. Confirm with leadership.
+4. **If you want to transfer this account, have you aligned with the current owner and started the written approval path through your manager?** — Reassigning in Salesforce first is a landmine.
+5. **For an assigned inbound lead, how many business days has it been since assignment, and is first contact logged in Salesforce?** — The 5-day clock is non-negotiable for assigned inbound.
+
+---
+
+## Objection Handling
+
+*(Common ROE misconceptions and how to address them)*
+
+| Misconception | Correct Position |
+| --- | --- |
+| **"I emailed them twice—that counts as logged activity."** | Email in your sent folder is not a Salesforce log. Activity must be logged as a task, call, meeting, or email on the record in Salesforce. |
+| **"The account is 130 days idle—I can just start working it."** | Even when an idle window may allow outreach, best practice is to contact the listed owner first. For a formal transfer, use the written path through your manager and sales leadership. |
+| **"I saw the account was idle so I reassigned it to myself in Salesforce."** | Unilateral reassignment is a landmine under the ROE. Align with the current owner → written path through manager + sales leadership. Never reassign first. |
+| **"That school district runs the 61/121 rules—I checked."** | E-Rate and USAC-funded entities follow Strategic-style treatment regardless of whether they appear on the list (with documented exceptions like ENA Indiana → Out-State Team). Confirm with leadership. |
+| **"I found the Strategic list on a rep's shared folder."** | The authoritative list lives on the official Sales SharePoint repository. Informal spreadsheets and screenshots don't count. |
+
+---
+
+## Technical Deep Dive [deep]
+
+**ROE table (general path):**
+
+| Topic | Rule |
+| --- | --- |
 | Prospect idle | **61+** days no qualifying logged activity → others may work |
 | Customer idle | **121+** days → others may work |
 | Assigned inbound | First contact **and** Salesforce log within **5 business days** |
 | Self-sourced | **Not** the inbound 5-day clock |
 
-**Strategic** accounts: assignment + official list mechanics—not the generic 61/121 path. **E‑Rate / USAC-funded** entities: **Strategic-style** per ROE regardless of list, except documented exceptions (**e.g. ENA Indiana → Out-State Team**).
+**Strategic accounts:**
+- Assignment + official list mechanics—not the generic 61/121 path
+- Sales Managers and VP Sales own list changes on official Sales SharePoint
+- Do not apply casual idle-window rules to Strategic accounts
 
-**Transfers:** talk to current owner → **written** path through **your manager** and sales leadership. **Never** reassign unilaterally.
+**E-Rate / USAC-funded entities:**
+- Strategic-style treatment regardless of list inclusion
+- Documented exceptions exist (e.g., ENA Indiana → Out-State Team)
+- Confirm coverage with leadership if unclear—don't apply casual 61/121
 
-**Landmines:** unilateral owner changes; rumor-based Strategic/E‑Rate ownership; “I was busy” with no SF log on assigned inbound.
+**Transfers:**
+- Path: talk to current owner → written approval → your manager → sales leadership
+- Never reassign in Salesforce to force a deal
+- Never based on rumor or informal agreement
+
+**Landmines:**
+- Unilateral owner changes in Salesforce
+- Rumor-based Strategic or E-Rate ownership claims
+- "I was busy" with no Salesforce log on assigned inbound
+- Using informal spreadsheets as the Strategic accounts source of truth
+
+**Escalation path:**
+- ROE doesn't fit the facts; transfer dispute; Strategic or E-Rate boundary; repeat duplicate-account pattern → manager + Salesforce timeline, not Slack polls or side deals
 
 ::: accordion ROE Overview Reference
 Rules of engagement at a glance — ownership, idle windows, and escalation paths.
@@ -141,45 +194,14 @@ Rules of engagement at a glance — ownership, idle windows, and escalation path
 *Collateral image — coming soon*
 :::
 
----
-
-## Rules (by topic)
-
-**Search before create** — One entity → one account; dedupe contacts. *“I searched SF first so we don’t duplicate.”*
-
-**Transfers** — Alignment → written approval. **Don’t** reassign in SF to force a deal.
-
-**General 61/121** — Even when a window might allow outreach, **ping the listed owner** first when relationship/context matter.
-
-**Inbound assigned** — 5 business days to contact + log. Sent email folder ≠ system of record.
-
-**Strategic** — Sales Managers + VP Sales own list changes on **official SharePoint**.
-
-**E‑Rate / USAC** — Don’t apply casual 61/121; confirm coverage with leadership if unclear.
-
 ::: accordion Activity Tracking in Salesforce
 Logged activity is what counts for idle-window calculations — calls, tasks, meetings, and emails on the record.
 
 *Collateral image — coming soon*
 :::
 
----
-
-## Escalate
-
-ROE doesn’t fit the facts; transfer dispute; Strategic or E‑Rate boundary; repeat duplicate-account pattern → **manager** + **Salesforce timeline**, not Slack polls or side deals.
-
----
-
-## Habits & hygiene [deep]
-
-- Search first; cadence that beats idle windows for general accounts.
-- Accurate stage, next steps, contacts—leadership only sees what’s in SF.
-
 ::: accordion Idle Window Reference
 General account idle windows — 61 days for Prospects, 121 days for Customers.
 
 *Collateral image — coming soon*
 :::
-
-- *Optional Guidde:* search-before-create, inbound 5-day logging, owner vs leadership paths for transfers / Strategic.

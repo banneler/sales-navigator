@@ -2,6 +2,7 @@ import { renderModuleDocumentHtml } from '../lib/markdown-sections.js';
 import { bindModuleInteractions } from '../lib/module-interactions.js';
 import { initScrollAnimations } from '../lib/scroll-animations.js';
 import { mountModuleIntroGate } from './module-intro-gate.js';
+import { bindRoleplayInteractions } from './ai-roleplay.js';
 
 /**
  * @param {HTMLElement} container
@@ -11,6 +12,7 @@ export default function renderMarkdownModule(container, markdownSource) {
   container.innerHTML = renderModuleDocumentHtml(markdownSource);
   container.dataset.scrollAnimationsInit = '';
   bindModuleInteractions(container);
+  bindRoleplayInteractions(container);
   mountModuleIntroGate(container, markdownSource, () => {
     initScrollAnimations(container);
   });

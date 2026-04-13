@@ -8,7 +8,7 @@ reference_files:
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 five_minute_summary: |
   - **Firewall / MNS:** FortiGate managed edge; **MNS** = umbrella (customer FW mgmt, SIEM, assessments, email security)—scope to buyer.
-  - **DDoS:** **Proactive** = 24×7 auto mitigation; **on-demand** SKU = **weekday 8–17** mitigation—**qualify**—don’t blur.
+  - **DDoS:** **Proactive** = 24×7 auto mitigation; **on-demand** SKU = **weekday 8–17** mitigation—**qualify**—don't blur.
   - **SD-WAN (VeloCloud):** multi-site + **≥1 site on GPC fiber**; optional NGFW/IDS lines **not** assumed in base—confirm every quote.
   - **Handoffs:** SE/security for HA, BGP/ASN DDoS, regulated stacks; pricing PDFs = internal until quoting approves.
 
@@ -16,7 +16,7 @@ knowledge_checks:
   - question: "How does DDoS Protection proactive differ from on-demand for mitigation windows?"
     options:
       - "There is no difference; both are always 24×7 mitigation."
-      - "Proactive includes 24×7 automated monitoring and mitigation; on-demand mitigation on the on-demand SKU is weekdays 8–17—qualify so customers don’t assume 24×7."
+      - "Proactive includes 24×7 automated monitoring and mitigation; on-demand mitigation on the on-demand SKU is weekdays 8–17—qualify so customers don't assume 24×7."
       - "On-demand always includes faster mitigation than proactive."
     correct_index: 1
     explanation: "On-demand ≠ 24×7 mitigation on that SKU."
@@ -35,12 +35,12 @@ knowledge_checks:
       - "That MPLS migration always finishes in one weekend with zero planning."
       - "Both of the above."
     correct_index: 2
-    explanation: "Don’t assume base = full NGFW; don’t promise overnight MPLS cut without plan."
+    explanation: "Don't assume base = full NGFW; don't promise overnight MPLS cut without plan."
 
   - question: "What does Managed Network Security (MNS) represent relative to Managed Firewall alone?"
     options:
       - "MNS is only a rebranded logo with no extra scope."
-      - "MNS is the umbrella: managed firewall plus firewall management of customer gear, SIEM, assessments, email security, and related services—scope to the buyer’s need."
+      - "MNS is the umbrella: managed firewall plus firewall management of customer gear, SIEM, assessments, email security, and related services—scope to the buyer's need."
       - "MNS replaces SD-WAN in every WAN design."
     correct_index: 1
     explanation: "MNS when SIEM, assessments, email, or multi-vendor ops matter."
@@ -94,7 +94,7 @@ knowledge_checks:
     explanation: "Pre-quote internal tools only."
 
 scenarios:
-  - title: "Customer wants ‘24/7 DDoS’ but budgets for on-demand"
+  - title: "Customer wants '24/7 DDoS' but budgets for on-demand"
     situation: |
       Wants always-on mitigation; picked **on-demand** for price—set expectations pre-signature.
     choices:
@@ -114,23 +114,71 @@ scenarios:
       - label: "Review optional NGFW/IDS lines with SE, map RFP lines to quoted SKUs, and document what is in base vs add-on."
         feedback: "Correct."
 
+roleplay:
+  persona: "Skeptical IT Director at a regional bank with 12 branches"
+  scenario: "Currently running MPLS between branches. Complaining about VPN jitter on shared broadband at smaller locations. Thinks SD-WAN is just 'expensive router software' and insists on managing their own Cisco gear."
+  goal: "Qualify multi-site footprint and GPC fiber anchors, then pivot from DIY network management to GPC's fully managed SD-WAN—frame as operational savings, 24/7 NOC support, and cloud breakout improvement rather than a technology debate."
 ---
 
-## Security
+## Elevator Pitch
 
-**Managed Firewall:** FortiGate-based edge + SOC; don’t quote throughput/compliance as fixed guarantees—**SE** + approved sheets.**MNS:** firewall + mgmt of customer gear, SIEM, assessments, email—**match SKU to need**.**Discovery:** trigger (audit/incident), who runs firewalls, footprint, SaaS egress, incidents, commercial.**Use cases:** compliance, refresh, hybrid workforce, consolidation, post-incident.**Landmines:** no fixed throughput promises; shared compliance responsibility; don’t sell firewall when buyer needs MNS scope.
+GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protection and intelligent routing at every edge. **Managed Firewall** (FortiGate-based, SOC-monitored) and **Managed Network Security (MNS)** stop threats at the edge and in email, with SIEM and assessment capabilities for regulated environments. **DDoS Protection** keeps critical services online—proactive for 24/7 mitigation, on-demand for cost-conscious accounts that understand the window. **SD-WAN (VeloCloud)** transforms multi-site WAN by routing traffic intelligently across any access type, with cloud breakout, QoS for VoIP, and a single management pane—all managed by GPC with local support and a 24/7 NOC.
 
-## DDoS
+---
 
-**Proactive:** 24×7 monitoring + mitigation.**On-demand:** on that SKU, mitigation **weekdays 8–17**—state explicitly.**Discovery:** what must stay up; history; always-on vs cost; BGP.**Landmines:** never equate on-demand with proactive timing; no promised mitigation times without approved materials.**Collateral:** **Sales Resources**.
+## Discovery Questions
+
+1. **How many locations do you have, and which ones are on GPC fiber vs. other broadband or MPLS?**
+2. **How are those locations connected today—VPN over shared Internet, MPLS, Ethernet? When does that contract expire?**
+3. **What are your most important applications? Do you use SaaS like O365 or Salesforce, and are they hosted on-prem or in the cloud?**
+4. **Have you experienced a security incident, ransomware event, or DDoS attack? Who manages your firewalls today?**
+5. **Do you need always-on DDoS mitigation (proactive) or is business-hours coverage acceptable—and what's the cost of an attack outside those windows?**
+
+---
+
+## Objection Handling
+
+| Objection | Pivot |
+| --- | --- |
+| **"We manage our own Cisco gear."** | GPC's fully managed SD-WAN eliminates upfront CapEx and frees your team from network management. A single monthly charge covers install, management, and 24/7 NOC monitoring. Gartner has ranked VMware VeloCloud at the top of the leader quadrant for SD-WAN. |
+| **"Our current solution works fine."** | Ask: do you have visibility into application performance across all sites? SD-WAN Orchestrator provides real-time views into access link performance and lets you prioritize critical apps—even over a single link. |
+| **"SD-WAN is too expensive."** | SD-WAN pricing sits between SIA and DIA—often less than the MPLS it replaces. The ROI comes from eliminating MPLS costs, reducing truck rolls, and improving uptime for revenue-generating applications. |
+| **"We only have sites in Nebraska."** | SD-WAN works over any transport—GPC fiber, cable, DSL, T1, or 4G/5G wireless. With at least one site on GPC fiber, all US locations including off-net branches can participate. |
+| **"The on-demand DDoS is fine—we're not a target."** | Confirm: on-demand mitigation windows are weekdays 8–17 only. After-hours attacks won't be mitigated until the next business day. If that risk is acceptable, document it; otherwise, align to proactive. |
+
+---
+
+## Technical Deep Dive [deep]
+
+**SD-WAN (VeloCloud) qualifiers:**
+- Minimum: ≥1 site on GPC fiber + multi-site WAN footprint
+- Off-net US branches can participate via any Internet transport
+- Business rule: at least one site on GPC fiber required
+- NGFW and IDS/IPS lines are optional add-ons—not included in base SD-WAN SKU; confirm with SE/quoting on every quote
+
+**SD-WAN pricing reference (internal):**
+- 50×50 Mbps: SD-WAN ~$147/mo; SIA CLEC ~$110; DIA ~$354
+- 100×100 Mbps: SD-WAN ~$199/mo; SIA CLEC ~$176; DIA ~$547
+- 500×500 Mbps: SD-WAN ~$481/mo; SIA CLEC ~$278; DIA ~$860
+- 1000×1000 Mbps: SD-WAN ~$699/mo; SIA CLEC ~$365; DIA ~$1,060
+- Internet bandwidth is **not included** in SD-WAN pricing—purchased separately
+
+**Managed Firewall:** FortiGate-based edge + SOC monitoring. Don't quote throughput/compliance as fixed guarantees—SE + approved sheets required.
+
+**MNS (Managed Network Security):** umbrella service = managed firewall + management of customer gear + SIEM + assessments + email security. Match SKU to buyer's actual need.
+
+**DDoS:**
+- Proactive: 24×7 monitoring + automated mitigation
+- On-demand: mitigation **weekdays 8–17 only**—state explicitly; never equate with proactive timing
+- BGP/ASN DDoS designs → SE/security early
+
+**Handoffs:** SE/security for HA, BGP/ASN DDoS, mixed-vendor firewall management, regulated environments, unusual scale. Pricing PDFs are internal until quoting validates.
+
+**Vertical fit:** retail stores, regional healthcare, community banking, insurance brokers, government, education, manufacturing—any multi-site business with VoIP/SaaS pain.
 
 ::: accordion DDoS Protection Overview
 *Collateral image — coming soon*
 :::
-
-## SD-WAN
-
-**What:** VeloCloud; **≥1 GPC fiber site** + multi-site WAN (off-net US ok); improves cloud breakout, backhaul, optional edge security.**Discovery:** footprint on/off GPC; today’s WAN; traffic; QoS; migration; **map every security line in RFP to SKU**.**Position:** local GPC support + platform fit—not unverified spec battles.**Landmines:** NGFW/IDS not assumed in base; no perfect app-ID forever; no overnight MPLS death without plan; no competitor parity without SE review.**Collateral:** sheet + battle card—**Sales Resources**.
 
 ::: accordion SD-WAN Retail Brief
 *Collateral image — coming soon*
@@ -139,15 +187,3 @@ scenarios:
 ::: accordion SD-WAN Healthcare Brief
 *Collateral image — coming soon*
 :::
-
-## Cross-cutting
-
-No throughput/SLA/design guarantees without SE/approved artifacts.**DDoS:** SKU matches mitigation window.**SD-WAN:** base vs add-on security validated.**Handoff SE** for HA, BGP DDoS, mixed vendors, regulated, unusual scale.**Pricing:** internal until quoting validates.
-
-## Pricing (internal) [deep]
-
-Fee schedules = pre-quote with quoting—not customer-facing until approved.
-
-## Media (optional) [deep]
-
-*Guidde:* SD-WAN discovery or security upsell from DIA.

@@ -1,3 +1,5 @@
+import { awardXP } from './gamification.js';
+
 /**
  * Wire up knowledge-check answers, scenario choices, and knowledge carousel nav.
  * Safe to call repeatedly: replaces the previous click handler on the same element.
@@ -169,8 +171,13 @@ function handleClick(e) {
       const qIdx = Number(slide.getAttribute('data-kc-slide'));
       const results = getScoreState(carousel);
       if (Number.isFinite(qIdx) && qIdx >= 0 && qIdx < results.length) {
+        const wasAlreadyCorrect = results[qIdx] === true;
         results[qIdx] = ok;
         updateKnowledgeScoreUI(carousel);
+        
+        if (ok && !wasAlreadyCorrect) {
+          awardXP(20, 'Knowledge Check Passed');
+        }
       }
     }
     return;
