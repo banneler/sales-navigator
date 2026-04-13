@@ -13,7 +13,12 @@ export function bindRoleplayInteractions(container) {
   const sendBtn = rpContainer.querySelector('.js-rp-send');
 
   let isStarted = false;
-  let turnCount = 0;
+  let messages = [];
+
+  // Read metadata from the DOM
+  const persona = rpContainer.dataset.persona || 'Customer';
+  const scenario = rpContainer.dataset.scenario || '';
+  const goal = rpContainer.dataset.goal || '';
 
   function appendMessage(role, text) {
     const div = document.createElement('div');
@@ -30,18 +35,65 @@ export function bindRoleplayInteractions(container) {
     div.appendChild(bubble);
     chatArea.appendChild(div);
     chatArea.scrollTop = chatArea.scrollHeight;
+    return bubble;
   }
 
-  function mockAiResponse(userText) {
-    // Simple mock logic for the beta
-    turnCount++;
-    setTimeout(() => {
-      if (turnCount === 1) {
-        appendMessage('ai', "I hear you, but we've always used shared broadband. Why should we pay more for DIA or Ethernet when what we have is mostly fine?");
-      } else if (turnCount === 2) {
-        appendMessage('ai', "That makes sense. Reliability is definitely an issue for us lately. I'd be open to seeing some pricing on DIA.");
+  async function fetchAiResponse(userText) {
+    messages.push({ role: 'user', content: userText });
+    
+    input.disabled = true;
+    sendBtn.disabled = true;
+    
+    // Create an empty bubble for the AI response
+    const bubble = appendMessage('ai', '...');
+    bubble.classList.add('animate-pulse');
+    
+    try {
+      const res = await fetch('/api/roleplay', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages, persona, scenario, goal })
+      });
+
+      if (!res.ok) throw new Error('Network response was not ok');
+
+      // Handle streaming response
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let aiText = '';
+      bubble.innerHTML = '';
+      bubble.classList.remove('animate-pulse');
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
         
-        // Win condition
+        const chunk = decoder.decode(value);
+        const lines = chunk.split('\n').filter(line => line.trim() !== '');
+        
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const data = line.slice(6);
+            if (data === '[DONE]') continue;
+            
+            try {
+              const parsed = JSON.parse(data);
+              const content = parsed.choices[0]?.delta?.content || '';
+              aiText += content;
+              bubble.innerHTML = escapeHtml(aiText).replace(/\n/g, '<br>');
+              chatArea.scrollTop = chatArea.scrollHeight;
+            } catch (e) {
+              console.error('Error parsing stream chunk', e);
+            }
+          }
+        }
+      }
+
+      // Check for win condition
+      if (aiText.includes('[WIN]')) {
+        aiText = aiText.replace('[WIN]', '').trim();
+        bubble.innerHTML = escapeHtml(aiText).replace(/\n/g, '<br>');
+        
         setTimeout(() => {
           const winDiv = document.createElement('div');
           winDiv.className = "flex justify-center mt-4";
@@ -55,14 +107,25 @@ export function bindRoleplayInteractions(container) {
           chatArea.appendChild(winDiv);
           chatArea.scrollTop = chatArea.scrollHeight;
           
-          input.disabled = true;
-          sendBtn.disabled = true;
-          
-          // Award XP
           awardXP(150, 'Roleplay Scenario Won');
-        }, 1000);
+        }, 500);
+      } else {
+        // Re-enable input if not won
+        input.disabled = false;
+        sendBtn.disabled = false;
+        input.focus();
       }
-    }, 800);
+      
+      messages.push({ role: 'assistant', content: aiText });
+
+    } catch (error) {
+      console.error('Roleplay Error:', error);
+      bubble.innerHTML = '<span class="text-red-600">Sorry, I lost my connection. Can we try that again?</span>';
+      bubble.classList.remove('animate-pulse');
+      input.disabled = false;
+      sendBtn.disabled = false;
+      input.focus();
+    }
   }
 
   startBtn.addEventListener('click', () => {
@@ -73,11 +136,13 @@ export function bindRoleplayInteractions(container) {
     chatArea.classList.remove('hidden');
     inputArea.classList.remove('hidden');
     
+    // Initial AI greeting
+    const greeting = "Hi there. I've got a few minutes. What can Great Plains do for us?";
+    appendMessage('ai', greeting);
+    messages.push({ role: 'assistant', content: greeting });
+    
     input.disabled = false;
     sendBtn.disabled = false;
-    
-    // Initial AI greeting
-    appendMessage('ai', "Hi there. I've got a few minutes. What can Great Plains do for us?");
     input.focus();
   });
 
@@ -89,6 +154,6 @@ export function bindRoleplayInteractions(container) {
     appendMessage('user', text);
     input.value = '';
     
-    mockAiResponse(text);
+    fetchAiResponse(text);
   });
 }

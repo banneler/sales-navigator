@@ -180,7 +180,7 @@ export function buildRoleplayHtml(meta) {
           <h3 id="rp-heading" class="text-lg font-bold text-slate-900">AI Roleplay</h3>
           <span class="inline-flex items-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10">Beta</span>
         </div>
-        <div class="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col" style="height: 500px;" data-roleplay-container>
+        <div class="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col" style="height: 500px;" data-roleplay-container data-persona="${escapeHtml(rp.persona)}" data-scenario="${escapeHtml(rp.scenario)}" data-goal="${escapeHtml(rp.goal)}">
           <!-- Roleplay Header -->
           <div class="bg-slate-50 border-b border-slate-200 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shrink-0">
             <div>
