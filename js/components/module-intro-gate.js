@@ -4,6 +4,18 @@ import { buildFiveMinuteSummaryIntroGateHtml } from '../lib/module-enrichment.js
 
 export const MODULE_INTRO_GATE_ID = 'module-intro-gate-overlay';
 
+const TRAINING_MODULE_IDS = new Set([
+  'sales-rules-of-engagement',
+  'sales-process-and-salesforce',
+  'sales-operations-and-approvals',
+  'portfolio-and-business-capabilities',
+  'product-connectivity',
+  'product-security-and-sd-wan',
+  'product-cloud-wifi-and-backup',
+  'product-uc-voice-and-collaboration',
+  'competitive-positioning',
+]);
+
 let positionCleanup = null;
 
 export function destroyModuleIntroGate() {
@@ -35,8 +47,9 @@ function positionIntroGateOverlay(overlay) {
  * @param {HTMLElement} container - #module-host
  * @param {string} markdownSource - Full content.md (for preview copy only)
  * @param {(() => void) | undefined} onStartModule
+ * @param {string | undefined} moduleId
  */
-export function mountModuleIntroGate(container, markdownSource, onStartModule) {
+export function mountModuleIntroGate(container, markdownSource, onStartModule, moduleId) {
   destroyModuleIntroGate();
 
   let meta = {};
@@ -49,6 +62,7 @@ export function mountModuleIntroGate(container, markdownSource, onStartModule) {
 
   const headerStripHtml = buildModuleIntroGateHeaderHtml(meta);
   const fiveMinHtml = buildFiveMinuteSummaryIntroGateHtml(meta);
+  const showPlayIntro = typeof moduleId === 'string' && TRAINING_MODULE_IDS.has(moduleId);
 
   const overlay = document.createElement('div');
   overlay.id = MODULE_INTRO_GATE_ID;
@@ -72,6 +86,11 @@ export function mountModuleIntroGate(container, markdownSource, onStartModule) {
           </div>
         </div>
         <div class="flex flex-shrink-0 flex-wrap items-center justify-end gap-2 border-t border-slate-900/10 bg-slate-900/[0.03] px-5 py-4 backdrop-blur-sm">
+          ${showPlayIntro ? `
+          <button type="button" class="module-intro-play-intro inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">
+            <i class="fa-solid fa-play" aria-hidden="true"></i>
+            Play Intro
+          </button>` : ''}
           <button type="button" class="module-intro-start inline-flex items-center gap-2 rounded-lg bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-orange-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300">
             Start Module
             <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -107,5 +126,9 @@ export function mountModuleIntroGate(container, markdownSource, onStartModule) {
   overlay.querySelector('.module-intro-start')?.addEventListener('click', () => {
     destroyModuleIntroGate();
     if (typeof onStartModule === 'function') onStartModule();
+  });
+
+  overlay.querySelector('.module-intro-play-intro')?.addEventListener('click', () => {
+    alert('Audio coming soon!');
   });
 }

@@ -45,11 +45,11 @@ export async function loadAndRenderModule(moduleId, container, manifest) {
     const mod = await import(moduleUrl);
     const render = mod.default || renderMarkdownModule;
     container.innerHTML = '';
-    render(container, markdownText);
+    render(container, markdownText, moduleId);
     if (manifest) mountModuleCompletionBar(container, manifest, moduleId);
   } catch (e) {
     container.innerHTML = '';
-    renderMarkdownModule(container, markdownText);
+    renderMarkdownModule(container, markdownText, moduleId);
     if (manifest) mountModuleCompletionBar(container, manifest, moduleId);
     console.warn('Falling back to default markdown renderer:', e);
   }

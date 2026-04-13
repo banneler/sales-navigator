@@ -7,13 +7,14 @@ import { bindRoleplayInteractions } from './ai-roleplay.js';
 /**
  * @param {HTMLElement} container
  * @param {string} markdownSource - Full file including optional YAML front matter
+ * @param {string} [moduleId]
  */
-export default function renderMarkdownModule(container, markdownSource) {
+export default function renderMarkdownModule(container, markdownSource, moduleId) {
   container.innerHTML = renderModuleDocumentHtml(markdownSource);
   container.dataset.scrollAnimationsInit = '';
   bindModuleInteractions(container);
   bindRoleplayInteractions(container);
   mountModuleIntroGate(container, markdownSource, () => {
     initScrollAnimations(container);
-  });
+  }, moduleId);
 }
