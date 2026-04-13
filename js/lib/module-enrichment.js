@@ -209,6 +209,8 @@ export function buildKnowledgeChecksCarouselHtml(meta) {
           </div>
         </div>
       </section>`;
+}
+
 export function buildKnowledgeChecksCarouselHtml(meta) {
   const checks = meta.knowledge_checks;
   if (!Array.isArray(checks) || checks.length === 0) return '';
