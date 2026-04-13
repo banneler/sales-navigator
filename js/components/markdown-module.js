@@ -1,5 +1,6 @@
 import { renderModuleDocumentHtml } from '../lib/markdown-sections.js';
 import { bindModuleInteractions } from '../lib/module-interactions.js';
+import { initScrollAnimations } from '../lib/scroll-animations.js';
 import { mountModuleIntroGate } from './module-intro-gate.js';
 
 /**
@@ -8,6 +9,7 @@ import { mountModuleIntroGate } from './module-intro-gate.js';
  */
 export default function renderMarkdownModule(container, markdownSource) {
   container.innerHTML = renderModuleDocumentHtml(markdownSource);
+  initScrollAnimations(container);
   bindModuleInteractions(container);
   mountModuleIntroGate(container, markdownSource);
 }

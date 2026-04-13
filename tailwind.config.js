@@ -8,10 +8,32 @@ module.exports = {
         'data-flow-x': 'data-flow-x 2s linear infinite',
         'data-flow-up': 'data-flow-up 1.5s linear infinite',
         'data-flow-down': 'data-flow-down 1.5s linear infinite',
+        'fade-in-up': 'fade-in-up 0.5s ease-out both',
+        'scale-in': 'scale-in 0.5s ease-out both',
         'celebrate-node':
           'celebrate-node 0.95s cubic-bezier(0.34, 1.45, 0.64, 1) both',
       },
       keyframes: {
+        'fade-in-up': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(20px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        'scale-in': {
+          '0%': {
+            opacity: '0',
+            transform: 'scale(0.95)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'scale(1)',
+          },
+        },
         'celebrate-node': {
           '0%': {
             transform: 'scale(1)',

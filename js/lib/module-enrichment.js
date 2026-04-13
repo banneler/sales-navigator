@@ -1,22 +1,7 @@
-import { marked } from 'https://esm.sh/marked@15.0.12';
-import DOMPurify from 'https://esm.sh/dompurify@3.2.2';
-
-marked.use({ gfm: true, breaks: true });
-
-function escapeHtml(s) {
-  if (s == null) return '';
-  return String(s)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
-
-function mdToSafeHtml(md) {
-  if (md == null || md === '') return '';
-  const html = marked.parse(String(md));
-  return DOMPurify.sanitize(html, { ADD_ATTR: ['target', 'rel'] });
-}
+import {
+  escapeHtml,
+  parseMarkdownToSafeHtml,
+} from './markdown-config.js';
 
 /**
  * Dark-mode reference list: icon + hyperlink per file (new tab). Two-column grid from `sm` when there are multiple links.
@@ -76,7 +61,7 @@ export function buildFiveMinuteSummaryHtml(meta) {
           <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-sm" title="About 5 minutes">5m</span>
           <div class="min-w-0 flex-1">
             <h3 id="five-min-heading" class="text-lg font-bold text-amber-950 mb-2">5-minute summary</h3>
-            <div class="module-markdown-body text-amber-950/90">${mdToSafeHtml(five)}</div>
+            <div class="module-markdown-body text-amber-950/90">${parseMarkdownToSafeHtml(five)}</div>
           </div>
         </div>
       </section>`;
@@ -92,7 +77,7 @@ export function buildFiveMinuteSummaryIntroGateHtml(meta) {
   return `
       <section class="module-five-min-gate" aria-labelledby="five-min-heading-gate">
         <h3 id="five-min-heading-gate" class="text-lg font-bold text-slate-900 mb-2">5-minute summary</h3>
-        <div class="module-markdown-body text-slate-700">${mdToSafeHtml(five)}</div>
+        <div class="module-markdown-body text-slate-700">${parseMarkdownToSafeHtml(five)}</div>
       </section>`;
 }
 
@@ -109,7 +94,7 @@ export function buildScenariosAsideHtml(meta) {
       const title = typeof sc?.title === 'string' ? sc.title : `Scenario ${si + 1}`;
       const situation = typeof sc?.situation === 'string' ? sc.situation : '';
       const choices = Array.isArray(sc?.choices) ? sc.choices : [];
-      const situationHtml = mdToSafeHtml(situation);
+      const situationHtml = parseMarkdownToSafeHtml(situation);
       const choiceBlocks = choices
         .map((ch, ci) => {
           const label = typeof ch?.label === 'string' ? ch.label : '';
@@ -121,7 +106,7 @@ export function buildScenariosAsideHtml(meta) {
               </button>
               <div class="js-sc-feedback hidden rounded border border-orange-100 bg-orange-50/90 px-2 py-1.5 shadow-sm" data-sc-index="${ci}" role="region">
                 <p class="text-[9px] font-bold uppercase tracking-wide text-orange-900 mb-1">Feedback</p>
-                <div class="module-markdown-body text-[10px] text-slate-700 leading-snug">${mdToSafeHtml(feedback)}</div>
+                <div class="module-markdown-body text-[10px] text-slate-700 leading-snug">${parseMarkdownToSafeHtml(feedback)}</div>
               </div>
             </div>`;
         })

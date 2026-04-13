@@ -1,6 +1,8 @@
-import { marked } from 'https://esm.sh/marked@15.0.12';
-import DOMPurify from 'https://esm.sh/dompurify@3.2.2';
 import { parseFrontMatter } from './front-matter.js';
+import {
+  escapeHtml,
+  parseMarkdownToSafeHtml,
+} from './markdown-config.js';
 import {
   buildFiveMinuteSummaryHtml,
   buildModuleReferenceFilesHtml,
@@ -8,17 +10,6 @@ import {
   buildKnowledgeChecksCarouselHtml,
 } from './module-enrichment.js';
 import { buildHandoutToolbarHtml } from './handout-links.js';
-
-marked.use({ gfm: true, breaks: true });
-
-function escapeHtml(s) {
-  if (s == null) return '';
-  return String(s)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
 
 /** Level-2 heading only (`##`), not `###`. */
 function isH2Line(line) {
@@ -80,16 +71,15 @@ export function splitMarkdownByH2(body) {
 
 function renderOneSectionCard(markdown, options) {
   const { useDeepCollapse, displayTitle } = options;
-  let html;
+  let safe;
   try {
-    html = marked.parse(markdown || '');
+    safe = parseMarkdownToSafeHtml(markdown || '');
   } catch (e) {
     return `
       <section class="bg-white border border-red-200 rounded-xl p-6 shadow-sm">
         <p class="text-sm text-red-800">${escapeHtml(e instanceof Error ? e.message : String(e))}</p>
       </section>`;
   }
-  const safe = DOMPurify.sanitize(html, { ADD_ATTR: ['target', 'rel'] });
 
   if (!displayTitle.trim()) {
     return `

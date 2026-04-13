@@ -1,5 +1,4 @@
 import { setRouteModuleId } from '../router.js';
-import { buildHandoutToolbarHtml } from '../lib/handout-links.js';
 
 const GETTING_STARTED_ID = 'getting-started';
 const OVERLAY_ID = 'getting-started-tour-overlay';
@@ -33,10 +32,7 @@ function buildDemoMarkup() {
       <div class="flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
         <div class="w-full lg:flex-1 min-w-0 space-y-6 pointer-events-none" data-tour-target="module-core">
           <div class="rounded-xl border border-slate-200/90 bg-white/95 shadow-sm p-6 backdrop-blur-sm">
-            <div class="flex flex-row flex-wrap items-center justify-between gap-x-4 gap-y-2">
-              <h2 class="text-2xl font-bold text-slate-900 tracking-tight min-w-0 flex-1">Welcome to Great Plains Communications</h2>
-              ${buildHandoutToolbarHtml('getting-started')}
-            </div>
+            <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Welcome to Great Plains Communications</h2>
             <p class="text-slate-600 mt-3 text-sm max-w-3xl leading-relaxed">
               We're glad you're here. This space is built to help you ramp with confidence—alongside teammates who remember their first customer call, their first complex quote, and the questions that used to keep them up at night.
             </p>
