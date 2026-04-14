@@ -6,7 +6,6 @@ sensitivity: "public"
 reference_files:
   - label: "Sales Resources (UC, voice, contact center)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
-video_carousel_intro: "Intermedia partner training clips for internal onboarding—pair with GPC talk tracks and Sales Resources. Playback pauses when you change slides."
 video_carousel:
   - title: "Premises to UC"
     src: "assets/UC/prem-to-uc.mp4"
@@ -19,7 +18,7 @@ video_carousel:
   - title: "Work better wherever"
     src: "assets/UC/work-better-wherever.mp4"
 five_minute_summary: |
-  - **Training videos:** Five short partner clips below cover migration, Teams, desktop/mobile apps, and hybrid work—watch before the deep dive sections.
+  - **Training videos:** Five short partner clips in this module cover migration, Teams, desktop/mobile apps, and hybrid work—watch before the deep dive sections.
   - **Unified Communications:** A single stack for PBX, messaging, meetings, and file sharing. Be aware of storage differences between tiers and the standard 30-day archiving baseline.
   - **Microsoft Teams Integration:** Customers can use Teams as their hub while leveraging GPC's cloud PBX for routing. Clarify early that Microsoft's Phone System licensing is separate.
   - **Contact Center:** CC Pro and Elite are based on concurrent users. Always work with pricing for digital channels or burst capacity rather than guessing.

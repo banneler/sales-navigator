@@ -109,127 +109,12 @@ function updateVideoCarousel(root, index) {
   root.querySelectorAll('.js-vc-carousel-dot').forEach((dot) => {
     const di = Number(dot.getAttribute('data-vc-dot'));
     const on = di === i;
-    if (dot.classList.contains('vc-thumb-btn')) {
-      dot.classList.toggle('ring-2', on);
-      dot.classList.toggle('ring-orange-400', on);
-      dot.classList.toggle('border-orange-500', on);
-      dot.classList.toggle('border-slate-200', !on);
-      dot.classList.toggle('opacity-100', on);
-      dot.classList.toggle('opacity-90', !on);
-    } else {
-      dot.classList.toggle('bg-orange-500', on);
-      dot.classList.toggle('ring-2', on);
-      dot.classList.toggle('ring-orange-200', on);
-      dot.classList.toggle('bg-slate-300', !on);
-      dot.classList.toggle('hover:bg-slate-400', !on);
-    }
+    dot.classList.toggle('bg-orange-500', on);
+    dot.classList.toggle('ring-2', on);
+    dot.classList.toggle('ring-orange-200', on);
+    dot.classList.toggle('bg-slate-300', !on);
+    dot.classList.toggle('hover:bg-slate-400', !on);
     dot.setAttribute('aria-current', on ? 'true' : 'false');
-  });
-}
-
-/**
- * Grab first decoded frame from MP4 (same-origin) for thumbnail strip + optional video poster.
- */
-function captureThumbFromMp4(relativePath, imgEl, videoEl) {
-  const abs = new URL(relativePath, window.location.href).href;
-  const video = document.createElement('video');
-  video.muted = true;
-  video.playsInline = true;
-  video.preload = 'metadata';
-  video.src = abs;
-
-  const done = () => {
-    video.removeAttribute('src');
-    video.load();
-  };
-
-  const applyDataUrl = (dataUrl) => {
-    if (imgEl && !imgEl.getAttribute('src')) {
-      imgEl.src = dataUrl;
-    }
-    if (
-      videoEl &&
-      !videoEl.getAttribute('poster') &&
-      dataUrl &&
-      dataUrl.startsWith('data:')
-    ) {
-      videoEl.setAttribute('poster', dataUrl);
-    }
-  };
-
-  video.addEventListener(
-    'loadeddata',
-    () => {
-      const d = video.duration;
-      const t =
-        d && !Number.isNaN(d)
-          ? Math.max(0.05, Math.min(0.75, d * 0.03))
-          : 0.1;
-      try {
-        video.currentTime = t;
-      } catch {
-        video.currentTime = 0.1;
-      }
-    },
-    { once: true }
-  );
-
-  video.addEventListener(
-    'seeked',
-    () => {
-      try {
-        const w = video.videoWidth;
-        const h = video.videoHeight;
-        if (!w || !h) {
-          done();
-          return;
-        }
-        const canvas = document.createElement('canvas');
-        const maxW = 176;
-        const scale = Math.min(1, maxW / w);
-        canvas.width = Math.round(w * scale);
-        canvas.height = Math.round(h * scale);
-        const ctx = canvas.getContext('2d');
-        if (!ctx) {
-          done();
-          return;
-        }
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        const dataUrl = canvas.toDataURL('image/jpeg', 0.82);
-        applyDataUrl(dataUrl);
-      } catch (e) {
-        console.warn('Video thumbnail capture failed', relativePath, e);
-      }
-      done();
-    },
-    { once: true }
-  );
-
-  video.addEventListener(
-    'error',
-    () => {
-      done();
-    },
-    { once: true }
-  );
-}
-
-function hydrateVideoCarouselThumbnails(carousel) {
-  if (carousel.getAttribute('data-vc-thumbs-done') === '1') return;
-  carousel.setAttribute('data-vc-thumbs-done', '1');
-
-  carousel.querySelectorAll('.vc-thumb-btn').forEach((btn) => {
-    const idx = Number(btn.getAttribute('data-vc-dot'));
-    const mp4 = btn.getAttribute('data-vc-mp4-src');
-    const staticPoster = btn.getAttribute('data-vc-has-static-poster') === '1';
-    const img = btn.querySelector('.js-vc-thumb-img');
-    if (!mp4 || !img || staticPoster) return;
-    if (img.getAttribute('src')) return;
-
-    const slide = carousel.querySelector(`.vc-slide[data-vc-slide="${idx}"]`);
-    const videoEl = slide?.querySelector('video') ?? null;
-
-    captureThumbFromMp4(mp4, img, videoEl);
   });
 }
 
@@ -238,7 +123,6 @@ function initVideoCarousels(container) {
     const active = Number(carousel.getAttribute('data-vc-active')) || 0;
     pauseVideosInCarousel(carousel);
     updateVideoCarousel(carousel, active);
-    hydrateVideoCarouselThumbnails(carousel);
   });
 }
 
