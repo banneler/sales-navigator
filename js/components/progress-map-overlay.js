@@ -16,6 +16,8 @@ const MODULE_ICONS = {
   'product-cloud-wifi-and-backup': 'fa-cloud',
   'product-uc-voice-and-collaboration': 'fa-headset',
   'competitive-positioning': 'fa-chess-knight',
+  'account-based-marketing': 'fa-bullseye',
+  'operational-business-reviews': 'fa-clipboard-list',
   'map-book': 'fa-map',
 };
 
