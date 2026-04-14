@@ -1,32 +1,68 @@
 const GANTT_NATURAL_WIDTH = 1150;
 
 /**
- * Replace `<div data-sn-gantt></div>` in rendered module HTML with a scaled iframe embed.
- * No extra chrome—section titles live in markdown above the placeholder.
+ * Replace `<div data-sn-gantt></div>` with a Gantt iframe scaled to **fill the host width**
+ * (ResizeObserver + uniform scale). Natural chart width in HTML is 1150px.
+ *
  * @param {HTMLElement} container - #module-host
  * @param {string} moduleId
- * @param {{ iframeHeight?: number; scale?: number }} [options]
+ * @param {{ iframeHeight?: number }} [options] - pixel height of iframe content at 1150px width
  */
 export function mountGanttAfterRender(container, moduleId, options = {}) {
-  const { iframeHeight = 620, scale = 0.66 } = options;
+  const { iframeHeight = 620 } = options;
+  const innerW = GANTT_NATURAL_WIDTH;
+  const innerH = iframeHeight;
 
   const ph = container.querySelector('[data-sn-gantt]');
   if (!ph) return;
 
-  const innerW = GANTT_NATURAL_WIDTH;
-  const innerH = iframeHeight;
-  const boxW = Math.ceil(innerW * scale);
-  const boxH = Math.ceil(innerH * scale);
+  const root = document.createElement('div');
+  /* Full width of section card: negate module section horizontal padding (p-6 / md:p-8). */
+  root.className =
+    'sn-gantt-block not-prose my-4 w-[calc(100%+3rem)] max-w-none -mx-6 md:w-[calc(100%+4rem)] md:-mx-8 min-w-0';
 
-  const wrap = document.createElement('div');
-  wrap.className = 'sn-gantt-block not-prose my-4 max-w-full overflow-x-auto';
-  wrap.innerHTML = `
-    <div class="inline-block overflow-hidden rounded-lg bg-white ring-1 ring-slate-200/80" style="width:min(100%, ${boxW}px);height:${boxH}px;vertical-align:top;">
-      <div style="transform:scale(${scale});transform-origin:top left;width:${innerW}px;height:${innerH}px;">
-        <iframe class="border-0 block bg-white" style="width:${innerW}px;height:${innerH}px;" title="Gantt chart" loading="lazy"></iframe>
-      </div>
-    </div>`;
-  const iframe = wrap.querySelector('iframe');
+  const shell = document.createElement('div');
+  shell.className =
+    'sn-gantt-viewport w-full overflow-hidden rounded-lg bg-white ring-1 ring-slate-200/80';
+
+  const inner = document.createElement('div');
+  inner.className = 'sn-gantt-inner';
+  inner.style.width = `${innerW}px`;
+  inner.style.height = `${innerH}px`;
+  inner.style.transformOrigin = 'top left';
+
+  const iframe = document.createElement('iframe');
+  iframe.className = 'border-0 block bg-white';
+  iframe.style.width = `${innerW}px`;
+  iframe.style.height = `${innerH}px`;
+  iframe.title = 'Gantt chart';
+  iframe.loading = 'lazy';
   iframe.src = new URL(`modules/${moduleId}/gantt.html`, window.location.href).href;
-  ph.replaceWith(wrap);
+
+  inner.appendChild(iframe);
+  shell.appendChild(inner);
+  root.appendChild(shell);
+  ph.replaceWith(root);
+
+  function applyScale() {
+    const w = root.getBoundingClientRect().width;
+    if (w < 32) return;
+    const s = w / innerW;
+    inner.style.transform = `scale(${s})`;
+    shell.style.height = `${innerH * s}px`;
+  }
+
+  applyScale();
+  requestAnimationFrame(applyScale);
+
+  if (typeof ResizeObserver !== 'undefined') {
+    const ro = new ResizeObserver(() => applyScale());
+    ro.observe(root);
+  } else {
+    window.addEventListener('resize', applyScale);
+  }
+
+  iframe.addEventListener('load', () => {
+    requestAnimationFrame(applyScale);
+  });
 }
