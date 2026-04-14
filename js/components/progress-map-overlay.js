@@ -14,6 +14,7 @@ const MODULE_ICONS = {
   'product-connectivity': 'fa-wifi',
   'product-security-and-sd-wan': 'fa-shield-halved',
   'product-cloud-wifi-and-backup': 'fa-cloud',
+  'product-itv': 'fa-tv',
   'product-uc-voice-and-collaboration': 'fa-headset',
   'competitive-positioning': 'fa-chess-knight',
   'account-based-marketing': 'fa-bullseye',
