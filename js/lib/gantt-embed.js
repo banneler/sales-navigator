@@ -2,8 +2,7 @@ const GANTT_NATURAL_WIDTH = 1150;
 
 /**
  * Replace `<div data-sn-gantt></div>` with a responsive Gantt iframe: fixed aspect ratio
- * (1150 × iframeHeight), uniform scale to card width — no scrollbars on the embed or inside
- * the iframe (see gantt.html overflow rules).
+ * (1150 × iframeHeight), uniform scale to fit the **padded** chart area — no scrollbars.
  *
  * @param {HTMLElement} container - #module-host
  * @param {string} moduleId
@@ -19,12 +18,15 @@ export function mountGanttAfterRender(container, moduleId, options = {}) {
 
   const root = document.createElement('div');
   root.className =
-    'sn-gantt-block not-prose my-4 w-[calc(100%+3rem)] max-w-none -mx-6 md:w-[calc(100%+4rem)] md:-mx-8 min-w-0';
+    'sn-gantt-block not-prose my-6 md:my-7 w-[calc(100%+3rem)] max-w-none -mx-6 md:w-[calc(100%+4rem)] md:-mx-8 min-w-0';
 
   const shell = document.createElement('div');
   shell.className =
-    'sn-gantt-viewport relative w-full overflow-hidden rounded-lg bg-white ring-1 ring-slate-200/80';
-  shell.style.aspectRatio = `${innerW} / ${innerH}`;
+    'rounded-xl border border-slate-200/90 bg-white p-4 shadow-sm sm:p-5 md:p-6';
+
+  const viewport = document.createElement('div');
+  viewport.className = 'sn-gantt-viewport relative w-full overflow-hidden';
+  viewport.style.aspectRatio = `${innerW} / ${innerH}`;
 
   const inner = document.createElement('div');
   inner.className = 'sn-gantt-inner';
@@ -50,15 +52,15 @@ export function mountGanttAfterRender(container, moduleId, options = {}) {
   iframe.src = new URL(`modules/${moduleId}/gantt.html`, window.location.href).href;
 
   inner.appendChild(iframe);
-  shell.appendChild(inner);
+  viewport.appendChild(inner);
+  shell.appendChild(viewport);
   root.appendChild(shell);
   ph.replaceWith(root);
 
   function applyScale() {
-    const w = root.getBoundingClientRect().width;
-    if (w < 32) return;
-    const s = w / innerW;
-    inner.style.transform = `scale(${s})`;
+    const w = viewport.getBoundingClientRect().width;
+    if (w < 24) return;
+    inner.style.transform = `scale(${w / innerW})`;
   }
 
   applyScale();
@@ -66,7 +68,7 @@ export function mountGanttAfterRender(container, moduleId, options = {}) {
 
   if (typeof ResizeObserver !== 'undefined') {
     const ro = new ResizeObserver(() => applyScale());
-    ro.observe(root);
+    ro.observe(viewport);
   } else {
     window.addEventListener('resize', applyScale);
   }
