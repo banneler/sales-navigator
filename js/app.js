@@ -86,6 +86,10 @@ async function main() {
 
   renderShell(manifest, (id) => show(id));
 
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    if (typeof window._openMobileNav === 'function') window._openMobileNav();
+  });
+
   document.getElementById('fiber-path-btn')?.addEventListener('click', () => {
     const id = getRouteModuleId();
     openProgressMap(manifest, id || firstId || '');

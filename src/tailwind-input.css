@@ -128,10 +128,16 @@
   transform: rotate(180deg);
 }
 
-/* Scenarios rail: situation block must match rail type (11px); global .module-markdown-body is 15px */
+/* Scenarios rail: compact on desktop, readable on mobile */
 .scenario-situation-text.module-markdown-body {
-  font-size: 0.6875rem;
-  line-height: 1.45;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+@media (min-width: 640px) {
+  .scenario-situation-text.module-markdown-body {
+    font-size: 0.6875rem;
+    line-height: 1.45;
+  }
 }
 .scenario-situation-text.module-markdown-body p,
 .scenario-situation-text.module-markdown-body li {

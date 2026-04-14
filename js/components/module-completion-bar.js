@@ -65,7 +65,7 @@ export function mountModuleCompletionBar(container, manifest, moduleId) {
             : ' — you’re at the last stop on the path.'
         }</p>
       </div>
-      <button type="button" class="module-complete-btn shrink-0 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-orange-500/25 transition hover:from-orange-600 hover:to-orange-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2">
+      <button type="button" class="module-complete-btn w-full sm:w-auto shrink-0 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-orange-500/25 transition hover:from-orange-600 hover:to-orange-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2">
         <i class="fa-solid fa-bolt" aria-hidden="true"></i>
         Mark module complete
       </button>`;

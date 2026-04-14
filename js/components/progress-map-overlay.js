@@ -194,8 +194,8 @@ export function openProgressMap(manifest, currentModuleId, options = {}) {
       <div data-pm-modal-inner class="bg-white border border-slate-200 rounded-2xl shadow-2xl max-w-sm w-full overflow-hidden transform scale-95 transition-transform duration-300">
         <div data-pm-modal-accent class="h-1.5 w-full bg-slate-200"></div>
         <div class="p-6 relative">
-          <button type="button" data-pm-modal-x class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors" aria-label="Close">
-            <i class="fa-solid fa-xmark w-5 h-5" aria-hidden="true"></i>
+          <button type="button" data-pm-modal-x class="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors" aria-label="Close">
+            <i class="fa-solid fa-xmark text-lg" aria-hidden="true"></i>
           </button>
           <div data-pm-modal-icon-wrap class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mb-4">
             <i data-pm-modal-icon class="fa-solid fa-book w-6 h-6 text-slate-500" aria-hidden="true"></i>
@@ -371,7 +371,7 @@ export function openProgressMap(manifest, currentModuleId, options = {}) {
 
       html += `
         <div class="relative w-[200px] h-[480px] flex-shrink-0 group" data-pm-node="${index}">
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full z-20 ${dotStyle} transition-all duration-500 cursor-pointer pm-clickable" data-pm-open="${safeId}" role="button" tabindex="0"></div>
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 sm:w-4 sm:h-4 rounded-full z-20 ${dotStyle} transition-all duration-500 cursor-pointer pm-clickable" data-pm-open="${safeId}" role="button" tabindex="0"></div>
           <div class="absolute left-1/2 w-1 -translate-x-1/2 z-10 transition-colors duration-500 ${lateralStyle} rounded-full overflow-hidden pointer-events-none" style="${lateralPosition}">
             ${packetAnim}
           </div>

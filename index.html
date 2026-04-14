@@ -30,19 +30,22 @@
 </head>
 <body class="bg-slate-100 text-slate-800 font-sans h-screen flex flex-col overflow-hidden" style="font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;">
   <div id="main-content" class="flex-1 flex flex-col min-h-0 overflow-hidden">
-    <header id="main-header" class="bg-slate-900 text-white p-4 shadow-md flex items-center justify-between gap-4 z-10 border-b-4 border-orange-500 flex-shrink-0">
-      <div class="flex items-center gap-4 flex-1 min-w-0">
-        <img src="Proposal_Assets/GPC-White-1-1.webp" alt="GPC Logo" class="h-8 flex-shrink-0">
-        <h1 class="text-xl font-bold tracking-wide border-l border-slate-700 pl-4 flex-shrink-0">Sales-Navigator</h1>
-        <p class="text-sm text-slate-400 hidden sm:block truncate">Interactive training modules</p>
+    <header id="main-header" class="bg-slate-900 text-white p-3 sm:p-4 shadow-md flex items-center justify-between gap-2 sm:gap-4 z-10 border-b-4 border-orange-500 flex-shrink-0">
+      <div class="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
+        <button type="button" id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 -ml-1 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" aria-label="Open menu">
+          <i class="fa-solid fa-bars text-lg" aria-hidden="true"></i>
+        </button>
+        <img src="Proposal_Assets/GPC-White-1-1.webp" alt="GPC Logo" class="h-7 sm:h-8 flex-shrink-0">
+        <h1 class="text-base sm:text-xl font-bold tracking-wide border-l border-slate-700 pl-2 sm:pl-4 flex-shrink-0 truncate">Sales-Navigator</h1>
+        <p class="text-sm text-slate-400 hidden lg:block truncate">Interactive training modules</p>
       </div>
-      <div class="flex items-center gap-2 flex-shrink-0">
-        <div class="hidden sm:flex items-center gap-2 mr-2 px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700" title="Your Total XP">
-          <i class="fa-solid fa-star text-orange-400 text-sm" aria-hidden="true"></i>
-          <span class="js-xp-display font-bold text-slate-200 text-sm tabular-nums">0</span>
-          <span class="text-xs text-slate-500 font-medium">XP</span>
+      <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+        <div class="flex items-center gap-1.5 sm:gap-2 sm:mr-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-slate-800 border border-slate-700" title="Your Total XP">
+          <i class="fa-solid fa-star text-orange-400 text-xs sm:text-sm" aria-hidden="true"></i>
+          <span class="js-xp-display font-bold text-slate-200 text-xs sm:text-sm tabular-nums">0</span>
+          <span class="text-xs text-slate-500 font-medium hidden sm:inline">XP</span>
         </div>
-        <button type="button" id="fiber-path-btn" class="inline-flex items-center gap-2 rounded-lg bg-orange-500/15 hover:bg-orange-500/25 border border-orange-400/40 text-orange-100 text-sm font-semibold px-3 py-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300" title="View your progress across modules">
+        <button type="button" id="fiber-path-btn" class="inline-flex items-center gap-2 rounded-lg bg-orange-500/15 hover:bg-orange-500/25 border border-orange-400/40 text-orange-100 text-sm font-semibold px-2.5 sm:px-3 py-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300" title="View your progress across modules">
           <i class="fa-solid fa-route" aria-hidden="true"></i>
           <span class="hidden sm:inline">Fiber path</span>
         </button>

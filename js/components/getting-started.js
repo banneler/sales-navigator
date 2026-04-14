@@ -767,11 +767,11 @@ export function loadGettingStarted(container, manifest) {
         <div class="px-5 py-4 getting-started-body text-sm max-h-[min(52vh,420px)] overflow-y-auto">${step.body}</div>
         <div class="px-5 py-3 bg-slate-900/[0.03] border-t border-slate-900/10 flex flex-wrap items-center justify-between gap-2 backdrop-blur-sm">
           <div class="flex flex-wrap items-center gap-2">
-            <button type="button" class="gs-prev inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white/40 px-3 py-2 text-xs font-medium text-slate-800 hover:bg-white/70 disabled:opacity-40 disabled:pointer-events-none transition" ${stepIndex === 0 ? 'disabled' : ''}>
+            <button type="button" class="gs-prev inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white/40 px-3.5 py-2.5 text-xs font-medium text-slate-800 hover:bg-white/70 disabled:opacity-40 disabled:pointer-events-none transition min-h-[44px]" ${stepIndex === 0 ? 'disabled' : ''}>
               <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
               Back
             </button>
-            <button type="button" class="gs-exit-tour inline-flex items-center gap-1.5 rounded-lg border border-slate-300/70 bg-white/30 px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white/60 hover:text-slate-800 transition" aria-label="Exit quick tour and return to the page">
+            <button type="button" class="gs-exit-tour inline-flex items-center gap-1.5 rounded-lg border border-slate-300/70 bg-white/30 px-3.5 py-2.5 text-xs font-medium text-slate-600 hover:bg-white/60 hover:text-slate-800 transition min-h-[44px]" aria-label="Exit quick tour and return to the page">
               <i class="fa-solid fa-xmark" aria-hidden="true"></i>
               Exit tour
             </button>
@@ -779,7 +779,7 @@ export function loadGettingStarted(container, manifest) {
           <div class="flex flex-wrap gap-2">
             ${
               !isLast
-                ? `<button type="button" class="gs-next inline-flex items-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 disabled:hover:bg-orange-500 text-white font-semibold px-4 py-2 text-xs shadow-md transition disabled:opacity-50 disabled:cursor-not-allowed" ${nextBlocked ? 'disabled' : ''} title="${escapeHtml(nextTitle)}">
+                ? `<button type="button" class="gs-next inline-flex items-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 disabled:hover:bg-orange-500 text-white font-semibold px-4 py-2.5 text-xs shadow-md transition disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px]" ${nextBlocked ? 'disabled' : ''} title="${escapeHtml(nextTitle)}">
               Next
               <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </button>`
