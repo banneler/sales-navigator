@@ -54,6 +54,10 @@ Account-based programs work when **sales and marketing agree on the timeline, th
 
 Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a named executive target?*
 
+## 90-day sequence
+
+Scroll horizontally on narrow screens if the full timeline is clipped.
+
 <div data-sn-gantt=""></div>
 
 ## How to use this module

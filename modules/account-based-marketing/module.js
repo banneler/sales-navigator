@@ -11,10 +11,7 @@ export default function renderAccountBasedMarketing(
 ) {
   renderMarkdownModule(container, markdownSource, moduleId);
   mountGanttAfterRender(container, moduleId, {
-    title: '90-day sequence',
-    blurb:
-      'Scaled chart—use horizontal scroll if needed. Same asset as your Constellation-CRM process doc.',
-    iframeHeight: 660,
+    iframeHeight: 630,
     scale: 0.62,
   });
 }

@@ -52,6 +52,10 @@ scenarios:
 
 Operational Business Reviews turn **network reality, financial signals, and marketing narrative** into a single executive conversation. Reps win when the **prep process is predictable**—this module trains the timeline, not just the slide deck.
 
+## 21-day OBR cycle
+
+Handoff at day 14; scroll horizontally on small screens if needed.
+
 <div data-sn-gantt=""></div>
 
 ## How to use this module

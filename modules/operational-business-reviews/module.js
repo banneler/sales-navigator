@@ -11,10 +11,7 @@ export default function renderOperationalBusinessReviews(
 ) {
   renderMarkdownModule(container, markdownSource, moduleId);
   mountGanttAfterRender(container, moduleId, {
-    title: '21-day OBR cycle',
-    blurb:
-      'Scaled chart—handoff at day 14; OBR meeting at end of cycle. Scroll horizontally on small screens.',
-    iframeHeight: 580,
+    iframeHeight: 550,
     scale: 0.68,
   });
 }
