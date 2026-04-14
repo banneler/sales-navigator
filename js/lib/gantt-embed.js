@@ -1,8 +1,9 @@
 const GANTT_NATURAL_WIDTH = 1150;
 
 /**
- * Replace `<div data-sn-gantt></div>` with a responsive Gantt iframe: fixed aspect ratio
- * (1150 × iframeHeight), uniform scale to fit the **padded** chart area — no scrollbars.
+ * Replace `<div data-sn-gantt></div>` with a responsive Gantt iframe: design size
+ * 1150 × iframeHeight, uniform scale to fit width; viewport height follows scale (no CSS
+ * aspect-ratio — avoids vertical squish in flex layouts).
  *
  * @param {HTMLElement} container - #module-host
  * @param {string} moduleId
@@ -30,15 +31,15 @@ export function mountGanttAfterRender(container, moduleId, options = {}) {
 
   const root = document.createElement('div');
   root.className =
-    'sn-gantt-block not-prose my-6 md:my-7 w-[calc(100%+3rem)] max-w-none -mx-6 md:w-[calc(100%+4rem)] md:-mx-8 min-w-0';
+    'sn-gantt-block not-prose my-6 md:my-7 w-[calc(100%+3rem)] max-w-none -mx-6 md:w-[calc(100%+4rem)] md:-mx-8 min-w-0 self-start';
 
   const shell = document.createElement('div');
   shell.className =
     'rounded-xl border border-slate-200/90 bg-white p-4 shadow-sm sm:p-5 md:p-6';
 
   const viewport = document.createElement('div');
-  viewport.className = 'sn-gantt-viewport relative w-full overflow-hidden';
-  viewport.style.aspectRatio = `${innerW} / ${innerH}`;
+  viewport.className =
+    'sn-gantt-viewport relative w-full max-w-full shrink-0 overflow-hidden';
 
   const inner = document.createElement('div');
   inner.className = 'sn-gantt-inner';
@@ -74,13 +75,35 @@ export function mountGanttAfterRender(container, moduleId, options = {}) {
     inner.style.height = `${next}px`;
     iframe.style.height = `${next}px`;
     iframe.setAttribute('height', String(next));
-    viewport.style.aspectRatio = `${innerW} / ${next}`;
   }
 
+  /**
+   * Explicit height (not CSS aspect-ratio) avoids flex/max-height fighting the box and
+   * “pinching” the scaled iframe. Scale is uniform on both axes.
+   */
   function applyScale() {
     const w = viewport.getBoundingClientRect().width;
     if (w < 24) return;
-    inner.style.transform = `scale(${w / innerW})`;
+    const scale = w / innerW;
+    inner.style.transform = `scale(${scale})`;
+    const viewportH = innerH * scale;
+    viewport.style.height = `${viewportH}px`;
+  }
+
+  /** Prefer .chart-container bounds — html/body offsetHeight often equals iframe height, not content. */
+  function measureIframeContentHeight(doc) {
+    const body = doc.body;
+    if (!body) return 0;
+    const chart = doc.querySelector('.chart-container');
+    if (chart) {
+      const bodyRect = body.getBoundingClientRect();
+      const chartRect = chart.getBoundingClientRect();
+      const fromBodyTop = Math.ceil(chartRect.bottom - bodyRect.top);
+      return Math.max(fromBodyTop, Math.ceil(body.scrollHeight));
+    }
+    return Math.ceil(
+      Math.max(doc.documentElement.scrollHeight, body.scrollHeight),
+    );
   }
 
   function syncContentHeightFromIframe() {
@@ -89,12 +112,7 @@ export function mountGanttAfterRender(container, moduleId, options = {}) {
       const doc = iframe.contentDocument;
       if (!doc?.body) return;
       const measure = () => {
-        const raw = Math.max(
-          doc.documentElement.scrollHeight,
-          doc.documentElement.offsetHeight,
-          doc.body.scrollHeight,
-          doc.body.offsetHeight,
-        );
+        const raw = measureIframeContentHeight(doc);
         const next = Math.min(
           Math.max(Math.ceil(raw) + heightSlop, minIframeHeight),
           maxIframeHeight,
