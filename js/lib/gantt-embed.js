@@ -84,8 +84,10 @@ export function mountGanttAfterRender(container, moduleId, options = {}) {
   function applyScale() {
     const w = viewport.getBoundingClientRect().width;
     if (w < 24) return;
-    const scale = w / innerW;
-    inner.style.transform = `scale(${scale})`;
+    const scale = Math.min(w / innerW, 1);
+    const scaledW = innerW * scale;
+    const tx = Math.max(0, (w - scaledW) / 2);
+    inner.style.transform = `translateX(${tx}px) scale(${scale})`;
     const viewportH = innerH * scale;
     viewport.style.height = `${viewportH}px`;
   }
@@ -145,6 +147,10 @@ export function mountGanttAfterRender(container, moduleId, options = {}) {
   iframe.addEventListener('load', () => {
     requestAnimationFrame(applyScale);
     syncContentHeightFromIframe();
+    window.setTimeout(() => {
+      syncContentHeightFromIframe();
+      applyScale();
+    }, 150);
   });
   iframe.src = new URL(`modules/${moduleId}/gantt.html`, window.location.href).href;
 }

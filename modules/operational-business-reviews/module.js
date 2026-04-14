@@ -11,6 +11,10 @@ export default function renderOperationalBusinessReviews(
 ) {
   renderMarkdownModule(container, markdownSource, moduleId);
   mountGanttAfterRender(container, moduleId, {
-    iframeHeight: 610,
+    iframeHeight: 620,
+    fitContentHeight: true,
+    minIframeHeight: 520,
+    maxIframeHeight: 720,
+    heightSlop: 28,
   });
 }
