@@ -9,14 +9,19 @@ reference_files:
 video_carousel:
   - title: "Premises to UC"
     src: "assets/UC/prem-to-uc.mp4"
+    poster: "assets/UC/prem-to-uc.png"
   - title: "Microsoft Teams"
     src: "assets/UC/teams.mp4"
+    poster: "assets/UC/teams.png"
   - title: "Desktop app"
     src: "assets/UC/desktop-app.mp4"
+    poster: "assets/UC/desktop-app.png"
   - title: "Mobile app"
     src: "assets/UC/mobile-app.mp4"
+    poster: "assets/UC/mobile-app.png"
   - title: "Work better wherever"
     src: "assets/UC/work-better-wherever.mp4"
+    poster: "assets/UC/work-better-wherever.png"
 five_minute_summary: |
   - **Training videos:** Five short partner clips in this module cover migration, Teams, desktop/mobile apps, and hybrid work—watch before the deep dive sections.
   - **Unified Communications:** A single stack for PBX, messaging, meetings, and file sharing. Be aware of storage differences between tiers and the standard 30-day archiving baseline.
