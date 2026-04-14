@@ -54,7 +54,7 @@ Operational Business Reviews turn **network reality, financial signals, and mark
 
 ## 21-day OBR cycle
 
-Handoff at day 14; scroll horizontally on small screens if needed.
+Handoff at day 14.
 
 <div data-sn-gantt=""></div>
 

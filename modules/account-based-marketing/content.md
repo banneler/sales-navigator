@@ -28,11 +28,11 @@ knowledge_checks:
 
   - question: "Where should reps log and execute the prescribed touches for this program?"
     options:
-      - "Constellation-CRM (as noted on the process chart footer)"
+      - "Constellation-CRM (per the sales sequence standard)"
       - "Only in email, with no CRM requirement"
       - "A separate spreadsheet owned by marketing only"
     correct_index: 0
-    explanation: "The Gantt references Constellation-CRM as the sales sequence system."
+    explanation: "Constellation-CRM is the intended system for this sequence."
 
 scenarios:
   - title: "Skipping ahead in the ABM sequence"
@@ -55,8 +55,6 @@ Account-based programs work when **sales and marketing agree on the timeline, th
 Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a named executive target?*
 
 ## 90-day sequence
-
-Scroll horizontally on narrow screens if the full timeline is clipped.
 
 <div data-sn-gantt=""></div>
 
