@@ -24,6 +24,7 @@
         }
 
         .chart-container {
+            box-sizing: border-box;
             width: 1150px;
             max-width: none;
             background: #fff;
@@ -271,11 +272,11 @@
             z-index: 10;
         }
 
-        /* Updated Meeting Flag - Pointing DOWN from Top */
+        /* Flag inset from grid right edge (was -24px and clipped in iframe embed) */
         .finish-flag {
             position: absolute;
-            right: -24px;
-            top: 150px; /* Sits above the grid header */
+            right: 8px;
+            top: 150px;
             width: 50px;
             display: flex;
             flex-direction: column;

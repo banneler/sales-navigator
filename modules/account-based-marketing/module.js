@@ -11,6 +11,10 @@ export default function renderAccountBasedMarketing(
 ) {
   renderMarkdownModule(container, markdownSource, moduleId);
   mountGanttAfterRender(container, moduleId, {
-    iframeHeight: 680,
+    iframeHeight: 350,
+    fitContentHeight: true,
+    minIframeHeight: 220,
+    maxIframeHeight: 460,
+    heightSlop: 20,
   });
 }

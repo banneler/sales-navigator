@@ -6,12 +6,24 @@ const GANTT_NATURAL_WIDTH = 1150;
  *
  * @param {HTMLElement} container - #module-host
  * @param {string} moduleId
- * @param {{ iframeHeight?: number }} [options] - design height of chart at 1150px width
+ * @param {{
+ *   iframeHeight?: number;
+ *   fitContentHeight?: boolean;
+ *   minIframeHeight?: number;
+ *   maxIframeHeight?: number;
+ *   heightSlop?: number;
+ * }} [options] - design height of chart at 1150px width; optional shrink-to-content
  */
 export function mountGanttAfterRender(container, moduleId, options = {}) {
-  const { iframeHeight = 620 } = options;
+  const {
+    iframeHeight = 620,
+    fitContentHeight = false,
+    minIframeHeight = 200,
+    maxIframeHeight = 1200,
+    heightSlop = 6,
+  } = options;
   const innerW = GANTT_NATURAL_WIDTH;
-  const innerH = iframeHeight;
+  let innerH = iframeHeight;
 
   const ph = container.querySelector('[data-sn-gantt]');
   if (!ph) return;
@@ -49,7 +61,6 @@ export function mountGanttAfterRender(container, moduleId, options = {}) {
   iframe.style.width = `${innerW}px`;
   iframe.style.height = `${innerH}px`;
   iframe.style.display = 'block';
-  iframe.src = new URL(`modules/${moduleId}/gantt.html`, window.location.href).href;
 
   inner.appendChild(iframe);
   viewport.appendChild(inner);
@@ -57,10 +68,50 @@ export function mountGanttAfterRender(container, moduleId, options = {}) {
   root.appendChild(shell);
   ph.replaceWith(root);
 
+  function setDesignHeight(h) {
+    const next = Math.round(h);
+    innerH = next;
+    inner.style.height = `${next}px`;
+    iframe.style.height = `${next}px`;
+    iframe.setAttribute('height', String(next));
+    viewport.style.aspectRatio = `${innerW} / ${next}`;
+  }
+
   function applyScale() {
     const w = viewport.getBoundingClientRect().width;
     if (w < 24) return;
     inner.style.transform = `scale(${w / innerW})`;
+  }
+
+  function syncContentHeightFromIframe() {
+    if (!fitContentHeight) return;
+    try {
+      const doc = iframe.contentDocument;
+      if (!doc?.body) return;
+      const measure = () => {
+        const raw = Math.max(
+          doc.documentElement.scrollHeight,
+          doc.documentElement.offsetHeight,
+          doc.body.scrollHeight,
+          doc.body.offsetHeight,
+        );
+        const next = Math.min(
+          Math.max(Math.ceil(raw) + heightSlop, minIframeHeight),
+          maxIframeHeight,
+        );
+        setDesignHeight(next);
+        applyScale();
+      };
+      const run = () =>
+        requestAnimationFrame(() => requestAnimationFrame(measure));
+      if (doc.fonts?.ready) {
+        doc.fonts.ready.then(run).catch(run);
+      } else {
+        run();
+      }
+    } catch {
+      /* cross-origin */
+    }
   }
 
   applyScale();
@@ -75,5 +126,7 @@ export function mountGanttAfterRender(container, moduleId, options = {}) {
 
   iframe.addEventListener('load', () => {
     requestAnimationFrame(applyScale);
+    syncContentHeightFromIframe();
   });
+  iframe.src = new URL(`modules/${moduleId}/gantt.html`, window.location.href).href;
 }
