@@ -251,6 +251,26 @@
             left: -3px;
         }
 
+        /* Drop-By connector lands toward Month 1 right edge — match original lower-right */
+        .abm-optional-callout {
+            position: absolute;
+            top: 72%;
+            right: 2%;
+            left: auto;
+            bottom: auto;
+            max-width: 140px;
+            background: #fff;
+            border: 1px dashed #FF8200;
+            padding: 4px;
+            font-size: 9px;
+            font-weight: 700;
+            color: #FF8200;
+            z-index: 11;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+
     </style>
 </head>
 <body>
@@ -392,8 +412,8 @@
                     <div class="bar bar-marketing bg-grey">
                         Month 1: LinkedIn & Google Ads (Awareness)
                     </div>
-                     <!-- Connector Destination -->
-                     <div style="position: absolute; left: 8px; bottom: 8px; right: auto; top: auto; max-width: 140px; background: #fff; border: 1px dashed #FF8200; padding: 4px; font-size: 9px; font-weight: 700; color: #FF8200; z-index: 11; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                     <!-- Connector destination: lower-right of M1 marketing (was right:-10% top:75%) -->
+                     <div class="abm-optional-callout">
                         OPTIONAL:<br>Brochure Insert Copy
                     </div>
                 </div>

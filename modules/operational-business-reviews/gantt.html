@@ -274,13 +274,15 @@
         }
 
         /*
-         * Sibling of .finish-container so % / right resolve against .gantt-grid width.
-         * Slight negative right matches standalone art (bubble overlaps orange finish line)
-         * while 28px chart padding keeps it inside the 1150px iframe.
+         * Sibling of .finish-container: position vs .gantt-grid.
+         * Center stack on the orange strip (4px at right:0 → axis at calc(100% - 2px))
+         * so the arrow tip lines up with the finish line, not day 20.
          */
         .finish-flag {
             position: absolute;
-            right: -18px;
+            left: calc(100% - 2px);
+            right: auto;
+            transform: translateX(-50%);
             top: 150px;
             display: flex;
             flex-direction: column;
