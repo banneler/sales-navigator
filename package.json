@@ -6,6 +6,7 @@
     "build": "tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind.css --minify",
     "dev:css": "tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind.css --watch",
     "build:handouts": "node scripts/build-handouts.mjs",
+    "docs:assemble-modules": "node scripts/assemble-all-modules-md.mjs",
     "auth:migrate": "auth migrate --config lib/auth-server.js --yes"
   },
   "devDependencies": {
