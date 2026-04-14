@@ -77,6 +77,55 @@ function initKnowledgeCarousels(container) {
   });
 }
 
+function pauseVideosInCarousel(root) {
+  root.querySelectorAll('video').forEach((v) => {
+    v.pause();
+  });
+}
+
+function updateVideoCarousel(root, index) {
+  const count = Number(root.getAttribute('data-vc-count')) || 0;
+  if (count === 0) return;
+  const i = Math.max(0, Math.min(index, count - 1));
+  root.setAttribute('data-vc-active', String(i));
+
+  root.querySelectorAll('.vc-slide').forEach((el) => {
+    const si = Number(el.getAttribute('data-vc-slide'));
+    const on = si === i;
+    el.classList.toggle('hidden', !on);
+    if (!on) {
+      el.querySelectorAll('video').forEach((v) => v.pause());
+    }
+  });
+
+  const ind = root.querySelector('.js-vc-carousel-indicator');
+  if (ind) ind.textContent = `${i + 1} / ${count}`;
+
+  const prev = root.querySelector('.js-vc-carousel-prev');
+  const next = root.querySelector('.js-vc-carousel-next');
+  if (prev) prev.disabled = i === 0;
+  if (next) next.disabled = i === count - 1;
+
+  root.querySelectorAll('.js-vc-carousel-dot').forEach((dot) => {
+    const di = Number(dot.getAttribute('data-vc-dot'));
+    const on = di === i;
+    dot.classList.toggle('bg-orange-500', on);
+    dot.classList.toggle('ring-2', on);
+    dot.classList.toggle('ring-orange-200', on);
+    dot.classList.toggle('bg-slate-300', !on);
+    dot.classList.toggle('hover:bg-slate-400', !on);
+    dot.setAttribute('aria-current', on ? 'true' : 'false');
+  });
+}
+
+function initVideoCarousels(container) {
+  container.querySelectorAll('.vc-carousel').forEach((carousel) => {
+    const active = Number(carousel.getAttribute('data-vc-active')) || 0;
+    pauseVideosInCarousel(carousel);
+    updateVideoCarousel(carousel, active);
+  });
+}
+
 function updateScenarioProgress(scenariosInner) {
   const cards = scenariosInner.querySelectorAll('.scenario-card');
   const total = cards.length;
@@ -125,6 +174,36 @@ function handleClick(e) {
     if (root) {
       const di = Number(dotBtn.getAttribute('data-kc-dot'));
       updateKnowledgeCarousel(root, di);
+    }
+    return;
+  }
+
+  const vcPrev = e.target.closest('.js-vc-carousel-prev');
+  if (vcPrev) {
+    const root = vcPrev.closest('.vc-carousel');
+    if (root) {
+      const cur = Number(root.getAttribute('data-vc-active')) || 0;
+      updateVideoCarousel(root, cur - 1);
+    }
+    return;
+  }
+
+  const vcNext = e.target.closest('.js-vc-carousel-next');
+  if (vcNext) {
+    const root = vcNext.closest('.vc-carousel');
+    if (root) {
+      const cur = Number(root.getAttribute('data-vc-active')) || 0;
+      updateVideoCarousel(root, cur + 1);
+    }
+    return;
+  }
+
+  const vcDot = e.target.closest('.js-vc-carousel-dot');
+  if (vcDot) {
+    const root = vcDot.closest('.vc-carousel');
+    if (root) {
+      const di = Number(vcDot.getAttribute('data-vc-dot'));
+      updateVideoCarousel(root, di);
     }
     return;
   }
@@ -230,5 +309,6 @@ export function bindModuleInteractions(container) {
   container.addEventListener('click', fn);
   handlerByEl.set(container, fn);
   initKnowledgeCarousels(container);
+  initVideoCarousels(container);
   initScenarioProgress(container);
 }

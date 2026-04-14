@@ -7,6 +7,7 @@ import {
   buildFiveMinuteSummaryHtml,
   buildModuleReferenceFilesHtml,
   buildScenariosAsideHtml,
+  buildVideoCarouselHtml,
   buildKnowledgeChecksCarouselHtml,
   buildRoleplayHtml,
 } from './module-enrichment.js';
@@ -198,6 +199,7 @@ export function renderModuleDocumentHtml(markdownSource) {
   const fiveMinHtml = buildFiveMinuteSummaryHtml(meta);
   const referenceFilesHtml = buildModuleReferenceFilesHtml(meta);
   const scenariosAsideInner = buildScenariosAsideHtml(meta);
+  const videoCarouselHtml = buildVideoCarouselHtml(meta);
   const knowledgeCarouselHtml = buildKnowledgeChecksCarouselHtml(meta);
   const roleplayHtml = buildRoleplayHtml(meta);
   const hasRef = Boolean(referenceFilesHtml);
@@ -210,6 +212,7 @@ export function renderModuleDocumentHtml(markdownSource) {
 
   const mainColumnInner = `
       ${fiveMinHtml}
+      ${videoCarouselHtml}
       <div class="space-y-6 module-deep-dive">${sectionCardsHtml}</div>
       ${knowledgeCarouselHtml}
       ${roleplayHtml}`;

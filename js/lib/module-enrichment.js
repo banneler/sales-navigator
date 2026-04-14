@@ -211,6 +211,81 @@ export function buildRoleplayHtml(meta) {
       </section>`;
 }
 
+/** Relative MP4 under site root (internal training paths only). */
+const SAFE_UC_VIDEO_SRC = /^assets\/UC\/[a-zA-Z0-9._-]+\.mp4$/;
+
+/**
+ * Optional training video carousel (e.g. partner portal clips). Wired in {@link renderModuleDocumentHtml}.
+ * Front matter:
+ *   video_carousel_intro: "Optional short HTML-safe intro (plain text)."
+ *   video_carousel:
+ *     - title: "Slide label"
+ *       src: "assets/UC/file.mp4"
+ */
+export function buildVideoCarouselHtml(meta) {
+  const items = meta.video_carousel;
+  if (!Array.isArray(items) || items.length === 0) return '';
+
+  const slides = [];
+  for (let i = 0; i < items.length; i++) {
+    const it = items[i];
+    const title =
+      typeof it?.title === 'string' && it.title.trim()
+        ? it.title.trim()
+        : `Video ${i + 1}`;
+    const src = typeof it?.src === 'string' ? it.src.trim() : '';
+    if (!SAFE_UC_VIDEO_SRC.test(src)) continue;
+    const srcEsc = escapeHtml(src);
+    const hidden = i === 0 ? '' : ' hidden';
+    slides.push(`<div class="vc-slide${hidden}" data-vc-slide="${i}">
+          <p class="text-sm font-semibold text-slate-800 mb-3 text-center">${escapeHtml(title)}</p>
+          <div class="rounded-xl border border-slate-200 bg-black/90 overflow-hidden shadow-md">
+            <video class="w-full max-h-[min(56vh,520px)] object-contain" controls playsinline preload="metadata" title="${escapeHtml(title)}">
+              <source src="${srcEsc}" type="video/mp4" />
+              <p class="text-slate-300 text-sm p-4">Your browser cannot play this video. <a class="text-orange-400 underline" href="${srcEsc}" target="_blank" rel="noopener">Open file</a></p>
+            </video>
+          </div>
+        </div>`);
+  }
+
+  if (slides.length === 0) return '';
+
+  const n = slides.length;
+  const dots = slides
+    .map((_, i) => {
+      const active =
+        i === 0
+          ? 'bg-orange-500 ring-2 ring-orange-200'
+          : 'bg-slate-300 hover:bg-slate-400';
+      return `<button type="button" class="js-vc-carousel-dot h-2 w-2 shrink-0 rounded-full transition ${active}" data-vc-dot="${i}" aria-label="Video ${i + 1} of ${n}" aria-current="${i === 0 ? 'true' : 'false'}"></button>`;
+    })
+    .join('');
+
+  const intro =
+    typeof meta.video_carousel_intro === 'string' && meta.video_carousel_intro.trim()
+      ? `<p class="text-sm text-slate-600 mb-4">${escapeHtml(meta.video_carousel_intro.trim())}</p>`
+      : '';
+
+  return `
+      <section class="module-video-carousel border border-slate-200 bg-gradient-to-b from-slate-50 to-white rounded-2xl p-5 md:p-6 shadow-sm" aria-labelledby="vc-heading">
+        <h3 id="vc-heading" class="text-lg font-bold text-slate-900 border-b border-slate-200 pb-2 mb-2">Training videos</h3>
+        ${intro}
+        <div class="vc-carousel rounded-xl border border-slate-200 bg-white p-3 md:p-4" data-vc-active="0" data-vc-count="${n}">
+          <div class="vc-carousel-slides min-h-[200px]">${slides.join('')}</div>
+          <div class="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-slate-200">
+            <button type="button" class="js-vc-carousel-prev inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 disabled:opacity-40 disabled:pointer-events-none" aria-label="Previous video">
+              <i class="fa-solid fa-chevron-left text-xs" aria-hidden="true"></i> Previous
+            </button>
+            <span class="js-vc-carousel-indicator text-sm font-semibold text-slate-600 tabular-nums">1 / ${n}</span>
+            <button type="button" class="js-vc-carousel-next inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 disabled:opacity-40 disabled:pointer-events-none" aria-label="Next video">
+              Next <i class="fa-solid fa-chevron-right text-xs" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="flex flex-wrap justify-center gap-1.5 mt-3 px-1 max-w-full">${dots}</div>
+        </div>
+      </section>`;
+}
+
 export function buildKnowledgeChecksCarouselHtml(meta) {
   const checks = meta.knowledge_checks;
   if (!Array.isArray(checks) || checks.length === 0) return '';
