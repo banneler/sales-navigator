@@ -26,44 +26,48 @@
     <div class="w-full max-w-md rounded-2xl border border-slate-200 bg-white shadow-xl overflow-hidden">
       <div class="h-1.5 bg-gradient-to-r from-orange-500 via-orange-400 to-amber-400"></div>
       <div class="p-8 space-y-8">
-        <form id="login-form" class="space-y-5">
-          <div>
-            <h2 class="text-lg font-semibold text-slate-900">Email &amp; password</h2>
-            <p class="text-sm text-slate-500 mt-1">Use your work email and password.</p>
-          </div>
+        <!-- Toggle lives outside <form> so it never participates in implicit submit / validation quirks -->
+        <div class="space-y-3 relative z-10">
+          <form id="login-form" class="space-y-5">
+            <div>
+              <h2 class="text-lg font-semibold text-slate-900">Email &amp; password</h2>
+              <p class="text-sm text-slate-500 mt-1">Use your work email and password.</p>
+            </div>
 
-          <div id="field-name" class="hidden space-y-2">
-            <label for="name" class="block text-sm font-medium text-slate-700">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name"
-              class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30"
-              placeholder="Your name">
-          </div>
+            <div id="field-name" class="hidden space-y-2">
+              <label for="name" class="block text-sm font-medium text-slate-700">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name"
+                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30"
+                placeholder="Your name">
+            </div>
 
-          <div class="space-y-2">
-            <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required
-              class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30"
-              placeholder="you@company.com">
-          </div>
+            <div class="space-y-2">
+              <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required
+                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30"
+                placeholder="you@company.com">
+            </div>
 
-          <div class="space-y-2">
-            <label for="password" class="block text-sm font-medium text-slate-700">Password</label>
-            <input id="password" name="password" type="password" autocomplete="current-password" required minlength="8"
-              class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30"
-              placeholder="••••••••">
-          </div>
+            <div class="space-y-2">
+              <label for="password" class="block text-sm font-medium text-slate-700">Password</label>
+              <input id="password" name="password" type="password" autocomplete="current-password" required minlength="8"
+                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30"
+                placeholder="••••••••">
+            </div>
 
-          <p id="auth-error" class="hidden text-sm text-red-600" role="alert"></p>
+            <p id="auth-error" class="hidden text-sm text-red-600" role="alert"></p>
 
-          <button type="submit" id="submit-btn"
-            class="w-full rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 px-4 shadow-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 focus-visible:ring-offset-2">
-            Sign in
-          </button>
+            <button type="submit" id="submit-btn"
+              class="w-full rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 px-4 shadow-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 focus-visible:ring-offset-2">
+              Sign in
+            </button>
+          </form>
 
-          <button type="button" id="mode-toggle" class="w-full text-sm text-orange-700 hover:text-orange-800 font-medium">
+          <button type="button" id="mode-toggle"
+            class="w-full cursor-pointer rounded-lg py-2 text-center text-sm font-medium text-orange-700 hover:bg-orange-50 hover:text-orange-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400">
             Need an account? Sign up
           </button>
-        </form>
+        </div>
 
         <div class="relative">
           <div class="absolute inset-0 flex items-center" aria-hidden="true">

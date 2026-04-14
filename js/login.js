@@ -44,7 +44,9 @@ async function boot() {
       : 'Need an account? Sign up';
   }
 
-  modeToggle.addEventListener('click', () => {
+  modeToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     setMode(mode === 'signin' ? 'signup' : 'signin');
   });
 
