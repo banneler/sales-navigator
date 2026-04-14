@@ -54,15 +54,17 @@ Account-based programs work when **sales and marketing agree on the timeline, th
 
 Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a named executive target?*
 
+<div data-sn-gantt=""></div>
+
 ## How to use this module
 
 1. Read the overview sections for **roles and intent** (you will refine copy as your SOP evolves).
-2. Scroll to **90-day sequence (Gantt)** for the interactive chart—same asset as the standalone HTML process doc, embedded for training.
+2. Use the **90-day sequence** chart above while coaching—same asset as the standalone HTML process doc.
 3. Pair this with **Operational Business Reviews** when discussing how executive conversations mature into review meetings.
 
 ## Sales prospecting lane
 
-The chart shows **eighteen touches** staggered across three months: intros, calls, LinkedIn actions, case studies, meeting asks, OBR tie-ins, alignment, and close-out steps. Stacked bars in a single month are intentional—reps need to see **density** without guessing order.
+The Gantt shows **eighteen touches** staggered across three months: intros, calls, LinkedIn actions, case studies, meeting asks, OBR tie-ins, alignment, and close-out steps. Stacked bars in a single month are intentional—reps need to see **density** without guessing order.
 
 ## Marketing air cover
 
