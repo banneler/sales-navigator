@@ -129,12 +129,25 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
 
 ## Objection Handling
 
-| Objection | Pivot |
-| --- | --- |
-| **"You all sound the same."** | Anchor on the layered stack: access → WAN → security → apps as one designed system—then ask what their current provider does when something breaks at 2 a.m. |
-| **"We just need basic Internet."** | Ask about cloud apps, VoIP, and growth plans—then show how basic access becomes a foundation for the full stack. |
-| **"We already have a national carrier."** | Midwest IP reach, local field teams, NOC monitoring, and portfolio breadth—not price. Tie to TCO of downtime. |
-| **"We're not ready for a full solution."** | Start with access; plant flags for WAN, security, and UC as next conversations once trust is established. |
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+::: flip ["You all sound the same."]
+Anchor on the layered stack: access → WAN → security → apps as one designed system—then ask what their current provider does when something breaks at 2 a.m.
+:::
+
+::: flip ["We just need basic Internet."]
+Ask about cloud apps, VoIP, and growth plans—then show how basic access becomes a foundation for the full stack.
+:::
+
+::: flip ["We already have a national carrier."]
+Midwest IP reach, local field teams, NOC monitoring, and portfolio breadth—not price. Tie to TCO of downtime.
+:::
+
+::: flip ["We're not ready for a full solution."]
+Start with access; plant flags for WAN, security, and UC as next conversations once trust is established.
+:::
+
+</div>
 
 ---
 

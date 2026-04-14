@@ -138,13 +138,29 @@ GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protecti
 
 ## Objection Handling
 
-| Objection | Pivot |
-| --- | --- |
-| **"We manage our own Cisco gear."** | GPC's fully managed SD-WAN eliminates upfront CapEx and frees your team from network management. A single monthly charge covers install, management, and 24/7 NOC monitoring. Gartner has ranked VMware VeloCloud at the top of the leader quadrant for SD-WAN. |
-| **"Our current solution works fine."** | Ask: do you have visibility into application performance across all sites? SD-WAN Orchestrator provides real-time views into access link performance and lets you prioritize critical apps—even over a single link. |
-| **"SD-WAN is too expensive."** | SD-WAN pricing sits between SIA and DIA—often less than the MPLS it replaces. The ROI comes from eliminating MPLS costs, reducing truck rolls, and improving uptime for revenue-generating applications. |
-| **"We only have sites in Nebraska."** | SD-WAN works over any transport—GPC fiber, cable, DSL, T1, or 4G/5G wireless. With at least one site on GPC fiber, all US locations including off-net branches can participate. |
-| **"The on-demand DDoS is fine—we're not a target."** | Confirm: on-demand mitigation windows are weekdays 8–17 only. After-hours attacks won't be mitigated until the next business day. If that risk is acceptable, document it; otherwise, align to proactive. |
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+::: flip ["We manage our own Cisco gear."]
+GPC's fully managed SD-WAN eliminates upfront CapEx and frees your team from network management. A single monthly charge covers install, management, and 24/7 NOC monitoring. Gartner has ranked VMware VeloCloud at the top of the leader quadrant for SD-WAN.
+:::
+
+::: flip ["Our current solution works fine."]
+Ask: do you have visibility into application performance across all sites? SD-WAN Orchestrator provides real-time views into access link performance and lets you prioritize critical apps—even over a single link.
+:::
+
+::: flip ["SD-WAN is too expensive."]
+SD-WAN pricing sits between SIA and DIA—often less than the MPLS it replaces. The ROI comes from eliminating MPLS costs, reducing truck rolls, and improving uptime for revenue-generating applications.
+:::
+
+::: flip ["We only have sites in Nebraska."]
+SD-WAN works over any transport—GPC fiber, cable, DSL, T1, or 4G/5G wireless. With at least one site on GPC fiber, all US locations including off-net branches can participate.
+:::
+
+::: flip ["The on-demand DDoS is fine—we're not a target."]
+Confirm: on-demand mitigation windows are weekdays 8–17 only. After-hours attacks won't be mitigated until the next business day. If that risk is acceptable, document it; otherwise, align to proactive.
+:::
+
+</div>
 
 ---
 

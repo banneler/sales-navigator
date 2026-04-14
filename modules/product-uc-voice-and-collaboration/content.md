@@ -238,16 +238,41 @@ GPC's UC platform replaces aging on-prem phone systems with a **single cloud sta
 
 ## Objection Handling
 
-| Objection | Pivot |
-| --- | --- |
-| **"We already use Teams—we don't need a separate phone system."** | **Two motions:** (1) **Ascend with Teams:** external PSTN calling typically needs **Phone System** + connectivity—GPC PBX delivers enterprise voice, SMS, queues, CC. (2) **Embedded UC-in-Teams** (FAQ/deck): voice/SMS/CC **inside** Teams is a different positioning—**no Teams Phone license** in that narrative vs **Direct Routing**—don’t blend talk tracks; bring architects. |
-| **"Cloud is less secure than our on-prem system."** | Triple Guard Security™: enterprise-grade data centers, certified security team, encryption, password management, and 2FA. Intermedia has been recognized 7 times by J.D. Power for technical support excellence. On-prem systems receive no automatic security updates. |
-| **"Switching will disrupt our business."** | OTT deployment means UC runs over your existing data network—no new wiring, no server installation. The Ascend platform is the standard default for new deployments. Number porting is planned carefully with architects. |
-| **"Our people won't learn a new system."** | The Ascend mobile and desktop apps mirror Teams-style UX. For Teams users, calls happen natively in the Teams dialer—no learning curve. |
-| **"We need to keep our current PBX for the alarm and fax lines."** | SIP trunking and POTS analog lines can coexist. Specialty lines (alarms, fax, elevator) remain on legacy paths while the main voice system migrates to cloud UC. |
-| **"We already pay for Microsoft Teams Phone—why add GPC?"** | Clarify **what** they bought (Teams Phone vs dial tone + routing) and **what outcomes** they still lack—SMS, CC, archiving, or PSTN design. **Embedded UC** positioning is different from **Direct Routing**; partner collateral contrasts them—bring architects, don't wing it. |
-| **"We only care about the Teams mobile app."** | Qualify **voice vs SMS**. Partner FAQ: **SMS in the Teams mobile app is not available yet**; business **calls** may work with the **UC app** installed—**Ascend mobile** often carries SMS; confirm enablement. |
-| **"Your deck says ~6% Teams Phone adoption—we don't believe it."** | Treat partner **market stats** as **qualification hooks**, not debate fodder—cite only what GPC approves; pivot to **their** users’ actual calling/SMS gaps and renewal timing. |
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+::: flip ["We already use Teams—we don't need a separate phone system."]
+**Two motions:** (1) **Ascend with Teams:** external PSTN calling typically needs **Phone System** + connectivity—GPC PBX delivers enterprise voice, SMS, queues, CC. (2) **Embedded UC-in-Teams** (FAQ/deck): voice/SMS/CC **inside** Teams is a different positioning—**no Teams Phone license** in that narrative vs **Direct Routing**—don’t blend talk tracks; bring architects.
+:::
+
+::: flip ["Cloud is less secure than our on-prem system."]
+Triple Guard Security™: enterprise-grade data centers, certified security team, encryption, password management, and 2FA. Intermedia has been recognized 7 times by J.D. Power for technical support excellence. On-prem systems receive no automatic security updates.
+:::
+
+::: flip ["Switching will disrupt our business."]
+OTT deployment means UC runs over your existing data network—no new wiring, no server installation. The Ascend platform is the standard default for new deployments. Number porting is planned carefully with architects.
+:::
+
+::: flip ["Our people won't learn a new system."]
+The Ascend mobile and desktop apps mirror Teams-style UX. For Teams users, calls happen natively in the Teams dialer—no learning curve.
+:::
+
+::: flip ["We need to keep our current PBX for the alarm and fax lines."]
+SIP trunking and POTS analog lines can coexist. Specialty lines (alarms, fax, elevator) remain on legacy paths while the main voice system migrates to cloud UC.
+:::
+
+::: flip ["We already pay for Microsoft Teams Phone—why add GPC?"]
+Clarify **what** they bought (Teams Phone vs dial tone + routing) and **what outcomes** they still lack—SMS, CC, archiving, or PSTN design. **Embedded UC** positioning is different from **Direct Routing**; partner collateral contrasts them—bring architects, don't wing it.
+:::
+
+::: flip ["We only care about the Teams mobile app."]
+Qualify **voice vs SMS**. Partner FAQ: **SMS in the Teams mobile app is not available yet**; business **calls** may work with the **UC app** installed—**Ascend mobile** often carries SMS; confirm enablement.
+:::
+
+::: flip ["Your deck says ~6% Teams Phone adoption—we don't believe it."]
+Treat partner **market stats** as **qualification hooks**, not debate fodder—cite only what GPC approves; pivot to **their** users’ actual calling/SMS gaps and renewal timing.
+:::
+
+</div>
 
 ---
 

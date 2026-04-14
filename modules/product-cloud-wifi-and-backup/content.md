@@ -144,13 +144,29 @@ Three products that extend the value of GPC fiber access: **Cloud Connect** give
 
 ## Objection Handling
 
-| Objection | Pivot |
-| --- | --- |
-| **"5G is fast enough to be my primary Internet."** | Position honestly: wireless is best-effort, not symmetrical, and speeds vary by site. For primary access, fiber is the right answer; 5G backup is the continuity layer. |
-| **"Just tell me how many APs we need."** | A site survey is required before any AP count—density depends on floor plan, device count, use case, and compliance. Promising counts on call one leads to under-engineered installs. |
-| **"We already connect to AWS directly."** | Ask how—public Internet or a private path? Cloud Connect's private Ethernet on-ramp eliminates Internet jitter for latency-sensitive workloads and adds multi-region resilience. |
-| **"We don't want cellular data leaving our building for compliance reasons."** | The Kajeet Sentinel portal filters non-business traffic during failover; GPC NOC monitors and manages the connection. Align specifics with SE and compliance team. |
-| **"5G backup is too expensive for a circuit we almost never use."** | Frame as insurance: the 5G Backup SKU starts at $68/month—compare to the cost of one four-hour outage for payment processing, patient care, or customer service. |
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+::: flip ["5G is fast enough to be my primary Internet."]
+Position honestly: wireless is best-effort, not symmetrical, and speeds vary by site. For primary access, fiber is the right answer; 5G backup is the continuity layer.
+:::
+
+::: flip ["Just tell me how many APs we need."]
+A site survey is required before any AP count—density depends on floor plan, device count, use case, and compliance. Promising counts on call one leads to under-engineered installs.
+:::
+
+::: flip ["We already connect to AWS directly."]
+Ask how—public Internet or a private path? Cloud Connect's private Ethernet on-ramp eliminates Internet jitter for latency-sensitive workloads and adds multi-region resilience.
+:::
+
+::: flip ["We don't want cellular data leaving our building for compliance reasons."]
+The Kajeet Sentinel portal filters non-business traffic during failover; GPC NOC monitors and manages the connection. Align specifics with SE and compliance team.
+:::
+
+::: flip ["5G backup is too expensive for a circuit we almost never use."]
+Frame as insurance: the 5G Backup SKU starts at $68/month—compare to the cost of one four-hour outage for payment processing, patient care, or customer service.
+:::
+
+</div>
 
 ---
 
