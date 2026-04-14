@@ -213,6 +213,8 @@ export function buildRoleplayHtml(meta) {
 
 /** Relative MP4 under site root (internal training paths only). */
 const SAFE_UC_VIDEO_SRC = /^assets\/UC\/[a-zA-Z0-9._-]+\.mp4$/;
+/** Optional static poster image next to MP4s. */
+const SAFE_UC_POSTER = /^assets\/UC\/[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
 
 /**
  * Optional training video carousel (e.g. partner portal clips). Wired in {@link renderModuleDocumentHtml}.
@@ -221,43 +223,58 @@ const SAFE_UC_VIDEO_SRC = /^assets\/UC\/[a-zA-Z0-9._-]+\.mp4$/;
  *   video_carousel:
  *     - title: "Slide label"
  *       src: "assets/UC/file.mp4"
+ *       poster: "assets/UC/file.jpg"   # optional; else thumbnail is generated client-side
  */
 export function buildVideoCarouselHtml(meta) {
   const items = meta.video_carousel;
   if (!Array.isArray(items) || items.length === 0) return '';
 
-  const slides = [];
-  for (let i = 0; i < items.length; i++) {
-    const it = items[i];
+  /** @type {{ src: string; title: string; poster: string }[]} */
+  const entries = [];
+  for (const it of items) {
+    const src = typeof it?.src === 'string' ? it.src.trim() : '';
+    if (!SAFE_UC_VIDEO_SRC.test(src)) continue;
     const title =
       typeof it?.title === 'string' && it.title.trim()
         ? it.title.trim()
-        : `Video ${i + 1}`;
-    const src = typeof it?.src === 'string' ? it.src.trim() : '';
-    if (!SAFE_UC_VIDEO_SRC.test(src)) continue;
-    const srcEsc = escapeHtml(src);
+        : `Video ${entries.length + 1}`;
+    let poster = typeof it?.poster === 'string' ? it.poster.trim() : '';
+    if (poster && !SAFE_UC_POSTER.test(poster)) poster = '';
+    entries.push({ src, title, poster });
+  }
+
+  if (entries.length === 0) return '';
+
+  const n = entries.length;
+  const slides = entries.map((e, i) => {
     const hidden = i === 0 ? '' : ' hidden';
-    slides.push(`<div class="vc-slide${hidden}" data-vc-slide="${i}">
-          <p class="text-sm font-semibold text-slate-800 mb-3 text-center">${escapeHtml(title)}</p>
+    const srcEsc = escapeHtml(e.src);
+    const posterAttr = e.poster ? ` poster="${escapeHtml(e.poster)}"` : '';
+    return `<div class="vc-slide${hidden}" data-vc-slide="${i}">
+          <p class="text-sm font-semibold text-slate-800 mb-3 text-center">${escapeHtml(e.title)}</p>
           <div class="rounded-xl border border-slate-200 bg-black/90 overflow-hidden shadow-md">
-            <video class="w-full max-h-[min(56vh,520px)] object-contain" controls playsinline preload="metadata" title="${escapeHtml(title)}">
+            <video class="w-full max-h-[min(56vh,520px)] object-contain"${posterAttr} controls playsinline preload="metadata" title="${escapeHtml(e.title)}">
               <source src="${srcEsc}" type="video/mp4" />
               <p class="text-slate-300 text-sm p-4">Your browser cannot play this video. <a class="text-orange-400 underline" href="${srcEsc}" target="_blank" rel="noopener">Open file</a></p>
             </video>
           </div>
-        </div>`);
-  }
+        </div>`;
+  });
 
-  if (slides.length === 0) return '';
-
-  const n = slides.length;
-  const dots = slides
-    .map((_, i) => {
-      const active =
-        i === 0
-          ? 'bg-orange-500 ring-2 ring-orange-200'
-          : 'bg-slate-300 hover:bg-slate-400';
-      return `<button type="button" class="js-vc-carousel-dot h-2 w-2 shrink-0 rounded-full transition ${active}" data-vc-dot="${i}" aria-label="Video ${i + 1} of ${n}" aria-current="${i === 0 ? 'true' : 'false'}"></button>`;
+  const thumbs = entries
+    .map((e, i) => {
+      const active = i === 0;
+      const borderRing = active
+        ? 'ring-2 ring-orange-400 border-orange-500 opacity-100'
+        : 'border-slate-200 opacity-90 hover:opacity-100';
+      const srcEsc = escapeHtml(e.src);
+      const posterEsc = e.poster ? escapeHtml(e.poster) : '';
+      const imgAttrs = e.poster
+        ? ` src="${posterEsc}"`
+        : '';
+      return `<button type="button" class="js-vc-carousel-dot vc-thumb-btn shrink-0 overflow-hidden rounded-lg border-2 ${borderRing} transition focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500" data-vc-dot="${i}" data-vc-mp4-src="${srcEsc}" data-vc-has-static-poster="${e.poster ? '1' : '0'}" aria-label="Video ${i + 1} of ${n}: ${escapeHtml(e.title)}" aria-current="${active ? 'true' : 'false'}">
+            <img class="js-vc-thumb-img block h-14 w-[5.5rem] object-cover bg-slate-200" alt="" width="88" height="56" loading="lazy" decoding="async"${imgAttrs} />
+          </button>`;
     })
     .join('');
 
@@ -281,7 +298,8 @@ export function buildVideoCarouselHtml(meta) {
               Next <i class="fa-solid fa-chevron-right text-xs" aria-hidden="true"></i>
             </button>
           </div>
-          <div class="flex flex-wrap justify-center gap-1.5 mt-3 px-1 max-w-full">${dots}</div>
+          <p class="mt-3 text-center text-[11px] font-medium uppercase tracking-wide text-slate-500">Choose a clip</p>
+          <div class="flex flex-wrap justify-center gap-2 mt-2 px-1 max-w-full">${thumbs}</div>
         </div>
       </section>`;
 }
