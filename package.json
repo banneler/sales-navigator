@@ -1,15 +1,21 @@
 {
   "name": "sales-navigator",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind.css --minify",
     "dev:css": "tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind.css --watch",
-    "build:handouts": "node scripts/build-handouts.mjs"
+    "build:handouts": "node scripts/build-handouts.mjs",
+    "auth:migrate": "auth migrate --config lib/auth-server.js --yes"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "md-to-pdf": "^5.2.4",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "@vercel/postgres": "^0.10.0",
+    "better-auth": "^1.6.2"
   }
 }

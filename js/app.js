@@ -15,11 +15,21 @@ import { destroyModuleIntroGate } from './components/module-intro-gate.js';
 import { setMainHeaderInternalBadge } from './lib/header-internal-badge.js';
 import { initHandoutPreview } from './lib/handout-links.js';
 import { updateXpDisplays } from './lib/gamification.js';
+import { getSession } from '../lib/auth.js';
 
 const MAP_BOOK_MODULE_ID = 'map-book';
 const GETTING_STARTED_ID = 'getting-started';
 
 async function main() {
+  const session = await getSession();
+  if (!session?.user) {
+    const next = encodeURIComponent(
+      window.location.pathname + window.location.search + window.location.hash,
+    );
+    window.location.replace(`/login.html?callbackUrl=${next}`);
+    return;
+  }
+
   const res = await fetch('modules-manifest.json', { cache: 'no-store' });
   if (!res.ok) {
     const root = document.getElementById('app-root');
