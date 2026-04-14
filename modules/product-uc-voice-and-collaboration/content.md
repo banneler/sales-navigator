@@ -1,7 +1,7 @@
 ---
 id: "product-uc-voice-and-collaboration"
 title: "UC, Voice & Collaboration"
-summary: "UC platform + Teams attach (separate Microsoft licenses); CC Pro/Elite concurrent; SIP/PRI/POTS; partner video library + collateral; internal pricing only."
+summary: "Ascend stack (100+ voice features, web fax, file sync); AI + DataHub/Extend; Teams attach vs embedded FAQ (no Teams Phone license vs DR); CC omnichannel/AI; 30-day→paid archiving; Mix & Match matrices; SIP/PRI/POTS; module video clips; internal pricing only."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (UC, voice, contact center)"
@@ -24,27 +24,34 @@ video_carousel:
     poster: "assets/UC/work-better-wherever.png"
 five_minute_summary: |
   - **Training videos:** Five short partner clips in this module cover migration, Teams, desktop/mobile apps, and hybrid work—watch before the deep dive sections.
-  - **Unified Communications:** A single stack for PBX, messaging, meetings, and file sharing. Be aware of storage differences between tiers and the standard 30-day archiving baseline.
-  - **Microsoft Teams Integration:** Customers can use Teams as their hub while leveraging GPC's cloud PBX for routing. Clarify early that Microsoft's Phone System licensing is separate.
-  - **Contact Center:** CC Pro and Elite are based on concurrent users. Always work with pricing for digital channels or burst capacity rather than guessing.
-  - **Traditional Voice:** Run thorough discovery on existing PBX equipment, SIP/PRI paths, and specialty lines before quoting.
+  - **Unified “Ascend” stack (BYOC/IPN themes):** One platform narrative for **100+** business voice features, SMS/company messaging, chat, **HD meetings**, **web fax**, and file sync/share—desktop, mobile, browser; tier storage differs; **30-day** archiving baseline with **paid longer retention** (partner collateral cites **up to 10 years** in places—**never** quote years without the account team).
+  - **AI & productivity:** **AI Call Recap**, **AI Meeting Recap**, **AI Assistant**, supervisor/agent-assist; roadmap mentions (e.g. **AI Receptionist**, **AI Topics/Trends** “coming soon”)—**confirm tier/SKU** on current matrices.
+  - **DataHub + integrations:** Analytics/reporting, **Extend**/API, CRM **screen pops**, and tying comms data to AI and business apps—**SE/solutions** for depth; **CRM lists** in partner decks include Salesforce, Zendesk, Dynamics, HubSpot, NetSuite, etc.
+  - **Security & uptime:** **99.999% SLA**, **Triple Guard Security™**, archiving/compliance framing—align with GPC-approved wording externally.
+  - **Microsoft Teams—two talk tracks:** (1) **Ascend with Teams:** Teams as hub + GPC cloud PBX; **Teams + Phone System** are **not** part of the GPC UC SKU—**joint licensing picture early**. (2) **Embedded UC-in-Teams** (partner FAQ/deck): positions voice/SMS/CC **inside Teams**, often **no Microsoft Teams Phone license** vs **Direct Routing** (Microsoft native dialer/PSTN path)—**do not** freestyle; **SE + FAQ**.
+  - **Embedded UX:** Collaboration stays in Teams; calling/SMS often through **UC tab** on **desktop** (pin app, **plugin** per install guides). **Continuity:** UC web/mobile if Teams has connectivity issues—**approved messaging only**.
+  - **Embedded mobile (FAQ):** Business **calls** can work from Teams mobile **with the UC app installed**; **SMS in the Teams mobile app is not available yet** (voice-oriented mobile; SMS planned)—use **Ascend mobile** for SMS where that’s the approved path; **confirm** current FAQ.
+  - **Contact Center:** **Omnichannel** CX (voice, SMS, chat, email, **WhatsApp** where in matrix), AI for routing/sentiment/summaries, CRM/ERP integrations; **CC Pro/Elite concurrent** licensing—AE/pricing for **burst** and digital add-ons.
+  - **Packaging & devices:** **Mix & Match** tier matrices (**Express / Essentials / Pro / Enterprise**) and separate **Ascend for Teams** rows—feature cells differ (AI, hunt groups, archiving, video limits); **phones & devices** SKUs (desk, DECT, conference, ATA, headsets, cameras) sit on comparison matrices—don’t quote from memory.
+  - **MSP/VAR angle (partner decks):** Cloud voice growth, **low Teams Phone adoption** vs Teams users without integrated business voice/SMS, **renewals** as migration moments, **single provider** for Voice/CC/archiving/Teams—**internal** narrative; verify stats with source before customer use.
+  - **Traditional Voice:** SIP/PRI/POTS discovery before quoting.
 
 knowledge_checks:
-  - question: "For Microsoft Teams integration, what must the customer understand about licensing?"
+  - question: "For **Ascend with Teams** (Teams as hub + GPC cloud PBX), what must the customer understand about Microsoft licensing?"
     options:
       - "GPC UC includes all Microsoft Teams and Phone System entitlements in one SKU"
-      - "Microsoft Teams licenses and Phone System are purchased separately from GPC's cloud PBX story"
+      - "Microsoft Teams licenses and Phone System are purchased separately from GPC's cloud PBX SKU—clarify the joint picture early"
       - "Teams Phone is never used with GPC; only SIP trunks apply"
     correct_index: 1
-    explanation: "Teams + Phone System separate—joint licensing picture early."
+    explanation: "Typical attach motion: Teams + Phone System separate from GPC UC SKU—see embedded FAQ for alternate positioning."
 
   - question: "What is the baseline call/chat archiving position you should state before quoting years of retention?"
     options:
       - "Free unlimited retention for all tiers on day one"
-      - "Free **30-day** retention baseline; longer retention is stepped—confirm tier with the account team"
+      - "Free **30-day** rolling baseline in partner collateral; **1–10 year** paid tiers appear in places—always **confirm tier/matrix** with the account team before quoting"
       - "Archiving is not offered on the UC platform"
     correct_index: 1
-    explanation: "30-day baseline; longer = confirm—don't quote years on call one."
+    explanation: "30-day baseline; paid longer retention—confirm matrix; partner PDFs cite multi-year tiers—never assume."
 
   - question: "How should Contact Center 'bursting' or elastic concurrency be handled in customer conversations?"
     options:
@@ -110,6 +117,46 @@ knowledge_checks:
     correct_index: 0
     explanation: "99.999%—minutes/year in plain language."
 
+  - question: "When a customer mixes up **embedded UC-in-Teams** with **Microsoft Direct Routing**, what is the safe motion?"
+    options:
+      - "Quote licensing differences from memory so the deal moves fast"
+      - "Contrast at a high level, then bring SE/architects for anything contractual or regulated—do not invent PSTN or Microsoft entitlements from memory"
+      - "Tell them the terms are interchangeable"
+    correct_index: 1
+    explanation: "Embedded ≠ Direct Routing; SE validates entitlements and design."
+
+  - question: "RevOps wants call and SMS activity reflected in CRM and leadership dashboards. What do you do first?"
+    options:
+      - "Promise a fixed integration pack and API scope on call one"
+      - "Discovery: who owns CRM, reporting, and compliance; loop specialists for Extend/DataHub-style analytics before commitments"
+      - "Say UC does not connect to CRMs"
+    correct_index: 1
+    explanation: "Scope integrations with specialists—collateral teases CRM/analytics threads."
+
+  - question: "Before promising that **Teams mobile** matches **desktop** for business SMS and voice, you should:"
+    options:
+      - "Assume parity and close—buyers hate uncertainty"
+      - "Follow partner FAQ: **SMS in the Teams mobile app is not available yet**; calls with UC app installed differ from SMS workflow—confirm enablement, use Ascend mobile for SMS where approved"
+      - "State that SMS is never part of any Teams path"
+    correct_index: 1
+    explanation: "FAQ-specific mobile limits—don't improvise parity."
+
+  - question: "Partner **FAQ** contrasts **Embedded UC-in-Teams** with **Direct Routing**. Which pairing is accurate for training?"
+    options:
+      - "Embedded: UC tab + partner positioning often **without a Microsoft Teams Phone license**; Direct Routing: Microsoft’s native PSTN/dialer path—escalate for design and entitlements"
+      - "Embedded and Direct Routing are identical; use either term interchangeably"
+      - "Direct Routing never uses Microsoft infrastructure"
+    correct_index: 0
+    explanation: "FAQ/deck language—SE validates customer-specific design."
+
+  - question: "**Mix & Match** matrices in partner collateral apply to which combinations?"
+    options:
+      - "Standard UC tiers and **Ascend for Teams** rows each have their own matrix—features (AI, archiving, video, hunt groups) differ by row—confirm before you quote"
+      - "One global matrix covers every product with identical rows"
+      - "Mix & Match refers only to desk phone colors"
+    correct_index: 0
+    explanation: "Separate matrices—cells differ; don’t quote from memory."
+
 scenarios:
   - title: "Customer wants Teams Phone and GPC voice this quarter"
     situation: |
@@ -137,15 +184,41 @@ scenarios:
       - label: "Quote CC Pro and Elite interchangeably at the same price."
         feedback: "Confirm matrix—Elite extends capability."
 
+  - title: "AI recaps plus CRM-attributed reporting—firm answers this week"
+    situation: |
+      CX and RevOps want **AI** call/meeting summaries for supervisors and **every** customer touch logged against Salesforce opportunities. They want a **written** SKU list, API surface, and timeline **before** they bring procurement.
+    choices:
+      - label: "Email SKU and integration detail from memory to keep momentum."
+        feedback: "Confirm AI tier/SKU with AE/pricing; CRM and Extend-style scope needs SE/solutions—not memory."
+
+      - label: "Deepen discovery on owners, compliance, and reporting; align AI and analytics threads with AE, pricing, and specialists."
+        feedback: "Correct."
+
+      - label: "Say AI and CRM are out of scope for UC so the conversation stays simple."
+        feedback: "Partner positioning includes those threads—qualify and escalate, don't deny."
+
+  - title: "Embedded FAQ says no Teams Phone license—IT says the opposite"
+    situation: |
+      Champion read partner **FAQ** (**Embedded** vs **Direct Routing**) and wants the **no Microsoft Teams Phone license** story in writing. IT insists every Teams PSTN design requires **Phone System** and accuses sales of conflicting messaging.
+    choices:
+      - label: "Side with the champion and guarantee no Microsoft licensing in email."
+        feedback: "Licensing is design-specific—SE/architects reconcile FAQ positioning with Microsoft prerequisites; don’t guarantee in email."
+
+      - label: "Schedule SE + architects; map **Embedded** vs **attach/DR** paths to **their** tenant and procurement facts."
+        feedback: "Correct."
+
+      - label: "Tell them FAQ is wrong and only your first call script matters."
+        feedback: "FAQ is enablement input—validate with SE, don’t dismiss."
+
 roleplay:
   persona: "Operations Manager at a 75-person professional services firm"
   scenario: "Stuck on an aging on-prem PBX that's out of warranty. The IT team uses Teams for chat and meetings but nobody can make external calls from it. Assumes replacing the PBX means buying new desk phones and a server."
-  goal: "Position GPC's cloud UC as the modern replacement—no on-prem server, enterprise-grade features from Teams or the native softphone, and a clear explanation of how Microsoft licensing and GPC's cloud PBX work together."
+  goal: "Position GPC's cloud UC as the modern replacement—no on-prem server, enterprise-grade features from Teams or the native softphone, and a clear explanation of **Ascend with Teams** licensing vs when **embedded FAQ** positioning (no Teams Phone license vs Direct Routing) might apply—SE validates."
 ---
 
 ## Elevator Pitch
 
-GPC's UC platform replaces aging on-prem phone systems with a **single cloud stack**: enterprise PBX, messaging, SMS/MMS, HD video meetings with AI recaps, optional contact center, and file sharing—all on a **99.999% uptime** platform backed by **Triple Guard Security™**. For Microsoft-first organizations, GPC cloud PBX integrates directly with Teams so users make calls from the Teams dialer with no new hardware required. The pitch is simple: your on-prem phone system is a depreciating asset that costs more than it looks—cloud UC consolidates phone, video, chat, and files into one predictable monthly fee per user.
+GPC's UC platform replaces aging on-prem phone systems with a **single cloud stack**—partner narrative: **one intelligent platform** for employee productivity and customer experience: enterprise PBX (**100+** voice features), messaging, SMS/MMS, HD meetings, **web fax**, AI-style recaps and assistant features on many paths, optional **omnichannel** contact center, and file sharing—all on a **99.999% uptime** story with **Triple Guard Security™**. **DataHub / analytics** and **CRM** ties (Salesforce, Zendesk, Dynamics, HubSpot, NetSuite, etc.) matter when RevOps or CX leaders are in the room—scope, don’t wing integrations. For Microsoft-first orgs, clarify early whether you’re in **Ascend with Teams** (Microsoft licensing + GPC PBX) or **embedded UC-in-Teams** FAQ positioning (often **no Teams Phone license** vs **Direct Routing**)—SE validates. The pitch: legacy PBX is a depreciating asset; cloud UC bundles voice, video, chat, files, and AI roadmap into predictable per-user economics—**Mix & Match** tiers and **Ascend for Teams** matrices set the guardrails.
 
 ::: accordion UC Platform Brochure
 *Collateral image — coming soon*
@@ -160,6 +233,12 @@ GPC's UC platform replaces aging on-prem phone systems with a **single cloud sta
 3. **How do people communicate when they're out of the office—cell phones, call forwarding, or a mobile app? Is that working well?**
 4. **Do you have a contact center or customer service queue? How many agents, what channels (phone, email, chat, SMS), and do you need supervisor monitoring or call recording?**
 5. **Are there compliance requirements for call recording or archiving—legal hold, financial services, healthcare? How long does data need to be retained?**
+6. **Do you need AI call/meeting summaries or supervisor-assist style analytics—who will own adoption and compliance?**
+7. **Where should call and SMS activity land for reporting—CRM, data warehouse, or spreadsheets?** (Uncovers DataHub/analytics and integration conversations.)
+8. **For Teams-heavy users: will they primarily use the Teams desktop app, mobile, or both for business calling and SMS?** (Surfaces embedded-Teams vs mobile gaps.)
+9. **Do you need company-owned SMS on business numbers vs personal SMS—who administers policy and compliance?** (Aligns with company vs personal SMS admin themes.)
+10. **Are you evaluating Mix & Match tiers (Express through Enterprise) or Ascend for Teams rows—who owns the matrix review with procurement?**
+11. **Is this account a renewal or competitive displacement—timing for migration and professional services?** (MSP/VAR “renewal moment” storyline—internal framing.)
 
 ---
 
@@ -167,11 +246,14 @@ GPC's UC platform replaces aging on-prem phone systems with a **single cloud sta
 
 | Objection | Pivot |
 | --- | --- |
-| **"We already use Teams—we don't need a separate phone system."** | Teams is great for chat and meetings, but external calling requires Phone System licensing plus PSTN connectivity. GPC cloud PBX gives users enterprise-grade calling within Teams or the Ascend app, with SMS, call queues, and contact center that Teams alone doesn't offer. |
+| **"We already use Teams—we don't need a separate phone system."** | **Two motions:** (1) **Ascend with Teams:** external PSTN calling typically needs **Phone System** + connectivity—GPC PBX delivers enterprise voice, SMS, queues, CC. (2) **Embedded UC-in-Teams** (FAQ/deck): voice/SMS/CC **inside** Teams is a different positioning—**no Teams Phone license** in that narrative vs **Direct Routing**—don’t blend talk tracks; bring architects. |
 | **"Cloud is less secure than our on-prem system."** | Triple Guard Security™: enterprise-grade data centers, certified security team, encryption, password management, and 2FA. Intermedia has been recognized 7 times by J.D. Power for technical support excellence. On-prem systems receive no automatic security updates. |
 | **"Switching will disrupt our business."** | OTT deployment means UC runs over your existing data network—no new wiring, no server installation. The Ascend platform is the standard default for new deployments. Number porting is planned carefully with architects. |
 | **"Our people won't learn a new system."** | The Ascend mobile and desktop apps mirror Teams-style UX. For Teams users, calls happen natively in the Teams dialer—no learning curve. |
 | **"We need to keep our current PBX for the alarm and fax lines."** | SIP trunking and POTS analog lines can coexist. Specialty lines (alarms, fax, elevator) remain on legacy paths while the main voice system migrates to cloud UC. |
+| **"We already pay for Microsoft Teams Phone—why add GPC?"** | Clarify **what** they bought (Teams Phone vs dial tone + routing) and **what outcomes** they still lack—SMS, CC, archiving, or PSTN design. **Embedded UC** positioning is different from **Direct Routing**; partner collateral contrasts them—bring architects, don't wing it. |
+| **"We only care about the Teams mobile app."** | Qualify **voice vs SMS**. Partner FAQ: **SMS in the Teams mobile app is not available yet**; business **calls** may work with the **UC app** installed—**Ascend mobile** often carries SMS; confirm enablement. |
+| **"Your deck says ~6% Teams Phone adoption—we don't believe it."** | Treat partner **market stats** as **qualification hooks**, not debate fodder—cite only what GPC approves; pivot to **their** users’ actual calling/SMS gaps and renewal timing. |
 
 ---
 
@@ -184,26 +266,38 @@ GPC's UC platform replaces aging on-prem phone systems with a **single cloud sta
 - **UC Collab Pro:** full Essentials + contact center lite, AI meeting notes, unlimited recordings, end-to-end encryption, 200 GB file storage/user
 - **Unite Enterprise:** up to 200 GB/user file storage vs 50 GB (Essentials) vs 5 GB (Express)
 
-**Teams integration options:**
-- **Ascend with Teams:** Teams for chat/meetings/files; Ascend desktop + mobile for all phone services. SMS, Contact Center, CRM integrations included at no additional cost. Single sign-on with M365 credentials.
-- **Ascend for Teams:** 100% within Teams application; enterprise PBX calling features (auto attendant, call queuing, call recording) inside the Teams dialer.
-- **Teams + Phone System licensing:** purchased separately from Microsoft—not included in GPC UC SKU. Set expectations early.
+**Teams integration options (maps to `UCaaS_BYOC` / `UCaaS_IPN` / Embedded doc):**
+- **Ascend with Teams:** Teams for chat/meetings/files; Ascend desktop + mobile for phone workloads. SMS, Contact Center, CRM integrations—**confirm** “included” language on current matrix. SSO with M365 credentials.
+- **Ascend for Teams / embedded story:** Enterprise PBX features inside the Teams dialer; install: **pin app**, **desktop plugin** for telephony—follow the **Embedded** install guide, not hallway lore.
+- **Teams + Phone System:** Purchased separately from Microsoft for many **attach** designs—not bundled into GPC UC SKU. **Contrast:** partner **FAQ** positions **Embedded** as **no Microsoft Teams Phone license** vs **Direct Routing** (Microsoft native PSTN/dialer)—**SE** owns which applies.
+- **UC tab / UX:** Decks describe collaboration in Teams while voice/SMS run through the **UC** experience—demo flow in customer **PPTX** extracts; **PDFs** for exact Q&A.
+- **Presence sync / hunt groups / archiving backup** appear in integration blocks—verify row-by-row on datasheet.
+
+**AI & roadmap:** **AI Call Recap**, **AI Meeting Recap**, **AI Assistant**; CC-side AI (routing, sentiment, summaries); roadmap items (**AI Receptionist**, **Topics/Trends** “coming soon” in extracts)—**never** quote SKU from memory.
+
+**DataHub + CRM + Extend:** Analytics/reporting, APIs, screen pops, comms data feeding AI and business apps—**SE** for HIPAA/FINRA-style archiving flyers and integration depth.
+
+**Embedded mobile vs desktop:** FAQ: **SMS in Teams mobile not available yet**; calls with UC app; **sync** themes between Ascend mobile and Teams mobile for calling—confirm current FAQ before customer promises.
+
+**Continuity / MSP narrative:** Partner pitch: redundancy if Teams unavailable (**UC web/mobile**); **single provider** story for Voice + CC + Archiving + Teams—**approved** customer wording only; never invent outages.
+
+**Mix & Match packaging:** Separate matrices for **standard UC** (Express / Essentials / Pro / Enterprise) and **Ascend for Teams**—rows differ (AI, hunt groups, archiving, video caps). **Devices:** phone/DECT/conference/ATA/headset/camera comparison PDFs—endpoint SKUs off matrix.
 
 **Contact Center:**
-- CC Pro / CC Elite: concurrent seat licensing—confirm matrices before quoting
-- Digital channels, dynamic notifications, burst/elastic = AE/pricing sizing—not napkin math
-- Supervisor features: monitor, whisper, barge; AI transcription and sentiment analysis (Elite)
+- CC Pro / CC Elite: **concurrent** licensing—confirm matrices.
+- **Omnichannel:** voice, SMS, chat, email, **WhatsApp** (where in matrix); AI-assisted routing and insights; CRM/ERP depth (Salesforce, Zendesk, Dynamics, HubSpot, NetSuite, etc.).
+- **CC with Teams:** Materials describe **UC for Teams Advanced** + CC—**Teams Desktop plugin** for Contact Center in some decks; can deploy with UC or add later—**AE/solutions**.
+- Burst/digital/elastic: AE/pricing—not napkin math. Supervisor: monitor, whisper, barge; Elite-class AI transcription/sentiment.
 
-**Voice (non-UC):**
-- SIP trunking: PBX → GPC → PSTN; managed eSBC when needed
-- PRI: digital trunks for larger sites
-- POTS: legacy/specialty lines (alarm, fax, elevator) where TDM still fits
+**Voice (non-UC):** SIP → eSBC; PRI; POTS specialty lines.
 
-**Archiving:** 30-day free baseline; longer retention is stepped—confirm tier with account team before quoting years.
+**Archiving:** **30-day** rolling baseline in collateral; **1–10 year** paid tiers in flyers—confirm before quoting retention **years**.
 
-**Uptime:** 99.999% SLA = ~5.26 minutes downtime per year.
+**Uptime:** 99.999% SLA ≈ ~5.26 minutes downtime/year in customer language.
 
-**Pricing:** Internal rate books—capability on datasheets. AE/pricing for seats, add-ons, archiving, and professional services. Never email ad-hoc rates from memory.
+**Pricing / extraction caveat:** Internal rate books; **PDF table extracts** are fragmented—**verify precision** against source PDFs for RFPs.
+
+**Naming noise (from themes doc):** **UC**, **Ascend**, occasional **Unite** in footnotes—align to GPC-approved terms externally.
 
 ::: accordion UC for Teams Datasheet
 *Collateral image — coming soon*

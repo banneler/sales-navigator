@@ -1,8 +1,8 @@
 # Intermedia UC — folder-level theme summaries
 
-_Partner PDF/PPTX/InDesign sources were removed from the repo after consolidation; keep master files in partner portal / internal storage if you need pixel-perfect references._
+*Partner PDF/PPTX/InDesign sources were removed from the repo after consolidation; keep master files in partner portal / internal storage if you need pixel-perfect references.*
 
-_Read-only sub-agent review of `from_intermedia_uc.md` extracts—not a substitute for source PDFs/PPTX. For internal training; align with GPC-approved messaging before external use._
+*Read-only sub-agent review of `from_intermedia_uc.md` extracts—not a substitute for source PDFs/PPTX. For internal training; align with GPC-approved messaging before external use.*
 
 ---
 
