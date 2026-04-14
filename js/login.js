@@ -66,27 +66,28 @@ form.addEventListener('submit', async (e) => {
     return;
   }
 
+  const label = submitBtn.textContent;
   submitBtn.disabled = true;
+  submitBtn.textContent = 'Please wait…';
   try {
+    let result;
     if (mode === 'signup') {
-      const { error } = await signUp(email, password, name);
-      if (error) {
-        showError(error.message || 'Could not sign up.');
-        return;
-      }
+      result = await signUp(email, password, name);
     } else {
-      const { error } = await signIn(email, password);
-      if (error) {
-        showError(error.message || 'Could not sign in.');
-        return;
-      }
+      result = await signIn(email, password);
+    }
+    console.log('[auth]', mode, result);
+    if (result.error) {
+      showError(result.error.message || 'Could not ' + mode.replace('sign', 'sign ') + '.');
+      return;
     }
     window.location.replace(callbackUrl());
   } catch (err) {
-    console.error(err);
+    console.error('[auth] submit error', err);
     showError(err instanceof Error ? err.message : 'Something went wrong.');
   } finally {
     submitBtn.disabled = false;
+    submitBtn.textContent = label;
   }
 });
 
@@ -100,19 +101,23 @@ magicForm.addEventListener('submit', async (e) => {
     return;
   }
   const magicSubmit = document.getElementById('magic-submit');
+  const magicLabel = magicSubmit.textContent;
   magicSubmit.disabled = true;
+  magicSubmit.textContent = 'Sending…';
   try {
-    const { error } = await signInMagicLink(email, callbackUrl());
-    if (error) {
-      showError(error.message || 'Could not send magic link.');
+    const result = await signInMagicLink(email, callbackUrl());
+    console.log('[auth] magic link', result);
+    if (result.error) {
+      showError(result.error.message || 'Could not send magic link.');
       return;
     }
     showInfo('Check your email for the sign-in link (or server logs if email is not configured).');
   } catch (err) {
-    console.error(err);
+    console.error('[auth] magic link error', err);
     showError(err instanceof Error ? err.message : 'Something went wrong.');
   } finally {
     magicSubmit.disabled = false;
+    magicSubmit.textContent = magicLabel;
   }
 });
 
