@@ -33,7 +33,7 @@ knowledge_checks:
       - "Generic web search only."
     correct_index: 1
     explanation: "The module points to the Business Capability deck for the story and the extracted library for per-product evidence."
-  - question: "What proof points anchor the "why GPC" network story?"
+  - question: "What proof points anchor the 'why GPC' network story?"
     options:
       - "Fiber-first access, Midwest IP reach, Tier-1 and IX relationships, and paths tuned for cloud/SaaS and end users."
       - "Only the number of years in business, with no network specifics."
@@ -54,7 +54,7 @@ knowledge_checks:
       - "Use only this module and never reference external collateral."
     correct_index: 1
     explanation: "Keep the executive storyline in the capability materials; pull datasheets and vertical proof from the organized extract when needed."
-  - question: "When a CFO asks "Why GPC vs anyone else?" in one sentence, what is a strong response?"
+  - question: "When a CFO asks 'Why GPC vs anyone else?' in one sentence, what is a strong response?"
     options:
       - "List fiber miles with no business outcome."
       - "Reliable Midwest foundation, fiber-first access, layered services, and accountable local support—then offer the capability deck."
@@ -74,11 +74,11 @@ knowledge_checks:
       - "They reinforce GPC as a partner—local teams and 24/7 monitoring differentiate from commodity ISP positioning."
       - "They should never be mentioned to avoid setting expectations."
     correct_index: 1
-    explanation: "Partnership and operational accountability are core to moving beyond "just another carrier.""
+    explanation: "Partnership and operational accountability are core to moving beyond 'just another carrier.'"
   - question: "What is a practical way to describe any deal using this module?"
     options:
       - "Quote random SKUs until something sticks."
-      - "Map the opportunity to "access + path + policy + apps" against their sites and workloads."
+      - "Map the opportunity to 'access + path + policy + apps' against their sites and workloads."
       - "Focus exclusively on a single product name regardless of discovery."
     correct_index: 1
     explanation: "Framing deals across access, path, policy, and apps aligns conversation with the layered portfolio map."
