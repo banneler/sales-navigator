@@ -1,7 +1,7 @@
 ---
 id: "operational-business-reviews"
 title: "Operational Business Reviews"
-summary: "The 21-day OBR cycle: recon through print & assembly—with clear swim lanes for account rep, design, data, marketing, and production—plus the live Gantt from your process documentation."
+summary: "The 21-day OBR cycle: recon through print & assembly—with clear swim lanes for account rep, design, data, marketing, and production—plus the reference timeline chart."
 sensitivity: "internal"
 five_minute_summary: |
   - **Cycle length:** Twenty-one days from initiation through materials ready for the OBR meeting.
@@ -56,7 +56,7 @@ Operational Business Reviews turn **network reality, financial signals, and mark
 
 Handoff at day 14.
 
-<div data-sn-gantt=""></div>
+![OBR process: 21-day strategic cycle (reference Gantt)](assets/gantt/obr-21-day-cycle.png)
 
 ## How to use this module
 
@@ -74,4 +74,4 @@ Handoff at day 14.
 
 ## Next steps for your documentation
 
-Swap in your **real RACI**, **tool names**, and **approval gates** as the written SOP matures. The Gantt source file is `modules/operational-business-reviews/gantt.html` for future visual edits.
+Swap in your **real RACI**, **tool names**, and **approval gates** as the written SOP matures. Update `assets/gantt/obr-21-day-cycle.png` when the chart changes.

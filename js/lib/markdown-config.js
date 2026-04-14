@@ -19,7 +19,6 @@ export const MARKDOWN_PURIFY_CONFIG = {
     'clipPath',
     'd',
     'aria-hidden',
-    'data-sn-gantt',
   ],
   ADD_TAGS: ['details', 'summary', 'svg', 'path', 'div'],
 };

@@ -1,8 +1,7 @@
 import renderMarkdownModule from '../../js/components/markdown-module.js';
-import { mountGanttAfterRender } from '../../js/lib/gantt-embed.js';
 
 /**
- * Markdown module; Gantt mounts at `<div data-sn-gantt></div>` in content.md (scaled).
+ * Markdown module; sequence chart is a static PNG (`assets/gantt/abm-90-day-sequence.png`) in content.md.
  */
 export default function renderAccountBasedMarketing(
   container,
@@ -10,11 +9,4 @@ export default function renderAccountBasedMarketing(
   moduleId,
 ) {
   renderMarkdownModule(container, markdownSource, moduleId);
-  mountGanttAfterRender(container, moduleId, {
-    iframeHeight: 680,
-    fitContentHeight: true,
-    minIframeHeight: 560,
-    maxIframeHeight: 820,
-    heightSlop: 36,
-  });
 }

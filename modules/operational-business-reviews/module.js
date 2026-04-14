@@ -1,8 +1,7 @@
 import renderMarkdownModule from '../../js/components/markdown-module.js';
-import { mountGanttAfterRender } from '../../js/lib/gantt-embed.js';
 
 /**
- * Markdown module; Gantt mounts at `<div data-sn-gantt></div>` in content.md (scaled).
+ * Markdown module; cycle chart is a static PNG (`assets/gantt/obr-21-day-cycle.png`) in content.md.
  */
 export default function renderOperationalBusinessReviews(
   container,
@@ -10,11 +9,4 @@ export default function renderOperationalBusinessReviews(
   moduleId,
 ) {
   renderMarkdownModule(container, markdownSource, moduleId);
-  mountGanttAfterRender(container, moduleId, {
-    iframeHeight: 620,
-    fitContentHeight: true,
-    minIframeHeight: 520,
-    maxIframeHeight: 720,
-    heightSlop: 28,
-  });
 }

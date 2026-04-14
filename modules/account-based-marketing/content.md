@@ -1,7 +1,7 @@
 ---
 id: "account-based-marketing"
 title: "Account Based Marketing"
-summary: "C-level ABM: a disciplined 90-day prospecting sequence—sales touches, marketing air cover, and alignment with Constellation-CRM—plus the live Gantt from your process documentation."
+summary: "C-level ABM: a disciplined 90-day prospecting sequence—sales touches, marketing air cover, and alignment with Constellation-CRM—plus the reference sequence chart."
 sensitivity: "internal"
 five_minute_summary: |
   - **Purpose:** Coordinate sales prospecting and marketing so executive targets see a coherent story over ninety days—not random one-off touches.
@@ -42,7 +42,7 @@ scenarios:
       - label: "Yes—relationships always override the sequence."
         feedback: "Relationships matter, but the sequence keeps marketing air cover and messaging aligned. Exceptions should be explicit, not silent skips."
       - label: "Coach them to stay on-sequence unless leadership documents an exception, so air cover and reporting stay intact."
-        feedback: "**Good.** The Gantt is the shared contract across sales and marketing."
+        feedback: "**Good.** The sequence chart is the shared contract across sales and marketing."
       - label: "Tell them to restart the sequence from touch one."
         feedback: "Restarting isn't always required—focus on documented exceptions and alignment with marketing."
 
@@ -56,12 +56,12 @@ Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a na
 
 ## 90-day sequence
 
-<div data-sn-gantt=""></div>
+![ABM campaign: 90-day C-level sequence (reference Gantt)](assets/gantt/abm-90-day-sequence.png)
 
 ## How to use this module
 
 1. Read the overview sections for **roles and intent** (you will refine copy as your SOP evolves).
-2. Use the **90-day sequence** chart above while coaching—same asset as the standalone HTML process doc.
+2. Use the **90-day sequence** chart above while coaching—the PNG in `assets/gantt/` is the source-of-truth visual; replace it when your SOP art updates.
 3. Pair this with **Operational Business Reviews** when discussing how executive conversations mature into review meetings.
 
 ## Sales prospecting lane
@@ -74,4 +74,4 @@ Month 1 emphasizes **awareness** (e.g. LinkedIn & paid search). Month 2 adds **v
 
 ## Next steps for your documentation
 
-Replace placeholder paragraphs above with your **final narrative**, **owner names**, **links to playbooks**, and **MQL/SQL definitions** as your internal docs solidify. The Gantt file lives at `modules/account-based-marketing/gantt.html` if you need to edit visuals.
+Replace placeholder paragraphs above with your **final narrative**, **owner names**, **links to playbooks**, and **MQL/SQL definitions** as your internal docs solidify. Update `assets/gantt/abm-90-day-sequence.png` when the chart changes.
