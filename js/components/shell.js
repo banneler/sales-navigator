@@ -29,7 +29,7 @@ export function renderShell(manifest, onSelect) {
         ${items
           .map(
             (m) => `
-        <li>
+        <li${m.id === 'getting-started' ? ' class="hidden md:list-item"' : ''}>
           <button type="button" data-module-id="${escapeHtml(m.id)}" class="nav-module w-full text-left px-3 py-3 sm:py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-orange-50 hover:text-orange-900 transition border border-transparent hover:border-orange-100">
             ${escapeHtml(m.title)}
           </button>

@@ -44,10 +44,22 @@ async function main() {
 
   const manifest = await res.json();
   const modules = manifest.modules || [];
-  const firstId = modules.sort((a, b) => (a.order || 0) - (b.order || 0))[0]?.id;
+  const sorted = [...modules].sort((a, b) => (a.order || 0) - (b.order || 0));
+  const isMobile = window.innerWidth < 768;
+  const firstId = isMobile
+    ? (sorted.find((m) => m.id !== GETTING_STARTED_ID && m.id !== MAP_BOOK_MODULE_ID) || sorted[0])?.id
+    : sorted[0]?.id;
+
+  const firstTrainingId = (sorted.find((m) => m.id !== GETTING_STARTED_ID && m.id !== MAP_BOOK_MODULE_ID) || sorted[0])?.id;
 
   async function show(id) {
     if (!id) return;
+
+    if (id === GETTING_STARTED_ID && window.innerWidth < 768 && firstTrainingId) {
+      id = firstTrainingId;
+      setRouteModuleId(id);
+    }
+
     const host = document.getElementById('module-host');
     if (!host) return;
 
