@@ -152,13 +152,29 @@ Reference for positioning against acquisition-driven competitors—stability, se
 
 ## Objection Handling
 
-| Objection | Pivot |
-| --- | --- |
-| **"The national carrier is cheaper."** | Tie to TCO: cost of an hour down, support model, redundancy depth, rate stability—not price alone. No verbal exceptions. |
-| **"Starlink/satellite is good enough."** | Acknowledge coverage; pivot to latency, weather risk, SLA for VoIP/telehealth, and predictable symmetrical paths. |
-| **"We already ran a speed test—your fiber looks the same."** | Speed tests measure a moment; position reliability, jitter, upload symmetry, and NOC response for business apps. |
-| **"Your competitor just got acquired—that makes them bigger."** | Respond factually: stability, billing continuity, field response—GPC continuity themes. No gossip. |
-| **"I need to see the battle-card numbers."** | Share collateral through approved channels; verify year/scope before any external citation. |
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+::: flip ["The national carrier is cheaper."]
+Tie to TCO: cost of an hour down, support model, redundancy depth, rate stability—not price alone. No verbal exceptions.
+:::
+
+::: flip ["Starlink/satellite is good enough."]
+Acknowledge coverage; pivot to latency, weather risk, SLA for VoIP/telehealth, and predictable symmetrical paths.
+:::
+
+::: flip ["We already ran a speed test—your fiber looks the same."]
+Speed tests measure a moment; position reliability, jitter, upload symmetry, and NOC response for business apps.
+:::
+
+::: flip ["Your competitor just got acquired—that makes them bigger."]
+Respond factually: stability, billing continuity, field response—GPC continuity themes. No gossip.
+:::
+
+::: flip ["I need to see the battle-card numbers."]
+Share collateral through approved channels; verify year/scope before any external citation.
+:::
+
+</div>
 
 **Disengage signals:** bad-faith trash talk requests, pure price auction with zero fit, design questions past your lane without SE.
 
