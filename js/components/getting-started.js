@@ -122,6 +122,10 @@ function getSpotlightRect(stepIndex) {
     case 0:
       return null;
     case 1: {
+      if (isMobileViewport()) {
+        const el = document.getElementById('mobile-menu-btn');
+        return el ? rectLike(el.getBoundingClientRect()) : null;
+      }
       const el = document.getElementById('sidebar');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
@@ -138,6 +142,10 @@ function getSpotlightRect(stepIndex) {
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
     case 5: {
+      if (isMobileViewport()) {
+        const el = document.getElementById('mobile-menu-btn');
+        return el ? rectLike(el.getBoundingClientRect()) : null;
+      }
       const el = document.querySelector('[data-module-id="map-book"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
@@ -265,31 +273,47 @@ function applySpotlightLayers(root, rect, pad = 8) {
   ring.style.cssText = `left:${left}px;top:${top}px;width:${w}px;height:${h}px;`;
 }
 
+function isMobileViewport() {
+  return window.innerWidth < 768;
+}
+
 function positionGlassCard(hostEl, stepIndex, rect) {
   if (!hostEl) return;
 
   const vw = window.innerWidth;
   const vh = window.innerHeight;
+
+  if (isMobileViewport()) {
+    hostEl.style.left = '0';
+    hostEl.style.right = '0';
+    hostEl.style.bottom = '0';
+    hostEl.style.top = 'auto';
+    hostEl.style.transform = 'none';
+    hostEl.style.width = '100%';
+    hostEl.style.maxWidth = 'none';
+    return;
+  }
+
+  hostEl.style.width = '';
+  hostEl.style.maxWidth = '';
+  hostEl.style.bottom = '';
+  hostEl.style.right = 'auto';
+
   const avoidRects = getTourCardAvoidRects(stepIndex, vw);
 
   if (stepIndex === 0 || !rect) {
     hostEl.style.left = '50%';
     hostEl.style.top = '50%';
     hostEl.style.transform = 'translate(-50%, -50%)';
-    hostEl.style.right = 'auto';
     return;
   }
 
-  // Step 2 ("Inside a module") spotlights the full module-core — usually wider/taller than
-  // these thresholds. Centering the card on that rect covers the copy users should read;
-  // keep normal edge docking so the card can sit in the scenarios column or below.
   const hugeSpotlight =
     rect.width > vw * 0.55 || rect.height > vh * 0.72;
   if (hugeSpotlight && stepIndex !== 2) {
     hostEl.style.left = '50%';
     hostEl.style.top = '50%';
     hostEl.style.transform = 'translate(-50%, -50%)';
-    hostEl.style.right = 'auto';
     return;
   }
 
@@ -301,13 +325,12 @@ function positionGlassCard(hostEl, stepIndex, rect) {
   const spotlight = { left: rect.left, top: rect.top, width: rect.width, height: rect.height };
 
   const candidates = [
-    { left: rect.left + rect.width + gap, top: rect.top }, // right
-    { left: rect.left - cardW - gap, top: rect.top }, // left
-    { left: rect.left, top: rect.top + rect.height + gap }, // below
-    { left: rect.left, top: rect.top - cardH - gap }, // above
+    { left: rect.left + rect.width + gap, top: rect.top },
+    { left: rect.left - cardW - gap, top: rect.top },
+    { left: rect.left, top: rect.top + rect.height + gap },
+    { left: rect.left, top: rect.top - cardH - gap },
   ].map((c) => ({ left: clampX(c.left), top: clampY(c.top) }));
 
-  // Mid widths are where overlap is most noticeable; bias toward below/above.
   if (vw < 1280) {
     candidates.unshift(
       { left: clampX(rect.left), top: clampY(rect.top + rect.height + gap) },
@@ -327,7 +350,6 @@ function positionGlassCard(hostEl, stepIndex, rect) {
     }
   }
 
-  // Fallback: dock near bottom so spotlighted hero remains visible.
   if (!best) {
     best = {
       left: clampX((vw - cardW) / 2),
@@ -335,7 +357,6 @@ function positionGlassCard(hostEl, stepIndex, rect) {
     };
   }
 
-  // Step 3 mid-width: fallback bottom-center can sit on the stacked hero; pin under hero + spotlight.
   if (stepIndex === 3 && vw < 1280 && avoidRects.length) {
     const chosen = { left: best.left, top: best.top, width: cardW, height: cardH };
     if (cardOverlapsAny(chosen, avoidRects)) {
@@ -367,7 +388,6 @@ function positionGlassCard(hostEl, stepIndex, rect) {
   hostEl.style.left = `${best.left}px`;
   hostEl.style.top = `${best.top}px`;
   hostEl.style.transform = 'none';
-  hostEl.style.right = 'auto';
 }
 
 /**
@@ -387,6 +407,7 @@ export function loadGettingStarted(container, manifest) {
   const mapBook = modules.find((m) => m.id === 'map-book');
 
   const categories = [...new Set(modules.map((m) => m.category || 'General'))];
+  const mobile = isMobileViewport();
 
   const steps = [
     {
@@ -401,9 +422,18 @@ export function loadGettingStarted(container, manifest) {
         </p>`,
     },
     {
-      title: 'Left navigation',
+      title: mobile ? 'Navigation' : 'Left navigation',
       icon: 'fa-bars',
-      body: `
+      body: mobile
+        ? `
+        <p class="text-slate-800 leading-relaxed mb-3">
+          Tap the <strong><i class="fa-solid fa-bars text-xs" aria-hidden="true"></i> menu button</strong> in the header to open the module list. Items are grouped by category${categories.length ? ` (${escapeHtml(categories.join(', '))})` : ''}.
+        </p>
+        <ul class="list-disc pl-5 text-slate-700 space-y-1.5 text-sm">
+          <li>Tap a module title to load it\u2014the menu closes automatically.</li>
+          <li>The <strong>highlighted</strong> item matches the page you are on.</li>
+        </ul>`
+        : `
         <p class="text-slate-800 leading-relaxed mb-3">
           Use the <strong>sidebar on the left</strong> to open any module. Items are grouped by category${categories.length ? ` (${escapeHtml(categories.join(', '))})` : ''}.
         </p>
@@ -420,11 +450,11 @@ export function loadGettingStarted(container, manifest) {
         <p class="text-slate-800 leading-relaxed mb-3">
           Each training module is built from structured content:
         </p>
-        <ul class="list-disc pl-5 text-slate-700 space-y-2 text-sm">
+        <ul class="list-disc pl-5 text-slate-700 space-y-${mobile ? '1.5' : '2'} text-sm">
           <li><strong>Title and summary</strong> at the top set context.</li>
           <li><strong>Five-minute summary</strong> bullets give a fast scan when present.</li>
-          <li>Major topics appear as <strong>section cards</strong> (each <code class="text-xs bg-slate-100/90 px-1 rounded">##</code> heading in the source becomes a card).</li>
-          <li>Some modules include <strong>reference links</strong> in a side area when provided.</li>
+          <li>Major topics appear as <strong>section cards</strong>.</li>
+          <li>Some modules include <strong>reference links</strong>${mobile ? '.' : ' in a side area when provided.'}</li>
         </ul>`,
     },
     {
@@ -432,14 +462,11 @@ export function loadGettingStarted(container, manifest) {
       icon: 'fa-comments',
       body: `
         <p class="text-slate-800 leading-relaxed mb-3">
-          <strong>Scenarios</strong> sit beside the main content on wider screens. You'll get a short situation, a few choices, and feedback—practice for real moments (customer or internal), not a test score.
-        </p>
-        <p class="text-slate-600 text-sm mb-3">
-          The sample in the highlighted area is a quick “find the collateral” moment—live modules use scenarios from your real training.
+          <strong>Scenarios</strong> give you a short situation, a few choices, and feedback—practice for real moments, not a test score.
         </p>
         <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
           <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
-          Choose the strongest response in the scenario to unlock <strong>Next</strong>.
+          ${mobile ? 'Scroll up and choose' : 'Choose'} the strongest response in the scenario to unlock <strong>Next</strong>.
         </p>`,
     },
     {
@@ -447,14 +474,11 @@ export function loadGettingStarted(container, manifest) {
       icon: 'fa-circle-question',
       body: `
         <p class="text-slate-800 leading-relaxed mb-3">
-          <strong>Knowledge checks</strong> usually live in a carousel toward the bottom—quick questions with explanations so you can self-check without pressure.
-        </p>
-        <p class="text-slate-600 text-sm mb-3">
-          The example in the highlighted area is a highly scientific Blair dining survey. Real modules quiz you on the training you just read.
+          <strong>Knowledge checks</strong> are quick questions with explanations so you can self-check without pressure.
         </p>
         <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
           <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
-          Pick the best answer to unlock <strong>Next</strong>.
+          ${mobile ? 'Scroll up and pick' : 'Pick'} the best answer to unlock <strong>Next</strong>.
         </p>`,
     },
     {
@@ -463,12 +487,11 @@ export function loadGettingStarted(container, manifest) {
       body: mapBook
         ? `
         <p class="text-slate-800 leading-relaxed mb-3">
-          <strong>${escapeHtml(mapBook.title)}</strong> is a digital version of our printed map book—often spread on the table as a backdrop for executive customer conversations about footprint, reach, and strategy.
+          <strong>${escapeHtml(mapBook.title)}</strong> is a digital version of our printed map book—a backdrop for executive customer conversations about footprint, reach, and strategy.
         </p>
-        <p class="text-slate-600 text-sm mb-3">
-          Open it from the sidebar for full-width maps and executive views; switch back to any training module the same way you got here.
-        </p>
-        <p class="text-slate-600 text-sm">Same header and sidebar as the rest of Sales-Navigator.</p>`
+        <p class="text-slate-600 text-sm">
+          ${mobile ? 'Open the <strong><i class="fa-solid fa-bars text-xs" aria-hidden="true"></i> menu</strong> and tap it to view' : 'Open it from the sidebar for'} full-width maps and executive views.
+        </p>`
         : `
         <p class="text-slate-800 leading-relaxed">Map-style resources appear in the navigation when enabled for your build.</p>`,
     },
@@ -477,14 +500,11 @@ export function loadGettingStarted(container, manifest) {
       icon: 'fa-route',
       body: `
         <p class="text-slate-800 leading-relaxed mb-3">
-          <strong>Fiber path</strong> in the header shows your progress across training modules—what you have opened, what is next, and how the route fits together.
-        </p>
-        <p class="text-slate-600 text-sm mb-3">
-          Open it anytime for a full-screen map; close it to return here or jump to another module from the sidebar.
+          <strong>Fiber path</strong> in the header tracks your progress—what you've opened, what's next, and how the route fits together.
         </p>
         <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
           <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
-          Click <strong>Fiber path</strong> in the header (the highlighted control) to unlock <strong>Next</strong>.
+          Tap <strong>Fiber path</strong> ${mobile ? '(<i class="fa-solid fa-route text-xs" aria-hidden="true"></i>) in the header' : 'in the header (the highlighted control)'} to unlock <strong>Next</strong>.
         </p>`,
     },
     {
@@ -492,7 +512,7 @@ export function loadGettingStarted(container, manifest) {
       icon: 'fa-circle-check',
       body: `
         <p class="text-slate-800 leading-relaxed mb-4">
-          You know how to navigate modules, check progress with Fiber path, find practice, and use the map book when needed. When you're ready, jump into your first training module below.
+          You know how to navigate modules, check progress with Fiber path, find practice, and use the map book when needed. Jump into your first training module below.
         </p>
         ${
           firstTraining
@@ -556,7 +576,8 @@ export function loadGettingStarted(container, manifest) {
   /** Recompute spotlight hole + glass card after demo content height changes (e.g. coach note). */
   function syncSpotlightAndCard() {
     const r = getSpotlightRect(stepIndex);
-    applySpotlightLayers(overlay, r);
+    const skipOverlay = isMobileViewport() && (stepIndex === 2 || stepIndex === 3 || stepIndex === 4);
+    applySpotlightLayers(overlay, skipOverlay ? null : r);
     const host = glassRoot?.querySelector('.tour-glass-card-host');
     if (host) positionGlassCard(host, stepIndex, r);
   }
@@ -711,20 +732,24 @@ export function loadGettingStarted(container, manifest) {
         : 'Complete the activity in the highlighted area first.'
       : '';
 
+    const mobileView = isMobileViewport();
+
     if (stepIndex === 3) {
-      document
-        .querySelector('[data-tour-target="tour-scenarios"]')
-        ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      const el = document.querySelector('[data-tour-target="tour-scenarios"]');
+      el?.scrollIntoView({ block: mobileView ? 'start' : 'nearest', behavior: 'smooth' });
     }
 
     if (stepIndex === 4) {
-      document
-        .querySelector('[data-tour-target="tour-knowledge"]')
-        ?.scrollIntoView({ block: 'center', behavior: 'auto' });
+      const el = document.querySelector('[data-tour-target="tour-knowledge"]');
+      el?.scrollIntoView({ block: mobileView ? 'start' : 'center', behavior: 'auto' });
     }
 
     const rect = getSpotlightRect(stepIndex);
-    applySpotlightLayers(overlay, rect);
+    if (mobileView && (stepIndex === 2 || stepIndex === 3 || stepIndex === 4)) {
+      applySpotlightLayers(overlay, null);
+    } else {
+      applySpotlightLayers(overlay, rect);
+    }
 
     if (stepIndex === 5) {
       document
@@ -738,17 +763,25 @@ export function loadGettingStarted(container, manifest) {
         ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
 
+    const mobileNow = isMobileViewport();
+    const cardRound = mobileNow ? 'rounded-t-2xl' : 'rounded-2xl';
+
     const html = `
-      <div class="tour-glass-inner rounded-2xl overflow-hidden border border-white/30 bg-gradient-to-b from-white/75 to-white/55 shadow-inner">
-        <div class="bg-gradient-to-r from-slate-900/95 to-slate-800/95 text-white px-5 py-4 backdrop-blur-sm">
-          <p class="text-[10px] font-semibold uppercase tracking-wider text-orange-300/95 mb-1">Quick tour</p>
-          <h2 class="text-lg font-bold flex items-center gap-2">
-            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-white/15 ring-1 ring-white/20">
-              <i class="fa-solid ${escapeHtml(step.icon)} text-sm" aria-hidden="true"></i>
-            </span>
-            ${escapeHtml(step.title)}
-          </h2>
-          <div class="mt-3 flex items-center gap-1" role="tablist" aria-label="Tour progress">
+      <div class="tour-glass-inner ${cardRound} overflow-hidden border border-white/30 bg-gradient-to-b from-white/75 to-white/55 shadow-inner">
+        <div class="bg-gradient-to-r from-slate-900/95 to-slate-800/95 text-white px-4 sm:px-5 py-3 sm:py-4 backdrop-blur-sm">
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex items-center gap-2 min-w-0">
+              <p class="text-[10px] font-semibold uppercase tracking-wider text-orange-300/95 hidden sm:block">Quick tour</p>
+              <h2 class="text-base sm:text-lg font-bold flex items-center gap-2">
+                <span class="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-lg bg-white/15 ring-1 ring-white/20 shrink-0">
+                  <i class="fa-solid ${escapeHtml(step.icon)} text-sm" aria-hidden="true"></i>
+                </span>
+                ${escapeHtml(step.title)}
+              </h2>
+            </div>
+            <span class="text-slate-400/90 text-xs shrink-0">${stepIndex + 1}/${total}</span>
+          </div>
+          <div class="mt-2 flex items-center gap-1" role="tablist" aria-label="Tour progress">
             ${steps
               .map(
                 (_, i) => `
@@ -762,21 +795,20 @@ export function loadGettingStarted(container, manifest) {
               )
               .join('')}
           </div>
-          <p class="text-slate-400/90 text-xs mt-1.5">Step ${stepIndex + 1} of ${total}</p>
         </div>
-        <div class="px-5 py-4 getting-started-body text-sm max-h-[min(52vh,420px)] overflow-y-auto">${step.body}</div>
-        <div class="px-5 py-3 bg-slate-900/[0.03] border-t border-slate-900/10 flex flex-wrap items-center justify-between gap-2 backdrop-blur-sm">
-          <div class="flex flex-wrap items-center gap-2">
-            <button type="button" class="gs-prev inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white/40 px-3.5 py-2.5 text-xs font-medium text-slate-800 hover:bg-white/70 disabled:opacity-40 disabled:pointer-events-none transition min-h-[44px]" ${stepIndex === 0 ? 'disabled' : ''}>
+        <div class="px-4 sm:px-5 py-3 sm:py-4 getting-started-body text-sm max-h-[min(35vh,420px)] sm:max-h-[min(52vh,420px)] overflow-y-auto">${step.body}</div>
+        <div class="px-4 sm:px-5 py-2.5 sm:py-3 bg-slate-900/[0.03] border-t border-slate-900/10 flex items-center justify-between gap-2 backdrop-blur-sm">
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <button type="button" class="gs-prev inline-flex items-center gap-1.5 sm:gap-2 rounded-lg border border-slate-300/80 bg-white/40 px-3 sm:px-3.5 py-2.5 text-xs font-medium text-slate-800 hover:bg-white/70 disabled:opacity-40 disabled:pointer-events-none transition min-h-[44px]" ${stepIndex === 0 ? 'disabled' : ''}>
               <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
               Back
             </button>
-            <button type="button" class="gs-exit-tour inline-flex items-center gap-1.5 rounded-lg border border-slate-300/70 bg-white/30 px-3.5 py-2.5 text-xs font-medium text-slate-600 hover:bg-white/60 hover:text-slate-800 transition min-h-[44px]" aria-label="Exit quick tour and return to the page">
+            <button type="button" class="gs-exit-tour inline-flex items-center gap-1 sm:gap-1.5 rounded-lg border border-slate-300/70 bg-white/30 px-3 sm:px-3.5 py-2.5 text-xs font-medium text-slate-600 hover:bg-white/60 hover:text-slate-800 transition min-h-[44px]" aria-label="Exit quick tour and return to the page">
               <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-              Exit tour
+              <span class="hidden sm:inline">Exit tour</span><span class="sm:hidden">Exit</span>
             </button>
           </div>
-          <div class="flex flex-wrap gap-2">
+          <div class="flex gap-2">
             ${
               !isLast
                 ? `<button type="button" class="gs-next inline-flex items-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 disabled:hover:bg-orange-500 text-white font-semibold px-4 py-2.5 text-xs shadow-md transition disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px]" ${nextBlocked ? 'disabled' : ''} title="${escapeHtml(nextTitle)}">
@@ -790,7 +822,9 @@ export function loadGettingStarted(container, manifest) {
       </div>`;
 
     if (!glassRoot) return;
-    glassRoot.innerHTML = `<div class="tour-glass-card-host fixed pointer-events-auto max-w-md w-[min(calc(100vw-2rem),28rem)] transition-[left,top,transform] duration-300 ease-out">${html}</div>`;
+    glassRoot.innerHTML = mobileNow
+      ? `<div class="tour-glass-card-host fixed pointer-events-auto w-full transition-[bottom] duration-300 ease-out" style="bottom:0;left:0;right:0">${html}</div>`
+      : `<div class="tour-glass-card-host fixed pointer-events-auto max-w-md w-[min(calc(100vw-2rem),28rem)] transition-[left,top,transform] duration-300 ease-out">${html}</div>`;
     bindCardActions(glassRoot);
 
     requestAnimationFrame(() => {
