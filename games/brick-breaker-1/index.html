@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discovery Break — Brick breaker (mockup)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #game-canvas {
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 384 / 280;
+      display: block;
+      background: #0f172a;
+      border-radius: 0.75rem;
+      border: 2px solid rgba(196, 160, 83, 0.45);
+    }
+    .pixel-popup {
+      font-family: "Press Start 2P", ui-monospace, monospace;
+      background: #1a1c2e;
+      border: 2px solid #8b6914;
+      box-shadow: 0 0 0 2px #0b0d14, 0 0 0 4px #c4a035, 4px 4px 0 0 #5c4033;
+    }
+    .pixel-popup-title {
+      font-size: 0.5rem;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      color: #fde68a;
+      text-shadow: 1px 1px 0 #422006;
+    }
+    .pixel-popup-kicker { font-size: 0.45rem; color: #f9e076; text-shadow: 2px 2px 0 #422006; }
+    .pixel-btn {
+      font-family: "Press Start 2P", ui-monospace, monospace;
+      font-size: 0.45rem;
+      background: #ea580c;
+      color: #0f172a;
+      box-shadow: inset -2px -2px 0 #9a3412, inset 2px 2px 0 #fdba74;
+    }
+    .pixel-btn:hover { background: #f97316; }
+    .pixel-win {
+      font-family: "Press Start 2P", ui-monospace, monospace;
+      box-shadow: 0 0 0 2px #0f172a, 0 0 0 4px #f97316, 4px 4px 0 0 #9a3412;
+    }
+    html.sn-embed .sn-embed-hide { display: none !important; }
+    html.sn-embed { height: 100%; overflow: hidden; }
+    html.sn-embed body {
+      min-height: 0; height: 100%; padding: 0.5rem; margin: 0; overflow: hidden;
+      display: flex; flex-direction: column; box-sizing: border-box;
+    }
+    html.sn-embed body > div { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+    html.sn-embed section[aria-label="Discovery Break game"] {
+      flex: 1; min-height: 0; display: flex; flex-direction: column;
+      padding: 0.75rem !important; margin: 0; box-sizing: border-box;
+    }
+    html.sn-embed .game-stack { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+    html.sn-embed #game-canvas { flex: 0 0 auto; width: 100%; height: auto; }
+    html.sn-embed body.sn-embed-body { padding: 0.5rem !important; }
+  </style>
+  <script>
+    if (new URLSearchParams(location.search).get("embed") === "1") {
+      document.documentElement.classList.add("sn-embed");
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800 font-sans p-4 sm:p-6 sn-embed-body" style="font-family: Inter, ui-sans-serif, system-ui, sans-serif;">
+  <div class="mx-auto w-full max-w-[1600px] space-y-4">
+    <header class="sn-embed-hide flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-emerald-700">Standalone mockup</p>
+        <h1 class="mt-1 text-xl font-bold text-slate-900 tracking-tight">Discovery Break — Brick breaker</h1>
+        <p class="mt-1 text-sm text-slate-600">Break amber discovery bricks to reveal questions · ← → · Space launch</p>
+      </div>
+    </header>
+
+    <section class="rounded-2xl border border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white p-6 md:p-8 shadow-sm" aria-label="Discovery Break game">
+      <h2 class="sn-embed-hide text-xl font-bold text-slate-900 mb-4 tracking-tight">Discovery Break</h2>
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-sm">
+        <p class="text-slate-600 text-xs sm:text-sm">← → move paddle · Space serve / launch</p>
+        <div class="flex flex-wrap items-center gap-4 ml-auto">
+          <div>
+            <span id="discovery-count" class="font-semibold tabular-nums text-emerald-800">0 / 5</span>
+            <span class="text-slate-500"> discoveries</span>
+          </div>
+          <p id="level-status" class="text-xs font-medium text-emerald-700 hidden">All discovery bricks</p>
+        </div>
+      </div>
+      <div class="relative w-full max-w-full game-stack flex-1 min-h-0 flex flex-col">
+        <canvas id="game-canvas" width="384" height="280" role="img" aria-label="Brick breaker mini-game"></canvas>
+
+        <div id="start-modal" class="absolute inset-0 z-40 flex items-center justify-center p-4 bg-slate-900/55" role="dialog" aria-modal="true" aria-labelledby="start-modal-title">
+          <div class="pixel-win max-w-sm w-full rounded-sm bg-slate-900 p-6 text-center border border-slate-800">
+            <p id="start-modal-title" class="text-amber-200 text-[0.5rem] leading-relaxed">DISCOVERY BREAK</p>
+            <p class="mt-2 text-[0.35rem] text-slate-400 font-sans">Break amber bricks to open each discovery question</p>
+            <button type="button" id="start-game-btn" class="mt-6 rounded-lg bg-emerald-600 px-8 py-3 text-sm font-bold text-white shadow-md border-2 border-emerald-800 hover:bg-emerald-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300">START</button>
+            <p class="mt-3 text-[0.3rem] text-slate-500 font-sans">Enter or Space</p>
+          </div>
+        </div>
+
+        <div id="question-modal" class="hidden absolute z-[45] left-1/2 -translate-x-1/2 w-[min(94%,19rem)] sm:w-[min(94%,20rem)] bottom-[28%] sm:bottom-[30%]" role="dialog" aria-modal="true" aria-labelledby="question-modal-title">
+          <div class="pixel-popup rounded-sm p-3 pt-3 pb-3">
+            <p class="pixel-popup-kicker mb-2 uppercase">Discovery</p>
+            <p id="question-modal-title" class="pixel-popup-title max-h-[min(32vh,9.5rem)] overflow-y-auto pr-1"></p>
+            <div class="mt-3 flex justify-end">
+              <button type="button" id="question-dismiss" class="pixel-btn rounded-sm px-3 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a1c2e]">OK</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="win-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/70" role="dialog" aria-modal="true" aria-labelledby="win-modal-title">
+          <div class="pixel-win max-w-lg w-full max-h-[min(92vh,36rem)] overflow-y-auto rounded-sm bg-slate-900 p-4 sm:p-6 text-left border border-slate-800">
+            <p id="win-modal-title" class="text-amber-200 text-[0.55rem] leading-relaxed text-center">COURSE CLEAR!</p>
+            <p class="mt-2 text-[0.4rem] text-slate-400 leading-relaxed text-center">Discovery Break complete.</p>
+            <div class="mt-4 pt-4 border-t border-slate-700">
+              <p class="text-[0.4rem] text-emerald-400/90 uppercase tracking-wide mb-3 font-sans">Discovery questions</p>
+              <ol id="win-discovery-list" class="list-decimal list-inside space-y-2 text-xs sm:text-sm text-slate-200 leading-snug font-sans pl-1"></ol>
+            </div>
+            <div class="mt-5 flex justify-center">
+              <button type="button" id="win-play-again" class="pixel-btn rounded-sm bg-orange-500 px-4 py-2 text-slate-900 hover:bg-orange-400">Play Again</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="sn-embed-hide mt-4 text-xs text-slate-500">Amber bricks map 1:1 to the five discovery questions.</p>
+    </section>
+  </div>
+
+  <script type="module">
+    /** Mirrors modules/product-security-and-sd-wan/content.md — Discovery Questions */
+    const DISCOVERY_QUESTIONS = [
+      "How many locations do you have, and which ones are on GPC fiber vs. other broadband or MPLS?",
+      "How are those locations connected today—VPN over shared Internet, MPLS, Ethernet? When does that contract expire?",
+      "What are your most important applications? Do you use SaaS like O365 or Salesforce, and are they hosted on-prem or in the cloud?",
+      "Have you experienced a security incident, ransomware event, or DDoS attack? Who manages your firewalls today?",
+      "Do you need always-on DDoS mitigation (proactive) or is business-hours coverage acceptable—and what's the cost of an attack outside those windows?",
+    ];
+
+    const canvas = document.getElementById("game-canvas");
+    const ctx = canvas.getContext("2d");
+    const W = canvas.width;
+    const H = canvas.height;
+
+    const startModal = document.getElementById("start-modal");
+    const btnStartGame = document.getElementById("start-game-btn");
+    const questionModal = document.getElementById("question-modal");
+    const modalTitle = document.getElementById("question-modal-title");
+    const btnQuestionDismiss = document.getElementById("question-dismiss");
+    const winModal = document.getElementById("win-modal");
+    const btnPlayAgain = document.getElementById("win-play-again");
+    const discoveryCountEl = document.getElementById("discovery-count");
+    const levelStatusEl = document.getElementById("level-status");
+
+    const paddle = { w: 64, h: 8, x: W / 2 - 32, y: H - 20, speed: 5.2 };
+    const ball = { x: W / 2, y: H - 40, vx: 0, vy: 0, r: 5, stuck: true };
+    const keys = { left: false, right: false };
+
+    /** qIndex 0–4 on amber bricks; null = filler */
+    let bricks = [];
+    let discovered = [false, false, false, false, false];
+    let gameStarted = false;
+    let pausedForQuestion = false;
+    let levelWon = false;
+
+    function shuffleInPlace(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function buildBricks() {
+      const list = [];
+      const cols = 8;
+      const rows = 5;
+      const bw = 42;
+      const bh = 14;
+      const gap = 4;
+      const offsetX = (W - (cols * (bw + gap) - gap)) / 2;
+      const offsetY = 36;
+      const slots = [];
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          slots.push({ col, row });
+        }
+      }
+      shuffleInPlace(slots);
+      const qPerm = shuffleInPlace([0, 1, 2, 3, 4]);
+      const goldSet = new Set(slots.slice(0, 5).map((s) => `${s.col},${s.row}`));
+      const qAt = new Map(slots.slice(0, 5).map((s, i) => [`${s.col},${s.row}`, qPerm[i]]));
+
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          const x = offsetX + col * (bw + gap);
+          const y = offsetY + row * (bh + gap);
+          const key = `${col},${row}`;
+          const q = goldSet.has(key) ? qAt.get(key) : null;
+          list.push({ x, y, w: bw, h: bh, alive: true, q });
+        }
+      }
+      return list;
+    }
+
+    function resetBallOnPaddle() {
+      ball.x = paddle.x + paddle.w / 2;
+      ball.y = paddle.y - ball.r - 1;
+      ball.vx = 0;
+      ball.vy = 0;
+      ball.stuck = true;
+    }
+
+    /** Angle above horizontal (radians); avoids nearly-flat shots that crawl sideways */
+    const MIN_LAUNCH_ELEV = (24 * Math.PI) / 180;
+    const MAX_LAUNCH_ELEV = (72 * Math.PI) / 180;
+
+    function applyMinUpwardAngle(vx, vy, speed) {
+      const m = Math.hypot(vx, vy) || speed;
+      const ux = vx / m;
+      const uy = vy / m;
+      const elev = Math.atan2(Math.abs(uy), Math.abs(ux));
+      if (elev >= MIN_LAUNCH_ELEV) {
+        return { vx: ux * speed, vy: uy * speed };
+      }
+      const sx = Math.sign(ux) || 1;
+      return {
+        vx: sx * speed * Math.cos(MIN_LAUNCH_ELEV),
+        vy: -speed * Math.sin(MIN_LAUNCH_ELEV),
+      };
+    }
+
+    function launchBall() {
+      if (!ball.stuck) return;
+      ball.stuck = false;
+      const speed = 4.2;
+      const elev = MIN_LAUNCH_ELEV + Math.random() * (MAX_LAUNCH_ELEV - MIN_LAUNCH_ELEV);
+      const dir = Math.random() < 0.5 ? -1 : 1;
+      ball.vx = dir * speed * Math.cos(elev);
+      ball.vy = -speed * Math.sin(elev);
+    }
+
+    function rectsOverlap(ax, ay, aw, ah, bx, by, bw, bh) {
+      return ax < bx + bw && ax + aw > bx && ay < by + bh && ay + ah > by;
+    }
+
+    function circleBrickResolve() {
+      const cx = ball.x;
+      const cy = ball.y;
+      const r = ball.r;
+      for (const b of bricks) {
+        if (!b.alive) continue;
+        const bx = b.x;
+        const by = b.y;
+        const bw = b.w;
+        const bh = b.h;
+        const closestX = Math.max(bx, Math.min(cx, bx + bw));
+        const closestY = Math.max(by, Math.min(cy, by + bh));
+        const dx = cx - closestX;
+        const dy = cy - closestY;
+        if (dx * dx + dy * dy >= r * r) continue;
+
+        b.alive = false;
+        if (b.q !== null) openQuestion(b.q);
+
+        const prevX = cx - ball.vx;
+        const prevY = cy - ball.vy;
+        const overlapLeft = prevX + r <= bx;
+        const overlapRight = prevX - r >= bx + bw;
+        const overlapTop = prevY + r <= by;
+        if (overlapLeft || overlapRight) ball.vx *= -1;
+        else if (overlapTop) ball.vy *= -1;
+        else {
+          const penLeft = cx + r - bx;
+          const penRight = bx + bw - (cx - r);
+          const penTop = cy + r - by;
+          const penBot = by + bh - (cy - r);
+          const m = Math.min(penLeft, penRight, penTop, penBot);
+          if (m === penTop || m === penBot) ball.vy *= -1;
+          else ball.vx *= -1;
+        }
+        ball.x += ball.vx * 0.5;
+        ball.y += ball.vy * 0.5;
+        return;
+      }
+    }
+
+    function updatePaddle() {
+      if (keys.left) paddle.x -= paddle.speed;
+      if (keys.right) paddle.x += paddle.speed;
+      paddle.x = Math.max(8, Math.min(W - paddle.w - 8, paddle.x));
+      if (ball.stuck) {
+        ball.x = paddle.x + paddle.w / 2;
+        ball.y = paddle.y - ball.r - 1;
+      }
+    }
+
+    function updateBall() {
+      if (ball.stuck || pausedForQuestion || levelWon) return;
+      ball.x += ball.vx;
+      ball.y += ball.vy;
+
+      if (ball.x - ball.r < 0) {
+        ball.x = ball.r;
+        ball.vx *= -1;
+      }
+      if (ball.x + ball.r > W) {
+        ball.x = W - ball.r;
+        ball.vx *= -1;
+      }
+      if (ball.y - ball.r < 0) {
+        ball.y = ball.r;
+        ball.vy *= -1;
+      }
+
+      circleBrickResolve();
+      if (pausedForQuestion) return;
+
+      const pr = { x: paddle.x, y: paddle.y, w: paddle.w, h: paddle.h };
+      if (ball.vy > 0 && rectsOverlap(ball.x - ball.r, ball.y - ball.r, ball.r * 2, ball.r * 2, pr.x, pr.y, pr.w, pr.h)) {
+        const hit = (ball.x - pr.x) / pr.w - 0.5;
+        ball.y = pr.y - ball.r;
+        const speed = Math.hypot(ball.vx, ball.vy) || 4.2;
+        const maxBend = 2.8;
+        ball.vx += hit * maxBend;
+        ball.vy = -Math.abs(ball.vy);
+        const out = applyMinUpwardAngle(ball.vx, ball.vy, speed);
+        ball.vx = out.vx;
+        ball.vy = out.vy;
+      }
+
+      if (ball.y - ball.r > H + 8) {
+        resetBallOnPaddle();
+      }
+    }
+
+    function openQuestion(index) {
+      if (discovered[index]) return;
+      discovered[index] = true;
+      pausedForQuestion = true;
+      modalTitle.textContent = DISCOVERY_QUESTIONS[index];
+      questionModal.classList.remove("hidden");
+      updateDiscoveryCount();
+    }
+
+    function closeQuestion() {
+      questionModal.classList.add("hidden");
+      pausedForQuestion = false;
+      keys.left = false;
+      keys.right = false;
+      if (discovered.every(Boolean)) {
+        levelWon = true;
+        showWinModal();
+      }
+    }
+
+    function showWinModal() {
+      const ol = document.getElementById("win-discovery-list");
+      ol.replaceChildren();
+      for (const q of DISCOVERY_QUESTIONS) {
+        const li = document.createElement("li");
+        li.textContent = q;
+        ol.appendChild(li);
+      }
+      winModal.classList.remove("hidden");
+    }
+
+    function updateDiscoveryCount() {
+      const n = discovered.filter(Boolean).length;
+      discoveryCountEl.textContent = `${n} / 5`;
+      if (n >= 5) levelStatusEl.classList.remove("hidden");
+    }
+
+    function playAgain() {
+      winModal.classList.add("hidden");
+      discovered = [false, false, false, false, false];
+      bricks = buildBricks();
+      levelWon = false;
+      closeQuestion();
+      pausedForQuestion = false;
+      keys.left = false;
+      keys.right = false;
+      gameStarted = false;
+      startModal.classList.remove("hidden");
+      levelStatusEl.classList.add("hidden");
+      updateDiscoveryCount();
+      resetBallOnPaddle();
+    }
+
+    function beginGame() {
+      if (gameStarted) return;
+      gameStarted = true;
+      startModal.classList.add("hidden");
+      bricks = buildBricks();
+      discovered = [false, false, false, false, false];
+      levelWon = false;
+      levelStatusEl.classList.add("hidden");
+      updateDiscoveryCount();
+      resetBallOnPaddle();
+    }
+
+    function drawBricks() {
+      for (const b of bricks) {
+        if (!b.alive) continue;
+        if (b.q !== null) {
+          ctx.fillStyle = "#b45309";
+          ctx.fillRect(b.x, b.y, b.w, b.h);
+          ctx.fillStyle = "#fbbf24";
+          ctx.fillRect(b.x + 2, b.y + 2, b.w - 4, b.h - 4);
+          ctx.fillStyle = "#78350f";
+          ctx.font = '8px "Press Start 2P", monospace';
+          ctx.fillText("?", b.x + b.w / 2 - 4, b.y + 11);
+        } else {
+          ctx.fillStyle = "#475569";
+          ctx.fillRect(b.x, b.y, b.w, b.h);
+          ctx.fillStyle = "#64748b";
+          ctx.fillRect(b.x + 1, b.y + 1, b.w - 2, b.h - 2);
+        }
+      }
+    }
+
+    function draw() {
+      ctx.fillStyle = "#0f172a";
+      ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = "#1e293b";
+      ctx.fillRect(0, H - 4, W, 4);
+
+      drawBricks();
+
+      ctx.fillStyle = "#38bdf8";
+      ctx.fillRect(paddle.x, paddle.y, paddle.w, paddle.h);
+      ctx.fillStyle = "#7dd3fc";
+      ctx.fillRect(paddle.x + 2, paddle.y + 1, paddle.w - 4, paddle.h - 2);
+
+      ctx.fillStyle = "#f8fafc";
+      ctx.beginPath();
+      ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = "#64748b";
+      ctx.font = '7px "Press Start 2P", monospace';
+      ctx.fillText("DISCOVERY BREAK", 10, 18);
+    }
+
+    function tick() {
+      if (!gameStarted || pausedForQuestion || levelWon) {
+        draw();
+        requestAnimationFrame(tick);
+        return;
+      }
+      updatePaddle();
+      updateBall();
+      draw();
+      requestAnimationFrame(tick);
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (!gameStarted) {
+        if (e.key === "Enter" || e.code === "Space") {
+          e.preventDefault();
+          beginGame();
+        }
+        return;
+      }
+      if (pausedForQuestion) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          closeQuestion();
+        }
+        return;
+      }
+      if (e.code === "ArrowLeft" || e.key === "a") keys.left = true;
+      if (e.code === "ArrowRight" || e.key === "d") keys.right = true;
+      if (e.code === "Space") {
+        e.preventDefault();
+        launchBall();
+      }
+      if (e.key === "Enter" && !winModal.classList.contains("hidden")) {
+        e.preventDefault();
+        playAgain();
+      }
+    });
+    window.addEventListener("keyup", (e) => {
+      if (!gameStarted) return;
+      if (e.code === "ArrowLeft" || e.key === "a") keys.left = false;
+      if (e.code === "ArrowRight" || e.key === "d") keys.right = false;
+    });
+
+    canvas.addEventListener("mousemove", (e) => {
+      if (!gameStarted || pausedForQuestion || levelWon) return;
+      const rect = canvas.getBoundingClientRect();
+      const mx = ((e.clientX - rect.left) / rect.width) * W;
+      paddle.x = Math.max(8, Math.min(W - paddle.w - 8, mx - paddle.w / 2));
+      if (ball.stuck) {
+        ball.x = paddle.x + paddle.w / 2;
+        ball.y = paddle.y - ball.r - 1;
+      }
+    });
+
+    btnStartGame.addEventListener("click", beginGame);
+    btnQuestionDismiss.addEventListener("click", closeQuestion);
+    btnPlayAgain.addEventListener("click", playAgain);
+
+    requestAnimationFrame(tick);
+  </script>
+</body>
+</html>

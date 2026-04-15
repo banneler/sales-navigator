@@ -134,6 +134,28 @@ GPC's connectivity stack matches the right access technology to each customer's 
 4. **Do you need static IPs, diversity (dual-path), or DDoS monitoring as part of your access design?**
 5. **Are any sites data-center or hub locations where high-capacity optical transport between strategic endpoints might be relevant?**
 
+<p class="text-slate-600 text-sm mb-2">Play <strong>Discovery Galactica</strong> below — destroy amber ships to unlock each question (same copy as the five prompts above).</p>
+
+<div class="hidden" aria-hidden="true">
+<ol>
+<li><strong>What are your most critical applications—VoIP, cloud ERP, video conferencing, payment terminals? How much upload traffic do they generate compared to download?</strong></li>
+<li><strong>How are your locations connected today—shared broadband, MPLS, Ethernet, or SD-WAN? When does that contract expire?</strong></li>
+<li><strong>Have you experienced jitter, latency spikes, or outages? What broke first, and what did it cost you?</strong></li>
+<li><strong>Do you need static IPs, diversity (dual-path), or DDoS monitoring as part of your access design?</strong></li>
+<li><strong>Are any sites data-center or hub locations where high-capacity optical transport between strategic endpoints might be relevant?</strong></li>
+</ol>
+</div>
+
+<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/galactica-1/index.html?embed=1"
+    title="Discovery Galactica"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); background: #f1f5f9;"
+  ></iframe>
+</div>
+
 ---
 
 ## Objection Handling

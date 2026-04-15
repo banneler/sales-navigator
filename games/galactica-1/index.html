@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discovery Galactica — Shooter (mockup)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #game-canvas {
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 384 / 216;
+      display: block;
+      background: #020617;
+      border-radius: 0.75rem;
+      border: 2px solid rgba(56, 189, 248, 0.35);
+    }
+    .pixel-popup {
+      font-family: "Press Start 2P", ui-monospace, monospace;
+      background: #1a1c2e;
+      border: 2px solid #8b6914;
+      box-shadow: 0 0 0 2px #0b0d14, 0 0 0 4px #c4a035, 4px 4px 0 0 #5c4033;
+    }
+    .pixel-popup-title {
+      font-size: 0.5rem;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      color: #fde68a;
+      text-shadow: 1px 1px 0 #422006;
+    }
+    .pixel-popup-kicker { font-size: 0.45rem; color: #f9e076; text-shadow: 2px 2px 0 #422006; }
+    .pixel-btn {
+      font-family: "Press Start 2P", ui-monospace, monospace;
+      font-size: 0.45rem;
+      background: #ea580c;
+      color: #0f172a;
+      box-shadow: inset -2px -2px 0 #9a3412, inset 2px 2px 0 #fdba74;
+    }
+    .pixel-btn:hover { background: #f97316; }
+    .pixel-win {
+      font-family: "Press Start 2P", ui-monospace, monospace;
+      box-shadow: 0 0 0 2px #0f172a, 0 0 0 4px #f97316, 4px 4px 0 0 #9a3412;
+    }
+    html.sn-embed .sn-embed-hide { display: none !important; }
+    html.sn-embed { height: 100%; overflow: hidden; }
+    html.sn-embed body {
+      min-height: 0; height: 100%; padding: 0.5rem; margin: 0; overflow: hidden;
+      display: flex; flex-direction: column; box-sizing: border-box;
+    }
+    html.sn-embed body > div { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+    html.sn-embed section[aria-label="Discovery Galactica game"] {
+      flex: 1; min-height: 0; display: flex; flex-direction: column;
+      padding: 0.75rem !important; margin: 0; box-sizing: border-box;
+    }
+    html.sn-embed .game-stack { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+    html.sn-embed #game-canvas { flex: 0 0 auto; width: 100%; height: auto; }
+    html.sn-embed body.sn-embed-body { padding: 0.5rem !important; }
+  </style>
+  <script>
+    if (new URLSearchParams(location.search).get("embed") === "1") {
+      document.documentElement.classList.add("sn-embed");
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800 font-sans p-4 sm:p-6 sn-embed-body" style="font-family: Inter, ui-sans-serif, system-ui, sans-serif;">
+  <div class="mx-auto w-full max-w-[1600px] space-y-4">
+    <header class="sn-embed-hide flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-emerald-700">Standalone mockup</p>
+        <h1 class="mt-1 text-xl font-bold text-slate-900 tracking-tight">Discovery Galactica — Space shooter</h1>
+        <p class="mt-1 text-sm text-slate-600">Destroy amber discovery ships · ← → · Space fire · Enter OK</p>
+      </div>
+    </header>
+
+    <section class="rounded-2xl border border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white p-6 md:p-8 shadow-sm" aria-label="Discovery Galactica game">
+      <h2 class="sn-embed-hide text-xl font-bold text-slate-900 mb-4 tracking-tight">Discovery Galactica</h2>
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-sm">
+        <p class="text-slate-600 text-xs sm:text-sm">← → move · Space fire</p>
+        <div class="flex flex-wrap items-center gap-4 ml-auto">
+          <div>
+            <span id="discovery-count" class="font-semibold tabular-nums text-emerald-800">0 / 5</span>
+            <span class="text-slate-500"> discoveries</span>
+          </div>
+          <p id="level-status" class="text-xs font-medium text-emerald-700 hidden">All discovery ships</p>
+        </div>
+      </div>
+      <div class="relative w-full max-w-full game-stack flex-1 min-h-0 flex flex-col">
+        <canvas id="game-canvas" width="384" height="216" role="img" aria-label="Space shooter mini-game"></canvas>
+
+        <div id="start-modal" class="absolute inset-0 z-40 flex items-center justify-center p-4 bg-slate-900/55" role="dialog" aria-modal="true" aria-labelledby="start-modal-title">
+          <div class="pixel-win max-w-sm w-full rounded-sm bg-slate-900 p-6 text-center border border-slate-800">
+            <p id="start-modal-title" class="text-amber-200 text-[0.5rem] leading-relaxed">DISCOVERY GALACTICA</p>
+            <p class="mt-2 text-[0.35rem] text-slate-400 font-sans">Clear amber ships to reveal discovery questions</p>
+            <button type="button" id="start-game-btn" class="mt-6 rounded-lg bg-emerald-600 px-8 py-3 text-sm font-bold text-white shadow-md border-2 border-emerald-800 hover:bg-emerald-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300">START</button>
+            <p class="mt-3 text-[0.3rem] text-slate-500 font-sans">Enter or Space</p>
+          </div>
+        </div>
+
+        <div id="question-modal" class="hidden absolute z-[45] left-1/2 -translate-x-1/2 w-[min(94%,19rem)] sm:w-[min(94%,20rem)] bottom-[28%] sm:bottom-[30%]" role="dialog" aria-modal="true" aria-labelledby="question-modal-title">
+          <div class="pixel-popup rounded-sm p-3 pt-3 pb-3">
+            <p class="pixel-popup-kicker mb-2 uppercase">Discovery</p>
+            <p id="question-modal-title" class="pixel-popup-title max-h-[min(32vh,9.5rem)] overflow-y-auto pr-1"></p>
+            <div class="mt-3 flex justify-end">
+              <button type="button" id="question-dismiss" class="pixel-btn rounded-sm px-3 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a1c2e]">OK</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="win-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/70" role="dialog" aria-modal="true" aria-labelledby="win-modal-title">
+          <div class="pixel-win max-w-lg w-full max-h-[min(92vh,36rem)] overflow-y-auto rounded-sm bg-slate-900 p-4 sm:p-6 text-left border border-slate-800">
+            <p id="win-modal-title" class="text-amber-200 text-[0.55rem] leading-relaxed text-center">MISSION COMPLETE!</p>
+            <p class="mt-2 text-[0.4rem] text-slate-400 leading-relaxed text-center">Discovery Galactica complete.</p>
+            <div class="mt-4 pt-4 border-t border-slate-700">
+              <p class="text-[0.4rem] text-emerald-400/90 uppercase tracking-wide mb-3 font-sans">Discovery questions</p>
+              <ol id="win-discovery-list" class="list-decimal list-inside space-y-2 text-xs sm:text-sm text-slate-200 leading-snug font-sans pl-1"></ol>
+            </div>
+            <div class="mt-5 flex justify-center">
+              <button type="button" id="win-play-again" class="pixel-btn rounded-sm bg-orange-500 px-4 py-2 text-slate-900 hover:bg-orange-400">Play Again</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="lose-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/75" role="dialog" aria-modal="true" aria-labelledby="lose-modal-title">
+          <div class="pixel-win max-w-sm w-full rounded-sm bg-slate-900 p-6 text-center border border-slate-800">
+            <p id="lose-modal-title" class="text-amber-200 text-[0.5rem] leading-relaxed">BREACH!</p>
+            <p class="mt-2 text-[0.35rem] text-slate-400 font-sans">Hostiles reached your line.</p>
+            <button type="button" id="lose-retry" class="mt-6 pixel-btn rounded-sm bg-orange-500 px-4 py-2 text-slate-900 hover:bg-orange-400">Try Again</button>
+          </div>
+        </div>
+      </div>
+      <p class="sn-embed-hide mt-4 text-xs text-slate-500">Amber ? ships = discovery · green chevrons = blockers. Each drifts sideways (noisy) and falls at its own speed; layout random each run.</p>
+    </section>
+  </div>
+
+  <script type="module">
+    /** Mirrors modules/product-connectivity/content.md — Discovery Questions */
+    const DISCOVERY_QUESTIONS = [
+      "What are your most critical applications—VoIP, cloud ERP, video conferencing, payment terminals? How much upload traffic do they generate compared to download?",
+      "How are your locations connected today—shared broadband, MPLS, Ethernet, or SD-WAN? When does that contract expire?",
+      "Have you experienced jitter, latency spikes, or outages? What broke first, and what did it cost you?",
+      "Do you need static IPs, diversity (dual-path), or DDoS monitoring as part of your access design?",
+      "Are any sites data-center or hub locations where high-capacity optical transport between strategic endpoints might be relevant?",
+    ];
+
+    const canvas = document.getElementById("game-canvas");
+    const ctx = canvas.getContext("2d");
+    const W = canvas.width;
+    const H = canvas.height;
+
+    const startModal = document.getElementById("start-modal");
+    const btnStartGame = document.getElementById("start-game-btn");
+    const questionModal = document.getElementById("question-modal");
+    const modalTitle = document.getElementById("question-modal-title");
+    const btnQuestionDismiss = document.getElementById("question-dismiss");
+    const winModal = document.getElementById("win-modal");
+    const btnPlayAgain = document.getElementById("win-play-again");
+    const loseModal = document.getElementById("lose-modal");
+    const btnLoseRetry = document.getElementById("lose-retry");
+    const discoveryCountEl = document.getElementById("discovery-count");
+    const levelStatusEl = document.getElementById("level-status");
+
+    const ship = { w: 28, h: 14, x: W / 2 - 14, y: H - 20, speed: 4.2 };
+    const keys = { left: false, right: false, fire: false };
+    let bullets = [];
+    let cooldown = 0;
+    let enemies = [];
+    let discovered = [false, false, false, false, false];
+    let gameStarted = false;
+    let pausedForQuestion = false;
+    let levelWon = false;
+    let levelLost = false;
+
+    function mulberry32(seed) {
+      return function () {
+        let t = (seed += 0x6d2b79f5);
+        t = Math.imul(t ^ (t >>> 15), t | 1);
+        t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    function buildEnemies() {
+      enemies = [];
+      const rand = mulberry32((Date.now() ^ (Math.random() * 0xffffffff)) >>> 0);
+      const ew = 34;
+      const eh = 18;
+      const gap = 8;
+      const cols = 8;
+      const rows = 4;
+      const offsetX = (W - (cols * (ew + gap) - gap)) / 2;
+      /** Start above the viewport; each ship moves independently */
+      const spawnAnchorY = -128;
+      const NUM_DISCOVERY = 5;
+      const NUM_BLOCKERS = 20;
+      const slots = [];
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) slots.push({ col: c, row: r });
+      }
+      for (let i = slots.length - 1; i > 0; i--) {
+        const j = Math.floor(rand() * (i + 1));
+        [slots[i], slots[j]] = [slots[j], slots[i]];
+      }
+      const qPerm = [0, 1, 2, 3, 4];
+      for (let i = qPerm.length - 1; i > 0; i--) {
+        const j = Math.floor(rand() * (i + 1));
+        [qPerm[i], qPerm[j]] = [qPerm[j], qPerm[i]];
+      }
+      for (let i = 0; i < NUM_DISCOVERY; i++) {
+        const s = slots[i];
+        enemies.push({
+          x: offsetX + s.col * (ew + gap),
+          y: spawnAnchorY + s.row * (eh + 6),
+          w: ew,
+          h: eh,
+          alive: true,
+          q: qPerm[i],
+          kind: "discovery",
+          vx: (rand() * 2 - 1) * 0.85,
+          vy: 0.065 + rand() * 0.14,
+          driftPhase: rand() * Math.PI * 2,
+          driftRate: 0.018 + rand() * 0.038,
+        });
+      }
+      for (let i = NUM_DISCOVERY; i < NUM_DISCOVERY + NUM_BLOCKERS; i++) {
+        const s = slots[i];
+        enemies.push({
+          x: offsetX + s.col * (ew + gap),
+          y: spawnAnchorY + s.row * (eh + 6),
+          w: ew,
+          h: eh,
+          alive: true,
+          q: null,
+          kind: "blocker",
+          vx: (rand() * 2 - 1) * 0.85,
+          vy: 0.065 + rand() * 0.14,
+          driftPhase: rand() * Math.PI * 2,
+          driftRate: 0.018 + rand() * 0.038,
+        });
+      }
+    }
+
+    const edgePad = 8;
+    const vxClamp = 1.55;
+
+    /** Each ship: pseudo-random horizontal drift + its own fall speed; then light separation so they don't sit on top of each other */
+    function moveEnemies() {
+      for (const e of enemies) {
+        if (!e.alive) continue;
+        const wobble = Math.sin(e.driftPhase) * 0.055;
+        e.driftPhase += e.driftRate;
+        e.vx += wobble + (Math.random() - 0.5) * 0.11;
+        e.vx = Math.max(-vxClamp, Math.min(vxClamp, e.vx));
+        e.x += e.vx;
+        e.y += e.vy;
+        if (e.x < edgePad) {
+          e.x = edgePad;
+          e.vx *= -0.88;
+        } else if (e.x + e.w > W - edgePad) {
+          e.x = W - edgePad - e.w;
+          e.vx *= -0.88;
+        }
+      }
+      separateEnemies();
+    }
+
+    function clampEnemyToScreen(e) {
+      e.x = Math.max(edgePad, Math.min(W - edgePad - e.w, e.x));
+    }
+
+    function separateEnemies() {
+      const gap = 1;
+      for (let iter = 0; iter < 4; iter++) {
+        for (let i = 0; i < enemies.length; i++) {
+          const a = enemies[i];
+          if (!a.alive) continue;
+          for (let j = i + 1; j < enemies.length; j++) {
+            const b = enemies[j];
+            if (!b.alive) continue;
+            const overlapX =
+              Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x);
+            const overlapY =
+              Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y);
+            if (overlapX <= 0 || overlapY <= 0) continue;
+            const depthX = overlapX + gap;
+            const depthY = overlapY + gap;
+            if (depthX < depthY) {
+              const push = depthX * 0.5;
+              const ca = a.x + a.w / 2;
+              const cb = b.x + b.w / 2;
+              if (ca < cb) {
+                a.x -= push;
+                b.x += push;
+              } else {
+                a.x += push;
+                b.x -= push;
+              }
+            } else {
+              const push = depthY * 0.5;
+              const ca = a.y + a.h / 2;
+              const cb = b.y + b.h / 2;
+              if (ca < cb) {
+                a.y -= push;
+                b.y += push;
+              } else {
+                a.y += push;
+                b.y -= push;
+              }
+            }
+            clampEnemyToScreen(a);
+            clampEnemyToScreen(b);
+          }
+        }
+      }
+    }
+
+    function rectsOverlap(a, b) {
+      return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+    }
+
+    function updateBullets() {
+      if (pausedForQuestion) return;
+      const next = [];
+      for (let i = 0; i < bullets.length; i++) {
+        const b = bullets[i];
+        b.y -= b.vy;
+        if (b.y < -8) continue;
+        let hit = false;
+        for (const e of enemies) {
+          if (!e.alive) continue;
+          if (rectsOverlap({ x: b.x - 1, y: b.y - 4, w: 3, h: 8 }, e)) {
+            e.alive = false;
+            hit = true;
+            if (e.q !== null) openQuestion(e.q);
+            break;
+          }
+        }
+        if (!hit) next.push(b);
+        if (pausedForQuestion) {
+          for (let j = i + 1; j < bullets.length; j++) {
+            const rb = bullets[j];
+            rb.y -= rb.vy;
+            if (rb.y >= -8) next.push(rb);
+          }
+          break;
+        }
+      }
+      bullets = next;
+    }
+
+    function openQuestion(index) {
+      if (discovered[index]) return;
+      discovered[index] = true;
+      pausedForQuestion = true;
+      modalTitle.textContent = DISCOVERY_QUESTIONS[index];
+      questionModal.classList.remove("hidden");
+      updateDiscoveryCount();
+    }
+
+    function closeQuestion() {
+      questionModal.classList.add("hidden");
+      pausedForQuestion = false;
+      keys.left = false;
+      keys.right = false;
+      keys.fire = false;
+      if (discovered.every(Boolean)) {
+        levelWon = true;
+        showWinModal();
+      }
+    }
+
+    function showWinModal() {
+      const ol = document.getElementById("win-discovery-list");
+      ol.replaceChildren();
+      for (const q of DISCOVERY_QUESTIONS) {
+        const li = document.createElement("li");
+        li.textContent = q;
+        ol.appendChild(li);
+      }
+      winModal.classList.remove("hidden");
+    }
+
+    function updateDiscoveryCount() {
+      const n = discovered.filter(Boolean).length;
+      discoveryCountEl.textContent = `${n} / 5`;
+      if (n >= 5) levelStatusEl.classList.remove("hidden");
+    }
+
+    function checkLose() {
+      for (const e of enemies) {
+        if (!e.alive) continue;
+        if (e.y + e.h >= ship.y - 2) {
+          levelLost = true;
+          loseModal.classList.remove("hidden");
+          return;
+        }
+      }
+    }
+
+    function updateShip() {
+      if (keys.left) ship.x -= ship.speed;
+      if (keys.right) ship.x += ship.speed;
+      ship.x = Math.max(8, Math.min(W - ship.w - 8, ship.x));
+    }
+
+    function tryFire() {
+      if (cooldown > 0) return;
+      if (pausedForQuestion || levelWon || levelLost) return;
+      bullets.push({ x: ship.x + ship.w / 2, y: ship.y, vy: 6.5 });
+      cooldown = 12;
+    }
+
+    /** Grey tile + green upside-down chevron (∨) — blocker escorts */
+    function drawBlockerChevron(ex, ey, ew, eh) {
+      ctx.fillStyle = "#4b5563";
+      ctx.fillRect(ex, ey, ew, eh);
+      ctx.fillStyle = "#6b7280";
+      ctx.fillRect(ex + 1, ey + 1, ew - 2, eh - 2);
+      const chartreuse = "#4ade80";
+      const rows = [
+        [0, 0, 1, 0, 0],
+        [0, 1, 1, 1, 0],
+        [1, 1, 1, 1, 1],
+      ];
+      const scale = 2;
+      const patW = 5 * scale;
+      const patH = 3 * scale;
+      const ax = Math.floor(ex + (ew - patW) / 2);
+      const ay = Math.floor(ey + (eh - patH) / 2);
+      for (let r = 0; r < 3; r++) {
+        for (let c = 0; c < 5; c++) {
+          if (!rows[r][c]) continue;
+          ctx.fillStyle = chartreuse;
+          ctx.fillRect(ax + c * scale, ay + r * scale, scale, scale);
+        }
+      }
+    }
+
+    function tick() {
+      if (!gameStarted) {
+        draw();
+        requestAnimationFrame(tick);
+        return;
+      }
+      if (pausedForQuestion || levelWon) {
+        draw();
+        requestAnimationFrame(tick);
+        return;
+      }
+      if (levelLost) {
+        draw();
+        requestAnimationFrame(tick);
+        return;
+      }
+
+      updateShip();
+      if (cooldown > 0) cooldown--;
+      if (keys.fire) tryFire();
+
+      moveEnemies();
+      updateBullets();
+      checkLose();
+
+      draw();
+      requestAnimationFrame(tick);
+    }
+
+    function draw() {
+      ctx.fillStyle = "#020617";
+      ctx.fillRect(0, 0, W, H);
+      for (let i = 0; i < 40; i++) {
+        const sy = ((performance.now() / 50 + i * 37) % 220) - 10;
+        ctx.fillStyle = "#1e293b";
+        ctx.fillRect(i * 10 - 2, sy, 2, 4);
+      }
+
+      for (const e of enemies) {
+        if (!e.alive) continue;
+        if (e.kind === "discovery") {
+          ctx.fillStyle = "#b45309";
+          ctx.fillRect(e.x, e.y, e.w, e.h);
+          ctx.fillStyle = "#fbbf24";
+          ctx.fillRect(e.x + 2, e.y + 2, e.w - 4, e.h - 4);
+          ctx.fillStyle = "#0f172a";
+          ctx.font = '8px "Press Start 2P", monospace';
+          ctx.fillText("?", e.x + e.w / 2 - 4, e.y + 13);
+        } else {
+          drawBlockerChevron(e.x, e.y, e.w, e.h);
+        }
+      }
+
+      ctx.fillStyle = "#38bdf8";
+      ctx.fillRect(ship.x, ship.y, ship.w, ship.h);
+      ctx.fillStyle = "#bae6fd";
+      ctx.fillRect(ship.x + 4, ship.y + 2, ship.w - 8, ship.h - 4);
+
+      ctx.fillStyle = "#fbbf24";
+      for (const b of bullets) {
+        ctx.fillRect(b.x - 1, b.y - 8, 3, 8);
+      }
+
+      ctx.fillStyle = "#64748b";
+      ctx.font = '7px "Press Start 2P", monospace';
+      ctx.fillText("DISCOVERY GALACTICA", 10, 18);
+    }
+
+    function playAgain() {
+      winModal.classList.add("hidden");
+      loseModal.classList.add("hidden");
+      discovered = [false, false, false, false, false];
+      bullets = [];
+      cooldown = 0;
+      levelWon = false;
+      levelLost = false;
+      closeQuestion();
+      pausedForQuestion = false;
+      keys.left = false;
+      keys.right = false;
+      keys.fire = false;
+      gameStarted = false;
+      startModal.classList.remove("hidden");
+      levelStatusEl.classList.add("hidden");
+      updateDiscoveryCount();
+      buildEnemies();
+      ship.x = W / 2 - ship.w / 2;
+    }
+
+    function retryFromLoss() {
+      loseModal.classList.add("hidden");
+      levelLost = false;
+      discovered = [false, false, false, false, false];
+      bullets = [];
+      levelStatusEl.classList.add("hidden");
+      updateDiscoveryCount();
+      buildEnemies();
+      ship.x = W / 2 - ship.w / 2;
+      pausedForQuestion = false;
+      questionModal.classList.add("hidden");
+    }
+
+    function beginGame() {
+      if (gameStarted) return;
+      gameStarted = true;
+      startModal.classList.add("hidden");
+      discovered = [false, false, false, false, false];
+      bullets = [];
+      levelWon = false;
+      levelLost = false;
+      loseModal.classList.add("hidden");
+      levelStatusEl.classList.add("hidden");
+      updateDiscoveryCount();
+      buildEnemies();
+      ship.x = W / 2 - ship.w / 2;
+      keys.left = false;
+      keys.right = false;
+      keys.fire = false;
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (!gameStarted) {
+        if (e.key === "Enter" || e.code === "Space") {
+          e.preventDefault();
+          beginGame();
+        }
+        return;
+      }
+      if (pausedForQuestion) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          closeQuestion();
+        }
+        return;
+      }
+      if (!loseModal.classList.contains("hidden")) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          retryFromLoss();
+        }
+        return;
+      }
+      if (e.code === "ArrowLeft" || e.key === "a") keys.left = true;
+      if (e.code === "ArrowRight" || e.key === "d") keys.right = true;
+      if (e.code === "Space") {
+        e.preventDefault();
+        keys.fire = true;
+        tryFire();
+      }
+      if (e.key === "Enter" && !winModal.classList.contains("hidden")) {
+        e.preventDefault();
+        playAgain();
+      }
+    });
+    window.addEventListener("keyup", (e) => {
+      if (!gameStarted) return;
+      if (e.code === "ArrowLeft" || e.key === "a") keys.left = false;
+      if (e.code === "ArrowRight" || e.key === "d") keys.right = false;
+      if (e.code === "Space") keys.fire = false;
+    });
+
+    canvas.addEventListener("mousemove", (e) => {
+      if (!gameStarted || pausedForQuestion || levelWon || levelLost) return;
+      const rect = canvas.getBoundingClientRect();
+      const mx = ((e.clientX - rect.left) / rect.width) * W;
+      ship.x = Math.max(8, Math.min(W - ship.w - 8, mx - ship.w / 2));
+    });
+
+    btnStartGame.addEventListener("click", beginGame);
+    btnQuestionDismiss.addEventListener("click", closeQuestion);
+    btnPlayAgain.addEventListener("click", playAgain);
+    btnLoseRetry.addEventListener("click", retryFromLoss);
+
+    buildEnemies();
+    requestAnimationFrame(tick);
+  </script>
+</body>
+</html>

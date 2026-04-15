@@ -220,6 +220,7 @@
   </div>
 
   <script type="module">
+    /** Mirrors modules/portfolio-and-business-capabilities/content.md — Discovery Questions */
     const DISCOVERY_QUESTIONS = [
       "How many locations do you have, and how are they connected today—shared Internet, MPLS, Ethernet, or SD-WAN?",
       "What are your most critical applications? Are any of them SaaS or cloud-hosted (O365, Salesforce, ERP)?",
@@ -594,6 +595,9 @@
     function closeQuestion() {
       questionModal.classList.add("hidden");
       pausedForQuestion = false;
+      keys.left = false;
+      keys.right = false;
+      keys.jump = false;
     }
 
     function showWinModal() {
@@ -815,7 +819,7 @@
       }
     });
     window.addEventListener("keyup", (e) => {
-      if (!gameStarted || pausedForQuestion) return;
+      if (!gameStarted) return;
       if (e.code === "ArrowLeft" || e.key === "a") keys.left = false;
       if (e.code === "ArrowRight" || e.key === "d") keys.right = false;
       if (e.code === "ArrowUp" || e.code === "Space" || e.key === "w") keys.jump = false;
