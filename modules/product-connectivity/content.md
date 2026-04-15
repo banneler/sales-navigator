@@ -128,11 +128,9 @@ GPC's connectivity stack matches the right access technology to each customer's 
 
 ---
 
-## Discovery Galaxy
+## 
 
-<p class="text-slate-600 text-sm mb-2">Run <strong>Discovery Galaxy</strong> below — discovery prompts unlock in-game and together in the recap when you finish (nothing listed here).</p>
-
-<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
     src="games/galactica-1/index.html?embed=1"
     title="Discovery Galaxy"

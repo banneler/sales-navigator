@@ -120,16 +120,6 @@
 
     <section class="rounded-2xl border border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white p-6 md:p-8 shadow-sm" aria-label="Discovery Galaxy game">
       <h2 class="sn-embed-hide text-xl font-bold text-slate-900 mb-4 tracking-tight">Discovery Galaxy</h2>
-      <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-sm">
-        <p class="text-slate-600 text-xs sm:text-sm">← → move · Space fire</p>
-        <div class="flex flex-wrap items-center gap-4 ml-auto">
-          <div>
-            <span id="discovery-count" class="font-semibold tabular-nums text-emerald-800">0 / 5</span>
-            <span class="text-slate-500"> discoveries</span>
-          </div>
-          <p id="level-status" class="text-xs font-medium text-emerald-700 hidden">All discovery ships</p>
-        </div>
-      </div>
       <div class="relative w-full max-w-full game-stack flex-1 min-h-0 flex flex-col">
         <canvas id="game-canvas" width="384" height="216" role="img" aria-label="Discovery Galaxy — space shooter"></canvas>
 
@@ -174,6 +164,17 @@
           </div>
         </div>
       </div>
+      <div class="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-emerald-200/70 pt-3 text-sm">
+        <p class="text-slate-600 text-xs sm:text-sm">← → move · Space fire</p>
+        <div class="flex flex-wrap items-center gap-4 ml-auto">
+          <div>
+            <span id="discovery-count" class="font-semibold tabular-nums text-emerald-800">0 / 5</span>
+            <span class="text-slate-500"> discoveries</span>
+          </div>
+          <p id="level-status" class="text-xs font-medium text-emerald-700 hidden">All discovery ships</p>
+        </div>
+      </div>
+      <p class="mt-2 text-center text-xs text-slate-500">Discovery prompts unlock in-game and in the recap when you finish.</p>
       <p class="sn-embed-hide mt-4 text-xs text-slate-500">Amber ? ships = discovery · green chevrons = blockers. Each drifts sideways (noisy) and falls at its own speed; layout random each run.</p>
     </section>
   </div>
