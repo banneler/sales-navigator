@@ -128,23 +128,7 @@ GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protecti
 
 ## Discovery Questions
 
-1. **How many locations do you have, and which ones are on GPC fiber vs. other broadband or MPLS?**
-2. **How are those locations connected today—VPN over shared Internet, MPLS, Ethernet? When does that contract expire?**
-3. **What are your most important applications? Do you use SaaS like O365 or Salesforce, and are they hosted on-prem or in the cloud?**
-4. **Have you experienced a security incident, ransomware event, or DDoS attack? Who manages your firewalls today?**
-5. **Do you need always-on DDoS mitigation (proactive) or is business-hours coverage acceptable—and what's the cost of an attack outside those windows?**
-
-<p class="text-slate-600 text-sm mb-2">Play <strong>Discovery Break</strong> below — break amber bricks to unlock each question (same copy as the five prompts above).</p>
-
-<div class="hidden" aria-hidden="true">
-<ol>
-<li><strong>How many locations do you have, and which ones are on GPC fiber vs. other broadband or MPLS?</strong></li>
-<li><strong>How are those locations connected today—VPN over shared Internet, MPLS, Ethernet? When does that contract expire?</strong></li>
-<li><strong>What are your most important applications? Do you use SaaS like O365 or Salesforce, and are they hosted on-prem or in the cloud?</strong></li>
-<li><strong>Have you experienced a security incident, ransomware event, or DDoS attack? Who manages your firewalls today?</strong></li>
-<li><strong>Do you need always-on DDoS mitigation (proactive) or is business-hours coverage acceptable—and what's the cost of an attack outside those windows?</strong></li>
-</ol>
-</div>
+<p class="text-slate-600 text-sm mb-2">Use <strong>Discovery Break</strong> below — each amber brick unlocks a prompt; when you’re done, you’ll see the full set together.</p>
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
@@ -152,7 +136,7 @@ GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protecti
     title="Discovery Break — Brick breaker"
     loading="lazy"
     sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); background: #f1f5f9;"
+    style="width: 100%; border: 0; display: block; height: 54rem; max-height: min(92vh, 58rem); min-height: 36rem; background: #f1f5f9;"
   ></iframe>
 </div>
 
