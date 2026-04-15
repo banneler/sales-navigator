@@ -122,7 +122,10 @@ roleplay:
 
 ## At a glance
 
-The **Cup of Coffee Summary** highlights managed security, DDoS tiers, SD-WAN qualifiers, and SE handoffs. **Elevator Pitch** locks the “policy on the pipe” narrative; **Discovery** qualifies the account; **Objection Handling** gives pivot language. **Technical Deep Dive** holds qualifiers, internal pricing references, and scope rules—open it before you quote or promise features.
+- **Managed security:** **Managed Firewall** (FortiGate, SOC-monitored) plus **MNS** when SIEM, assessments, email security, or broader scope matter—match SKU to the buyer’s real need.
+- **DDoS:** **Proactive** = 24×7 automated mitigation; **on-demand** mitigation window is **weekdays 8–17** on that SKU—never let a customer assume overnight coverage they did not buy.
+- **SD-WAN (VeloCloud):** Standard story needs **≥1 site on GPC fiber** and a **multi-site** WAN footprint; **NGFW/IDS lines are optional add-ons**, not bundled in base—confirm with **SE/quoting** every time.
+- **When to pull SE early:** HA/BGP, regulated environments, high-scale DC, mixed-vendor firewall ops, or **BGP/ASN DDoS** designs.
 
 ---
 
@@ -134,7 +137,7 @@ GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protecti
 
 ---
 
-## Discovery Questions
+## 
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe

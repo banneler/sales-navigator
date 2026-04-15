@@ -76,7 +76,9 @@ roleplay:
 
 ## At a glance
 
-Use the **Cup of Coffee Summary** for what iTV is, who it fits, billing, and SharePoint as the source of truth. **Why GPC iTV** and **Headline benefits** build the customer story; **Delivery & lineup** keeps you honest on Internet dependency and QR-driven lineups. This module does not use the elevator widget—treat **How to use & follow-ups** as your prep checklist before collateral and quoting.
+- **Architecture:** iTV is **streaming TV for business** (channels, **Cloud DVR**, **Replay TV**) over the customer’s **GPC Internet**—qualify access first; don’t sell iTV as carrier-agnostic broadband entertainment.
+- **Footprint:** Collateral spans **small shops to larger sites**; some installs still need **set-top boxes** at a **low monthly rate**—call that out in discovery so expectations match the quote.
+- **Truth sources:** **SharePoint** (and official tools) for **lineups, QR “learn more,” rate cards, and packaging**—this module is enablement, not a second source of record.
 
 ---
 

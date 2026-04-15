@@ -212,7 +212,9 @@ roleplay:
 
 ## At a glance
 
-Use the **Cup of Coffee Summary** for platform, Teams, and contact-center guardrails. **Elevator Pitch** frames cloud UC and Microsoft-first licensing; **Discovery Questions** qualify the migration; **Objection Handling** supports live conversations. **Technical Deep Dive** is for matrices, FAQ alignment, and SE-level detail—expand before you commit SKUs or compliance claims.
+- **Platform:** One cloud stack—voice, SMS, meetings, omnichannel CC, file sync—with **99.999%** uptime and **Triple Guard Security™** as headline trust; when **RevOps/CX** want CRM or analytics depth, **qualify specialists**—don’t improvise DataHub/Extend scope.
+- **Microsoft-first:** Separate **Ascend with Teams** (your PBX + Microsoft licensing picture) from **embedded UC-in-Teams** FAQ lines (**no Teams Phone license** vs **Direct Routing**)—**SE validates**; economics from current **Mix & Match** / **Ascend for Teams** matrices, not memory.
+- **Contact center:** **Concurrent** licensing on Pro/Elite and **burst** capacity—**hand concurrent + bursting to AE/pricing**, not napkin math on the call.
 
 ---
 

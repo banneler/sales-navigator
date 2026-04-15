@@ -122,7 +122,10 @@ roleplay:
 
 ## At a glance
 
-Use the **Cup of Coffee Summary** above for fast bullets on SIA, DIA, Ethernet, Wave, and fiber vs satellite framing. Open the **Elevator Pitch** when you are ready to lock the one-screen story. Work through **Discovery** to qualify workloads, then **Objection Handling** for live language. Expand **Technical Deep Dive** for comparisons, scale numbers, and internal pricing guardrails—always route customer-facing numbers through official quoting tools.
+- **SIA vs DIA:** Shared **SIA** when best-effort and cost dominate; **DIA** when symmetry, VoIP/video pain, SLA-style ops, diversity, or stronger DDoS visibility matter—more bandwidth on SIA does not fix jitter by itself.
+- **Private transport:** **Managed Ethernet** = Layer 2 site-to-site (not Internet breakout). **Wave** = Layer 1 optical between DCs/hubs—qualify discovery before positioning it as “faster Internet.”
+- **Fiber vs satellite:** Reframe on **reliability, latency, weather, congestion**—not a speed-test duel alone.
+- **Commercial:** Training PDFs stay **internal**; customer-facing numbers only through **approved quoting** and AE/pricing when scope is fuzzy.
 
 ---
 

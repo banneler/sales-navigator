@@ -107,7 +107,9 @@ roleplay:
 
 ## At a glance
 
-Use the **Cup of Coffee Summary** for the executive spine—outcomes, layered stack, proof, and discovery. Open the **Elevator Pitch** to rehearse the one-paragraph **why GPC** story, then run **Discovery** and **Objection Handling** when you are in live qualification. Expand **Technical Deep Dive** for the portfolio map layers and SKU-adjacent detail when the deal needs depth.
+- **Story:** Outcomes and partnership first—**access (fiber + backup) → WAN → security → UC, Cloud Connect, and Wi‑Fi** as **one designed system**, not a SKU list.
+- **Proof:** **Midwest IP reach**, Tier-1/IX relationships, local teams, **24/7 NOC**—use the **Business Capability** materials for the narrative spine and **Sales Resources** for per-product evidence.
+- **Discovery:** Sites, critical apps, uptime tolerance, cloud/voice moves—then map the opportunity to **access + path + policy + apps** so the stack matches how they actually run.
 
 ---
 
@@ -125,7 +127,7 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
 
 ---
 
-## Discovery Questions
+## 
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe

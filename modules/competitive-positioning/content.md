@@ -130,7 +130,9 @@ roleplay:
 
 ## At a glance
 
-The **Cup of Coffee Summary** captures the competitive framework and landmines. **Elevator Pitch** reinforces discovery-before-claims; **Discovery Questions** qualify pain before battle cards. **Objection Handling** supports live repositioning; **Technical Deep Dive** holds deeper battle-card and execution notes when you need them.
+- **Framework:** **Discover first**, then map **competitor angle → business risk for this account → proof you can support** (local teams, **24×7 NOC**, redundancy, portfolio)—avoid generic “we’re better.”
+- **Landmines:** No **personal disparagement**; no **battle-card stats** externally until **marketing** confirms currency; **SE/PM** for architecture-heavy or RFP-grade deals.
+- **Fiber vs LEO:** Anchor on **reliability, latency, weather/obstruction risk, and operational support**—not Mbps alone; **PM** for delivery/construction/contract threads when relevant.
 
 ---
 

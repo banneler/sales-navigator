@@ -128,7 +128,9 @@ roleplay:
 
 ## At a glance
 
-Start with the **Cup of Coffee Summary** for Cloud Connect, Managed Wi‑Fi, and 5G backup at a glance. **Elevator Pitch** ties the three products to fiber access; **Discovery Questions** qualify the opportunity; **Objection Handling** covers pushback. **Technical Deep Dive** is for specs and internal references—expand when engineering or procurement needs depth.
+- **Cloud Connect:** Private, predictable paths to **AWS, Azure, Google**, and major SaaS—reduces “Internet-only” jitter for workloads that matter; qualify which clouds and apps drive the pain.
+- **Managed Wi‑Fi:** Full lifecycle (**design → install → maintain**), **guest vs corporate** segmentation, and integrated **firewall/IDS/IPS**—AP counts follow **survey/engineering**, not a guess on call one.
+- **5G Wireless Backup:** **Automatic failover / fail-back**, **24/7 NOC**, optional **battery**—position as **continuity** on GPC fiber; set honest expectations on **RF, speed tiers, and HIPAA** vs primary access.
 
 ---
 
