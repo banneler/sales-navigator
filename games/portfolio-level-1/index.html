@@ -141,6 +141,50 @@
       <div class="relative w-full max-w-full game-stack flex-1 min-h-0 flex flex-col">
         <canvas id="game-canvas" width="384" height="216" role="img" aria-label="8-bit style platform game"></canvas>
 
+        <div
+          id="start-modal"
+          class="absolute inset-0 z-40 flex items-center justify-center p-4 bg-slate-900/55"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="start-modal-title"
+        >
+          <div class="pixel-win max-w-sm w-full rounded-sm bg-slate-900 p-6 text-center border border-slate-800">
+            <p id="start-modal-title" class="text-amber-200 text-[0.5rem] leading-relaxed">DISCOVERY RUN</p>
+            <p class="mt-2 text-[0.35rem] text-slate-400 font-sans">Level 1 · Portfolio</p>
+            <button
+              type="button"
+              id="start-game-btn"
+              class="mt-6 rounded-lg bg-emerald-600 px-8 py-3 text-sm font-bold text-white shadow-md border-2 border-emerald-800 hover:bg-emerald-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+            >
+              START
+            </button>
+            <p class="mt-3 text-[0.3rem] text-slate-500 font-sans">Enter or Space</p>
+          </div>
+        </div>
+
+        <!-- Per-coin discovery pop-up (same copy as module; full list still on course clear) -->
+        <div
+          id="question-modal"
+          class="hidden absolute z-[45] left-1/2 -translate-x-1/2 w-[min(94%,19rem)] sm:w-[min(94%,20rem)] bottom-[32%] sm:bottom-[34%]"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="question-modal-title"
+        >
+          <div class="pixel-popup rounded-sm p-3 pt-3 pb-3">
+            <p class="pixel-popup-kicker mb-2 uppercase">Discovery</p>
+            <p id="question-modal-title" class="pixel-popup-title max-h-[min(32vh,9.5rem)] overflow-y-auto pr-1"></p>
+            <div class="mt-3 flex justify-end">
+              <button
+                type="button"
+                id="question-dismiss"
+                class="pixel-btn rounded-sm px-3 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a1c2e]"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+
         <!-- Level clear + full discovery list (questions hidden in module until this) -->
         <div
           id="win-modal"
@@ -186,6 +230,11 @@
 
     const canvas = document.getElementById("game-canvas");
     const ctx = canvas.getContext("2d");
+    const startModal = document.getElementById("start-modal");
+    const btnStartGame = document.getElementById("start-game-btn");
+    const questionModal = document.getElementById("question-modal");
+    const modalTitle = document.getElementById("question-modal-title");
+    const btnQuestionDismiss = document.getElementById("question-dismiss");
     const winModal = document.getElementById("win-modal");
     const btnWinDismiss = document.getElementById("win-dismiss");
     const coinCountEl = document.getElementById("coin-count");
@@ -239,9 +288,10 @@
     const ENEMY_W = 14;
     const ENEMY_H = 12;
     const enemies = [
-      { x: 72, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.85, minX: 36, maxX: 160, dir: 1 },
-      { x: 520, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.75, minX: 468, maxX: 640, dir: 1 },
-      { x: 900, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.8, minX: 840, maxX: 1020, dir: -1 },
+      /** Starts mid-patrol walking right so first movement is away from spawn (see player spawn x). */
+      { x: 115, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.85, minX: 36, maxX: 160, dir: 1, dead: false },
+      { x: 520, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.75, minX: 468, maxX: 640, dir: 1, dead: false },
+      { x: 900, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.8, minX: 840, maxX: 1020, dir: -1, dead: false },
     ];
 
     const flag = {
@@ -251,7 +301,7 @@
     };
 
     const player = {
-      x: 24,
+      x: 12,
       y: groundY - 18,
       w: 14,
       h: 18,
@@ -269,6 +319,8 @@
     };
 
     let cameraX = 0;
+    let gameStarted = false;
+    let pausedForQuestion = false;
     let invuln = 0;
     let hp = 3;
     let flagSlideTimer = 0;
@@ -367,7 +419,7 @@
       player.onGround = false;
       heartsDisplayEl.textContent = "❤️".repeat(Math.max(0, hp)) + "🖤".repeat(3 - Math.max(0, hp));
       if (hp <= 0) {
-        player.x = 24;
+        player.x = 12;
         player.y = groundY - player.h;
         player.vx = 0;
         player.vy = 0;
@@ -378,8 +430,9 @@
     }
 
     function updateEnemies() {
-      if (levelWon || flag.state !== "idle") return;
+      if (!gameStarted || pausedForQuestion || levelWon || flag.state !== "idle") return;
       for (const e of enemies) {
+        if (e.dead) continue;
         e.x += e.speed * e.dir;
         if (e.x <= e.minX) {
           e.x = e.minX;
@@ -393,6 +446,9 @@
     }
 
     function updatePlayer() {
+      if (!gameStarted) return;
+      if (pausedForQuestion) return;
+
       if (flag.state === "slide") {
         flagSlideTimer++;
         player.x = flag.poleX - 7;
@@ -452,7 +508,7 @@
       resolveWallCollisions();
 
       if (player.y + player.h > VIEW_H + 80) {
-        player.x = 24;
+        player.x = 12;
         player.y = groundY - player.h;
         player.vx = 0;
         player.vy = 0;
@@ -468,6 +524,7 @@
 
       for (let i = 0; i < enemies.length; i++) {
         const e = enemies[i];
+        if (e.dead) continue;
         const er = { x: e.x, y: e.y, w: e.w, h: e.h };
         if (!rectsOverlap(pr, er)) continue;
         const stomp =
@@ -475,6 +532,7 @@
           player.y + player.h < e.y + e.h * 0.55 &&
           playerFeet() - player.vy <= e.y + 4;
         if (stomp) {
+          e.dead = true;
           player.vy = physics.jumpVel * 0.55;
           player.y = e.y - player.h - 0.01;
           invuln = 14;
@@ -500,7 +558,7 @@
           pr.y < cr.y + cr.h &&
           pr.y + pr.h > cr.y
         ) {
-          collectCoin(i);
+          openQuestion(i);
           break;
         }
       }
@@ -520,10 +578,18 @@
       updateCamera();
     }
 
-    function collectCoin(index) {
+    function openQuestion(index) {
       if (coins[index].collected) return;
       coins[index].collected = true;
+      pausedForQuestion = true;
+      modalTitle.textContent = DISCOVERY_QUESTIONS[index];
+      questionModal.classList.remove("hidden");
       updateCoinCount();
+    }
+
+    function closeQuestion() {
+      questionModal.classList.add("hidden");
+      pausedForQuestion = false;
     }
 
     function showWinModal() {
@@ -660,6 +726,7 @@
       }
 
       for (const e of enemies) {
+        if (e.dead) continue;
         drawEnemyWorld(e);
       }
 
@@ -674,6 +741,15 @@
       }
     }
 
+    function beginGame() {
+      if (gameStarted) return;
+      gameStarted = true;
+      startModal.classList.add("hidden");
+      keys.left = false;
+      keys.right = false;
+      keys.jump = false;
+    }
+
     function gameLoop() {
       updateEnemies();
       updatePlayer();
@@ -682,6 +758,20 @@
     }
 
     window.addEventListener("keydown", (e) => {
+      if (!gameStarted) {
+        if (e.key === "Enter" || e.code === "Space") {
+          e.preventDefault();
+          beginGame();
+        }
+        return;
+      }
+      if (pausedForQuestion) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          closeQuestion();
+        }
+        return;
+      }
       if (e.code === "ArrowLeft" || e.key === "a") keys.left = true;
       if (e.code === "ArrowRight" || e.key === "d") keys.right = true;
       if (e.code === "ArrowUp" || e.code === "Space" || e.key === "w") {
@@ -694,11 +784,14 @@
       }
     });
     window.addEventListener("keyup", (e) => {
+      if (!gameStarted || pausedForQuestion) return;
       if (e.code === "ArrowLeft" || e.key === "a") keys.left = false;
       if (e.code === "ArrowRight" || e.key === "d") keys.right = false;
       if (e.code === "ArrowUp" || e.code === "Space" || e.key === "w") keys.jump = false;
     });
 
+    btnStartGame.addEventListener("click", beginGame);
+    btnQuestionDismiss.addEventListener("click", closeQuestion);
     btnWinDismiss.addEventListener("click", () => winModal.classList.add("hidden"));
 
     requestAnimationFrame(gameLoop);
