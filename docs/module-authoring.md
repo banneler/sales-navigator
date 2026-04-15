@@ -53,7 +53,7 @@ Supporting line if needed.
 :::
 ```
 
-**Interaction** — **Up** opens the doors; **Down** closes them. Learners can also click the doors area to toggle. Links inside the pitch behave normally (they do not toggle the doors).
+**Interaction** — Click the **door frame / panels** to open or close the reveal. Links inside the pitch behave normally (they do not toggle the doors).
 
 **Guardrails**
 

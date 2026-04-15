@@ -56,38 +56,40 @@ const CHEVRON_SVG = `<svg class="h-5 w-5 shrink-0 text-slate-500 transition-tran
 
 const FLIP_ICON_SVG = `<svg class="h-5 w-5 text-indigo-500/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>`;
 
-const ELEVATOR_ARROW_UP_SVG = `<svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 19V5M5 12l7-7 7 7"/></svg>`;
-
-const ELEVATOR_ARROW_DOWN_SVG = `<svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>`;
-
-const ELEVATOR_SEAM_GLOW_SVG = `<svg class="h-14 w-14 transition-all duration-300 group-hover:drop-shadow-[0_0_14px_rgba(234,88,12,0.55)]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle class="transition-all duration-300 group-hover:stroke-orange-500" cx="32" cy="32" r="14" stroke="rgba(234,88,12,0.85)" stroke-width="2.5"/><circle class="transition-all duration-300" cx="32" cy="32" r="7" fill="rgba(249,115,22,0.45)"/></svg>`;
-
 /**
- * Elevator pitch reveal: doors + floor indicator + seam glow + up/down controls.
+ * Elevator pitch reveal: bi-parting door panels, metal frame, floor label above.
  * @param {string} floorName
  * @param {string} innerHtml - Already sanitized markdown HTML
  */
 function buildElevatorShell(floorName, innerHtml) {
   const floorHtml = escapeHtml(String(floorName).trim());
-  const btnBase =
-    'flex h-10 w-10 items-center justify-center rounded-lg border shadow-md transition-all duration-300 sm:h-11 sm:w-11';
-  const btnIdle =
-    'border-slate-300 bg-white text-orange-600 hover:border-orange-400 hover:bg-orange-50 hover:shadow-lg group-hover/elev:border-orange-300/90 group-hover/elev:shadow-md';
+  const doorGroove =
+    'pointer-events-none absolute inset-2 rounded-sm bg-[repeating-linear-gradient(180deg,transparent,transparent_36px,rgba(71,85,105,0.16)_36px,rgba(71,85,105,0.16)_37px)] opacity-90';
+  const doorSheen =
+    'pointer-events-none absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-white/55 to-transparent';
+  const doorSill =
+    'pointer-events-none absolute inset-x-0 bottom-0 h-2.5 bg-gradient-to-t from-slate-500/30 to-transparent';
   return (
     `<div class="elevator-reveal-wrap group/elev mb-8 w-full">` +
       `<div class="mb-3 flex justify-center">` +
         `<div class="rounded-md border border-orange-500/35 bg-white px-4 py-1.5 font-mono text-xs font-semibold uppercase tracking-widest text-orange-600 shadow-sm ring-1 ring-slate-200/90 transition-all duration-300 group-hover/elev:border-orange-400/45 group-hover/elev:shadow-md group-hover/elev:ring-orange-200/70">${floorHtml}</div>` +
       `</div>` +
-      `<div class="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-4">` +
-        `<div class="elevator-reveal-card group relative h-80 min-h-[20rem] w-full min-w-0 flex-1 cursor-pointer overflow-hidden rounded-2xl border border-slate-300/90 bg-gradient-to-b from-slate-50 via-white to-slate-100 shadow-xl ring-1 ring-slate-200/60">` +
+      `<div class="elevator-reveal-card group relative h-80 min-h-[20rem] w-full cursor-pointer overflow-hidden rounded-xl border-[3px] border-slate-600 bg-gradient-to-b from-slate-600 via-slate-800 to-slate-950 p-2 shadow-[0_8px_32px_rgba(15,23,42,0.45)] ring-1 ring-slate-900/60">` +
+        `<div class="relative h-full w-full overflow-hidden rounded-md bg-slate-950 shadow-[inset_0_0_0_1px_rgba(15,23,42,0.9),inset_0_0_28px_rgba(0,0,0,0.55)]">` +
           `<div class="js-elevator-pitch module-markdown-body absolute inset-0 z-10 flex flex-col items-center justify-center overflow-y-auto bg-white p-6 text-center text-slate-900 opacity-0 scale-[0.92] transition-[opacity,transform] duration-200 sm:p-10 group-[.is-open]:animate-elevator-reveal group-[.is-open]:opacity-100 [&_p]:text-slate-800 [&_strong]:text-slate-900">${innerHtml}</div>` +
-          `<div class="elevator-door-left absolute inset-y-0 left-0 z-20 flex w-1/2 items-center justify-end border-r border-slate-300 bg-gradient-to-r from-white via-slate-50 to-slate-200 pr-2 shadow-[inset_-6px_0_12px_rgba(255,255,255,0.85)] transition-transform duration-700 ease-in-out group-[.is-open]:-translate-x-[95%]"></div>` +
-          `<div class="elevator-door-right absolute inset-y-0 right-0 z-20 flex w-1/2 items-center justify-start border-l border-slate-300 bg-gradient-to-l from-white via-slate-50 to-slate-200 pl-2 shadow-[inset_6px_0_12px_rgba(255,255,255,0.85)] transition-transform duration-700 ease-in-out group-[.is-open]:translate-x-[95%]"></div>` +
-          `<div class="pointer-events-none absolute left-1/2 top-1/2 z-[25] -translate-x-1/2 -translate-y-1/2">${ELEVATOR_SEAM_GLOW_SVG}</div>` +
-        `</div>` +
-        `<div class="flex flex-row justify-center gap-2 sm:w-auto sm:shrink-0 sm:flex-col sm:justify-center sm:gap-2">` +
-          `<button type="button" class="js-elevator-up ${btnBase} ${btnIdle}" aria-label="Open doors">${ELEVATOR_ARROW_UP_SVG}</button>` +
-          `<button type="button" class="js-elevator-down ${btnBase} ${btnIdle}" aria-label="Close doors">${ELEVATOR_ARROW_DOWN_SVG}</button>` +
+          `<div class="pointer-events-none absolute inset-y-1 left-1/2 z-[26] w-px -translate-x-1/2 bg-slate-950 shadow-[1px_0_0_rgba(255,255,255,0.12),2px_0_4px_rgba(0,0,0,0.5)]"></div>` +
+          `<div class="elevator-door-left absolute inset-y-0 left-0 z-20 w-1/2 origin-left border-r border-slate-600/90 bg-gradient-to-r from-slate-50 via-slate-200 to-slate-300 shadow-[inset_-10px_0_20px_rgba(255,255,255,0.45),inset_4px_0_12px_rgba(15,23,42,0.12),2px_0_8px_rgba(0,0,0,0.15)] transition-transform duration-700 ease-in-out group-[.is-open]:-translate-x-[95%]">` +
+            `<div class="${doorGroove}"></div>` +
+            `<div class="${doorSheen}"></div>` +
+            `<div class="${doorSill}"></div>` +
+            `<div class="pointer-events-none absolute right-2.5 top-1/2 h-[4.25rem] w-1.5 -translate-y-1/2 rounded-full bg-gradient-to-b from-slate-300 via-slate-500 to-slate-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_1px_2px_rgba(0,0,0,0.35)]"></div>` +
+          `</div>` +
+          `<div class="elevator-door-right absolute inset-y-0 right-0 z-20 w-1/2 origin-right border-l border-slate-600/90 bg-gradient-to-l from-slate-50 via-slate-200 to-slate-300 shadow-[inset_10px_0_20px_rgba(255,255,255,0.45),inset_-4px_0_12px_rgba(15,23,42,0.12),-2px_0_8px_rgba(0,0,0,0.15)] transition-transform duration-700 ease-in-out group-[.is-open]:translate-x-[95%]">` +
+            `<div class="${doorGroove}"></div>` +
+            `<div class="${doorSheen}"></div>` +
+            `<div class="${doorSill}"></div>` +
+            `<div class="pointer-events-none absolute left-2.5 top-1/2 h-[4.25rem] w-1.5 -translate-y-1/2 rounded-full bg-gradient-to-b from-slate-300 via-slate-500 to-slate-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_1px_2px_rgba(0,0,0,0.35)]"></div>` +
+          `</div>` +
         `</div>` +
       `</div>` +
     `</div>\n\n`
