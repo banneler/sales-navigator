@@ -3,10 +3,14 @@
 ## Standardized Module Structure (Micro-Learning)
 To ensure all modules focus purely on sales execution, follow this strict structure for the main content body (after the YAML frontmatter):
 
+0. **At a glance (product-style modules):** Optional but recommended for **Product** category modules (and similar narrative modules such as Competitive Positioning). Add `## At a glance` immediately after the front matter closing `---` and **before** the elevator block. Use one or two short paragraphs to explain how to use the page: **Cup of Coffee Summary** for bullets, **Elevator Pitch** for the rehearsed story, **Discovery** / games for qualification, **Objection Handling** for live language, and **Technical Deep Dive `[deep]`** when you need specs, SKUs, or SE-level detail. This bridges the gap between the summary card and the interactive sections (similar in spirit to the **Overview** tab on sales-trio modules).
+
 1. **Elevator Pitch:** A concise, punchy summary of the product/solution and its core value proposition.
 2. **Discovery Questions:** 3-5 high-impact questions to ask the customer to uncover pain points and qualify the opportunity.
 3. **Objection Handling:** Common customer pushbacks and how to pivot or reframe the conversation.
 4. **Technical Deep Dive `[deep]`:** All technical specifications, speeds, feeds, and granular details must be placed in a collapsed `[deep]` section or an accordion.
+
+**Sales trio modules** (`sales-rules-of-engagement`, `sales-process-and-salesforce`, `sales-operations-and-approvals`) use `## Overview`, `## Key Guidelines`, and `## Common Pitfalls` as tabs instead—do not duplicate `## At a glance` there unless you intentionally want an extra section before the trio (not standard).
 
 ## Collapsed sections (`[deep]`)
 

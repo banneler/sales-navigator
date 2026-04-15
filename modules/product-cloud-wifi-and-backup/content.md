@@ -126,6 +126,12 @@ roleplay:
   goal: "Position 5G backup as a managed, automatic failover solution with app prioritization and NOC monitoring—set honest speed/tier expectations while tying reliability to patient care continuity."
 ---
 
+## At a glance
+
+Start with the **Cup of Coffee Summary** for Cloud Connect, Managed Wi‑Fi, and 5G backup at a glance. **Elevator Pitch** ties the three products to fiber access; **Discovery Questions** qualify the opportunity; **Objection Handling** covers pushback. **Technical Deep Dive** is for specs and internal references—expand when engineering or procurement needs depth.
+
+---
+
 ## 
 
 ::: elevator [Elevator Pitch]

@@ -74,6 +74,12 @@ roleplay:
 
 ---
 
+## At a glance
+
+Use the **Cup of Coffee Summary** for what iTV is, who it fits, billing, and SharePoint as the source of truth. **Why GPC iTV** and **Headline benefits** build the customer story; **Delivery & lineup** keeps you honest on Internet dependency and QR-driven lineups. This module does not use the elevator widget—treat **How to use & follow-ups** as your prep checklist before collateral and quoting.
+
+---
+
 ## Why GPC iTV
 
 Keep customers engaged with **GPC iTV**—a **streaming TV** solution for business. Standard positioning describes it as the **latest** streaming TV offer from GPC: **popular channels** and **modern features** (including **Cloud DVR** and **Replay TV**) over the customer’s **existing GPC Internet** connection. **Authoritative PDFs, rate cards, and updates live in SharePoint**—use the module reference link, not static copies here.

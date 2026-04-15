@@ -120,6 +120,12 @@ roleplay:
   goal: "Qualify multi-site footprint and GPC fiber anchors, then pivot from DIY network management to GPC's fully managed SD-WAN—frame as operational savings, 24/7 NOC support, and cloud breakout improvement rather than a technology debate."
 ---
 
+## At a glance
+
+The **Cup of Coffee Summary** highlights managed security, DDoS tiers, SD-WAN qualifiers, and SE handoffs. **Elevator Pitch** locks the “policy on the pipe” narrative; **Discovery** qualifies the account; **Objection Handling** gives pivot language. **Technical Deep Dive** holds qualifiers, internal pricing references, and scope rules—open it before you quote or promise features.
+
+---
+
 ## 
 
 ::: elevator [Elevator Pitch]

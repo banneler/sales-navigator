@@ -128,6 +128,12 @@ roleplay:
   goal: "Run discovery on application pain, TCO of outages, and local support gaps before presenting any GPC comparison—never lead with price or unverified stats."
 ---
 
+## At a glance
+
+The **Cup of Coffee Summary** captures the competitive framework and landmines. **Elevator Pitch** reinforces discovery-before-claims; **Discovery Questions** qualify pain before battle cards. **Objection Handling** supports live repositioning; **Technical Deep Dive** holds deeper battle-card and execution notes when you need them.
+
+---
+
 ## 
 
 ::: elevator [Elevator Pitch]

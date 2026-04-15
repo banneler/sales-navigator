@@ -105,6 +105,12 @@ roleplay:
   goal: "Deliver a one-sentence 'why GPC' answer grounded in outcomes and partnership, then anchor the conversation on the layered stack and offer the capability deck as a concrete next step."
 ---
 
+## At a glance
+
+Use the **Cup of Coffee Summary** for the executive spine—outcomes, layered stack, proof, and discovery. Open the **Elevator Pitch** to rehearse the one-paragraph **why GPC** story, then run **Discovery** and **Objection Handling** when you are in live qualification. Expand **Technical Deep Dive** for the portfolio map layers and SKU-adjacent detail when the deal needs depth.
+
+---
+
 ## 
 
 ::: elevator [Elevator Pitch]

@@ -10,6 +10,7 @@ The app maps `##` headings to **section roles** for typography and layout (`js/l
 
 | Role | Preferred `##` title |
 |------|----------------------|
+| Overview bridge | `## At a glance` (product-style modules) or `## Overview` (also sales-trio tab 1) |
 | Elevator | `## Elevator Pitch` |
 | Discovery | `## Discovery Questions` |
 | Objections | `## Objection Handling` |

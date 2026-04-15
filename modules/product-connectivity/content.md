@@ -120,6 +120,12 @@ roleplay:
   goal: "Pivot from price to reliability—qualify the symmetry and latency requirements for VoIP and cloud apps, then position DIA or Managed Ethernet as the right solution rather than simply more shared bandwidth."
 ---
 
+## At a glance
+
+Use the **Cup of Coffee Summary** above for fast bullets on SIA, DIA, Ethernet, Wave, and fiber vs satellite framing. Open the **Elevator Pitch** when you are ready to lock the one-screen story. Work through **Discovery** to qualify workloads, then **Objection Handling** for live language. Expand **Technical Deep Dive** for comparisons, scale numbers, and internal pricing guardrails—always route customer-facing numbers through official quoting tools.
+
+---
+
 ## 
 
 ::: elevator [Elevator Pitch]

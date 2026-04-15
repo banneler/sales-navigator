@@ -91,6 +91,12 @@ function sectionCardShellClasses(role, useDeepCollapse) {
       return `${base} module-section-discovery border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white`;
     case 'objections':
       return `${base} module-section-objections border-indigo-200/80 bg-gradient-to-b from-indigo-50/40 to-white`;
+    case 'overview':
+      return `${base} module-section-overview border-slate-200/90 bg-gradient-to-b from-slate-50/95 via-white to-white`;
+    case 'guidelines':
+      return `${base} module-section-guidelines border-sky-200/80 bg-gradient-to-b from-sky-50/50 to-white`;
+    case 'pitfalls':
+      return `${base} module-section-pitfalls border-amber-200/80 bg-gradient-to-b from-amber-50/40 to-white`;
     default:
       return `${base} module-section-generic border-slate-200/80 bg-gradient-to-b from-white to-slate-50/50`;
   }
@@ -102,6 +108,8 @@ const SECTION_BODY_FULL_WIDTH_ROLES = new Set([
   'elevator',
   'discovery',
   'overview',
+  'guidelines',
+  'pitfalls',
 ]);
 
 /**

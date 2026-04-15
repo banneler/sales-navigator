@@ -210,6 +210,12 @@ roleplay:
   goal: "Position GPC's cloud UC as the modern replacement—no on-prem server, enterprise-grade features from Teams or the native softphone, and a clear explanation of **Ascend with Teams** licensing vs when **embedded FAQ** positioning (no Teams Phone license vs Direct Routing) might apply—SE validates."
 ---
 
+## At a glance
+
+Use the **Cup of Coffee Summary** for platform, Teams, and contact-center guardrails. **Elevator Pitch** frames cloud UC and Microsoft-first licensing; **Discovery Questions** qualify the migration; **Objection Handling** supports live conversations. **Technical Deep Dive** is for matrices, FAQ alignment, and SE-level detail—expand before you commit SKUs or compliance claims.
+
+---
+
 ## 
 
 ::: elevator [Elevator Pitch]
