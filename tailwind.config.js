@@ -13,14 +13,24 @@ module.exports = {
         'celebrate-node':
           'celebrate-node 0.95s cubic-bezier(0.34, 1.45, 0.64, 1) both',
         'elevator-reveal':
-          'elevator-zoom 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+          'elevator-zoom 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards',
       },
       keyframes: {
         'elevator-zoom': {
           '0%': {
             opacity: '0',
-            transform: 'scale(0.8) translateY(20px)',
-            filter: 'blur(8px)',
+            transform: 'scale(0.52) translateY(42px)',
+            filter: 'blur(14px)',
+          },
+          '55%': {
+            opacity: '1',
+            transform: 'scale(1.06) translateY(-6px)',
+            filter: 'blur(0)',
+          },
+          '80%': {
+            opacity: '1',
+            transform: 'scale(0.98) translateY(2px)',
+            filter: 'blur(0)',
           },
           '100%': {
             opacity: '1',

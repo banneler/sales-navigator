@@ -147,6 +147,12 @@ function initScenarioProgress(container) {
   });
 }
 
+/** @param {Element} el */
+function elevatorCardFromControl(el) {
+  const root = el.closest('.elevator-reveal-wrap');
+  return root ? root.querySelector('.elevator-reveal-card') : null;
+}
+
 function handleClick(e) {
   const prevBtn = e.target.closest('.js-kc-carousel-prev');
   if (prevBtn) {
@@ -300,7 +306,7 @@ function handleClick(e) {
   if (elevatorUp) {
     e.preventDefault();
     e.stopPropagation();
-    const card = elevatorUp.closest('.elevator-reveal-card');
+    const card = elevatorCardFromControl(elevatorUp);
     if (!card) return;
     if (card.classList.contains('is-open')) return;
     const pitch = card.querySelector('.js-elevator-pitch');
@@ -313,7 +319,7 @@ function handleClick(e) {
   if (elevatorDown) {
     e.preventDefault();
     e.stopPropagation();
-    const card = elevatorDown.closest('.elevator-reveal-card');
+    const card = elevatorCardFromControl(elevatorDown);
     if (!card) return;
     card.classList.remove('is-open');
     return;
