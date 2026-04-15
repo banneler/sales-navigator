@@ -119,17 +119,7 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
 
 ## Discovery Questions
 
-<p class="text-slate-600 text-sm mb-2">Play through Discovery Run below — the five discovery questions appear when you clear the level.</p>
-
-<div class="hidden" aria-hidden="true">
-<ol>
-<li><strong>How many locations do you have, and how are they connected today—shared Internet, MPLS, Ethernet, or SD-WAN?</strong></li>
-<li><strong>What are your most critical applications? Are any of them SaaS or cloud-hosted (O365, Salesforce, ERP)?</strong></li>
-<li><strong>What does an hour of downtime cost your business—and what was your last significant outage?</strong></li>
-<li><strong>Are you planning any cloud migrations or voice modernization in the next 12–24 months?</strong></li>
-<li><strong>Who owns network, security, and voice decisions—are those the same team or separate?</strong></li>
-</ol>
-</div>
+<p class="text-slate-600 text-sm mb-2">Run <strong>Discovery Run</strong> below — prompts appear as you play, and the full list shows when you clear the level.</p>
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe

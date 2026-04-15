@@ -47,18 +47,41 @@
       box-shadow: 0 0 0 2px #0f172a, 0 0 0 4px #f97316, 4px 4px 0 0 #9a3412;
     }
     html.sn-embed .sn-embed-hide { display: none !important; }
-    html.sn-embed { height: 100%; overflow: hidden; }
+    /* Embed: block layout so content height = HUD + canvas (no flex gap / iframe scroll) */
+    html.sn-embed {
+      height: auto;
+      overflow-x: hidden;
+    }
     html.sn-embed body {
-      min-height: 0; height: 100%; padding: 0.5rem; margin: 0; overflow: hidden;
-      display: flex; flex-direction: column; box-sizing: border-box;
+      margin: 0;
+      padding: 0.5rem !important;
+      height: auto !important;
+      min-height: 0 !important;
+      display: block;
+      box-sizing: border-box;
+      overflow-x: hidden;
     }
-    html.sn-embed body > div { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+    html.sn-embed body > div {
+      display: block;
+      max-width: 100%;
+    }
     html.sn-embed section[aria-label="Discovery Galaxy game"] {
-      flex: 1; min-height: 0; display: flex; flex-direction: column;
-      padding: 0.75rem !important; margin: 0; box-sizing: border-box;
+      display: block;
+      padding: 0.75rem !important;
+      margin: 0;
+      box-sizing: border-box;
     }
-    html.sn-embed .game-stack { flex: 1; min-height: 0; display: flex; flex-direction: column; }
-    html.sn-embed #game-canvas { flex: 0 0 auto; width: 100%; height: auto; }
+    html.sn-embed .game-stack {
+      display: block;
+      position: relative;
+      width: 100%;
+    }
+    html.sn-embed #game-canvas {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 384 / 216;
+      display: block;
+    }
     html.sn-embed body.sn-embed-body { padding: 0.5rem !important; }
   </style>
   <script>

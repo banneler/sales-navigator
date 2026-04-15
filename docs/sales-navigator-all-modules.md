@@ -21,8 +21,6 @@ Single export in manifest order. **Canonical training source for each module is 
 
 ---
 
-
-
 # Getting started (`getting-started`)
 
 *No `modules/getting-started/content.md`. Excerpts from `js/components/getting-started.js`.*
@@ -243,11 +241,7 @@ const steps = [
 
 ---
 
-
-
 # Sales Rules of Engagement (`sales-rules-of-engagement`)
-
-
 
 ---
 
@@ -339,7 +333,7 @@ scenarios:
 
 - title: "Working a customer account with no logged activity for 130 days"
 situation: |
-  **Customer** account, **not** Strategic, not E‑Rate/USAC per ROE. No logged activity **130** days. You want outreach this week.
+**Customer** account, **not** Strategic, not E‑Rate/USAC per ROE. No logged activity **130** days. You want outreach this week.
 choices:
   - label: "Start calling without contacting the listed owner first."
   feedback: "Reach the listed owner first—reduces conflict even when windows may allow outreach."
@@ -347,7 +341,7 @@ choices:
   feedback: "Correct. Align or use approved transfer paths."
 - title: "Inbound lead from marketing sits untouched"
 situation: |
-  Marketing assigned the lead Monday. Following Tuesday = **six** business days later—no Salesforce contact logged. Another rep wants it.
+Marketing assigned the lead Monday. Following Tuesday = **six** business days later—no Salesforce contact logged. Another rep wants it.
 choices:
   - label: "Still yours—email notes count as logged activity."
   feedback: "Assigned inbound needs a Salesforce log within five business days."
@@ -379,8 +373,6 @@ The Rules of Engagement exist to protect everyone's pipeline and keep Salesforce
 
 ## Common Pitfalls
 
-
-
 ::: flip ["I emailed them twice—that counts as logged activity."]
 Email in your sent folder is not a Salesforce log. Activity must be logged as a task, call, meeting, or email on the record in Salesforce.
 :::
@@ -396,8 +388,6 @@ Unilateral reassignment is a landmine under the ROE. Align with the current owne
 ::: flip ["That school district runs the 61/121 rules—I checked."]
 E-Rate and USAC-funded entities follow Strategic-style treatment regardless of whether they appear on the list. Confirm with leadership.
 :::
-
-
 
 ---
 
@@ -461,15 +451,9 @@ General account idle windows — 61 days for Prospects, 121 days for Customers.
 *Collateral image — coming soon*
 :::
 
-
-
 ---
 
-
-
 # Sales Process & Salesforce (`sales-process-and-salesforce`)
-
-
 
 ---
 
@@ -564,7 +548,7 @@ scenarios:
 
 - title: "Employee business lead referral after conversion"
 situation: |
-  Converted employee referral lead; opportunity open.
+Converted employee referral lead; opportunity open.
 choices:
   - label: "Skip referral fields; they are only for reporting to HR."
   feedback: "Wrong—keep referral fields and referrer updated."
@@ -572,7 +556,7 @@ choices:
   feedback: "Correct."
 - title: "First DocuSign envelope from Conga"
 situation: |
-  Conga merge ready; **Contract Signer** never set; solution **Approval Pending**.
+Conga merge ready; **Contract Signer** never set; solution **Approval Pending**.
 choices:
   - label: "Add Contract Signer now and send immediately."
   feedback: "You can't add Contract Signer in Approval Pending—fix stage/workflow first."
@@ -599,8 +583,6 @@ Salesforce is GPC's **system of record for every deal**—from first contact to 
 
 ## Common Pitfalls
 
-
-
 ::: flip ["I'll skip creating the opportunity on conversion—less work."]
 Default is always create the opportunity. Exceptions require manager or admin approval. Skipping on your own causes reporting gaps and approval issues.
 :::
@@ -616,8 +598,6 @@ Set Contract Signer when you create the GPC Solution or early in its lifecycle. 
 ::: flip ["My signers are saved in a spreadsheet—I'll add them to Salesforce later."]
 DocuSign recipients must be Contacts on the account before sending. Contacts not in Salesforce = envelope can't be sent.
 :::
-
-
 
 ---
 
@@ -670,15 +650,9 @@ Setting up Contract Signer and sending envelopes from Salesforce via Conga.
 *Collateral image — coming soon*
 :::
 
-
-
 ---
 
-
-
 # Sales Operations & Approvals (`sales-operations-and-approvals`)
-
-
 
 ---
 
@@ -783,7 +757,7 @@ scenarios:
 
 - title: "Customer wants pricing changes after billing started"
 situation: |
-  **Closed/Won** and **billing started**. Customer wants to change MRC on **part** of the contract—not remove all services.
+**Closed/Won** and **billing started**. Customer wants to change MRC on **part** of the contract—not remove all services.
 choices:
   - label: "Use the pre-billing Change Order Conga path from the GPC Solution."
   feedback: "Wrong. Pre-billing change orders only; post-billing partial → MAC."
@@ -791,7 +765,7 @@ choices:
   feedback: "Correct."
 - title: "Deepest review path on a multi-service site"
 situation: |
-  One Solution Site has **multiple services** selected.
+One Solution Site has **multiple services** selected.
 choices:
   - label: "Routing follows the path that requires the deepest review when multiple services apply."
   feedback: "Correct."
@@ -818,8 +792,6 @@ Getting a deal right in Salesforce is as important as winning it. The **approval
 
 ## Common Pitfalls
 
-
-
 ::: flip ["I'll just submit a change order—the customer wants to adjust services."]
 First ask: has billing started? If yes, a change order is not the right tool. Partial in-life changes → MAC; full removal → Disconnect.
 :::
@@ -835,8 +807,6 @@ Manual Validation skips automation and routes to every participating department.
 ::: flip ["New and Existing services on the same site will just pick the faster path."]
 New + Existing on one site always routes via the New path. Know the rules before building the Solution Site.
 :::
-
-
 
 ---
 
@@ -889,15 +859,9 @@ How costing routing selects review paths based on site type, services, and produ
 *Collateral image — coming soon*
 :::
 
-
-
 ---
 
-
-
 # Portfolio & Business Capabilities (`portfolio-and-business-capabilities`)
-
-
 
 ---
 
@@ -988,7 +952,7 @@ options:
   scenarios:
 - title: "Retail chain, cloud POS, hates 'just another ISP'"
 situation: |
-  A multi-site retailer wants reliable connectivity and says all carriers sound the same. They care about **uptime**, **local support**, and **paths to cloud POS and SaaS**.
+A multi-site retailer wants reliable connectivity and says all carriers sound the same. They care about **uptime**, **local support**, and **paths to cloud POS and SaaS**.
 choices:
   - label: "Pitch a SKU list and lowest price first."
   feedback: "Weak: you sound like a commodity. Open with outcomes, Midwest IP reach, monitoring, and local teams—then map layers to their sites."
@@ -996,7 +960,7 @@ choices:
   feedback: "Strong: matches the executive storyline and portfolio map, and sets up discovery on sites and critical workloads."
 - title: "CFO joins the call halfway through"
 situation: |
-  You were walking through services and the CFO asks **"Why GPC vs anyone else?"** in one sentence before they drop off.
+You were walking through services and the CFO asks **"Why GPC vs anyone else?"** in one sentence before they drop off.
 choices:
   - label: "Answer with fiber miles and technical jargon only."
   feedback: "Incomplete: add the business angle—competitive connectivity through a resilient Midwest network, partnership, and paths tuned for cloud/SaaS."
@@ -1004,6 +968,7 @@ choices:
   feedback: "Strong: ties network proof points to partnership and gives them a concrete next artifact."
 
 ## roleplay:
+
   persona: "Skeptical CFO at a mid-size Midwest manufacturer"
   scenario: "Just sat through two carrier pitches that sounded identical. Asks point-blank why GPC is different before walking out of the room."
   goal: "Deliver a one-sentence 'why GPC' answer grounded in outcomes and partnership, then anchor the conversation on the layered stack and offer the capability deck as a concrete next step."
@@ -1078,15 +1043,9 @@ Midwest IP, fiber-first access, and Tier-1/IX relationships—anchor the "why GP
 *Collateral image — coming soon*
 :::
 
-
-
 ---
 
-
-
 # Connectivity & Access (`product-connectivity`)
-
-
 
 ---
 
@@ -1181,7 +1140,7 @@ scenarios:
 
 - title: "Branch complains about VPN and video over 'business broadband'"
 situation: |
-  Shared Internet; **jitter and upload** pain for VoIP/cloud. Budget tight.
+Shared Internet; **jitter and upload** pain for VoIP/cloud. Budget tight.
 choices:
   - label: "Automatically quote Wave between every site."
   feedback: "Wave = L1 big pipes—start with DIA/SIA/Ethernet discovery."
@@ -1189,7 +1148,7 @@ choices:
   feedback: "Correct."
 - title: "Prospect compares GPC fiber to satellite for stores"
 situation: |
-  **Starlink** / satellite for rural **POS + VoIP**.
+**Starlink** / satellite for rural **POS + VoIP**.
 choices:
   - label: "Dismiss satellite without asking any questions."
   feedback: "Explore latency/weather first—then fiber strengths."
@@ -1197,6 +1156,7 @@ choices:
   feedback: "Correct."
 
 ## roleplay:
+
   persona: "Skeptical IT Director"
   scenario: "Complaining about VPN jitter over shared broadband at three branch locations. Wants the cheapest fix and assumes upgrading bandwidth on the same SIA circuit will solve it."
   goal: "Pivot from price to reliability—qualify the symmetry and latency requirements for VoIP and cloud apps, then position DIA or Managed Ethernet as the right solution rather than simply more shared bandwidth."
@@ -1219,8 +1179,6 @@ GPC's connectivity stack matches the right access technology to each customer's 
 
 ## Objection Handling
 
-
-
 ::: flip ["Just bump up our shared Internet—that'll fix the jitter."]
 More shared bandwidth doesn't guarantee upload symmetry or latency. Qualify what's actually causing jitter—often it's the shared nature, not raw capacity. DIA is the right answer for VoIP and cloud workloads.
 :::
@@ -1236,8 +1194,6 @@ Acknowledge coverage; then qualify: does payment processing or VoIP tolerate 20�
 ::: flip ["We already have MPLS—why change?"]
 Ask when the contract expires and what it costs vs. throughput. SD-WAN over DIA often delivers better performance at lower cost with cloud breakout capability.
 :::
-
-
 
 ---
 
@@ -1287,15 +1243,9 @@ Ask when the contract expires and what it costs vs. throughput. SD-WAN over DIA 
 *Collateral image — coming soon*
 :::
 
-
-
 ---
 
-
-
 # Security & SD-WAN (`product-security-and-sd-wan`)
-
-
 
 ---
 
@@ -1390,7 +1340,7 @@ scenarios:
 
 - title: "Customer wants '24/7 DDoS' but budgets for on-demand"
 situation: |
-  Wants always-on mitigation; picked **on-demand** for price—set expectations pre-signature.
+Wants always-on mitigation; picked **on-demand** for price—set expectations pre-signature.
 choices:
   - label: "Tell them on-demand is the same as proactive for mitigation timing."
   feedback: "Clarify windows; document purchase."
@@ -1398,7 +1348,7 @@ choices:
   feedback: "Correct."
 - title: "RFP assumes full next-gen firewall in base SD-WAN"
 situation: |
-  Procurement pasted IDS/IPS into RFP as included in base SD-WAN at one price.
+Procurement pasted IDS/IPS into RFP as included in base SD-WAN at one price.
 choices:
   - label: "Bid base SD-WAN and assume all security lines are included."
   feedback: "Map lines to SKUs with SE/quoting."
@@ -1406,6 +1356,7 @@ choices:
   feedback: "Correct."
 
 ## roleplay:
+
   persona: "Skeptical IT Director at a regional bank with 12 branches"
   scenario: "Currently running MPLS between branches. Complaining about VPN jitter on shared broadband at smaller locations. Thinks SD-WAN is just 'expensive router software' and insists on managing their own Cisco gear."
   goal: "Qualify multi-site footprint and GPC fiber anchors, then pivot from DIY network management to GPC's fully managed SD-WAN—frame as operational savings, 24/7 NOC support, and cloud breakout improvement rather than a technology debate."
@@ -1483,15 +1434,9 @@ GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protecti
 *Collateral image — coming soon*
 :::
 
-
-
 ---
 
-
-
 # Cloud, Wi-Fi & Backup (`product-cloud-wifi-and-backup`)
-
-
 
 ---
 
@@ -1586,7 +1531,7 @@ scenarios:
 
 - title: "Retail chain wants cloud ERP and guest Wi-Fi"
 situation: |
-  Multi-site retailer; cloud ERP + guest Wi‑Fi; wants **12 APs/store** budgeted on first call.
+Multi-site retailer; cloud ERP + guest Wi‑Fi; wants **12 APs/store** budgeted on first call.
 choices:
   - label: "Quote twelve APs per store to match their budget request."
   feedback: "Defer counts—survey + engineering."
@@ -1596,7 +1541,7 @@ choices:
   feedback: "Position Wi‑Fi with engineering handoff."
 - title: "Branch needs uptime when fiber fails"
 situation: |
-  Fiber outage last month; wants **full speed 5G forever** with no caveats for the board.
+Fiber outage last month; wants **full speed 5G forever** with no caveats for the board.
 choices:
   - label: "Agree to unlimited headline speed at every site with no variability."
   feedback: "Set honest RF/speed/tier expectations."
@@ -1606,6 +1551,7 @@ choices:
   feedback: "Backup is for fiber failure—pair honesty on 5G."
 
 ## roleplay:
+
   persona: "IT Manager at a healthcare clinic network"
   scenario: "Had a fiber outage last month that took down patient scheduling and e-prescribing for four hours. Wants a solution but is skeptical of wireless backup speeds and worried about HIPAA data on a cellular network."
   goal: "Position 5G backup as a managed, automatic failover solution with app prioritization and NOC monitoring—set honest speed/tier expectations while tying reliability to patient care continuity."
@@ -1684,15 +1630,9 @@ Three products that extend the value of GPC fiber access: **Cloud Connect** give
 *Collateral image — coming soon*
 :::
 
-
-
 ---
 
-
-
 # GPC iTV for Business (`product-itv`)
-
-
 
 ---
 
@@ -1746,7 +1686,7 @@ scenarios:
 
 - title: "Waiting room TVs on a competitor ISP"
 situation: |
-  A **retail** prospect wants **GPC iTV** for lobby screens but **Internet is still with another carrier**.
+A **retail** prospect wants **GPC iTV** for lobby screens but **Internet is still with another carrier**.
 choices:
   - label: "Sell iTV standalone and assume any broadband will work the same."
   feedback: "Collateral ties iTV to **GPC Internet**—qualify access path and bundle story first."
@@ -1754,7 +1694,7 @@ choices:
   feedback: "**Good.** Match the architecture in current SharePoint collateral."
 - title: "Customer wants every regional sports network without discovery"
 situation: |
-  They insist on a **channel list guarantee** before sharing address or serviceability.
+They insist on a **channel list guarantee** before sharing address or serviceability.
 choices:
   - label: "Guarantee the full RSN lineup verbally to win the meeting."
   feedback: "Use **public lineup / QR** flows and official tools—avoid hand-waving."
@@ -1804,15 +1744,9 @@ Position it for **mom-and-pop through larger sites**: the story is **customizabl
 - Use the **Sales Resources** / iTV folders on **SharePoint** for pricing workbooks, regional PDFs, and updated product sheets.
 - For **voice-only** conversations that touch TV in the portfolio, cross-link from **Portfolio & Business Capabilities** once your map is updated.
 
-
-
 ---
 
-
-
 # UC, Voice & Collaboration (`product-uc-voice-and-collaboration`)
-
-
 
 ---
 
@@ -1907,7 +1841,7 @@ scenarios:
 
 - title: "Customer wants Teams Phone and GPC voice this quarter"
 situation: |
-  Teams for chat/meetings; wants dialer voice next quarter; assumes one invoice covers Microsoft + GPC; **Phone System** not budgeted.
+Teams for chat/meetings; wants dialer voice next quarter; assumes one invoice covers Microsoft + GPC; **Phone System** not budgeted.
 choices:
   - label: "Confirm that a single GPC SKU replaces all Microsoft licensing."
   feedback: "Teams + Phone System separate—clarify joint picture."
@@ -1917,7 +1851,7 @@ choices:
   feedback: "Teams hub + GPC PBX is the motion."
 - title: "Contact Center seat count on a first call"
 situation: |
-  Wants **CC Elite** + digital channels; firm concurrent count + burst **today**; email pricing now.
+Wants **CC Elite** + digital channels; firm concurrent count + burst **today**; email pricing now.
 choices:
   - label: "Email internal rate tables from the pricing folder to win speed."
   feedback: "Internal books—not external email from memory."
@@ -1927,6 +1861,7 @@ choices:
   feedback: "Confirm matrix—Elite extends capability."
 
 ## roleplay:
+
   persona: "Operations Manager at a 75-person professional services firm"
   scenario: "Stuck on an aging on-prem PBX that's out of warranty. The IT team uses Teams for chat and meetings but nobody can make external calls from it. Assumes replacing the PBX means buying new desk phones and a server."
   goal: "Position GPC's cloud UC as the modern replacement—no on-prem server, enterprise-grade features from Teams or the native softphone, and a clear explanation of how Microsoft licensing and GPC's cloud PBX work together."
@@ -2007,15 +1942,9 @@ GPC's UC platform replaces aging on-prem phone systems with a **single cloud sta
 *Collateral image — coming soon*
 :::
 
-
-
 ---
 
-
-
 # Competitive Positioning (`competitive-positioning`)
-
-
 
 ---
 
@@ -2112,7 +2041,7 @@ scenarios:
 
 - title: "Starlink vs fiber at a rural clinic"
 situation: |
-  Prospect loves **Starlink**; wants lowest cost for VPN + telehealth; asks for speed-test proof only.
+Prospect loves **Starlink**; wants lowest cost for VPN + telehealth; asks for speed-test proof only.
 choices:
   - label: "Dismiss satellite and refuse to discuss their interest."
   feedback: "Acknowledge coverage; reframe to latency, weather, SLAs—fiber vs LEO section."
@@ -2122,7 +2051,7 @@ choices:
   feedback: "Confirm stats/scope before external claims—landmine."
 - title: "Competitor drops a low price in a multi-site deal"
 situation: |
-  National entrant undercuts on headline price. CFO asks why pay more for GPC—in the room.
+National entrant undercuts on headline price. CFO asks why pay more for GPC—in the room.
 choices:
   - label: "Attack the competitor's CEO and call their network unreliable."
   feedback: "Landmine: no personal disparagement."
@@ -2132,6 +2061,7 @@ choices:
   feedback: "No improvised commercial commitments—reframe value; use channels."
 
 ## roleplay:
+
   persona: "Entrenched IT Manager"
   scenario: "Currently with a national carrier who just dropped their price at renewal. Demands a spec-for-spec speed comparison and says local doesn't matter anymore."
   goal: "Run discovery on application pain, TCO of outages, and local support gaps before presenting any GPC comparison—never lead with price or unverified stats."
@@ -2212,15 +2142,9 @@ Key differentiators for Ethernet positioning—use alongside the tech-card patte
 *Collateral image — coming soon*
 :::
 
-
-
 ---
 
-
-
 # Account Based Marketing (`account-based-marketing`)
-
-
 
 ---
 
@@ -2263,7 +2187,7 @@ scenarios:
 
 - title: "Skipping ahead in the ABM sequence"
 situation: |
-  A rep wants to jump straight to **meeting ask** in week two because they already know the CTO. Leadership asks whether that aligns with the ABM playbook.
+A rep wants to jump straight to **meeting ask** in week two because they already know the CTO. Leadership asks whether that aligns with the ABM playbook.
 choices:
   - label: "Yes—relationships always override the sequence."
   feedback: "Relationships matter, but the sequence keeps marketing air cover and messaging aligned. Exceptions should be explicit, not silent skips."
@@ -2302,15 +2226,9 @@ Month 1 emphasizes **awareness** (e.g. LinkedIn & paid search). Month 2 adds **v
 
 Replace placeholder paragraphs above with your **final narrative**, **owner names**, **links to playbooks**, and **MQL/SQL definitions** as your internal docs solidify. Update `assets/gantt/abm-90-day-sequence.png` when the chart changes.
 
-
-
 ---
 
-
-
 # Operational Business Reviews (`operational-business-reviews`)
-
-
 
 ---
 
@@ -2353,7 +2271,7 @@ scenarios:
 
 - title: "Customer timeline vs. 21-day OBR cycle"
 situation: |
-  An account rep promises the customer a **printed OBR deck in five days**. Delivery points to the **21-day Gantt**.
+An account rep promises the customer a **printed OBR deck in five days**. Delivery points to the **21-day Gantt**.
 choices:
   - label: "Tell the customer five days is the standard."
   feedback: "The documented cycle is **21 days**; reset expectations or escalate an approved exception path."
@@ -2390,11 +2308,7 @@ OBR process: 21-day strategic cycle (reference Gantt)
 
 Swap in your **real RACI**, **tool names**, and **approval gates** as the written SOP matures. Update `assets/gantt/obr-21-day-cycle.png` when the chart changes.
 
-
-
 ---
-
-
 
 # Executive Map Book (`map-book`)
 
