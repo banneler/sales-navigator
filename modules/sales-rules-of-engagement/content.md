@@ -118,7 +118,15 @@ reference_files:
 
 ## Overview
 
-The Rules of Engagement exist to protect everyone's pipeline and keep Salesforce trustworthy as the **system of record**. Three principles cover 90% of situations: **search before you create** (one entity, one account); **log meaningful activity** (Salesforce activity, not just email sent); and **transfer through leadership in writing** (never reassign unilaterally). Strategic and E-Rate accounts follow different rules. Know the windows, own your activity log, and disputes get resolved cleanly.
+The Rules of Engagement protect everyone’s pipeline and keep Salesforce trustworthy as the **system of record**.
+
+**Core principles** (most day-to-day situations):
+
+- **Search before you create** — one entity, one account; always search Salesforce before adding records.
+- **Log meaningful activity** — tasks, calls, meetings, or emails **on the Salesforce record** (email in your Sent folder does not count).
+- **Transfer through leadership in writing** — never reassign an account unilaterally.
+
+Strategic and **E-Rate** accounts follow different rules. Know the **idle windows** (Prospect **61+** days, Customer **121+** days), keep your activity log current, and resolve disputes with Salesforce as the source of truth.
 
 ---
 

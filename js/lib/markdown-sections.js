@@ -210,7 +210,7 @@ function tryRenderSalesTrioTabLayout(sections) {
   const tabPanels = panels
     .map(
       (p) =>
-        `<div role="tabpanel" id="${p.panelId}" class="js-sales-trio-panel module-sales-trio-panel p-6 md:p-8${p.hidden}" aria-labelledby="${p.tabId}"><div class="module-markdown-body module-section-prose max-w-prose">${p.inner}</div></div>`
+        `<div role="tabpanel" id="${p.panelId}" class="js-sales-trio-panel module-sales-trio-panel p-6 md:p-8${p.hidden}" aria-labelledby="${p.tabId}"><div class="module-markdown-body module-sales-trio-panel-body w-full max-w-none">${p.inner}</div></div>`
     )
     .join('');
 

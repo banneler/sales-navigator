@@ -127,7 +127,13 @@ scenarios:
 
 ## Overview
 
-Getting a deal right in Salesforce is as important as winning it. The **approval process** exists to catch errors before orders go to delivery—reviewers check site-level services, products, and quote math. The **change order vs MAC vs disconnect** distinction prevents billing errors, stalled installs, and customer escalations. **Costing routing** ensures the right teams estimate and validate spend. Know which path to use at each stage, and your deals will move cleanly from approval to revenue.
+Getting a deal **right** in Salesforce matters as much as winning it.
+
+- **Approvals** — reviewers catch issues before orders go to delivery (site-level services, products, quote math).
+- **Change order vs MAC vs disconnect** — use the right tool so billing, installs, and customers stay aligned.
+- **Costing routing** — the right teams estimate and validate spend.
+
+Pick the correct path at each stage so deals move cleanly from approval to revenue.
 
 ---
 

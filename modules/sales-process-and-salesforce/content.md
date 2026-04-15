@@ -117,7 +117,14 @@ scenarios:
 
 ## Overview
 
-Salesforce is GPC's **system of record for every deal**—from first contact to installed revenue. The process is a straight line: convert leads when ready to quote (always create the opportunity), build the GPC Solution, get approvals, merge with Conga, and send via DocuSign. Every step has a rule. Skipping steps—not creating the opportunity, deleting Closed/Lost records, setting Contract Signer late, or keeping contacts outside Salesforce—creates downstream problems in approvals, billing, and commission. Clean data in, clean revenue out.
+Salesforce is GPC’s **system of record for every deal**—from first contact to installed revenue.
+
+**The happy path**
+
+1. Convert leads when you’re ready to quote — **default: create the opportunity** (exceptions need manager/admin approval).
+2. Build the **GPC Solution** → run **approvals** → **Conga** merge → **DocuSign**.
+
+**Why the rules matter:** skipping steps—no opportunity on conversion, deleting **Closed/Lost**, late **Contract Signer**, signers only in a spreadsheet—breaks approvals, billing, and commissions. Clean data in, clean revenue out.
 
 ---
 
