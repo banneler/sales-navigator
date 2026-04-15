@@ -203,10 +203,10 @@
             <div class="mt-5 flex justify-center">
               <button
                 type="button"
-                id="win-dismiss"
+                id="win-play-again"
                 class="pixel-btn rounded-sm bg-orange-500 px-4 py-2 text-slate-900 hover:bg-orange-400"
               >
-                NICE
+                Play Again
               </button>
             </div>
           </div>
@@ -236,7 +236,7 @@
     const modalTitle = document.getElementById("question-modal-title");
     const btnQuestionDismiss = document.getElementById("question-dismiss");
     const winModal = document.getElementById("win-modal");
-    const btnWinDismiss = document.getElementById("win-dismiss");
+    const btnPlayAgain = document.getElementById("win-play-again");
     const coinCountEl = document.getElementById("coin-count");
     const levelStatusEl = document.getElementById("level-status");
     const heartsDisplayEl = document.getElementById("hearts-display");
@@ -287,12 +287,16 @@
 
     const ENEMY_W = 14;
     const ENEMY_H = 12;
-    const enemies = [
-      /** Starts mid-patrol walking right so first movement is away from spawn (see player spawn x). */
-      { x: 115, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.85, minX: 36, maxX: 160, dir: 1, dead: false },
-      { x: 520, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.75, minX: 468, maxX: 640, dir: 1, dead: false },
-      { x: 900, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.8, minX: 840, maxX: 1020, dir: -1, dead: false },
-    ];
+
+    /** Starts mid-patrol walking right so first movement is away from spawn (see player spawn x). */
+    function createInitialEnemies() {
+      return [
+        { x: 115, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.85, minX: 36, maxX: 160, dir: 1, dead: false },
+        { x: 520, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.75, minX: 468, maxX: 640, dir: 1, dead: false },
+        { x: 900, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.8, minX: 840, maxX: 1020, dir: -1, dead: false },
+      ];
+    }
+    const enemies = createInitialEnemies();
 
     const flag = {
       poleX: WORLD_W - 36,
@@ -603,6 +607,33 @@
       winModal.classList.remove("hidden");
     }
 
+    function playAgain() {
+      winModal.classList.add("hidden");
+      for (const c of coins) c.collected = false;
+      const fresh = createInitialEnemies();
+      for (let i = 0; i < enemies.length; i++) Object.assign(enemies[i], fresh[i]);
+      player.x = 12;
+      player.y = groundY - player.h;
+      player.vx = 0;
+      player.vy = 0;
+      player.onGround = false;
+      cameraX = 0;
+      flag.state = "idle";
+      flagSlideTimer = 0;
+      levelWon = false;
+      invuln = 0;
+      hp = 3;
+      heartsDisplayEl.textContent = "❤️❤️❤️";
+      closeQuestion();
+      keys.left = false;
+      keys.right = false;
+      keys.jump = false;
+      gameStarted = false;
+      startModal.classList.remove("hidden");
+      levelStatusEl.classList.add("hidden");
+      updateCoinCount();
+    }
+
     function updateCoinCount() {
       const n = coins.filter((c) => c.collected).length;
       coinCountEl.textContent = `${n} / ${coins.length}`;
@@ -780,7 +811,7 @@
       }
       if (e.key === "Enter" && !winModal.classList.contains("hidden")) {
         e.preventDefault();
-        winModal.classList.add("hidden");
+        playAgain();
       }
     });
     window.addEventListener("keyup", (e) => {
@@ -792,7 +823,7 @@
 
     btnStartGame.addEventListener("click", beginGame);
     btnQuestionDismiss.addEventListener("click", closeQuestion);
-    btnWinDismiss.addEventListener("click", () => winModal.classList.add("hidden"));
+    btnPlayAgain.addEventListener("click", playAgain);
 
     requestAnimationFrame(gameLoop);
   </script>
