@@ -72,7 +72,7 @@ function buildElevatorShell(floorName, innerHtml) {
   return (
     `<div class="elevator-reveal-wrap group/elev mb-8 w-full">` +
       `<div class="mb-3 flex justify-center">` +
-        `<div class="rounded-md border border-orange-500/35 bg-white px-4 py-1.5 font-mono text-xs font-semibold uppercase tracking-widest text-orange-600 shadow-sm ring-1 ring-slate-200/90 transition-all duration-300 group-hover/elev:border-orange-400/45 group-hover/elev:shadow-md group-hover/elev:ring-orange-200/70">${floorHtml}</div>` +
+        `<div class="rounded-md border-2 border-slate-600 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-300 px-5 py-2 font-mono text-[0.7rem] font-bold uppercase leading-tight tracking-[0.18em] text-slate-800 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_4px_14px_rgba(15,23,42,0.35)] ring-1 ring-slate-500/40 transition-all duration-300 group-hover/elev:from-slate-100 group-hover/elev:via-slate-50 group-hover/elev:to-slate-200 group-hover/elev:shadow-[inset_0_1px_0_rgba(255,255,255,0.75),0_6px_18px_rgba(15,23,42,0.4)]">${floorHtml}</div>` +
       `</div>` +
       `<div class="elevator-reveal-card group relative h-80 min-h-[20rem] w-full cursor-pointer overflow-hidden rounded-xl border-[3px] border-slate-600 bg-gradient-to-b from-slate-600 via-slate-800 to-slate-950 p-2 shadow-[0_8px_32px_rgba(15,23,42,0.45)] ring-1 ring-slate-900/60">` +
         `<div class="relative h-full w-full overflow-hidden rounded-md bg-slate-950 shadow-[inset_0_0_0_1px_rgba(15,23,42,0.9),inset_0_0_28px_rgba(0,0,0,0.55)]">` +

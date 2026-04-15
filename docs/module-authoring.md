@@ -46,7 +46,7 @@ Use a **fenced shortcode** for a high-stakes elevator pitch: animated doors, flo
 **Syntax** — floor name in square brackets on the opener line; body is normal Markdown; closing fence on its own line at **column 0**.
 
 ```markdown
-::: elevator [Executive floor]
+::: elevator [Enterprise Sales]
 **Your one-liner** — value, differentiation, and ask.
 
 Supporting line if needed.
