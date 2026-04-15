@@ -210,11 +210,13 @@ roleplay:
   goal: "Position GPC's cloud UC as the modern replacement—no on-prem server, enterprise-grade features from Teams or the native softphone, and a clear explanation of **Ascend with Teams** licensing vs when **embedded FAQ** positioning (no Teams Phone license vs Direct Routing) might apply—SE validates."
 ---
 
-## Elevator Pitch
+## 
 
+::: elevator [Elevator Pitch]
 Replace aging PBX with **one cloud stack**: voice, SMS, meetings, omnichannel CC, file sync—**99.999%** uptime and **Triple Guard Security™** as headline trust. When **RevOps/CX** care about CRM or analytics, qualify and bring specialists—don’t wing DataHub/Extend scope.
 
 **Microsoft-first accounts:** clarify **Ascend with Teams** (your PBX + Microsoft licensing picture) vs **embedded UC-in-Teams** FAQ language (**no Teams Phone license** vs **Direct Routing**)—**SE validates**, don’t freestyle. Economics and SKUs come from current **Mix & Match** / **Ascend for Teams** matrices, not memory.
+:::
 
 ::: accordion UC Platform Brochure
 *Collateral image — coming soon*

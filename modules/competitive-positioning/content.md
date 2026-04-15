@@ -128,9 +128,11 @@ roleplay:
   goal: "Run discovery on application pain, TCO of outages, and local support gaps before presenting any GPC comparison—never lead with price or unverified stats."
 ---
 
-## Elevator Pitch
+## 
 
+::: elevator [Elevator Pitch]
 **Discover first, then map GPC proof to their pain**—never lead with trash talk or unverified stats. Your levers: local fiber, 24/7 NOC, owned/redundant paths, full stack (access → WAN → security → apps). Outcome-led beats generic “we’re better.”
+:::
 
 ::: accordion M&A / Cox Acquisition Battle Card
 Reference for positioning against acquisition-driven competitors—stability, service continuity, and factual comparison points.

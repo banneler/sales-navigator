@@ -120,15 +120,15 @@ roleplay:
   goal: "Qualify multi-site footprint and GPC fiber anchors, then pivot from DIY network management to GPC's fully managed SD-WAN—frame as operational savings, 24/7 NOC support, and cloud breakout improvement rather than a technology debate."
 ---
 
-## Elevator Pitch
+## 
 
+::: elevator [Elevator Pitch]
 GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protection and intelligent routing at every edge. **Managed Firewall** (FortiGate-based, SOC-monitored) and **Managed Network Security (MNS)** stop threats at the edge and in email, with SIEM and assessment capabilities for regulated environments. **DDoS Protection** keeps critical services online—proactive for 24/7 mitigation, on-demand for cost-conscious accounts that understand the window. **SD-WAN (VeloCloud)** transforms multi-site WAN by routing traffic intelligently across any access type, with cloud breakout, QoS for VoIP, and a single management pane—all managed by GPC with local support and a 24/7 NOC.
+:::
 
 ---
 
 ## Discovery Questions
-
-<p class="text-slate-600 text-sm mb-2">Use <strong>Discovery Break</strong> below — each amber brick unlocks a prompt; when you’re done, you’ll see the full set together.</p>
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe

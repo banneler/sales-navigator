@@ -126,9 +126,11 @@ roleplay:
   goal: "Position 5G backup as a managed, automatic failover solution with app prioritization and NOC monitoring—set honest speed/tier expectations while tying reliability to patient care continuity."
 ---
 
-## Elevator Pitch
+## 
 
+::: elevator [Elevator Pitch]
 Three products that extend the value of GPC fiber access: **Cloud Connect** gives SaaS-heavy and cloud-first businesses a private, predictable path to AWS, Azure, Google, and other platforms—no more Internet-only jitter for critical workloads. **Managed Wi-Fi** covers the last ten feet with a fully managed lifecycle (design, install, maintain), guest/corporate segmentation, and integrated firewall/IDS/IPS. **5G Wireless Backup** keeps the business running during fiber outages with automatic failover, automatic fail-back, 24/7 NOC monitoring, and optional battery protection—no manual intervention required.
+:::
 
 ---
 

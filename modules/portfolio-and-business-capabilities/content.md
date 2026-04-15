@@ -105,9 +105,11 @@ roleplay:
   goal: "Deliver a one-sentence 'why GPC' answer grounded in outcomes and partnership, then anchor the conversation on the layered stack and offer the capability deck as a concrete next step."
 ---
 
-## Elevator Pitch
+## 
 
+::: elevator [Elevator Pitch]
 GPC is a **layered technology partner** on a resilient Midwest fiber network: access (fiber + backup) → WAN → security → UC, Cloud Connect, and Wi-Fi as **one system**, not a SKU buffet. Proof: Midwest IP reach, Tier-1/IX paths, local teams, 24/7 NOC—use the capability deck for the story, Sales Resources for product evidence.
+:::
 
 ::: accordion Business Capability Overview
 Cover slide from the GPC Business Capability presentation—use as the opening visual when framing outcomes and partnership.
@@ -118,8 +120,6 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
 ---
 
 ## Discovery Questions
-
-<p class="text-slate-600 text-sm mb-2">Run <strong>Discovery Run</strong> below — prompts appear as you play, and the full list shows when you clear the level.</p>
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe

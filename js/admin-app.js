@@ -2,6 +2,15 @@ import { getFile, putTextFile } from './lib/github-client.js';
 import { parseFrontMatter } from './lib/front-matter.js';
 import { renderModuleDocumentHtml } from './lib/markdown-sections.js';
 import { bindModuleInteractions } from './lib/module-interactions.js';
+import { bindRoleplayInteractions, initRoleplayModal } from './components/ai-roleplay.js';
+
+/** Same wiring as `markdown-module.js` so admin preview matches the learner module view. */
+function wireAdminPreview(container) {
+  if (!container) return;
+  bindModuleInteractions(container);
+  bindRoleplayInteractions(container);
+  initRoleplayModal(container);
+}
 
 // Hardcoded — same pattern as Enterprise-Proposals admin (GITHUB_OWNER / GITHUB_REPO)
 const GITHUB_OWNER = 'banneler';
@@ -37,7 +46,7 @@ async function main() {
     previewTimer = window.setTimeout(() => {
       if (previewEl && editor) {
         previewEl.innerHTML = renderModuleDocumentHtml(editor.value);
-        bindModuleInteractions(previewEl);
+        wireAdminPreview(previewEl);
       }
     }, 250);
   }
@@ -69,7 +78,7 @@ async function main() {
       if (shaField) shaField.value = sha;
       if (previewEl) {
         previewEl.innerHTML = renderModuleDocumentHtml(content);
-        bindModuleInteractions(previewEl);
+        wireAdminPreview(previewEl);
       }
       showToast('Loaded from GitHub.');
     } catch (e) {
@@ -186,7 +195,7 @@ async function main() {
       if (shaField && newSha) shaField.value = newSha;
       if (previewEl) {
         previewEl.innerHTML = renderModuleDocumentHtml(mdString);
-        bindModuleInteractions(previewEl);
+        wireAdminPreview(previewEl);
       }
       showToast('Pushed to GitHub.');
     } catch (e) {
