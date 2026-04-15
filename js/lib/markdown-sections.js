@@ -96,12 +96,21 @@ function sectionCardShellClasses(role, useDeepCollapse) {
   }
 }
 
+/** Section roles whose body should span the full card width (no max-w-prose / 65ch cap). */
+const SECTION_BODY_FULL_WIDTH_ROLES = new Set([
+  'objections',
+  'elevator',
+  'discovery',
+  'overview',
+]);
+
 /**
- * Objection sections often contain full-width flip grids; others get comfortable reading width.
+ * Comfortable reading width for long prose; full width for objections grids and for
+ * overview / elevator / discovery so they align with the card (same issue as sales-trio tabs).
  * @param {import('./section-roles.js').SectionRole} role
  */
 function markdownBodyWrapperClasses(role) {
-  if (role === 'objections') {
+  if (SECTION_BODY_FULL_WIDTH_ROLES.has(role)) {
     return 'module-markdown-body module-section-body-full w-full';
   }
   return 'module-markdown-body module-section-prose max-w-prose';
