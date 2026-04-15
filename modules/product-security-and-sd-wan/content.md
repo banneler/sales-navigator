@@ -131,16 +131,13 @@ GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protecti
 <p class="text-slate-600 text-sm mb-2">Use <strong>Discovery Break</strong> below — each amber brick unlocks a prompt; when you’re done, you’ll see the full set together.</p>
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
-  <div class="relative w-full max-w-full" style="aspect-ratio: 384 / 365; max-height: min(92vh, 720px);">
-    <iframe
-      src="games/brick-breaker-1/index.html?embed=1"
-      title="Discovery Break — Brick breaker"
-      loading="lazy"
-      sandbox="allow-scripts allow-same-origin"
-      class="absolute inset-0 h-full w-full border-0"
-      style="background: #f1f5f9;"
-    ></iframe>
-  </div>
+  <iframe
+    src="games/brick-breaker-1/index.html?embed=1"
+    title="Discovery Break — Brick breaker"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; height: min(95vh, 85rem); min-height: 44rem; background: #f1f5f9;"
+  ></iframe>
 </div>
 
 ---
