@@ -119,20 +119,25 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
 
 ## Discovery Questions
 
-1. **How many locations do you have, and how are they connected today—shared Internet, MPLS, Ethernet, or SD-WAN?**
-2. **What are your most critical applications? Are any of them SaaS or cloud-hosted (O365, Salesforce, ERP)?**
-3. **What does an hour of downtime cost your business—and what was your last significant outage?**
-4. **Are you planning any cloud migrations or voice modernization in the next 12–24 months?**
-5. **Who owns network, security, and voice decisions—are those the same team or separate?**
+<p class="text-slate-600 text-sm mb-2">Play through Discovery Run below — the five discovery questions appear when you clear the level.</p>
 
-<div class="mt-6 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+<div class="hidden" aria-hidden="true">
+<ol>
+<li><strong>How many locations do you have, and how are they connected today—shared Internet, MPLS, Ethernet, or SD-WAN?</strong></li>
+<li><strong>What are your most critical applications? Are any of them SaaS or cloud-hosted (O365, Salesforce, ERP)?</strong></li>
+<li><strong>What does an hour of downtime cost your business—and what was your last significant outage?</strong></li>
+<li><strong>Are you planning any cloud migrations or voice modernization in the next 12–24 months?</strong></li>
+<li><strong>Who owns network, security, and voice decisions—are those the same team or separate?</strong></li>
+</ol>
+</div>
+
+<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
     src="games/portfolio-level-1/index.html?embed=1"
-    class="w-full border-0 block bg-slate-100"
-    style="min-height: 26rem; height: 58vh; max-height: 40rem;"
     title="Discovery Run — Level 1"
     loading="lazy"
     sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); background: #f1f5f9;"
   ></iframe>
 </div>
 

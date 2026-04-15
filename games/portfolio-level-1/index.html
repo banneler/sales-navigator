@@ -62,9 +62,48 @@
     html.sn-embed .sn-embed-hide {
       display: none !important;
     }
+    html.sn-embed {
+      height: 100%;
+      overflow: hidden;
+    }
     html.sn-embed body {
       min-height: 0;
-      padding: 0.75rem;
+      height: 100%;
+      padding: 0.5rem;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+    html.sn-embed body > div {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    html.sn-embed section[aria-label="Discovery Run game"] {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 0.75rem !important;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    html.sn-embed .game-stack {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    html.sn-embed #game-canvas {
+      flex: 0 0 auto;
+      width: 100%;
+      height: auto;
+    }
+    html.sn-embed body.sn-embed-body {
+      padding: 0.5rem !important;
     }
   </style>
   <script>
@@ -73,7 +112,7 @@
     }
   </script>
 </head>
-<body class="min-h-screen bg-slate-100 text-slate-800 font-sans p-4 sm:p-6" style="font-family: Inter, ui-sans-serif, system-ui, sans-serif;">
+<body class="min-h-screen bg-slate-100 text-slate-800 font-sans p-4 sm:p-6 sn-embed-body" style="font-family: Inter, ui-sans-serif, system-ui, sans-serif;">
   <div class="mx-auto w-full max-w-[1600px] space-y-4">
     <header class="sn-embed-hide flex flex-wrap items-end justify-between gap-3">
       <div>
@@ -99,50 +138,33 @@
           <p id="level-status" class="text-xs font-medium text-emerald-700 hidden">All discovery coins</p>
         </div>
       </div>
-      <div class="relative w-full max-w-full">
+      <div class="relative w-full max-w-full game-stack flex-1 min-h-0 flex flex-col">
         <canvas id="game-canvas" width="384" height="216" role="img" aria-label="8-bit style platform game"></canvas>
 
-        <!-- Anchored to canvas: sits above the HUD strip, closer to the playfield -->
-        <div
-          id="question-modal"
-          class="hidden absolute z-50 left-1/2 -translate-x-1/2 w-[min(94%,19rem)] sm:w-[min(94%,20rem)] bottom-[32%] sm:bottom-[34%]"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="question-modal-title"
-        >
-          <div class="pixel-popup rounded-sm p-3 pt-3 pb-3">
-            <p class="pixel-popup-kicker mb-2 uppercase">Discovery</p>
-            <p id="question-modal-title" class="pixel-popup-title max-h-[min(32vh,9.5rem)] overflow-y-auto pr-1"></p>
-            <div class="mt-3 flex justify-end">
-              <button
-                type="button"
-                id="question-dismiss"
-                class="pixel-btn rounded-sm px-3 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a1c2e]"
-              >
-                OK
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Level clear (flag) -->
+        <!-- Level clear + full discovery list (questions hidden in module until this) -->
         <div
           id="win-modal"
-          class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60"
+          class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/70"
           role="dialog"
           aria-modal="true"
           aria-labelledby="win-modal-title"
         >
-          <div class="pixel-win max-w-sm rounded-sm bg-slate-900 p-6 text-center border border-slate-800">
-            <p id="win-modal-title" class="text-amber-200 text-[0.55rem] leading-relaxed">COURSE CLEAR!</p>
-            <p class="mt-3 text-[0.4rem] text-slate-400 leading-relaxed">Portfolio discovery run complete.</p>
-            <button
-              type="button"
-              id="win-dismiss"
-              class="pixel-btn mt-5 rounded-sm bg-orange-500 px-4 py-2 text-slate-900 hover:bg-orange-400"
-            >
-              NICE
-            </button>
+          <div class="pixel-win max-w-lg w-full max-h-[min(92vh,36rem)] overflow-y-auto rounded-sm bg-slate-900 p-4 sm:p-6 text-left border border-slate-800">
+            <p id="win-modal-title" class="text-amber-200 text-[0.55rem] leading-relaxed text-center">COURSE CLEAR!</p>
+            <p class="mt-2 text-[0.4rem] text-slate-400 leading-relaxed text-center">Portfolio discovery run complete.</p>
+            <div class="mt-4 pt-4 border-t border-slate-700">
+              <p class="text-[0.4rem] text-emerald-400/90 uppercase tracking-wide mb-3 font-sans">Discovery questions</p>
+              <ol id="win-discovery-list" class="list-decimal list-inside space-y-2 text-xs sm:text-sm text-slate-200 leading-snug font-sans pl-1"></ol>
+            </div>
+            <div class="mt-5 flex justify-center">
+              <button
+                type="button"
+                id="win-dismiss"
+                class="pixel-btn rounded-sm bg-orange-500 px-4 py-2 text-slate-900 hover:bg-orange-400"
+              >
+                NICE
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -164,10 +186,7 @@
 
     const canvas = document.getElementById("game-canvas");
     const ctx = canvas.getContext("2d");
-    const modal = document.getElementById("question-modal");
     const winModal = document.getElementById("win-modal");
-    const modalTitle = document.getElementById("question-modal-title");
-    const btnDismiss = document.getElementById("question-dismiss");
     const btnWinDismiss = document.getElementById("win-dismiss");
     const coinCountEl = document.getElementById("coin-count");
     const levelStatusEl = document.getElementById("level-status");
@@ -220,9 +239,9 @@
     const ENEMY_W = 14;
     const ENEMY_H = 12;
     const enemies = [
-      { x: 72, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.85, minX: 36, maxX: 160, dead: false, dir: 1 },
-      { x: 520, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.75, minX: 468, maxX: 640, dead: false, dir: 1 },
-      { x: 900, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.8, minX: 840, maxX: 1020, dead: false, dir: -1 },
+      { x: 72, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.85, minX: 36, maxX: 160, dir: 1 },
+      { x: 520, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.75, minX: 468, maxX: 640, dir: 1 },
+      { x: 900, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.8, minX: 840, maxX: 1020, dir: -1 },
     ];
 
     const flag = {
@@ -250,7 +269,6 @@
     };
 
     let cameraX = 0;
-    let pausedForQuestion = false;
     let invuln = 0;
     let hp = 3;
     let flagSlideTimer = 0;
@@ -360,9 +378,8 @@
     }
 
     function updateEnemies() {
-      if (pausedForQuestion || levelWon || flag.state !== "idle") return;
+      if (levelWon || flag.state !== "idle") return;
       for (const e of enemies) {
-        if (e.dead) continue;
         e.x += e.speed * e.dir;
         if (e.x <= e.minX) {
           e.x = e.minX;
@@ -386,13 +403,13 @@
           player.y = groundY - player.h;
           flag.state = "done";
           levelWon = true;
-          winModal.classList.remove("hidden");
+          showWinModal();
         }
         updateCamera();
         return;
       }
 
-      if (pausedForQuestion || levelWon) return;
+      if (levelWon) return;
 
       if (keys.left) player.vx -= physics.moveAccel;
       if (keys.right) player.vx += physics.moveAccel;
@@ -451,7 +468,6 @@
 
       for (let i = 0; i < enemies.length; i++) {
         const e = enemies[i];
-        if (e.dead) continue;
         const er = { x: e.x, y: e.y, w: e.w, h: e.h };
         if (!rectsOverlap(pr, er)) continue;
         const stomp =
@@ -459,9 +475,9 @@
           player.y + player.h < e.y + e.h * 0.55 &&
           playerFeet() - player.vy <= e.y + 4;
         if (stomp) {
-          e.dead = true;
           player.vy = physics.jumpVel * 0.55;
           player.y = e.y - player.h - 0.01;
+          invuln = 14;
         } else if (invuln <= 0) {
           hurtPlayer();
         }
@@ -484,7 +500,7 @@
           pr.y < cr.y + cr.h &&
           pr.y + pr.h > cr.y
         ) {
-          openQuestion(i);
+          collectCoin(i);
           break;
         }
       }
@@ -504,17 +520,21 @@
       updateCamera();
     }
 
-    function openQuestion(index) {
+    function collectCoin(index) {
+      if (coins[index].collected) return;
       coins[index].collected = true;
-      pausedForQuestion = true;
-      modalTitle.textContent = DISCOVERY_QUESTIONS[index];
-      modal.classList.remove("hidden");
       updateCoinCount();
     }
 
-    function closeQuestion() {
-      modal.classList.add("hidden");
-      pausedForQuestion = false;
+    function showWinModal() {
+      const ol = document.getElementById("win-discovery-list");
+      ol.replaceChildren();
+      for (const q of DISCOVERY_QUESTIONS) {
+        const li = document.createElement("li");
+        li.textContent = q;
+        ol.appendChild(li);
+      }
+      winModal.classList.remove("hidden");
     }
 
     function updateCoinCount() {
@@ -531,7 +551,7 @@
       ctx.fillRect(sx, sy, w, h);
     }
 
-    /** Simple rival grunt: grey tile + chartreuse “A”. */
+    /** Rival grunt: grey tile + chartreuse upside-down chevron (∨). */
     function drawEnemyWorld(e) {
       const x = Math.floor(e.x);
       const y = Math.floor(e.y);
@@ -543,14 +563,11 @@
       drawPixelRectWorld(x + 1, y + 1, w - 2, h - 2, "#9ca3af");
 
       const ax = x + 4;
-      const ay = y + 2;
+      const ay = y + 3;
       const rows = [
+        [0, 0, 1, 0, 0],
         [0, 1, 1, 1, 0],
-        [1, 0, 0, 0, 1],
-        [1, 0, 0, 0, 1],
         [1, 1, 1, 1, 1],
-        [1, 0, 0, 0, 1],
-        [1, 0, 0, 0, 1],
       ];
       for (let r = 0; r < rows.length; r++) {
         for (let c = 0; c < 5; c++) {
@@ -643,7 +660,6 @@
       }
 
       for (const e of enemies) {
-        if (e.dead) continue;
         drawEnemyWorld(e);
       }
 
@@ -672,14 +688,9 @@
         e.preventDefault();
         keys.jump = true;
       }
-      if (e.key === "Enter") {
-        if (!modal.classList.contains("hidden")) {
-          e.preventDefault();
-          closeQuestion();
-        } else if (!winModal.classList.contains("hidden")) {
-          e.preventDefault();
-          winModal.classList.add("hidden");
-        }
+      if (e.key === "Enter" && !winModal.classList.contains("hidden")) {
+        e.preventDefault();
+        winModal.classList.add("hidden");
       }
     });
     window.addEventListener("keyup", (e) => {
@@ -688,7 +699,6 @@
       if (e.code === "ArrowUp" || e.code === "Space" || e.key === "w") keys.jump = false;
     });
 
-    btnDismiss.addEventListener("click", closeQuestion);
     btnWinDismiss.addEventListener("click", () => winModal.classList.add("hidden"));
 
     requestAnimationFrame(gameLoop);
