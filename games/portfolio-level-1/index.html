@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Run — Level 1 (mockup)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #game-canvas {
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 384 / 216;
+      display: block;
+      background: #1a1c2e;
+      border-radius: 0.75rem;
+      border: 2px solid rgba(196, 160, 83, 0.45);
+    }
+    /* Compact 8-bit discovery pop-up — matches in-game navy / coin gold / brick / hero orange */
+    .pixel-popup {
+      font-family: "Press Start 2P", ui-monospace, monospace;
+      background: #1a1c2e;
+      border: 2px solid #8b6914;
+      box-shadow:
+        0 0 0 2px #0b0d14,
+        0 0 0 4px #c4a035,
+        4px 4px 0 0 #5c4033;
+    }
+    .pixel-popup-title {
+      font-size: 0.5rem;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      color: #fde68a;
+      text-shadow: 1px 1px 0 #422006;
+    }
+    .pixel-popup-kicker {
+      font-size: 0.45rem;
+      color: #f9e076;
+      text-shadow: 2px 2px 0 #422006;
+    }
+    .pixel-btn {
+      font-family: "Press Start 2P", ui-monospace, monospace;
+      font-size: 0.45rem;
+      background: #ea580c;
+      color: #0f172a;
+      box-shadow: inset -2px -2px 0 #9a3412, inset 2px 2px 0 #fdba74;
+    }
+    .pixel-btn:hover {
+      background: #f97316;
+    }
+    .pixel-win {
+      font-family: "Press Start 2P", ui-monospace, monospace;
+      box-shadow:
+        0 0 0 2px #0f172a,
+        0 0 0 4px #f97316,
+        4px 4px 0 0 #9a3412;
+    }
+    html.sn-embed .sn-embed-hide {
+      display: none !important;
+    }
+    html.sn-embed body {
+      min-height: 0;
+      padding: 0.75rem;
+    }
+  </style>
+  <script>
+    if (new URLSearchParams(location.search).get("embed") === "1") {
+      document.documentElement.classList.add("sn-embed");
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800 font-sans p-4 sm:p-6" style="font-family: Inter, ui-sans-serif, system-ui, sans-serif;">
+  <div class="mx-auto w-full max-w-[1600px] space-y-4">
+    <header class="sn-embed-hide flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-emerald-700">Standalone mockup · not wired to Sales-Navigator</p>
+        <h1 class="mt-1 text-xl font-bold text-slate-900 tracking-tight">Portfolio &amp; Business Capabilities — Discovery Run</h1>
+        <p class="mt-1 text-sm text-slate-600">Scroll · stomp enemies · pits &amp; blocks · ← → · Space jump · Enter OK</p>
+      </div>
+    </header>
+
+    <section
+      class="rounded-2xl border border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white p-6 md:p-8 shadow-sm"
+      aria-label="Discovery Run game"
+    >
+      <h2 class="sn-embed-hide text-xl font-bold text-slate-900 mb-4 tracking-tight">Discovery Run — Level 1</h2>
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-sm">
+        <p class="text-slate-600 text-xs sm:text-sm">← → move · Space jump · stomp rivals · Enter OK</p>
+        <div class="flex flex-wrap items-center gap-4 ml-auto">
+          <span id="hearts-display" class="text-lg tracking-widest" aria-hidden="true">❤️❤️❤️</span>
+          <div>
+            <span id="coin-count" class="font-semibold tabular-nums text-emerald-800">0 / 5</span>
+            <span class="text-slate-500"> coins</span>
+          </div>
+          <p id="level-status" class="text-xs font-medium text-emerald-700 hidden">All discovery coins</p>
+        </div>
+      </div>
+      <div class="relative w-full max-w-full">
+        <canvas id="game-canvas" width="384" height="216" role="img" aria-label="8-bit style platform game"></canvas>
+
+        <!-- Anchored to canvas: sits above the HUD strip, closer to the playfield -->
+        <div
+          id="question-modal"
+          class="hidden absolute z-50 left-1/2 -translate-x-1/2 w-[min(94%,19rem)] sm:w-[min(94%,20rem)] bottom-[32%] sm:bottom-[34%]"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="question-modal-title"
+        >
+          <div class="pixel-popup rounded-sm p-3 pt-3 pb-3">
+            <p class="pixel-popup-kicker mb-2 uppercase">Discovery</p>
+            <p id="question-modal-title" class="pixel-popup-title max-h-[min(32vh,9.5rem)] overflow-y-auto pr-1"></p>
+            <div class="mt-3 flex justify-end">
+              <button
+                type="button"
+                id="question-dismiss"
+                class="pixel-btn rounded-sm px-3 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a1c2e]"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Level clear (flag) -->
+        <div
+          id="win-modal"
+          class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="win-modal-title"
+        >
+          <div class="pixel-win max-w-sm rounded-sm bg-slate-900 p-6 text-center border border-slate-800">
+            <p id="win-modal-title" class="text-amber-200 text-[0.55rem] leading-relaxed">COURSE CLEAR!</p>
+            <p class="mt-3 text-[0.4rem] text-slate-400 leading-relaxed">Portfolio discovery run complete.</p>
+            <button
+              type="button"
+              id="win-dismiss"
+              class="pixel-btn mt-5 rounded-sm bg-orange-500 px-4 py-2 text-slate-900 hover:bg-orange-400"
+            >
+              NICE
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p class="sn-embed-hide mt-4 text-xs text-slate-500">
+        Future: one level per module; embed where Discovery Questions live.
+      </p>
+    </section>
+  </div>
+
+  <script type="module">
+    const DISCOVERY_QUESTIONS = [
+      "How many locations do you have, and how are they connected today—shared Internet, MPLS, Ethernet, or SD-WAN?",
+      "What are your most critical applications? Are any of them SaaS or cloud-hosted (O365, Salesforce, ERP)?",
+      "What does an hour of downtime cost your business—and what was your last significant outage?",
+      "Are you planning any cloud migrations or voice modernization in the next 12–24 months?",
+      "Who owns network, security, and voice decisions—are those the same team or separate?",
+    ];
+
+    const canvas = document.getElementById("game-canvas");
+    const ctx = canvas.getContext("2d");
+    const modal = document.getElementById("question-modal");
+    const winModal = document.getElementById("win-modal");
+    const modalTitle = document.getElementById("question-modal-title");
+    const btnDismiss = document.getElementById("question-dismiss");
+    const btnWinDismiss = document.getElementById("win-dismiss");
+    const coinCountEl = document.getElementById("coin-count");
+    const levelStatusEl = document.getElementById("level-status");
+    const heartsDisplayEl = document.getElementById("hearts-display");
+
+    const VIEW_W = canvas.width;
+    const VIEW_H = canvas.height;
+    const WORLD_W = 1184;
+    const groundY = VIEW_H - 24;
+
+    const keys = { left: false, right: false, jump: false };
+
+    /** Solid surfaces (ground blocks + pits between segments) */
+    const platforms = [
+      { x: 0, y: groundY, w: 372, h: 24 },
+      { x: 452, y: groundY, w: 732, h: 24 },
+      { x: 196, y: groundY - 40, w: 68, h: 10 },
+      { x: 316, y: groundY - 58, w: 68, h: 10 },
+      { x: 588, y: groundY - 48, w: 76, h: 10 },
+      { x: 708, y: groundY - 70, w: 76, h: 10 },
+      { x: 836, y: groundY - 50, w: 84, h: 10 },
+      { x: 708, y: groundY - 98, w: 76, h: 10 },
+    ];
+
+    /** Low bricks to hop */
+    const obstacles = [
+      { x: 108, y: groundY - 16, w: 20, h: 16 },
+      { x: 512, y: groundY - 16, w: 20, h: 16 },
+      { x: 996, y: groundY - 16, w: 20, h: 16 },
+    ];
+
+    for (const o of obstacles) {
+      platforms.push({ x: o.x, y: o.y, w: o.w, h: o.h });
+    }
+
+    const coinPositions = [
+      { x: 230, y: groundY - 40 - 12, r: 8 },
+      { x: 350, y: groundY - 58 - 12, r: 8 },
+      { x: 626, y: groundY - 48 - 12, r: 8 },
+      { x: 878, y: groundY - 50 - 12, r: 8 },
+      { x: 746, y: groundY - 98 - 12, r: 8 },
+    ];
+
+    const coins = DISCOVERY_QUESTIONS.map((_, i) => ({
+      id: i,
+      collected: false,
+      ...coinPositions[i],
+    }));
+
+    const ENEMY_W = 14;
+    const ENEMY_H = 12;
+    const enemies = [
+      { x: 72, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.85, minX: 36, maxX: 160, dead: false, dir: 1 },
+      { x: 520, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.75, minX: 468, maxX: 640, dead: false, dir: 1 },
+      { x: 900, y: groundY - ENEMY_H, w: ENEMY_W, h: ENEMY_H, speed: 0.8, minX: 840, maxX: 1020, dead: false, dir: -1 },
+    ];
+
+    const flag = {
+      poleX: WORLD_W - 36,
+      poleH: 76,
+      state: "idle",
+    };
+
+    const player = {
+      x: 24,
+      y: groundY - 18,
+      w: 14,
+      h: 18,
+      vx: 0,
+      vy: 0,
+      onGround: false,
+    };
+
+    const physics = {
+      gravity: 0.32,
+      jumpVel: -6.8,
+      moveAccel: 0.52,
+      maxRun: 3.1,
+      friction: 0.84,
+    };
+
+    let cameraX = 0;
+    let pausedForQuestion = false;
+    let invuln = 0;
+    let hp = 3;
+    let flagSlideTimer = 0;
+    let levelWon = false;
+
+    function getPoleTopPlayerY() {
+      return groundY - flag.poleH - player.h;
+    }
+
+    function playerFeet() {
+      return player.y + player.h;
+    }
+
+    function coinBobY(index) {
+      return Math.sin(performance.now() / 200 + index) * 2;
+    }
+
+    function updateCamera() {
+      const target = player.x - VIEW_W * 0.36;
+      cameraX = Math.max(0, Math.min(WORLD_W - VIEW_W, target));
+    }
+
+    function rectsOverlap(a, b) {
+      return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+    }
+
+    function isGroundSegment(p) {
+      return p.y === groundY && p.h === 24;
+    }
+
+    /**
+     * Blocks & floating platforms are solid from the sides — ground segments are walk-only on top.
+     */
+    function resolveWallCollisions() {
+      const prevX = player.x - player.vx;
+      const prevY = player.y - player.vy;
+      for (let pass = 0; pass < 2; pass++) {
+        for (const p of platforms) {
+          if (isGroundSegment(p)) continue;
+          const pr = { x: player.x, y: player.y, w: player.w, h: player.h };
+          if (!rectsOverlap(pr, p)) continue;
+
+          const fromLeft = prevX + player.w <= p.x + 1;
+          const fromRight = prevX >= p.x + p.w - 1;
+          const fromAbove = prevY + player.h <= p.y + 1;
+          const fromBelow = prevY >= p.y + p.h - 1;
+
+          if (fromLeft) {
+            player.x = p.x - player.w;
+            player.vx = 0;
+          } else if (fromRight) {
+            player.x = p.x + p.w;
+            player.vx = 0;
+          } else if (fromAbove) {
+            player.y = p.y - player.h;
+            player.vy = 0;
+            player.onGround = true;
+          } else if (fromBelow) {
+            player.y = p.y + p.h;
+            player.vy = Math.min(0, player.vy);
+          } else {
+            const cx = pr.x + pr.w / 2;
+            const cy = pr.y + pr.h / 2;
+            const px = p.x + p.w / 2;
+            const py = p.y + p.h / 2;
+            const overlapX = Math.min(pr.x + pr.w - p.x, p.x + p.w - pr.x);
+            const overlapY = Math.min(pr.y + pr.h - p.y, p.y + p.h - pr.y);
+            if (overlapX < overlapY) {
+              if (cx < px) {
+                player.x = p.x - player.w;
+              } else {
+                player.x = p.x + p.w;
+              }
+              player.vx = 0;
+            } else {
+              if (cy < py) {
+                player.y = p.y - player.h;
+                player.vy = 0;
+                player.onGround = true;
+              } else {
+                player.y = p.y + p.h;
+                player.vy = Math.min(0, player.vy);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    function hurtPlayer() {
+      if (invuln > 0 || flag.state !== "idle") return;
+      hp = Math.max(0, hp - 1);
+      invuln = 90;
+      player.vx = player.x > WORLD_W / 2 ? -4 : 4;
+      player.vy = -3;
+      player.onGround = false;
+      heartsDisplayEl.textContent = "❤️".repeat(Math.max(0, hp)) + "🖤".repeat(3 - Math.max(0, hp));
+      if (hp <= 0) {
+        player.x = 24;
+        player.y = groundY - player.h;
+        player.vx = 0;
+        player.vy = 0;
+        hp = 3;
+        invuln = 120;
+        heartsDisplayEl.textContent = "❤️❤️❤️";
+      }
+    }
+
+    function updateEnemies() {
+      if (pausedForQuestion || levelWon || flag.state !== "idle") return;
+      for (const e of enemies) {
+        if (e.dead) continue;
+        e.x += e.speed * e.dir;
+        if (e.x <= e.minX) {
+          e.x = e.minX;
+          e.dir = 1;
+        }
+        if (e.x + e.w >= e.maxX) {
+          e.x = e.maxX - e.w;
+          e.dir = -1;
+        }
+      }
+    }
+
+    function updatePlayer() {
+      if (flag.state === "slide") {
+        flagSlideTimer++;
+        player.x = flag.poleX - 7;
+        player.vx = 0;
+        player.vy = 0;
+        player.y += 2.8;
+        if (player.y >= groundY - player.h) {
+          player.y = groundY - player.h;
+          flag.state = "done";
+          levelWon = true;
+          winModal.classList.remove("hidden");
+        }
+        updateCamera();
+        return;
+      }
+
+      if (pausedForQuestion || levelWon) return;
+
+      if (keys.left) player.vx -= physics.moveAccel;
+      if (keys.right) player.vx += physics.moveAccel;
+      player.vx *= physics.friction;
+      player.vx = Math.max(-physics.maxRun, Math.min(physics.maxRun, player.vx));
+
+      if (keys.jump && player.onGround) {
+        player.vy = physics.jumpVel;
+        player.onGround = false;
+      } else if (!player.onGround) {
+        player.vy += physics.gravity;
+      }
+
+      if (invuln > 0) invuln--;
+
+      player.x += player.vx;
+      player.y += player.vy;
+
+      if (player.x < 0) {
+        player.x = 0;
+        player.vx = 0;
+      }
+      if (player.x + player.w > WORLD_W) {
+        player.x = WORLD_W - player.w;
+        player.vx = 0;
+      }
+
+      player.onGround = false;
+      for (const p of platforms) {
+        const prevBottom = player.y - player.vy + player.h;
+        const horiz = player.x + player.w > p.x + 1 && player.x < p.x + p.w - 1;
+        if (!horiz) continue;
+        if (player.vy >= 0 && prevBottom <= p.y + 1 && playerFeet() >= p.y) {
+          player.y = p.y - player.h;
+          player.vy = 0;
+          player.onGround = true;
+        }
+      }
+
+      resolveWallCollisions();
+
+      if (player.y + player.h > VIEW_H + 80) {
+        player.x = 24;
+        player.y = groundY - player.h;
+        player.vx = 0;
+        player.vy = 0;
+        hurtPlayer();
+      }
+
+      const pr = {
+        x: player.x - 2,
+        y: player.y - 2,
+        w: player.w + 4,
+        h: player.h + 4,
+      };
+
+      for (let i = 0; i < enemies.length; i++) {
+        const e = enemies[i];
+        if (e.dead) continue;
+        const er = { x: e.x, y: e.y, w: e.w, h: e.h };
+        if (!rectsOverlap(pr, er)) continue;
+        const stomp =
+          player.vy > 0.2 &&
+          player.y + player.h < e.y + e.h * 0.55 &&
+          playerFeet() - player.vy <= e.y + 4;
+        if (stomp) {
+          e.dead = true;
+          player.vy = physics.jumpVel * 0.55;
+          player.y = e.y - player.h - 0.01;
+        } else if (invuln <= 0) {
+          hurtPlayer();
+        }
+      }
+
+      for (let i = 0; i < coins.length; i++) {
+        const c = coins[i];
+        if (c.collected) continue;
+        const bob = coinBobY(i);
+        const half = c.r + 4;
+        const cr = {
+          x: c.x - half,
+          y: c.y + bob - half,
+          w: half * 2,
+          h: half * 2,
+        };
+        if (
+          pr.x < cr.x + cr.w &&
+          pr.x + pr.w > cr.x &&
+          pr.y < cr.y + cr.h &&
+          pr.y + pr.h > cr.y
+        ) {
+          openQuestion(i);
+          break;
+        }
+      }
+
+      if (
+        flag.state === "idle" &&
+        player.onGround &&
+        player.x + player.w > flag.poleX - 8 &&
+        player.x < flag.poleX + 12
+      ) {
+        flag.state = "slide";
+        player.y = getPoleTopPlayerY();
+        player.x = flag.poleX - 7;
+        flagSlideTimer = 0;
+      }
+
+      updateCamera();
+    }
+
+    function openQuestion(index) {
+      coins[index].collected = true;
+      pausedForQuestion = true;
+      modalTitle.textContent = DISCOVERY_QUESTIONS[index];
+      modal.classList.remove("hidden");
+      updateCoinCount();
+    }
+
+    function closeQuestion() {
+      modal.classList.add("hidden");
+      pausedForQuestion = false;
+    }
+
+    function updateCoinCount() {
+      const n = coins.filter((c) => c.collected).length;
+      coinCountEl.textContent = `${n} / ${coins.length}`;
+      if (n >= coins.length) levelStatusEl.classList.remove("hidden");
+    }
+
+    function drawPixelRectWorld(wx, wy, w, h, color) {
+      const sx = Math.floor(wx - cameraX);
+      const sy = Math.floor(wy);
+      if (sx + w < 0 || sx > VIEW_W) return;
+      ctx.fillStyle = color;
+      ctx.fillRect(sx, sy, w, h);
+    }
+
+    /** Simple rival grunt: grey tile + chartreuse “A”. */
+    function drawEnemyWorld(e) {
+      const x = Math.floor(e.x);
+      const y = Math.floor(e.y);
+      const w = e.w;
+      const h = e.h;
+      const chartreuse = "#d4fc38";
+
+      drawPixelRectWorld(x, y, w, h, "#6b7280");
+      drawPixelRectWorld(x + 1, y + 1, w - 2, h - 2, "#9ca3af");
+
+      const ax = x + 4;
+      const ay = y + 2;
+      const rows = [
+        [0, 1, 1, 1, 0],
+        [1, 0, 0, 0, 1],
+        [1, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 1],
+        [1, 0, 0, 0, 1],
+      ];
+      for (let r = 0; r < rows.length; r++) {
+        for (let c = 0; c < 5; c++) {
+          if (rows[r][c]) drawPixelRectWorld(ax + c, ay + r, 1, 1, chartreuse);
+        }
+      }
+    }
+
+    /** Small “?” = discovery question coin (5×7, amber on gold) */
+    function drawCoinIconWorld(cx, cy) {
+      const ink = "#78350f";
+      const px = Math.floor(cx) - 2;
+      const py = Math.floor(cy) - 3;
+      const rows = [
+        [0, 1, 1, 1, 0],
+        [1, 0, 0, 0, 1],
+        [0, 0, 0, 1, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0],
+      ];
+      for (let r = 0; r < rows.length; r++) {
+        for (let c = 0; c < 5; c++) {
+          if (rows[r][c]) drawPixelRectWorld(px + c, py + r, 1, 1, ink);
+        }
+      }
+    }
+
+    function drawFlagWorld() {
+      const poleX = flag.poleX;
+      const fy = groundY - flag.poleH;
+      const fw = 44;
+      const fh = 22;
+      const fx = poleX - fw + 4;
+
+      drawPixelRectWorld(poleX, fy, 4, flag.poleH, "#94a3b8");
+      drawPixelRectWorld(poleX + 1, fy, 2, 3, "#cbd5e1");
+
+      drawPixelRectWorld(fx, fy, fw, fh, "#ea580c");
+      drawPixelRectWorld(fx, fy, fw, 2, "#fdba74");
+      drawPixelRectWorld(fx, fy + fh - 2, fw, 2, "#9a3412");
+      drawPixelRectWorld(fx, fy, 2, fh, "#c2410c");
+      drawPixelRectWorld(fx + fw - 2, fy, 2, fh, "#9a3412");
+
+      ctx.save();
+      ctx.imageSmoothingEnabled = false;
+      ctx.font = '7px "Press Start 2P", monospace';
+      ctx.fillStyle = "#0f172a";
+      ctx.textBaseline = "top";
+      const sx = Math.floor(fx - cameraX + 4);
+      const sy = Math.floor(fy + 7);
+      ctx.fillText("GPC", sx, sy);
+      ctx.restore();
+    }
+
+    function draw() {
+      ctx.fillStyle = "#1a1c2e";
+      ctx.fillRect(0, 0, VIEW_W, VIEW_H);
+
+      for (
+        let wx = Math.floor(cameraX / 96) * 96;
+        wx < cameraX + VIEW_W + 96;
+        wx += 96
+      ) {
+        drawPixelRectWorld(wx, 36, 64, 6, "#252847");
+      }
+
+      for (const p of platforms) {
+        for (let bx = p.x; bx < p.x + p.w; bx += 12) {
+          drawPixelRectWorld(bx, p.y, Math.min(12, p.x + p.w - bx), p.h, "#5c4033");
+          drawPixelRectWorld(bx, p.y, Math.min(12, p.x + p.w - bx), 3, "#8b6914");
+        }
+      }
+
+      for (const o of obstacles) {
+        drawPixelRectWorld(o.x, o.y, o.w, o.h, "#78350f");
+        drawPixelRectWorld(o.x, o.y, o.w, 4, "#b45309");
+      }
+
+      for (let i = 0; i < coins.length; i++) {
+        const c = coins[i];
+        if (c.collected) continue;
+        const bob = coinBobY(i);
+        const cx = c.x;
+        const cy = c.y + bob;
+        drawPixelRectWorld(cx - c.r, cy - c.r, c.r * 2, c.r * 2, "#f2c94c");
+        drawPixelRectWorld(cx - c.r + 2, cy - c.r + 2, c.r * 2 - 4, c.r * 2 - 4, "#f9e076");
+        drawCoinIconWorld(cx, cy);
+      }
+
+      for (const e of enemies) {
+        if (e.dead) continue;
+        drawEnemyWorld(e);
+      }
+
+      drawFlagWorld();
+
+      const flash = invuln > 0 && Math.floor(invuln / 4) % 2 === 1;
+      const sx = player.x - cameraX;
+      if ((!flash || flag.state === "slide") && sx > -24 && sx < VIEW_W + 24) {
+        drawPixelRectWorld(player.x, player.y + 8, player.w, 10, "#2563eb");
+        drawPixelRectWorld(player.x + 2, player.y, player.w - 4, 9, "#ea580c");
+        drawPixelRectWorld(player.x + 3, player.y + 4, 8, 4, "#fcd34d");
+      }
+    }
+
+    function gameLoop() {
+      updateEnemies();
+      updatePlayer();
+      draw();
+      requestAnimationFrame(gameLoop);
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (e.code === "ArrowLeft" || e.key === "a") keys.left = true;
+      if (e.code === "ArrowRight" || e.key === "d") keys.right = true;
+      if (e.code === "ArrowUp" || e.code === "Space" || e.key === "w") {
+        e.preventDefault();
+        keys.jump = true;
+      }
+      if (e.key === "Enter") {
+        if (!modal.classList.contains("hidden")) {
+          e.preventDefault();
+          closeQuestion();
+        } else if (!winModal.classList.contains("hidden")) {
+          e.preventDefault();
+          winModal.classList.add("hidden");
+        }
+      }
+    });
+    window.addEventListener("keyup", (e) => {
+      if (e.code === "ArrowLeft" || e.key === "a") keys.left = false;
+      if (e.code === "ArrowRight" || e.key === "d") keys.right = false;
+      if (e.code === "ArrowUp" || e.code === "Space" || e.key === "w") keys.jump = false;
+    });
+
+    btnDismiss.addEventListener("click", closeQuestion);
+    btnWinDismiss.addEventListener("click", () => winModal.classList.add("hidden"));
+
+    requestAnimationFrame(gameLoop);
+  </script>
+</body>
+</html>

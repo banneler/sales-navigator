@@ -125,6 +125,17 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
 4. **Are you planning any cloud migrations or voice modernization in the next 12–24 months?**
 5. **Who owns network, security, and voice decisions—are those the same team or separate?**
 
+<div class="mt-6 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/portfolio-level-1/index.html?embed=1"
+    class="w-full border-0 block bg-slate-100"
+    style="min-height: 26rem; height: 58vh; max-height: 40rem;"
+    title="Discovery Run — Level 1"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+  ></iframe>
+</div>
+
 ---
 
 ## Objection Handling

@@ -19,8 +19,15 @@ export const MARKDOWN_PURIFY_CONFIG = {
     'clipPath',
     'd',
     'aria-hidden',
+    'src',
+    'sandbox',
+    'title',
+    'loading',
+    'referrerpolicy',
+    'allow',
+    'style',
   ],
-  ADD_TAGS: ['details', 'summary', 'svg', 'path', 'div'],
+  ADD_TAGS: ['details', 'summary', 'svg', 'path', 'div', 'iframe'],
 };
 
 /**
