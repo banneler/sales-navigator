@@ -46,12 +46,16 @@ Use a **fenced shortcode** for a high-stakes elevator pitch: animated doors, flo
 **Syntax** — floor name in square brackets on the opener line; body is normal Markdown; closing fence on its own line at **column 0**.
 
 ```markdown
-::: elevator [Enterprise Sales]
+## 
+
+::: elevator [Elevator Pitch]
 **Your one-liner** — value, differentiation, and ask.
 
 Supporting line if needed.
 :::
 ```
+
+Use an **empty `##` line** (`##` plus a space, nothing else) when you want the section **without** a duplicate heading—the floor plate already shows the title.
 
 **Interaction** — Click the **door frame / panels** to open or close the reveal. Links inside the pitch behave normally (they do not toggle the doors).
 
@@ -59,6 +63,7 @@ Supporting line if needed.
 
 - The closing line must be exactly `:::` (optional spaces after the third colon only).
 - Do not put `]` inside the floor label if you need a bracket in the title; keep labels short.
+- The H2 opener must include whitespace after `##` (e.g. `## `) so the parser treats it as a heading line.
 
 ## App behavior (not authoring)
 

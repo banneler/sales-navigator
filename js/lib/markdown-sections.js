@@ -107,9 +107,14 @@ const SECTION_BODY_FULL_WIDTH_ROLES = new Set([
 /**
  * Comfortable reading width for long prose; full width for objections grids and for
  * overview / elevator / discovery so they align with the card (same issue as sales-trio tabs).
+ * Headingless sections (`## ` with no title) are full width so embedded components (e.g. elevator) span the card.
  * @param {import('./section-roles.js').SectionRole} role
+ * @param {string} [displayTitle]
  */
-function markdownBodyWrapperClasses(role) {
+function markdownBodyWrapperClasses(role, displayTitle) {
+  if (!String(displayTitle ?? '').trim()) {
+    return 'module-markdown-body module-section-body-full w-full';
+  }
   if (SECTION_BODY_FULL_WIDTH_ROLES.has(role)) {
     return 'module-markdown-body module-section-body-full w-full';
   }
@@ -134,7 +139,7 @@ function renderOneSectionCard(markdown, options) {
   }
 
   const shell = sectionCardShellClasses(sectionRole, useDeepCollapse);
-  const bodyCls = markdownBodyWrapperClasses(sectionRole);
+  const bodyCls = markdownBodyWrapperClasses(sectionRole, displayTitle);
 
   if (!displayTitle.trim()) {
     return `
