@@ -97,13 +97,9 @@ Position it for **mom-and-pop through larger sites**: the story is **customizabl
 - **Internet dependency:** Messaging assumes **GPC Internet** is in place (or will be)—lead with **access** qualification where iTV is in play.
 - **Lineup & “learn more”:** Collateral typically points to a **QR code** for **local lineup**—confirm the current asset on **SharePoint**. For customer-facing overview, [gpcom.com/gpcitv](https://gpcom.com/gpcitv/) may still apply; **internal source of truth remains SharePoint.**
 
-## How to use this module
+## How to use & follow-ups
 
-1. Run **discovery**: business type, number of screens, must-have channels/sports, **existing TV hardware**, and **who provides Internet today**.
-2. Pair with **Connectivity & Access** when Internet is not yet GPC—iTV is not a substitute for a proper access path.
-3. Keep **lineup, pricing, and equipment** on **official tools and rate cards**; pull **positioning PDFs and pricing** from **SharePoint**, not from this app.
-
-## Next steps
-
-- Use the **Sales Resources** / iTV folders on **SharePoint** for pricing workbooks, regional PDFs, and updated product sheets.
-- For **voice-only** conversations that touch TV in the portfolio, cross-link from **Portfolio & Business Capabilities** once your map is updated.
+1. Run **discovery**: business type, screens, must-have channels/sports, **existing TV hardware**, **who provides Internet today**.
+2. Pair with **Connectivity & Access** when Internet is not yet GPC—iTV is not a substitute for access.
+3. Keep **lineup, pricing, equipment** on **official tools**; **SharePoint** is source of truth—not this app.
+4. Use **Sales Resources** / iTV on **SharePoint** for workbooks and PDFs; cross-link **Portfolio & Business Capabilities** when TV is part of a broader story.

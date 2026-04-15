@@ -130,7 +130,7 @@ roleplay:
 
 ## Elevator Pitch
 
-GPC wins competitive deals by earning the right to compare—not by attacking. The framework is simple: **discover first, then map every GPC claim to the customer's stated pain.** Local fiber, a 24/7 NOC, owned redundancy, and a full portfolio (access → WAN → security → apps) are your proof points. Generic superiority claims lose; outcome-led, discovery-grounded responses win.
+**Discover first, then map GPC proof to their pain**—never lead with trash talk or unverified stats. Your levers: local fiber, 24/7 NOC, owned/redundant paths, full stack (access → WAN → security → apps). Outcome-led beats generic “we’re better.”
 
 ::: accordion M&A / Cox Acquisition Battle Card
 Reference for positioning against acquisition-driven competitors—stability, service continuity, and factual comparison points.

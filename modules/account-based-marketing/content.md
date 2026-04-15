@@ -64,11 +64,13 @@ Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a na
 2. Use the **90-day sequence** chart above while coaching—the PNG in `assets/gantt/` is the source-of-truth visual; replace it when your SOP art updates.
 3. Pair this with **Operational Business Reviews** when discussing how executive conversations mature into review meetings.
 
-## Sales prospecting lane
+## Sequence lanes (sales & marketing)
+
+### Sales prospecting
 
 The Gantt shows **eighteen touches** staggered across three months: intros, calls, LinkedIn actions, case studies, meeting asks, OBR tie-ins, alignment, and close-out steps. Stacked bars in a single month are intentional—reps need to see **density** without guessing order.
 
-## Marketing air cover
+### Marketing air cover
 
 Month 1 emphasizes **awareness** (e.g. LinkedIn & paid search). Month 2 adds **validation** (e.g. direct mail). Month 3 focuses **conversion** (e.g. retargeting). Optional creative (brochure copy) is called out where it supports the same story.
 

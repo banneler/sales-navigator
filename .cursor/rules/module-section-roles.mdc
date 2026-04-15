@@ -1,0 +1,21 @@
+---
+description: Stable H2 titles for Sales-Navigator module section styling and sales-trio tab layout
+globs: modules/**/content.md
+alwaysApply: false
+---
+
+# Module section titles (H2)
+
+The app maps `##` headings to **section roles** for typography and layout (`js/lib/section-roles.js`). Keep these titles **exact** (case-insensitive) so styling applies:
+
+| Role | Preferred `##` title |
+|------|----------------------|
+| Elevator | `## Elevator Pitch` |
+| Discovery | `## Discovery Questions` |
+| Objections | `## Objection Handling` |
+| Technical deep | `## Technical Deep Dive [deep]` |
+| Sales trio (tabs) | `## Overview` → `## Key Guidelines` → `## Common Pitfalls` → `## Process Deep Dive [deep]` |
+
+**Sales trio modules** (`sales-rules-of-engagement`, `sales-process-and-salesforce`, `sales-operations-and-approvals`): the first three sections render as **tabs** when this order and titles match.
+
+Unknown titles still render; they use the generic card style.

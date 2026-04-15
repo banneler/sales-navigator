@@ -107,7 +107,7 @@ roleplay:
 
 ## Elevator Pitch
 
-GPC is not just an ISP—it's a **layered technology partner** built on a resilient Midwest fiber network. The portfolio runs from access (fiber + backup) through WAN, security, and all the way to UC, Cloud Connect, and Wi-Fi—designed as **one integrated system**, not a menu of unrelated add-ons. Midwest IP, Tier-1 and IX relationships, local teams, and 24/7 NOC monitoring are the proof points that separate GPC from commodity carriers.
+GPC is a **layered technology partner** on a resilient Midwest fiber network: access (fiber + backup) → WAN → security → UC, Cloud Connect, and Wi-Fi as **one system**, not a SKU buffet. Proof: Midwest IP reach, Tier-1/IX paths, local teams, 24/7 NOC—use the capability deck for the story, Sales Resources for product evidence.
 
 ::: accordion Business Capability Overview
 Cover slide from the GPC Business Capability presentation—use as the opening visual when framing outcomes and partnership.

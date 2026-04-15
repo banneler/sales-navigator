@@ -12,6 +12,10 @@ import {
   buildRoleplayHtml,
 } from './module-enrichment.js';
 import { buildHandoutToolbarHtml } from './handout-links.js';
+import {
+  getSectionRole,
+  isSalesTrioModule,
+} from './section-roles.js';
 
 /** Level-2 heading only (`##`), not `###`. */
 function isH2Line(line) {
@@ -71,8 +75,45 @@ export function splitMarkdownByH2(body) {
   return sections;
 }
 
+/**
+ * @param {import('./section-roles.js').SectionRole} role
+ */
+function sectionCardShellClasses(role, useDeepCollapse) {
+  if (useDeepCollapse) {
+    return 'module-section-deep module-section-role-deep bg-gradient-to-b from-slate-50/80 to-white border border-slate-200/80 rounded-2xl shadow-sm hover:shadow-md transition-shadow';
+  }
+  const base =
+    'module-section-card rounded-2xl border p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow';
+  switch (role) {
+    case 'elevator':
+      return `${base} module-section-elevator border-orange-200/90 bg-gradient-to-br from-orange-50/50 via-white to-slate-50/30`;
+    case 'discovery':
+      return `${base} module-section-discovery border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white`;
+    case 'objections':
+      return `${base} module-section-objections border-indigo-200/80 bg-gradient-to-b from-indigo-50/40 to-white`;
+    default:
+      return `${base} module-section-generic border-slate-200/80 bg-gradient-to-b from-white to-slate-50/50`;
+  }
+}
+
+/**
+ * Objection sections often contain full-width flip grids; others get comfortable reading width.
+ * @param {import('./section-roles.js').SectionRole} role
+ */
+function markdownBodyWrapperClasses(role) {
+  if (role === 'objections') {
+    return 'module-markdown-body module-section-body-full w-full';
+  }
+  return 'module-markdown-body module-section-prose max-w-prose';
+}
+
+/**
+ * @param {string} markdown
+ * @param {{ displayTitle: string; useDeepCollapse: boolean; sectionRole?: import('./section-roles.js').SectionRole }} options
+ */
 function renderOneSectionCard(markdown, options) {
   const { useDeepCollapse, displayTitle } = options;
+  const sectionRole = options.sectionRole ?? 'generic';
   let safe;
   try {
     safe = parseMarkdownToSafeHtml(markdown || '');
@@ -83,16 +124,19 @@ function renderOneSectionCard(markdown, options) {
       </section>`;
   }
 
+  const shell = sectionCardShellClasses(sectionRole, useDeepCollapse);
+  const bodyCls = markdownBodyWrapperClasses(sectionRole);
+
   if (!displayTitle.trim()) {
     return `
-      <section class="bg-gradient-to-b from-white to-slate-50/50 border border-slate-200/80 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow">
-        <div class="module-markdown-body">${safe}</div>
+      <section class="${shell}">
+        <div class="${bodyCls}">${safe}</div>
       </section>`;
   }
 
   if (useDeepCollapse) {
     return `
-      <details class="module-section-deep bg-gradient-to-b from-white to-slate-50/50 border border-slate-200/80 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+      <details class="${shell}">
         <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-6 md:p-8 text-left outline-none [&::-webkit-details-marker]:hidden marker:content-none">
           <span class="min-w-0 flex-1">
             <span class="block text-xl font-bold text-slate-900">${escapeHtml(displayTitle)}</span>
@@ -101,23 +145,104 @@ function renderOneSectionCard(markdown, options) {
           <i class="fa-solid fa-chevron-down module-section-deep-chevron shrink-0 text-slate-400 transition-transform duration-200" aria-hidden="true"></i>
         </summary>
         <div class="border-t border-slate-200/80 px-6 md:px-8 pb-6 md:pb-8 pt-6">
-          <div class="module-markdown-body">${safe}</div>
+          <div class="${bodyCls}">${safe}</div>
         </div>
       </details>`;
   }
 
-  const heading = `<h3 class="text-xl font-bold text-slate-900 mb-5">${escapeHtml(displayTitle)}</h3>`;
+  const heading = `<h3 class="text-xl font-bold text-slate-900 mb-4 tracking-tight">${escapeHtml(displayTitle)}</h3>`;
   return `
-      <section class="bg-gradient-to-b from-white to-slate-50/50 border border-slate-200/80 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow">
+      <section class="${shell}">
         ${heading}
-        <div class="module-markdown-body">${safe}</div>
+        <div class="${bodyCls}">${safe}</div>
       </section>`;
 }
 
 /**
+ * Sales trio: first three H2s as tabs, Process Deep Dive stays collapsible.
  * @param {Array<{ title: string | null; markdown: string }>} sections
+ * @returns {string | null}
  */
-export function renderSectionsToHtml(sections) {
+function tryRenderSalesTrioTabLayout(sections) {
+  if (sections.length < 4) return null;
+  const parsed = sections.map((s) => {
+    const raw = s.title ?? '';
+    const { displayTitle, requestsDeep } = parseH2DeepMarker(raw);
+    return {
+      markdown: s.markdown,
+      displayTitle,
+      requestsDeep,
+      role: getSectionRole(displayTitle),
+    };
+  });
+  const [a, b, c, d] = parsed;
+  if (
+    a.role !== 'overview' ||
+    b.role !== 'guidelines' ||
+    c.role !== 'pitfalls' ||
+    d.role !== 'deep' ||
+    !d.requestsDeep
+  ) {
+    return null;
+  }
+
+  const panels = [a, b, c].map((sec, i) => {
+    let inner;
+    try {
+      inner = parseMarkdownToSafeHtml(sec.markdown || '');
+    } catch (e) {
+      inner = `<p class="text-red-600">${escapeHtml(e instanceof Error ? e.message : String(e))}</p>`;
+    }
+    const hidden = i === 0 ? '' : ' hidden';
+    const tabId = `sales-trio-tab-${i}`;
+    const panelId = `sales-trio-panel-${i}`;
+    const labels = ['Overview', 'Key Guidelines', 'Common Pitfalls'];
+    return { inner, hidden, tabId, panelId, label: labels[i] };
+  });
+
+  const tabButtons = panels
+    .map((p, i) => {
+      const selected = i === 0;
+      return `<button type="button" role="tab" id="${p.tabId}" class="js-sales-trio-tab flex-1 min-w-[8rem] px-4 py-3 text-sm font-semibold transition border-b-2 -mb-px focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-orange-400 ${selected ? 'border-orange-500 text-orange-800 bg-white' : 'border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50/80'}" aria-selected="${selected ? 'true' : 'false'}" aria-controls="${p.panelId}" tabindex="${selected ? '0' : '-1'}">${escapeHtml(p.label)}</button>`;
+    })
+    .join('');
+
+  const tabPanels = panels
+    .map(
+      (p) =>
+        `<div role="tabpanel" id="${p.panelId}" class="js-sales-trio-panel module-sales-trio-panel p-6 md:p-8${p.hidden}" aria-labelledby="${p.tabId}"><div class="module-markdown-body module-section-prose max-w-prose">${p.inner}</div></div>`
+    )
+    .join('');
+
+  const deepHtml = renderOneSectionCard(d.markdown, {
+    displayTitle: d.displayTitle,
+    useDeepCollapse: true,
+    sectionRole: 'deep',
+  });
+
+  return `
+    <div class="module-sales-trio space-y-6">
+      <div class="module-sales-trio-shell rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden">
+        <div role="tablist" aria-label="Sales process sections" class="flex flex-wrap border-b border-slate-200 bg-slate-50/90">
+          ${tabButtons}
+        </div>
+        ${tabPanels}
+      </div>
+      ${deepHtml}
+    </div>`;
+}
+
+/**
+ * @param {Array<{ title: string | null; markdown: string }>} sections
+ * @param {{ moduleId?: string }} [opts]
+ */
+export function renderSectionsToHtml(sections, opts = {}) {
+  const moduleId = opts.moduleId;
+  if (isSalesTrioModule(moduleId)) {
+    const trio = tryRenderSalesTrioTabLayout(sections);
+    if (trio) return trio;
+  }
+
   const total = sections.length;
   return sections
     .map(({ title, markdown }) => {
@@ -125,9 +250,11 @@ export function renderSectionsToHtml(sections) {
       const { displayTitle, requestsDeep } = parseH2DeepMarker(rawTitle);
       const useDeepCollapse =
         requestsDeep && total > 1 && Boolean(displayTitle.trim());
+      const sectionRole = getSectionRole(displayTitle);
       return renderOneSectionCard(markdown, {
         displayTitle,
         useDeepCollapse,
+        sectionRole,
       });
     })
     .join('');
@@ -146,7 +273,7 @@ export function buildModuleHeaderBlockHtml(meta, handoutHtml = '') {
     return `
       <div>
         <h2 class="text-2xl font-bold text-slate-900 tracking-tight">${escapeHtml(title)}</h2>
-        ${summary ? `<p class="text-slate-600 mt-2 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
+        ${summary ? `<p class="text-slate-600 mt-2 max-w-2xl text-[15px] leading-relaxed">${escapeHtml(summary)}</p>` : ''}
       </div>`;
   }
 
@@ -156,7 +283,7 @@ export function buildModuleHeaderBlockHtml(meta, handoutHtml = '') {
           <h2 class="text-2xl font-bold text-slate-900 tracking-tight min-w-0 flex-1">${escapeHtml(title)}</h2>
           ${String(handoutHtml).trim()}
         </div>
-        ${summary ? `<p class="text-slate-600 mt-3 max-w-3xl">${escapeHtml(summary)}</p>` : ''}
+        ${summary ? `<p class="text-slate-600 mt-3 max-w-2xl text-[15px] leading-relaxed">${escapeHtml(summary)}</p>` : ''}
       </div>`;
 }
 
@@ -195,7 +322,8 @@ export function renderModuleDocumentHtml(markdownSource) {
   }
 
   const sections = splitMarkdownByH2(body || '');
-  const sectionCardsHtml = renderSectionsToHtml(sections);
+  const moduleId = typeof meta.id === 'string' ? meta.id : '';
+  const sectionCardsHtml = renderSectionsToHtml(sections, { moduleId });
   const fiveMinHtml = buildFiveMinuteSummaryHtml(meta);
   const referenceFilesHtml = buildModuleReferenceFilesHtml(meta);
   const scenariosAsideInner = buildScenariosAsideHtml(meta);

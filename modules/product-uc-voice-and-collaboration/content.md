@@ -212,7 +212,9 @@ roleplay:
 
 ## Elevator Pitch
 
-GPC's UC platform replaces aging on-prem phone systems with a **single cloud stack**—partner narrative: **one intelligent platform** for employee productivity and customer experience: enterprise PBX (**100+** voice features), messaging, SMS/MMS, HD meetings, **web fax**, AI-style recaps and assistant features on many paths, optional **omnichannel** contact center, and file sharing—all on a **99.999% uptime** story with **Triple Guard Security™**. **DataHub / analytics** and **CRM** ties (Salesforce, Zendesk, Dynamics, HubSpot, NetSuite, etc.) matter when RevOps or CX leaders are in the room—scope, don’t wing integrations. For Microsoft-first orgs, clarify early whether you’re in **Ascend with Teams** (Microsoft licensing + GPC PBX) or **embedded UC-in-Teams** FAQ positioning (often **no Teams Phone license** vs **Direct Routing**)—SE validates. The pitch: legacy PBX is a depreciating asset; cloud UC bundles voice, video, chat, files, and AI roadmap into predictable per-user economics—**Mix & Match** tiers and **Ascend for Teams** matrices set the guardrails.
+Replace aging PBX with **one cloud stack**: voice, SMS, meetings, omnichannel CC, file sync—**99.999%** uptime and **Triple Guard Security™** as headline trust. When **RevOps/CX** care about CRM or analytics, qualify and bring specialists—don’t wing DataHub/Extend scope.
+
+**Microsoft-first accounts:** clarify **Ascend with Teams** (your PBX + Microsoft licensing picture) vs **embedded UC-in-Teams** FAQ language (**no Teams Phone license** vs **Direct Routing**)—**SE validates**, don’t freestyle. Economics and SKUs come from current **Mix & Match** / **Ascend for Teams** matrices, not memory.
 
 ::: accordion UC Platform Brochure
 *Collateral image — coming soon*

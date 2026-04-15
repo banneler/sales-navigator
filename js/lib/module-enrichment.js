@@ -52,16 +52,64 @@ export function buildModuleReferenceFilesHtml(meta) {
       </section>`;
 }
 
+/**
+ * @param {string} md
+ * @returns {string[]} First-line text after `- ` for each top-level bullet line
+ */
+function extractDashBulletTexts(md) {
+  const out = [];
+  for (const line of String(md || '').split(/\r?\n/)) {
+    const m = line.match(/^\s*-\s+(.+)$/);
+    if (m) out.push(m[1].trim());
+  }
+  return out;
+}
+
 export function buildFiveMinuteSummaryHtml(meta) {
   const five = meta.five_minute_summary;
   if (typeof five !== 'string' || !five.trim()) return '';
+
+  const bullets = extractDashBulletTexts(five);
+  const headerRow = `
+        <div class="flex items-start gap-3">
+          <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-sm" title="About 5 minutes">5m</span>
+          <div class="min-w-0 flex-1">
+            <h3 id="five-min-heading" class="text-lg font-bold text-amber-950 mb-2">5-minute summary</h3>
+            <p class="text-xs font-medium text-amber-900/70 mb-3">Key takeaways — tap below if you want the full list.</p>
+          </div>
+        </div>`;
+
+  if (bullets.length >= 5) {
+    const top = bullets.slice(0, 3);
+    const chips = top
+      .map(
+        (t) =>
+          `<div class="module-five-min-chip rounded-xl border border-amber-200/90 bg-white/95 px-4 py-3 text-sm leading-snug text-amber-950 shadow-sm">${parseMarkdownToSafeHtml(t)}</div>`
+      )
+      .join('');
+    return `
+      <section class="module-five-min border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm" aria-labelledby="five-min-heading">
+        ${headerRow}
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-2">${chips}</div>
+        <details class="module-five-min-details group rounded-lg border border-amber-200/70 bg-white/60">
+          <summary class="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-amber-900 flex items-center gap-2 rounded-lg hover:bg-amber-50/80 [&::-webkit-details-marker]:hidden marker:content-none">
+            <i class="fa-solid fa-chevron-right text-amber-600/80 transition-transform group-open:rotate-90 text-xs" aria-hidden="true"></i>
+            Show all ${bullets.length} points (${bullets.length - 3} more)
+          </summary>
+          <div class="px-4 pb-4 module-markdown-body module-five-min-prose text-amber-950/90 border-t border-amber-200/50 pt-4">${parseMarkdownToSafeHtml(five)}</div>
+        </details>
+      </section>`;
+  }
+
+  const compactClass =
+    bullets.length >= 2 ? ' module-five-min-compact module-five-min-balanced' : ' module-five-min-prose';
   return `
       <section class="module-five-min border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm" aria-labelledby="five-min-heading">
         <div class="flex items-start gap-3">
           <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-sm" title="About 5 minutes">5m</span>
           <div class="min-w-0 flex-1">
             <h3 id="five-min-heading" class="text-lg font-bold text-amber-950 mb-2">5-minute summary</h3>
-            <div class="module-markdown-body text-amber-950/90">${parseMarkdownToSafeHtml(five)}</div>
+            <div class="module-markdown-body text-amber-950/90${compactClass}">${parseMarkdownToSafeHtml(five)}</div>
           </div>
         </div>
       </section>`;
@@ -74,10 +122,36 @@ export function buildFiveMinuteSummaryHtml(meta) {
 export function buildFiveMinuteSummaryIntroGateHtml(meta) {
   const five = meta.five_minute_summary;
   if (typeof five !== 'string' || !five.trim()) return '';
+
+  const bullets = extractDashBulletTexts(five);
+  if (bullets.length >= 5) {
+    const top = bullets.slice(0, 3);
+    const chips = top
+      .map(
+        (t) =>
+          `<div class="rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm leading-snug text-slate-700">${parseMarkdownToSafeHtml(t)}</div>`
+      )
+      .join('');
+    return `
+      <section class="module-five-min-gate" aria-labelledby="five-min-heading-gate">
+        <h3 id="five-min-heading-gate" class="text-lg font-bold text-slate-900 mb-2">5-minute summary</h3>
+        <p class="text-xs text-slate-500 mb-3">Key takeaways — expand for the full list.</p>
+        <div class="grid grid-cols-1 gap-2 mb-2">${chips}</div>
+        <details class="group rounded-lg border border-slate-200 bg-white/80">
+          <summary class="cursor-pointer list-none px-3 py-2 text-sm font-semibold text-slate-700 flex items-center gap-2 [&::-webkit-details-marker]:hidden marker:content-none">
+            <i class="fa-solid fa-chevron-right text-slate-400 transition-transform group-open:rotate-90 text-xs" aria-hidden="true"></i>
+            All ${bullets.length} points
+          </summary>
+          <div class="px-3 pb-3 module-markdown-body text-slate-700 border-t border-slate-100 pt-3">${parseMarkdownToSafeHtml(five)}</div>
+        </details>
+      </section>`;
+  }
+
+  const compactClass = bullets.length >= 2 ? ' module-five-min-compact' : '';
   return `
       <section class="module-five-min-gate" aria-labelledby="five-min-heading-gate">
         <h3 id="five-min-heading-gate" class="text-lg font-bold text-slate-900 mb-2">5-minute summary</h3>
-        <div class="module-markdown-body text-slate-700">${parseMarkdownToSafeHtml(five)}</div>
+        <div class="module-markdown-body text-slate-700${compactClass}">${parseMarkdownToSafeHtml(five)}</div>
       </section>`;
 }
 

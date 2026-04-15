@@ -262,6 +262,31 @@ function handleClick(e) {
     return;
   }
 
+  const trioTab = e.target.closest('.js-sales-trio-tab');
+  if (trioTab) {
+    const shell = trioTab.closest('.module-sales-trio-shell');
+    const controlsId = trioTab.getAttribute('aria-controls');
+    if (shell && controlsId) {
+      shell.querySelectorAll('.js-sales-trio-tab').forEach((btn) => {
+        const on = btn === trioTab;
+        btn.setAttribute('aria-selected', on ? 'true' : 'false');
+        btn.setAttribute('tabindex', on ? '0' : '-1');
+        btn.classList.toggle('border-orange-500', on);
+        btn.classList.toggle('text-orange-800', on);
+        btn.classList.toggle('bg-white', on);
+        btn.classList.toggle('border-transparent', !on);
+        btn.classList.toggle('text-slate-600', !on);
+        btn.classList.toggle('hover:text-slate-900', !on);
+        btn.classList.toggle('hover:bg-slate-50/80', !on);
+      });
+      shell.querySelectorAll('.js-sales-trio-panel').forEach((panel) => {
+        const show = panel.id === controlsId;
+        panel.classList.toggle('hidden', !show);
+      });
+    }
+    return;
+  }
+
   const flipBtn = e.target.closest('.js-flip-card');
   if (flipBtn) {
     const inner = flipBtn.querySelector('.js-flip-inner');

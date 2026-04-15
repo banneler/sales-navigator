@@ -166,3 +166,61 @@
 .scenario-situation-text.module-markdown-body p:last-child {
   margin-bottom: 0;
 }
+
+/* Section roles (Elevator / Discovery / Objections) — see js/lib/section-roles.js */
+.module-section-prose {
+  max-width: 65ch;
+}
+.module-section-body-full {
+  max-width: none;
+}
+.module-section-elevator .module-markdown-body p:first-of-type {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: #1e293b;
+}
+.module-section-discovery .module-markdown-body ol > li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+/* 5-minute summary: comfortable width + optional two-column bullet list */
+.module-five-min-prose {
+  max-width: 65ch;
+}
+.module-five-min-compact.module-five-min-balanced ul {
+  display: grid;
+  gap: 0.35rem 1.25rem;
+}
+@media (min-width: 640px) {
+  .module-five-min-compact.module-five-min-balanced ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.module-five-min-compact li {
+  margin-bottom: 0.2rem;
+}
+.module-five-min-chip p {
+  margin: 0;
+}
+.module-five-min-chip p + p {
+  margin-top: 0.35rem;
+}
+.module-five-min-details summary {
+  list-style: none;
+}
+
+/* Sales trio tabs */
+@keyframes salesTrioPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.module-sales-trio-shell [role='tabpanel']:not(.hidden) {
+  animation: salesTrioPanelIn 0.35s ease-out both;
+}

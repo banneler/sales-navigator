@@ -52,15 +52,11 @@ scenarios:
 
 Operational Business Reviews turn **network reality, financial signals, and marketing narrative** into a single executive conversation. Reps win when the **prep process is predictable**—this module trains the timeline, not just the slide deck.
 
+**How to use:** Walk new hires through **phases** below; use the **21-day** chart for swim-lane expectations; cross-link **Account Based Marketing** when tying executive outreach to review readiness.
+
 ## 21-day OBR cycle
 
 ![OBR process: 21-day strategic cycle (reference Gantt)](assets/gantt/obr-21-day-cycle.png)
-
-## How to use this module
-
-1. Walk new hires through **phases** below so they know who does what before the meeting.
-2. Refer to the **21-day cycle** chart above for the swim-lane view used in your SOP.
-3. Cross-link to **Account Based Marketing** when discussing how executive outreach feeds review readiness.
 
 ## Phases (high level)
 

@@ -31,21 +31,26 @@ function buildDemoMarkup() {
     <div class="tour-demo-content max-w-[1600px] mx-auto space-y-6 pb-4 select-none">
       <div class="flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
         <div class="w-full lg:flex-1 min-w-0 space-y-6 pointer-events-none" data-tour-target="module-core">
-          <div class="rounded-xl border border-slate-200/90 bg-white/95 shadow-sm p-6 backdrop-blur-sm">
+          <div class="rounded-2xl border border-orange-200/90 bg-gradient-to-br from-orange-50/50 via-white to-slate-50/40 shadow-sm p-6 md:p-8 backdrop-blur-sm module-tour-elevator">
             <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Welcome to Great Plains Communications</h2>
-            <p class="text-slate-600 mt-3 text-sm max-w-3xl leading-relaxed">
+            <p class="text-slate-600 mt-3 text-sm max-w-prose leading-relaxed">
               We're glad you're here. This space is built to help you ramp with confidence—alongside teammates who remember their first customer call, their first complex quote, and the questions that used to keep them up at night.
             </p>
           </div>
-          <div class="rounded-xl border border-orange-100 bg-gradient-to-br from-orange-50/95 to-white/90 p-5 shadow-sm backdrop-blur-sm">
-            <p class="text-xs font-bold text-orange-800 uppercase tracking-wide">Five-minute summary</p>
-            <ul class="mt-3 space-y-2.5 text-sm text-slate-700">
-              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span> We're genuinely happy you chose to grow your career here—your wins matter to us.</li>
-              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span> Take training at your pace; come back to any module when you need a refresher or a talk track.</li>
-              <li class="flex gap-2"><span class="text-orange-500 shrink-0">•</span> Showing up curious for customers beats memorizing slides—use this hub to prepare, then go have real conversations.</li>
-            </ul>
+          <div class="rounded-2xl border border-amber-200 bg-amber-50/80 p-5 md:p-6 shadow-sm backdrop-blur-sm">
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-sm" title="About 5 minutes">5m</span>
+              <div class="min-w-0 flex-1">
+                <p class="text-xs font-bold text-amber-950 uppercase tracking-wide">Five-minute summary</p>
+                <ul class="mt-3 space-y-2.5 text-sm text-amber-950/90">
+                  <li class="flex gap-2"><span class="text-amber-500 shrink-0">•</span> We're genuinely happy you chose to grow your career here—your wins matter to us.</li>
+                  <li class="flex gap-2"><span class="text-amber-500 shrink-0">•</span> Take training at your pace; come back to any module when you need a refresher or a talk track.</li>
+                  <li class="flex gap-2"><span class="text-amber-500 shrink-0">•</span> Showing up curious for customers beats memorizing slides—use this hub to prepare, then go have real conversations.</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <section class="rounded-xl border border-slate-200 bg-white/95 p-6 shadow-sm backdrop-blur-sm">
+          <section class="rounded-2xl border border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white p-6 md:p-8 shadow-sm backdrop-blur-sm module-tour-discovery">
             <h3 class="text-lg font-bold text-slate-900">A note from the team</h3>
             <div class="text-sm text-slate-700 mt-3 space-y-3 leading-relaxed">
               <p>Dear teammate,</p>
