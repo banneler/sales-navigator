@@ -296,6 +296,43 @@ function handleClick(e) {
     return;
   }
 
+  const elevatorUp = e.target.closest('.js-elevator-up');
+  if (elevatorUp) {
+    e.preventDefault();
+    e.stopPropagation();
+    const card = elevatorUp.closest('.elevator-reveal-card');
+    if (!card) return;
+    if (card.classList.contains('is-open')) return;
+    const pitch = card.querySelector('.js-elevator-pitch');
+    if (pitch) void pitch.offsetWidth;
+    card.classList.add('is-open');
+    return;
+  }
+
+  const elevatorDown = e.target.closest('.js-elevator-down');
+  if (elevatorDown) {
+    e.preventDefault();
+    e.stopPropagation();
+    const card = elevatorDown.closest('.elevator-reveal-card');
+    if (!card) return;
+    card.classList.remove('is-open');
+    return;
+  }
+
+  const elevatorCard = e.target.closest('.elevator-reveal-card');
+  if (elevatorCard) {
+    if (e.target.closest('a')) return;
+    if (e.target.closest('button')) return;
+    const pitch = elevatorCard.querySelector('.js-elevator-pitch');
+    if (elevatorCard.classList.contains('is-open')) {
+      elevatorCard.classList.remove('is-open');
+    } else {
+      if (pitch) void pitch.offsetWidth;
+      elevatorCard.classList.add('is-open');
+    }
+    return;
+  }
+
   const scBtn = e.target.closest('.js-sc-choice');
   if (scBtn) {
     const article = scBtn.closest('.scenario-card');

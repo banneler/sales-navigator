@@ -39,6 +39,27 @@ Body markdown here. Images work, for example:
 - The closing line must be exactly `:::` (optional spaces after the third colon only). Indented lines like `    :::` are ignored so fenced code blocks are less likely to break parsing.
 - Do not put `]` inside the title; keep titles short for the summary row.
 
+## Elevator pitch reveal (`::: elevator`)
+
+Use a **fenced shortcode** for a high-stakes elevator pitch: animated doors, floor label, and cinematic reveal of the pitch copy. **Nested shortcodes** in the body are supported (same closing rules as accordion).
+
+**Syntax** — floor name in square brackets on the opener line; body is normal Markdown; closing fence on its own line at **column 0**.
+
+```markdown
+::: elevator [Executive floor]
+**Your one-liner** — value, differentiation, and ask.
+
+Supporting line if needed.
+:::
+```
+
+**Interaction** — **Up** opens the doors; **Down** closes them. Learners can also click the doors area to toggle. Links inside the pitch behave normally (they do not toggle the doors).
+
+**Guardrails**
+
+- The closing line must be exactly `:::` (optional spaces after the third colon only).
+- Do not put `]` inside the floor label if you need a bracket in the title; keep labels short.
+
 ## App behavior (not authoring)
 
 **Fiber path** (header): full-screen progress map; manifest order; `localStorage` `sn:module-visited:v1`. Unrelated to `[deep]`.

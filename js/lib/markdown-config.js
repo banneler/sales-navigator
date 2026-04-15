@@ -26,8 +26,17 @@ export const MARKDOWN_PURIFY_CONFIG = {
     'referrerpolicy',
     'allow',
     'style',
+    'aria-label',
+    'type',
+    'stroke',
+    'stroke-width',
+    'stroke-linecap',
+    'stroke-linejoin',
+    'r',
+    'cx',
+    'cy',
   ],
-  ADD_TAGS: ['details', 'summary', 'svg', 'path', 'div', 'iframe'],
+  ADD_TAGS: ['details', 'summary', 'svg', 'path', 'div', 'iframe', 'button', 'circle'],
 };
 
 /**
@@ -47,6 +56,34 @@ const CHEVRON_SVG = `<svg class="h-5 w-5 shrink-0 text-slate-500 transition-tran
 
 const FLIP_ICON_SVG = `<svg class="h-5 w-5 text-indigo-500/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>`;
 
+const ELEVATOR_ARROW_UP_SVG = `<svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 19V5M5 12l7-7 7 7"/></svg>`;
+
+const ELEVATOR_ARROW_DOWN_SVG = `<svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>`;
+
+const ELEVATOR_SEAM_GLOW_SVG = `<svg class="pointer-events-none absolute left-1/2 top-1/2 z-[25] h-16 w-16 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 group-hover:drop-shadow-[0_0_14px_rgba(249,115,22,0.85)]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle class="transition-all duration-300 group-hover:stroke-orange-300" cx="32" cy="32" r="14" stroke="rgba(249,115,22,0.75)" stroke-width="3"/><circle class="transition-all duration-300 group-hover:stroke-orange-400/90" cx="32" cy="32" r="8" fill="rgba(249,115,22,0.35)"/></svg>`;
+
+/**
+ * Elevator pitch reveal: doors + floor indicator + seam glow + up/down controls.
+ * @param {string} floorName
+ * @param {string} innerHtml - Already sanitized markdown HTML
+ */
+function buildElevatorShell(floorName, innerHtml) {
+  const floorHtml = escapeHtml(String(floorName).trim());
+  return (
+    `<div class="relative h-80 w-full cursor-pointer group elevator-reveal-card mb-8 overflow-hidden rounded-2xl bg-slate-950 shadow-2xl">` +
+      `<div class="js-elevator-pitch module-markdown-body absolute inset-0 z-10 flex flex-col items-center justify-center p-8 text-center text-slate-100 opacity-0 scale-90 transition-[opacity,transform] duration-300 sm:p-12 group-[.is-open]:animate-elevator-reveal group-[.is-open]:opacity-100">${innerHtml}</div>` +
+      `<div class="elevator-door-left absolute inset-y-0 left-0 z-20 flex w-1/2 items-center justify-end border-r border-slate-600 bg-gradient-to-r from-slate-800 to-slate-700 pr-2 transition-transform duration-700 ease-in-out group-[.is-open]:-translate-x-[95%]"></div>` +
+      `<div class="elevator-door-right absolute inset-y-0 right-0 z-20 flex w-1/2 items-center justify-start border-l border-slate-600 bg-gradient-to-l from-slate-800 to-slate-700 pl-2 transition-transform duration-700 ease-in-out group-[.is-open]:translate-x-[95%]"></div>` +
+      `<div class="pointer-events-none absolute left-1/2 top-6 z-30 -translate-x-1/2 rounded border border-orange-500/50 bg-black/40 px-4 py-1 font-mono text-xs uppercase tracking-widest text-orange-500 shadow-sm transition-all duration-300 group-hover:border-orange-400 group-hover:text-orange-400 group-hover:shadow-[0_0_20px_rgba(249,115,22,0.45)]">${floorHtml}</div>` +
+      `${ELEVATOR_SEAM_GLOW_SVG}` +
+      `<div class="absolute right-3 top-1/2 z-[35] flex -translate-y-1/2 flex-col gap-1.5">` +
+        `<button type="button" class="js-elevator-up flex h-9 w-9 items-center justify-center rounded-md border border-orange-500/60 bg-slate-900/90 text-orange-400 shadow-md transition-all duration-300 hover:border-orange-400 hover:bg-orange-950/50 hover:text-orange-300 hover:shadow-[0_0_16px_rgba(249,115,22,0.5)] group-hover:border-orange-400/90 group-hover:shadow-[0_0_12px_rgba(249,115,22,0.35)]" aria-label="Open doors">${ELEVATOR_ARROW_UP_SVG}</button>` +
+        `<button type="button" class="js-elevator-down flex h-9 w-9 items-center justify-center rounded-md border border-orange-500/60 bg-slate-900/90 text-orange-400 shadow-md transition-all duration-300 hover:border-orange-400 hover:bg-orange-950/50 hover:text-orange-300 hover:shadow-[0_0_16px_rgba(249,115,22,0.5)] group-hover:border-orange-400/90 group-hover:shadow-[0_0_12px_rgba(249,115,22,0.35)]" aria-label="Close doors">${ELEVATOR_ARROW_DOWN_SVG}</button>` +
+      `</div>` +
+    `</div>\n\n`
+  );
+}
+
 /** @returns {boolean} */
 function isShortcodeOpenLine(lineRaw, keyword) {
   const t = lineRaw.replace(/\r$/, '').trimStart();
@@ -64,7 +101,13 @@ function isShortcodeOpenLine(lineRaw, keyword) {
 function isShortcodeCloseLine(lineRaw) {
   const t = lineRaw.replace(/\r$/, '').trimEnd();
   if (!t.startsWith(':::')) return false;
-  if (t.startsWith('::: accordion') || t.startsWith('::: flip')) return false;
+  if (
+    t.startsWith('::: accordion') ||
+    t.startsWith('::: flip') ||
+    t.startsWith('::: elevator')
+  ) {
+    return false;
+  }
   return /^:::\s*$/.test(t);
 }
 
@@ -157,7 +200,7 @@ function buildFlipShell(title, innerHtml) {
 }
 
 /**
- * Replace `::: accordion [Title]` … `:::` and `::: flip [Title]` … `:::` with HTML.
+ * Replace `::: accordion [Title]` … `:::` , `::: flip [Title]` … `:::`, and `::: elevator [Floor]` … `:::` with HTML.
  * @param {string} md
  * @returns {string}
  */
@@ -214,12 +257,37 @@ export function preprocessShortcodes(md) {
     out += buildFlipShell(block.title, innerHtml);
     i = block.end;
   }
-  
+  s = out;
+
+  // Process Elevator pitch reveal
+  out = '';
+  i = 0;
+  while (i < s.length) {
+    const jBracket = s.indexOf('::: elevator [', i);
+    const jBare = s.indexOf('::: elevator ', i);
+    const j = jBracket === -1 ? jBare : jBare === -1 ? jBracket : Math.min(jBracket, jBare);
+
+    if (j === -1) {
+      out += s.slice(i);
+      break;
+    }
+    out += s.slice(i, j);
+    const block = extractShortcodeBlock(s, j, 'elevator');
+    if (!block) {
+      out += s[j];
+      i = j + 1;
+      continue;
+    }
+    const innerHtml = parseMarkdownToSafeHtml(block.body.trim());
+    out += buildElevatorShell(block.title, innerHtml);
+    i = block.end;
+  }
+
   return out;
 }
 
 /**
- * Markdown → HTML, with accordion/flip micro-interactions and DOMPurify.
+ * Markdown → HTML, with accordion/flip/elevator micro-interactions and DOMPurify.
  * @param {string} md
  * @returns {string}
  */
