@@ -18,6 +18,8 @@ const TITLE_TO_ROLE = new Map(
   Object.entries({
     'elevator pitch': 'elevator',
     'discovery questions': 'discovery',
+    /** Connectivity & Access — same layout role as Discovery Questions (full-width embed) */
+    'discovery galaxy': 'discovery',
     'objection handling': 'objections',
     'technical deep dive': 'deep',
     'process deep dive': 'deep',
