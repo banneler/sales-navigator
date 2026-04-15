@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discovery Galactica — Shooter (mockup)</title>
+  <title>Discovery Galaxy — Shooter (mockup)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -53,7 +53,7 @@
       display: flex; flex-direction: column; box-sizing: border-box;
     }
     html.sn-embed body > div { flex: 1; min-height: 0; display: flex; flex-direction: column; }
-    html.sn-embed section[aria-label="Discovery Galactica game"] {
+    html.sn-embed section[aria-label="Discovery Galaxy game"] {
       flex: 1; min-height: 0; display: flex; flex-direction: column;
       padding: 0.75rem !important; margin: 0; box-sizing: border-box;
     }
@@ -72,13 +72,13 @@
     <header class="sn-embed-hide flex flex-wrap items-end justify-between gap-3">
       <div>
         <p class="text-xs font-semibold uppercase tracking-wider text-emerald-700">Standalone mockup</p>
-        <h1 class="mt-1 text-xl font-bold text-slate-900 tracking-tight">Discovery Galactica — Space shooter</h1>
+        <h1 class="mt-1 text-xl font-bold text-slate-900 tracking-tight">Discovery Galaxy — Space shooter</h1>
         <p class="mt-1 text-sm text-slate-600">Destroy amber discovery ships · ← → · Space fire · Enter OK</p>
       </div>
     </header>
 
-    <section class="rounded-2xl border border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white p-6 md:p-8 shadow-sm" aria-label="Discovery Galactica game">
-      <h2 class="sn-embed-hide text-xl font-bold text-slate-900 mb-4 tracking-tight">Discovery Galactica</h2>
+    <section class="rounded-2xl border border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white p-6 md:p-8 shadow-sm" aria-label="Discovery Galaxy game">
+      <h2 class="sn-embed-hide text-xl font-bold text-slate-900 mb-4 tracking-tight">Discovery Galaxy</h2>
       <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-sm">
         <p class="text-slate-600 text-xs sm:text-sm">← → move · Space fire</p>
         <div class="flex flex-wrap items-center gap-4 ml-auto">
@@ -90,11 +90,11 @@
         </div>
       </div>
       <div class="relative w-full max-w-full game-stack flex-1 min-h-0 flex flex-col">
-        <canvas id="game-canvas" width="384" height="216" role="img" aria-label="Space shooter mini-game"></canvas>
+        <canvas id="game-canvas" width="384" height="216" role="img" aria-label="Discovery Galaxy — space shooter"></canvas>
 
         <div id="start-modal" class="absolute inset-0 z-40 flex items-center justify-center p-4 bg-slate-900/55" role="dialog" aria-modal="true" aria-labelledby="start-modal-title">
           <div class="pixel-win max-w-sm w-full rounded-sm bg-slate-900 p-6 text-center border border-slate-800">
-            <p id="start-modal-title" class="text-amber-200 text-[0.5rem] leading-relaxed">DISCOVERY GALACTICA</p>
+            <p id="start-modal-title" class="text-amber-200 text-[0.5rem] leading-relaxed">DISCOVERY GALAXY</p>
             <p class="mt-2 text-[0.35rem] text-slate-400 font-sans">Clear amber ships to reveal discovery questions</p>
             <button type="button" id="start-game-btn" class="mt-6 rounded-lg bg-emerald-600 px-8 py-3 text-sm font-bold text-white shadow-md border-2 border-emerald-800 hover:bg-emerald-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300">START</button>
             <p class="mt-3 text-[0.3rem] text-slate-500 font-sans">Enter or Space</p>
@@ -114,7 +114,7 @@
         <div id="win-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/70" role="dialog" aria-modal="true" aria-labelledby="win-modal-title">
           <div class="pixel-win max-w-lg w-full max-h-[min(92vh,36rem)] overflow-y-auto rounded-sm bg-slate-900 p-4 sm:p-6 text-left border border-slate-800">
             <p id="win-modal-title" class="text-amber-200 text-[0.55rem] leading-relaxed text-center">MISSION COMPLETE!</p>
-            <p class="mt-2 text-[0.4rem] text-slate-400 leading-relaxed text-center">Discovery Galactica complete.</p>
+            <p class="mt-2 text-[0.4rem] text-slate-400 leading-relaxed text-center">Discovery Galaxy complete.</p>
             <div class="mt-4 pt-4 border-t border-slate-700">
               <p class="text-[0.4rem] text-emerald-400/90 uppercase tracking-wide mb-3 font-sans">Discovery questions</p>
               <ol id="win-discovery-list" class="list-decimal list-inside space-y-2 text-xs sm:text-sm text-slate-200 leading-snug font-sans pl-1"></ol>
@@ -138,7 +138,7 @@
   </div>
 
   <script type="module">
-    /** Mirrors modules/product-connectivity/content.md — Discovery Questions */
+    /** Mirrors modules/product-connectivity/content.md — Discovery Galaxy */
     const DISCOVERY_QUESTIONS = [
       "What are your most critical applications—VoIP, cloud ERP, video conferencing, payment terminals? How much upload traffic do they generate compared to download?",
       "How are your locations connected today—shared broadband, MPLS, Ethernet, or SD-WAN? When does that contract expire?",
@@ -322,6 +322,21 @@
       return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
     }
 
+    /** Hits only count when at least this fraction of the enemy is inside the playfield */
+    const MIN_VISIBLE_TARGET_FRAC = 0.25;
+
+    function enemyVisibleFraction(e) {
+      const ix0 = Math.max(e.x, 0);
+      const iy0 = Math.max(e.y, 0);
+      const ix1 = Math.min(e.x + e.w, W);
+      const iy1 = Math.min(e.y + e.h, H);
+      const iw = Math.max(0, ix1 - ix0);
+      const ih = Math.max(0, iy1 - iy0);
+      const inter = iw * ih;
+      const area = e.w * e.h;
+      return area > 0 ? inter / area : 0;
+    }
+
     function updateBullets() {
       if (pausedForQuestion) return;
       const next = [];
@@ -332,6 +347,7 @@
         let hit = false;
         for (const e of enemies) {
           if (!e.alive) continue;
+          if (enemyVisibleFraction(e) < MIN_VISIBLE_TARGET_FRAC) continue;
           if (rectsOverlap({ x: b.x - 1, y: b.y - 4, w: 3, h: 8 }, e)) {
             e.alive = false;
             hit = true;
@@ -505,7 +521,7 @@
 
       ctx.fillStyle = "#64748b";
       ctx.font = '7px "Press Start 2P", monospace';
-      ctx.fillText("DISCOVERY GALACTICA", 10, 18);
+      ctx.fillText("DISCOVERY GALAXY", 10, 18);
     }
 
     function playAgain() {
