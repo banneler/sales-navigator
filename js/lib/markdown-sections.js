@@ -9,7 +9,7 @@ import {
   buildScenariosAsideHtml,
   buildVideoCarouselHtml,
   buildKnowledgeChecksCarouselHtml,
-  buildRoleplayHtml,
+  buildRoleplayPanelHtml,
 } from './module-enrichment.js';
 import { buildHandoutToolbarHtml } from './handout-links.js';
 import {
@@ -343,12 +343,14 @@ export function renderModuleDocumentHtml(markdownSource) {
   const scenariosAsideInner = buildScenariosAsideHtml(meta);
   const videoCarouselHtml = buildVideoCarouselHtml(meta);
   const knowledgeCarouselHtml = buildKnowledgeChecksCarouselHtml(meta);
-  const roleplayHtml = buildRoleplayHtml(meta);
+  const roleplayPanelHtml = buildRoleplayPanelHtml(meta);
+  const hasRoleplayPanel = Boolean(roleplayPanelHtml);
   const hasRef = Boolean(referenceFilesHtml);
   const hasScenarios = Boolean(scenariosAsideInner);
 
   const handoutToolbar = buildHandoutToolbarHtml(
-    typeof meta.id === 'string' ? meta.id : ''
+    typeof meta.id === 'string' ? meta.id : '',
+    { hasRoleplay: hasRoleplayPanel }
   );
   const headerBlock = buildModuleHeaderBlockHtml(meta, handoutToolbar);
 
@@ -356,8 +358,11 @@ export function renderModuleDocumentHtml(markdownSource) {
       ${fiveMinHtml}
       ${videoCarouselHtml}
       <div class="space-y-6 module-deep-dive">${sectionCardsHtml}</div>
-      ${knowledgeCarouselHtml}
-      ${roleplayHtml}`;
+      ${knowledgeCarouselHtml}`;
+
+  const roleplayShelter = hasRoleplayPanel
+    ? `<div id="module-roleplay-shelter" class="hidden" hidden aria-hidden="true">${roleplayPanelHtml}</div>`
+    : '';
 
   if (hasRef || hasScenarios) {
     let asideColumnHtml = '';
@@ -392,7 +397,8 @@ export function renderModuleDocumentHtml(markdownSource) {
         </div>
         ${asideColumnHtml}
       </div>
-    </div>`;
+    </div>
+    ${roleplayShelter}`;
   }
 
   return `
@@ -400,5 +406,6 @@ export function renderModuleDocumentHtml(markdownSource) {
       ${headerBlock}
       ${mainColumnInner}
     </div>
+    ${roleplayShelter}
   `;
 }

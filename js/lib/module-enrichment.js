@@ -244,18 +244,17 @@ function buildSingleKnowledgeCard(kc, slideIndex) {
         </div>`;
 }
 
-export function buildRoleplayHtml(meta) {
+/**
+ * Inner roleplay card only (for modal or legacy inline). No section wrapper.
+ * @param {Record<string, unknown>} meta
+ * @returns {string}
+ */
+export function buildRoleplayPanelHtml(meta) {
   const rp = meta.roleplay;
   if (!rp || !rp.persona || !rp.scenario) return '';
 
   return `
-      <section class="module-roleplay border-t border-slate-200 pt-8 mt-2" aria-labelledby="rp-heading">
-        <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-4">
-          <h3 id="rp-heading" class="text-lg font-bold text-slate-900">AI Roleplay</h3>
-          <span class="inline-flex items-center rounded-full bg-orange-50 px-2 py-1 text-xs font-medium text-orange-700 ring-1 ring-inset ring-orange-700/10">Beta</span>
-        </div>
-        <div class="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col" style="height: min(500px, 70dvh);" data-roleplay-container data-persona="${escapeHtml(rp.persona)}" data-scenario="${escapeHtml(rp.scenario)}" data-goal="${escapeHtml(rp.goal)}">
-          <!-- Roleplay Header -->
+        <div class="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col w-full" style="height: min(72vh, 720px); max-height: min(72vh, 720px);" data-roleplay-container data-persona="${escapeHtml(rp.persona)}" data-scenario="${escapeHtml(rp.scenario)}" data-goal="${escapeHtml(rp.goal)}">
           <div class="bg-slate-50 border-b border-slate-200 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shrink-0">
             <div>
               <p class="text-sm font-bold text-slate-900">Persona: <span class="font-normal text-slate-700">${escapeHtml(rp.persona)}</span></p>
@@ -266,13 +265,8 @@ export function buildRoleplayHtml(meta) {
               <i class="fa-solid fa-play" aria-hidden="true"></i> Start Roleplay
             </button>
           </div>
-          
-          <!-- Chat Area -->
           <div class="js-rp-chat-area flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50 hidden">
-            <!-- Messages will be injected here -->
           </div>
-          
-          <!-- Input Area -->
           <div class="js-rp-input-area border-t border-slate-200 p-3 bg-white hidden shrink-0">
             <form class="js-rp-form flex gap-2">
               <input type="text" class="js-rp-input flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" placeholder="Type your response..." disabled>
@@ -281,7 +275,20 @@ export function buildRoleplayHtml(meta) {
               </button>
             </form>
           </div>
+        </div>`;
+}
+
+/** @deprecated Prefer {@link buildRoleplayPanelHtml} + modal; kept for callers that need a full section. */
+export function buildRoleplayHtml(meta) {
+  const panel = buildRoleplayPanelHtml(meta);
+  if (!panel) return '';
+  return `
+      <section class="module-roleplay border-t border-slate-200 pt-8 mt-2" aria-labelledby="rp-heading">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-4">
+          <h3 id="rp-heading" class="text-lg font-bold text-slate-900">AI Roleplay</h3>
+          <span class="inline-flex items-center rounded-full bg-orange-50 px-2 py-1 text-xs font-medium text-orange-700 ring-1 ring-inset ring-orange-700/10">Beta</span>
         </div>
+        ${panel}
       </section>`;
 }
 

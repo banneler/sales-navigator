@@ -166,3 +166,90 @@ export function bindRoleplayInteractions(container) {
     fetchAiResponse(text);
   });
 }
+
+/** @type {((e: KeyboardEvent) => void) | null} */
+let roleplayModalEscapeHandler = null;
+
+/**
+ * Wire "Start AI Roleplay" to a glass modal over the module; panel lives in #module-roleplay-shelter until opened.
+ * @param {HTMLElement} container - Module host (#module-host)
+ */
+export function initRoleplayModal(container) {
+  if (!container || container.dataset.roleplayModalWired === '1') return;
+  const openBtn = container.querySelector('[data-roleplay-open]');
+  const shelter = container.querySelector('#module-roleplay-shelter');
+  if (!openBtn || !shelter) return;
+  container.dataset.roleplayModalWired = '1';
+
+  function ensureModal() {
+    let modal = container.querySelector('#module-roleplay-modal');
+    if (modal) return modal;
+
+    modal = document.createElement('div');
+    modal.id = 'module-roleplay-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'module-roleplay-modal-title');
+    modal.className =
+      'fixed inset-0 z-[205] hidden flex items-center justify-center p-4 sm:p-6';
+    modal.innerHTML = `
+      <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-[2px]" data-roleplay-modal-dismiss tabindex="-1" aria-hidden="true"></div>
+      <div class="relative z-10 flex max-h-[min(92vh,920px)] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-white/35 bg-white/75 shadow-2xl ring-1 ring-white/20 backdrop-blur-xl backdrop-saturate-150">
+        <div class="flex shrink-0 flex-wrap items-center justify-between gap-3 border-b border-white/45 bg-white/55 px-4 py-3 backdrop-blur-md">
+          <h2 id="module-roleplay-modal-title" class="text-lg font-bold text-slate-900">
+            AI Roleplay
+            <span class="ml-2 inline-flex items-center rounded-full bg-orange-50 px-2 py-0.5 text-xs font-medium text-orange-700 ring-1 ring-inset ring-orange-700/15">Beta</span>
+          </h2>
+          <button type="button" data-roleplay-modal-dismiss class="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-slate-900 px-3 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400">
+            Close
+          </button>
+        </div>
+        <div id="module-roleplay-modal-body" class="min-h-0 flex-1 overflow-y-auto p-3 sm:p-5"></div>
+      </div>
+    `;
+    container.appendChild(modal);
+    return modal;
+  }
+
+  function closeModal() {
+    const modal = container.querySelector('#module-roleplay-modal');
+    const panel = modal?.querySelector('[data-roleplay-container]');
+    if (modal && panel && shelter) {
+      shelter.appendChild(panel);
+      modal.classList.add('hidden');
+    }
+    document.body.style.overflow = '';
+    if (roleplayModalEscapeHandler) {
+      document.removeEventListener('keydown', roleplayModalEscapeHandler);
+      roleplayModalEscapeHandler = null;
+    }
+  }
+
+  function openModal() {
+    const modal = ensureModal();
+    const bodyEl = modal.querySelector('#module-roleplay-modal-body');
+    const panel = shelter.querySelector('[data-roleplay-container]');
+    if (!panel || !bodyEl) return;
+    bodyEl.appendChild(panel);
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    roleplayModalEscapeHandler = (e) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    document.addEventListener('keydown', roleplayModalEscapeHandler);
+  }
+
+  container.addEventListener('click', (e) => {
+    const t = e.target;
+    if (!(t instanceof Element)) return;
+    if (t.closest('[data-roleplay-open]')) {
+      e.preventDefault();
+      openModal();
+      return;
+    }
+    if (t.closest('[data-roleplay-modal-dismiss]')) {
+      e.preventDefault();
+      closeModal();
+    }
+  });
+}
