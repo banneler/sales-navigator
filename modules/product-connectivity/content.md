@@ -138,7 +138,7 @@ GPC's connectivity stack matches the right access technology to each customer's 
 
 ## Objection Handling
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["Just bump up our shared Internet—that'll fix the jitter."]
 More shared bandwidth doesn't guarantee upload symmetry or latency. Qualify what's actually causing jitter—often it's the shared nature, not raw capacity. DIA is the right answer for VoIP and cloud workloads.
@@ -154,6 +154,16 @@ Acknowledge coverage; then qualify: does payment processing or VoIP tolerate 20�
 
 ::: flip ["We already have MPLS—why change?"]
 Ask when the contract expires and what it costs vs. throughput. SD-WAN over DIA often delivers better performance at lower cost with cloud breakout capability.
+:::
+
+::: flip ["We don't need symmetrical upload."]
+Qualify cloud backup, video, VoIP, and SaaS—many workloads are upload-heavy; discovery before assuming asymmetric is fine.
+
+:::
+
+::: flip ["Fiber build will take too long."]
+Acknowledge calendar reality; contrast with ongoing cost of poor access; phased cutover and project planning where applicable.
+
 :::
 
 </div>

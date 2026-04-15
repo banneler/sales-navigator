@@ -149,7 +149,7 @@ Pick the correct path at each stage so deals move cleanly from approval to reven
 
 ## Common Pitfalls
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["I'll just submit a change order—the customer wants to adjust services."]
 First ask: has billing started? If yes, a change order is not the right tool. Partial in-life changes → MAC; full removal → Disconnect.
@@ -165,6 +165,14 @@ Manual Validation skips automation and routes to every participating department.
 
 ::: flip ["New and Existing services on the same site will just pick the faster path."]
 New + Existing on one site always routes via the New path. Know the rules before building the Solution Site.
+:::
+
+::: flip ["The quote in my email matches intent—that's enough for approval."]
+Reviewers validate **line items, totals, and site-level attachment** on the GPC Solution. Fix the record so quote math and services match what you're asking reviewers to approve.
+:::
+
+::: flip ["Site-level detail is busywork—the headline MRC is what counts."]
+Incomplete Solution Sites—missing services or products on a site—stall approvals and delay projects. Reviewers check site-level completeness, not just the rollup.
 :::
 
 </div>

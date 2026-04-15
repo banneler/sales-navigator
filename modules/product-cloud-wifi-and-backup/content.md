@@ -144,7 +144,7 @@ Three products that extend the value of GPC fiber access: **Cloud Connect** give
 
 ## Objection Handling
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["5G is fast enough to be my primary Internet."]
 Position honestly: wireless is best-effort, not symmetrical, and speeds vary by site. For primary access, fiber is the right answer; 5G backup is the continuity layer.
@@ -164,6 +164,10 @@ The Kajeet Sentinel portal filters non-business traffic during failover; GPC NOC
 
 ::: flip ["5G backup is too expensive for a circuit we almost never use."]
 Frame as insurance: the 5G Backup SKU starts at $68/month—compare to the cost of one four-hour outage for payment processing, patient care, or customer service.
+:::
+
+::: flip ["We only need guest WiFi—corporate can stay on what we have."]
+Split networks are common; still qualify density, security policy, and who owns trouble tickets. Managed WiFi can isolate guest SSIDs while giving you one throat to choke for RF and firmware.
 :::
 
 </div>

@@ -129,7 +129,7 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
 
 ## Objection Handling
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["You all sound the same."]
 Anchor on the layered stack: access → WAN → security → apps as one designed system—then ask what their current provider does when something breaks at 2 a.m.
@@ -145,6 +145,16 @@ Midwest IP reach, local field teams, NOC monitoring, and portfolio breadth—not
 
 ::: flip ["We're not ready for a full solution."]
 Start with access; plant flags for WAN, security, and UC as next conversations once trust is established.
+:::
+
+::: flip ["We only buy on the lowest price."]
+Reframe to **TCO**: downtime, truck rolls, change orders, and ticket volume—cheap access can be expensive to operate.
+
+:::
+
+::: flip ["We'll add security and WAN later."]
+Layered design from day one avoids rip-and-replace; position access + path + policy as one roadmap, even if phases differ.
+
 :::
 
 </div>

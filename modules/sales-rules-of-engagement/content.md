@@ -142,7 +142,7 @@ Strategic and **E-Rate** accounts follow different rules. Know the **idle window
 
 ## Common Pitfalls
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["I emailed them twice—that counts as logged activity."]
 Email in your sent folder is not a Salesforce log. Activity must be logged as a task, call, meeting, or email on the record in Salesforce.
@@ -158,6 +158,14 @@ Unilateral reassignment is a landmine under the ROE. Align with the current owne
 
 ::: flip ["That school district runs the 61/121 rules—I checked."]
 E-Rate and USAC-funded entities follow Strategic-style treatment regardless of whether they appear on the list. Confirm with leadership.
+:::
+
+::: flip ["Assigned inbound lead—I have a couple of weeks before first contact."]
+You have **5 business days** to make first contact **and** log it in Salesforce. That clock is non-negotiable for assigned inbound leads.
+:::
+
+::: flip ["I'll spin up a new account so I don't have to chase the listed owner."]
+Duplicates are the hardest ROE problem to unwind. Search first; if you need access, use the transfer path—never create a parallel account to bypass ownership.
 :::
 
 </div>

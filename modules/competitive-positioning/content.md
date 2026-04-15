@@ -152,7 +152,7 @@ Reference for positioning against acquisition-driven competitors—stability, se
 
 ## Objection Handling
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["The national carrier is cheaper."]
 Tie to TCO: cost of an hour down, support model, redundancy depth, rate stability—not price alone. No verbal exceptions.
@@ -172,6 +172,11 @@ Respond factually: stability, billing continuity, field response—GPC continuit
 
 ::: flip ["I need to see the battle-card numbers."]
 Share collateral through approved channels; verify year/scope before any external citation.
+:::
+
+::: flip ["Fiber is fiber—latency is the same everywhere."]
+Differentiate last mile, routing, peering, and repair SLAs—map to **their** apps and what an hour of downtime costs, not generic speed claims.
+
 :::
 
 </div>

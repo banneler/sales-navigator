@@ -140,7 +140,7 @@ Salesforce is GPC’s **system of record for every deal**—from first contact t
 
 ## Common Pitfalls
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["I'll skip creating the opportunity on conversion—less work."]
 Default is always create the opportunity. Exceptions require manager or admin approval. Skipping on your own causes reporting gaps and approval issues.
@@ -156,6 +156,14 @@ Set Contract Signer when you create the GPC Solution or early in its lifecycle. 
 
 ::: flip ["My signers are saved in a spreadsheet—I'll add them to Salesforce later."]
 DocuSign recipients must be Contacts on the account before sending. Contacts not in Salesforce = envelope can't be sent.
+:::
+
+::: flip ["Close date is flexible—stage and amount are what matter."]
+Stage, amount, and close date should move together and reflect a forecast you'd defend. Stale dates break leadership views and downstream planning.
+:::
+
+::: flip ["I'll run my follow-ups from notes—I'll update Salesforce when the deal heats up."]
+Tasks, list views, and Home dashboards are the hygiene habit—if activity isn't on the record, handoffs and approvals break for everyone who touches the deal after you.
 :::
 
 </div>

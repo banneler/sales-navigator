@@ -138,7 +138,7 @@ GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protecti
 
 ## Objection Handling
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["We manage our own Cisco gear."]
 GPC's fully managed SD-WAN eliminates upfront CapEx and frees your team from network management. A single monthly charge covers install, management, and 24/7 NOC monitoring. Gartner has ranked VMware VeloCloud at the top of the leader quadrant for SD-WAN.
@@ -158,6 +158,10 @@ SD-WAN works over any transport—GPC fiber, cable, DSL, T1, or 4G/5G wireless. 
 
 ::: flip ["The on-demand DDoS is fine—we're not a target."]
 Confirm: on-demand mitigation windows are weekdays 8–17 only. After-hours attacks won't be mitigated until the next business day. If that risk is acceptable, document it; otherwise, align to proactive.
+:::
+
+::: flip ["Is NGFW included in the base SD-WAN SKU?"]
+No—next-gen firewall and IDS/IPS are optional add-ons, not bundled in base VeloCloud. Quote and scope with SE so security expectations match what's on the order.
 :::
 
 </div>
