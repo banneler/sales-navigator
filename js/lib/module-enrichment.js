@@ -70,11 +70,12 @@ export function buildFiveMinuteSummaryHtml(meta) {
   if (typeof five !== 'string' || !five.trim()) return '';
 
   const bullets = extractDashBulletTexts(five);
+  const coffeeIcon = `<span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center text-base" title="Cup of Coffee Summary"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></span>`;
   const headerRow = `
         <div class="flex items-start gap-3">
-          <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-sm" title="About 5 minutes">5m</span>
+          ${coffeeIcon}
           <div class="min-w-0 flex-1">
-            <h3 id="five-min-heading" class="text-lg font-bold text-amber-950 mb-2">5-minute summary</h3>
+            <h3 id="five-min-heading" class="text-lg font-bold text-amber-950 mb-2">Cup of Coffee Summary</h3>
             <p class="text-xs font-medium text-amber-900/70 mb-3">Key takeaways — tap below if you want the full list.</p>
           </div>
         </div>`;
@@ -106,9 +107,9 @@ export function buildFiveMinuteSummaryHtml(meta) {
   return `
       <section class="module-five-min border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm" aria-labelledby="five-min-heading">
         <div class="flex items-start gap-3">
-          <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-sm" title="About 5 minutes">5m</span>
+          ${coffeeIcon}
           <div class="min-w-0 flex-1">
-            <h3 id="five-min-heading" class="text-lg font-bold text-amber-950 mb-2">5-minute summary</h3>
+            <h3 id="five-min-heading" class="text-lg font-bold text-amber-950 mb-2">Cup of Coffee Summary</h3>
             <div class="module-markdown-body text-amber-950/90${compactClass}">${parseMarkdownToSafeHtml(five)}</div>
           </div>
         </div>
@@ -116,7 +117,7 @@ export function buildFiveMinuteSummaryHtml(meta) {
 }
 
 /**
- * Five-minute summary for the module intro gate only: no amber card, no “5m” icon.
+ * Cup of Coffee Summary for the module intro gate only: no amber card, no coffee icon.
  * Full module view still uses {@link buildFiveMinuteSummaryHtml}.
  */
 export function buildFiveMinuteSummaryIntroGateHtml(meta) {
@@ -134,7 +135,7 @@ export function buildFiveMinuteSummaryIntroGateHtml(meta) {
       .join('');
     return `
       <section class="module-five-min-gate" aria-labelledby="five-min-heading-gate">
-        <h3 id="five-min-heading-gate" class="text-lg font-bold text-slate-900 mb-2">5-minute summary</h3>
+        <h3 id="five-min-heading-gate" class="text-lg font-bold text-slate-900 mb-2">Cup of Coffee Summary</h3>
         <p class="text-xs text-slate-500 mb-3">Key takeaways — expand for the full list.</p>
         <div class="grid grid-cols-1 gap-2 mb-2">${chips}</div>
         <details class="group rounded-lg border border-slate-200 bg-white/80">
@@ -150,7 +151,7 @@ export function buildFiveMinuteSummaryIntroGateHtml(meta) {
   const compactClass = bullets.length >= 2 ? ' module-five-min-compact' : '';
   return `
       <section class="module-five-min-gate" aria-labelledby="five-min-heading-gate">
-        <h3 id="five-min-heading-gate" class="text-lg font-bold text-slate-900 mb-2">5-minute summary</h3>
+        <h3 id="five-min-heading-gate" class="text-lg font-bold text-slate-900 mb-2">Cup of Coffee Summary</h3>
         <div class="module-markdown-body text-slate-700${compactClass}">${parseMarkdownToSafeHtml(five)}</div>
       </section>`;
 }

@@ -23,20 +23,21 @@ export function buildHandoutToolbarHtml(moduleId, options = {}) {
   const pdfPath = `handouts/pdf/${encodeURIComponent(id)}.pdf`;
   const pdfName = `Sales-Navigator-handout-${id}.pdf`;
 
-  const roleplayBlock =
-    hasRoleplay &&
-    `
-          <span class="mx-1 hidden h-5 w-px self-center bg-slate-200 sm:inline-block" aria-hidden="true"></span>
+  const roleplayBlock = hasRoleplay
+    ? `
           <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Roleplay</span>
           <button type="button"
             data-roleplay-open
-            class="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-sm transition hover:border-amber-300 hover:bg-amber-50/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">
-            <i class="fa-solid fa-lightbulb text-amber-500" aria-hidden="true"></i>
+            class="inline-flex items-center gap-1.5 rounded-lg border border-orange-600 bg-orange-500 px-3 py-1.5 text-sm font-semibold text-white shadow-md transition hover:bg-orange-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 focus-visible:ring-offset-2">
+            <i class="fa-solid fa-lightbulb text-white/95" aria-hidden="true"></i>
             Start AI Roleplay
-          </button>`;
+          </button>
+          <span class="mx-1 hidden h-5 w-px self-center bg-slate-200 sm:inline-block" aria-hidden="true"></span>`
+    : '';
 
   return `
         <div class="module-handout-toolbar pointer-events-auto flex flex-wrap items-center justify-end gap-2 gap-y-2 shrink-0 sm:pt-0.5" data-module-handout-toolbar>
+          ${roleplayBlock}
           <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Handout</span>
           <button type="button"
             data-handout-preview
@@ -46,7 +47,6 @@ export function buildHandoutToolbarHtml(moduleId, options = {}) {
             <i class="fa-solid fa-file-pdf text-red-500" aria-hidden="true"></i>
             View handout
           </button>
-          ${roleplayBlock || ''}
         </div>`;
 }
 
