@@ -162,16 +162,6 @@ Three products that extend the value of GPC fiber access: **Cloud Connect** give
 
 ---
 
-## Discovery Questions
-
-1. **Which cloud platforms or SaaS apps are most critical to your business—AWS, Azure, O365, Salesforce? How do you reach them today, and where do you feel latency or reliability pain?**
-2. **When your primary Internet circuit went down last—how long were you out, what broke first, and what did that cost the business?**
-3. **Who manages your Wi-Fi today? Do you have separate guest and corporate networks, and are you dealing with any compliance requirements like PCI or HIPAA?**
-4. **How many sites need coverage, and do any have outdoor or high-density requirements that a standard AP count might undersize?**
-5. **Do you have applications—VoIP, payment terminals, patient records—that must stay up even during a fiber outage?**
-
----
-
 ## Objection Handling
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

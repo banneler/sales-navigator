@@ -1828,16 +1828,6 @@ Three products that extend the value of GPC fiber access: **Cloud Connect** give
 
 ---
 
-## Discovery Questions
-
-1. **Which cloud platforms or SaaS apps are most critical to your business—AWS, Azure, O365, Salesforce? How do you reach them today, and where do you feel latency or reliability pain?**
-2. **When your primary Internet circuit went down last—how long were you out, what broke first, and what did that cost the business?**
-3. **Who manages your Wi-Fi today? Do you have separate guest and corporate networks, and are you dealing with any compliance requirements like PCI or HIPAA?**
-4. **How many sites need coverage, and do any have outdoor or high-density requirements that a standard AP count might undersize?**
-5. **Do you have applications—VoIP, payment terminals, patient records—that must stay up even during a fiber outage?**
-
----
-
 ## Objection Handling
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -2315,19 +2305,16 @@ Replace aging PBX with **one cloud stack**: voice, SMS, meetings, omnichannel CC
 
 ---
 
-## Discovery Questions
+## Extended discovery prompts
 
-1. **What phone system are you running today—on-prem PBX, hosted VoIP, or legacy key system? When did it last get a major upgrade, and is it still under support?**
-2. **Do your employees use Microsoft Teams for chat and meetings? Are they expecting to make and receive external calls from within Teams?**
-3. **How do people communicate when they're out of the office—cell phones, call forwarding, or a mobile app? Is that working well?**
-4. **Do you have a contact center or customer service queue? How many agents, what channels (phone, email, chat, SMS), and do you need supervisor monitoring or call recording?**
-5. **Are there compliance requirements for call recording or archiving—legal hold, financial services, healthcare? How long does data need to be retained?**
-6. **Do you need AI call/meeting summaries or supervisor-assist style analytics—who will own adoption and compliance?**
-7. **Where should call and SMS activity land for reporting—CRM, data warehouse, or spreadsheets?** (Uncovers DataHub/analytics and integration conversations.)
-8. **For Teams-heavy users: will they primarily use the Teams desktop app, mobile, or both for business calling and SMS?** (Surfaces embedded-Teams vs mobile gaps.)
-9. **Do you need company-owned SMS on business numbers vs personal SMS—who administers policy and compliance?** (Aligns with company vs personal SMS admin themes.)
-10. **Are you evaluating Mix & Match tiers (Express through Enterprise) or Ascend for Teams rows—who owns the matrix review with procurement?**
-11. **Is this account a renewal or competitive displacement—timing for migration and professional services?** (MSP/VAR “renewal moment” storyline—internal framing.)
+Use these **after** the core five questions (covered in the Discovery Break game above) when the deal needs CRM, analytics, Teams UX, or procurement depth:
+
+1. **Do you need AI call/meeting summaries or supervisor-assist style analytics—who will own adoption and compliance?**
+2. **Where should call and SMS activity land for reporting—CRM, data warehouse, or spreadsheets?** (Uncovers DataHub/analytics and integration conversations.)
+3. **For Teams-heavy users: will they primarily use the Teams desktop app, mobile, or both for business calling and SMS?** (Surfaces embedded-Teams vs mobile gaps.)
+4. **Do you need company-owned SMS on business numbers vs personal SMS—who administers policy and compliance?** (Aligns with company vs personal SMS admin themes.)
+5. **Are you evaluating Mix & Match tiers (Express through Enterprise) or Ascend for Teams rows—who owns the matrix review with procurement?**
+6. **Is this account a renewal or competitive displacement—timing for migration and professional services?** (MSP/VAR “renewal moment” storyline—internal framing.)
 
 ---
 
@@ -2687,11 +2674,10 @@ title: "Account Based Marketing"
 summary: "C-level targeting. 90-day sprints. Marketing air cover."
 sensitivity: "internal"
 five_minute_summary: |
-
-- **Purpose:** Coordinate sales prospecting and marketing so executive targets see a coherent story over ninety days—not random one-off touches.
-- **Sales lane:** Eighteen sequenced touches across three months (intro through final call), mixing email, phone, LinkedIn, and optional field activity.
-- **Marketing lane:** Month-by-month air cover (awareness, validation, retargeting) that reinforces the same narrative.
-- **Systems:** Touches are designed to live in **Constellation-CRM**; use the Gantt below as the source-of-truth visual when coaching reps or planning campaigns.
+  - **Purpose:** Coordinate sales prospecting and marketing so executive targets see a coherent story over ninety days—not random one-off touches.
+  - **Sales lane:** Eighteen sequenced touches across three months (intro through final call), mixing email, phone, LinkedIn, and optional field activity.
+  - **Marketing lane:** Month-by-month air cover (awareness, validation, retargeting) that reinforces the same narrative.
+  - **Systems:** Touches are designed to live in **Constellation-CRM**; use the Gantt below as the source-of-truth visual when coaching reps or planning campaigns.
 
 knowledge_checks:
 
