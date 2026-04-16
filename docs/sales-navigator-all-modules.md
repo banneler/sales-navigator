@@ -382,7 +382,7 @@ The Rules of Engagement exist for one reason: to protect everyone’s pipeline a
 
 **The Core Mandates**
 
-- **Search before you create:** One entity, one account. Duplicates are a nightmare to untangle and lead to split commissions.
+- **Search before you create:** One entity, one account. Duplicates are a nightmare to untangle and create ownership disputes.
 - **Log it or lose it:** Tasks, calls, meetings, or emails must live on the Salesforce record. Your Outlook Sent folder is irrelevant in an ownership dispute.
 - **Transfer through leadership:** Never reassign an account unilaterally. It's the fastest way to lose trust with your team.
 
@@ -392,7 +392,7 @@ Strategic and USAC accounts are different beasts entirely. Know the idle windows
 
 ## Key Guidelines
 
-1. **Search before creating:** One entity, one account. Duplicates are a nightmare to untangle and lead to split commissions. Always search Salesforce before adding records.
+1. **Search before creating:** One entity, one account. Duplicates are a nightmare to untangle and create ownership disputes. Always search Salesforce before adding records.
 2. **Log it or lose it:** Tasks, calls, meetings, or emails must live on the Salesforce record. Your Outlook Sent folder does not count in an ownership dispute.
 3. **Respect idle windows:** Prospect accounts open after **61+** days of no qualifying logged activity; Customer accounts after **121+**. Even when the window is open, reach the listed owner first—no cowboy grabs.
 4. **Transfer through leadership:** Never reassign an account in Salesforce unilaterally. Talk to the current owner, get alignment, and secure written approval from leadership.
