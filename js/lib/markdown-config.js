@@ -40,7 +40,7 @@ export const MARKDOWN_PURIFY_CONFIG = {
     'height',
     'alt',
   ],
-  ADD_TAGS: ['details', 'summary', 'svg', 'path', 'div', 'iframe', 'button', 'circle', 'img', 'ellipse'],
+  ADD_TAGS: ['details', 'summary', 'svg', 'path', 'div', 'iframe', 'button', 'circle', 'img', 'ellipse', 'span'],
 };
 
 /**
@@ -84,10 +84,10 @@ function buildElevatorShell(floorName, innerHtml) {
     `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block lg:-translate-y-12" aria-hidden="true">` +
       `<div class="relative h-52 w-[7.5rem] -rotate-[2deg] overflow-visible rounded-sm bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 shadow-[0_8px_22px_rgba(15,23,42,0.14),inset_0_1px_0_rgba(255,255,255,0.65)]">` +
         `<div class="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-[42%]">${thumbTackSvg}</div>` +
-        `<div class="flex h-full flex-col items-center justify-center gap-2 px-2.5 py-4 text-center">` +
+        `<div class="flex h-full flex-col items-center justify-center gap-2.5 px-2.5 py-4 text-center">` +
           `<div class="h-9 w-9 rounded-full bg-gradient-to-br from-amber-300 to-orange-400 shadow-[inset_0_2px_4px_rgba(255,255,255,0.45)]"></div>` +
-          `<p class="font-serif text-[0.68rem] font-semibold leading-snug text-amber-950">Glad you are here</p>` +
-          `<p class="text-[0.5rem] font-semibold uppercase tracking-[0.2em] text-orange-800/75">Welcome</p>` +
+          `<p class="font-['Fraunces',Georgia,serif] text-[0.72rem] font-semibold leading-snug text-amber-950 [font-feature-settings:'ss01'_on]">Glad you are here</p>` +
+          `<p class="font-['Fraunces',Georgia,serif] text-[0.52rem] font-semibold uppercase tracking-[0.28em] text-orange-900/80">Welcome</p>` +
         `</div>` +
       `</div>` +
     `</div>`;
@@ -95,10 +95,13 @@ function buildElevatorShell(floorName, innerHtml) {
     `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block lg:-translate-y-12" aria-hidden="true">` +
       `<div class="relative h-52 w-[7.5rem] rotate-[1.5deg] overflow-visible rounded-sm bg-gradient-to-b from-slate-600 via-slate-800 to-slate-950 shadow-[0_10px_26px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.08)]">` +
         `<div class="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-[42%]">${thumbTackSvg}</div>` +
-        `<div class="flex h-full flex-col items-center justify-center gap-2.5 px-2.5 py-3 text-center">` +
-          `<img src="Proposal_Assets/GPC-White-1-1.webp" alt="" width="88" height="28" decoding="async" class="h-6 w-auto max-w-[6rem] object-contain opacity-[0.98]" />` +
-          `<p class="font-serif text-[0.62rem] font-semibold leading-snug text-slate-100">Your success starts here</p>` +
-          `<p class="text-[0.48rem] text-slate-300/95">We are glad you came</p>` +
+        `<div class="flex h-full flex-col items-center justify-center gap-2.5 px-2 py-3 text-center">` +
+          `<div class="flex flex-col items-center gap-0.5 [font-feature-settings:'ss01'_on]">` +
+            `<span class="font-['Fraunces',Georgia,serif] text-[0.78rem] font-semibold leading-tight tracking-[0.04em] text-white">Great Plains</span>` +
+            `<span class="font-['Fraunces',Georgia,serif] text-[0.58rem] font-medium italic leading-tight text-slate-200/95">Communications</span>` +
+          `</div>` +
+          `<p class="font-['Fraunces',Georgia,serif] text-[0.62rem] font-semibold leading-snug text-slate-100">Your success starts here</p>` +
+          `<p class="font-['Fraunces',Georgia,serif] text-[0.5rem] font-medium leading-snug text-slate-300/95">We are glad you came</p>` +
         `</div>` +
       `</div>` +
     `</div>`;
