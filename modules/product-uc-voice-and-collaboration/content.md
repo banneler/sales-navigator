@@ -6,6 +6,12 @@ sensitivity: "public"
 reference_files:
   - label: "Sales Resources (UC, voice, contact center)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+discovery_questions:
+  - "What phone system are you running today—on-prem PBX, hosted VoIP, or legacy key system? When did it last get a major upgrade, and is it still under support?"
+  - "Do your employees use Microsoft Teams for chat and meetings? Are they expecting to make and receive external calls from within Teams?"
+  - "How do people communicate when they're out of the office—cell phones, call forwarding, or a mobile app? Is that working well?"
+  - "Do you have a contact center or customer service queue? How many agents, what channels (phone, email, chat, SMS), and do you need supervisor monitoring or call recording?"
+  - "Are there compliance requirements for call recording or archiving—legal hold, financial services, healthcare? How long does data need to be retained?"
 video_carousel:
   - title: "Premises to UC"
     src: "assets/UC/prem-to-uc.mp4"
@@ -229,6 +235,20 @@ Replace aging PBX with **one cloud stack**: voice, SMS, meetings, omnichannel CC
 ::: accordion UC Platform Brochure
 *Collateral image — coming soon*
 :::
+
+---
+
+## 
+
+<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/brick-breaker-1/index.html?embed=1&module=product-uc-voice-and-collaboration"
+    title="Discovery Break — Brick breaker"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; height: min(95vh, 85rem); min-height: 44rem; background: #f1f5f9;"
+  ></iframe>
+</div>
 
 ---
 

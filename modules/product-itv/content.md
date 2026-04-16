@@ -6,6 +6,12 @@ sensitivity: "internal"
 reference_files:
   - label: "GPC iTV collateral — SharePoint (source of truth)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+discovery_questions:
+  - "What type of business is this, how many screens need TV, and which channels or sports are must-haves for staff or customers?"
+  - "Who provides Internet at each site today—and is it already on GPC fiber or broadband, or still with another carrier?"
+  - "What TV hardware do you have now (smart TVs, boxes, commercial displays)—and are you open to streaming-first delivery or do you expect set-top boxes at some locations?"
+  - "How do you handle lineups, pricing, and packaging today—who signs off before you promise specific channels or rates?"
+  - "What does success look like after install—single bill with connectivity, guest vs staff viewing, and who owns support when something buffers or drops?"
 five_minute_summary: |
   - **What it is:** GPC iTV is a **streaming TV** offer for businesses—popular channels and features such as **Cloud DVR** and **Replay TV**—delivered over the customer’s **existing GPC Internet** connection.
   - **Who it fits:** Positioned as **customizable** for small shops through larger sites; discovery still matters for channel mix, screens, and budget.
@@ -79,6 +85,20 @@ roleplay:
 - **Architecture:** iTV is **streaming TV for business** (channels, **Cloud DVR**, **Replay TV**) over the customer’s **GPC Internet**—qualify access first; don’t sell iTV as carrier-agnostic broadband entertainment.
 - **Footprint:** Collateral spans **small shops to larger sites**; some installs still need **set-top boxes** at a **low monthly rate**—call that out in discovery so expectations match the quote.
 - **Truth sources:** **SharePoint** (and official tools) for **lineups, QR “learn more,” rate cards, and packaging**—this module is enablement, not a second source of record.
+
+---
+
+## 
+
+<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/galactica-1/index.html?embed=1&module=product-itv"
+    title="Discovery Galaxy"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); background: #f1f5f9;"
+  ></iframe>
+</div>
 
 ---
 

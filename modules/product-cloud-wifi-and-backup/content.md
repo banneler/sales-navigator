@@ -6,6 +6,12 @@ sensitivity: "public"
 reference_files:
   - label: "Sales Resources (cloud, Wi‑Fi, backup collateral)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+discovery_questions:
+  - "Which cloud platforms or SaaS apps are most critical to your business—AWS, Azure, O365, Salesforce? How do you reach them today, and where do you feel latency or reliability pain?"
+  - "When your primary Internet circuit went down last—how long were you out, what broke first, and what did that cost the business?"
+  - "Who manages your Wi-Fi today? Do you have separate guest and corporate networks, and are you dealing with any compliance requirements like PCI or HIPAA?"
+  - "How many sites need coverage, and do any have outdoor or high-density requirements that a standard AP count might undersize?"
+  - "Do you have applications—VoIP, payment terminals, patient records—that must stay up even during a fiber outage?"
 five_minute_summary: |
   - **Cloud Connect:** Combine with Managed Ethernet to provide a private, predictable path to cloud providers and SaaS. Always align with an SE on cross-connects and diversity.
   - **Managed Wi-Fi:** We manage the entire lifecycle including security (firewall, IDS/IPS) and network separation. Never quote access point counts before a proper site survey.
@@ -139,6 +145,20 @@ roleplay:
 ::: elevator [Elevator Pitch]
 Three products that extend the value of GPC fiber access: **Cloud Connect** gives SaaS-heavy and cloud-first businesses a private, predictable path to AWS, Azure, Google, and other platforms—no more Internet-only jitter for critical workloads. **Managed Wi-Fi** covers the last ten feet with a fully managed lifecycle (design, install, maintain), guest/corporate segmentation, and integrated firewall/IDS/IPS. **5G Wireless Backup** keeps the business running during fiber outages with automatic failover, automatic fail-back, 24/7 NOC monitoring, and optional battery protection—no manual intervention required.
 :::
+
+---
+
+## 
+
+<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/portfolio-level-1/index.html?embed=1&module=product-cloud-wifi-and-backup"
+    title="Discovery Run — Level 1"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); background: #f1f5f9;"
+  ></iframe>
+</div>
 
 ---
 

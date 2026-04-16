@@ -95,6 +95,8 @@ discovery_questions:
 
 Use `games/galactica-1/index.html` or `games/brick-breaker-1/index.html` instead of `portfolio-level-1` when embedding those templates. The `module=` query parameter is **required** for discovery text to load (`../../modules/<id>/content.md` is fetched from the browser).
 
+**Rotation in this repo (product-family modules):** first embed in the sequence uses **Discovery Run** (`portfolio-level-1`), second **Discovery Galaxy** (`galactica-1`), third **Discovery Break** (`brick-breaker-1`), then repeat for the next three modules—so each game template can appear on multiple modules with different `module=` values.
+
 **Operational notes**
 
 - Serve the app from a **local web server** (same as module `content.md` loading); `file://` may block `fetch`.
