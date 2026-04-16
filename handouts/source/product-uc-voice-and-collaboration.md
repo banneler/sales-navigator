@@ -1,7 +1,5 @@
 # UC, Voice & Collaboration — Handout
 
-<div class="handout-brand"><img src="../assets/gpc-logo.svg" alt="Great Plains Communications" /></div>
-
 *Sales-Navigator · Great Plains Communications*
 
 **Internal pricing books** for UC, Contact Center, and voice—**never email rates from memory**. **Concurrent** licensing, add-on channels, archiving tiers, **bursting**, and PS lines require **AE / pricing desk** alignment.

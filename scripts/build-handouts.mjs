@@ -17,8 +17,6 @@ const root = join(__dirname, '..');
 const sourceDir = join(root, 'handouts/source');
 const pdfDir = join(root, 'handouts/pdf');
 const cssPath = join(root, 'handouts/handout-print.css');
-/** Base styles from md-to-pdf (tables, lists). Loaded first; handout-print.css overrides. */
-const mdToPdfBaseCss = join(root, 'node_modules/md-to-pdf/markdown.css');
 
 await mkdir(pdfDir, { recursive: true });
 
@@ -38,12 +36,11 @@ for (const file of files) {
     { path: src },
     {
       dest,
-      stylesheet: [mdToPdfBaseCss, cssPath],
-      page_media_type: 'print',
+      stylesheet: [cssPath],
       pdf_options: {
         format: 'Letter',
         printBackground: true,
-        margin: { top: '16mm', right: '14mm', bottom: '16mm', left: '14mm' },
+        margin: { top: '18mm', right: '16mm', bottom: '18mm', left: '16mm' },
       },
     }
   );

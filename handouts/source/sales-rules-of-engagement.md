@@ -1,7 +1,5 @@
 # Sales Rules of Engagement — Handout
 
-<div class="handout-brand"><img src="../assets/gpc-logo.svg" alt="Great Plains Communications" /></div>
-
 <div class="handout-meta"><strong>Sales-Navigator</strong> · Great Plains Communications<br><em>Public reference summary — always confirm details in the current ROE PDF and official Strategic list.</em></div>
 
 > **Authoritative source**  

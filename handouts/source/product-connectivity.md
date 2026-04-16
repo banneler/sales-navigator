@@ -1,7 +1,5 @@
 # Connectivity & Access — Handout
 
-<div class="handout-brand"><img src="../assets/gpc-logo.svg" alt="Great Plains Communications" /></div>
-
 *Sales-Navigator · Great Plains Communications*
 
 **Pricing & battle cards** in the training library are **internal reference** until validated through **standard quoting tools** and approvals. **Wave** pricing matrices are **internal**—always align with the **quoting team**.

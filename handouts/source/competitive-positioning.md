@@ -1,7 +1,5 @@
 # Competitive Positioning — Handout
 
-<div class="handout-brand"><img src="../assets/gpc-logo.svg" alt="Great Plains Communications" /></div>
-
 *Sales-Navigator · Great Plains Communications*
 
 **References:** **Product battle cards** and **Competitive battle cards** on **Sales SharePoint → Sales Resources** (anchors in the module). Confirm **currency** of any stat before **external** use.
