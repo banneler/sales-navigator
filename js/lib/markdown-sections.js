@@ -102,7 +102,11 @@ function sectionCardShellClasses(role, useDeepCollapse) {
   }
 }
 
-/** Section roles whose body should span the full card width (no max-w-prose / 65ch cap). */
+/**
+ * Section roles whose body should span the full card width (no max-w-prose / 65ch cap).
+ * Includes `generic`: any `##` title that is not in section-roles.js (e.g. ABM/OBR custom headings)
+ * otherwise stayed at 65ch and looked inset next to charts and wide layouts.
+ */
 const SECTION_BODY_FULL_WIDTH_ROLES = new Set([
   'objections',
   'elevator',
@@ -111,11 +115,11 @@ const SECTION_BODY_FULL_WIDTH_ROLES = new Set([
   'guidelines',
   'pitfalls',
   'deep',
+  'generic',
 ]);
 
 /**
- * Comfortable reading width for long prose; full width for objections grids and for
- * overview / elevator / discovery so they align with the card (same issue as sales-trio tabs).
+ * Default section body uses full card width; narrow `max-w-prose` is not applied (see generic in set above).
  * Headingless sections (`## ` with no title) are full width so embedded components (e.g. elevator) span the card.
  * @param {import('./section-roles.js').SectionRole} role
  * @param {string} [displayTitle]
