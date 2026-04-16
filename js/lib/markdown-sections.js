@@ -110,6 +110,7 @@ const SECTION_BODY_FULL_WIDTH_ROLES = new Set([
   'overview',
   'guidelines',
   'pitfalls',
+  'deep',
 ]);
 
 /**

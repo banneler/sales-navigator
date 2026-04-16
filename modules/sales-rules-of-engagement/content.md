@@ -218,7 +218,6 @@ To move an account from another sales representative:
 2. **Once agreed**, **email your manager and sales leadership** for **approval and transfer** (per ROE).
 
 - **Never** change ownership **unilaterally** in Salesforce to force a deal.
-- **Never** rely on **rumor** or informal agreement in place of that path.
 
 ### When to escalate (ties to the rules above)
 
