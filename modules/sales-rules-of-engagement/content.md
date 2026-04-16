@@ -147,8 +147,6 @@ Strategic and E-Rate accounts are different beasts entirely. Know the idle windo
 
 ## Common Pitfalls
 
-**Landmines (deal-killers)**
-
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["I emailed them twice—that counts as activity."]
@@ -218,21 +216,3 @@ Strategic and E-Rate accounts are different beasts entirely. Know the idle windo
 **Escalation path:**
 
 - ROE doesn't fit the facts; transfer dispute; Strategic or E-Rate boundary; repeat duplicate-account pattern → manager + Salesforce timeline, not Slack polls or side deals
-
-::: accordion ROE Overview Reference
-Rules of engagement at a glance — ownership, idle windows, and escalation paths.
-
-*Collateral image — coming soon*
-:::
-
-::: accordion Activity Tracking in Salesforce
-Logged activity is what counts for idle-window calculations — calls, tasks, meetings, and emails on the record.
-
-*Collateral image — coming soon*
-:::
-
-::: accordion Idle Window Reference
-General account idle windows — 61 days for Prospects, 121 days for Customers.
-
-*Collateral image — coming soon*
-:::
