@@ -83,15 +83,15 @@ function buildElevatorShell(floorName, innerHtml) {
   const posterL =
     `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block lg:-translate-y-12" aria-hidden="true">` +
       `<div class="relative inline-block overflow-visible -rotate-[2.5deg]">` +
-        `<div class="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-[38%]">${thumbTackSvg}</div>` +
-        `<img src="Proposal_Assets/elevator-posters/left-poster.png" alt="" width="300" height="400" decoding="async" class="block h-[18rem] w-[11rem] object-contain object-top shadow-[0_12px_32px_rgba(0,0,0,0.22)] ring-1 ring-slate-900/15" />` +
+        `<div class="pointer-events-none absolute left-1/2 top-2 z-30 -translate-x-1/2">${thumbTackSvg}</div>` +
+        `<img src="Proposal_Assets/elevator-posters/left-poster.png" alt="" width="300" height="400" decoding="async" class="relative z-10 block h-[18rem] w-[11rem] object-contain object-top shadow-[0_22px_50px_rgba(15,23,42,0.45),0_12px_28px_rgba(0,0,0,0.32),0_4px_10px_rgba(0,0,0,0.2)] ring-1 ring-slate-900/15" />` +
       `</div>` +
     `</div>`;
   const posterR =
     `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block lg:-translate-y-12" aria-hidden="true">` +
       `<div class="relative inline-block overflow-visible rotate-[2.5deg]">` +
-        `<div class="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-[38%]">${thumbTackSvg}</div>` +
-        `<img src="Proposal_Assets/elevator-posters/right-poster.png" alt="" width="300" height="400" decoding="async" class="block h-[18rem] w-[11rem] object-contain object-top shadow-[0_12px_32px_rgba(0,0,0,0.22)] ring-1 ring-slate-900/15" />` +
+        `<div class="pointer-events-none absolute left-1/2 top-2 z-30 -translate-x-1/2">${thumbTackSvg}</div>` +
+        `<img src="Proposal_Assets/elevator-posters/right-poster.png" alt="" width="300" height="400" decoding="async" class="relative z-10 block h-[18rem] w-[11rem] object-contain object-top shadow-[0_22px_50px_rgba(15,23,42,0.45),0_12px_28px_rgba(0,0,0,0.32),0_4px_10px_rgba(0,0,0,0.2)] ring-1 ring-slate-900/15" />` +
       `</div>` +
     `</div>`;
   return (
