@@ -16,10 +16,15 @@ h1 {
   font-size: 20pt;
   font-weight: 800;
   color: #0f172a;
-  margin: 0 0 0.5em;
+  margin: 0 0 0.35em;
   padding-bottom: 0.35em;
   border-bottom: 3px solid #ea580c;
   letter-spacing: -0.02em;
+}
+
+/* Tighter stack: title → meta line → first rule block */
+h1 + .handout-meta {
+  margin-top: 0;
 }
 
 h2 {
@@ -83,4 +88,41 @@ hr {
   font-size: 9pt;
   color: #64748b;
   margin-bottom: 1.25em;
+}
+
+/* Tables — reference grids scan well in PDF; use for ROE-style handouts */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.65em 0 1.1em;
+  font-size: 10pt;
+  page-break-inside: avoid;
+}
+
+th,
+td {
+  border: 1px solid #cbd5e1;
+  padding: 0.45em 0.65em;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #f1f5f9;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+tbody tr:nth-child(even) td {
+  background: #fafafa;
+}
+
+/* Optional: small label above a section (use with <p class="handout-kicker">…</p>) */
+.handout-kicker {
+  font-size: 9pt;
+  font-weight: 700;
+  color: #c2410c;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 1.35em 0 0.25em;
 }
