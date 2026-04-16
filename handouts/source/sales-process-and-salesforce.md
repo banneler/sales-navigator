@@ -1,5 +1,7 @@
 # Sales Process & Salesforce — Handout
 
+<div class="handout-brand"><img src="../assets/gpc-logo.svg" alt="Great Plains Communications" /></div>
+
 *Sales-Navigator · Great Plains Communications*
 
 Pair this handout with **Salesforce 101 / 201**, quick references, **GPCU**, and **Teams** channels cited in the official training pack. Video walkthroughs live in the **Salesforce Training Videos** folder—use them after reading PDFs for structured practice.

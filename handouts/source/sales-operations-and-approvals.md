@@ -1,5 +1,7 @@
 # Sales Operations & Approvals — Handout
 
+<div class="handout-brand"><img src="../assets/gpc-logo.svg" alt="Great Plains Communications" /></div>
+
 *Sales-Navigator · Great Plains Communications · Internal playbook*
 
 **Paired references (dates on SharePoint):** Approval Overview & Training Guide; Approval Requirements Matrix; Change Order Process (Sales); Costing Routing Quick Reference; Move-Add-Change Processes; Salesforce Roadmap shared library. Use **Approval History** on the **GPC Solution**—not **OBR** materials—as the system of record for approvals. **OBR** = Operational Business Review readiness (forms/SOP)—account planning with ops leadership, **not** a substitute for Salesforce approval or costing rules.

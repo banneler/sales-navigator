@@ -1,5 +1,7 @@
 # Security & SD-WAN — Handout
 
+<div class="handout-brand"><img src="../assets/gpc-logo.svg" alt="Great Plains Communications" /></div>
+
 *Sales-Navigator · Great Plains Communications*
 
 **Internal fee schedules** for SD-WAN, managed security, and related SKUs are **not customer-facing** until validated with **pricing / SE**. Folder: internal pricing pack (UC/Security/SD-WAN)—see module references.

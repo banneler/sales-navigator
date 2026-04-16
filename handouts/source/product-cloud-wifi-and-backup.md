@@ -1,5 +1,7 @@
 # Cloud, Wi-Fi & Backup — Handout
 
+<div class="handout-brand"><img src="../assets/gpc-logo.svg" alt="Great Plains Communications" /></div>
+
 *Sales-Navigator · Great Plains Communications*
 
 ## Cloud Connect (positioning)
