@@ -325,7 +325,7 @@ export function buildModuleIntroGateHeaderHtml(meta) {
 }
 
 /**
- * Full module document HTML: header; then main column (~70%) with Cup of Coffee Summary, ## sections, knowledge carousel; optional sticky scenarios aside (~30%) when scenarios exist.
+ * Full module document HTML: header; then main column (~70%) with Coffee Summary, ## sections, knowledge carousel; optional sticky scenarios aside (~30%) when scenarios exist.
  * Used by the main app and the admin preview. Returns error markup if front matter is invalid.
  */
 export function renderModuleDocumentHtml(markdownSource) {

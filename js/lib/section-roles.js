@@ -24,7 +24,7 @@ const TITLE_TO_ROLE = new Map(
     'technical deep dive': 'deep',
     'process deep dive': 'deep',
     overview: 'overview',
-    /** Narrative bridge after Cup of Coffee — same layout role as sales Overview tab */
+    /** Narrative bridge after Coffee Summary — same layout role as sales Overview tab */
     'at a glance': 'overview',
     'key guidelines': 'guidelines',
     'common pitfalls': 'pitfalls',

@@ -282,7 +282,7 @@ Qualify **voice vs SMS**. Partner FAQ: **SMS in the Teams mobile app is not avai
 
 ## Technical Deep Dive [deep]
 
-*The five-minute summary above stays light on purpose. This section is for **prep**—SE alignment, objections, and matrices—not a script to read to a buyer.*
+*The Coffee Summary above stays light on purpose. This section is for **prep**—SE alignment, objections, and matrices—not a script to read to a buyer.*
 
 **Partner theme alignment (Intermedia BYOC / IPN / Embedded extracts)**
 

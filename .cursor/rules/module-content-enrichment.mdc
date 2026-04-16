@@ -1,5 +1,5 @@
 ---
-description: Sales-Navigator module YAML — 5-minute summary, knowledge checks, scenarios
+description: Sales-Navigator module YAML — Coffee Summary, knowledge checks, scenarios
 globs: modules/*/content.md
 alwaysApply: false
 ---
@@ -9,10 +9,10 @@ alwaysApply: false
 Each module’s front matter may include (keep `id`, `title`, `summary`, `sensitivity`):
 
 - **`reference_files`**: list of `{ label, sharepoint_url }` for SharePoint docs (open in new tab). Use `reference_files: []` until links exist; empty list shows a placeholder in **Module Reference Files** above **Scenarios**.
-- **`five_minute_summary`**: block scalar (`|`) with short markdown bullets for a ~5-minute read.
+- **`five_minute_summary`**: block scalar (`|`) with short markdown bullets; the app shows this block under the heading **Coffee Summary**.
 - **`knowledge_checks`**: list of objects with `question`, `options` (3 strings), `correct_index` (0-based), `explanation` (plain text).
 - **`scenarios`**: list of objects with `title`, `situation` (`|` markdown), `choices` with `label` and `feedback` (strings; feedback can use light markdown).
 
-Render order: full-width **header** → **5-minute summary** + **`##` section cards** + **knowledge checks** (carousel + score, end of main column, ~70% on large screens) → **Module Reference Files** (top of right rail when `reference_files` is present) + **Scenarios** (scrollable below). Omit `reference_files` entirely to hide the reference block. Scenarios show **progress** (N/M reviewed), **selected-choice styling**, **Feedback** panels, **Reviewed** badge, and an **all complete** banner when every scenario has a choice. Target **~10** `knowledge_checks` per module. Invalid YAML breaks the admin preview and push validation.
+Render order: full-width **header** → **Coffee Summary** + **`##` section cards** + **knowledge checks** (carousel + score, end of main column, ~70% on large screens) → **Module Reference Files** (top of right rail when `reference_files` is present) + **Scenarios** (scrollable below). Omit `reference_files` entirely to hide the reference block. Scenarios show **progress** (N/M reviewed), **selected-choice styling**, **Feedback** panels, **Reviewed** badge, and an **all complete** banner when every scenario has a choice. Target **~10** `knowledge_checks` per module. Invalid YAML breaks the admin preview and push validation.
 
 Module slugs (see `modules-manifest.json`): `sales-rules-of-engagement`, `sales-process-and-salesforce`, `sales-operations-and-approvals`, `portfolio-and-business-capabilities`, `product-connectivity`, `product-security-and-sd-wan`, `product-cloud-wifi-and-backup`, `product-uc-voice-and-collaboration`, `competitive-positioning`.

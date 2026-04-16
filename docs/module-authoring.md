@@ -3,7 +3,7 @@
 ## Standardized Module Structure (Micro-Learning)
 To ensure all modules focus purely on sales execution, follow this strict structure for the main content body (after the YAML frontmatter):
 
-0. **At a glance (product-style modules):** Optional but recommended for **Product** category modules (and similar narrative modules such as Competitive Positioning). Add `## At a glance` immediately after the front matter closing `---` and **before** the elevator block. Write it like a **mini battle card**: concrete **qualifiers, stack order, landmines, handoffs, and proof artifacts** for *this* offer—pulled from the module’s own summary, elevator, and deep content. Do **not** use it to narrate the UI (avoid “read the Cup of Coffee Summary then open the elevator”) unless a single clause ties a specific decision to a bullet. Goal: substance between the summary card and the interactive sections, in the same spirit as the sales-trio **Overview** tab but product-specific.
+0. **At a glance (product-style modules):** Optional but recommended for **Product** category modules (and similar narrative modules such as Competitive Positioning). Add `## At a glance` immediately after the front matter closing `---` and **before** the elevator block. Write it like a **mini battle card**: concrete **qualifiers, stack order, landmines, handoffs, and proof artifacts** for *this* offer—pulled from the module’s own summary, elevator, and deep content. Do **not** use it to narrate the UI (avoid “read the Coffee Summary then open the elevator”) unless a single clause ties a specific decision to a bullet. Goal: substance between the summary card and the interactive sections, in the same spirit as the sales-trio **Overview** tab but product-specific.
 
 1. **Elevator Pitch:** A concise, punchy summary of the product/solution and its core value proposition.
 2. **Discovery Questions:** 3-5 high-impact questions to ask the customer to uncover pain points and qualify the opportunity.
@@ -22,7 +22,7 @@ Append **`[deep]`** to an H2 line to render that section **collapsed by default*
 
 Case-insensitive. The UI shows **Section title** only (marker stripped). **Guardrail:** if the module has **only one** `##`, `[deep]` is ignored so the page never opens empty.
 
-Everything else in the pipeline—five-minute summary, scenarios, knowledge checks, references—is unchanged by `[deep]`.
+Everything else in the pipeline—Coffee Summary, scenarios, knowledge checks, references—is unchanged by `[deep]`.
 
 ## Accordion shortcode (`::: accordion`)
 
