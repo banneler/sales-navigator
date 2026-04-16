@@ -184,9 +184,10 @@
   padding-left: 0.25rem;
 }
 
-/* Coffee Summary: comfortable width + optional two-column bullet list */
+/* Coffee Summary: use full width of main column (prose was 65ch and looked inset) */
 .module-five-min-prose {
-  max-width: 65ch;
+  max-width: none;
+  width: 100%;
 }
 .module-five-min-compact.module-five-min-balanced ul {
   display: grid;
