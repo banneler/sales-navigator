@@ -71,36 +71,6 @@ export function buildFiveMinuteSummaryHtml(meta) {
 
   const bullets = extractDashBulletTexts(five);
   const coffeeIcon = `<span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center text-base" title="Coffee Summary"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></span>`;
-  const headerRow = `
-        <div class="flex w-full min-w-0 items-start gap-3">
-          ${coffeeIcon}
-          <div class="min-w-0 flex-1 w-full">
-            <h3 id="five-min-heading" class="text-lg font-bold text-amber-950 mb-2">Coffee Summary</h3>
-            <p class="text-xs font-medium text-amber-900/70 mb-3">Key takeaways — tap below if you want the full list.</p>
-          </div>
-        </div>`;
-
-  if (bullets.length >= 5) {
-    const top = bullets.slice(0, 3);
-    const previewList = top
-      .map(
-        (t) =>
-          `<li class="leading-snug pl-0.5">${parseMarkdownToSafeHtml(t)}</li>`
-      )
-      .join('');
-    return `
-      <section class="module-five-min w-full border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm" aria-labelledby="five-min-heading">
-        ${headerRow}
-        <ul class="module-five-min-preview-list w-full max-w-none mb-3 list-disc pl-5 space-y-2 text-sm text-amber-950/90 marker:text-amber-600">${previewList}</ul>
-        <details class="module-five-min-details group w-full rounded-lg border border-amber-200/70 bg-white/60">
-          <summary class="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-amber-900 flex items-center gap-2 rounded-lg hover:bg-amber-50/80 [&::-webkit-details-marker]:hidden marker:content-none">
-            <i class="fa-solid fa-chevron-right text-amber-600/80 transition-transform group-open:rotate-90 text-xs" aria-hidden="true"></i>
-            Show all ${bullets.length} points (${bullets.length - 3} more)
-          </summary>
-          <div class="w-full px-4 pb-4 module-markdown-body module-five-min-prose text-amber-950/90 border-t border-amber-200/50 pt-4">${parseMarkdownToSafeHtml(five)}</div>
-        </details>
-      </section>`;
-  }
 
   const compactClass =
     bullets.length >= 2 ? ' module-five-min-compact' : ' module-five-min-prose';
@@ -125,28 +95,6 @@ export function buildFiveMinuteSummaryIntroGateHtml(meta) {
   if (typeof five !== 'string' || !five.trim()) return '';
 
   const bullets = extractDashBulletTexts(five);
-  if (bullets.length >= 5) {
-    const top = bullets.slice(0, 3);
-    const previewList = top
-      .map(
-        (t) =>
-          `<li class="leading-snug">${parseMarkdownToSafeHtml(t)}</li>`
-      )
-      .join('');
-    return `
-      <section class="module-five-min-gate" aria-labelledby="five-min-heading-gate">
-        <h3 id="five-min-heading-gate" class="text-lg font-bold text-slate-900 mb-2">Coffee Summary</h3>
-        <p class="text-xs text-slate-500 mb-3">Key takeaways — expand for the full list.</p>
-        <ul class="module-five-min-preview-list w-full max-w-none mb-2 list-disc pl-5 space-y-2 text-sm text-slate-700">${previewList}</ul>
-        <details class="group rounded-lg border border-slate-200 bg-white/80">
-          <summary class="cursor-pointer list-none px-3 py-2 text-sm font-semibold text-slate-700 flex items-center gap-2 [&::-webkit-details-marker]:hidden marker:content-none">
-            <i class="fa-solid fa-chevron-right text-slate-400 transition-transform group-open:rotate-90 text-xs" aria-hidden="true"></i>
-            All ${bullets.length} points
-          </summary>
-          <div class="px-3 pb-3 module-markdown-body text-slate-700 border-t border-slate-100 pt-3">${parseMarkdownToSafeHtml(five)}</div>
-        </details>
-      </section>`;
-  }
 
   const compactClass = bullets.length >= 2 ? ' module-five-min-compact' : '';
   return `

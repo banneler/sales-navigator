@@ -5,11 +5,10 @@ title: "Account Based Marketing"
 summary: "C-level targeting. 90-day sprints. Marketing air cover."
 sensitivity: "internal"
 five_minute_summary: |
-
-- **Purpose:** Coordinate sales prospecting and marketing so executive targets see a coherent story over ninety days—not random one-off touches.
-- **Sales lane:** Eighteen sequenced touches across three months (intro through final call), mixing email, phone, LinkedIn, and optional field activity.
-- **Marketing lane:** Month-by-month air cover (awareness, validation, retargeting) that reinforces the same narrative.
-- **Systems:** Touches are designed to live in **Constellation-CRM**; use the Gantt below as the source-of-truth visual when coaching reps or planning campaigns.
+  - **Purpose:** Coordinate sales prospecting and marketing so executive targets see a coherent story over ninety days—not random one-off touches.
+  - **Sales lane:** Eighteen sequenced touches across three months (intro through final call), mixing email, phone, LinkedIn, and optional field activity.
+  - **Marketing lane:** Month-by-month air cover (awareness, validation, retargeting) that reinforces the same narrative.
+  - **Systems:** Touches are designed to live in **Constellation-CRM**; use the Gantt below as the source-of-truth visual when coaching reps or planning campaigns.
 
 knowledge_checks:
 

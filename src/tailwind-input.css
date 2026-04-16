@@ -198,15 +198,6 @@
 .module-five-min-compact li {
   margin-bottom: 0.35rem;
 }
-.module-five-min-preview-list li p {
-  margin: 0;
-}
-.module-five-min-preview-list li p + p {
-  margin-top: 0.35rem;
-}
-.module-five-min-details summary {
-  list-style: none;
-}
 
 /* Sales trio tabs */
 @keyframes salesTrioPanelIn {
