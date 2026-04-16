@@ -73,37 +73,14 @@ function buildElevatorShell(floorName, innerHtml) {
     'pointer-events-none absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-white/55 to-transparent';
   const doorSill =
     'pointer-events-none absolute inset-x-0 bottom-0 h-2.5 bg-gradient-to-t from-slate-500/30 to-transparent';
-  /** Hallway posters (lg+): paper sheets; tack absolute; lg:-translate-y raises posters vs elevator */
-  const thumbTackSvg =
-    `<svg class="h-3.5 w-3.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">` +
-      `<ellipse cx="12" cy="7.5" rx="5" ry="4" fill="#b91c1c"/>` +
-      `<ellipse cx="12" cy="7" rx="2.2" ry="1.6" fill="#fecaca"/>` +
-      `<path d="M12 11v9" stroke="#57534e" stroke-width="2" stroke-linecap="round"/>` +
-    `</svg>`;
+  /** Hallway posters (lg+): static artwork in Proposal_Assets/elevator-posters/ */
   const posterL =
     `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block lg:-translate-y-12" aria-hidden="true">` +
-      `<div class="relative h-52 w-[7.5rem] -rotate-[2deg] overflow-visible rounded-sm bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 shadow-[0_8px_22px_rgba(15,23,42,0.14),inset_0_1px_0_rgba(255,255,255,0.65)]">` +
-        `<div class="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-[42%]">${thumbTackSvg}</div>` +
-        `<div class="flex h-full flex-col items-center justify-center gap-2.5 px-2.5 py-4 text-center">` +
-          `<div class="h-9 w-9 rounded-full bg-gradient-to-br from-amber-300 to-orange-400 shadow-[inset_0_2px_4px_rgba(255,255,255,0.45)]"></div>` +
-          `<p class="font-['Fraunces',Georgia,serif] text-[0.72rem] font-semibold leading-snug text-amber-950 [font-feature-settings:'ss01'_on]">Glad you are here</p>` +
-          `<p class="font-['Fraunces',Georgia,serif] text-[0.52rem] font-semibold uppercase tracking-[0.28em] text-orange-900/80">Welcome</p>` +
-        `</div>` +
-      `</div>` +
+      `<img src="Proposal_Assets/elevator-posters/left-poster.png" alt="" width="300" height="400" decoding="async" class="h-52 w-[7.5rem] object-contain object-top rounded-sm shadow-[0_10px_28px_rgba(0,0,0,0.2)] ring-1 ring-slate-900/10" />` +
     `</div>`;
   const posterR =
     `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block lg:-translate-y-12" aria-hidden="true">` +
-      `<div class="relative h-52 w-[7.5rem] rotate-[1.5deg] overflow-visible rounded-sm bg-gradient-to-b from-slate-600 via-slate-800 to-slate-950 shadow-[0_10px_26px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.08)]">` +
-        `<div class="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-[42%]">${thumbTackSvg}</div>` +
-        `<div class="flex h-full flex-col items-center justify-center gap-2.5 px-2 py-3 text-center">` +
-          `<div class="flex flex-col items-center gap-0.5 [font-feature-settings:'ss01'_on]">` +
-            `<span class="font-['Fraunces',Georgia,serif] text-[0.78rem] font-semibold leading-tight tracking-[0.04em] text-white">Great Plains</span>` +
-            `<span class="font-['Fraunces',Georgia,serif] text-[0.58rem] font-medium italic leading-tight text-slate-200/95">Communications</span>` +
-          `</div>` +
-          `<p class="font-['Fraunces',Georgia,serif] text-[0.62rem] font-semibold leading-snug text-slate-100">Your success starts here</p>` +
-          `<p class="font-['Fraunces',Georgia,serif] text-[0.5rem] font-medium leading-snug text-slate-300/95">We are glad you came</p>` +
-        `</div>` +
-      `</div>` +
+      `<img src="Proposal_Assets/elevator-posters/right-poster.png" alt="" width="300" height="400" decoding="async" class="h-52 w-[7.5rem] object-contain object-top rounded-sm shadow-[0_10px_28px_rgba(0,0,0,0.2)] ring-1 ring-slate-900/10" />` +
     `</div>`;
   return (
     `<div class="elevator-reveal-wrap group/elev mb-8 w-full">` +
