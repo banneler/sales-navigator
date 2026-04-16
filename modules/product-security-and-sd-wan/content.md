@@ -1,7 +1,7 @@
 ---
 id: "product-security-and-sd-wan"
 title: "Security & SD-WAN"
-summary: "MNS vs managed firewall; DDoS proactive vs on-demand windows; Velo SD-WAN (≥1 GPC fiber site); SE early; internal pricing only."
+summary: "Managed edge. DDoS mitigation. Multi-site SD-WAN."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (security & SD-WAN collateral)"

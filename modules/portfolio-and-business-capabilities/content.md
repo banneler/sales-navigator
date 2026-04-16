@@ -1,7 +1,7 @@
 ---
 id: "portfolio-and-business-capabilities"
 title: "Portfolio & Business Capabilities"
-summary: "Outcome-led GPC story: layered stack (access → WAN → security → apps); partner + Midwest IP proof; Sales Resources for datasheets."
+summary: "Layered technology. Midwest fiber. Outcome-led selling."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (collateral hub)"

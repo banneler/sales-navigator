@@ -1,7 +1,7 @@
 ---
 id: "sales-process-and-salesforce"
 title: "Sales Process & Salesforce"
-summary: "Leads → convert → opportunities → GPC Solutions → approvals → Conga/DocuSign. SF 101, lead conversion ref, DocuSign integration in Sales Resources."
+summary: "Deal progression. Clean pipelines. DocuSign workflows."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (enablement hub)"

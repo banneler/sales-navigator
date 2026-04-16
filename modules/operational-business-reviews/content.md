@@ -1,7 +1,7 @@
 ---
 id: "operational-business-reviews"
 title: "Operational Business Reviews"
-summary: "The 21-day OBR cycle: recon through print & assembly—with clear swim lanes for account rep, design, data, marketing, and production—plus the reference timeline chart."
+summary: "21-day cycles. Executive alignment. Strategic retention."
 sensitivity: "internal"
 five_minute_summary: |
   - **Cycle length:** Twenty-one days from initiation through materials ready for the OBR meeting.

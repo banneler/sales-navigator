@@ -1,7 +1,7 @@
 ---
 id: "sales-operations-and-approvals"
 title: "Sales Operations & Approvals"
-summary: "GPC Solution approvals (Approval History), pre-billing change orders vs MAC/disconnect post-billing, Solution Site costing routing, manual validation. PDFs in Module Reference Files."
+summary: "Solution approvals. Change orders. Clean revenue."
 sensitivity: "internal"
 reference_files:
   - label: "Approval Overview and Training Guide — 07/25"

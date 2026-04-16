@@ -1,7 +1,7 @@
 ---
 id: "product-itv"
 title: "GPC iTV for Business"
-summary: "Business streaming TV over GPC Internet—popular channels, Cloud DVR, Replay TV, and local/sports lineups—with a single bill alongside connectivity."
+summary: "Business streaming. Cloud DVR. Single-bill simplicity."
 sensitivity: "internal"
 reference_files:
   - label: "GPC iTV collateral — SharePoint (source of truth)"

@@ -1,7 +1,7 @@
 ---
 id: "product-uc-voice-and-collaboration"
 title: "UC, Voice & Collaboration"
-summary: "Cloud UC + Teams positioning; AI, CRM, and CC angles; full partner-theme detail in Technical Deep Dive; SIP/PRI/POTS; module videos; internal pricing only."
+summary: "Cloud voice. Teams integration. Contact center scaling."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (UC, voice, contact center)"

@@ -1,7 +1,7 @@
 ---
 id: "product-connectivity"
 title: "Connectivity & Access"
-summary: "SIA/DIA, Managed Ethernet, Wave, fiber vs satellite framing; internal pricing via quoting only."
+summary: "Dedicated access. Private transport. Fiber vs satellite."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (product collateral)"

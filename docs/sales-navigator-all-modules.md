@@ -501,7 +501,7 @@ Patterns that undermine the ROE:
 ---
 id: "sales-process-and-salesforce"
 title: "Sales Process & Salesforce"
-summary: "Leads → convert → opportunities → GPC Solutions → approvals → Conga/DocuSign. SF 101, lead conversion ref, DocuSign integration in Sales Resources."
+summary: "Deal progression. Clean pipelines. DocuSign workflows."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (enablement hub)"
@@ -727,7 +727,7 @@ Setting up Contract Signer and sending envelopes from Salesforce via Conga.
 ---
 id: "sales-operations-and-approvals"
 title: "Sales Operations & Approvals"
-summary: "GPC Solution approvals (Approval History), pre-billing change orders vs MAC/disconnect post-billing, Solution Site costing routing, manual validation. PDFs in Module Reference Files."
+summary: "Solution approvals. Change orders. Clean revenue."
 sensitivity: "internal"
 reference_files:
   - label: "Approval Overview and Training Guide — 07/25"
@@ -962,7 +962,7 @@ How costing routing selects review paths based on site type, services, and produ
 ---
 id: "portfolio-and-business-capabilities"
 title: "Portfolio & Business Capabilities"
-summary: "Outcome-led GPC story: layered stack (access → WAN → security → apps); partner + Midwest IP proof; Sales Resources for datasheets."
+summary: "Layered technology. Midwest fiber. Outcome-led selling."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (collateral hub)"
@@ -1185,7 +1185,7 @@ Midwest IP, fiber-first access, and Tier-1/IX relationships—anchor the "why GP
 ---
 id: "product-connectivity"
 title: "Connectivity & Access"
-summary: "SIA/DIA, Managed Ethernet, Wave, fiber vs satellite framing; internal pricing via quoting only."
+summary: "Dedicated access. Private transport. Fiber vs satellite."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (product collateral)"
@@ -1428,7 +1428,7 @@ Acknowledge calendar reality; contrast with ongoing cost of poor access; phased 
 ---
 id: "product-security-and-sd-wan"
 title: "Security & SD-WAN"
-summary: "MNS vs managed firewall; DDoS proactive vs on-demand windows; Velo SD-WAN (≥1 GPC fiber site); SE early; internal pricing only."
+summary: "Managed edge. DDoS mitigation. Multi-site SD-WAN."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (security & SD-WAN collateral)"
@@ -1667,7 +1667,7 @@ No—next-gen firewall and IDS/IPS are optional add-ons, not bundled in base Vel
 ---
 id: "product-cloud-wifi-and-backup"
 title: "Cloud, Wi-Fi & Backup"
-summary: "Cloud Connect + Ethernet on-ramp; managed Wi‑Fi (survey before AP counts); 5G backup with honest RF/speed expectations."
+summary: "Cloud on-ramps. Managed Wi-Fi. 5G continuity."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (cloud, Wi‑Fi, backup collateral)"
@@ -1922,7 +1922,7 @@ Split networks are common; still qualify density, security policy, and who owns 
 ---
 id: "product-itv"
 title: "GPC iTV for Business"
-summary: "Business streaming TV over GPC Internet—popular channels, Cloud DVR, Replay TV, and local/sports lineups—with a single bill alongside connectivity."
+summary: "Business streaming. Cloud DVR. Single-bill simplicity."
 sensitivity: "internal"
 reference_files:
   - label: "GPC iTV collateral — SharePoint (source of truth)"
@@ -2064,7 +2064,7 @@ Position it for **mom-and-pop through larger sites**: the story is **customizabl
 ---
 id: "product-uc-voice-and-collaboration"
 title: "UC, Voice & Collaboration"
-summary: "Cloud UC + Teams positioning; AI, CRM, and CC angles; full partner-theme detail in Technical Deep Dive; SIP/PRI/POTS; module videos; internal pricing only."
+summary: "Cloud voice. Teams integration. Contact center scaling."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (UC, voice, contact center)"
@@ -2443,7 +2443,7 @@ Qualify **voice vs SMS**. Partner FAQ: **SMS in the Teams mobile app is not avai
 ---
 id: "competitive-positioning"
 title: "Competitive Positioning"
-summary: "Discovery before claims; map competitor → GPC response with proof; landmines; metro / fiber vs LEO / M&A / tech battle-card patterns; pull SE/PM when depth matters."
+summary: "Discovery first. Business risk. Undeniable proof."
 sensitivity: "public"
 reference_files:
   - label: "Product battle cards"
@@ -2684,7 +2684,7 @@ Key differentiators for Ethernet positioning—use alongside the tech-card patte
 
 id: "account-based-marketing"
 title: "Account Based Marketing"
-summary: "C-level ABM: a disciplined 90-day prospecting sequence—sales touches, marketing air cover, and alignment with Constellation-CRM—plus the reference sequence chart."
+summary: "C-level targeting. 90-day sprints. Marketing air cover."
 sensitivity: "internal"
 five_minute_summary: |
 
@@ -2773,7 +2773,7 @@ Replace placeholder paragraphs above with your **final narrative**, **owner name
 ---
 id: "operational-business-reviews"
 title: "Operational Business Reviews"
-summary: "The 21-day OBR cycle: recon through print & assembly—with clear swim lanes for account rep, design, data, marketing, and production—plus the reference timeline chart."
+summary: "21-day cycles. Executive alignment. Strategic retention."
 sensitivity: "internal"
 five_minute_summary: |
   - **Cycle length:** Twenty-one days from initiation through materials ready for the OBR meeting.

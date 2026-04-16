@@ -1,7 +1,7 @@
 ---
 id: "competitive-positioning"
 title: "Competitive Positioning"
-summary: "Discovery before claims; map competitor → GPC response with proof; landmines; metro / fiber vs LEO / M&A / tech battle-card patterns; pull SE/PM when depth matters."
+summary: "Discovery first. Business risk. Undeniable proof."
 sensitivity: "public"
 reference_files:
   - label: "Product battle cards"

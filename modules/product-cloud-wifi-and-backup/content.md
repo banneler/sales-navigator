@@ -1,7 +1,7 @@
 ---
 id: "product-cloud-wifi-and-backup"
 title: "Cloud, Wi-Fi & Backup"
-summary: "Cloud Connect + Ethernet on-ramp; managed Wi‑Fi (survey before AP counts); 5G backup with honest RF/speed expectations."
+summary: "Cloud on-ramps. Managed Wi-Fi. 5G continuity."
 sensitivity: "public"
 reference_files:
   - label: "Sales Resources (cloud, Wi‑Fi, backup collateral)"

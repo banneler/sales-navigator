@@ -1,5 +1,6 @@
 import { setRouteModuleId } from '../router.js';
 import { getVisitedModuleIds, markModuleVisited } from '../lib/progress-state.js';
+import { modulesInSidebarOrder } from '../lib/module-nav-order.js';
 
 const OVERLAY_ID = 'progress-map-overlay';
 const BASE_NODE_WIDTH = 200;
@@ -75,9 +76,7 @@ export function openProgressMap(manifest, currentModuleId, options = {}) {
   const celebrationOpts = options.celebration || null;
   const isCelebration = !!celebrationOpts;
 
-  const modules = [...(manifest.modules || [])].sort(
-    (a, b) => (a.order || 0) - (b.order || 0)
-  );
+  const modules = modulesInSidebarOrder(manifest);
   const visited = getVisitedModuleIds();
   const total = modules.length;
   const visitedCount = modules.filter((m) => visited.has(m.id)).length;
