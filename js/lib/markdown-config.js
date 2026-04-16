@@ -73,14 +73,26 @@ function buildElevatorShell(floorName, innerHtml) {
     'pointer-events-none absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-white/55 to-transparent';
   const doorSill =
     'pointer-events-none absolute inset-x-0 bottom-0 h-2.5 bg-gradient-to-t from-slate-500/30 to-transparent';
-  /** Hallway posters (lg+): static artwork in Proposal_Assets/elevator-posters/ */
+  /** Hallway posters (lg+): static artwork; tack + slight tilt; sharp corners */
+  const thumbTackSvg =
+    `<svg class="h-4 w-4 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">` +
+      `<ellipse cx="12" cy="7.5" rx="5" ry="4" fill="#b91c1c"/>` +
+      `<ellipse cx="12" cy="7" rx="2.2" ry="1.6" fill="#fecaca"/>` +
+      `<path d="M12 11v9" stroke="#57534e" stroke-width="2" stroke-linecap="round"/>` +
+    `</svg>`;
   const posterL =
     `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block lg:-translate-y-12" aria-hidden="true">` +
-      `<img src="Proposal_Assets/elevator-posters/left-poster.png" alt="" width="300" height="400" decoding="async" class="h-52 w-[7.5rem] object-contain object-top rounded-sm shadow-[0_10px_28px_rgba(0,0,0,0.2)] ring-1 ring-slate-900/10" />` +
+      `<div class="relative inline-block overflow-visible -rotate-[2.5deg]">` +
+        `<div class="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-[38%]">${thumbTackSvg}</div>` +
+        `<img src="Proposal_Assets/elevator-posters/left-poster.png" alt="" width="300" height="400" decoding="async" class="block h-[18rem] w-[11rem] object-contain object-top shadow-[0_12px_32px_rgba(0,0,0,0.22)] ring-1 ring-slate-900/15" />` +
+      `</div>` +
     `</div>`;
   const posterR =
     `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block lg:-translate-y-12" aria-hidden="true">` +
-      `<img src="Proposal_Assets/elevator-posters/right-poster.png" alt="" width="300" height="400" decoding="async" class="h-52 w-[7.5rem] object-contain object-top rounded-sm shadow-[0_10px_28px_rgba(0,0,0,0.2)] ring-1 ring-slate-900/10" />` +
+      `<div class="relative inline-block overflow-visible rotate-[2.5deg]">` +
+        `<div class="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-[38%]">${thumbTackSvg}</div>` +
+        `<img src="Proposal_Assets/elevator-posters/right-poster.png" alt="" width="300" height="400" decoding="async" class="block h-[18rem] w-[11rem] object-contain object-top shadow-[0_12px_32px_rgba(0,0,0,0.22)] ring-1 ring-slate-900/15" />` +
+      `</div>` +
     `</div>`;
   return (
     `<div class="elevator-reveal-wrap group/elev mb-8 w-full">` +
