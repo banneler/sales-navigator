@@ -181,45 +181,56 @@ Strategic and USAC accounts are different beasts entirely. Know the idle windows
 
 ### General guidelines and Salesforce (all reps)
 
-- **Source of truth:** Salesforce is the official system of record and is used to **arbitrate account disputes**.
-- **Before creating accounts or contacts:** Search Salesforce by **address and name** to prevent duplicates. Do **not** open a second account record for an existing entity. Do **not** add a contact whose email already exists on another record—**coordinate with the current account owner**.
-- **Evolving rules:** These rules are designed to cover the **majority of situations (~80%)**. Unique scenarios are handled **case by case** by **sales management**—do not improvise policy outside that path.
+- Salesforce is the official system of record for arbitrating account disputes.
+- Before creating accounts or contacts: search by address and name; do not open a second account for an existing entity; do not add a contact whose email already exists elsewhere without coordinating with that account owner.
+- Most situations (~80%) fit the ROE as written. Unique or unclear cases go to sales management case by case—do not improvise policy on your own.
 
 ### General accounts (non-Strategic)
 
-*Applies to accounts **not** on the official Strategic Accounts list.*
+Applies to accounts not on the official Strategic Accounts list.
 
 | Topic | Rule (per ROE) |
 | --- | --- |
-| **Customer** | With **Customer** status: no **logged activity** for **121+** days → account may be worked by another rep. **Best practice:** communicate with the **current account owner before engaging**, even when the record appears open by the numbers. |
-| **Prospect** | With **Prospect** status: no **logged activity** for **61+** days → account may be worked by another rep. Keep the record updated with **relevant intel** (e.g. construction, contract timing). **Notation alone does not protect an account**—you need **consistent contact** (at minimum about **every 60 days**) alongside current information. |
-| **Inbound leads** | Assigned by **sales or marketing leadership:** initial **contact** must be **made and logged** within **5 business days** or the lead may be **reassigned**. This rule does **not** apply to leads you **self-generate** through prospecting. |
-| **Self-sourced** | **Not** subject to the assigned-inbound 5-business-day clock. |
+| Customer | Customer status, no logged activity for 121+ days: others may work the account. Best practice: talk to the current owner before engaging, even if the record looks open by the numbers. |
+| Prospect | Prospect status, no logged activity for 61+ days: others may work the account. Keep relevant intel on the record (projects, contract timing). Notation alone is not enough—you need consistent contact (about every 60 days minimum) plus current information. |
+| Inbound leads | Assigned by sales or marketing leadership: first contact made and logged within 5 business days, or the lead may be reassigned. Does not apply to self-generated prospecting leads. |
+| Self-sourced | Not subject to the 5-business-day inbound clock. |
 
 ### Strategic accounts
 
-*Applies to the Strategic Accounts team and the **official, named** account list.*
+Applies to the Strategic Accounts team and the official named account list.
 
-- **Protection model:** Accounts on the official Strategic Accounts list are **protected by assignment**, **not** by the general **61/121-day** activity rules above.
-- **Official list:** The list is **dynamic** and changes when leadership updates it. **All changes** are **managed and communicated** by **Sales Managers** and the **VP of Sales**. The authoritative list is **maintained and distributed separately** from the ROE narrative—housed in the **ROE repository** on **Sales SharePoint** (not informal spreadsheets).
+- Listed Strategic accounts are protected by assignment, not by the general 61/121-day rules above.
+- The list is dynamic. Sales Managers and the VP of Sales manage and communicate changes. The official list is maintained separately from this narrative and lives in the ROE repository on Sales SharePoint—not informal spreadsheets.
 
 ### USAC / E-Rate program entities (per ROE)
 
-Entities—including **schools, libraries, and hospitals**—that **currently use or are eligible for** **USAC** and/or **E-Rate** funding are treated as **Strategic Accounts** for ROE purposes **whether or not** they appear on the named list.
+Schools, libraries, hospitals, and similar entities that currently use or are eligible for USAC and/or E-Rate funding are treated as Strategic Accounts for ROE purposes, whether or not they appear on the named list.
 
-- **Documented exception:** **ENA (Education Networks of America)** based in **Indiana** remains with the **Out-State Team** (per ROE).
-- If coverage is unclear, **confirm with leadership**—do **not** apply the casual **61/121** general-account rules by assumption.
+- Exception (per ROE): ENA (Education Networks of America) in Indiana stays with the Out-State Team.
+- If you are unsure whether coverage applies, confirm with leadership—do not assume the casual 61/121 general-account path.
 
 ### Account transfers
 
 To move an account from another sales representative:
 
-1. **Connect with the current owner** and reach agreement on the move.
-2. **Once agreed**, **email your manager and sales leadership** for **approval and transfer** (per ROE).
+1. Connect with the current owner and reach agreement on the move.
+2. Once agreed, email your manager and sales leadership for approval and transfer (per ROE).
 
-- **Never** change ownership **unilaterally** in Salesforce to force a deal.
+Do not change ownership unilaterally in Salesforce to force a deal.
 
-### When to escalate (ties to the rules above)
+### When to escalate
 
-- **Ambiguous or edge-case facts** (~20% of situations), **transfer disputes**, **Strategic vs general vs USAC/E-Rate boundaries**, or **repeat duplicate-account patterns** → work through **sales management** with **Salesforce history** as evidence—not Slack polls or side deals.
-- **Violations** that undermine the ROE: unilateral owner changes; **no logged touch** on **assigned inbound** within **5 business days**; claiming Strategic/USAC coverage without confirming the official list or leadership; using **unofficial** Strategic lists instead of **Sales SharePoint**.
+Use sales management (with Salesforce history as your evidence—not Slack polls or side deals) when:
+
+- The situation is an edge case or does not fit the ROE cleanly (~20% of cases).
+- You have a transfer dispute or unclear ownership.
+- The boundary is unclear: Strategic vs general account, or USAC/E-Rate eligibility vs standard 61/121 rules.
+- You see a repeat duplicate-account pattern.
+
+Patterns that undermine the ROE:
+
+- Changing the account owner in Salesforce without the ROE transfer path.
+- No logged touch on an assigned inbound lead within 5 business days.
+- Claiming Strategic or USAC/E-Rate treatment without confirming against the official list or with leadership.
+- Relying on unofficial Strategic lists instead of the SharePoint ROE repository.
