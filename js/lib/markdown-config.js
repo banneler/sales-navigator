@@ -35,8 +35,12 @@ export const MARKDOWN_PURIFY_CONFIG = {
     'r',
     'cx',
     'cy',
+    'decoding',
+    'width',
+    'height',
+    'alt',
   ],
-  ADD_TAGS: ['details', 'summary', 'svg', 'path', 'div', 'iframe', 'button', 'circle'],
+  ADD_TAGS: ['details', 'summary', 'svg', 'path', 'div', 'iframe', 'button', 'circle', 'img', 'ellipse'],
 };
 
 /**
@@ -69,12 +73,23 @@ function buildElevatorShell(floorName, innerHtml) {
     'pointer-events-none absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-white/55 to-transparent';
   const doorSill =
     'pointer-events-none absolute inset-x-0 bottom-0 h-2.5 bg-gradient-to-t from-slate-500/30 to-transparent';
-  /** Hallway posters (lg+): CSS 3D tilt, no external images—stock-friendly copy */
+  /** Hallway posters (lg+): flat to match head-on elevator; slight Z-rotate, tack, dog-ear */
+  const thumbTackSvg =
+    `<svg class="h-3.5 w-3.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">` +
+      `<ellipse cx="12" cy="7.5" rx="5" ry="4" fill="#b91c1c"/>` +
+      `<ellipse cx="12" cy="7" rx="2.2" ry="1.6" fill="#fecaca"/>` +
+      `<path d="M12 11v9" stroke="#57534e" stroke-width="2" stroke-linecap="round"/>` +
+    `</svg>`;
   const posterL =
     `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block" aria-hidden="true">` +
-      `<div class="relative pl-0.5 [perspective:1100px] [perspective-origin:center_right]">` +
-        `<div class="relative h-52 w-[7.5rem] origin-right overflow-hidden rounded-sm border-[5px] border-amber-950/90 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 shadow-[8px_12px_32px_rgba(0,0,0,0.38),inset_0_1px_0_rgba(255,255,255,0.55)] [transform:rotateY(24deg)] ring-1 ring-black/20">` +
-          `<div class="pointer-events-none absolute inset-y-6 left-1 w-px bg-gradient-to-b from-transparent via-amber-900/20 to-transparent"></div>` +
+      `<div class="relative flex flex-col items-center">` +
+        `<div class="relative z-20 -mb-1.5">${thumbTackSvg}</div>` +
+        `<div class="relative h-52 w-[7.5rem] -rotate-[2.5deg] overflow-visible rounded-sm border-[5px] border-amber-950/90 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 shadow-[0_14px_28px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.55)] ring-1 ring-black/15">` +
+          `<div class="pointer-events-none absolute inset-y-6 left-1 w-px bg-gradient-to-b from-transparent via-amber-900/18 to-transparent"></div>` +
+          `<div class="pointer-events-none absolute bottom-0 right-0 z-10 h-6 w-6 overflow-hidden">` +
+            `<div class="absolute bottom-0 right-0 h-8 w-8 origin-bottom-right rotate-45 translate-x-2 translate-y-2 bg-gradient-to-br from-amber-100/95 to-orange-100/90 shadow-[-2px_-2px_4px_rgba(0,0,0,0.12)] ring-1 ring-amber-950/15"></div>` +
+            `<div class="absolute bottom-1 right-1 h-3 w-3 rounded-br-sm bg-amber-950/08 shadow-inner"></div>` +
+          `</div>` +
           `<div class="flex h-full flex-col items-center justify-center gap-2 px-2.5 py-4 text-center">` +
             `<div class="h-9 w-9 rounded-full bg-gradient-to-br from-amber-300 to-orange-400 shadow-[inset_0_2px_4px_rgba(255,255,255,0.45)] ring-1 ring-amber-700/25"></div>` +
             `<p class="font-serif text-[0.68rem] font-semibold leading-snug text-amber-950">Glad you are here</p>` +
@@ -85,11 +100,18 @@ function buildElevatorShell(floorName, innerHtml) {
     `</div>`;
   const posterR =
     `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block" aria-hidden="true">` +
-      `<div class="relative pr-0.5 [perspective:1100px] [perspective-origin:center_left]">` +
-        `<div class="relative h-52 w-[7.5rem] origin-left overflow-hidden rounded-sm border-[5px] border-amber-950/90 bg-gradient-to-bl from-sky-50 via-indigo-50/90 to-violet-50 shadow-[-8px_12px_32px_rgba(0,0,0,0.38),inset_0_1px_0_rgba(255,255,255,0.55)] [transform:rotateY(-24deg)] ring-1 ring-black/20">` +
+      `<div class="relative flex flex-col items-center">` +
+        `<div class="relative z-20 -mb-1.5">${thumbTackSvg}</div>` +
+        `<div class="relative h-52 w-[7.5rem] rotate-[2deg] overflow-visible rounded-sm border-[5px] border-amber-950/90 bg-gradient-to-bl from-sky-50 via-indigo-50/90 to-violet-50 shadow-[0_14px_28px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.55)] ring-1 ring-black/15">` +
           `<div class="pointer-events-none absolute inset-y-6 right-1 w-px bg-gradient-to-b from-transparent via-indigo-900/15 to-transparent"></div>` +
-          `<div class="flex h-full flex-col items-center justify-center gap-2 px-2.5 py-4 text-center">` +
-            `<div class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-indigo-400/60 bg-white/80 text-[0.6rem] font-bold text-indigo-700 shadow-inner">GPC</div>` +
+          `<div class="pointer-events-none absolute bottom-0 left-0 z-10 h-6 w-6 overflow-hidden">` +
+            `<div class="absolute bottom-0 left-0 h-8 w-8 origin-bottom-left -rotate-45 -translate-x-2 translate-y-2 bg-gradient-to-bl from-sky-100/95 to-indigo-100/90 shadow-[2px_-2px_4px_rgba(0,0,0,0.12)] ring-1 ring-indigo-950/12"></div>` +
+            `<div class="absolute bottom-1 left-1 h-3 w-3 rounded-bl-sm bg-indigo-950/06 shadow-inner"></div>` +
+          `</div>` +
+          `<div class="flex h-full flex-col items-stretch justify-center gap-1.5 px-2 py-3 text-center">` +
+            `<div class="flex items-center justify-center rounded-sm bg-slate-900 px-2 py-2 shadow-inner ring-1 ring-black/20">` +
+              `<img src="Proposal_Assets/GPC-White-1-1.webp" alt="" width="88" height="28" decoding="async" class="h-6 w-auto max-w-[5.5rem] object-contain opacity-[0.98]" />` +
+            `</div>` +
             `<p class="font-serif text-[0.62rem] font-semibold leading-snug text-slate-800">Your success starts here</p>` +
             `<p class="text-[0.48rem] text-slate-600/90">We are glad you came</p>` +
           `</div>` +
@@ -101,7 +123,7 @@ function buildElevatorShell(floorName, innerHtml) {
       `<div class="mb-3 flex justify-center">` +
         `<div class="rounded-md border-2 border-slate-600 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-300 px-5 py-2 font-mono text-[0.7rem] font-bold uppercase leading-tight tracking-[0.18em] text-slate-800 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_4px_14px_rgba(15,23,42,0.35)] ring-1 ring-slate-500/40 transition-all duration-300 group-hover/elev:from-slate-100 group-hover/elev:via-slate-50 group-hover/elev:to-slate-200 group-hover/elev:shadow-[inset_0_1px_0_rgba(255,255,255,0.75),0_6px_18px_rgba(15,23,42,0.4)]">${floorHtml}</div>` +
       `</div>` +
-      `<div class="flex w-full flex-col items-center gap-6 lg:flex-row lg:items-end lg:justify-center lg:gap-3 xl:gap-8">` +
+      `<div class="flex w-full flex-col items-center gap-6 lg:flex-row lg:items-center lg:justify-center lg:gap-3 xl:gap-8">` +
       posterL +
       `<div class="elevator-reveal-card group relative w-full max-w-xl shrink-0 cursor-pointer aspect-square overflow-hidden rounded-xl border-[3px] border-slate-600 bg-gradient-to-b from-slate-600 via-slate-800 to-slate-950 p-2 shadow-[0_8px_32px_rgba(15,23,42,0.45)] ring-1 ring-slate-900/60">` +
         `<div class="relative h-full w-full overflow-hidden rounded-md bg-slate-950 shadow-[inset_0_0_0_1px_rgba(15,23,42,0.9),inset_0_0_28px_rgba(0,0,0,0.55)]">` +
