@@ -256,7 +256,7 @@ const steps = [
 ---
 id: "sales-rules-of-engagement"
 title: "Sales Rules of Engagement"
-summary: "Protect your pipeline: master the idle windows, beat the 5-day inbound clock, and use Salesforce to maintain clear account ownership."
+summary: "Pipeline protection. Idle windows. & Account ownership."
 sensitivity: "public"
 five_minute_summary: |
   **One Source of Truth:** Salesforce isn't just paperwork; it's how you protect your commission. Search before you create. Duplicate accounts cause costly ownership disputes.
