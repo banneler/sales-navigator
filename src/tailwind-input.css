@@ -189,22 +189,19 @@
   max-width: none;
   width: 100%;
 }
-.module-five-min-compact.module-five-min-balanced ul {
-  display: grid;
-  gap: 0.35rem 1.25rem;
-}
-@media (min-width: 640px) {
-  .module-five-min-compact.module-five-min-balanced ul {
-    grid-template-columns: 1fr 1fr;
-  }
+/* Coffee Summary bullets: single column, full width of main column */
+.module-five-min-compact ul {
+  display: block;
+  width: 100%;
+  max-width: none;
 }
 .module-five-min-compact li {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.35rem;
 }
-.module-five-min-chip p {
+.module-five-min-preview-list li p {
   margin: 0;
 }
-.module-five-min-chip p + p {
+.module-five-min-preview-list li p + p {
   margin-top: 0.35rem;
 }
 .module-five-min-details summary {

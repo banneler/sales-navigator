@@ -82,16 +82,16 @@ export function buildFiveMinuteSummaryHtml(meta) {
 
   if (bullets.length >= 5) {
     const top = bullets.slice(0, 3);
-    const chips = top
+    const previewList = top
       .map(
         (t) =>
-          `<div class="module-five-min-chip rounded-xl border border-amber-200/90 bg-white/95 px-4 py-3 text-sm leading-snug text-amber-950 shadow-sm">${parseMarkdownToSafeHtml(t)}</div>`
+          `<li class="leading-snug pl-0.5">${parseMarkdownToSafeHtml(t)}</li>`
       )
       .join('');
     return `
       <section class="module-five-min w-full border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm" aria-labelledby="five-min-heading">
         ${headerRow}
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-2">${chips}</div>
+        <ul class="module-five-min-preview-list w-full max-w-none mb-3 list-disc pl-5 space-y-2 text-sm text-amber-950/90 marker:text-amber-600">${previewList}</ul>
         <details class="module-five-min-details group w-full rounded-lg border border-amber-200/70 bg-white/60">
           <summary class="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-amber-900 flex items-center gap-2 rounded-lg hover:bg-amber-50/80 [&::-webkit-details-marker]:hidden marker:content-none">
             <i class="fa-solid fa-chevron-right text-amber-600/80 transition-transform group-open:rotate-90 text-xs" aria-hidden="true"></i>
@@ -103,7 +103,7 @@ export function buildFiveMinuteSummaryHtml(meta) {
   }
 
   const compactClass =
-    bullets.length >= 2 ? ' module-five-min-compact module-five-min-balanced' : ' module-five-min-prose';
+    bullets.length >= 2 ? ' module-five-min-compact' : ' module-five-min-prose';
   return `
       <section class="module-five-min w-full border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm" aria-labelledby="five-min-heading">
         <div class="flex w-full min-w-0 items-start gap-3">
@@ -127,17 +127,17 @@ export function buildFiveMinuteSummaryIntroGateHtml(meta) {
   const bullets = extractDashBulletTexts(five);
   if (bullets.length >= 5) {
     const top = bullets.slice(0, 3);
-    const chips = top
+    const previewList = top
       .map(
         (t) =>
-          `<div class="rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm leading-snug text-slate-700">${parseMarkdownToSafeHtml(t)}</div>`
+          `<li class="leading-snug">${parseMarkdownToSafeHtml(t)}</li>`
       )
       .join('');
     return `
       <section class="module-five-min-gate" aria-labelledby="five-min-heading-gate">
         <h3 id="five-min-heading-gate" class="text-lg font-bold text-slate-900 mb-2">Coffee Summary</h3>
         <p class="text-xs text-slate-500 mb-3">Key takeaways — expand for the full list.</p>
-        <div class="grid grid-cols-1 gap-2 mb-2">${chips}</div>
+        <ul class="module-five-min-preview-list w-full max-w-none mb-2 list-disc pl-5 space-y-2 text-sm text-slate-700">${previewList}</ul>
         <details class="group rounded-lg border border-slate-200 bg-white/80">
           <summary class="cursor-pointer list-none px-3 py-2 text-sm font-semibold text-slate-700 flex items-center gap-2 [&::-webkit-details-marker]:hidden marker:content-none">
             <i class="fa-solid fa-chevron-right text-slate-400 transition-transform group-open:rotate-90 text-xs" aria-hidden="true"></i>
