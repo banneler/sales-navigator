@@ -261,7 +261,7 @@ sensitivity: "public"
 five_minute_summary: |
   **One Source of Truth:** Salesforce isn't just paperwork; it's how you protect your commission. Search before you create. Duplicate accounts cause costly ownership disputes.
 
-  **Squatter's Rights Don't Exist:** If you aren't working an account, you don't own it. Prospects open up to the floor after 61 days of dead air. Customers at 121. Strategic and E-Rate accounts have their own strict rules—know them.
+  **Squatter's Rights Don't Exist:** If you aren't working an account, you don't own it. Prospects open up to the floor after 61 days of dead air. Customers at 121. Strategic and USAC accounts have their own strict rules—know them.
 
   **The 5-Day Inbound Clock:** Handed a warm inbound lead? You have five business days to make contact and log it in Salesforce. This is non-negotiable. Log it, or lose it.
 
@@ -324,7 +324,7 @@ knowledge_checks:
     correct_index: 0
     explanation: "Align with owner, then written leadership approval."
 
-  - question: "Are E-Rate and USAC-funded entities treated like ordinary general accounts for the 61/121-day activity rules?"
+  - question: "Are USAC-funded entities treated like ordinary general accounts for the 61/121-day activity rules?"
     options:
       - "No; they follow Strategic-style treatment regardless of list inclusion (with noted exceptions)"
       - "Yes; they always follow the same 61/121 rules as any Prospect or Customer"
@@ -351,7 +351,7 @@ knowledge_checks:
 scenarios:
   - title: "The 130-Day Ghost Town"
     situation: |
-      You find a juicy Customer account. It's not Strategic, not E-Rate. The current owner hasn't logged a single activity in 130 days. You want to reach out today. What's your move?
+      You find a juicy Customer account. It's not Strategic, not USAC-funded. The current owner hasn't logged a single activity in 130 days. You want to reach out today. What's your move?
     choices:
       - label: "It's past 121 days. The window is open. Start dialing and emailing immediately."
         feedback: "Rookie move. Yes, the window is technically open, but blasting an email without warning creates internal friction. Reach the listed owner first."
@@ -386,7 +386,7 @@ The Rules of Engagement exist for one reason: to protect everyone’s pipeline a
 - **Log it or lose it:** Tasks, calls, meetings, or emails must live on the Salesforce record. Your Outlook Sent folder is irrelevant in an ownership dispute.
 - **Transfer through leadership:** Never reassign an account unilaterally. It's the fastest way to lose trust with your team.
 
-Strategic and E-Rate accounts are different beasts entirely. Know the idle windows (Prospect **61+** days, Customer **121+** days), keep your activity log bulletproof, and let the data do the talking.
+Strategic and USAC accounts are different beasts entirely. Know the idle windows (Prospect **61+** days, Customer **121+** days), keep your activity log bulletproof, and let the data do the talking.
 
 ---
 
@@ -417,7 +417,7 @@ Strategic and E-Rate accounts are different beasts entirely. Know the idle windo
 :::
 
 ::: flip ["That school district falls under the 61/121 day rules."]
-**The E-Rate Trap:** E-Rate and USAC-funded entities follow Strategic-style treatment, even if they aren't explicitly on the list. Confirm coverage with leadership before assuming they are fair game.
+**The USAC Trap:** USAC-funded entities follow Strategic-style treatment, even if they aren't explicitly on the list. Confirm coverage with leadership before assuming they are fair game.
 :::
 
 ::: flip ["It's an inbound lead—I'll get to it when my week clears up."]
@@ -449,7 +449,7 @@ Strategic and E-Rate accounts are different beasts entirely. Know the idle windo
 - Sales Managers and VP Sales own list changes on official Sales SharePoint
 - Do not apply casual idle-window rules to Strategic accounts
 
-**E-Rate / USAC-funded entities:**
+**USAC-funded entities:**
 
 - Strategic-style treatment regardless of list inclusion
 - Documented exceptions exist (e.g., ENA Indiana → Out-State Team)
@@ -464,13 +464,13 @@ Strategic and E-Rate accounts are different beasts entirely. Know the idle windo
 **Landmines:**
 
 - Unilateral owner changes in Salesforce
-- Rumor-based Strategic or E-Rate ownership claims
+- Rumor-based Strategic or USAC ownership claims
 - "I was busy" with no Salesforce log on assigned inbound
 - Using informal spreadsheets as the Strategic accounts source of truth
 
 **Escalation path:**
 
-- ROE doesn't fit the facts; transfer dispute; Strategic or E-Rate boundary; repeat duplicate-account pattern → manager + Salesforce timeline, not Slack polls or side deals
+- ROE doesn't fit the facts; transfer dispute; Strategic or USAC boundary; repeat duplicate-account pattern → manager + Salesforce timeline, not Slack polls or side deals
 <!-- prettier-ignore-end -->
 
 ---

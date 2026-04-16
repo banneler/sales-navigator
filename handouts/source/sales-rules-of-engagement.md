@@ -24,10 +24,10 @@
 - First **contact** and a **logged touch** in Salesforce within **5 business days**, or the lead may be **reassigned**.
 - That clock is **not** the same rule as **self-sourced** prospecting—do not confuse the two.
 
-## Strategic Accounts & E-Rate / USAC
+## Strategic Accounts & USAC
 
 - **Strategic Accounts** (official list): protected by **assignment**, **not** by the 61/121-day general rules.
-- **E-Rate / USAC-funded entities** are treated as **Strategic** for ROE purposes **even if** not on the named list—**exception:** **ENA (Education Networks of America) in Indiana** stays with the **Out-State Team** per ROE.
+- **USAC-funded entities** are treated as **Strategic** for ROE purposes **even if** not on the named list—**exception:** **ENA (Education Networks of America) in Indiana** stays with the **Out-State Team** per ROE.
 - **Who owns the list:** **Sales Managers** and **VP of Sales**; changes are communicated from the **official Sales SharePoint** ROE materials—**informal lists are not authoritative**.
 
 ## Transfers & edge cases
@@ -42,14 +42,14 @@ Search before create; **one account per entity**; meaningful activity rhythm; ev
 
 ## Scenario cues (training)
 
-- **130+ days** idle, not Strategic, not E-Rate/USAC: still **coordinate with the owner / proper transfer path**—not “start without contacting the incumbent.”
+- **130+ days** idle, not Strategic, not USAC-funded: still **coordinate with the owner / proper transfer path**—not “start without contacting the incumbent.”
 - Marketing lead assigned **Monday**; **following Tuesday** = **six business days** with **no** Salesforce log—may be reassigned; **email alone** ≠ logged activity where ROE requires a logged touch.
 
 ## Knowledge-check anchors
 
 - **5 business days** for assigned inbound first contact + log (vs self-sourced).
 - Strategic list authority: **Sales Managers + VP of Sales**; authoritative list: **Sales SharePoint** per ROE.
-- E-Rate/USAC: Strategic-style treatment; **not** ordinary 61/121.
+- USAC: Strategic-style treatment; **not** ordinary 61/121.
 - Transfers: incumbent + manager + leadership **in writing**.
 
 ---
