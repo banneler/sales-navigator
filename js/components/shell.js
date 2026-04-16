@@ -1,16 +1,7 @@
 import { setRouteModuleId } from '../router.js';
+import { modulesInSidebarOrder } from '../lib/module-nav-order.js';
 
 let manifestData = null;
-
-function byCategory(modules) {
-  const map = new Map();
-  for (const m of modules) {
-    const c = m.category || 'General';
-    if (!map.has(c)) map.set(c, []);
-    map.get(c).push(m);
-  }
-  return map;
-}
 
 /**
  * @param {object} manifest - modules-manifest.json
@@ -18,8 +9,13 @@ function byCategory(modules) {
  */
 export function renderShell(manifest, onSelect) {
   manifestData = manifest;
-  const modules = [...(manifest.modules || [])].sort((a, b) => (a.order || 0) - (b.order || 0));
-  const grouped = byCategory(modules);
+  const flat = modulesInSidebarOrder(manifest);
+  const grouped = new Map();
+  for (const m of flat) {
+    const c = m.category || 'General';
+    if (!grouped.has(c)) grouped.set(c, []);
+    grouped.get(c).push(m);
+  }
 
   const navHtml = [];
   for (const [category, items] of grouped) {

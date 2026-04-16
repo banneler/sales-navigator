@@ -4,6 +4,7 @@ import {
   markModuleCompleted,
 } from '../lib/progress-state.js';
 import { awardXP } from '../lib/gamification.js';
+import { nextModuleInSidebarOrder } from '../lib/module-nav-order.js';
 
 function escapeHtml(s) {
   if (s == null) return '';
@@ -34,11 +35,7 @@ export function mountModuleCompletionBar(container, manifest, moduleId) {
   slot.className =
     'mt-8 pt-6 border-t border-slate-200/90 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4';
 
-  const ordered = [...(manifest.modules || [])].sort(
-    (a, b) => (a.order || 0) - (b.order || 0)
-  );
-  const idx = ordered.findIndex((m) => m.id === moduleId);
-  const next = idx >= 0 && idx < ordered.length - 1 ? ordered[idx + 1] : null;
+  const next = nextModuleInSidebarOrder(manifest, moduleId);
 
   function render() {
     const done = isModuleCompleted(moduleId);
