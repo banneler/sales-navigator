@@ -73,7 +73,7 @@ function buildElevatorShell(floorName, innerHtml) {
     'pointer-events-none absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-white/55 to-transparent';
   const doorSill =
     'pointer-events-none absolute inset-x-0 bottom-0 h-2.5 bg-gradient-to-t from-slate-500/30 to-transparent';
-  /** Hallway posters (lg+): flat to match head-on elevator; slight Z-rotate, tack, dog-ear */
+  /** Hallway posters (lg+): paper sheets, no picture frames; tack absolute for true eye-level flex align; dog-ear on one side only */
   const thumbTackSvg =
     `<svg class="h-3.5 w-3.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">` +
       `<ellipse cx="12" cy="7.5" rx="5" ry="4" fill="#b91c1c"/>` +
@@ -82,39 +82,29 @@ function buildElevatorShell(floorName, innerHtml) {
     `</svg>`;
   const posterL =
     `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block" aria-hidden="true">` +
-      `<div class="relative flex flex-col items-center">` +
-        `<div class="relative z-20 -mb-1.5">${thumbTackSvg}</div>` +
-        `<div class="relative h-52 w-[7.5rem] -rotate-[2.5deg] overflow-visible rounded-sm border-[5px] border-amber-950/90 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 shadow-[0_14px_28px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.55)] ring-1 ring-black/15">` +
-          `<div class="pointer-events-none absolute inset-y-6 left-1 w-px bg-gradient-to-b from-transparent via-amber-900/18 to-transparent"></div>` +
-          `<div class="pointer-events-none absolute bottom-0 right-0 z-10 h-6 w-6 overflow-hidden">` +
-            `<div class="absolute bottom-0 right-0 h-8 w-8 origin-bottom-right rotate-45 translate-x-2 translate-y-2 bg-gradient-to-br from-amber-100/95 to-orange-100/90 shadow-[-2px_-2px_4px_rgba(0,0,0,0.12)] ring-1 ring-amber-950/15"></div>` +
-            `<div class="absolute bottom-1 right-1 h-3 w-3 rounded-br-sm bg-amber-950/08 shadow-inner"></div>` +
-          `</div>` +
-          `<div class="flex h-full flex-col items-center justify-center gap-2 px-2.5 py-4 text-center">` +
-            `<div class="h-9 w-9 rounded-full bg-gradient-to-br from-amber-300 to-orange-400 shadow-[inset_0_2px_4px_rgba(255,255,255,0.45)] ring-1 ring-amber-700/25"></div>` +
-            `<p class="font-serif text-[0.68rem] font-semibold leading-snug text-amber-950">Glad you are here</p>` +
-            `<p class="text-[0.5rem] font-semibold uppercase tracking-[0.2em] text-orange-800/75">Welcome</p>` +
-          `</div>` +
+      `<div class="relative h-52 w-[7.5rem] -rotate-[2deg] overflow-visible rounded-sm bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 shadow-[0_8px_22px_rgba(15,23,42,0.14),inset_0_1px_0_rgba(255,255,255,0.65)]">` +
+        `<div class="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-[42%]">${thumbTackSvg}</div>` +
+        `<div class="pointer-events-none absolute bottom-0 right-0 z-10 h-6 w-6 overflow-hidden">` +
+          `<div class="absolute bottom-0 right-0 h-8 w-8 origin-bottom-right rotate-45 translate-x-2 translate-y-2 bg-gradient-to-br from-amber-100/95 to-orange-100/90 shadow-[-2px_-2px_3px_rgba(0,0,0,0.1)]"></div>` +
+          `<div class="absolute bottom-1 right-1 h-3 w-3 rounded-br-sm bg-amber-900/10 shadow-inner"></div>` +
+        `</div>` +
+        `<div class="flex h-full flex-col items-center justify-center gap-2 px-2.5 py-4 text-center">` +
+          `<div class="h-9 w-9 rounded-full bg-gradient-to-br from-amber-300 to-orange-400 shadow-[inset_0_2px_4px_rgba(255,255,255,0.45)]"></div>` +
+          `<p class="font-serif text-[0.68rem] font-semibold leading-snug text-amber-950">Glad you are here</p>` +
+          `<p class="text-[0.5rem] font-semibold uppercase tracking-[0.2em] text-orange-800/75">Welcome</p>` +
         `</div>` +
       `</div>` +
     `</div>`;
   const posterR =
     `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block" aria-hidden="true">` +
-      `<div class="relative flex flex-col items-center">` +
-        `<div class="relative z-20 -mb-1.5">${thumbTackSvg}</div>` +
-        `<div class="relative h-52 w-[7.5rem] rotate-[2deg] overflow-visible rounded-sm border-[5px] border-amber-950/90 bg-gradient-to-bl from-sky-50 via-indigo-50/90 to-violet-50 shadow-[0_14px_28px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.55)] ring-1 ring-black/15">` +
-          `<div class="pointer-events-none absolute inset-y-6 right-1 w-px bg-gradient-to-b from-transparent via-indigo-900/15 to-transparent"></div>` +
-          `<div class="pointer-events-none absolute bottom-0 left-0 z-10 h-6 w-6 overflow-hidden">` +
-            `<div class="absolute bottom-0 left-0 h-8 w-8 origin-bottom-left -rotate-45 -translate-x-2 translate-y-2 bg-gradient-to-bl from-sky-100/95 to-indigo-100/90 shadow-[2px_-2px_4px_rgba(0,0,0,0.12)] ring-1 ring-indigo-950/12"></div>` +
-            `<div class="absolute bottom-1 left-1 h-3 w-3 rounded-bl-sm bg-indigo-950/06 shadow-inner"></div>` +
+      `<div class="relative h-52 w-[7.5rem] rotate-[1.5deg] overflow-visible rounded-sm bg-gradient-to-bl from-sky-50 via-indigo-50/90 to-violet-50 shadow-[0_8px_22px_rgba(15,23,42,0.14),inset_0_1px_0_rgba(255,255,255,0.65)]">` +
+        `<div class="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-[42%]">${thumbTackSvg}</div>` +
+        `<div class="flex h-full flex-col items-center justify-center gap-2 px-2 py-3 text-center">` +
+          `<div class="inline-flex max-w-[5.75rem] rounded-md bg-slate-800/95 px-2 py-1.5 shadow-sm">` +
+            `<img src="Proposal_Assets/GPC-White-1-1.webp" alt="" width="88" height="28" decoding="async" class="h-5 w-auto max-w-full object-contain opacity-[0.98]" />` +
           `</div>` +
-          `<div class="flex h-full flex-col items-stretch justify-center gap-1.5 px-2 py-3 text-center">` +
-            `<div class="flex items-center justify-center rounded-sm bg-slate-900 px-2 py-2 shadow-inner ring-1 ring-black/20">` +
-              `<img src="Proposal_Assets/GPC-White-1-1.webp" alt="" width="88" height="28" decoding="async" class="h-6 w-auto max-w-[5.5rem] object-contain opacity-[0.98]" />` +
-            `</div>` +
-            `<p class="font-serif text-[0.62rem] font-semibold leading-snug text-slate-800">Your success starts here</p>` +
-            `<p class="text-[0.48rem] text-slate-600/90">We are glad you came</p>` +
-          `</div>` +
+          `<p class="font-serif text-[0.62rem] font-semibold leading-snug text-slate-800">Your success starts here</p>` +
+          `<p class="text-[0.48rem] text-slate-600/90">We are glad you came</p>` +
         `</div>` +
       `</div>` +
     `</div>`;
