@@ -434,8 +434,6 @@ Strategic and USAC accounts are different beasts entirely. Know the idle windows
 
 ## Process Deep Dive [deep]
 
-*This section tracks the official ROE PDF (Revised August 2025). If anything conflicts, the PDF and SharePoint materials win.*
-
 ### General guidelines and Salesforce (all reps)
 
 - **Source of truth:** Salesforce is the official system of record and is used to **arbitrate account disputes**.
