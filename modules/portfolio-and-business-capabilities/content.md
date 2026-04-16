@@ -6,6 +6,12 @@ sensitivity: "public"
 reference_files:
   - label: "Sales Resources (collateral hub)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+discovery_questions:
+  - "How many locations do you have, and how are they connected today—shared Internet, MPLS, Ethernet, or SD-WAN?"
+  - "What are your most critical applications? Are any of them SaaS or cloud-hosted (O365, Salesforce, ERP)?"
+  - "What does an hour of downtime cost your business—and what was your last significant outage?"
+  - "Are you planning any cloud migrations or voice modernization in the next 12–24 months?"
+  - "Who owns network, security, and voice decisions—are those the same team or separate?"
 five_minute_summary: |
   - **The Opening:** Focus on business outcomes and partnership (local support, proactive monitoring, Midwest presence) rather than dumping a list of SKUs.
   - **The GPC Stack:** Position our services as one cohesive system, layering access, WAN, security, and unified communications.
@@ -131,7 +137,7 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
-    src="games/portfolio-level-1/index.html?embed=1"
+    src="games/portfolio-level-1/index.html?embed=1&module=portfolio-and-business-capabilities"
     title="Discovery Run — Level 1"
     loading="lazy"
     sandbox="allow-scripts allow-same-origin"

@@ -6,6 +6,12 @@ sensitivity: "public"
 reference_files:
   - label: "Sales Resources (security & SD-WAN collateral)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+discovery_questions:
+  - "How many locations do you have, and which ones are on GPC fiber vs. other broadband or MPLS?"
+  - "How are those locations connected today—VPN over shared Internet, MPLS, Ethernet? When does that contract expire?"
+  - "What are your most important applications? Do you use SaaS like O365 or Salesforce, and are they hosted on-prem or in the cloud?"
+  - "Have you experienced a security incident, ransomware event, or DDoS attack? Who manages your firewalls today?"
+  - "Do you need always-on DDoS mitigation (proactive) or is business-hours coverage acceptable—and what's the cost of an attack outside those windows?"
 five_minute_summary: |
   - **Managed Security:** We offer FortiGate managed edge firewalls and a broader Managed Network Security (MNS) umbrella that includes SIEM, assessments, and email security.
   - **DDoS Protection:** Be clear on the tiers. Proactive offers 24/7 automatic mitigation, while On-Demand is limited to weekday business hours.
@@ -141,7 +147,7 @@ GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protecti
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
-    src="games/brick-breaker-1/index.html?embed=1"
+    src="games/brick-breaker-1/index.html?embed=1&module=product-security-and-sd-wan"
     title="Discovery Break — Brick breaker"
     loading="lazy"
     sandbox="allow-scripts allow-same-origin"

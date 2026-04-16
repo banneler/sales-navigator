@@ -6,7 +6,7 @@ To ensure all modules focus purely on sales execution, follow this strict struct
 0. **At a glance (product-style modules):** Optional but recommended for **Product** category modules (and similar narrative modules such as Competitive Positioning). Add `## At a glance` immediately after the front matter closing `---` and **before** the elevator block. Write it like a **mini battle card**: concrete **qualifiers, stack order, landmines, handoffs, and proof artifacts** for *this* offer—pulled from the module’s own summary, elevator, and deep content. Do **not** use it to narrate the UI (avoid “read the Coffee Summary then open the elevator”) unless a single clause ties a specific decision to a bullet. Goal: substance between the summary card and the interactive sections, in the same spirit as the sales-trio **Overview** tab but product-specific.
 
 1. **Elevator Pitch:** A concise, punchy summary of the product/solution and its core value proposition.
-2. **Discovery Questions:** 3-5 high-impact questions to ask the customer to uncover pain points and qualify the opportunity.
+2. **Discovery Questions:** 3-5 high-impact questions to ask the customer to uncover pain points and qualify the opportunity. For prose, you can still use a `## Discovery Questions` section in the markdown body where it fits the narrative.
 3. **Objection Handling:** Common customer pushbacks and how to pivot or reframe the conversation.
 4. **Technical Deep Dive `[deep]`:** All technical specifications, speeds, feeds, and granular details must be placed in a collapsed `[deep]` section or an accordion.
 
@@ -68,6 +68,37 @@ Use an **empty `##` line** (`##` plus a space, nothing else) when you want the s
 - The closing line must be exactly `:::` (optional spaces after the third colon only).
 - Do not put `]` inside the floor label if you need a bracket in the title; keep labels short.
 - The H2 opener must include whitespace after `##` (e.g. `## `) so the parser treats it as a heading line.
+
+## Discovery embed games (`discovery_questions` in YAML)
+
+The **Discovery Run** (platformer), **Discovery Galaxy** (shooter), and **Discovery Break** (brick breaker) games load their five in-game prompts from the **host module’s** YAML front matter—not from hardcoded JavaScript.
+
+**Front matter** — add a top-level list with **exactly five** strings (current game mechanics require this count):
+
+```yaml
+discovery_questions:
+  - "First open-ended discovery prompt…"
+  - "…"
+  - "…"
+  - "…"
+  - "Fifth prompt…"
+```
+
+**Iframe** — point the game at your module’s `id` (same value as `id:` in the front matter):
+
+```html
+<iframe
+  src="games/portfolio-level-1/index.html?embed=1&module=your-module-id"
+  …
+></iframe>
+```
+
+Use `games/galactica-1/index.html` or `games/brick-breaker-1/index.html` instead of `portfolio-level-1` when embedding those templates. The `module=` query parameter is **required** for discovery text to load (`../../modules/<id>/content.md` is fetched from the browser).
+
+**Operational notes**
+
+- Serve the app from a **local web server** (same as module `content.md` loading); `file://` may block `fetch`.
+- If the list is missing, not an array, or not exactly five entries, the game shows an error on the start screen and keeps **START** disabled.
 
 ## App behavior (not authoring)
 

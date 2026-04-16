@@ -6,6 +6,12 @@ sensitivity: "public"
 reference_files:
   - label: "Sales Resources (product collateral)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+discovery_questions:
+  - "What are your most critical applications—VoIP, cloud ERP, video conferencing, payment terminals? How much upload traffic do they generate compared to download?"
+  - "How are your locations connected today—shared broadband, MPLS, Ethernet, or SD-WAN? When does that contract expire?"
+  - "Have you experienced jitter, latency spikes, or outages? What broke first, and what did it cost you?"
+  - "Do you need static IPs, diversity (dual-path), or DDoS monitoring as part of your access design?"
+  - "Are any sites data-center or hub locations where high-capacity optical transport between strategic endpoints might be relevant?"
 five_minute_summary: |
   - **Internet Access:** Use SIA for flexible, cost-sensitive shared access. Lead with DIA when the customer needs dedicated symmetrical bandwidth, SLA-grade operations, or stronger DDoS protection.
   - **Private Transport:** Position Managed Ethernet for private Layer 2 site-to-site connectivity. Use Wave for high-capacity Layer 1 optical transport between data centers or hubs.
@@ -141,7 +147,7 @@ GPC's connectivity stack matches the right access technology to each customer's 
 
 <div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
-    src="games/galactica-1/index.html?embed=1"
+    src="games/galactica-1/index.html?embed=1&module=product-connectivity"
     title="Discovery Galaxy"
     loading="lazy"
     sandbox="allow-scripts allow-same-origin"

@@ -144,10 +144,11 @@
           <div class="pixel-win max-w-sm w-full rounded-sm bg-slate-900 p-6 text-center border border-slate-800">
             <p id="start-modal-title" class="text-amber-200 text-[0.5rem] leading-relaxed">DISCOVERY RUN</p>
             <p class="mt-2 text-[0.35rem] text-slate-400 font-sans">Level 1 · Portfolio</p>
+            <p id="discovery-load-msg" class="mt-3 text-xs text-slate-400 font-sans min-h-[1.25rem]"></p>
             <button
               type="button"
               id="start-game-btn"
-              class="mt-6 rounded-lg bg-emerald-600 px-8 py-3 text-sm font-bold text-white shadow-md border-2 border-emerald-800 hover:bg-emerald-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+              class="mt-6 rounded-lg bg-emerald-600 px-8 py-3 text-sm font-bold text-white shadow-md border-2 border-emerald-800 hover:bg-emerald-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 disabled:opacity-50 disabled:pointer-events-none"
             >
               START
             </button>
@@ -226,14 +227,10 @@
   </div>
 
   <script type="module">
-    /** Mirrors modules/portfolio-and-business-capabilities/content.md — Discovery Questions */
-    const DISCOVERY_QUESTIONS = [
-      "How many locations do you have, and how are they connected today—shared Internet, MPLS, Ethernet, or SD-WAN?",
-      "What are your most critical applications? Are any of them SaaS or cloud-hosted (O365, Salesforce, ERP)?",
-      "What does an hour of downtime cost your business—and what was your last significant outage?",
-      "Are you planning any cloud migrations or voice modernization in the next 12–24 months?",
-      "Who owns network, security, and voice decisions—are those the same team or separate?",
-    ];
+    import { loadDiscoveryQuestionsFromModule } from "../_shared/discovery-load.js";
+
+    let discoveryQuestions = [];
+    let coins = [];
 
     const canvas = document.getElementById("game-canvas");
     const ctx = canvas.getContext("2d");
@@ -286,11 +283,16 @@
       { x: 746, y: groundY - 98 - 12, r: 8 },
     ];
 
-    const coins = DISCOVERY_QUESTIONS.map((_, i) => ({
-      id: i,
-      collected: false,
-      ...coinPositions[i],
-    }));
+    function assignCoinsFromQuestions() {
+      coins.length = 0;
+      for (let i = 0; i < discoveryQuestions.length; i++) {
+        coins.push({
+          id: i,
+          collected: false,
+          ...coinPositions[i],
+        });
+      }
+    }
 
     const ENEMY_W = 14;
     const ENEMY_H = 12;
@@ -593,7 +595,7 @@
       if (coins[index].collected) return;
       coins[index].collected = true;
       pausedForQuestion = true;
-      modalTitle.textContent = DISCOVERY_QUESTIONS[index];
+      modalTitle.textContent = discoveryQuestions[index];
       questionModal.classList.remove("hidden");
       updateCoinCount();
     }
@@ -609,7 +611,7 @@
     function showWinModal() {
       const ol = document.getElementById("win-discovery-list");
       ol.replaceChildren();
-      for (const q of DISCOVERY_QUESTIONS) {
+      for (const q of discoveryQuestions) {
         const li = document.createElement("li");
         li.textContent = q;
         ol.appendChild(li);
@@ -835,6 +837,29 @@
     btnQuestionDismiss.addEventListener("click", closeQuestion);
     btnPlayAgain.addEventListener("click", playAgain);
 
+    const discoveryLoadMsg = document.getElementById("discovery-load-msg");
+
+    async function bootDiscoveryQuestions() {
+      discoveryLoadMsg.textContent = "Loading discovery questions…";
+      discoveryLoadMsg.classList.remove("text-red-300");
+      discoveryLoadMsg.classList.add("text-slate-400");
+      btnStartGame.disabled = true;
+      const params = new URLSearchParams(location.search);
+      const r = await loadDiscoveryQuestionsFromModule(params.get("module"));
+      if (!r.ok) {
+        discoveryLoadMsg.textContent = r.message;
+        discoveryLoadMsg.classList.remove("text-slate-400");
+        discoveryLoadMsg.classList.add("text-red-300");
+        return;
+      }
+      discoveryQuestions = r.questions;
+      assignCoinsFromQuestions();
+      discoveryLoadMsg.textContent = "";
+      btnStartGame.disabled = false;
+      updateCoinCount();
+    }
+
+    bootDiscoveryQuestions();
     requestAnimationFrame(gameLoop);
   </script>
 </body>
