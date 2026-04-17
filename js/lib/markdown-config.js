@@ -80,28 +80,32 @@ function buildElevatorShell(floorName, innerHtml) {
       `<ellipse cx="12" cy="7" rx="2.2" ry="1.6" fill="#fecaca"/>` +
       `<path d="M12 11v9" stroke="#57534e" stroke-width="2" stroke-linecap="round"/>` +
     `</svg>`;
+  /** Posters scale up with viewport so lg–xl laptops beside the module sidebar don’t overrun */
+  const posterImgClass =
+    'relative z-10 block h-[10rem] w-[6.25rem] object-contain object-top shadow-[0_22px_50px_rgba(15,23,42,0.45),0_12px_28px_rgba(0,0,0,0.32),0_4px_10px_rgba(0,0,0,0.2)] ring-1 ring-slate-900/15 ' +
+    'lg:h-[11rem] lg:w-[7rem] xl:h-[14rem] xl:w-[8.75rem] 2xl:h-[18rem] 2xl:w-[11rem]';
   const posterL =
-    `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block lg:-translate-y-12" aria-hidden="true">` +
+    `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block lg:-translate-y-8 xl:-translate-y-10 2xl:-translate-y-12" aria-hidden="true">` +
       `<div class="relative inline-block overflow-visible -rotate-[2.5deg]">` +
         `<div class="pointer-events-none absolute left-1/2 top-2 z-30 -translate-x-1/2">${thumbTackSvg}</div>` +
-        `<img src="Proposal_Assets/elevator-posters/left-poster.png" alt="" width="300" height="400" decoding="async" class="relative z-10 block h-[18rem] w-[11rem] object-contain object-top shadow-[0_22px_50px_rgba(15,23,42,0.45),0_12px_28px_rgba(0,0,0,0.32),0_4px_10px_rgba(0,0,0,0.2)] ring-1 ring-slate-900/15" />` +
+        `<img src="Proposal_Assets/elevator-posters/left-poster.png" alt="" width="300" height="400" decoding="async" class="${posterImgClass}" />` +
       `</div>` +
     `</div>`;
   const posterR =
-    `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block lg:-translate-y-12" aria-hidden="true">` +
+    `<div class="elevator-reveal-poster pointer-events-none hidden shrink-0 select-none lg:block lg:-translate-y-8 xl:-translate-y-10 2xl:-translate-y-12" aria-hidden="true">` +
       `<div class="relative inline-block overflow-visible rotate-[2.5deg]">` +
         `<div class="pointer-events-none absolute left-1/2 top-2 z-30 -translate-x-1/2">${thumbTackSvg}</div>` +
-        `<img src="Proposal_Assets/elevator-posters/right-poster.png" alt="" width="300" height="400" decoding="async" class="relative z-10 block h-[18rem] w-[11rem] object-contain object-top shadow-[0_22px_50px_rgba(15,23,42,0.45),0_12px_28px_rgba(0,0,0,0.32),0_4px_10px_rgba(0,0,0,0.2)] ring-1 ring-slate-900/15" />` +
+        `<img src="Proposal_Assets/elevator-posters/right-poster.png" alt="" width="300" height="400" decoding="async" class="${posterImgClass}" />` +
       `</div>` +
     `</div>`;
   return (
     `<div class="elevator-reveal-wrap group/elev mb-8 w-full">` +
-      `<div class="mb-3 flex justify-center">` +
-        `<div class="rounded-md border-2 border-slate-600 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-300 px-5 py-2 font-mono text-[0.7rem] font-bold uppercase leading-tight tracking-[0.18em] text-slate-800 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_4px_14px_rgba(15,23,42,0.35)] ring-1 ring-slate-500/40 transition-all duration-300 group-hover/elev:from-slate-100 group-hover/elev:via-slate-50 group-hover/elev:to-slate-200 group-hover/elev:shadow-[inset_0_1px_0_rgba(255,255,255,0.75),0_6px_18px_rgba(15,23,42,0.4)]">${floorHtml}</div>` +
+      `<div class="mb-3 flex justify-center px-1">` +
+        `<div class="max-w-[min(100%,calc(100vw-2rem))] rounded-md border-2 border-slate-600 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-300 px-3 py-2 font-mono text-[clamp(0.6rem,calc(0.42rem_+_0.9vw),0.7rem)] font-bold uppercase leading-tight tracking-[0.12em] sm:px-5 sm:tracking-[0.18em] text-slate-800 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_4px_14px_rgba(15,23,42,0.35)] ring-1 ring-slate-500/40 transition-all duration-300 group-hover/elev:from-slate-100 group-hover/elev:via-slate-50 group-hover/elev:to-slate-200 group-hover/elev:shadow-[inset_0_1px_0_rgba(255,255,255,0.75),0_6px_18px_rgba(15,23,42,0.4)]">${floorHtml}</div>` +
       `</div>` +
-      `<div class="flex w-full flex-col items-center gap-6 lg:flex-row lg:items-center lg:justify-center lg:gap-3 xl:gap-8">` +
+      `<div class="flex w-full min-w-0 max-w-full flex-col items-center gap-5 sm:gap-6 lg:flex-row lg:items-center lg:justify-center lg:gap-2 xl:gap-4 2xl:gap-8">` +
       posterL +
-      `<div class="elevator-reveal-card group relative w-full max-w-xl shrink-0 cursor-pointer aspect-square overflow-hidden rounded-xl border-[3px] border-slate-600 bg-gradient-to-b from-slate-600 via-slate-800 to-slate-950 p-2 shadow-[0_8px_32px_rgba(15,23,42,0.45)] ring-1 ring-slate-900/60">` +
+      `<div class="elevator-reveal-card group relative w-full max-w-[min(100%,22rem)] shrink min-w-0 cursor-pointer aspect-square overflow-hidden rounded-xl border-[3px] border-slate-600 bg-gradient-to-b from-slate-600 via-slate-800 to-slate-950 p-2 shadow-[0_8px_32px_rgba(15,23,42,0.45)] ring-1 ring-slate-900/60 sm:max-w-[min(100%,24rem)] xl:max-w-lg 2xl:max-w-xl">` +
         `<div class="relative h-full w-full overflow-hidden rounded-md bg-slate-950 shadow-[inset_0_0_0_1px_rgba(15,23,42,0.9),inset_0_0_28px_rgba(0,0,0,0.55)]">` +
           `<div class="js-elevator-pitch module-markdown-body absolute inset-0 z-10 flex flex-col items-center justify-center overflow-y-auto bg-white p-6 text-center text-slate-900 opacity-0 scale-[0.92] transition-[opacity,transform] duration-200 sm:p-10 group-[.is-open]:animate-elevator-reveal group-[.is-open]:opacity-100 [&_p]:text-slate-800 [&_strong]:text-slate-900">${innerHtml}</div>` +
           `<div class="pointer-events-none absolute inset-y-1 left-1/2 z-[26] w-px -translate-x-1/2 bg-slate-950 shadow-[1px_0_0_rgba(255,255,255,0.12),2px_0_4px_rgba(0,0,0,0.5)] transition-opacity duration-300 ease-out group-[.is-open]:opacity-0"></div>` +
