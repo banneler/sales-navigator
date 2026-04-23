@@ -503,6 +503,7 @@ id: "sales-process-and-salesforce"
 title: "Sales Process & Salesforce"
 summary: "Deal progression. Clean pipelines. DocuSign workflows."
 sensitivity: "public"
+sales_trio_guidelines_only: true
 reference_files:
   - label: "Salesforce Roadmap — 2025 training guides (main folder)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=aa3Qzz&siteid=%7B3120FC34%2D7B32%2D4627%2DA6C3%2DDE1832FB7356%7D&webid=%7B1830E200%2D0828%2D45CE%2DB4F7%2D42BEE33B3084%7D&uniqueid=%7BE2E5E4EB%2DEAAF%2D4DEC%2D9003%2DB9CB553BFC5A%7D&FolderCTID=0x012000DFABF9A88316F24FA8D2F7A3EAC4739E&id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29"

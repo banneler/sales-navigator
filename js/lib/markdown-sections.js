@@ -187,6 +187,70 @@ function renderOneSectionCard(markdown, options) {
 }
 
 /**
+ * Sales trio variant: only **Key Guidelines** and **Common Pitfalls** as tabs (no Overview tab, no Process Deep Dive block).
+ * Opt in per module via front matter `sales_trio_guidelines_only: true`.
+ * @param {Array<{ title: string | null; markdown: string }>} sections
+ * @returns {string | null}
+ */
+function tryRenderSalesTrioGuidelinesOnlyLayout(sections) {
+  const parsed = sections.map((s) => {
+    const raw = s.title ?? '';
+    const { displayTitle, requestsDeep } = parseH2DeepMarker(raw);
+    return {
+      markdown: s.markdown,
+      displayTitle,
+      requestsDeep,
+      role: getSectionRole(displayTitle),
+    };
+  });
+  const wanted = parsed.filter((p) => p.role === 'guidelines' || p.role === 'pitfalls');
+  if (
+    wanted.length !== 2 ||
+    wanted[0].role !== 'guidelines' ||
+    wanted[1].role !== 'pitfalls'
+  ) {
+    return null;
+  }
+
+  const panels = wanted.map((sec, i) => {
+    let inner;
+    try {
+      inner = parseMarkdownToSafeHtml(sec.markdown || '');
+    } catch (e) {
+      inner = `<p class="text-red-600">${escapeHtml(e instanceof Error ? e.message : String(e))}</p>`;
+    }
+    const hidden = i === 0 ? '' : ' hidden';
+    const tabId = `sales-trio-tab-${i}`;
+    const panelId = `sales-trio-panel-${i}`;
+    return { inner, hidden, tabId, panelId, label: sec.displayTitle };
+  });
+
+  const tabButtons = panels
+    .map((p, i) => {
+      const selected = i === 0;
+      return `<button type="button" role="tab" id="${p.tabId}" class="js-sales-trio-tab flex-1 min-w-[8rem] px-4 py-3 text-sm font-semibold transition border-b-2 -mb-px focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-orange-400 ${selected ? 'border-orange-500 text-orange-800 bg-white' : 'border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50/80'}" aria-selected="${selected ? 'true' : 'false'}" aria-controls="${p.panelId}" tabindex="${selected ? '0' : '-1'}">${escapeHtml(p.label)}</button>`;
+    })
+    .join('');
+
+  const tabPanels = panels
+    .map(
+      (p) =>
+        `<div role="tabpanel" id="${p.panelId}" class="js-sales-trio-panel module-sales-trio-panel p-6 md:p-8${p.hidden}" aria-labelledby="${p.tabId}"><div class="module-markdown-body module-sales-trio-panel-body w-full max-w-none">${p.inner}</div></div>`
+    )
+    .join('');
+
+  return `
+    <div class="module-sales-trio space-y-6">
+      <div class="module-sales-trio-shell rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden">
+        <div role="tablist" aria-label="Guidelines and pitfalls" class="flex flex-wrap border-b border-slate-200 bg-slate-50/90">
+          ${tabButtons}
+        </div>
+        ${tabPanels}
+      </div>
+    </div>`;
+}
+
+/**
  * Sales trio: first three H2s as tabs, Process Deep Dive stays collapsible.
  * @param {Array<{ title: string | null; markdown: string }>} sections
  * @returns {string | null}
@@ -262,11 +326,16 @@ function tryRenderSalesTrioTabLayout(sections) {
 
 /**
  * @param {Array<{ title: string | null; markdown: string }>} sections
- * @param {{ moduleId?: string }} [opts]
+ * @param {{ moduleId?: string; meta?: Record<string, unknown> }} [opts]
  */
 export function renderSectionsToHtml(sections, opts = {}) {
   const moduleId = opts.moduleId;
+  const meta = opts.meta;
   if (isSalesTrioModule(moduleId)) {
+    if (meta && meta.sales_trio_guidelines_only === true) {
+      const duo = tryRenderSalesTrioGuidelinesOnlyLayout(sections);
+      if (duo) return duo;
+    }
     const trio = tryRenderSalesTrioTabLayout(sections);
     if (trio) return trio;
   }
@@ -351,7 +420,7 @@ export function renderModuleDocumentHtml(markdownSource) {
 
   const sections = splitMarkdownByH2(body || '');
   const moduleId = typeof meta.id === 'string' ? meta.id : '';
-  const sectionCardsHtml = renderSectionsToHtml(sections, { moduleId });
+  const sectionCardsHtml = renderSectionsToHtml(sections, { moduleId, meta });
   const fiveMinHtml = buildFiveMinuteSummaryHtml(meta);
   const yourCoachesHtml = buildYourCoachesHtml(meta);
   const referenceFilesHtml = buildModuleReferenceFilesHtml(meta);
