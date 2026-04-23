@@ -174,6 +174,7 @@ scenarios:
 
 ## Overview
 
+<!--
 ### System of record
 
 Salesforce is GPC’s **system of record for every deal**—from first contact to installed revenue. Keep live opportunities and activity **in Salesforce**, not in email or spreadsheets alone.
@@ -197,6 +198,7 @@ Work the **Coffee Summary** stepper and the **training blocks on this page** in 
 Cutting corners—**no opportunity** on conversion, deleting **Closed/Lost**, a late **Contract Signer**, or signers that only live in a spreadsheet—breaks **approvals**, **billing**, and **commissions**. Clean data in, clean revenue out.
 
 ---
+-->
 
 ## Key Guidelines
 
@@ -242,6 +244,7 @@ Tasks, list views, and Home dashboards are the hygiene habit—if activity isn't
 
 ## Process Deep Dive [deep]
 
+<!--
 **Lifecycle flow:**
 1. **Leads** → Convert when ready to quote. Default: creates account + contact + new opportunity. Exception (skip opportunity): manager or admin only.
 2. **Opportunity:** stages, value, next steps. Closed/Won → projects per site. Closed/Lost → capture why; do not delete.
@@ -292,3 +295,4 @@ Setting up Contract Signer and sending envelopes from Salesforce via Conga.
 
 *Collateral image — coming soon*
 :::
+-->
