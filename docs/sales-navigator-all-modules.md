@@ -2736,41 +2736,39 @@ five_minute_summary: |
   - **Systems:** Touches are designed to live in **Constellation-CRM**; use the Gantt below as the source-of-truth visual when coaching reps or planning campaigns.
 
 knowledge_checks:
-
-- question: "Roughly how long is the C-level ABM sales sequence as shown in the standard Gantt?"
-options:
-  - "90 days (three months of sequenced touches)"
-  - "21 business days"
-  - "One calendar week"
-  correct_index: 0
-  explanation: "The chart is framed as a 90-day sequence with Month 1–3 columns."
-- question: "What is marketing 'air cover' meant to do in this model?"
-options:
-  - "Reinforce awareness and validation while sales runs the touch sequence"
-  - "Replace outbound sales entirely for the quarter"
-  - "Only run after a closed-won deal"
-  correct_index: 0
-  explanation: "Air cover supports the same accounts across months while sales executes touches."
-- question: "Where should reps log and execute the prescribed touches for this program?"
-options:
-  - "Constellation-CRM (per the sales sequence standard)"
-  - "Only in email, with no CRM requirement"
-  - "A separate spreadsheet owned by marketing only"
-  correct_index: 0
-  explanation: "Constellation-CRM is the intended system for this sequence."
+  - question: "Roughly how long is the C-level ABM sales sequence as shown in the standard Gantt?"
+    options:
+      - "90 days (three months of sequenced touches)"
+      - "21 business days"
+      - "One calendar week"
+    correct_index: 0
+    explanation: "The chart is framed as a 90-day sequence with Month 1–3 columns."
+  - question: "What is marketing 'air cover' meant to do in this model?"
+    options:
+      - "Reinforce awareness and validation while sales runs the touch sequence"
+      - "Replace outbound sales entirely for the quarter"
+      - "Only run after a closed-won deal"
+    correct_index: 0
+    explanation: "Air cover supports the same accounts across months while sales executes touches."
+  - question: "Where should reps log and execute the prescribed touches for this program?"
+    options:
+      - "Constellation-CRM (per the sales sequence standard)"
+      - "Only in email, with no CRM requirement"
+      - "A separate spreadsheet owned by marketing only"
+    correct_index: 0
+    explanation: "Constellation-CRM is the intended system for this sequence."
 
 scenarios:
-
-- title: "Skipping ahead in the ABM sequence"
-situation: |
-  A rep wants to jump straight to **meeting ask** in week two because they already know the CTO. Leadership asks whether that aligns with the ABM playbook.
-choices:
-  - label: "Yes—relationships always override the sequence."
-  feedback: "Relationships matter, but the sequence keeps marketing air cover and messaging aligned. Exceptions should be explicit, not silent skips."
-  - label: "Coach them to stay on-sequence unless leadership documents an exception, so air cover and reporting stay intact."
-  feedback: "**Good.** The sequence chart is the shared contract across sales and marketing."
-  - label: "Tell them to restart the sequence from touch one."
-  feedback: "Restarting isn't always required—focus on documented exceptions and alignment with marketing."
+  - title: "Skipping ahead in the ABM sequence"
+    situation: |
+      A rep wants to jump straight to **meeting ask** in week two because they already know the CTO. Leadership asks whether that aligns with the ABM playbook.
+    choices:
+      - label: "Yes—relationships always override the sequence."
+        feedback: "Relationships matter, but the sequence keeps marketing air cover and messaging aligned. Exceptions should be explicit, not silent skips."
+      - label: "Coach them to stay on-sequence unless leadership documents an exception, so air cover and reporting stay intact."
+        feedback: "**Good.** The sequence chart is the shared contract across sales and marketing."
+      - label: "Tell them to restart the sequence from touch one."
+        feedback: "Restarting isn't always required—focus on documented exceptions and alignment with marketing."
 
 ---
 
