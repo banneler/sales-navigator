@@ -66,6 +66,17 @@ function extractDashBulletTexts(md) {
 }
 
 /**
+ * Title-style display: capitalize lowercase letters that start a word (after start / space / hyphen / + / arrow).
+ * Leaves acronyms (e.g. GPC) and numbers unchanged.
+ * @param {string} s
+ */
+function flowDisplayTitle(s) {
+  const t = String(s).trim();
+  if (!t) return t;
+  return t.replace(/(^|[\s\-+→])([a-z])/g, (_, delim, ch) => delim + ch.toUpperCase());
+}
+
+/**
  * Horizontal stepper with chevrons between steps. Optional `five_minute_flow` in module meta.
  * @param {Record<string, unknown>} meta
  * @param {{ introGate?: boolean }} [opts]
@@ -80,33 +91,35 @@ function buildFiveMinuteFlowHtml(meta, opts = {}) {
     typeof flow.aria_label === 'string' && flow.aria_label.trim()
       ? flow.aria_label.trim()
       : 'Onboarding sequence';
-  const aria = escapeHtml(ariaRaw);
+  const aria = escapeHtml(flowDisplayTitle(ariaRaw));
 
   const stepShell = introGate
     ? 'border-slate-200/95 bg-white text-slate-900 ring-slate-900/5'
     : 'border-amber-200/90 bg-white/95 text-amber-950 ring-amber-900/5';
   const capClass = introGate ? 'text-slate-600' : 'text-amber-900/70';
-  const sepClass = introGate ? 'text-slate-400' : 'text-amber-700/60';
+  const sepClass = introGate ? 'text-slate-500' : 'text-amber-800/85';
 
   /** @type {string[]} */
   const stepBlocks = [];
   for (const step of stepsRaw) {
-    const title = typeof step?.title === 'string' ? step.title.trim() : '';
-    if (!title) continue;
-    const caption =
+    const titleRaw = typeof step?.title === 'string' ? step.title.trim() : '';
+    if (!titleRaw) continue;
+    const title = flowDisplayTitle(titleRaw);
+    const captionRaw =
       typeof step?.caption === 'string' && step.caption.trim()
         ? step.caption.trim()
         : '';
+    const caption = captionRaw ? flowDisplayTitle(captionRaw) : '';
     const capHtml = caption
-      ? `<span class="mt-0.5 block text-[11px] font-normal leading-tight ${capClass}">${escapeHtml(caption)}</span>`
+      ? `<span class="mt-0.5 block text-[11px] font-medium leading-tight ${capClass}">${escapeHtml(caption)}</span>`
       : '';
-    stepBlocks.push(`<div role="listitem" class="flex min-w-[4.75rem] shrink-0 flex-col items-center justify-center rounded-lg border px-2.5 py-2 text-center shadow-sm ring-1 sm:min-w-[5.5rem] sm:px-3 ${stepShell}">
-            <span class="text-sm font-semibold">${escapeHtml(title)}</span>${capHtml}
+    stepBlocks.push(`<div role="listitem" class="flex min-w-0 flex-1 flex-col items-center justify-center rounded-lg border px-2 py-2.5 text-center shadow-sm ring-1 sm:px-3 ${stepShell}">
+            <span class="text-sm font-semibold leading-snug">${escapeHtml(title)}</span>${capHtml}
           </div>`);
   }
   if (stepBlocks.length === 0) return '';
 
-  const sep = `<span class="flex shrink-0 items-center px-0.5 sm:px-1 ${sepClass}" aria-hidden="true"><i class="fa-solid fa-chevron-right text-[10px] sm:text-xs" aria-hidden="true"></i></span>`;
+  const sep = `<span class="flex w-6 shrink-0 items-center justify-center sm:w-8 ${sepClass}" aria-hidden="true"><i class="fa-solid fa-chevron-right text-sm font-semibold sm:text-base" aria-hidden="true"></i></span>`;
   /** @type {string[]} */
   const row = [];
   for (let i = 0; i < stepBlocks.length; i++) {
@@ -115,7 +128,7 @@ function buildFiveMinuteFlowHtml(meta, opts = {}) {
   }
 
   return `<div class="five-min-flow mb-4 w-full min-w-0">
-          <div role="list" aria-label="${aria}" class="flex flex-nowrap items-stretch justify-start gap-y-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:justify-center [&::-webkit-scrollbar]:hidden">
+          <div role="list" aria-label="${aria}" class="flex w-full min-w-0 items-stretch gap-1 sm:gap-2">
             ${row.join('')}
           </div>
         </div>`;
