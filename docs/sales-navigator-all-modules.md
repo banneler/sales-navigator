@@ -823,14 +823,25 @@ reference_files:
   - label: "Salesforce Roadmap — shared link"
     sharepoint_url: "https://gpcom.sharepoint.com/:b:/s/SalesforceRoadmap/IQCEYPLtQTCVS7H8aEnrSTrLARzxb0p97NTo17Rj8DeB_gg?e=RyiZUS"
 video_sections:
-  - heading: "Pre-Approved fiber (the one-pager)"
-    intro: The shortcut only applies when the deal is genuinely plain-vanilla fiber. If payback or the dollars feel fuzzy, use the normal approval path—that’s what the quick reference tells you too.
+  - heading: "Pre-Approved Fiber"
+    intro: The shortcut only applies when the deal is genuinely plain-vanilla fiber. If payback or the dollars feel fuzzy, use the normal approval path.
     body: |
-      **[Pre-Approved Order Process Quick Reference — 07/23](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)** is the cheat sheet. In plain terms: **Channel, Enterprise, and Wholesale** reps can use it; **36+ month** term; **no** promos, free months, buyouts, or promo credits; **Build Fiber** or **On-Net Fiber** sites only (**fiber only**—not copper or coax); works for new logos or renewals; tied to a **Zone Parent** opportunity that is **Booked, In Progress, or Completed**.
+      **[Pre-Approved Order Process Quick Reference — 07/23](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)**
+      - **Who:** Channel, Enterprise, and Wholesale AEs
+      - **36+ month** term
+      - **No** promos, free months, buyouts, or promo credits
+      - **Build Fiber** or **On-Net Fiber** sites only (**fiber only**—not copper or coax)
+      - New logos or renewals / upgrades
+      - Tied to a **Zone Parent** opportunity that is **Booked, In Progress, or Completed**
 
-      Dollars and build: **$150+ MRC per site**; service location within **500 feet of the fiber line** (not “kind of near” the vault); the path **cannot** cross **railroads, streets, grassy areas, or building penetrations**. **Zip 68102** is out. Discounts either cap at **20%** (not term-based) or follow the **term-based** table in the guide—for example **36-month** deals use the **27%** band, and **one tenth of a percent over** blows the Pre-Approved lane.
+      **Fine print**
+      - **$150+** MRC per site
+      - Service within **500 feet** of the **fiber line** (not just the vault)
+      - Path **cannot** cross **railroads, streets, grassy areas, or building penetrations**
+      - **Zip 68102** excluded
+      - Discounts: **20%** max if not term-based; if term-based, use the table (e.g. **36-month** → **27%** max—and **0.01% over** disqualifies Pre-Approved)
 
-      **Colo, SD-WAN, wireless broadband** need **Product Manager** approval; **GPC Managed Wi‑Fi, on-prem PBX, Business Security** go through **BSOL**; **dark fiber** doesn’t qualify for Pre-Approved at all.
+      **Products:** Colo, SD-WAN, wireless broadband → **Product Manager**; GPC Managed Wi‑Fi, on-prem PBX, Business Security → **BSOL**; **dark fiber** never qualifies—check the PDF before you commit.
   - heading: "Approval Requirements Matrix (v5.5)"
     intro: This PDF is where payback, discount bands, and dollar thresholds actually live—Pre-Approved is only a small slice of what it covers.
     body: |
