@@ -895,7 +895,11 @@ video_sections:
 
 five_minute_summary: |
   - **The Approval Process:** Reviewers evaluate site-level services, products, and quote math—not just the headline total. Track progress via the Approval History on the GPC Solution.
-  - **Handling Changes:** **Change Order** before billing, **MAC** after billing—**partial** contract changes only. Dropping **all** services → **Cancellation** (pre-bill) or **Disconnect** (post-bill). Use the **Change Order vs MAC** card, then the PDFs in **Module Reference Files**.
+  - **Handling Changes:** **Partial** contract changes only—billing status picks the tool:
+    - **Change Order** — after **Closed/Won**, **before** billing (**Booked**, not **Billed**)
+    - **MAC** (Move / Add / Change) — **after** billing has started
+    - **Cancellation** — customer removes **all** services **before** billing
+    - **Disconnect** — customer removes **all** services **after** billing
   - **Manual Validation:** Checking "Request Manual Validation" skips automated routing and forces every department to review. Use this sparingly.
   - **Pre-Approved Fast Track:** Clean fiber can skip the long approval chain when you pass **both** checklists in the next two cards—**Pre-Approved Fiber** first, then **Approval Requirements Matrix** (payback, discounts, deal size). Anything fuzzy? Run **standard** approvals.
 
