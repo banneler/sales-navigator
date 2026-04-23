@@ -248,19 +248,16 @@ const SAFE_UC_VIDEO_SRC =
 const SAFE_UC_POSTER =
   /^assets\/(?:UC\/|training\/salesforce\/)[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
 
-/**
- * Optional training video carousel (e.g. partner portal clips). Wired in {@link renderModuleDocumentHtml}.
- * Front matter:
- *   video_carousel_intro: "Optional short HTML-safe intro (plain text)."  # omit to show no intro
- *   video_carousel:
- *     - title: "Screen-reader label only (not shown as heading)"
- *       src: "assets/UC/file.mp4"   # or assets/training/salesforce/<slug>.mp4
- *       poster: "assets/UC/file.jpg"   # optional; same path prefixes as src
- */
-export function buildVideoCarouselHtml(meta) {
-  const items = meta.video_carousel;
-  if (!Array.isArray(items) || items.length === 0) return '';
+/** Matches overview-style `module-section-card` shells used for `##` sections. */
+const TRAINING_SECTION_CARD_CLASSES =
+  'module-training-section module-section-card rounded-2xl border p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow module-section-overview border-slate-200/90 bg-gradient-to-b from-slate-50/95 via-white to-white';
 
+/**
+ * @param {unknown[]} items
+ * @returns {{ src: string; title: string; poster: string }[]}
+ */
+function normalizeVideoItems(items) {
+  if (!Array.isArray(items)) return [];
   /** @type {{ src: string; title: string; poster: string }[]} */
   const entries = [];
   for (const it of items) {
@@ -274,15 +271,28 @@ export function buildVideoCarouselHtml(meta) {
     if (poster && !SAFE_UC_POSTER.test(poster)) poster = '';
     entries.push({ src, title, poster });
   }
+  return entries;
+}
 
-  if (entries.length === 0) return '';
+function buildTrainingIntroParagraph(intro) {
+  if (typeof intro !== 'string' || !intro.trim()) return '';
+  return `<p class="text-sm text-slate-600 mb-4">${escapeHtml(intro.trim())}</p>`;
+}
 
+/**
+ * Carousel chrome only (slides, prev/next, dots). Each slide shows a visible title above the player.
+ * @param {{ src: string; title: string; poster: string }[]} entries
+ */
+function buildVideoCarouselChromeHtml(entries) {
   const n = entries.length;
+  if (n === 0) return '';
+
   const slides = entries.map((e, i) => {
     const hidden = i === 0 ? '' : ' hidden';
     const srcEsc = escapeHtml(e.src);
     const posterAttr = e.poster ? ` poster="${escapeHtml(e.poster)}"` : '';
     return `<div class="vc-slide${hidden}" data-vc-slide="${i}">
+          <p class="text-base font-semibold text-slate-900 mb-3 tracking-tight">${escapeHtml(e.title)}</p>
           <div class="rounded-xl border border-slate-200 bg-black/90 overflow-hidden shadow-md">
             <video class="w-full max-h-[min(56vh,520px)] object-contain"${posterAttr} controls playsinline preload="metadata" title="${escapeHtml(e.title)}">
               <source src="${srcEsc}" type="video/mp4" />
@@ -302,15 +312,7 @@ export function buildVideoCarouselHtml(meta) {
     })
     .join('');
 
-  const intro =
-    typeof meta.video_carousel_intro === 'string' && meta.video_carousel_intro.trim()
-      ? `<p class="text-sm text-slate-600 mb-4">${escapeHtml(meta.video_carousel_intro.trim())}</p>`
-      : '';
-
   return `
-      <section class="module-video-carousel border border-slate-200 bg-gradient-to-b from-slate-50 to-white rounded-2xl p-5 md:p-6 shadow-sm" aria-labelledby="vc-heading">
-        <h3 id="vc-heading" class="text-lg font-bold text-slate-900 border-b border-slate-200 pb-2 mb-2">Training videos</h3>
-        ${intro}
         <div class="vc-carousel rounded-xl border border-slate-200 bg-white p-3 md:p-4" data-vc-active="0" data-vc-count="${n}">
           <div class="vc-carousel-slides min-h-[200px]">${slides.join('')}</div>
           <div class="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-slate-200">
@@ -323,8 +325,102 @@ export function buildVideoCarouselHtml(meta) {
             </button>
           </div>
           <div class="flex flex-wrap justify-center gap-2 mt-4 px-1 max-w-full">${dots}</div>
-        </div>
+        </div>`;
+}
+
+/**
+ * One training card: heading, optional plain intro, optional markdown body, optional video carousel.
+ * @param {Record<string, unknown>} section
+ * @param {number} index
+ */
+function buildVideoSectionCardHtml(section, index) {
+  const heading =
+    typeof section?.heading === 'string' && section.heading.trim()
+      ? section.heading.trim()
+      : `Training ${index + 1}`;
+  const sid = `video-section-${index}`;
+  const introHtml = buildTrainingIntroParagraph(
+    typeof section?.intro === 'string' ? section.intro : ''
+  );
+  const entries = normalizeVideoItems(
+    Array.isArray(section?.items) ? section.items : []
+  );
+  const bodyRaw = typeof section?.body === 'string' ? section.body : '';
+
+  if (entries.length === 0) {
+    if (!bodyRaw.trim()) return '';
+    let bodyHtml;
+    try {
+      bodyHtml = parseMarkdownToSafeHtml(bodyRaw);
+    } catch {
+      bodyHtml =
+        '<p class="text-sm text-red-800">Could not render section body.</p>';
+    }
+    return `
+      <section class="${TRAINING_SECTION_CARD_CLASSES}" aria-labelledby="${sid}">
+        <h3 id="${sid}" class="text-xl font-bold text-slate-900 mb-4 tracking-tight">${escapeHtml(heading)}</h3>
+        ${introHtml}
+        <div class="module-markdown-body module-section-body-full w-full text-slate-800">${bodyHtml}</div>
       </section>`;
+  }
+
+  let bodyBeforeCarousel = '';
+  if (bodyRaw.trim()) {
+    try {
+      bodyBeforeCarousel = `<div class="module-markdown-body module-section-body-full w-full text-slate-800 mb-4">${parseMarkdownToSafeHtml(bodyRaw)}</div>`;
+    } catch {
+      bodyBeforeCarousel = '';
+    }
+  }
+
+  const carouselHtml = buildVideoCarouselChromeHtml(entries);
+  return `
+      <section class="${TRAINING_SECTION_CARD_CLASSES}" aria-labelledby="${sid}">
+        <h3 id="${sid}" class="text-xl font-bold text-slate-900 mb-4 tracking-tight">${escapeHtml(heading)}</h3>
+        ${introHtml}
+        ${bodyBeforeCarousel}
+        ${carouselHtml}
+      </section>`;
+}
+
+/**
+ * Training blocks after Coffee Summary: either `video_sections` (multiple cards) or legacy
+ * `video_carousel` + `video_carousel_intro` (single card, UC module).
+ * Wired in {@link renderModuleDocumentHtml}.
+ *
+ * `video_sections` entries: `heading`, optional `intro` (plain text), optional `items` (same as video_carousel),
+ * optional `body` (markdown for text-only cards or prose before a carousel).
+ */
+export function buildVideoSectionsHtml(meta) {
+  if (Array.isArray(meta.video_sections) && meta.video_sections.length > 0) {
+    return meta.video_sections
+      .map((sec, i) => buildVideoSectionCardHtml(sec, i))
+      .filter(Boolean)
+      .join('');
+  }
+
+  const items = meta.video_carousel;
+  if (!Array.isArray(items) || items.length === 0) return '';
+  const entries = normalizeVideoItems(items);
+  if (entries.length === 0) return '';
+
+  const intro =
+    typeof meta.video_carousel_intro === 'string' && meta.video_carousel_intro.trim()
+      ? buildTrainingIntroParagraph(meta.video_carousel_intro)
+      : '';
+  const carousel = buildVideoCarouselChromeHtml(entries);
+  const sid = 'video-section-legacy';
+  return `
+      <section class="${TRAINING_SECTION_CARD_CLASSES} module-video-carousel-legacy" aria-labelledby="${sid}">
+        <h3 id="${sid}" class="text-xl font-bold text-slate-900 mb-4 tracking-tight">Training videos</h3>
+        ${intro}
+        ${carousel}
+      </section>`;
+}
+
+/** @deprecated Use {@link buildVideoSectionsHtml}; kept for call-site compatibility. */
+export function buildVideoCarouselHtml(meta) {
+  return buildVideoSectionsHtml(meta);
 }
 
 export function buildKnowledgeChecksCarouselHtml(meta) {

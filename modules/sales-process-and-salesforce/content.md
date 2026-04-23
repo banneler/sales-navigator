@@ -6,26 +6,41 @@ sensitivity: "public"
 reference_files:
   - label: "Salesforce Roadmap — 2025 training guides (main folder)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=aa3Qzz&siteid=%7B3120FC34%2D7B32%2D4627%2DA6C3%2DDE1832FB7356%7D&webid=%7B1830E200%2D0828%2D45CE%2DB4F7%2D42BEE33B3084%7D&uniqueid=%7BE2E5E4EB%2DEAAF%2D4DEC%2D9003%2DB9CB553BFC5A%7D&FolderCTID=0x012000DFABF9A88316F24FA8D2F7A3EAC4739E&id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29"
-video_carousel_intro: "Same playlist Sales Support uses for onboarding: seven 101 clips in order, then the two GPC Solution builds. Separate callout: signing in to the Salesforce app now goes through Okta (YubiKey no longer applies to Salesforce)—that is production login, not something extra you do just to play these videos."
-video_carousel:
-  - title: "Salesforce 101 — Watch 1st, Sections 1 and 2"
-    src: "assets/training/salesforce/sf101-01-sections-1-and-2.mp4"
-  - title: "Salesforce 101 — Watch 2nd, Section 3 part 1"
-    src: "assets/training/salesforce/sf101-02-section-3-pt1.mp4"
-  - title: "Salesforce 101 — Watch 3rd, Section 3 part 2"
-    src: "assets/training/salesforce/sf101-03-section-3-pt2.mp4"
-  - title: "Salesforce 101 — Watch 4th, Section 4"
-    src: "assets/training/salesforce/sf101-04-section-4.mp4"
-  - title: "Salesforce 101 — Watch 5th, Section 4 sales cycle"
-    src: "assets/training/salesforce/sf101-05-section-4-sales-cycle.mp4"
-  - title: "Salesforce 101 — Watch 6th, Section 5 intro"
-    src: "assets/training/salesforce/sf101-06-section-5-intro.mp4"
-  - title: "Salesforce 101 — Watch 7th, Section 5 additional resources"
-    src: "assets/training/salesforce/sf101-07-section-5-additional-resources.mp4"
-  - title: "Creating a GPC Solution (training video)"
-    src: "assets/training/salesforce/sf-gpc-solution-video-2023.mp4"
-  - title: "Creating a multi-site GPC Solution (training video)"
-    src: "assets/training/salesforce/sf-gpc-multisite-solution-video-2023.mp4"
+video_sections:
+  - heading: "Salesforce 101"
+    intro: "Seven clips in Sales Support onboarding order. When you practice in the live org, sign in to Salesforce with Okta (not YubiKey)."
+    items:
+      - title: "Getting started — Sections 1–2 (~12 min)"
+        src: "assets/training/salesforce/sf101-01-sections-1-and-2.mp4"
+      - title: "Section 3 — Part 1, navigation & records (~4 min)"
+        src: "assets/training/salesforce/sf101-02-section-3-pt1.mp4"
+      - title: "Section 3 — Part 2 (~6 min)"
+        src: "assets/training/salesforce/sf101-03-section-3-pt2.mp4"
+      - title: "Section 4 — Core concepts (~2 min)"
+        src: "assets/training/salesforce/sf101-04-section-4.mp4"
+      - title: "Section 4 — Sales cycle (~9 min)"
+        src: "assets/training/salesforce/sf101-05-section-4-sales-cycle.mp4"
+      - title: "Section 5 — Intro (~2 min)"
+        src: "assets/training/salesforce/sf101-06-section-5-intro.mp4"
+      - title: "Section 5 — Additional resources (~2 min)"
+        src: "assets/training/salesforce/sf101-07-section-5-additional-resources.mp4"
+  - heading: "GPC Solution workshops"
+    intro: "After 101, walk through how GPC Solutions are built so costing, approvals, and DocuSign line up with production."
+    items:
+      - title: "Creating a GPC Solution (~45 min)"
+        src: "assets/training/salesforce/sf-gpc-solution-video-2023.mp4"
+      - title: "Creating a multi-site GPC Solution (~60 min)"
+        src: "assets/training/salesforce/sf-gpc-multisite-solution-video-2023.mp4"
+  - heading: "Kickoff with Sales Support"
+    body: |
+      **Fritz Antoine** (Salesforce administrator, [salesforceadministrator@gpcom.com](mailto:salesforceadministrator@gpcom.com)) and **Amy** from Sales Support run the live onboarding kickoff. Bring your open questions on leads, opportunities, and GPC Solutions—this is the session to align on expectations before you work deals in production.
+
+      _Schedule and Teams link: add when your cohort is assigned._
+  - heading: "Follow-up with Sales Support"
+    body: |
+      Reconnect with **Fritz** and **Amy** after you have worked a few opportunities—review edge cases, approval timing, and DocuSign/Conga habits so nothing drifts from the standard path.
+
+      _Schedule and Teams link: add when your cohort is assigned._
 five_minute_summary: |
   - **Start with the clips:** Training videos below—101 in watch order, then GPC Solution and multi-site.
     - **Salesforce login:** Watch out for the update—**Salesforce now uses Okta** (YubiKey no longer applies to signing in to the Salesforce app).
