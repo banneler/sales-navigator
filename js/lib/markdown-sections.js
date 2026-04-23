@@ -252,10 +252,14 @@ function tryRenderSalesTrioGuidelinesOnlyLayout(sections) {
 
 /**
  * Sales trio: first three H2s as tabs, Process Deep Dive stays collapsible.
+ * With `meta.sales_trio_hide_overview === true`, the Overview body stays in the DOM
+ * (hidden) and only Key Guidelines + Common Pitfalls appear as tabs—e.g. when the
+ * Coffee Summary already covers the overview narrative.
  * @param {Array<{ title: string | null; markdown: string }>} sections
+ * @param {Record<string, unknown> | undefined} meta
  * @returns {string | null}
  */
-function tryRenderSalesTrioTabLayout(sections) {
+function tryRenderSalesTrioTabLayout(sections, meta) {
   if (sections.length < 4) return null;
   const parsed = sections.map((s) => {
     const raw = s.title ?? '';
@@ -278,7 +282,32 @@ function tryRenderSalesTrioTabLayout(sections) {
     return null;
   }
 
-  const panels = [a, b, c].map((sec, i) => {
+  const hideOverview = Boolean(meta && meta.sales_trio_hide_overview === true);
+
+  let overviewSuppressedHtml = '';
+  /** @type {typeof parsed} */
+  let tabSecs;
+  /** @type {string[]} */
+  let tabLabels;
+  if (hideOverview) {
+    let overviewInner;
+    try {
+      overviewInner = parseMarkdownToSafeHtml(a.markdown || '');
+    } catch (e) {
+      overviewInner = `<p class="text-red-600">${escapeHtml(e instanceof Error ? e.message : String(e))}</p>`;
+    }
+    overviewSuppressedHtml = `
+    <div class="module-sales-trio-overview-suppressed hidden" aria-hidden="true">
+      <div class="module-markdown-body w-full max-w-none">${overviewInner}</div>
+    </div>`;
+    tabSecs = [b, c];
+    tabLabels = ['Key Guidelines', 'Common Pitfalls'];
+  } else {
+    tabSecs = [a, b, c];
+    tabLabels = ['Overview', 'Key Guidelines', 'Common Pitfalls'];
+  }
+
+  const panels = tabSecs.map((sec, i) => {
     let inner;
     try {
       inner = parseMarkdownToSafeHtml(sec.markdown || '');
@@ -288,8 +317,7 @@ function tryRenderSalesTrioTabLayout(sections) {
     const hidden = i === 0 ? '' : ' hidden';
     const tabId = `sales-trio-tab-${i}`;
     const panelId = `sales-trio-panel-${i}`;
-    const labels = ['Overview', 'Key Guidelines', 'Common Pitfalls'];
-    return { inner, hidden, tabId, panelId, label: labels[i] };
+    return { inner, hidden, tabId, panelId, label: tabLabels[i] };
   });
 
   const tabButtons = panels
@@ -312,10 +340,15 @@ function tryRenderSalesTrioTabLayout(sections) {
     sectionRole: 'deep',
   });
 
+  const tablistLabel = hideOverview
+    ? 'Key guidelines and common pitfalls'
+    : 'Sales process sections';
+
   return `
     <div class="module-sales-trio space-y-6">
+      ${overviewSuppressedHtml}
       <div class="module-sales-trio-shell rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden">
-        <div role="tablist" aria-label="Sales process sections" class="flex flex-wrap border-b border-slate-200 bg-slate-50/90">
+        <div role="tablist" aria-label="${escapeHtml(tablistLabel)}" class="flex flex-wrap border-b border-slate-200 bg-slate-50/90">
           ${tabButtons}
         </div>
         ${tabPanels}
@@ -336,7 +369,7 @@ export function renderSectionsToHtml(sections, opts = {}) {
       const duo = tryRenderSalesTrioGuidelinesOnlyLayout(sections);
       if (duo) return duo;
     }
-    const trio = tryRenderSalesTrioTabLayout(sections);
+    const trio = tryRenderSalesTrioTabLayout(sections, meta);
     if (trio) return trio;
   }
 

@@ -181,27 +181,22 @@ Incomplete Solution Sites—missing services or products on a site—stall appro
 
 ## Process Deep Dive [deep]
 
-**Source:** Approval mechanics, costing routing, change order/MAC/disconnect boundaries, and Pre-Approved rules must match the **dated PDFs** in **Module Reference Files** (especially **Approval Overview**, **Approval Requirements Matrix**, **Change Order**, **MAC**, **Costing Routing**). This page is training shorthand—**SharePoint wins** on any conflict.
+**Source:** For approvals, costing routing, where change orders stop and MAC/disconnect start, and Pre-Approved rules, lean on the **dated PDFs** in **Module Reference Files**—**Approval Overview**, **Approval Requirements Matrix**, **Change Order**, **MAC**, **Costing Routing**, and the rest.
 
 **Approval flow:**
 - Work from **GPC Solution → Approval History** → Approve / Reject / Reassign / Recall; add comments
 - Reviewers judge: site-level services, products, quote math, record hygiene (Solution Services on sites, products on services, quote line sanity)
-- Who reviews: Product Management (product rules); Sales Management (judgment, escalation); Salesforce team (routing/workflow bugs)
-- Mobile: same actions available from approval notifications/email links
+- Who reviews: Product Management (product rules); Sales Management (financials); Salesforce team (routing/workflow bugs)
 - Stalls: check Approval History for step/assignee; escalate via Sales Management or SF team
 
 **Change order (narrow definition):**
-- When: contract change **after Closed/Won** and **before billing starts**; Solution must be Booked, not Billed
-- Not: post-billing partial change → **MAC**; pre-billing full removal → **Cancellation**; post-billing full removal → **Disconnect**
+- When: Contract change **after Closed/Won** and **before billing starts**; Solution must be Booked, not Billed
 - Motion: Conga Change Order template from GPC Solution → complete sites/changes → keep GPC Solution ID on forms → signatures → upload → email package to Sales Manager (when required), PMO, SF Administrator, CRC
 - After submit: SF Admin booking adjustment; PMO project; CRC billing
-- Note: if site stage is Pending Billing or 7–10 Day Order, Admin may need PMO/CRC approval before booking change—not instant
+- Note: If site stage is Pending Billing or 7–10 Day Order, Admin may need PMO/CRC approval before booking change—not instant
 
 **Costing routing rules of thumb:**
-- Zone Parent → sites may bypass automation; Reusable not allowed with Zone Parent
 - New + Existing on one site → **New** path
-- Multiple services on one site → **deepest review** path
-- Reusable / OSP matrices → see Costing Routing PDF
 - Request Manual Validation = skip automation → every participating department reviews manually
 
 **Pre-submission checklist:**
@@ -214,15 +209,3 @@ Straightforward fiber deals can bypass standard approvals when the solution meet
 - **Requirements:** **36+ month** term; **minimum MRC per Solution Site** (training example: **$150**—confirm on matrix); **Build** or **On-Net** fiber only—not Copper/Coax; **no** promotional credits or contract buyouts unless the matrix allows.
 - **Routing constraints:** Fiber reach and easement rules as published—e.g. distance limits and restrictions on railroads, streets, grassy areas, or building penetrations when the guide prohibits them.
 - **Product exclusions:** **Colocation, SD-WAN, Wireless Internet Broadband, GPC Managed Wi‑Fi, On-Prem PBX, Business Security, Dark Fiber** (and anything else the matrix lists) stay off Pre-Approved—use **Product Manager** or **BSOL** paths per the matrix.
-
-::: accordion Approval Flow & History
-How approvals route through the GPC Solution and where to find Approval History. Use **Approval Overview and Training Guide** (Module Reference Files) for step-by-step visuals.
-:::
-
-::: accordion Change Order Process
-Pre-billing change order workflow—from Conga template through SF Admin booking adjustment. Follow **Change Order Process — Sales Team** (Module Reference Files).
-:::
-
-::: accordion Costing Routing Reference
-How costing routing selects review paths from site type, services, and products. Use **Costing Routing Quick Reference** (Module Reference Files).
-:::

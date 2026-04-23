@@ -258,6 +258,7 @@ id: "sales-rules-of-engagement"
 title: "Sales Rules of Engagement"
 summary: "Pipeline protection. Idle windows. Account ownership."
 sensitivity: "public"
+sales_trio_hide_overview: true
 five_minute_summary: |
   - **One source of truth:** Search before you create. Duplicates drive ownership wars—**Salesforce** is how leadership settles who owns the account (and your commission story).
   - **Idle windows:** On the **general** path, when there’s **no qualifying logged activity** for the period below, others may work the account—**still** reach the listed owner first when you can; don’t ambush teammates.
@@ -984,7 +985,7 @@ Incomplete Solution Sites—missing services or products on a site—stall appro
 
 ## Process Deep Dive [deep]
 
-**Source:** Approval mechanics, costing routing, change order/MAC/disconnect boundaries, and Pre-Approved rules must match the **dated PDFs** in **Module Reference Files** (especially **Approval Overview**, **Approval Requirements Matrix**, **Change Order**, **MAC**, **Costing Routing**). This page is training shorthand—**SharePoint wins** on any conflict.
+**Source:** For approvals, costing routing, where change orders stop and MAC/disconnect start, and Pre-Approved rules, lean on the **dated PDFs** in **Module Reference Files**—**Approval Overview**, **Approval Requirements Matrix**, **Change Order**, **MAC**, **Costing Routing**, and the rest.
 
 **Approval flow:**
 - Work from **GPC Solution → Approval History** → Approve / Reject / Reassign / Recall; add comments
@@ -1017,18 +1018,6 @@ Straightforward fiber deals can bypass standard approvals when the solution meet
 - **Requirements:** **36+ month** term; **minimum MRC per Solution Site** (training example: **$150**—confirm on matrix); **Build** or **On-Net** fiber only—not Copper/Coax; **no** promotional credits or contract buyouts unless the matrix allows.
 - **Routing constraints:** Fiber reach and easement rules as published—e.g. distance limits and restrictions on railroads, streets, grassy areas, or building penetrations when the guide prohibits them.
 - **Product exclusions:** **Colocation, SD-WAN, Wireless Internet Broadband, GPC Managed Wi‑Fi, On-Prem PBX, Business Security, Dark Fiber** (and anything else the matrix lists) stay off Pre-Approved—use **Product Manager** or **BSOL** paths per the matrix.
-
-::: accordion Approval Flow & History
-How approvals route through the GPC Solution and where to find Approval History. Use **Approval Overview and Training Guide** (Module Reference Files) for step-by-step visuals.
-:::
-
-::: accordion Change Order Process
-Pre-billing change order workflow—from Conga template through SF Admin booking adjustment. Follow **Change Order Process — Sales Team** (Module Reference Files).
-:::
-
-::: accordion Costing Routing Reference
-How costing routing selects review paths from site type, services, and products. Use **Costing Routing Quick Reference** (Module Reference Files).
-:::
 <!-- prettier-ignore-end -->
 
 ---

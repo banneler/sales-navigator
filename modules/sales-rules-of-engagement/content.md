@@ -3,6 +3,7 @@ id: "sales-rules-of-engagement"
 title: "Sales Rules of Engagement"
 summary: "Pipeline protection. Idle windows. Account ownership."
 sensitivity: "public"
+sales_trio_hide_overview: true
 five_minute_summary: |
   - **One source of truth:** Search before you create. Duplicates drive ownership wars—**Salesforce** is how leadership settles who owns the account (and your commission story).
   - **Idle windows:** On the **general** path, when there’s **no qualifying logged activity** for the period below, others may work the account—**still** reach the listed owner first when you can; don’t ambush teammates.
