@@ -8,7 +8,7 @@ five_minute_summary: |
   - **Idle windows:** On the **general** path, when there’s **no qualifying logged activity** for the period below, others may work the account—**still** reach the listed owner first when you can; don’t ambush teammates.
     - **Prospect:** **61+** days.
     - **Customer:** **121+** days.
-    - **Strategic list & USAC/E-Rate:** **Not** the 61/121 path—assignment and program rules differ; confirm treatment before you chase the account.
+    - **Strategic list & USAC/E-Rate:** **Not** the same 61/121 idle path—assignment and program rules differ; confirm treatment before you chase the account.
   - **Five-day inbound clock:** Sales- or marketing-**assigned** inbound lead? **Five business days** to make first contact **and** log it in Salesforce. Miss it and it can be reassigned. **Self-sourced** leads do **not** use that clock.
   - **Transfers:** Never reassign yourself. Reach the current owner; once aligned, email **your manager and sales leadership** for approval.
 
