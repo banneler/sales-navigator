@@ -3,9 +3,6 @@ import {
   parseMarkdownToSafeHtml,
 } from './markdown-config.js';
 
-/** Faint filing-cabinet mark for {@link buildModuleReferenceFilesHtml} (FA “cabinet” is Pro-only). */
-const REFERENCE_FILES_WATERMARK_SRC = 'assets/brand/file-cabinet-watermark.svg';
-
 /**
  * Light reference list: icon + hyperlink per file (new tab). Two-column grid from `sm` when there are multiple links.
  * Omit `reference_files` from front matter to hide this block; use `reference_files: []` for placeholder.
@@ -46,20 +43,12 @@ export function buildModuleReferenceFilesHtml(meta) {
     ? `<div class="p-3 ${gridClass}">${rows}</div>`
     : `<div class="p-3"><p class="text-xs text-slate-500 leading-relaxed">SharePoint links for this module will appear here as they are added.</p></div>`;
 
-  const wmSrc = escapeHtml(REFERENCE_FILES_WATERMARK_SRC);
-  const watermark = `<span class="pointer-events-none absolute inset-5 flex items-center justify-center overflow-hidden rounded-xl md:inset-7" aria-hidden="true">
-          <img src="${wmSrc}" alt="" class="h-[min(72%,26rem)] w-auto max-w-[min(92%,28rem)] object-contain opacity-[0.12] select-none" width="512" height="512" decoding="async" loading="lazy" />
-        </span>`;
-
   return `
-      <section class="module-reference-files relative overflow-hidden rounded-xl border border-slate-200/90 bg-gradient-to-b from-slate-50/95 via-white to-white text-slate-800 shadow-sm" aria-labelledby="module-ref-heading">
-        ${watermark}
-        <div class="relative z-[1]">
-          <div class="px-3 py-2 border-b border-slate-200/80 bg-white/65 backdrop-blur-[2px]">
-            <h3 id="module-ref-heading" class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Module Reference Files</h3>
-          </div>
-          ${bodyInner}
+      <section class="module-reference-files rounded-xl border border-slate-200/90 bg-gradient-to-b from-slate-50/95 via-white to-white text-slate-800 shadow-sm overflow-hidden" aria-labelledby="module-ref-heading">
+        <div class="px-3 py-2 border-b border-slate-200/80 bg-white/65 backdrop-blur-[2px]">
+          <h3 id="module-ref-heading" class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Module Reference Files</h3>
         </div>
+        ${bodyInner}
       </section>`;
 }
 

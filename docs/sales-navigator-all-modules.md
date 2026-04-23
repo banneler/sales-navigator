@@ -870,7 +870,7 @@ five_minute_summary: |
   - **The Approval Process:** Reviewers evaluate site-level services, products, and quote math—not just the headline total. Track progress via the Approval History on the GPC Solution.
   - **Handling Changes:** Use Change Orders only for pre-billing adjustments. Once billing has started, use the MAC (Move-Add-Change) process for partial updates or Disconnect for full removals.
   - **Manual Validation:** Checking "Request Manual Validation" skips automated routing and forces every department to review. Use this sparingly.
-  - **Pre-Approved Fast Track:** Boring fiber deals can skip the long approval chain when you match **every** line of the **Pre-Approved quick reference** (36+ mo, **$150+** MRC/site, build rules, discounts, geography) **and** nothing in the **Approval Requirements Matrix** pulls a manager or exec. If anything’s weird—mixed products, fat discount, ugly payback—run standard approvals.
+  - **Pre-Approved Fast Track:** Clean fiber can skip the long approval chain when you pass **both** checklists in the next two cards—**Pre-Approved Fiber** first, then **Approval Requirements Matrix** (payback, discounts, deal size). Anything fuzzy? Run **standard** approvals.
 
 knowledge_checks:
   - question: "When is a 'change order' appropriate in the narrow sense used here?"
