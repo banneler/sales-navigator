@@ -397,6 +397,31 @@ const SAFE_UC_POSTER =
 const TRAINING_SECTION_CARD_CLASSES =
   'module-training-section module-section-card rounded-2xl border p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow module-section-overview border-slate-200/90 bg-gradient-to-b from-slate-50/95 via-white to-white';
 
+/** Teams mark for Check In / live session cards (`assets/UC/teams.png`, shared with the UC module poster). */
+const TEAMS_LIVE_WATERMARK_SRC = 'assets/UC/teams.png';
+
+/**
+ * Headings like “Check In 1” or “Live session — …” get a faint Teams watermark on the card.
+ * @param {string} heading
+ */
+function trainingSectionHeadingIsLiveTeamsStyle(heading) {
+  const t = String(heading || '');
+  return /\bcheck\s*in\b/i.test(t) || /\blive\s*session\b/i.test(t);
+}
+
+/**
+ * @param {string} innerHtml - Heading, intro, body, carousel (no outer section)
+ * @param {boolean} useWatermark
+ */
+function wrapTrainingCardInnerWithTeamsWatermark(innerHtml, useWatermark) {
+  if (!useWatermark) return innerHtml;
+  const src = escapeHtml(TEAMS_LIVE_WATERMARK_SRC);
+  return `<span class="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl" aria-hidden="true">
+          <img src="${src}" alt="" class="absolute -bottom-8 -right-8 h-56 w-56 max-w-[min(72%,300px)] object-contain object-bottom-right opacity-[0.1] select-none sm:h-64 sm:w-64 sm:-bottom-10 sm:-right-10" width="256" height="256" decoding="async" loading="lazy" />
+        </span>
+        <div class="relative z-[1]">${innerHtml}</div>`;
+}
+
 /**
  * @param {unknown[]} items
  * @returns {{ src: string; title: string; poster: string }[]}
@@ -484,6 +509,8 @@ function buildVideoSectionCardHtml(section, index) {
       ? section.heading.trim()
       : `Training ${index + 1}`;
   const sid = `video-section-${index}`;
+  const teamsMark = trainingSectionHeadingIsLiveTeamsStyle(heading);
+  const shellClasses = `${TRAINING_SECTION_CARD_CLASSES}${teamsMark ? ' relative overflow-hidden' : ''}`;
   const introHtml = buildTrainingIntroParagraph(
     typeof section?.intro === 'string' ? section.intro : ''
   );
@@ -501,11 +528,13 @@ function buildVideoSectionCardHtml(section, index) {
       bodyHtml =
         '<p class="text-sm text-red-800">Could not render section body.</p>';
     }
-    return `
-      <section class="${TRAINING_SECTION_CARD_CLASSES}" aria-labelledby="${sid}">
+    const inner = `
         <h3 id="${sid}" class="text-xl font-bold text-slate-900 mb-4 tracking-tight">${escapeHtml(heading)}</h3>
         ${introHtml}
-        <div class="module-markdown-body module-section-body-full w-full text-slate-800">${bodyHtml}</div>
+        <div class="module-markdown-body module-section-body-full w-full text-slate-800">${bodyHtml}</div>`;
+    return `
+      <section class="${shellClasses}" aria-labelledby="${sid}">
+        ${wrapTrainingCardInnerWithTeamsWatermark(inner, teamsMark)}
       </section>`;
   }
 
@@ -519,12 +548,14 @@ function buildVideoSectionCardHtml(section, index) {
   }
 
   const carouselHtml = buildVideoCarouselChromeHtml(entries);
-  return `
-      <section class="${TRAINING_SECTION_CARD_CLASSES}" aria-labelledby="${sid}">
+  const inner = `
         <h3 id="${sid}" class="text-xl font-bold text-slate-900 mb-4 tracking-tight">${escapeHtml(heading)}</h3>
         ${introHtml}
         ${bodyBeforeCarousel}
-        ${carouselHtml}
+        ${carouselHtml}`;
+  return `
+      <section class="${shellClasses}" aria-labelledby="${sid}">
+        ${wrapTrainingCardInnerWithTeamsWatermark(inner, teamsMark)}
       </section>`;
 }
 
