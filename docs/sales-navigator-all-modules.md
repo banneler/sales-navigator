@@ -474,11 +474,13 @@ Do not change ownership unilaterally in Salesforce to force a deal.
 
 ### When to escalate
 
-Use sales management (with Salesforce history as your evidence—not Slack polls or side deals) when:
+Use sales management (with Salesforce history as your evidence) when:
 
 - The situation is an edge case or does not fit the ROE cleanly (~20% of cases).
 - You have a transfer dispute or unclear ownership.
-- The boundary is unclear: Strategic vs general account, or USAC/E-Rate eligibility vs standard 61/121 rules.
+- The boundary is unclear: 
+    - Strategic vs general account
+    - USAC/E-Rate eligibility vs standard 61/121 rules.
 - You see a repeat duplicate-account pattern.
 
 Patterns that undermine the ROE:
