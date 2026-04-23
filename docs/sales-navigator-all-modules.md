@@ -260,9 +260,10 @@ summary: "Pipeline protection. Idle windows. Account ownership."
 sensitivity: "public"
 five_minute_summary: |
   - **One source of truth:** Search before you create. Duplicates drive ownership wars—**Salesforce** is how leadership settles who owns the account (and your commission story).
-  - **Prospect idle window (general):** Others may work the account after **61+** days with no qualifying logged activity.
-  - **Customer idle window (general):** Others may work the account after **121+** days with no qualifying logged activity.
-  - **Strategic list & USAC/E-Rate:** Not the 61/121 path—assignment and program rules differ. Confirm before you chase the logo.
+  - **Idle windows:** On the **general** path, when there’s **no qualifying logged activity** for the period below, others may work the account—**still** reach the listed owner first when you can; don’t ambush teammates.
+    - **Prospect:** **61+** days.
+    - **Customer:** **121+** days.
+    - **Strategic list & USAC/E-Rate:** **Not** the 61/121 clocks—assignment and program rules differ; confirm treatment before you chase the account.
   - **Five-day inbound clock:** Sales- or marketing-**assigned** inbound lead? **Five business days** to make first contact **and** log it in Salesforce. Miss it and it can be reassigned. **Self-sourced** leads do **not** use that clock.
   - **Transfers:** Never reassign yourself. Reach the current owner; once aligned, email **your manager and sales leadership** for approval (per ROE PDF).
 
