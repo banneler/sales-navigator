@@ -528,7 +528,7 @@ video_carousel:
     src: "assets/training/salesforce/sf-gpc-multisite-solution-video-2023.mp4"
 five_minute_summary: |
   - **Start with the clips:** Training videos below—101 in watch order, then GPC Solution and multi-site.
-    - **Salesforce login:** Watch out for the update—**Salesforce now uses Okta** (YubiKey no longer applies to signing in to the Salesforce app). That’s production access, not a quirk of these MP4s.
+    - **Salesforce login:** Watch out for the update—**Salesforce now uses Okta** (YubiKey no longer applies to signing in to the Salesforce app).
   - **Lead Conversion:** Convert leads only when they are ready for a quote. This should default to creating a new opportunity, account, and contact.
   - **Pipeline Management:** Keep stages accurate to the buying process. Never delete Closed/Lost opportunities, as that history is critical for forecasting and analysis.
   - **DocuSign Workflows:** Set the Contract Signer early on the GPC Solution. Ensure all signers exist as Contacts in Salesforce before sending the envelope.
