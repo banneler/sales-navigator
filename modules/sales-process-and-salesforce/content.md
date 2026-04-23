@@ -50,6 +50,17 @@ five_minute_summary: |
   - **DocuSign Workflows:** Set the Contract Signer early on the GPC Solution. Ensure all signers exist as Contacts in Salesforce before sending the envelope.
   - **Data Hygiene:** Keep your pipeline clean by logging tasks, maintaining accurate close dates, and using the Salesforce Home dashboards to track follow-ups.
 
+your_coaches:
+  coaches:
+    - name: "Amy Wettering"
+      email: "awettering@gpcom.com"
+      role: "Sales Support"
+      photo: "assets/training/salesforce/coaches/amy-wettering.png"
+    - name: "Fritz Antoine"
+      email: "salesforceadministrator@gpcom.com"
+      role: "Salesforce administrator"
+      photo: "assets/training/salesforce/coaches/fritz-antoine.png"
+
 knowledge_checks:
   - question: "When converting a lead in normal circumstances, what should you almost always do?"
     options:

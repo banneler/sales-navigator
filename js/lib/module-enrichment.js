@@ -104,6 +104,74 @@ export function buildFiveMinuteSummaryIntroGateHtml(meta) {
       </section>`;
 }
 
+/** Coach headshots: only under `assets/training/salesforce/coaches/`. */
+const SAFE_COACH_PHOTO =
+  /^assets\/training\/salesforce\/coaches\/[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
+
+/**
+ * Optional “Your Coaches” strip below Coffee Summary.
+ * Front matter:
+ *   your_coaches:
+ *     heading: "Your Coaches"   # optional
+ *     coaches:
+ *       - name: "..."
+ *         email: "..."          # mailto target
+ *         role: "..."           # optional line under name
+ *         photo: "assets/training/salesforce/coaches/slug.png"  # optional
+ */
+export function buildYourCoachesHtml(meta) {
+  const yc = meta.your_coaches;
+  if (!yc || typeof yc !== 'object') return '';
+
+  const coaches = Array.isArray(yc.coaches) ? yc.coaches : [];
+  if (coaches.length === 0) return '';
+
+  const heading =
+    typeof yc.heading === 'string' && yc.heading.trim()
+      ? yc.heading.trim()
+      : 'Your Coaches';
+
+  const cards = coaches
+    .map((c, i) => {
+      const name = typeof c?.name === 'string' ? c.name.trim() : '';
+      const email = typeof c?.email === 'string' ? c.email.trim() : '';
+      const role = typeof c?.role === 'string' ? c.role.trim() : '';
+      if (!name && !email) return '';
+      const mail = escapeHtml(email);
+      const mailHref = email ? escapeHtml(`mailto:${email}`) : '';
+      const roleLine = role
+        ? `<p class="text-xs text-slate-600 mt-0.5">${escapeHtml(role)}</p>`
+        : '';
+      const label = name || email || `Coach ${i + 1}`;
+      const photoRaw = typeof c?.photo === 'string' ? c.photo.trim() : '';
+      const photoOk = Boolean(photoRaw && SAFE_COACH_PHOTO.test(photoRaw));
+      const headshot = photoOk
+        ? `<div class="h-14 w-14 shrink-0 rounded-full overflow-hidden border border-slate-200 shadow-sm ring-1 ring-slate-200/80 bg-slate-100">
+            <img src="${escapeHtml(photoRaw)}" alt="${escapeHtml(label)}" class="h-full w-full object-cover" width="56" height="56" loading="lazy" decoding="async" />
+          </div>`
+        : `<div class="coach-headshot-placeholder h-14 w-14 shrink-0 rounded-full bg-gradient-to-br from-slate-100 to-slate-200/90 border-2 border-dashed border-slate-300 shadow-inner" role="img" aria-label="Headshot placeholder for ${escapeHtml(label)}"></div>`;
+      return `
+        <div class="flex items-center gap-4 min-w-0">
+          ${headshot}
+          <div class="min-w-0 flex-1">
+            ${name ? `<p class="font-semibold text-slate-900 text-sm">${escapeHtml(name)}</p>` : ''}
+            ${roleLine}
+            ${email ? `<a href="${mailHref}" class="text-sm text-orange-600 hover:text-orange-700 underline decoration-orange-500/40 underline-offset-2 break-all">${mail}</a>` : ''}
+          </div>
+        </div>`;
+    })
+    .filter(Boolean)
+    .join('');
+
+  if (!cards.trim()) return '';
+
+  return `
+      <section class="module-your-coaches w-full border border-slate-200 bg-slate-50/90 rounded-xl p-5 md:p-6 shadow-sm" aria-labelledby="your-coaches-heading">
+        <h3 id="your-coaches-heading" class="text-base font-bold text-slate-900 mb-4 tracking-tight">${escapeHtml(heading)}</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">${cards}</div>
+      </section>`;
+}
+
 /**
  * Sticky right-rail: scenarios column. Empty string if no scenarios.
  */

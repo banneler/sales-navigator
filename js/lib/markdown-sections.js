@@ -5,6 +5,7 @@ import {
 } from './markdown-config.js';
 import {
   buildFiveMinuteSummaryHtml,
+  buildYourCoachesHtml,
   buildModuleReferenceFilesHtml,
   buildScenariosAsideHtml,
   buildVideoSectionsHtml,
@@ -352,6 +353,7 @@ export function renderModuleDocumentHtml(markdownSource) {
   const moduleId = typeof meta.id === 'string' ? meta.id : '';
   const sectionCardsHtml = renderSectionsToHtml(sections, { moduleId });
   const fiveMinHtml = buildFiveMinuteSummaryHtml(meta);
+  const yourCoachesHtml = buildYourCoachesHtml(meta);
   const referenceFilesHtml = buildModuleReferenceFilesHtml(meta);
   const scenariosAsideInner = buildScenariosAsideHtml(meta);
   const videoSectionsHtml = buildVideoSectionsHtml(meta);
@@ -369,6 +371,7 @@ export function renderModuleDocumentHtml(markdownSource) {
 
   const mainColumnInner = `
       ${fiveMinHtml}
+      ${yourCoachesHtml}
       ${videoSectionsHtml}
       <div class="space-y-6 module-deep-dive">${sectionCardsHtml}</div>
       ${knowledgeCarouselHtml}`;
