@@ -3,8 +3,11 @@ import {
   parseMarkdownToSafeHtml,
 } from './markdown-config.js';
 
+/** Faint filing-cabinet mark for {@link buildModuleReferenceFilesHtml} (FA “cabinet” is Pro-only). */
+const REFERENCE_FILES_WATERMARK_SRC = 'assets/brand/file-cabinet-watermark.svg';
+
 /**
- * Dark-mode reference list: icon + hyperlink per file (new tab). Two-column grid from `sm` when there are multiple links.
+ * Light reference list: icon + hyperlink per file (new tab). Two-column grid from `sm` when there are multiple links.
  * Omit `reference_files` from front matter to hide this block; use `reference_files: []` for placeholder.
  *
  * Expects meta.reference_files: Array<{ label?: string, sharepoint_url: string }>
@@ -24,11 +27,11 @@ export function buildModuleReferenceFilesHtml(meta) {
           : `Reference ${i + 1}`;
       const href = escapeHtml(url);
       return `
-        <a href="${href}" target="_blank" rel="noopener noreferrer" class="group ref-file-link flex min-w-0 items-start gap-2.5 rounded-lg border border-slate-700/70 bg-slate-950/40 px-2.5 py-2 transition hover:border-orange-500/35 hover:bg-slate-800/45 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60">
-          <span class="ref-file-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-600/80 bg-gradient-to-br from-slate-800 to-slate-950 text-orange-400 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]" aria-hidden="true">
-            <i class="fa-solid fa-file-lines text-base"></i>
+        <a href="${href}" target="_blank" rel="noopener noreferrer" class="group ref-file-link flex min-w-0 items-start gap-2.5 rounded-lg border border-slate-200/90 bg-white/75 px-2.5 py-2 shadow-sm shadow-slate-900/5 transition hover:border-orange-200/90 hover:bg-orange-50/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/55">
+          <span class="ref-file-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-200/80 bg-slate-100/90 text-slate-600 transition group-hover:border-orange-200/70 group-hover:bg-white group-hover:text-orange-700" aria-hidden="true">
+            <i class="fa-solid fa-file-lines text-sm"></i>
           </span>
-          <span class="min-w-0 flex-1 pt-1 text-[11px] font-medium leading-snug text-orange-300 underline decoration-orange-500/40 underline-offset-2 group-hover:text-orange-200 group-hover:decoration-orange-400/70">${escapeHtml(label)}</span>
+          <span class="min-w-0 flex-1 pt-1 text-xs font-medium leading-snug text-slate-700 underline decoration-slate-300/90 underline-offset-2 group-hover:text-slate-900 group-hover:decoration-orange-400/70">${escapeHtml(label)}</span>
         </a>`;
     })
     .filter(Boolean);
@@ -41,14 +44,22 @@ export function buildModuleReferenceFilesHtml(meta) {
 
   const bodyInner = rows
     ? `<div class="p-3 ${gridClass}">${rows}</div>`
-    : `<div class="p-3"><p class="text-[10px] text-slate-500 leading-relaxed">SharePoint links for this module will appear here as they are added.</p></div>`;
+    : `<div class="p-3"><p class="text-xs text-slate-500 leading-relaxed">SharePoint links for this module will appear here as they are added.</p></div>`;
+
+  const wmSrc = escapeHtml(REFERENCE_FILES_WATERMARK_SRC);
+  const watermark = `<span class="pointer-events-none absolute inset-5 flex items-center justify-center overflow-hidden rounded-xl md:inset-7" aria-hidden="true">
+          <img src="${wmSrc}" alt="" class="h-[min(72%,26rem)] w-auto max-w-[min(92%,28rem)] object-contain opacity-[0.12] select-none" width="512" height="512" decoding="async" loading="lazy" />
+        </span>`;
 
   return `
-      <section class="module-reference-files rounded-xl border border-slate-600 bg-slate-900 text-slate-100 shadow-lg overflow-hidden" aria-labelledby="module-ref-heading">
-        <div class="px-3 py-2 border-b border-slate-700 bg-slate-950/80">
-          <h3 id="module-ref-heading" class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Module Reference Files</h3>
+      <section class="module-reference-files relative overflow-hidden rounded-xl border border-slate-200/90 bg-gradient-to-b from-slate-50/95 via-white to-white text-slate-800 shadow-sm" aria-labelledby="module-ref-heading">
+        ${watermark}
+        <div class="relative z-[1]">
+          <div class="px-3 py-2 border-b border-slate-200/80 bg-white/65 backdrop-blur-[2px]">
+            <h3 id="module-ref-heading" class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Module Reference Files</h3>
+          </div>
+          ${bodyInner}
         </div>
-        ${bodyInner}
       </section>`;
 }
 
