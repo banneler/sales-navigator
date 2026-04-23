@@ -8,41 +8,43 @@ reference_files:
     sharepoint_url: "https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=aa3Qzz&siteid=%7B3120FC34%2D7B32%2D4627%2DA6C3%2DDE1832FB7356%7D&webid=%7B1830E200%2D0828%2D45CE%2DB4F7%2D42BEE33B3084%7D&uniqueid=%7BE2E5E4EB%2DEAAF%2D4DEC%2D9003%2DB9CB553BFC5A%7D&FolderCTID=0x012000DFABF9A88316F24FA8D2F7A3EAC4739E&id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29"
 video_sections:
   - heading: "Salesforce 101"
-    intro: "Seven clips in Sales Support onboarding order. When you practice in the live org, sign in to Salesforce with Okta (not YubiKey)."
     items:
-      - title: "Getting started — Sections 1–2 (~12 min)"
+      - title: "Getting started — Sections 1–2"
         src: "assets/training/salesforce/sf101-01-sections-1-and-2.mp4"
-      - title: "Section 3 — Part 1, navigation & records (~4 min)"
+      - title: "Section 3 — Part 1, navigation & records"
         src: "assets/training/salesforce/sf101-02-section-3-pt1.mp4"
-      - title: "Section 3 — Part 2 (~6 min)"
+      - title: "Section 3 — Part 2"
         src: "assets/training/salesforce/sf101-03-section-3-pt2.mp4"
-      - title: "Section 4 — Core concepts (~2 min)"
+      - title: "Section 4 — Core concepts"
         src: "assets/training/salesforce/sf101-04-section-4.mp4"
-      - title: "Section 4 — Sales cycle (~9 min)"
+      - title: "Section 4 — Sales cycle"
         src: "assets/training/salesforce/sf101-05-section-4-sales-cycle.mp4"
-      - title: "Section 5 — Intro (~2 min)"
+      - title: "Section 5 — Intro"
         src: "assets/training/salesforce/sf101-06-section-5-intro.mp4"
-      - title: "Section 5 — Additional resources (~2 min)"
+      - title: "Section 5 — Additional resources"
         src: "assets/training/salesforce/sf101-07-section-5-additional-resources.mp4"
-  - heading: "GPC Solution workshops"
-    intro: "After 101, walk through how GPC Solutions are built so costing, approvals, and DocuSign line up with production."
+  - heading: "Sales Support & Salesforce admin — 15 minutes"
+    body: |
+      Short kickoff with **Sales Support** and your **Salesforce administrator** (**Fritz Antoine**, [salesforceadministrator@gpcom.com](mailto:salesforceadministrator@gpcom.com))—align on expectations, where to get help, and how this module fits live selling.
+  - heading: "Live demonstration — lead conversion with Amy"
+    body: |
+      **Amy** walks through **converting a lead** in Salesforce. Review the job aid first: [Converting Leads to an Opportunity — Quick Reference Guide (PDF)](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FConverting%20Leads%20to%20an%20Opportunity%20Quick%20Reference%20Guide%20%2D%201123%2Epdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29).
+  - heading: "Creating a GPC Solution"
     items:
-      - title: "Creating a GPC Solution (~45 min)"
+      - title: "Creating a GPC Solution"
         src: "assets/training/salesforce/sf-gpc-solution-video-2023.mp4"
-      - title: "Creating a multi-site GPC Solution (~60 min)"
+  - heading: "Live session — GPC Solution with Amy (30 minutes)"
+    body: |
+      After the video, spend **30 minutes** live with **Amy** applying the GPC Solution workflow—questions, navigation, and how this ties to approvals and costing.
+  - heading: "Creating a multi-site GPC Solution"
+    items:
+      - title: "Creating a multi-site GPC Solution"
         src: "assets/training/salesforce/sf-gpc-multisite-solution-video-2023.mp4"
-  - heading: "Kickoff with Sales Support"
+  - heading: "Live session — Multi-site GPC Solution with Amy (30 minutes)"
     body: |
-      **Fritz Antoine** (Salesforce administrator, [salesforceadministrator@gpcom.com](mailto:salesforceadministrator@gpcom.com)) and **Amy** from Sales Support run the live onboarding kickoff. Bring your open questions on leads, opportunities, and GPC Solutions—this is the session to align on expectations before you work deals in production.
-
-      _Schedule and Teams link: add when your cohort is assigned._
-  - heading: "Follow-up with Sales Support"
-    body: |
-      Reconnect with **Fritz** and **Amy** after you have worked a few opportunities—review edge cases, approval timing, and DocuSign/Conga habits so nothing drifts from the standard path.
-
-      _Schedule and Teams link: add when your cohort is assigned._
+      After the video, **30 minutes** live with **Amy** on **multi-site** GPC Solutions. You will **work demo opportunities** during this session to practice the motion in Salesforce.
 five_minute_summary: |
-  - **Start with the clips:** Training videos below—101 in watch order, then GPC Solution and multi-site.
+  - **Onboarding flow:** Blocks below follow Sales Support order: **101** → **15 min** with Sales Support & admin → **live lead conversion** with **Amy** → **GPC Solution** (video + **30 min** live with Amy) → **multi-site** (video + **30 min** live with Amy on demo opps).
     - **Salesforce login:** Watch out for the update—**Salesforce now uses Okta** (YubiKey no longer applies to signing in to the Salesforce app).
   - **Lead Conversion:** Convert leads only when they are ready for a quote. This should default to creating a new opportunity, account, and contact.
   - **Pipeline Management:** Keep stages accurate to the buying process. Never delete Closed/Lost opportunities, as that history is critical for forecasting and analysis.
@@ -156,7 +158,7 @@ scenarios:
 
 Salesforce is GPC’s **system of record for every deal**—from first contact to installed revenue.
 
-**2026 onboarding (Sales Support):** Run the **Training videos** in order—Salesforce **101** (Watch 1st through 7th), then **Creating a GPC Solution** and **Creating a multi-site GPC Solution**. **Salesforce login** changed: use **Okta** to open the Salesforce org (**YubiKey** is no longer used for that app—the clips themselves don’t require a separate login flow). **Salesforce admin:** **Fritz Antoine**, salesforceadministrator@gpcom.com. Keep live deals in Salesforce—not in email or spreadsheets alone. **PDFs, decks, and job aids** are linked in **Process Deep Dive** below; the **Salesforce Roadmap** training folder is also one click away under **Module Reference Files**.
+**2026 onboarding (Sales Support):** Work the **training blocks** in order—**101** clips first, then a **15-minute** touchpoint with Sales Support and **Fritz Antoine** (Salesforce admin), then a **live lead conversion** with **Amy** (use the [Converting Leads quick reference](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FConverting%20Leads%20to%20an%20Opportunity%20Quick%20Reference%20Guide%20%2D%201123%2Epdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)), then **GPC Solution** (video + **30 min** with Amy), then **multi-site** (video + **30 min** with Amy on **demo opps**). **Salesforce login** uses **Okta** (not YubiKey for the Salesforce app). **Salesforce admin:** **Fritz Antoine**, salesforceadministrator@gpcom.com. Keep live deals in Salesforce—not in email or spreadsheets alone. More **PDFs and job aids** are in **Process Deep Dive**; the **Salesforce Roadmap** folder is under **Module Reference Files**.
 
 **The happy path**
 
@@ -236,7 +238,7 @@ Tasks, list views, and Home dashboards are the hygiene habit—if activity isn't
 **Sales Support collateral (SharePoint)** — use alongside the videos when you need the written path:
 
 - **Approvals:** [Approval overview & training guide (PDF)](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Overview%20and%20Training%20Guide%20-%200725.pdf?csf=1&web=1&e=0e227N) · [Approval requirements matrix v5.5 (PDF)](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=2c4K38)
-- **Cycle & process:** [Salesforce hierarchy & cycle overview (PPTX)](https://gpcom.sharepoint.com/:p:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Salesforce%20Hierarchy%20%26%20Cycle%20Overview%20Demo%20template%20-%200723.pptx?d=wc0563555f48e4c22bd45fdeaf0e36c77&csf=1&web=1&e=Osb5bj) · [Which process do I use — flow chart & quick job aid (PDF)](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Which%20Process%20Do%20I%20Use%20Flow%20Chart%20and%20Quick%20Job%20Aid%20-%200922.pdf?csf=1&web=1&e=EIZhnU)
+- **Cycle & process:** [Salesforce hierarchy & cycle overview (PPTX)](https://gpcom.sharepoint.com/:p:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Salesforce%20Hierarchy%20%26%20Cycle%20Overview%20Demo%20template%20-%200723.pptx?d=wc0563555f48e4c22bd45fdeaf0e36c77&csf=1&web=1&e=Osb5bj) · [Which process do I use — flow chart & quick job aid (PDF)](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Which%20Process%20Do%20I%20Use%20Flow%20Chart%20and%20Quick%20Job%20Aid%20-%200922.pdf?csf=1&web=1&e=EIZhnU) · [Converting Leads to an Opportunity — quick reference (PDF)](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FConverting%20Leads%20to%20an%20Opportunity%20Quick%20Reference%20Guide%20%2D%201123%2Epdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)
 - **Sites & changes:** [Solution site type — quick reference (PDF)](https://gpcom.sharepoint.com/:b:/s/SalesforceRoadmap/IQCK0LjJijwfTJmWzw5CEn7bAU_ivZaWfl7Hvq7Q1CF7lDw?e=7Ey9Tm) · [Move–add–change processes — Sales Team (PDF)](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Move-Add-Change%20Processes%20-%20Sales%20Team%20-%201123.pdf?csf=1&web=1&e=vu44zS) · [Change order process — Sales Team (PDF)](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Change%20Order%20Process%20-%20Sales%20Team%20-%200325.pdf?csf=1&web=1&e=FEPLBC)
 - **Broader enablement:** [Sales Resources — GPC Sales hub](https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx)
 
