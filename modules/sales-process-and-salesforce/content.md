@@ -174,16 +174,27 @@ scenarios:
 
 ## Overview
 
-Salesforce is GPC’s **system of record for every deal**—from first contact to installed revenue.
+### System of record
 
-**2026 onboarding (Sales Support):** Work the **training blocks** in order—**101** clips first, then **Check In 1** (15 minutes with Sales Support and **Fritz Antoine**, then **Amy** on live **lead conversion**—job aid: [Converting Leads quick reference (PDF)](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FConverting%20Leads%20to%20an%20Opportunity%20Quick%20Reference%20Guide%20%2D%201123%2Epdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)), then **GPC Solution** (video + **30 min** with Amy), then **multi-site** (video + **30 min** with Amy on **demo opps**). **Salesforce login** uses **Okta** (not YubiKey for the Salesforce app). **Salesforce admin:** **Fritz Antoine**, salesforceadministrator@gpcom.com. Keep live deals in Salesforce—not in email or spreadsheets alone. More **PDFs and job aids** are in **Process Deep Dive**; the **Salesforce Roadmap** folder is under **Module Reference Files**.
+Salesforce is GPC’s **system of record for every deal**—from first contact to installed revenue. Keep live opportunities and activity **in Salesforce**, not in email or spreadsheets alone.
 
-**The happy path**
+### 2026 onboarding (Sales Support)
 
-1. Convert leads when you’re ready to quote — **default: create the opportunity** (exceptions need manager/admin approval).
-2. Build the **GPC Solution** → run **approvals** → **Conga** merge → **DocuSign**.
+Work the **Coffee Summary** stepper and the **training blocks on this page** in order—the same sequence Sales Support uses (**101** → **Check In 1** → **GPC Solution** → **multi-site**). Don’t skip ahead unless leadership documents an exception.
 
-**Why the rules matter:** skipping steps—no opportunity on conversion, deleting **Closed/Lost**, late **Contract Signer**, signers only in a spreadsheet—breaks approvals, billing, and commissions. Clean data in, clean revenue out.
+- **Check In 1:** 15 minutes with Sales Support and **Fritz Antoine** (Salesforce administrator), then **Amy** walks **live lead conversion**. Skim the job aid first: [Converting Leads — quick reference (PDF)](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FConverting%20Leads%20to%20an%20Opportunity%20Quick%20Reference%20Guide%20%2D%201123%2Epdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29).
+- **Sign-in:** **Okta** for the Salesforce app (YubiKey no longer applies here).
+- **Admin contact:** **Fritz Antoine** — [salesforceadministrator@gpcom.com](mailto:salesforceadministrator@gpcom.com).
+- **Written guides:** **Process Deep Dive** (below) links PDFs and job aids; the **Salesforce Roadmap** library is in **Module Reference Files**.
+
+### Happy path
+
+1. **Lead conversion** — When you’re ready to quote, convert the lead. **Default: create the opportunity** (exceptions need manager or admin approval).
+2. **Deal motion** — **GPC Solution** → **approvals** → **Conga** → **DocuSign**.
+
+### Why the rules matter
+
+Cutting corners—**no opportunity** on conversion, deleting **Closed/Lost**, a late **Contract Signer**, or signers that only live in a spreadsheet—breaks **approvals**, **billing**, and **commissions**. Clean data in, clean revenue out.
 
 ---
 
