@@ -255,6 +255,8 @@ function tryRenderSalesTrioGuidelinesOnlyLayout(sections) {
  * With `meta.sales_trio_hide_overview === true`, the Overview body stays in the DOM
  * (hidden) and only Key Guidelines + Common Pitfalls appear as tabs—e.g. when the
  * Coffee Summary already covers the overview narrative.
+ * With `meta.sales_trio_hide_deep_dive === true`, **Process Deep Dive [deep]** is kept
+ * in the DOM but hidden (cards + PDFs carry the narrative in the UI).
  * @param {Array<{ title: string | null; markdown: string }>} sections
  * @param {Record<string, unknown> | undefined} meta
  * @returns {string | null}
@@ -334,11 +336,26 @@ function tryRenderSalesTrioTabLayout(sections, meta) {
     )
     .join('');
 
-  const deepHtml = renderOneSectionCard(d.markdown, {
-    displayTitle: d.displayTitle,
-    useDeepCollapse: true,
-    sectionRole: 'deep',
-  });
+  const hideDeep = Boolean(meta && meta.sales_trio_hide_deep_dive === true);
+  let deepBlockHtml = '';
+  if (hideDeep) {
+    let deepInner;
+    try {
+      deepInner = parseMarkdownToSafeHtml(d.markdown || '');
+    } catch (e) {
+      deepInner = `<p class="text-red-600">${escapeHtml(e instanceof Error ? e.message : String(e))}</p>`;
+    }
+    deepBlockHtml = `
+    <div class="module-sales-trio-deep-suppressed hidden" aria-hidden="true">
+      <div class="module-markdown-body w-full max-w-none">${deepInner}</div>
+    </div>`;
+  } else {
+    deepBlockHtml = renderOneSectionCard(d.markdown, {
+      displayTitle: d.displayTitle,
+      useDeepCollapse: true,
+      sectionRole: 'deep',
+    });
+  }
 
   const tablistLabel = hideOverview
     ? 'Key guidelines and common pitfalls'
@@ -353,7 +370,7 @@ function tryRenderSalesTrioTabLayout(sections, meta) {
         </div>
         ${tabPanels}
       </div>
-      ${deepHtml}
+      ${deepBlockHtml}
     </div>`;
 }
 

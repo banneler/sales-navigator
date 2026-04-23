@@ -3,6 +3,7 @@ id: "sales-operations-and-approvals"
 title: "Sales Operations & Approvals"
 summary: "Solution approvals. Change orders. Clean revenue."
 sensitivity: "internal"
+sales_trio_hide_deep_dive: true
 reference_files:
   - label: "Approval Overview and Training Guide — 07/25"
     sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Overview%20and%20Training%20Guide%20-%200725.pdf?csf=1&web=1&e=qy6LaI"
@@ -38,16 +39,34 @@ video_sections:
       - Discounts: **20%** max if not term-based; if term-based, use the table (e.g. **36-month** → **27%** max—and **0.01% over** disqualifies Pre-Approved)
 
       **Check for product exclusions prior to proceeding.**
-  - heading: "Approval Requirements Matrix (v5.5)"
-    intro: This PDF is where payback, discount bands, and dollar thresholds actually live—Pre-Approved is only a small slice of what it covers.
+  - heading: "Approval Requirements Matrix"
+    intro: Payback, discounts, and dollar thresholds live here—not just Pre-Approved. If the deal is big, ugly, or unusual, assume you need eyes on the PDF before you promise who signs.
     body: |
-      **[Approval Requirements Matrix v5.5 — 07/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=h64jqJ)** spells out **auto-approve vs manager** using **payback months** tied to **contract term** (go past the allowed payback for that term → **manager**). **Strategic Build** site types have their own carve-out—read the table.
+      **[Approval Requirements Matrix v5.5 — 07/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=h64jqJ)**
+      - **Payback vs term:** Max **payback months** allowed for **auto-approve** depends on **contract term**—go over the limit for that term → **manager** approval (full table in PDF)
+      - **Strategic Build** (solution site type): **bypasses** the payback-month requirement in the matrix—still read the doc
+      - **Discount (not by term):** **≤20%** auto; **>20%** → **manager**
+      - **Discount (by term):** caps **step up** with longer terms—e.g. **24–35 mo** → **22%** max, **36–47 mo** → **27%**, **48–59 mo** → **29%**, **60+ mo** → **31%** (see PDF for **0–23 mo** and exact bands)
+      - **Who it applies to:** **Enterprise, Channel, and Wholesale** use the same discount rules (**Wholesale “bulk process”** is called out separately in the PDF)
 
-      **Discounts:** same bands for Enterprise, Channel, and Wholesale—**20%** max when the discount isn’t term-driven; when it **is** term-driven, the max steps up with longer terms (e.g. **27%** in the **36–47 month** row, **31%** at **60+ months**—see the PDF).
+      **Net investment (deal size)**
+      - **Under $50k** — auto-approve band
+      - **$50k+** — **manager**
+      - **$75k+** — **CRO**
+      - **$100k+** — **CFO**
+      - **$500k+** — **CEO**
 
-      **Net investment:** roughly **under $50k** can auto-approve; **$50k+** manager; **$75k+** CRO; **$100k+** CFO; **$500k+** CEO. **Churn over 10%** pulls **manager and CRO**. **Unfavorable investment** always needs a manager. **Product** lines route to **Product Manager**. **Dark fiber** needs **manager and CRO**. **Zone Parent** deals: **manager and CRO** always, then **CFO** from **$100k+** net investment and **CEO** from **$500k+** as in the PDF. **Strategic Build parent** opportunities (incl. new market builds) are approved outside Salesforce and **auto-approve** in the system as documented.
+      **Other triggers**
+      - **Churn:** **≤10%** auto; **>10%** → **manager** and **CRO**
+      - **Unfavorable investment** — always **manager**
+      - **Product** line issues — **Product Manager**
+      - **Dark fiber** — **manager** and **CRO**
 
-      Use the PDF—not this page—when someone asks “does this dollar amount clear?”
+      **Fine print**
+      - **Zone Parent** opportunity (**net investment**): **manager** and **CRO** always; **CFO** at **$100k+**; **CEO** at **$500k+**
+      - **Strategic Build parent** opportunities (incl. **new market builds**): approved **outside Salesforce** → **auto-approve** in the system per the guide
+
+      **Use the PDF when someone asks “does this dollar amount or payback clear?”—this card is a map, not the table.**
 five_minute_summary: |
   - **The Approval Process:** Reviewers evaluate site-level services, products, and quote math—not just the headline total. Track progress via the Approval History on the GPC Solution.
   - **Handling Changes:** Use Change Orders only for pre-billing adjustments. Once billing has started, use the MAC (Move-Add-Change) process for partial updates or Disconnect for full removals.
