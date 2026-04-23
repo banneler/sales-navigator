@@ -20,7 +20,7 @@ five_minute_summary: |
   - **The Approval Process:** Reviewers evaluate site-level services, products, and quote math—not just the headline total. Track progress via the Approval History on the GPC Solution.
   - **Handling Changes:** Use Change Orders only for pre-billing adjustments. Once billing has started, use the MAC (Move-Add-Change) process for partial updates or Disconnect for full removals.
   - **Manual Validation:** Checking "Request Manual Validation" skips automated routing and forces every department to review. Use this sparingly.
-  - **OBR Cadence:** Operations Business Reviews are for account planning and do not replace standard Salesforce approval or costing rules.
+  - **Pre-Approved Fast Track:** You can bypass standard approvals for 36+ month fiber deals with a minimum $150 MRC per site. Complex products like SD-WAN, Managed Wi-Fi, and Security are excluded and require standard routing.
 
 knowledge_checks:
   - question: "When is a 'change order' appropriate in the narrow sense used here?"
@@ -204,6 +204,13 @@ Incomplete Solution Sites—missing services or products on a site—stall appro
 
 **Pre-submission checklist:**
 Right object, real sites/services/products, quote math ties, story matches payback/churn context, attachments + GPC Solution IDs on forms, Request Manual Validation only when human review is really needed.
+
+**Pre-Approved Order Process:**
+The Pre-Approved Order Process bypasses standard approvals for straightforward fiber deals. To use it, the GPC Solution must be in the "Design" stage.
+
+* **Requirements:** Must be a 36-month term or longer with a minimum MRC of $150 at each Solution Site. It only applies to Build Fiber or On-Net Fiber (not Copper or Coax). No promotional credits or contract buyouts can be applied.
+* **Routing Constraints:** The fiber line to the Solution Site must be within 500 feet and cannot cross railroad tracks, streets, grassy areas, or run through buildings.
+* **Product Exclusions:** You cannot use the Pre-Approved path if the deal includes Colocation, SD-WAN, Wireless Internet Broadband, GPC Managed Wi-Fi, On-Prem PBX, Business Security, or Dark Fiber. These require dedicated Product Manager or BSOL approval.
 
 ::: accordion Approval Flow & History
 How approvals route through the GPC Solution and where to find Approval History.
