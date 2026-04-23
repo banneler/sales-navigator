@@ -808,6 +808,8 @@ title: "Sales Operations & Approvals"
 summary: "Solution approvals. Change orders. Clean revenue."
 sensitivity: "internal"
 sales_trio_hide_deep_dive: true
+video_sections_as_tabs: true
+video_sections_tabs_aria_label: "Pre-Approved, matrix, and change-order guides"
 reference_files:
   - label: "Approval Overview and Training Guide — 07/25"
     sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Overview%20and%20Training%20Guide%20-%200725.pdf?csf=1&web=1&e=qy6LaI"
@@ -901,7 +903,7 @@ five_minute_summary: |
     - **Cancellation** — customer removes **all** services **before** billing
     - **Disconnect** — customer removes **all** services **after** billing
   - **Manual Validation:** Checking "Request Manual Validation" skips automated routing and forces every department to review. Use this sparingly.
-  - **Pre-Approved Fast Track:** Clean fiber can skip the long approval chain when you pass **both** checklists in the next two cards—**Pre-Approved Fiber** first, then **Approval Requirements Matrix** (payback, discounts, deal size). Anything fuzzy? Run **standard** approvals.
+  - **Pre-Approved Fast Track:** Clean fiber can skip the long approval chain when you pass **both** checklists in the tabbed guide—**Pre-Approved Fiber** first, then **Approval Requirements Matrix** (payback, discounts, deal size). Anything fuzzy? Run **standard** approvals.
 
 knowledge_checks:
   - question: "When is a 'change order' appropriate in the narrow sense used here?"

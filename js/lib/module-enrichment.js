@@ -560,15 +560,118 @@ function buildVideoSectionCardHtml(section, index) {
 }
 
 /**
+ * When `meta.video_sections_as_tabs === true`, stack `video_sections` as one tabbed shell
+ * (same tab behavior as sales-trio Guidelines/Pitfalls). Falls back to separate cards if
+ * fewer than two sections render.
+ * @param {Record<string, unknown>} meta
+ * @returns {string | null}
+ */
+function buildVideoSectionsAsTabsHtml(meta) {
+  const sections = meta.video_sections;
+  if (!Array.isArray(sections) || sections.length < 2) return null;
+
+  /** @type {{ tabId: string; panelId: string; label: string; hidden: string; panelInner: string }[]} */
+  const panels = [];
+
+  for (let i = 0; i < sections.length; i++) {
+    const sec = sections[i];
+    const label =
+      typeof sec?.heading === 'string' && sec.heading.trim()
+        ? sec.heading.trim()
+        : `Topic ${i + 1}`;
+    const introHtml = buildTrainingIntroParagraph(
+      typeof sec?.intro === 'string' ? sec.intro : ''
+    );
+    const entries = normalizeVideoItems(
+      Array.isArray(sec?.items) ? sec.items : []
+    );
+    const bodyRaw = typeof sec?.body === 'string' ? sec.body : '';
+
+    let blockHtml = '';
+    if (entries.length === 0) {
+      if (!bodyRaw.trim() && !introHtml) continue;
+      let bodyHtml = '';
+      if (bodyRaw.trim()) {
+        try {
+          bodyHtml = parseMarkdownToSafeHtml(bodyRaw);
+        } catch {
+          bodyHtml =
+            '<p class="text-sm text-red-800">Could not render section body.</p>';
+        }
+      }
+      blockHtml = `${introHtml}${bodyHtml}`;
+    } else {
+      let bodyBeforeCarousel = '';
+      if (bodyRaw.trim()) {
+        try {
+          bodyBeforeCarousel = `<div class="module-markdown-body w-full max-w-none mb-4">${parseMarkdownToSafeHtml(bodyRaw)}</div>`;
+        } catch {
+          bodyBeforeCarousel = '';
+        }
+      }
+      blockHtml = `${introHtml}${bodyBeforeCarousel}${buildVideoCarouselChromeHtml(entries)}`;
+    }
+
+    const tabId = `video-section-tab-${i}`;
+    const panelId = `video-section-panel-${i}`;
+    const hidden = panels.length === 0 ? '' : ' hidden';
+    panels.push({
+      tabId,
+      panelId,
+      label,
+      hidden,
+      panelInner: blockHtml,
+    });
+  }
+
+  if (panels.length < 2) return null;
+
+  const tablistLabel =
+    typeof meta.video_sections_tabs_aria_label === 'string' &&
+    meta.video_sections_tabs_aria_label.trim()
+      ? meta.video_sections_tabs_aria_label.trim()
+      : 'Topic guides';
+
+  const tabButtons = panels
+    .map((p, i) => {
+      const selected = i === 0;
+      return `<button type="button" role="tab" id="${p.tabId}" class="js-sales-trio-tab flex-1 min-w-[8rem] px-4 py-3 text-sm font-semibold transition border-b-2 -mb-px focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-orange-400 ${selected ? 'border-orange-500 text-orange-800 bg-white' : 'border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50/80'}" aria-selected="${selected ? 'true' : 'false'}" aria-controls="${p.panelId}" tabindex="${selected ? '0' : '-1'}">${escapeHtml(p.label)}</button>`;
+    })
+    .join('');
+
+  const tabPanels = panels
+    .map(
+      (p) =>
+        `<div role="tabpanel" id="${p.panelId}" class="js-sales-trio-panel module-sales-trio-panel p-6 md:p-8${p.hidden}" aria-labelledby="${p.tabId}"><div class="module-markdown-body module-sales-trio-panel-body w-full max-w-none text-slate-800">${p.panelInner}</div></div>`
+    )
+    .join('');
+
+  return `
+    <div class="module-video-sections-tabs space-y-6">
+      <div class="module-sales-trio-shell rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden">
+        <div role="tablist" aria-label="${escapeHtml(tablistLabel)}" class="flex flex-wrap border-b border-slate-200 bg-slate-50/90">
+          ${tabButtons}
+        </div>
+        ${tabPanels}
+      </div>
+    </div>`;
+}
+
+/**
  * Training blocks after Coffee Summary: either `video_sections` (multiple cards) or legacy
  * `video_carousel` + `video_carousel_intro` (single card, UC module).
  * Wired in {@link renderModuleDocumentHtml}.
  *
  * `video_sections` entries: `heading`, optional `intro` (plain text), optional `items` (same as video_carousel),
  * optional `body` (markdown for text-only cards or prose before a carousel).
+ * With `video_sections_as_tabs: true`, sections render as tabs inside one card (needs ≥2 sections).
  */
 export function buildVideoSectionsHtml(meta) {
   if (Array.isArray(meta.video_sections) && meta.video_sections.length > 0) {
+    if (meta.video_sections_as_tabs === true) {
+      const tabbed = buildVideoSectionsAsTabsHtml(meta);
+      if (tabbed) return tabbed;
+    }
     return meta.video_sections
       .map((sec, i) => buildVideoSectionCardHtml(sec, i))
       .filter(Boolean)
