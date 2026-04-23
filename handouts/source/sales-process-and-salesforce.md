@@ -2,7 +2,7 @@
 
 *Sales-Navigator · Great Plains Communications*
 
-Pair this handout with **Salesforce 101 / 201**, quick references, **GPCU**, and **Teams** channels cited in the official training pack. In **Sales-Navigator**, follow the **training blocks** in order: **101** videos → **15 min** with Sales Support & **Fritz Antoine** (admin) → **live lead conversion** with **Amy** → **GPC Solution** (video + **30 min** live with Amy) → **multi-site** (video + **30 min** live with Amy on demo opps). **Salesforce** sign-in **now uses Okta** (YubiKey no longer applies to the Salesforce app). **PDFs and job aids** are in **Process Deep Dive**; **Module Reference Files** has the **Salesforce Roadmap** folder.
+Pair this handout with **Salesforce 101 / 201**, quick references, **GPCU**, and **Teams** channels cited in the official training pack. In **Sales-Navigator**, follow the **training blocks** in order: **101** videos → **Check In 1** (Sales Support & **Fritz Antoine** kickoff + **Amy** on lead conversion) → **GPC Solution** (video + **30 min** live with Amy) → **multi-site** (video + **30 min** live with Amy on demo opps). **Salesforce** sign-in **now uses Okta** (YubiKey no longer applies to the Salesforce app). **PDFs and job aids** are in **Process Deep Dive**; **Module Reference Files** has the **Salesforce Roadmap** folder.
 
 ## Lead → opportunity lifecycle
 

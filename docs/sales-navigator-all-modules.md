@@ -523,12 +523,11 @@ video_sections:
         src: "assets/training/salesforce/sf101-06-section-5-intro.mp4"
       - title: "Section 5 — Additional resources"
         src: "assets/training/salesforce/sf101-07-section-5-additional-resources.mp4"
-  - heading: "Sales Support & Salesforce admin — 15 minutes"
+  - heading: "Check In 1"
     body: |
-      Short kickoff with **Sales Support** and your **Salesforce administrator** (**Fritz Antoine**, [salesforceadministrator@gpcom.com](mailto:salesforceadministrator@gpcom.com))—align on expectations, where to get help, and how this module fits live selling.
-  - heading: "Live demonstration — lead conversion with Amy"
-    body: |
-      **Amy** walks through **converting a lead** in Salesforce. Review the job aid first: [Converting Leads to an Opportunity — Quick Reference Guide (PDF)](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FConverting%20Leads%20to%20an%20Opportunity%20Quick%20Reference%20Guide%20%2D%201123%2Epdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29).
+      Short **15-minute** kickoff with **Sales Support** and your **Salesforce administrator** (**Fritz Antoine**, [salesforceadministrator@gpcom.com](mailto:salesforceadministrator@gpcom.com))—align on expectations, where to get help, and how this module fits live selling.
+
+      Then **Amy** walks through **converting a lead** in Salesforce. Review the job aid first: [Converting Leads to an Opportunity — Quick Reference Guide (PDF)](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FConverting%20Leads%20to%20an%20Opportunity%20Quick%20Reference%20Guide%20%2D%201123%2Epdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29).
   - heading: "Creating a GPC Solution"
     items:
       - title: "Creating a GPC Solution"
@@ -544,7 +543,7 @@ video_sections:
     body: |
       After the video, **30 minutes** live with **Amy** on **multi-site** GPC Solutions. You will **work demo opportunities** during this session to practice the motion in Salesforce.
 five_minute_summary: |
-  - **Onboarding flow:** Blocks below follow Sales Support order: **101** → **15 min** with Sales Support & admin → **live lead conversion** with **Amy** → **GPC Solution** (video + **30 min** live with Amy) → **multi-site** (video + **30 min** live with Amy on demo opps).
+  - **Onboarding flow:** Blocks below follow Sales Support order: **101** → **Check In 1** (Sales Support & admin kickoff + **Amy** live on lead conversion) → **GPC Solution** (video + **30 min** live with Amy) → **multi-site** (video + **30 min** live with Amy on demo opps).
     - **Salesforce login:** Watch out for the update—**Salesforce now uses Okta** (YubiKey no longer applies to signing in to the Salesforce app).
   - **Lead Conversion:** Convert leads only when they are ready for a quote. This should default to creating a new opportunity, account, and contact.
   - **Pipeline Management:** Keep stages accurate to the buying process. Never delete Closed/Lost opportunities, as that history is critical for forecasting and analysis.
@@ -658,7 +657,7 @@ scenarios:
 
 Salesforce is GPC’s **system of record for every deal**—from first contact to installed revenue.
 
-**2026 onboarding (Sales Support):** Work the **training blocks** in order—**101** clips first, then a **15-minute** touchpoint with Sales Support and **Fritz Antoine** (Salesforce admin), then a **live lead conversion** with **Amy** (use the [Converting Leads quick reference](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FConverting%20Leads%20to%20an%20Opportunity%20Quick%20Reference%20Guide%20%2D%201123%2Epdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)), then **GPC Solution** (video + **30 min** with Amy), then **multi-site** (video + **30 min** with Amy on **demo opps**). **Salesforce login** uses **Okta** (not YubiKey for the Salesforce app). **Salesforce admin:** **Fritz Antoine**, salesforceadministrator@gpcom.com. Keep live deals in Salesforce—not in email or spreadsheets alone. More **PDFs and job aids** are in **Process Deep Dive**; the **Salesforce Roadmap** folder is under **Module Reference Files**.
+**2026 onboarding (Sales Support):** Work the **training blocks** in order—**101** clips first, then **Check In 1** (15 minutes with Sales Support and **Fritz Antoine**, then **Amy** on live **lead conversion**—job aid: [Converting Leads quick reference (PDF)](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FConverting%20Leads%20to%20an%20Opportunity%20Quick%20Reference%20Guide%20%2D%201123%2Epdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)), then **GPC Solution** (video + **30 min** with Amy), then **multi-site** (video + **30 min** with Amy on **demo opps**). **Salesforce login** uses **Okta** (not YubiKey for the Salesforce app). **Salesforce admin:** **Fritz Antoine**, salesforceadministrator@gpcom.com. Keep live deals in Salesforce—not in email or spreadsheets alone. More **PDFs and job aids** are in **Process Deep Dive**; the **Salesforce Roadmap** folder is under **Module Reference Files**.
 
 **The happy path**
 
