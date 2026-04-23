@@ -810,6 +810,8 @@ sensitivity: "internal"
 reference_files:
   - label: "Approval Overview and Training Guide — 07/25"
     sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Overview%20and%20Training%20Guide%20-%200725.pdf?csf=1&web=1&e=qy6LaI"
+  - label: "Pre-Approved Order Process Quick Reference Guide — 07/23"
+    sharepoint_url: "https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29"
   - label: "Approval Requirements Matrix v5.5 — 07/25"
     sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=h64jqJ"
   - label: "Change Order Process — Sales Team — 03/25"
@@ -820,11 +822,24 @@ reference_files:
     sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Move-Add-Change%20Processes%20-%20Sales%20Team%20-%201123.pdf?csf=1&web=1&e=zURGTj"
   - label: "Salesforce Roadmap — shared link"
     sharepoint_url: "https://gpcom.sharepoint.com/:b:/s/SalesforceRoadmap/IQCEYPLtQTCVS7H8aEnrSTrLARzxb0p97NTo17Rj8DeB_gg?e=RyiZUS"
+video_sections:
+  - heading: "Pre-Approved Order Process — quick reference"
+    intro: Short checklist for when straightforward fiber can skip the standard approval chain—read this before you promise a “fast path.”
+    body: |
+      Open the **[Pre-Approved Order Process Quick Reference Guide — 07/23](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)** and walk it in order: **Design**-stage GPC Solution, **36+** month term, **MRC per Solution Site** at or above the floor in the live matrix (training examples often cite **$150**—verify the current number), **Build** or **On-Net** fiber only, and **no** promotional credits or contract buyouts unless the published rules explicitly allow them.
+
+      Pair it with the **Approval Requirements Matrix** card next—this PDF is the narrative checklist; the matrix is where **product exclusions** and approver lanes are spelled out.
+  - heading: "Approval Requirements Matrix — v5.5"
+    intro: The live routing table—who approves what, thresholds, and which products are allowed on Pre-Approved vs standard paths.
+    body: |
+      Keep **[Approval Requirements Matrix v5.5 — 07/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=h64jqJ)** open whenever you ask, “Can this go Pre-Approved?” **SD-WAN, Managed Wi‑Fi, Business Security, colocation, dark fiber, wireless broadband**, and other matrix-flagged products **do not** use the fiber fast path—use **Product Manager** or **BSOL** routing per the matrix instead of assuming a shortcut.
+
+      When the deal mixes excluded products with fiber, default to **standard** approvals until the record matches what the matrix shows.
 five_minute_summary: |
   - **The Approval Process:** Reviewers evaluate site-level services, products, and quote math—not just the headline total. Track progress via the Approval History on the GPC Solution.
   - **Handling Changes:** Use Change Orders only for pre-billing adjustments. Once billing has started, use the MAC (Move-Add-Change) process for partial updates or Disconnect for full removals.
   - **Manual Validation:** Checking "Request Manual Validation" skips automated routing and forces every department to review. Use this sparingly.
-  - **Pre-Approved Fast Track:** Straightforward fiber can skip standard approvals when you meet the matrix rules (term, MRC per site, fiber type, build constraints, exclusions). **SD-WAN, Managed Wi‑Fi, and Security** (and other excluded products) stay on standard routing—confirm the live **Approval Requirements Matrix**.
+  - **Pre-Approved Fast Track:** Straightforward fiber can skip standard approvals when you meet **every** rule in the **Pre-Approved quick reference** and the live **Approval Requirements Matrix** (term, MRC per site, fiber type, build constraints, exclusions). Use the **two training cards** under this summary as your starting point, then validate on SharePoint.
 
 knowledge_checks:
   - question: "When is a 'change order' appropriate in the narrow sense used here?"
@@ -985,39 +1000,35 @@ Incomplete Solution Sites—missing services or products on a site—stall appro
 
 ## Process Deep Dive [deep]
 
-**Source:** For approvals, costing routing, where change orders stop and MAC/disconnect start, and Pre-Approved rules, lean on the **dated PDFs** in **Module Reference Files**—**Approval Overview**, **Approval Requirements Matrix**, **Change Order**, **MAC**, **Costing Routing**, and the rest.
+**Source:** Ground truth is always the **dated PDFs** in **Module Reference Files**—especially **Approval Overview**, **Pre-Approved Order Process Quick Reference**, **Approval Requirements Matrix**, **Change Order**, **MAC**, and **Costing Routing**. The **training cards** above walk the Pre-Approved + Matrix pair; this section lines up **standard approvals**, **change orders**, **costing**, and **Pre-Approved** so you know which PDF to open first.
 
-**Approval flow:**
+**Standard approval flow (most deals):**
 - Work from **GPC Solution → Approval History** → Approve / Reject / Reassign / Recall; add comments
-- Reviewers judge: site-level services, products, quote math, record hygiene (Solution Services on sites, products on services, quote line sanity)
-- Who reviews: Product Management (product rules); Sales Management (judgment, escalation); Salesforce team (routing/workflow bugs)
-- Mobile: same actions available from approval notifications/email links
-- Stalls: check Approval History for step/assignee; escalate via Sales Management or SF team
+- Reviewers judge **site-level** services, products, **quote math**, and record hygiene (Solution Services on sites, products on services, quote line sanity)
+- Typical lanes: **Product Management** (product rules), **Sales Management** (financials / judgment), **Salesforce** team (routing and workflow issues)
+- Stuck? Read **Approval History** for step and assignee; escalate through **Sales Management** or the **SF** team—not side channels
 
 **Change order (narrow definition):**
-- When: contract change **after Closed/Won** and **before billing starts**; Solution must be Booked, not Billed
-- Not: post-billing partial change → **MAC**; pre-billing full removal → **Cancellation**; post-billing full removal → **Disconnect**
-- Motion: Conga Change Order template from GPC Solution → complete sites/changes → keep GPC Solution ID on forms → signatures → upload → email package to Sales Manager (when required), PMO, SF Administrator, CRC
-- After submit: SF Admin booking adjustment; PMO project; CRC billing
-- Note: if site stage is Pending Billing or 7–10 Day Order, Admin may need PMO/CRC approval before booking change—not instant
+- **When:** Contract change **after Closed/Won** and **before billing starts**; Solution should be **Booked**, not **Billed**
+- **Motion:** Conga Change Order template from the GPC Solution → complete sites/changes → **GPC Solution ID** on every form → signatures → upload → email package to Sales Manager (when required), **PMO**, **SF Administrator**, **CRC**
+- **After submit:** SF Admin booking adjustment; PMO project; CRC billing
+- **Watch:** If site stage is **Pending Billing** or **7–10 Day Order**, Admin may need **PMO/CRC** sign-off before booking changes—don’t assume it’s instant
 
-**Costing routing rules of thumb:**
-- Zone Parent → sites may bypass automation; Reusable not allowed with Zone Parent
-- New + Existing on one site → **New** path
-- Multiple services on one site → **deepest review** path
-- Reusable / OSP matrices → see Costing Routing PDF
-- Request Manual Validation = skip automation → every participating department reviews manually
+**Costing routing (rules of thumb):**
+- **New + Existing** on one site → **New** path
+- **Request Manual Validation** checked → automation off → **every** participating department reviews manually
 
-**Pre-submission checklist:**
-Right object, real sites/services/products, quote math ties, story matches payback/churn context, attachments + GPC Solution IDs on forms, Request Manual Validation only when human review is really needed.
+**Pre-submission checklist (any path):**
+Right object, real sites/services/products, quote math ties to the story, attachments + **GPC Solution IDs** on forms, and **Request Manual Validation** only when you truly need human eyes on every department.
 
-**Pre-Approved Order Process:**
-Straightforward fiber deals can bypass standard approvals when the solution meets **Pre-Approved** rules on the dated **Approval Requirements Matrix** and related guides (**Module Reference Files**). If this narrative and SharePoint disagree, **treat SharePoint as authoritative**.
+**Pre-Approved fiber (how it connects):**
+Think of it as a **narrow gate** on top of everything above—not a different product family.
 
-- **Stage:** GPC Solution must be in **Design** (per current matrix/process docs).
-- **Requirements:** **36+ month** term; **minimum MRC per Solution Site** (training example: **$150**—confirm on matrix); **Build** or **On-Net** fiber only—not Copper/Coax; **no** promotional credits or contract buyouts unless the matrix allows.
-- **Routing constraints:** Fiber reach and easement rules as published—e.g. distance limits and restrictions on railroads, streets, grassy areas, or building penetrations when the guide prohibits them.
-- **Product exclusions:** **Colocation, SD-WAN, Wireless Internet Broadband, GPC Managed Wi‑Fi, On-Prem PBX, Business Security, Dark Fiber** (and anything else the matrix lists) stay off Pre-Approved—use **Product Manager** or **BSOL** paths per the matrix.
+1. **Read order:** **[Pre-Approved Order Process Quick Reference — 07/23](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)** first (what “clean fiber” looks like), then **[Approval Requirements Matrix v5.5 — 07/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=h64jqJ)** (thresholds, approvers, **exclusions**). If either doc says no, you’re back on **standard** approvals.
+2. **Deal shape:** **Design**-stage GPC Solution, **36+** month term, **MRC per Solution Site** at or above the floor in the **current** matrix (examples in training often use **$150**—confirm the live number), **Build** or **On-Net** fiber—not Copper/Coax—and **no** promo credits or contract buyouts unless the published rules explicitly allow them.
+3. **Field reality:** Fiber reach, distance, and easement rules in the guides still apply—if the guide blocks a route type (railroads, certain streets, easements, building penetrations, etc.), Pre-Approved is **not** a workaround.
+4. **Products:** **Colocation, SD-WAN, wireless broadband, GPC Managed Wi‑Fi, on-prem PBX, Business Security, dark fiber**, and **anything else the matrix lists** stay off the fast path—route **Product Manager** / **BSOL** per the matrix, not Pre-Approved.
+5. **Unsure?** Build the record for **standard** routing and let leadership confirm; the quick reference is short precisely so you can self-check before you commit to a timeline.
 <!-- prettier-ignore-end -->
 
 ---
