@@ -224,7 +224,7 @@ roleplay:
 
 ---
 
-## 
+## Pitch
 
 ::: elevator [Elevator Pitch]
 Replace aging PBX with **one cloud stack**: voice, SMS, meetings, omnichannel CC, file sync—**99.999%** uptime and **Triple Guard Security™** as headline trust. When **RevOps/CX** care about CRM or analytics, qualify and bring specialists—don’t wing DataHub/Extend scope.
@@ -233,12 +233,12 @@ Replace aging PBX with **one cloud stack**: voice, SMS, meetings, omnichannel CC
 :::
 
 ::: accordion UC Platform Brochure
-*Collateral image — coming soon*
+Pull the current Ascend / UC brochure PDF from **Sales Resources** (Module Reference Files)—never recycle an old revision from email.
 :::
 
 ---
 
-## 
+## Discovery Break
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
@@ -359,9 +359,9 @@ Qualify **voice vs SMS**. Partner FAQ: **SMS in the Teams mobile app is not avai
 **Naming noise (from themes doc):** **UC**, **Ascend**, occasional **Unite** in footnotes—align to GPC-approved terms externally.
 
 ::: accordion UC for Teams Datasheet
-*Collateral image — coming soon*
+Device and feature rows change with matrix updates—open the latest **UC for Teams** / embedded datasheet from **Sales Resources** with your SE before you quote.
 :::
 
 ::: accordion Phone Comparison
-*Collateral image — coming soon*
+Desk, DECT, conference, and headset grids live in partner comparison PDFs under **Sales Resources**—match the customer to the matrix, not memory.
 :::

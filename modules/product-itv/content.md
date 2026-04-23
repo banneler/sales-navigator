@@ -88,7 +88,7 @@ roleplay:
 
 ---
 
-## 
+## Discovery game
 
 <div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe

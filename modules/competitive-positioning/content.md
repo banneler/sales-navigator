@@ -136,7 +136,7 @@ roleplay:
 
 ---
 
-## 
+## Positioning snapshot
 
 ::: elevator [Elevator Pitch]
 **Discover first, then map GPC proof to their pain**—never lead with trash talk or unverified stats. Your levers: local fiber, 24/7 NOC, owned/redundant paths, full stack (access → WAN → security → apps). Outcome-led beats generic “we’re better.”
@@ -145,7 +145,6 @@ roleplay:
 ::: accordion M&A / Cox Acquisition Battle Card
 Reference for positioning against acquisition-driven competitors—stability, service continuity, and factual comparison points.
 
-*Collateral image — coming soon*
 :::
 
 ---
@@ -217,15 +216,9 @@ Differentiate last mile, routing, peering, and repair SLAs—map to **their** ap
 | **Tech cards (SD-WAN pattern)** | Profile → pain → GPC wrap → qualifying Qs → proof; verify awards; SE validates design |
 
 ::: accordion Fiber vs LEO Satellite Battle Card
-Side-by-side comparison of fiber vs Starlink/LEO—latency, weather risk, SLAs, and enterprise support.
-
-*Collateral image — coming soon*
-
-*Collateral image — coming soon*
+Side-by-side comparison of fiber vs Starlink/LEO—latency, weather risk, SLAs, and enterprise support. Pull the approved card from **Sales Resources** before you cite specifics externally.
 :::
 
 ::: accordion Ethernet Competitive Battle Card
-Key differentiators for Ethernet positioning—use alongside the tech-card pattern when qualifying multi-site WAN opportunities.
-
-*Collateral image — coming soon*
+Key differentiators for Ethernet positioning—use alongside the tech-card pattern when qualifying multi-site WAN opportunities. Current PDF lives in **Sales Resources**.
 :::

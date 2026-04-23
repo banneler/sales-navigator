@@ -20,7 +20,7 @@ five_minute_summary: |
   - **The Approval Process:** Reviewers evaluate site-level services, products, and quote math—not just the headline total. Track progress via the Approval History on the GPC Solution.
   - **Handling Changes:** Use Change Orders only for pre-billing adjustments. Once billing has started, use the MAC (Move-Add-Change) process for partial updates or Disconnect for full removals.
   - **Manual Validation:** Checking "Request Manual Validation" skips automated routing and forces every department to review. Use this sparingly.
-  - **Pre-Approved Fast Track:** You can bypass standard approvals for 36+ month fiber deals with a minimum $150 MRC per site. Complex products like SD-WAN, Managed Wi-Fi, and Security are excluded and require standard routing.
+  - **Pre-Approved Fast Track:** Straightforward fiber can skip standard approvals when you meet the matrix rules (term, MRC per site, fiber type, build constraints, exclusions). **SD-WAN, Managed Wi‑Fi, and Security** (and other excluded products) stay on standard routing—confirm the live **Approval Requirements Matrix**.
 
 knowledge_checks:
   - question: "When is a 'change order' appropriate in the narrow sense used here?"
@@ -127,13 +127,13 @@ scenarios:
 
 ## Overview
 
-Getting a deal **right** in Salesforce matters as much as winning it.
+Winning the deal means nothing if the **GPC Solution** cannot clear **approvals** and **costing**.
 
-- **Approvals** — reviewers catch issues before orders go to delivery (site-level services, products, quote math).
-- **Change order vs MAC vs disconnect** — use the right tool so billing, installs, and customers stay aligned.
-- **Costing routing** — the right teams estimate and validate spend.
+- **Approvals** — Reviewers judge **site-level** services, products, and **quote math** before delivery—not a headline total.
+- **Change order vs MAC vs disconnect** — Billing status picks the tool. Wrong path = stalled installs and revenue fights.
+- **Costing routing** — Automation and **Manual Validation** route dollars to the right reviewers; learn the rules before you submit.
 
-Pick the correct path at each stage so deals move cleanly from approval to revenue.
+Pick the path that matches **where the deal is in billing**, then keep the record clean enough for someone else to approve it.
 
 ---
 
@@ -181,6 +181,8 @@ Incomplete Solution Sites—missing services or products on a site—stall appro
 
 ## Process Deep Dive [deep]
 
+**Source:** Approval mechanics, costing routing, change order/MAC/disconnect boundaries, and Pre-Approved rules must match the **dated PDFs** in **Module Reference Files** (especially **Approval Overview**, **Approval Requirements Matrix**, **Change Order**, **MAC**, **Costing Routing**). This page is training shorthand—**SharePoint wins** on any conflict.
+
 **Approval flow:**
 - Work from **GPC Solution → Approval History** → Approve / Reject / Reassign / Recall; add comments
 - Reviewers judge: site-level services, products, quote math, record hygiene (Solution Services on sites, products on services, quote line sanity)
@@ -206,28 +208,21 @@ Incomplete Solution Sites—missing services or products on a site—stall appro
 Right object, real sites/services/products, quote math ties, story matches payback/churn context, attachments + GPC Solution IDs on forms, Request Manual Validation only when human review is really needed.
 
 **Pre-Approved Order Process:**
-The Pre-Approved Order Process bypasses standard approvals for straightforward fiber deals. To use it, the GPC Solution must be in the "Design" stage.
+Straightforward fiber deals can bypass standard approvals when the solution meets **Pre-Approved** rules on the dated **Approval Requirements Matrix** and related guides (**Module Reference Files**). If this narrative and SharePoint disagree, **treat SharePoint as authoritative**.
 
-* **Requirements:** Must be a 36-month term or longer with a minimum MRC of $150 at each Solution Site. It only applies to Build Fiber or On-Net Fiber (not Copper or Coax). No promotional credits or contract buyouts can be applied.
-* **Routing Constraints:** The fiber line to the Solution Site must be within 500 feet and cannot cross railroad tracks, streets, grassy areas, or run through buildings.
-* **Product Exclusions:** You cannot use the Pre-Approved path if the deal includes Colocation, SD-WAN, Wireless Internet Broadband, GPC Managed Wi-Fi, On-Prem PBX, Business Security, or Dark Fiber. These require dedicated Product Manager or BSOL approval.
+- **Stage:** GPC Solution must be in **Design** (per current matrix/process docs).
+- **Requirements:** **36+ month** term; **minimum MRC per Solution Site** (training example: **$150**—confirm on matrix); **Build** or **On-Net** fiber only—not Copper/Coax; **no** promotional credits or contract buyouts unless the matrix allows.
+- **Routing constraints:** Fiber reach and easement rules as published—e.g. distance limits and restrictions on railroads, streets, grassy areas, or building penetrations when the guide prohibits them.
+- **Product exclusions:** **Colocation, SD-WAN, Wireless Internet Broadband, GPC Managed Wi‑Fi, On-Prem PBX, Business Security, Dark Fiber** (and anything else the matrix lists) stay off Pre-Approved—use **Product Manager** or **BSOL** paths per the matrix.
 
 ::: accordion Approval Flow & History
-How approvals route through the GPC Solution and where to find Approval History.
-
-*Collateral image — coming soon*
-
-*Collateral image — coming soon*
+How approvals route through the GPC Solution and where to find Approval History. Use **Approval Overview and Training Guide** (Module Reference Files) for step-by-step visuals.
 :::
 
 ::: accordion Change Order Process
-Pre-billing change order workflow — from Conga template through SF Admin booking adjustment.
-
-*Collateral image — coming soon*
+Pre-billing change order workflow—from Conga template through SF Admin booking adjustment. Follow **Change Order Process — Sales Team** (Module Reference Files).
 :::
 
 ::: accordion Costing Routing Reference
-How costing routing selects review paths based on site type, services, and products.
-
-*Collateral image — coming soon*
+How costing routing selects review paths from site type, services, and products. Use **Costing Routing Quick Reference** (Module Reference Files).
 :::

@@ -259,13 +259,10 @@ title: "Sales Rules of Engagement"
 summary: "Pipeline protection. Idle windows. Account ownership."
 sensitivity: "public"
 five_minute_summary: |
-  **One Source of Truth:** Salesforce isn't just paperwork; it's how you protect your commission. Search before you create. Duplicate accounts cause costly ownership disputes.
-
-  **Squatter's Rights Don't Exist:** If you aren't working an account, you don't own it. Prospects open up to the floor after 61 days of dead air. Customers at 121. Strategic and USAC accounts have their own strict rules—know them.
-
-  **The 5-Day Inbound Clock:** Handed a warm inbound lead? You have five business days to make contact and log it in Salesforce. This is non-negotiable. Log it, or lose it.
-
-  **No Cowboy Transfers:** You never reassign an account to yourself unilaterally. Connect with the current owner; once agreed, email your manager and sales leadership for approval and transfer (per ROE).
+  - **One source of truth:** Search before you create. Duplicates drive ownership wars—**Salesforce** is how leadership settles who owns the account (and your commission story).
+  - **Idle windows (general accounts):** **Prospect:** floor opens after **61+** days with no qualifying logged activity. **Customer:** **121+** days. **Strategic** list accounts and **USAC/E-Rate** entities follow **different** rules—read those sections before you work a name.
+  - **Five-day inbound clock:** Sales- or marketing-**assigned** inbound lead? **Five business days** to make first contact **and** log it in Salesforce. Miss it and it can be reassigned. **Self-sourced** leads do **not** use that clock.
+  - **Transfers:** Never reassign yourself. Reach the current owner; once aligned, email **your manager and sales leadership** for approval (per ROE PDF).
 
 knowledge_checks:
   - question: "Before creating a new account or contact in Salesforce, what should you do first?"
@@ -354,7 +351,7 @@ scenarios:
       You find a juicy Customer account. It's not Strategic, not USAC-funded. The current owner hasn't logged a single activity in 130 days. You want to reach out today. What's your move?
     choices:
       - label: "It's past 121 days. The window is open. Start dialing and emailing immediately."
-        feedback: "Rookie move. Yes, the window is technically open, but blasting an email without warning creates internal friction. Reach the listed owner first."
+        feedback: "Slow down. The window is open by the numbers, but cold outreach without a heads-up burns relationships internally. Reach the listed owner first."
 
       - label: "Coordinate with the current owner. If they are unresponsive, follow the ROE transfer steps through leadership before claiming it."
         feedback: "Correct. Protect your reputation internally. Align with the owner or use the approved transfer paths."
@@ -376,17 +373,13 @@ reference_files:
 
 ## Overview
 
-**The Reality Check**
+ROE exists to **protect pipelines** and **draw clean lines** on who works whom. **Salesforce** is the system of record—full stop.
 
-The Rules of Engagement exist for one reason: to protect everyone’s pipeline and maintain clear boundaries across the team. Salesforce is the undisputed system of record.
+- **Search before you create** — One entity, one account. Duplicates waste time and invite disputes.
+- **Log it or lose it** — Tasks, calls, meetings, emails belong **on the record**. Outlook does not count in an ownership fight.
+- **Transfer through leadership** — Never self-reassign. Agree with the incumbent, then **manager + sales leadership** (per ROE).
 
-**The Core Mandates**
-
-- **Search before you create:** One entity, one account. Duplicates are a nightmare to untangle and create ownership disputes.
-- **Log it or lose it:** Tasks, calls, meetings, or emails must live on the Salesforce record. Your Outlook Sent folder is irrelevant in an ownership dispute.
-- **Transfer through leadership:** Never reassign an account unilaterally. Connect with the current owner first; once agreed, involve your manager and sales leadership per ROE.
-
-Strategic and USAC accounts are different beasts entirely. Know the idle windows (Prospect **61+** days, Customer **121+** days), keep your activity log bulletproof, and let the data do the talking.
+**General** accounts: **61+** (Prospect) / **121+** (Customer) idle rules. **Strategic** list and **USAC/E-Rate** coverage are stricter—confirm before you chase the logo.
 
 ---
 
@@ -433,6 +426,8 @@ Strategic and USAC accounts are different beasts entirely. Know the idle windows
 ---
 
 ## Process Deep Dive [deep]
+
+**Source:** This section summarizes the **Sales Rules of Engagement (ROE) — Revised August 2025** PDF linked under **Module Reference Files**. If leadership publishes a newer ROE, follow that document—not this page.
 
 ### General guidelines and Salesforce (all reps)
 
@@ -778,23 +773,18 @@ Tasks, list views, and Home dashboards are the hygiene habit—if activity isn't
 ::: accordion Lead Conversion Quick Reference
 Converting a lead creates the account, contact, and opportunity in one step.
 
-*Collateral image — coming soon*
 
-*Collateral image — coming soon*
 :::
 
 ::: accordion Salesforce Home & Dashboards
 Use the Salesforce Home page and dashboards to keep your pipeline and follow-ups current.
 
-*Collateral image — coming soon*
 
-*Collateral image — coming soon*
 :::
 
 ::: accordion DocuSign Integration Reference
 Setting up Contract Signer and sending envelopes from Salesforce via Conga.
 
-*Collateral image — coming soon*
 :::
 -->
 <!-- prettier-ignore-end -->
@@ -828,7 +818,7 @@ five_minute_summary: |
   - **The Approval Process:** Reviewers evaluate site-level services, products, and quote math—not just the headline total. Track progress via the Approval History on the GPC Solution.
   - **Handling Changes:** Use Change Orders only for pre-billing adjustments. Once billing has started, use the MAC (Move-Add-Change) process for partial updates or Disconnect for full removals.
   - **Manual Validation:** Checking "Request Manual Validation" skips automated routing and forces every department to review. Use this sparingly.
-  - **Pre-Approved Fast Track:** You can bypass standard approvals for 36+ month fiber deals with a minimum $150 MRC per site. Complex products like SD-WAN, Managed Wi-Fi, and Security are excluded and require standard routing.
+  - **Pre-Approved Fast Track:** Straightforward fiber can skip standard approvals when you meet the matrix rules (term, MRC per site, fiber type, build constraints, exclusions). **SD-WAN, Managed Wi‑Fi, and Security** (and other excluded products) stay on standard routing—confirm the live **Approval Requirements Matrix**.
 
 knowledge_checks:
   - question: "When is a 'change order' appropriate in the narrow sense used here?"
@@ -935,13 +925,13 @@ scenarios:
 
 ## Overview
 
-Getting a deal **right** in Salesforce matters as much as winning it.
+Winning the deal means nothing if the **GPC Solution** cannot clear **approvals** and **costing**.
 
-- **Approvals** — reviewers catch issues before orders go to delivery (site-level services, products, quote math).
-- **Change order vs MAC vs disconnect** — use the right tool so billing, installs, and customers stay aligned.
-- **Costing routing** — the right teams estimate and validate spend.
+- **Approvals** — Reviewers judge **site-level** services, products, and **quote math** before delivery—not a headline total.
+- **Change order vs MAC vs disconnect** — Billing status picks the tool. Wrong path = stalled installs and revenue fights.
+- **Costing routing** — Automation and **Manual Validation** route dollars to the right reviewers; learn the rules before you submit.
 
-Pick the correct path at each stage so deals move cleanly from approval to revenue.
+Pick the path that matches **where the deal is in billing**, then keep the record clean enough for someone else to approve it.
 
 ---
 
@@ -989,6 +979,8 @@ Incomplete Solution Sites—missing services or products on a site—stall appro
 
 ## Process Deep Dive [deep]
 
+**Source:** Approval mechanics, costing routing, change order/MAC/disconnect boundaries, and Pre-Approved rules must match the **dated PDFs** in **Module Reference Files** (especially **Approval Overview**, **Approval Requirements Matrix**, **Change Order**, **MAC**, **Costing Routing**). This page is training shorthand—**SharePoint wins** on any conflict.
+
 **Approval flow:**
 - Work from **GPC Solution → Approval History** → Approve / Reject / Reassign / Recall; add comments
 - Reviewers judge: site-level services, products, quote math, record hygiene (Solution Services on sites, products on services, quote line sanity)
@@ -1014,30 +1006,23 @@ Incomplete Solution Sites—missing services or products on a site—stall appro
 Right object, real sites/services/products, quote math ties, story matches payback/churn context, attachments + GPC Solution IDs on forms, Request Manual Validation only when human review is really needed.
 
 **Pre-Approved Order Process:**
-The Pre-Approved Order Process bypasses standard approvals for straightforward fiber deals. To use it, the GPC Solution must be in the "Design" stage.
+Straightforward fiber deals can bypass standard approvals when the solution meets **Pre-Approved** rules on the dated **Approval Requirements Matrix** and related guides (**Module Reference Files**). If this narrative and SharePoint disagree, **treat SharePoint as authoritative**.
 
-* **Requirements:** Must be a 36-month term or longer with a minimum MRC of $150 at each Solution Site. It only applies to Build Fiber or On-Net Fiber (not Copper or Coax). No promotional credits or contract buyouts can be applied.
-* **Routing Constraints:** The fiber line to the Solution Site must be within 500 feet and cannot cross railroad tracks, streets, grassy areas, or run through buildings.
-* **Product Exclusions:** You cannot use the Pre-Approved path if the deal includes Colocation, SD-WAN, Wireless Internet Broadband, GPC Managed Wi-Fi, On-Prem PBX, Business Security, or Dark Fiber. These require dedicated Product Manager or BSOL approval.
+- **Stage:** GPC Solution must be in **Design** (per current matrix/process docs).
+- **Requirements:** **36+ month** term; **minimum MRC per Solution Site** (training example: **$150**—confirm on matrix); **Build** or **On-Net** fiber only—not Copper/Coax; **no** promotional credits or contract buyouts unless the matrix allows.
+- **Routing constraints:** Fiber reach and easement rules as published—e.g. distance limits and restrictions on railroads, streets, grassy areas, or building penetrations when the guide prohibits them.
+- **Product exclusions:** **Colocation, SD-WAN, Wireless Internet Broadband, GPC Managed Wi‑Fi, On-Prem PBX, Business Security, Dark Fiber** (and anything else the matrix lists) stay off Pre-Approved—use **Product Manager** or **BSOL** paths per the matrix.
 
 ::: accordion Approval Flow & History
-How approvals route through the GPC Solution and where to find Approval History.
-
-*Collateral image — coming soon*
-
-*Collateral image — coming soon*
+How approvals route through the GPC Solution and where to find Approval History. Use **Approval Overview and Training Guide** (Module Reference Files) for step-by-step visuals.
 :::
 
 ::: accordion Change Order Process
-Pre-billing change order workflow — from Conga template through SF Admin booking adjustment.
-
-*Collateral image — coming soon*
+Pre-billing change order workflow—from Conga template through SF Admin booking adjustment. Follow **Change Order Process — Sales Team** (Module Reference Files).
 :::
 
 ::: accordion Costing Routing Reference
-How costing routing selects review paths based on site type, services, and products.
-
-*Collateral image — coming soon*
+How costing routing selects review paths from site type, services, and products. Use **Costing Routing Quick Reference** (Module Reference Files).
 :::
 <!-- prettier-ignore-end -->
 
@@ -1085,10 +1070,10 @@ knowledge_checks:
   - question: "Where should you send someone for product-specific datasheets after this storyline?"
     options:
       - "Only the Business Capability PDF; ignore other folders."
-      - "The deep collateral library (extracted OneDrive tree) organized by product, while this module stays the narrative spine."
+      - "Sales Resources and the product modules, while this page stays the narrative spine."
       - "Generic web search only."
     correct_index: 1
-    explanation: "The module points to the Business Capability deck for the story and the extracted library for per-product evidence."
+    explanation: "Use the Business Capability deck for the story and **Sales Resources** (plus the relevant product modules) for per-product evidence."
   - question: "What proof points anchor the 'why GPC' network story?"
     options:
       - "Fiber-first access, Midwest IP reach, Tier-1 and IX relationships, and paths tuned for cloud/SaaS and end users."
@@ -1106,10 +1091,10 @@ knowledge_checks:
   - question: "How does this module relate to the Business Capability PDF versus the deep collateral library?"
     options:
       - "Ignore the PDF; the library replaces the storyline entirely."
-      - "Use this module and the Business Capability deck for the narrative spine; use the extracted library for per-product evidence."
+      - "Use this module and the Business Capability deck for the narrative spine; use Sales Resources and the product modules for per-product evidence."
       - "Use only this module and never reference external collateral."
     correct_index: 1
-    explanation: "Keep the executive storyline in the capability materials; pull datasheets and vertical proof from the organized extract when needed."
+    explanation: "Keep the executive storyline in the capability materials; pull datasheets and vertical proof from **Sales Resources** and product modules when needed."
   - question: "When a CFO asks 'Why GPC vs anyone else?' in one sentence, what is a strong response?"
     options:
       - "List fiber miles with no business outcome."
@@ -1169,7 +1154,7 @@ roleplay:
 
 ---
 
-## 
+## Story stack
 
 ::: elevator [Elevator Pitch]
 GPC is a **layered technology partner** on a resilient Midwest fiber network: access (fiber + backup) → WAN → security → UC, Cloud Connect, and Wi-Fi as **one system**, not a SKU buffet. Proof: Midwest IP reach, Tier-1/IX paths, local teams, 24/7 NOC—use the capability deck for the story, Sales Resources for product evidence.
@@ -1178,12 +1163,11 @@ GPC is a **layered technology partner** on a resilient Midwest fiber network: ac
 ::: accordion Business Capability Overview
 Cover slide from the GPC Business Capability presentation—use as the opening visual when framing outcomes and partnership.
 
-*Collateral image — coming soon*
 :::
 
 ---
 
-## 
+## Discovery Run
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
@@ -1252,15 +1236,12 @@ Layered design from day one avoids rip-and-replace; position access + path + pol
 ::: accordion Portfolio Stack Layers
 Visual breakdown of the layered portfolio—access through applications—from the capability deck.
 
-*Collateral image — coming soon*
 
-*Collateral image — coming soon*
 :::
 
 ::: accordion Network Story & Proof Points
 Midwest IP, fiber-first access, and Tier-1/IX relationships—anchor the "why GPC" conversation with this network narrative slide.
 
-*Collateral image — coming soon*
 :::
 <!-- prettier-ignore-end -->
 
@@ -1408,7 +1389,7 @@ roleplay:
 
 ---
 
-## 
+## Pitch
 
 ::: elevator [Elevator Pitch]
 GPC's connectivity stack matches the right access technology to each customer's workload—not just the cheapest pipe available. **SIA** (Standard Internet Access) is the right fit for cost-sensitive, flexible needs. **DIA** (Dedicated Internet Access) delivers symmetrical bandwidth, stronger DDoS posture, and SLA-grade operations for businesses that can't afford jitter or downtime. **Managed Ethernet** provides private Layer 2 connectivity between sites. **Wave** moves large optical volumes between data centers and hubs. Discovery first—then quote the right product.
@@ -1416,7 +1397,7 @@ GPC's connectivity stack matches the right access technology to each customer's 
 
 ---
 
-## 
+## Discovery Galaxy
 
 <div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
@@ -1493,17 +1474,15 @@ Acknowledge calendar reality; contrast with ongoing cost of poor access; phased 
 **Pricing:** Quotes = standard tools + approvals. DIA/SIA/Ethernet/Wave pricing via quoting + Sales Resources—involve AE/pricing when scope is fuzzy.
 
 ::: accordion DIA vs SIA Comparison
-*Collateral image — coming soon*
+Use the comparison sheet in **Sales Resources** for side-by-side dedicated vs shared Internet positioning.
 :::
 
 ::: accordion Ethernet Battle Card
-*Collateral image — coming soon*
+Ethernet battle card and qualifiers sit in **Sales Resources**—pair with discovery on sites, handoffs, and SLAs.
 :::
 
 ::: accordion Fiber vs Starlink Battlecard
-*Collateral image — coming soon*
-
-*Collateral image — coming soon*
+Fiber vs LEO positioning points live in competitive collateral on **Sales Resources**—confirm Starlink claims against the current approved card.
 :::
 <!-- prettier-ignore-end -->
 
@@ -1651,7 +1630,7 @@ roleplay:
 
 ---
 
-## 
+## Pitch
 
 ::: elevator [Elevator Pitch]
 GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protection and intelligent routing at every edge. **Managed Firewall** (FortiGate-based, SOC-monitored) and **Managed Network Security (MNS)** stop threats at the edge and in email, with SIEM and assessment capabilities for regulated environments. **DDoS Protection** keeps critical services online—proactive for 24/7 mitigation, on-demand for cost-conscious accounts that understand the window. **SD-WAN (VeloCloud)** transforms multi-site WAN by routing traffic intelligently across any access type, with cloud breakout, QoS for VoIP, and a single management pane—all managed by GPC with local support and a 24/7 NOC.
@@ -1659,7 +1638,7 @@ GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protecti
 
 ---
 
-## 
+## Discovery Break
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
@@ -1734,15 +1713,15 @@ No—next-gen firewall and IDS/IPS are optional add-ons, not bundled in base Vel
 **Vertical fit:** retail stores, regional healthcare, community banking, insurance brokers, government, education, manufacturing—any multi-site business with VoIP/SaaS pain.
 
 ::: accordion DDoS Protection Overview
-*Collateral image — coming soon*
+DDoS proactive vs on-demand positioning and mitigation windows are in **Sales Resources**—read the current product sheet before you promise 24×7 coverage on the wrong SKU.
 :::
 
 ::: accordion SD-WAN Retail Brief
-*Collateral image — coming soon*
+Retail vertical briefs and proof points live in **Sales Resources**—pair with SE when the design is non-standard.
 :::
 
 ::: accordion SD-WAN Healthcare Brief
-*Collateral image — coming soon*
+Healthcare SD-WAN talking points and compliance-oriented hooks are maintained in **Sales Resources**—validate PHI/regulated claims with SE.
 :::
 <!-- prettier-ignore-end -->
 
@@ -1840,11 +1819,11 @@ knowledge_checks:
 
   - question: "Where should sellers look for formal Cloud, Wi‑Fi, and Backup product training shortcuts?"
     options:
-      - "The extracted training folder's .url shortcuts to hosted pages (on-network)"
+      - "Sales Resources and the enablement-maintained training links (SharePoint / approved shortcuts)"
       - "Random search-engine results updated hourly"
       - "Only unofficial third-party forums"
     correct_index: 0
-    explanation: ".url shortcuts when on-network; else Sales Resources / GPCU."
+    explanation: "Start with **Sales Resources** and the links your enablement team publishes—not open web search."
 
   - question: "Which cloud/SaaS ecosystem framing matches the Cloud section's positioning?"
     options:
@@ -1895,7 +1874,7 @@ roleplay:
 
 ---
 
-## 
+## Pitch
 
 ::: elevator [Elevator Pitch]
 Three products that extend the value of GPC fiber access: **Cloud Connect** gives SaaS-heavy and cloud-first businesses a private, predictable path to AWS, Azure, Google, and other platforms—no more Internet-only jitter for critical workloads. **Managed Wi-Fi** covers the last ten feet with a fully managed lifecycle (design, install, maintain), guest/corporate segmentation, and integrated firewall/IDS/IPS. **5G Wireless Backup** keeps the business running during fiber outages with automatic failover, automatic fail-back, 24/7 NOC monitoring, and optional battery protection—no manual intervention required.
@@ -1903,7 +1882,7 @@ Three products that extend the value of GPC fiber access: **Cloud Connect** give
 
 ---
 
-## 
+## Discovery Run
 
 <div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
@@ -1975,19 +1954,15 @@ Split networks are common; still qualify density, security policy, and who owns 
 - No SLA guarantees on wireless—all best-effort
 
 ::: accordion Cloud Connect Battle Card
-*Collateral image — coming soon*
+Cloud Connect proof points and diagrams are maintained in **Sales Resources**—grab the latest battle card before customer calls.
 :::
 
 ::: accordion Managed Wi-Fi Collateral
-*Collateral image — coming soon*
-
-*Collateral image — coming soon*
+Managed Wi‑Fi datasheets and survey talking points live under **Sales Resources**; engineering still sizes every design.
 :::
 
 ::: accordion 5G Wireless Internet Backup
-*Collateral image — coming soon*
-
-*Collateral image — coming soon*
+Wireless backup specs, failover rules, and territory notes are in **Sales Resources**—align with quoting before you promise throughput.
 :::
 <!-- prettier-ignore-end -->
 
@@ -2088,7 +2063,7 @@ roleplay:
 
 ---
 
-## 
+## Discovery game
 
 <div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
@@ -2366,7 +2341,7 @@ roleplay:
 
 ---
 
-## 
+## Pitch
 
 ::: elevator [Elevator Pitch]
 Replace aging PBX with **one cloud stack**: voice, SMS, meetings, omnichannel CC, file sync—**99.999%** uptime and **Triple Guard Security™** as headline trust. When **RevOps/CX** care about CRM or analytics, qualify and bring specialists—don’t wing DataHub/Extend scope.
@@ -2375,12 +2350,12 @@ Replace aging PBX with **one cloud stack**: voice, SMS, meetings, omnichannel CC
 :::
 
 ::: accordion UC Platform Brochure
-*Collateral image — coming soon*
+Pull the current Ascend / UC brochure PDF from **Sales Resources** (Module Reference Files)—never recycle an old revision from email.
 :::
 
 ---
 
-## 
+## Discovery Break
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
@@ -2501,11 +2476,11 @@ Qualify **voice vs SMS**. Partner FAQ: **SMS in the Teams mobile app is not avai
 **Naming noise (from themes doc):** **UC**, **Ascend**, occasional **Unite** in footnotes—align to GPC-approved terms externally.
 
 ::: accordion UC for Teams Datasheet
-*Collateral image — coming soon*
+Device and feature rows change with matrix updates—open the latest **UC for Teams** / embedded datasheet from **Sales Resources** with your SE before you quote.
 :::
 
 ::: accordion Phone Comparison
-*Collateral image — coming soon*
+Desk, DECT, conference, and headset grids live in partner comparison PDFs under **Sales Resources**—match the customer to the matrix, not memory.
 :::
 <!-- prettier-ignore-end -->
 
@@ -2654,7 +2629,7 @@ roleplay:
 
 ---
 
-## 
+## Positioning snapshot
 
 ::: elevator [Elevator Pitch]
 **Discover first, then map GPC proof to their pain**—never lead with trash talk or unverified stats. Your levers: local fiber, 24/7 NOC, owned/redundant paths, full stack (access → WAN → security → apps). Outcome-led beats generic “we’re better.”
@@ -2663,7 +2638,6 @@ roleplay:
 ::: accordion M&A / Cox Acquisition Battle Card
 Reference for positioning against acquisition-driven competitors—stability, service continuity, and factual comparison points.
 
-*Collateral image — coming soon*
 :::
 
 ---
@@ -2735,17 +2709,11 @@ Differentiate last mile, routing, peering, and repair SLAs—map to **their** ap
 | **Tech cards (SD-WAN pattern)** | Profile → pain → GPC wrap → qualifying Qs → proof; verify awards; SE validates design |
 
 ::: accordion Fiber vs LEO Satellite Battle Card
-Side-by-side comparison of fiber vs Starlink/LEO—latency, weather risk, SLAs, and enterprise support.
-
-*Collateral image — coming soon*
-
-*Collateral image — coming soon*
+Side-by-side comparison of fiber vs Starlink/LEO—latency, weather risk, SLAs, and enterprise support. Pull the approved card from **Sales Resources** before you cite specifics externally.
 :::
 
 ::: accordion Ethernet Competitive Battle Card
-Key differentiators for Ethernet positioning—use alongside the tech-card pattern when qualifying multi-site WAN opportunities.
-
-*Collateral image — coming soon*
+Key differentiators for Ethernet positioning—use alongside the tech-card pattern when qualifying multi-site WAN opportunities. Current PDF lives in **Sales Resources**.
 :::
 <!-- prettier-ignore-end -->
 
@@ -2831,9 +2799,9 @@ The Gantt shows **eighteen touches** staggered across three months: intros, call
 
 Month 1 emphasizes **awareness** (e.g. LinkedIn & paid search). Month 2 adds **validation** (e.g. direct mail). Month 3 focuses **conversion** (e.g. retargeting). Optional creative (brochure copy) is called out where it supports the same story.
 
-## Next steps for your documentation
+## Keep this module honest
 
-Replace placeholder paragraphs above with your **final narrative**, **owner names**, **links to playbooks**, and **MQL/SQL definitions** as your internal docs solidify. Update `assets/gantt/abm-90-day-sequence.png` when the chart changes.
+Name your **enablement owner**, **playbook links**, and **MQL/SQL** definitions in your internal wiki—this page stays intentionally generic. When the Gantt or narrative changes, swap **`assets/gantt/abm-90-day-sequence.png`** and align the bullets here with the live program.
 <!-- prettier-ignore-end -->
 
 ---
@@ -2911,9 +2879,9 @@ Operational Business Reviews turn **network reality, financial signals, and mark
 - **Marketing:** Format, layout, and review of customer-facing materials after the day-14 handoff.
 - **Production:** Print and assembly leading into the OBR meeting milestone.
 
-## Next steps for your documentation
+## Keep the Gantt honest
 
-Swap in your **real RACI**, **tool names**, and **approval gates** as the written SOP matures. Update `assets/gantt/obr-21-day-cycle.png` when the chart changes.
+Document your **RACI**, **systems**, and **approval gates** in the live OBR SOP. When leadership updates the model, replace **`assets/gantt/obr-21-day-cycle.png`** so this module matches what delivery actually runs.
 <!-- prettier-ignore-end -->
 
 ---

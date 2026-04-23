@@ -278,22 +278,17 @@ Tasks, list views, and Home dashboards are the hygiene habit—if activity isn't
 ::: accordion Lead Conversion Quick Reference
 Converting a lead creates the account, contact, and opportunity in one step.
 
-*Collateral image — coming soon*
 
-*Collateral image — coming soon*
 :::
 
 ::: accordion Salesforce Home & Dashboards
 Use the Salesforce Home page and dashboards to keep your pipeline and follow-ups current.
 
-*Collateral image — coming soon*
 
-*Collateral image — coming soon*
 :::
 
 ::: accordion DocuSign Integration Reference
 Setting up Contract Signer and sending envelopes from Salesforce via Conga.
 
-*Collateral image — coming soon*
 :::
 -->

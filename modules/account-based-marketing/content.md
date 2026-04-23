@@ -73,6 +73,6 @@ The Gantt shows **eighteen touches** staggered across three months: intros, call
 
 Month 1 emphasizes **awareness** (e.g. LinkedIn & paid search). Month 2 adds **validation** (e.g. direct mail). Month 3 focuses **conversion** (e.g. retargeting). Optional creative (brochure copy) is called out where it supports the same story.
 
-## Next steps for your documentation
+## Keep this module honest
 
-Replace placeholder paragraphs above with your **final narrative**, **owner names**, **links to playbooks**, and **MQL/SQL definitions** as your internal docs solidify. Update `assets/gantt/abm-90-day-sequence.png` when the chart changes.
+Name your **enablement owner**, **playbook links**, and **MQL/SQL** definitions in your internal wiki—this page stays intentionally generic. When the Gantt or narrative changes, swap **`assets/gantt/abm-90-day-sequence.png`** and align the bullets here with the live program.

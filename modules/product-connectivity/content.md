@@ -135,7 +135,7 @@ roleplay:
 
 ---
 
-## 
+## Pitch
 
 ::: elevator [Elevator Pitch]
 GPC's connectivity stack matches the right access technology to each customer's workload—not just the cheapest pipe available. **SIA** (Standard Internet Access) is the right fit for cost-sensitive, flexible needs. **DIA** (Dedicated Internet Access) delivers symmetrical bandwidth, stronger DDoS posture, and SLA-grade operations for businesses that can't afford jitter or downtime. **Managed Ethernet** provides private Layer 2 connectivity between sites. **Wave** moves large optical volumes between data centers and hubs. Discovery first—then quote the right product.
@@ -143,7 +143,7 @@ GPC's connectivity stack matches the right access technology to each customer's 
 
 ---
 
-## 
+## Discovery Galaxy
 
 <div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
@@ -220,15 +220,13 @@ Acknowledge calendar reality; contrast with ongoing cost of poor access; phased 
 **Pricing:** Quotes = standard tools + approvals. DIA/SIA/Ethernet/Wave pricing via quoting + Sales Resources—involve AE/pricing when scope is fuzzy.
 
 ::: accordion DIA vs SIA Comparison
-*Collateral image — coming soon*
+Use the comparison sheet in **Sales Resources** for side-by-side dedicated vs shared Internet positioning.
 :::
 
 ::: accordion Ethernet Battle Card
-*Collateral image — coming soon*
+Ethernet battle card and qualifiers sit in **Sales Resources**—pair with discovery on sites, handoffs, and SLAs.
 :::
 
 ::: accordion Fiber vs Starlink Battlecard
-*Collateral image — coming soon*
-
-*Collateral image — coming soon*
+Fiber vs LEO positioning points live in competitive collateral on **Sales Resources**—confirm Starlink claims against the current approved card.
 :::

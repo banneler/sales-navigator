@@ -135,7 +135,7 @@ roleplay:
 
 ---
 
-## 
+## Pitch
 
 ::: elevator [Elevator Pitch]
 GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protection and intelligent routing at every edge. **Managed Firewall** (FortiGate-based, SOC-monitored) and **Managed Network Security (MNS)** stop threats at the edge and in email, with SIEM and assessment capabilities for regulated environments. **DDoS Protection** keeps critical services online—proactive for 24/7 mitigation, on-demand for cost-conscious accounts that understand the window. **SD-WAN (VeloCloud)** transforms multi-site WAN by routing traffic intelligently across any access type, with cloud breakout, QoS for VoIP, and a single management pane—all managed by GPC with local support and a 24/7 NOC.
@@ -143,7 +143,7 @@ GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protecti
 
 ---
 
-## 
+## Discovery Break
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
@@ -218,13 +218,13 @@ No—next-gen firewall and IDS/IPS are optional add-ons, not bundled in base Vel
 **Vertical fit:** retail stores, regional healthcare, community banking, insurance brokers, government, education, manufacturing—any multi-site business with VoIP/SaaS pain.
 
 ::: accordion DDoS Protection Overview
-*Collateral image — coming soon*
+DDoS proactive vs on-demand positioning and mitigation windows are in **Sales Resources**—read the current product sheet before you promise 24×7 coverage on the wrong SKU.
 :::
 
 ::: accordion SD-WAN Retail Brief
-*Collateral image — coming soon*
+Retail vertical briefs and proof points live in **Sales Resources**—pair with SE when the design is non-standard.
 :::
 
 ::: accordion SD-WAN Healthcare Brief
-*Collateral image — coming soon*
+Healthcare SD-WAN talking points and compliance-oriented hooks are maintained in **Sales Resources**—validate PHI/regulated claims with SE.
 :::

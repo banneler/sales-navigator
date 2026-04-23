@@ -85,11 +85,11 @@ knowledge_checks:
 
   - question: "Where should sellers look for formal Cloud, Wi‑Fi, and Backup product training shortcuts?"
     options:
-      - "The extracted training folder's .url shortcuts to hosted pages (on-network)"
+      - "Sales Resources and the enablement-maintained training links (SharePoint / approved shortcuts)"
       - "Random search-engine results updated hourly"
       - "Only unofficial third-party forums"
     correct_index: 0
-    explanation: ".url shortcuts when on-network; else Sales Resources / GPCU."
+    explanation: "Start with **Sales Resources** and the links your enablement team publishes—not open web search."
 
   - question: "Which cloud/SaaS ecosystem framing matches the Cloud section's positioning?"
     options:
@@ -140,7 +140,7 @@ roleplay:
 
 ---
 
-## 
+## Pitch
 
 ::: elevator [Elevator Pitch]
 Three products that extend the value of GPC fiber access: **Cloud Connect** gives SaaS-heavy and cloud-first businesses a private, predictable path to AWS, Azure, Google, and other platforms—no more Internet-only jitter for critical workloads. **Managed Wi-Fi** covers the last ten feet with a fully managed lifecycle (design, install, maintain), guest/corporate segmentation, and integrated firewall/IDS/IPS. **5G Wireless Backup** keeps the business running during fiber outages with automatic failover, automatic fail-back, 24/7 NOC monitoring, and optional battery protection—no manual intervention required.
@@ -148,7 +148,7 @@ Three products that extend the value of GPC fiber access: **Cloud Connect** give
 
 ---
 
-## 
+## Discovery Run
 
 <div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
@@ -220,17 +220,13 @@ Split networks are common; still qualify density, security policy, and who owns 
 - No SLA guarantees on wireless—all best-effort
 
 ::: accordion Cloud Connect Battle Card
-*Collateral image — coming soon*
+Cloud Connect proof points and diagrams are maintained in **Sales Resources**—grab the latest battle card before customer calls.
 :::
 
 ::: accordion Managed Wi-Fi Collateral
-*Collateral image — coming soon*
-
-*Collateral image — coming soon*
+Managed Wi‑Fi datasheets and survey talking points live under **Sales Resources**; engineering still sizes every design.
 :::
 
 ::: accordion 5G Wireless Internet Backup
-*Collateral image — coming soon*
-
-*Collateral image — coming soon*
+Wireless backup specs, failover rules, and territory notes are in **Sales Resources**—align with quoting before you promise throughput.
 :::

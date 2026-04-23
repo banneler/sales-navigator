@@ -66,6 +66,6 @@ Operational Business Reviews turn **network reality, financial signals, and mark
 - **Marketing:** Format, layout, and review of customer-facing materials after the day-14 handoff.
 - **Production:** Print and assembly leading into the OBR meeting milestone.
 
-## Next steps for your documentation
+## Keep the Gantt honest
 
-Swap in your **real RACI**, **tool names**, and **approval gates** as the written SOP matures. Update `assets/gantt/obr-21-day-cycle.png` when the chart changes.
+Document your **RACI**, **systems**, and **approval gates** in the live OBR SOP. When leadership updates the model, replace **`assets/gantt/obr-21-day-cycle.png`** so this module matches what delivery actually runs.

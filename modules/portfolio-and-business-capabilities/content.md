@@ -35,10 +35,10 @@ knowledge_checks:
   - question: "Where should you send someone for product-specific datasheets after this storyline?"
     options:
       - "Only the Business Capability PDF; ignore other folders."
-      - "The deep collateral library (extracted OneDrive tree) organized by product, while this module stays the narrative spine."
+      - "Sales Resources and the product modules, while this page stays the narrative spine."
       - "Generic web search only."
     correct_index: 1
-    explanation: "The module points to the Business Capability deck for the story and the extracted library for per-product evidence."
+    explanation: "Use the Business Capability deck for the story and **Sales Resources** (plus the relevant product modules) for per-product evidence."
   - question: "What proof points anchor the 'why GPC' network story?"
     options:
       - "Fiber-first access, Midwest IP reach, Tier-1 and IX relationships, and paths tuned for cloud/SaaS and end users."
@@ -56,10 +56,10 @@ knowledge_checks:
   - question: "How does this module relate to the Business Capability PDF versus the deep collateral library?"
     options:
       - "Ignore the PDF; the library replaces the storyline entirely."
-      - "Use this module and the Business Capability deck for the narrative spine; use the extracted library for per-product evidence."
+      - "Use this module and the Business Capability deck for the narrative spine; use Sales Resources and the product modules for per-product evidence."
       - "Use only this module and never reference external collateral."
     correct_index: 1
-    explanation: "Keep the executive storyline in the capability materials; pull datasheets and vertical proof from the organized extract when needed."
+    explanation: "Keep the executive storyline in the capability materials; pull datasheets and vertical proof from **Sales Resources** and product modules when needed."
   - question: "When a CFO asks 'Why GPC vs anyone else?' in one sentence, what is a strong response?"
     options:
       - "List fiber miles with no business outcome."
@@ -119,7 +119,7 @@ roleplay:
 
 ---
 
-## 
+## Story stack
 
 ::: elevator [Elevator Pitch]
 GPC is a **layered technology partner** on a resilient Midwest fiber network: access (fiber + backup) → WAN → security → UC, Cloud Connect, and Wi-Fi as **one system**, not a SKU buffet. Proof: Midwest IP reach, Tier-1/IX paths, local teams, 24/7 NOC—use the capability deck for the story, Sales Resources for product evidence.
@@ -128,12 +128,11 @@ GPC is a **layered technology partner** on a resilient Midwest fiber network: ac
 ::: accordion Business Capability Overview
 Cover slide from the GPC Business Capability presentation—use as the opening visual when framing outcomes and partnership.
 
-*Collateral image — coming soon*
 :::
 
 ---
 
-## 
+## Discovery Run
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
@@ -202,13 +201,10 @@ Layered design from day one avoids rip-and-replace; position access + path + pol
 ::: accordion Portfolio Stack Layers
 Visual breakdown of the layered portfolio—access through applications—from the capability deck.
 
-*Collateral image — coming soon*
 
-*Collateral image — coming soon*
 :::
 
 ::: accordion Network Story & Proof Points
 Midwest IP, fiber-first access, and Tier-1/IX relationships—anchor the "why GPC" conversation with this network narrative slide.
 
-*Collateral image — coming soon*
 :::

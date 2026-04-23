@@ -4,13 +4,10 @@ title: "Sales Rules of Engagement"
 summary: "Pipeline protection. Idle windows. Account ownership."
 sensitivity: "public"
 five_minute_summary: |
-  **One Source of Truth:** Salesforce isn't just paperwork; it's how you protect your commission. Search before you create. Duplicate accounts cause costly ownership disputes.
-
-  **Squatter's Rights Don't Exist:** If you aren't working an account, you don't own it. Prospects open up to the floor after 61 days of dead air. Customers at 121. Strategic and USAC accounts have their own strict rules—know them.
-
-  **The 5-Day Inbound Clock:** Handed a warm inbound lead? You have five business days to make contact and log it in Salesforce. This is non-negotiable. Log it, or lose it.
-
-  **No Cowboy Transfers:** You never reassign an account to yourself unilaterally. Connect with the current owner; once agreed, email your manager and sales leadership for approval and transfer (per ROE).
+  - **One source of truth:** Search before you create. Duplicates drive ownership wars—**Salesforce** is how leadership settles who owns the account (and your commission story).
+  - **Idle windows (general accounts):** **Prospect:** floor opens after **61+** days with no qualifying logged activity. **Customer:** **121+** days. **Strategic** list accounts and **USAC/E-Rate** entities follow **different** rules—read those sections before you work a name.
+  - **Five-day inbound clock:** Sales- or marketing-**assigned** inbound lead? **Five business days** to make first contact **and** log it in Salesforce. Miss it and it can be reassigned. **Self-sourced** leads do **not** use that clock.
+  - **Transfers:** Never reassign yourself. Reach the current owner; once aligned, email **your manager and sales leadership** for approval (per ROE PDF).
 
 knowledge_checks:
   - question: "Before creating a new account or contact in Salesforce, what should you do first?"
@@ -99,7 +96,7 @@ scenarios:
       You find a juicy Customer account. It's not Strategic, not USAC-funded. The current owner hasn't logged a single activity in 130 days. You want to reach out today. What's your move?
     choices:
       - label: "It's past 121 days. The window is open. Start dialing and emailing immediately."
-        feedback: "Rookie move. Yes, the window is technically open, but blasting an email without warning creates internal friction. Reach the listed owner first."
+        feedback: "Slow down. The window is open by the numbers, but cold outreach without a heads-up burns relationships internally. Reach the listed owner first."
 
       - label: "Coordinate with the current owner. If they are unresponsive, follow the ROE transfer steps through leadership before claiming it."
         feedback: "Correct. Protect your reputation internally. Align with the owner or use the approved transfer paths."
@@ -121,17 +118,13 @@ reference_files:
 
 ## Overview
 
-**The Reality Check**
+ROE exists to **protect pipelines** and **draw clean lines** on who works whom. **Salesforce** is the system of record—full stop.
 
-The Rules of Engagement exist for one reason: to protect everyone’s pipeline and maintain clear boundaries across the team. Salesforce is the undisputed system of record.
+- **Search before you create** — One entity, one account. Duplicates waste time and invite disputes.
+- **Log it or lose it** — Tasks, calls, meetings, emails belong **on the record**. Outlook does not count in an ownership fight.
+- **Transfer through leadership** — Never self-reassign. Agree with the incumbent, then **manager + sales leadership** (per ROE).
 
-**The Core Mandates**
-
-- **Search before you create:** One entity, one account. Duplicates are a nightmare to untangle and create ownership disputes.
-- **Log it or lose it:** Tasks, calls, meetings, or emails must live on the Salesforce record. Your Outlook Sent folder is irrelevant in an ownership dispute.
-- **Transfer through leadership:** Never reassign an account unilaterally. Connect with the current owner first; once agreed, involve your manager and sales leadership per ROE.
-
-Strategic and USAC accounts are different beasts entirely. Know the idle windows (Prospect **61+** days, Customer **121+** days), keep your activity log bulletproof, and let the data do the talking.
+**General** accounts: **61+** (Prospect) / **121+** (Customer) idle rules. **Strategic** list and **USAC/E-Rate** coverage are stricter—confirm before you chase the logo.
 
 ---
 
@@ -178,6 +171,8 @@ Strategic and USAC accounts are different beasts entirely. Know the idle windows
 ---
 
 ## Process Deep Dive [deep]
+
+**Source:** This section summarizes the **Sales Rules of Engagement (ROE) — Revised August 2025** PDF linked under **Module Reference Files**. If leadership publishes a newer ROE, follow that document—not this page.
 
 ### General guidelines and Salesforce (all reps)
 
