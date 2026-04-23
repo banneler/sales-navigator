@@ -40,14 +40,14 @@ video_sections:
 
       **Check for product exclusions prior to proceeding.**
   - heading: "Approval Requirements Matrix"
-    intro: Payback, discounts, and dollar thresholds live here—not just Pre-Approved. If the deal is big, ugly, or unusual, assume you need eyes on the PDF before you promise who signs.
+    intro: Payback, discounts, and dollar thresholds live here.
     body: |
       **[Approval Requirements Matrix v5.5 — 07/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=h64jqJ)**
       - **Payback vs term:** Max **payback months** allowed for **auto-approve** depends on **contract term**—go over the limit for that term → **manager** approval (full table in PDF)
-      - **Strategic Build** (solution site type): **bypasses** the payback-month requirement in the matrix—still read the doc
+      - **Strategic Build** (solution site type): **bypasses** the payback-month requirement in the matrix
       - **Discount (not by term):** **≤20%** auto; **>20%** → **manager**
-      - **Discount (by term):** caps **step up** with longer terms—e.g. **24–35 mo** → **22%** max, **36–47 mo** → **27%**, **48–59 mo** → **29%**, **60+ mo** → **31%** (see PDF for **0–23 mo** and exact bands)
-      - **Who it applies to:** **Enterprise, Channel, and Wholesale** use the same discount rules (**Wholesale “bulk process”** is called out separately in the PDF)
+      - **Discount (by term):** caps **step up** with longer terms—e.g. **24–35 mo** → **22%** max, **36–47 mo** → **27%**, **48–59 mo** → **29%**, **60+ mo** → **31%**
+      - **Who it applies to:** **Enterprise, Channel, and Wholesale** use the same discount rules 
 
       **Net investment (deal size)**
       - **Under $50k** — auto-approve band
@@ -62,11 +62,6 @@ video_sections:
       - **Product** line issues — **Product Manager**
       - **Dark fiber** — **manager** and **CRO**
 
-      **Fine print**
-      - **Zone Parent** opportunity (**net investment**): **manager** and **CRO** always; **CFO** at **$100k+**; **CEO** at **$500k+**
-      - **Strategic Build parent** opportunities (incl. **new market builds**): approved **outside Salesforce** → **auto-approve** in the system per the guide
-
-      **Use the PDF when someone asks “does this dollar amount or payback clear?”—this card is a map, not the table.**
 five_minute_summary: |
   - **The Approval Process:** Reviewers evaluate site-level services, products, and quote math—not just the headline total. Track progress via the Approval History on the GPC Solution.
   - **Handling Changes:** Use Change Orders only for pre-billing adjustments. Once billing has started, use the MAC (Move-Add-Change) process for partial updates or Disconnect for full removals.
