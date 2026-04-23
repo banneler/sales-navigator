@@ -37,7 +37,7 @@ video_sections:
       - **Zip 68102** excluded
       - Discounts: **20%** max if not term-based; if term-based, use the table (e.g. **36-month** → **27%** max—and **0.01% over** disqualifies Pre-Approved)
 
-      **Products:** Colo, SD-WAN, wireless broadband → **Product Manager**; GPC Managed Wi‑Fi, on-prem PBX, Business Security → **BSOL**; **dark fiber** never qualifies—check the PDF before you commit.
+      **Check for product exclusions prior to proceeding.**
   - heading: "Approval Requirements Matrix (v5.5)"
     intro: This PDF is where payback, discount bands, and dollar thresholds actually live—Pre-Approved is only a small slice of what it covers.
     body: |
