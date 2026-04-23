@@ -242,9 +242,11 @@ export function buildRoleplayHtml(meta) {
 }
 
 /** Relative MP4 under site root (internal training paths only). */
-const SAFE_UC_VIDEO_SRC = /^assets\/UC\/[a-zA-Z0-9._-]+\.mp4$/;
+const SAFE_UC_VIDEO_SRC =
+  /^assets\/(?:UC\/|training\/salesforce\/)[a-zA-Z0-9._-]+\.mp4$/;
 /** Optional static poster image next to MP4s. */
-const SAFE_UC_POSTER = /^assets\/UC\/[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
+const SAFE_UC_POSTER =
+  /^assets\/(?:UC\/|training\/salesforce\/)[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
 
 /**
  * Optional training video carousel (e.g. partner portal clips). Wired in {@link renderModuleDocumentHtml}.
@@ -252,8 +254,8 @@ const SAFE_UC_POSTER = /^assets\/UC\/[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
  *   video_carousel_intro: "Optional short HTML-safe intro (plain text)."  # omit to show no intro
  *   video_carousel:
  *     - title: "Screen-reader label only (not shown as heading)"
- *       src: "assets/UC/file.mp4"
- *       poster: "assets/UC/file.jpg"   # optional static poster image
+ *       src: "assets/UC/file.mp4"   # or assets/training/salesforce/<slug>.mp4
+ *       poster: "assets/UC/file.jpg"   # optional; same path prefixes as src
  */
 export function buildVideoCarouselHtml(meta) {
   const items = meta.video_carousel;

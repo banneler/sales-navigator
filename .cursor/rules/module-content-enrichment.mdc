@@ -9,6 +9,7 @@ alwaysApply: false
 Each module’s front matter may include (keep `id`, `title`, `summary`, `sensitivity`):
 
 - **`reference_files`**: list of `{ label, sharepoint_url }` for SharePoint docs (open in new tab). Use `reference_files: []` until links exist; empty list shows a placeholder in **Module Reference Files** above **Scenarios**.
+- **`video_carousel`** / **`video_carousel_intro`**: optional; `src` must be `assets/UC/<slug>.mp4` or `assets/training/salesforce/<slug>.mp4` (posters use the same path prefixes). See `sales-process-and-salesforce` for Salesforce training example.
 - **`five_minute_summary`**: block scalar (`|`) with short markdown bullets; the app shows this block under the heading **Coffee Summary**.
 - **`knowledge_checks`**: list of objects with `question`, `options` (3 strings), `correct_index` (0-based), `explanation` (plain text).
 - **`scenarios`**: list of objects with `title`, `situation` (`|` markdown), `choices` with `label` and `feedback` (strings; feedback can use light markdown).
