@@ -866,9 +866,36 @@ video_sections:
       - **Product** line issues — **Product Manager**
       - **Dark fiber** — **manager** and **CRO**
 
+  - heading: "Change Order vs MAC"
+    intro: Billing status and how much of the contract changes decide the path. Wrong tool means rework—start here, then open the PDFs for the click-by-click.
+    body: |
+      **[Change Order Process — Sales Team — 03/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Change%20Order%20Process%20-%20Sales%20Team%20-%200325.pdf?csf=1&web=1&e=STAe3w)** · **[Move-Add-Change Processes — Sales Team — 11/23](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Move-Add-Change%20Processes%20-%20Sales%20Team%20-%201123.pdf?csf=1&web=1&e=zURGTj)**
+
+      **Which path?**
+      - **Change Order** — Customer changes **part** of the contract **after Closed/Won** and **before billing starts**; GPC Solution is **Booked**, **not Billed**
+      - **MAC** (**Move / Add / Change**) — Customer changes **part** of the contract **after billing has started**
+      - **Cancellation** — Customer removes **all** services/products **before** billing starts
+      - **Disconnect** — Customer removes **all** services/products **after** billing starts
+
+      **Change order (at a glance)**
+      - Confirm stage (**Closed/Won**) and **Booked / not Billed**—you can’t run a change order once it’s **Billed**
+      - **Conga Files** on the GPC Solution → **Change Order** template → **Preview** / merge → finish the Word doc (solution site(s), description of change, line-level changes)
+      - Keep the **GPC Solution number** on the paperwork; get signatures; **upload** the signed pack to the GPC Solution
+      - Email loop: **Sales Manager** when the change matters for **MRC, payback, or extra cost**—plus **PMO**, **Salesforce Administration**, and **CRC** per the guide
+      - After Admin posts the **booking adjustment**, **PMO** updates the project and **CRC** handles billing impacts
+
+      **MAC (at a glance)**
+      - Starts from a **Billed** baseline; you’re amending **what’s already in market**, not pre-bill rework
+      - **Move** — relocate services to a new site; **Add** — bolt on (or reconnect) services; **Change** — swap speeds/packages/MRC on what’s billing today
+      - Most MAC work is a **new GPC Solution** on the existing opportunity—follow the MAC PDF for Move vs Add vs Change steps
+
+      **Fine print**
+      - If a site is in **Pending Billing** or **7–10 Day Order**, **Salesforce Admin** may need **PMO/CRC** sign-off **before** the booking adjustment—don’t assume instant booking
+      - **CRC/BCC** can handle a **short list** of tiny **adds/changes** (see MAC guide—e.g. small **$30 MRC** feature tweaks, single line adds)—email **businesscare@gpcom.com**; those **don’t** generate **AE commission**. Not on the list → build it in **Salesforce** per MAC.
+
 five_minute_summary: |
   - **The Approval Process:** Reviewers evaluate site-level services, products, and quote math—not just the headline total. Track progress via the Approval History on the GPC Solution.
-  - **Handling Changes:** Use Change Orders only for pre-billing adjustments. Once billing has started, use the MAC (Move-Add-Change) process for partial updates or Disconnect for full removals.
+  - **Handling Changes:** **Change Order** before billing, **MAC** after billing—**partial** contract changes only. Dropping **all** services → **Cancellation** (pre-bill) or **Disconnect** (post-bill). Use the **Change Order vs MAC** card, then the PDFs in **Module Reference Files**.
   - **Manual Validation:** Checking "Request Manual Validation" skips automated routing and forces every department to review. Use this sparingly.
   - **Pre-Approved Fast Track:** Clean fiber can skip the long approval chain when you pass **both** checklists in the next two cards—**Pre-Approved Fiber** first, then **Approval Requirements Matrix** (payback, discounts, deal size). Anything fuzzy? Run **standard** approvals.
 
