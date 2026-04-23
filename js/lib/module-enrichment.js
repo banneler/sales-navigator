@@ -416,8 +416,8 @@ function trainingSectionHeadingIsLiveTeamsStyle(heading) {
 function wrapTrainingCardInnerWithTeamsWatermark(innerHtml, useWatermark) {
   if (!useWatermark) return innerHtml;
   const src = escapeHtml(TEAMS_LIVE_WATERMARK_SRC);
-  return `<span class="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden rounded-2xl" aria-hidden="true">
-          <img src="${src}" alt="" class="h-auto w-[min(100%,42rem)] max-h-[min(72vh,560px)] max-w-full shrink-0 object-contain opacity-[0.13] select-none sm:w-[min(100%,48rem)] sm:max-h-[min(78vh,640px)]" width="800" height="800" decoding="async" loading="lazy" />
+  return `<span class="pointer-events-none absolute inset-6 flex items-center justify-center overflow-hidden rounded-2xl md:inset-8" aria-hidden="true">
+          <img src="${src}" alt="" class="max-h-full max-w-full object-contain opacity-[0.13] select-none" width="800" height="800" decoding="async" loading="lazy" />
         </span>
         <div class="relative z-[1]">${innerHtml}</div>`;
 }
