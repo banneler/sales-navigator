@@ -2,7 +2,7 @@
 
 *Sales-Navigator · Great Plains Communications*
 
-Pair this handout with **Salesforce 101 / 201**, quick references, **GPCU**, and **Teams** channels cited in the official training pack. In **Sales-Navigator**, watch the **Training videos** in order (101 Watch 1st through 7th, then GPC Solution and multi-site clips). Sign in with **Okta** (not YubiKey). **Salesforce admin:** **Fritz Antoine**, salesforceadministrator@gpcom.com. PDFs and the full library live on **Salesforce Roadmap** (SharePoint)—use **Module Reference Files** in the app for direct links.
+Pair this handout with **Salesforce 101 / 201**, quick references, **GPCU**, and **Teams** channels cited in the official training pack. In **Sales-Navigator**, watch the **Training videos** in order (101 Watch 1st through 7th, then GPC Solution and multi-site clips). Sign in with **Okta** (not YubiKey). **Salesforce admin:** **Fritz Antoine**, salesforceadministrator@gpcom.com. **PDFs and job aids** are linked in the module’s **Process Deep Dive**; the **Salesforce Roadmap** folder shortcut lives under **Module Reference Files**.
 
 ## Lead → opportunity lifecycle
 

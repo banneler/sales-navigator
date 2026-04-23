@@ -6,23 +6,7 @@ sensitivity: "public"
 reference_files:
   - label: "Salesforce Roadmap — 2025 training guides (main folder)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=aa3Qzz&siteid=%7B3120FC34%2D7B32%2D4627%2DA6C3%2DDE1832FB7356%7D&webid=%7B1830E200%2D0828%2D45CE%2DB4F7%2D42BEE33B3084%7D&uniqueid=%7BE2E5E4EB%2DEAAF%2D4DEC%2D9003%2DB9CB553BFC5A%7D&FolderCTID=0x012000DFABF9A88316F24FA8D2F7A3EAC4739E&id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29"
-  - label: "Approvals — overview and training guide (PDF)"
-    sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Overview%20and%20Training%20Guide%20-%200725.pdf?csf=1&web=1&e=0e227N"
-  - label: "Salesforce hierarchy and cycle overview (PPTX)"
-    sharepoint_url: "https://gpcom.sharepoint.com/:p:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Salesforce%20Hierarchy%20%26%20Cycle%20Overview%20Demo%20template%20-%200723.pptx?d=wc0563555f48e4c22bd45fdeaf0e36c77&csf=1&web=1&e=Osb5bj"
-  - label: "Which process do I use — flow chart and quick job aid (PDF)"
-    sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Which%20Process%20Do%20I%20Use%20Flow%20Chart%20and%20Quick%20Job%20Aid%20-%200922.pdf?csf=1&web=1&e=EIZhnU"
-  - label: "Move–add–change processes — Sales Team (PDF)"
-    sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Move-Add-Change%20Processes%20-%20Sales%20Team%20-%201123.pdf?csf=1&web=1&e=vu44zS"
-  - label: "Solution site type — quick reference (PDF)"
-    sharepoint_url: "https://gpcom.sharepoint.com/:b:/s/SalesforceRoadmap/IQCK0LjJijwfTJmWzw5CEn7bAU_ivZaWfl7Hvq7Q1CF7lDw?e=7Ey9Tm"
-  - label: "Change order process — Sales Team (PDF)"
-    sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Change%20Order%20Process%20-%20Sales%20Team%20-%200325.pdf?csf=1&web=1&e=FEPLBC"
-  - label: "Approval requirements matrix v5.5 (PDF)"
-    sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=2c4K38"
-  - label: "Sales Resources (GPC Sales enablement hub)"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
-video_carousel_intro: "Watch the Salesforce 101 clips in order first (sign in with Okta, not YubiKey). Then use the solution-build videos. PDFs and the full training library are in Module Reference Files on the right."
+video_carousel_intro: "Same playlist Sales Support uses for onboarding: seven 101 clips in order, then the two GPC Solution builds. Sign in with Okta—then you’re rehearsing the real motion reps use in production."
 video_carousel:
   - title: "Salesforce 101 — Watch 1st, Sections 1 and 2"
     src: "assets/training/salesforce/sf101-01-sections-1-and-2.mp4"
@@ -43,10 +27,7 @@ video_carousel:
   - title: "Creating a multi-site GPC Solution (training video)"
     src: "assets/training/salesforce/sf-gpc-multisite-solution-video-2023.mp4"
 five_minute_summary: |
-  - **Onboarding path:** Use the Training videos below in order (101 Watch 1st through 7th, then GPC Solution and multi-site). Use Module Reference Files for PDFs, PPTX, and the Salesforce Roadmap library on SharePoint.
-  - **Sign-in:** Salesforce access uses **Okta** (YubiKey was retired for this flow—follow current IT guidance).
-  - **Salesforce admin:** **Fritz Antoine** — salesforceadministrator@gpcom.com for admin and configuration questions.
-  - **Enter opportunities in Salesforce:** Bring live deals into the system of record; do not run the pipeline only in email or spreadsheets.
+  - **Start with the clips:** Training videos below—101 in watch order, then GPC Solution and multi-site (Okta sign-in).
   - **Lead Conversion:** Convert leads only when they are ready for a quote. This should default to creating a new opportunity, account, and contact.
   - **Pipeline Management:** Keep stages accurate to the buying process. Never delete Closed/Lost opportunities, as that history is critical for forecasting and analysis.
   - **DocuSign Workflows:** Set the Contract Signer early on the GPC Solution. Ensure all signers exist as Contacts in Salesforce before sending the envelope.
@@ -159,7 +140,7 @@ scenarios:
 
 Salesforce is GPC’s **system of record for every deal**—from first contact to installed revenue.
 
-**2026 onboarding (Sales Support):** Start with the **Training videos** in order—Salesforce **101** (Watch 1st through 7th), then **Creating a GPC Solution** and **Creating a multi-site GPC Solution**. Sign in with **Okta** (not YubiKey). For PDFs, approvals materials, and the full library, use **Module Reference Files** (Salesforce Roadmap on SharePoint). **Salesforce admin:** **Fritz Antoine**, salesforceadministrator@gpcom.com. Bring active opportunities into Salesforce so downstream teams see the real pipeline.
+**2026 onboarding (Sales Support):** Run the **Training videos** in order—Salesforce **101** (Watch 1st through 7th), then **Creating a GPC Solution** and **Creating a multi-site GPC Solution**. Sign in with **Okta** (not YubiKey). **Salesforce admin:** **Fritz Antoine**, salesforceadministrator@gpcom.com. Keep live deals in Salesforce—not in email or spreadsheets alone. **PDFs, decks, and job aids** are linked in **Process Deep Dive** below; the **Salesforce Roadmap** training folder is also one click away under **Module Reference Files**.
 
 **The happy path**
 
@@ -235,6 +216,13 @@ Tasks, list views, and Home dashboards are the hygiene habit—if activity isn't
 **After Closed/Won:** a project is created for each Solution Site. Complete sites/products/contacts at Closed/Won; Tasks + clear activity notes; referral fields still accurate.
 
 **Avoid:** converting without opportunity (normal deals); duplicate contacts; stale close dates; incomplete GPC Solutions for approval; Contract Signer blank until Approval Pending; deleting Closed/Lost; signers not Contacts; spreadsheet-only pipeline.
+
+**Sales Support collateral (SharePoint)** — use alongside the videos when you need the written path:
+
+- **Approvals:** [Approval overview & training guide (PDF)](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Overview%20and%20Training%20Guide%20-%200725.pdf?csf=1&web=1&e=0e227N) · [Approval requirements matrix v5.5 (PDF)](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=2c4K38)
+- **Cycle & process:** [Salesforce hierarchy & cycle overview (PPTX)](https://gpcom.sharepoint.com/:p:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Salesforce%20Hierarchy%20%26%20Cycle%20Overview%20Demo%20template%20-%200723.pptx?d=wc0563555f48e4c22bd45fdeaf0e36c77&csf=1&web=1&e=Osb5bj) · [Which process do I use — flow chart & quick job aid (PDF)](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Which%20Process%20Do%20I%20Use%20Flow%20Chart%20and%20Quick%20Job%20Aid%20-%200922.pdf?csf=1&web=1&e=EIZhnU)
+- **Sites & changes:** [Solution site type — quick reference (PDF)](https://gpcom.sharepoint.com/:b:/s/SalesforceRoadmap/IQCK0LjJijwfTJmWzw5CEn7bAU_ivZaWfl7Hvq7Q1CF7lDw?e=7Ey9Tm) · [Move–add–change processes — Sales Team (PDF)](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Move-Add-Change%20Processes%20-%20Sales%20Team%20-%201123.pdf?csf=1&web=1&e=vu44zS) · [Change order process — Sales Team (PDF)](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Change%20Order%20Process%20-%20Sales%20Team%20-%200325.pdf?csf=1&web=1&e=FEPLBC)
+- **Broader enablement:** [Sales Resources — GPC Sales hub](https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx)
 
 ::: accordion Lead Conversion Quick Reference
 Converting a lead creates the account, contact, and opportunity in one step.
