@@ -40,9 +40,19 @@ video_sections:
   - heading: "Live session — Multi-site GPC Solution with Amy (30 minutes)"
     body: |
       After the video, **30 minutes** live with **Amy** on **multi-site** GPC Solutions. You will **work demo opportunities** during this session to practice the motion in Salesforce.
+five_minute_flow:
+  aria_label: "Salesforce onboarding order"
+  steps:
+    - title: "101"
+      caption: "Self-paced videos"
+    - title: "Check In 1"
+      caption: "Kickoff + live lead demo"
+    - title: "GPC Solution"
+      caption: "Video → 30 min live"
+    - title: "Multi-site"
+      caption: "Video → 30 min live"
 five_minute_summary: |
-  - **Onboarding flow:** Blocks below follow Sales Support order: **101** → **Check In 1** (Sales Support & admin kickoff + **Amy** live on lead conversion) → **GPC Solution** (video + **30 min** live with Amy) → **multi-site** (video + **30 min** live with Amy on demo opps).
-    - **Salesforce login:** Watch out for the update—**Salesforce now uses Okta** (YubiKey no longer applies to signing in to the Salesforce app).
+  - **Salesforce login:** **Okta** now—YubiKey no longer applies to signing in to the Salesforce app.
   - **Lead Conversion:** Convert leads only when they are ready for a quote. This should default to creating a new opportunity, account, and contact.
   - **Pipeline Management:** Keep stages accurate to the buying process. Never delete Closed/Lost opportunities, as that history is critical for forecasting and analysis.
   - **DocuSign Workflows:** Set the Contract Signer early on the GPC Solution. Ensure all signers exist as Contacts in Salesforce before sending the envelope.
@@ -56,7 +66,7 @@ your_coaches:
       photo: "assets/training/salesforce/coaches/amy-wettering.png"
     - name: "Fritz Antoine"
       email: "salesforceadministrator@gpcom.com"
-      role: "Salesforce administrator"
+      role: "Salesforce Administrator"
       photo: "assets/training/salesforce/coaches/fritz-antoine.png"
 
 knowledge_checks:

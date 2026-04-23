@@ -65,22 +65,82 @@ function extractDashBulletTexts(md) {
   return out;
 }
 
+/**
+ * Horizontal stepper with chevrons between steps. Optional `five_minute_flow` in module meta.
+ * @param {Record<string, unknown>} meta
+ * @param {{ introGate?: boolean }} [opts]
+ */
+function buildFiveMinuteFlowHtml(meta, opts = {}) {
+  const introGate = Boolean(opts.introGate);
+  const flow = meta.five_minute_flow;
+  if (!flow || typeof flow !== 'object' || Array.isArray(flow)) return '';
+  const stepsRaw = flow.steps;
+  if (!Array.isArray(stepsRaw) || stepsRaw.length === 0) return '';
+  const ariaRaw =
+    typeof flow.aria_label === 'string' && flow.aria_label.trim()
+      ? flow.aria_label.trim()
+      : 'Onboarding sequence';
+  const aria = escapeHtml(ariaRaw);
+
+  const stepShell = introGate
+    ? 'border-slate-200/95 bg-white text-slate-900 ring-slate-900/5'
+    : 'border-amber-200/90 bg-white/95 text-amber-950 ring-amber-900/5';
+  const capClass = introGate ? 'text-slate-600' : 'text-amber-900/70';
+  const sepClass = introGate ? 'text-slate-400' : 'text-amber-700/60';
+
+  /** @type {string[]} */
+  const stepBlocks = [];
+  for (const step of stepsRaw) {
+    const title = typeof step?.title === 'string' ? step.title.trim() : '';
+    if (!title) continue;
+    const caption =
+      typeof step?.caption === 'string' && step.caption.trim()
+        ? step.caption.trim()
+        : '';
+    const capHtml = caption
+      ? `<span class="mt-0.5 block text-[11px] font-normal leading-tight ${capClass}">${escapeHtml(caption)}</span>`
+      : '';
+    stepBlocks.push(`<div role="listitem" class="flex min-w-[4.75rem] shrink-0 flex-col items-center justify-center rounded-lg border px-2.5 py-2 text-center shadow-sm ring-1 sm:min-w-[5.5rem] sm:px-3 ${stepShell}">
+            <span class="text-sm font-semibold">${escapeHtml(title)}</span>${capHtml}
+          </div>`);
+  }
+  if (stepBlocks.length === 0) return '';
+
+  const sep = `<span class="flex shrink-0 items-center px-0.5 sm:px-1 ${sepClass}" aria-hidden="true"><i class="fa-solid fa-chevron-right text-[10px] sm:text-xs" aria-hidden="true"></i></span>`;
+  /** @type {string[]} */
+  const row = [];
+  for (let i = 0; i < stepBlocks.length; i++) {
+    if (i > 0) row.push(sep);
+    row.push(stepBlocks[i]);
+  }
+
+  return `<div class="five-min-flow mb-4 w-full min-w-0">
+          <div role="list" aria-label="${aria}" class="flex flex-nowrap items-stretch justify-start gap-y-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:justify-center [&::-webkit-scrollbar]:hidden">
+            ${row.join('')}
+          </div>
+        </div>`;
+}
+
 export function buildFiveMinuteSummaryHtml(meta) {
   const five = meta.five_minute_summary;
-  if (typeof five !== 'string' || !five.trim()) return '';
+  const flowHtml = buildFiveMinuteFlowHtml(meta);
+  const hasSummary = typeof five === 'string' && Boolean(five.trim());
+  if (!flowHtml && !hasSummary) return '';
 
-  const bullets = extractDashBulletTexts(five);
+  const bullets = extractDashBulletTexts(hasSummary ? five : '');
   const coffeeIcon = `<span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center text-base" title="Coffee Summary"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></span>`;
 
   const compactClass =
     bullets.length >= 2 ? ' module-five-min-compact' : ' module-five-min-prose';
+  const proseHtml = hasSummary ? parseMarkdownToSafeHtml(five) : '';
+  const bodyInner = `${flowHtml}${proseHtml ? `<div class="module-markdown-body w-full text-amber-950/90${compactClass}">${proseHtml}</div>` : ''}`;
   return `
       <section class="module-five-min w-full border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm" aria-labelledby="five-min-heading">
         <div class="flex w-full min-w-0 items-start gap-3">
           ${coffeeIcon}
           <div class="min-w-0 flex-1 w-full">
             <h3 id="five-min-heading" class="text-lg font-bold text-amber-950 mb-2">Coffee Summary</h3>
-            <div class="module-markdown-body w-full text-amber-950/90${compactClass}">${parseMarkdownToSafeHtml(five)}</div>
+            ${bodyInner}
           </div>
         </div>
       </section>`;
@@ -92,15 +152,19 @@ export function buildFiveMinuteSummaryHtml(meta) {
  */
 export function buildFiveMinuteSummaryIntroGateHtml(meta) {
   const five = meta.five_minute_summary;
-  if (typeof five !== 'string' || !five.trim()) return '';
+  const flowHtml = buildFiveMinuteFlowHtml(meta, { introGate: true });
+  const hasSummary = typeof five === 'string' && Boolean(five.trim());
+  if (!flowHtml && !hasSummary) return '';
 
-  const bullets = extractDashBulletTexts(five);
+  const bullets = extractDashBulletTexts(hasSummary ? five : '');
 
   const compactClass = bullets.length >= 2 ? ' module-five-min-compact' : '';
+  const proseHtml = hasSummary ? parseMarkdownToSafeHtml(five) : '';
+  const bodyInner = `${flowHtml}${proseHtml ? `<div class="module-markdown-body text-slate-700${compactClass}">${proseHtml}</div>` : ''}`;
   return `
       <section class="module-five-min-gate" aria-labelledby="five-min-heading-gate">
         <h3 id="five-min-heading-gate" class="text-lg font-bold text-slate-900 mb-2">Coffee Summary</h3>
-        <div class="module-markdown-body text-slate-700${compactClass}">${parseMarkdownToSafeHtml(five)}</div>
+        ${bodyInner}
       </section>`;
 }
 
