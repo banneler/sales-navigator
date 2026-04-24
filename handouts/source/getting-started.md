@@ -9,7 +9,7 @@
 ## Inside a typical module
 
 - **Title and summary** at the top set context.
-- **Five-minute summary** bullets give a fast scan when the module includes them.
+- **Coffee Summary** bullets give a fast scan when the module includes them.
 - Major topics appear as **section cards**—each `##` heading in the source becomes its own card.
 - Some modules add **reference links** (SharePoint, PDFs) in a side column on wide screens.
 - **Scenarios** sit beside the main column when present: a short situation, a few choices, and feedback—practice for real customer *or internal* moments (e.g. finding collateral), not a graded test.

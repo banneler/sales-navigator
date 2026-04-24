@@ -37,19 +37,21 @@ function buildDemoMarkup() {
               We're glad you're here. This space is built to help you ramp with confidence—alongside teammates who remember their first customer call, their first complex quote, and the questions that used to keep them up at night.
             </p>
           </div>
-          <div class="rounded-2xl border border-amber-200 bg-amber-50/80 p-5 md:p-6 shadow-sm backdrop-blur-sm">
-            <div class="flex items-start gap-3">
-              <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-sm" title="About 5 minutes">5m</span>
-              <div class="min-w-0 flex-1">
-                <p class="text-xs font-bold text-amber-950 uppercase tracking-wide">Five-minute summary</p>
-                <ul class="mt-3 space-y-2.5 text-sm text-amber-950/90">
-                  <li class="flex gap-2"><span class="text-amber-500 shrink-0">•</span> We're genuinely happy you chose to grow your career here—your wins matter to us.</li>
-                  <li class="flex gap-2"><span class="text-amber-500 shrink-0">•</span> Take training at your pace; come back to any module when you need a refresher or a talk track.</li>
-                  <li class="flex gap-2"><span class="text-amber-500 shrink-0">•</span> Showing up curious for customers beats memorizing slides—use this hub to prepare, then go have real conversations.</li>
-                </ul>
+          <section class="module-five-min w-full border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm backdrop-blur-sm" aria-labelledby="five-min-heading-getting-started">
+            <div class="flex w-full min-w-0 items-start gap-3">
+              <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center text-base" title="Coffee Summary"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></span>
+              <div class="min-w-0 flex-1 w-full">
+                <h3 id="five-min-heading-getting-started" class="text-lg font-bold text-amber-950 mb-2">Coffee Summary</h3>
+                <div class="module-markdown-body w-full text-amber-950/90 module-five-min-compact text-sm">
+                  <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Welcome:</strong> Sales-Navigator bundles ROE, Salesforce, approvals, portfolio, and product modules—work them in the order your leader sets, and come back anytime for a refresher.</li>
+                    <li><strong>This block:</strong> Every training module starts with the same <strong>Coffee Summary</strong> pattern—fast bullets before section cards, videos, scenarios, and <strong>Module Reference Files</strong>.</li>
+                    <li><strong>Source of truth:</strong> PDFs, battlecards, and price books live in <strong>Sales Resources</strong> (SharePoint); use this app for motion and practice—verify customer-facing numbers in governed collateral and quoting tools.</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
+          </section>
           <section class="rounded-2xl border border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white p-6 md:p-8 shadow-sm backdrop-blur-sm module-tour-discovery">
             <h3 class="text-lg font-bold text-slate-900">A note from the team</h3>
             <div class="text-sm text-slate-700 mt-3 space-y-3 leading-relaxed">
@@ -457,7 +459,7 @@ export function loadGettingStarted(container, manifest) {
         </p>
         <ul class="list-disc pl-5 text-slate-700 space-y-${mobile ? '1.5' : '2'} text-sm">
           <li><strong>Title and summary</strong> at the top set context.</li>
-          <li><strong>Five-minute summary</strong> bullets give a fast scan when present.</li>
+          <li><strong>Coffee Summary</strong> bullets give a fast scan when present.</li>
           <li>Major topics appear as <strong>section cards</strong>.</li>
           <li>Some modules include <strong>reference links</strong>${mobile ? '.' : ' in a side area when provided.'}</li>
         </ul>`,
