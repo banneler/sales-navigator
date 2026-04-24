@@ -4,6 +4,8 @@
 
 **Structured extract (tables + body):** [`gpc-training-corpus-structured.md`](gpc-training-corpus-structured.md) — PyMuPDF `find_tables()` + `to_markdown()`, with non-table text as spatial blocks. Regenerate: `python3 scripts/extract_gpc_corpus_structured.py -o docs/gpc-training-corpus-structured.md`.
 
+**App front matter review:** [`sales-navigator-front-matter-corpus-review.md`](sales-navigator-front-matter-corpus-review.md) — corpus-informed suggestions for `modules/*/content.md` (references, KCs, priorities).
+
 **OCR validation:** [`gpc-training-corpus-ocr-validation.md`](gpc-training-corpus-ocr-validation.md) compares flat extract vs EasyOCR on PNGs (sampled pages) — `python3 scripts/validate_gpc_extract_vs_ocr.py` (see `scripts/requirements-ocr-validation.txt`).
 
 **Purpose:** Structured reference for what exists in the desktop training corpus, how topics connect, and how they align with **Sales-Navigator** modules.
