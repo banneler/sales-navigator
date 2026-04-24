@@ -4,13 +4,15 @@ This file is **machine-extracted** plain text from every PDF under the GPC train
 
 **Structural bible** (module IDs, teaching order, duplicates, gaps): [`gpc-training-content-bible.md`](gpc-training-content-bible.md).
 
+**Layout / tables:** [`gpc-training-corpus-structured.md`](gpc-training-corpus-structured.md) — run `python3 scripts/extract_gpc_corpus_structured.py` (same PyMuPDF dep).
+
 **OCR validation** (tables vs flattened text): [`gpc-training-corpus-ocr-validation.md`](gpc-training-corpus-ocr-validation.md) — run `python3 scripts/validate_gpc_extract_vs_ocr.py` after `pip install -r scripts/requirements-ocr-validation.txt`.
 
 ## Document metadata
 
 | Field | Value |
 |-------|-------|
-| Generated (UTC) | 2026-04-24 13:08 UTC |
+| Generated (UTC) | 2026-04-24 13:29 UTC |
 | Source PDF root | `/Users/ba/Desktop/GPC Training Material` |
 | Page image root (reference) | `/Users/ba/Desktop/GPC Training Material - page images` |
 | PDF count | 135 |

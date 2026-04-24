@@ -108,6 +108,29 @@ This report compares **PyMuPDF embedded text** (same source as [`gpc-training-co
 
 4. **OCR noise:** `$` vs `S`, stray punctuation, and `%` — do not treat OCR as ground truth for **numbers** without human QA.
 
+## Fix: structured extraction (preferred for tables)
+
+**Problem:** `get_text("text")` flattens layout. **Mitigation already in-repo:** run
+[`scripts/extract_gpc_corpus_structured.py`](../scripts/extract_gpc_corpus_structured.py) to generate
+[`gpc-training-corpus-structured.md`](gpc-training-corpus-structured.md) (and optional `.jsonl`).
+That pipeline uses PyMuPDF **`find_tables()`** and **`Table.to_markdown()`** for grid-shaped pages, plus **spatial text blocks** for non-table copy (with overlaps removed so cells are not duplicated in the body section).
+
+**When to use which artifact**
+
+| Artifact | Best for |
+|----------|----------|
+| [`gpc-training-corpus-canonical-text.md`](gpc-training-corpus-canonical-text.md) | Fast grep, naive chunking, “all words on page” |
+| **`gpc-training-corpus-structured.*`** | Approvals matrix, fee schedules, MAC/process tables, anything with columns |
+| PNGs / PDF | Ground truth layout; vision models |
+| OCR (EasyOCR) | Decks that are mostly images; QA only — not authoritative for numbers |
+
+**If tables are still wrong:** detector misses complex merges — try **pdfplumber** / **Camelot** on high-value PDFs only, or store **CSV** sidecars maintained by ops.
+
+```bash
+python3 scripts/extract_gpc_corpus_structured.py -o docs/gpc-training-corpus-structured.md \
+  --jsonl docs/gpc-training-corpus-structured.jsonl
+```
+
 
 ## Re-run
 

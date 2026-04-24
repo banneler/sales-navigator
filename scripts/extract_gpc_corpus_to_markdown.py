@@ -4,6 +4,8 @@
 Uses PyMuPDF (same stack as rasterize_pdf_tree.py). Mirrors paths used for page images:
   src/dir/Name.pdf  →  page images at dst/dir/Name/page-NNN.png
 
+For **layout-aware** output (tables as markdown grids), use ``extract_gpc_corpus_structured.py`` instead.
+
 Low-text pages are flagged in-document and summarized in the front matter.
 """
 from __future__ import annotations
@@ -85,6 +87,10 @@ def main() -> None:
     lines.append(
         "**Structural bible** (module IDs, teaching order, duplicates, gaps): "
         "[`gpc-training-content-bible.md`](gpc-training-content-bible.md).\n"
+    )
+    lines.append(
+        "**Layout / tables:** [`gpc-training-corpus-structured.md`](gpc-training-corpus-structured.md) — run "
+        "`python3 scripts/extract_gpc_corpus_structured.py` (same PyMuPDF dep).\n"
     )
     lines.append(
         "**OCR validation** (tables vs flattened text): "
