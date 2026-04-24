@@ -1,6 +1,8 @@
 # GPC Training Corpus — Content Bible
 
-**Purpose:** Single reference for what exists in the desktop training corpus, how topics connect, and how they align with **Sales-Navigator** modules. Use this for curriculum design, search/RAG chunking, handout linking, and deduplication.
+**Companion (full text):** The **canonical compilation of all extractable PDF text** (737 pages, every document) lives in [`gpc-training-corpus-canonical-text.md`](gpc-training-corpus-canonical-text.md). Regenerate it with `python3 scripts/extract_gpc_corpus_to_markdown.py -o docs/gpc-training-corpus-canonical-text.md` after PDF updates. Use that file when tightening module front matter or building RAG chunks; use *this* file for inventory, module mapping, teaching order, and deduplication.
+
+**Purpose:** Structured reference for what exists in the desktop training corpus, how topics connect, and how they align with **Sales-Navigator** modules.
 
 **Evidence convention:** Paths are under the user’s machine unless noted. Raster output:  
 `/Users/ba/Desktop/GPC Training Material - page images/<relative>/page-NNN.png`  
