@@ -44,9 +44,9 @@ function buildDemoMarkup() {
                 <h3 id="five-min-heading-getting-started" class="text-lg font-bold text-amber-950 mb-2">Coffee Summary</h3>
                 <div class="module-markdown-body w-full text-amber-950/90 module-five-min-compact text-sm">
                   <ul class="list-disc pl-5 space-y-2">
-                    <li><strong>Welcome:</strong> Sales-Navigator bundles ROE, Salesforce, approvals, portfolio, and product modules—work them in the order your leader sets, and come back anytime for a refresher.</li>
-                    <li><strong>This block:</strong> Every training module starts with the same <strong>Coffee Summary</strong> pattern—fast bullets before section cards, videos, scenarios, and <strong>Module Reference Files</strong>.</li>
-                    <li><strong>Source of truth:</strong> PDFs, battlecards, and price books live in <strong>Sales Resources</strong> (SharePoint); use this app for motion and practice—verify customer-facing numbers in governed collateral and quoting tools.</li>
+                    <li>We're genuinely happy you chose to grow your career here—your wins matter to us.</li>
+                    <li>Take training at your pace; come back to any module when you need a refresher or a talk track.</li>
+                    <li>Showing up curious for customers beats memorizing slides—use this hub to prepare, then go have real conversations.</li>
                   </ul>
                 </div>
               </div>
