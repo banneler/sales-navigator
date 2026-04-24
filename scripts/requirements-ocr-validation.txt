@@ -1,0 +1,5 @@
+# Optional: OCR validation (scripts/validate_gpc_extract_vs_ocr.py).
+# Use a venv. If torch/easyocr fails with NumPy 2, run: pip install 'numpy<2'
+easyocr>=1.7.0
+numpy>=1.26.0,<2
+Pillow>=10.0.0

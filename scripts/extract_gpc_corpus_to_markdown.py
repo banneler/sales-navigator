@@ -86,6 +86,11 @@ def main() -> None:
         "**Structural bible** (module IDs, teaching order, duplicates, gaps): "
         "[`gpc-training-content-bible.md`](gpc-training-content-bible.md).\n"
     )
+    lines.append(
+        "**OCR validation** (tables vs flattened text): "
+        "[`gpc-training-corpus-ocr-validation.md`](gpc-training-corpus-ocr-validation.md) — run "
+        "`python3 scripts/validate_gpc_extract_vs_ocr.py` after `pip install -r scripts/requirements-ocr-validation.txt`.\n"
+    )
     lines.append("## Document metadata\n")
     lines.append(f"| Field | Value |")
     lines.append(f"|-------|-------|")
