@@ -55,7 +55,7 @@ Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a na
 
 ## 90-day sequence
 
-ABM campaign: 90-day C-level sequence (reference Gantt)
+![ABM campaign: 90-day C-level sequence (reference Gantt)](assets/gantt/abm-90-day-sequence.png)
 
 ## How to use this module
 
