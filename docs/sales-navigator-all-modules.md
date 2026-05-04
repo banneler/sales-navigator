@@ -2563,6 +2563,12 @@ reference_files:
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx#product-battle-cards"
   - label: "Competitive battle cards"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx#competitive-battle-cards"
+discovery_questions:
+  - "Who answers the phone at 2 a.m. if your primary circuit goes down—and how long does it take them to respond on-site?"
+  - "Which applications break first if upload latency spikes or a circuit drops? What does an hour of downtime cost the business?"
+  - "How are your locations connected today—VPN over shared broadband, MPLS, or Ethernet? When does that contract expire?"
+  - "Are you running SaaS applications like O365, Salesforce, or cloud ERP? Where are those workloads hosted?"
+  - "What does your current vendor do when there's a service issue—do they have local field technicians or is everything remote?"
 five_minute_summary: |
   - **The Framework:** Map competitor weaknesses to GPC strengths using business risk and proof points (local support, NOC, redundancy). Avoid generic claims of superiority.
   - **Avoid Landmines:** Never make personal attacks or use absolutes. Verify battle-card stats with marketing before sharing externally, and bring in SEs early for architecture discussions.
@@ -2714,13 +2720,17 @@ Positioning against the four main Omaha competitors:
 
 ---
 
-## Discovery Questions
+## Discovery Galaxy
 
-1. **Who answers the phone at 2 a.m. if your primary circuit goes down—and how long does it take them to respond on-site?**
-2. **Which applications break first if upload latency spikes or a circuit drops? What does an hour of downtime cost the business?**
-3. **How are your locations connected today—VPN over shared broadband, MPLS, or Ethernet? When does that contract expire?**
-4. **Are you running SaaS applications like O365, Salesforce, or cloud ERP? Where are those workloads hosted?**
-5. **What does your current vendor do when there's a service issue—do they have local field technicians or is everything remote?**
+<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/galactica-1/index.html?embed=1&module=competitive-positioning"
+    title="Discovery Galaxy"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); background: #f1f5f9;"
+  ></iframe>
+</div>
 
 ---
 
