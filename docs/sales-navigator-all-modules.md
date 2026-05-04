@@ -1220,7 +1220,7 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
     title="Discovery Run — Level 1"
     loading="lazy"
     sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); background: #f1f5f9;"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
   ></iframe>
 </div>
 
@@ -1456,7 +1456,7 @@ GPC's connectivity stack matches the right access technology to each customer's 
     title="Discovery Galaxy"
     loading="lazy"
     sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); background: #f1f5f9;"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
   ></iframe>
 </div>
 
@@ -1941,7 +1941,7 @@ Three products that extend the value of GPC fiber access: **Cloud Connect** give
     title="Discovery Run — Level 1"
     loading="lazy"
     sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); background: #f1f5f9;"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
   ></iframe>
 </div>
 
@@ -2122,7 +2122,7 @@ roleplay:
     title="Discovery Galaxy"
     loading="lazy"
     sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); background: #f1f5f9;"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
   ></iframe>
 </div>
 
@@ -2703,20 +2703,6 @@ roleplay:
 **Discover first, then map GPC proof to their pain**—never lead with trash talk or unverified stats. Your levers: local fiber, 24/7 NOC, owned/redundant paths, full stack (access → WAN → security → apps). Outcome-led beats generic “we’re better.”
 :::
 
-::: accordion M&A / Cox Acquisition Battle Card
-Reference for positioning against acquisition-driven competitors like Cox/Charter:
-- **NPS & Reputation:** GPC has significantly higher NPS than Cox/Spectrum/Charter, backed by a 4.1 average Google rating.
-- **Support:** Contrast Cox's promise to "return customer service to the US" with GPC's Midwest-based support team that *never left*.
-- **Network & Terms:** Emphasize GPC's 100% fiber network, symmetrical speeds up to 100 Gbps, negotiable term lengths for price locks, and $0 install/activation fees (contrasted against Cox's coax limitations, 12-month terms, auto-renewals, and $100 install fees).
-:::
-
-::: accordion Omaha Metro Competitors
-Positioning against the four main Omaha competitors:
-- **FiberFirst:** Counter their quick turnaround with GPC's 110+ years of stability, local employees, and built-in network redundancy.
-- **Metronet (T-Mobile):** Counter their lower prices and T-Mobile backing by highlighting GPC's ~98% buried fiber (vs. Metronet's quickly built aerial fiber) and 24x7 NOC.
-- **Allo:** Counter their "no contracts" by pitching GPC contracts as a benefit (rate locks). Note that Allo has pocketed availability, leases fiber from GPC, and has a reputation for rate increases.
-- **Google Fiber:** Counter their simplified 2-tier pricing by highlighting GPC's custom solutions and ability to support complex business needs (DDoS, SD-WAN, multi-site) rather than just basic bandwidth.
-:::
 
 ---
 
@@ -2728,7 +2714,7 @@ Positioning against the four main Omaha competitors:
     title="Discovery Galaxy"
     loading="lazy"
     sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); background: #f1f5f9;"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
   ></iframe>
 </div>
 
