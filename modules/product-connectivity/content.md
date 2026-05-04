@@ -78,6 +78,18 @@ Every single thing we sell—voice, security, cloud apps—lives or dies by the 
 - "How many physical locations do you have, and do they need to share private data directly with each other?"
 - "What happens to your customer experience if there is a 500-millisecond delay on your voice and video calls?"
 
+## Discovery Galaxy
+
+<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/galactica-1/index.html?embed=1&module=product-connectivity"
+    title="Discovery Galaxy"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
+  ></iframe>
+</div>
+
 ---
 
 ## Objection Handling

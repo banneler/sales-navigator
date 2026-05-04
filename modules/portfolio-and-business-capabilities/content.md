@@ -78,6 +78,18 @@ Stop selling SKUs and start selling outcomes. GPC isn't just another fiber pipe;
 - "Who is currently managing your edge security, and how long does it take them to respond to a ticket?"
 - "As your business expands over the next two years, what is your biggest technology bottleneck?"
 
+## Discovery Run
+
+<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/portfolio-level-1/index.html?embed=1&module=portfolio-and-business-capabilities"
+    title="Discovery Run — Level 1"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
+  ></iframe>
+</div>
+
 ---
 
 ## Objection Handling

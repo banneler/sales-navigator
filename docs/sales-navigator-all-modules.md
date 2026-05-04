@@ -1098,6 +1098,18 @@ Stop selling SKUs and start selling outcomes. GPC isn't just another fiber pipe;
 - "Who is currently managing your edge security, and how long does it take them to respond to a ticket?"
 - "As your business expands over the next two years, what is your biggest technology bottleneck?"
 
+## Discovery Run
+
+<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/portfolio-level-1/index.html?embed=1&module=portfolio-and-business-capabilities"
+    title="Discovery Run — Level 1"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
+  ></iframe>
+</div>
+
 ---
 
 ## Objection Handling
@@ -1205,6 +1217,18 @@ Every single thing we sell—voice, security, cloud apps—lives or dies by the 
 - "Are your employees primarily downloading data, or are they constantly uploading large files to cloud servers?"
 - "How many physical locations do you have, and do they need to share private data directly with each other?"
 - "What happens to your customer experience if there is a 500-millisecond delay on your voice and video calls?"
+
+## Discovery Galaxy
+
+<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/galactica-1/index.html?embed=1&module=product-connectivity"
+    title="Discovery Galaxy"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
+  ></iframe>
+</div>
 
 ---
 
@@ -1568,6 +1592,18 @@ When critical apps go down, nobody cares how cheap their internet was. This modu
 - "Are your employees complaining about dead zones or slow connections in specific parts of the building?"
 - "You mentioned moving your servers to AWS. How are you currently managing the latency and routing predictability to that environment?"
 
+## Discovery Run
+
+<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/portfolio-level-1/index.html?embed=1&module=product-cloud-wifi-and-backup"
+    title="Discovery Run — Level 1"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
+  ></iframe>
+</div>
+
 ---
 
 ## Technical Deep Dive [deep]
@@ -1829,6 +1865,18 @@ Voice deals almost always collide with Microsoft Teams. We have to own that conv
 - "How are your employees currently making external phone calls when they are working remotely?"
 - "You mentioned using Microsoft Teams. Are you currently paying for the Teams Phone add-on license, or are you looking for a more cost-effective way to integrate voice?"
 - "For your customer service team, do you have visibility into metrics like hold times, abandoned calls, and agent performance?"
+
+## Discovery Break
+
+<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/brick-breaker-1/index.html?embed=1&module=product-uc-voice-and-collaboration"
+    title="Discovery Break — Brick breaker"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; height: min(95vh, 85rem); min-height: 44rem; background: #f1f5f9;"
+  ></iframe>
+</div>
 
 ---
 

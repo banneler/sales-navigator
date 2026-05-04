@@ -76,6 +76,18 @@ When critical apps go down, nobody cares how cheap their internet was. This modu
 - "Are your employees complaining about dead zones or slow connections in specific parts of the building?"
 - "You mentioned moving your servers to AWS. How are you currently managing the latency and routing predictability to that environment?"
 
+## Discovery Run
+
+<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/portfolio-level-1/index.html?embed=1&module=product-cloud-wifi-and-backup"
+    title="Discovery Run — Level 1"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
+  ></iframe>
+</div>
+
 ---
 
 ## Technical Deep Dive [deep]

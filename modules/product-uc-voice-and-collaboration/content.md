@@ -93,6 +93,18 @@ Voice deals almost always collide with Microsoft Teams. We have to own that conv
 - "You mentioned using Microsoft Teams. Are you currently paying for the Teams Phone add-on license, or are you looking for a more cost-effective way to integrate voice?"
 - "For your customer service team, do you have visibility into metrics like hold times, abandoned calls, and agent performance?"
 
+## Discovery Break
+
+<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+  <iframe
+    src="games/brick-breaker-1/index.html?embed=1&module=product-uc-voice-and-collaboration"
+    title="Discovery Break — Brick breaker"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    style="width: 100%; border: 0; display: block; height: min(95vh, 85rem); min-height: 44rem; background: #f1f5f9;"
+  ></iframe>
+</div>
+
 ---
 
 ## Technical Deep Dive [deep]
