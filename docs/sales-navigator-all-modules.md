@@ -1091,13 +1091,6 @@ Stop selling SKUs and start selling outcomes. GPC isn't just another fiber pipe;
 
 ---
 
-## Discovery Questions
-
-- "If your primary internet connection drops at 2:00 PM on a Tuesday, what exactly happens to your operations and revenue?"
-- "Which of your daily applications are hosted on-premise, and which are in the cloud (AWS, Azure, O365)?"
-- "Who is currently managing your edge security, and how long does it take them to respond to a ticket?"
-- "As your business expands over the next two years, what is your biggest technology bottleneck?"
-
 ## Discovery Run
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
@@ -1211,12 +1204,6 @@ Every single thing we sell—voice, security, cloud apps—lives or dies by the 
 :::
 
 ---
-
-## Discovery Questions
-
-- "Are your employees primarily downloading data, or are they constantly uploading large files to cloud servers?"
-- "How many physical locations do you have, and do they need to share private data directly with each other?"
-- "What happens to your customer experience if there is a 500-millisecond delay on your voice and video calls?"
 
 ## Discovery Galaxy
 
@@ -1586,12 +1573,6 @@ When critical apps go down, nobody cares how cheap their internet was. This modu
 
 ---
 
-## Discovery Questions
-
-- "If the internet goes down, what happens to your point-of-sale system or cloud-based CRM?"
-- "Are your employees complaining about dead zones or slow connections in specific parts of the building?"
-- "You mentioned moving your servers to AWS. How are you currently managing the latency and routing predictability to that environment?"
-
 ## Discovery Run
 
 <div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
@@ -1859,12 +1840,6 @@ Voice deals almost always collide with Microsoft Teams. We have to own that conv
 :::
 
 ---
-
-## Discovery Questions
-
-- "How are your employees currently making external phone calls when they are working remotely?"
-- "You mentioned using Microsoft Teams. Are you currently paying for the Teams Phone add-on license, or are you looking for a more cost-effective way to integrate voice?"
-- "For your customer service team, do you have visibility into metrics like hold times, abandoned calls, and agent performance?"
 
 ## Discovery Break
 

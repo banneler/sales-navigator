@@ -72,12 +72,6 @@ Every single thing we sell—voice, security, cloud apps—lives or dies by the 
 
 ---
 
-## Discovery Questions
-
-- "Are your employees primarily downloading data, or are they constantly uploading large files to cloud servers?"
-- "How many physical locations do you have, and do they need to share private data directly with each other?"
-- "What happens to your customer experience if there is a 500-millisecond delay on your voice and video calls?"
-
 ## Discovery Galaxy
 
 <div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">

@@ -71,13 +71,6 @@ Stop selling SKUs and start selling outcomes. GPC isn't just another fiber pipe;
 
 ---
 
-## Discovery Questions
-
-- "If your primary internet connection drops at 2:00 PM on a Tuesday, what exactly happens to your operations and revenue?"
-- "Which of your daily applications are hosted on-premise, and which are in the cloud (AWS, Azure, O365)?"
-- "Who is currently managing your edge security, and how long does it take them to respond to a ticket?"
-- "As your business expands over the next two years, what is your biggest technology bottleneck?"
-
 ## Discovery Run
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">

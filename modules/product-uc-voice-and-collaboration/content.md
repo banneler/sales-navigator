@@ -87,12 +87,6 @@ Voice deals almost always collide with Microsoft Teams. We have to own that conv
 
 ---
 
-## Discovery Questions
-
-- "How are your employees currently making external phone calls when they are working remotely?"
-- "You mentioned using Microsoft Teams. Are you currently paying for the Teams Phone add-on license, or are you looking for a more cost-effective way to integrate voice?"
-- "For your customer service team, do you have visibility into metrics like hold times, abandoned calls, and agent performance?"
-
 ## Discovery Break
 
 <div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">

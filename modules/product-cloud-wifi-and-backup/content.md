@@ -70,12 +70,6 @@ When critical apps go down, nobody cares how cheap their internet was. This modu
 
 ---
 
-## Discovery Questions
-
-- "If the internet goes down, what happens to your point-of-sale system or cloud-based CRM?"
-- "Are your employees complaining about dead zones or slow connections in specific parts of the building?"
-- "You mentioned moving your servers to AWS. How are you currently managing the latency and routing predictability to that environment?"
-
 ## Discovery Run
 
 <div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
