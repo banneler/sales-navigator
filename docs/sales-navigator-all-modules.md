@@ -267,19 +267,12 @@ sensitivity: "public"
 sales_trio_hide_overview: true
 
 five_minute_summary: |
-
-  - **One source of truth:** Search before you create. Duplicates drive ownership wars. **Salesforce** is how leadership settles who owns an account (and who gets the commission).
-
-  - **Idle windows:** On the **general** path, if there is **no qualifying logged activity** for the periods below, others may work the account. But don't be a cowboy—**always** reach out to the listed owner first before you pounce.
-
-    - **Prospect:** **61+** days.
-
-    - **Customer:** **121+** days.
-
+  - **One source of truth:** Search before you create. Duplicates drive ownership wars. Salesforce is how leadership settles who owns an account (and who gets the commission).
+  - **Idle windows:** On the general path, if there is no qualifying logged activity for the periods below, others may work the account. But don't be a cowboy—always reach out to the listed owner first before you pounce.
+    - **Prospect:** 61+ days.
+    - **Customer:** 121+ days.
     - **Strategic list & USAC/E-Rate:** The 61/121 clocks do not apply here. Confirm treatment with leadership before you start chasing these accounts.
-
-  - **The 5-day inbound clock:** Assigned an inbound lead by sales or marketing? You have exactly **five business days** to make first contact **and** log it in Salesforce. Miss it, and it gets reassigned. (Note: Self-sourced leads do not use this clock).
-
+  - **The 5-day inbound clock:** Assigned an inbound lead by sales or marketing? You have exactly five business days to make first contact and log it in Salesforce. Miss it, and it gets reassigned. (Note: Self-sourced leads do not use this clock).
   - **Transfers:** Never play admin and reassign an account to yourself. Talk to the incumbent owner, get aligned, and then email your manager and sales leadership for the official sign-off.
 
 knowledge_checks:
