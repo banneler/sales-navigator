@@ -112,13 +112,13 @@ Position it for **mom-and-pop through larger sites**: the story is **customizabl
 
 | Theme | How to talk about it |
 |--------|----------------------|
-| **Replay TV** | Catch-up style viewing for busy teams and public areas—tie to “don’t miss the game” or “replay yesterday’s segment.” |
-| **Cloud DVR** | Record and store in the cloud where the product supports it—avoid over-specific storage numbers unless your current rate card says so. |
-| **HD channels** | Quality on modern displays; pair with **access** bandwidth so video doesn’t stutter. |
-| **Popular sports** | Strong for **hospitality, retail, and break rooms**—still confirm **local lineup** before promising a given RSN. |
-| **Local channels** | Collateral calls out **local news and weather**—good for community-facing businesses. |
+| **Replay TV** | REPLAY TV |
+| **Cloud DVR** | CLOUD DVR |
+| **HD channels** | HD CHANNELS |
+| **Popular sports** | POPULAR SPORTS CHANNELS |
+| **Local channels** | Local channels included, allowing you and your customers to stay on top of local events and weather. |
 | **Equipment savings** | “**Save money on monthly equipment and DVR rentals**” where the *streaming-first* model applies—**footnote:** some sites may still need **set-top boxes** at a **low monthly rate**. |
-| **Single bill** | **One bill for multiple services** when sold in a bundled commercial structure—confirm with **ordering/billing** so you quote what finance will invoice. |
+| **Single bill** | Convenient single bill for multiple services. |
 
 ## Delivery & lineup
 

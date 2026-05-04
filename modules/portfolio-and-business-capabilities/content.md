@@ -14,24 +14,24 @@ discovery_questions:
   - "Who owns network, security, and voice decisions—are those the same team or separate?"
 five_minute_summary: |
   - **The Opening:** Focus on business outcomes and partnership (local support, proactive monitoring, Midwest presence) rather than dumping a list of SKUs.
-  - **The GPC Stack:** Position our services as one cohesive system, layering access, WAN, security, and unified communications.
+  - **The GPC Stack:** Position our services as a comprehensive suite of 10 core solutions (Fiber Internet, SD-WAN, Managed Firewall, UC, etc.).
   - **Providing Proof:** Use the capability deck to tell the high-level narrative, and lean on Sales Resources for specific product evidence.
   - **Running Discovery:** Uncover site counts, critical applications, uptime requirements, and cloud migrations before pitching a specific fit.
 knowledge_checks:
   - question: "What is the best opening for a portfolio conversation?"
     options:
       - "Lead with a full list of product SKUs and speeds."
-      - "Lead with business outcomes and GPC as a partner with a layered network story."
+      - "Lead with business outcomes and GPC as a partner with a comprehensive suite of services."
       - "Start only with pricing and contract terms."
     correct_index: 1
-    explanation: "The module emphasizes outcomes and partnership first; layer the stack (access → WAN → security → apps) and save SKU detail for follow-up collateral."
+    explanation: "The module emphasizes outcomes and partnership first; present the comprehensive suite of services and save SKU detail for follow-up collateral."
   - question: "How should you describe how GPC products fit together?"
     options:
-      - "As layers—access, WAN, security, then collaboration and cloud adjacency—so it reads as one system."
+      - "As a comprehensive suite of services designed for growth."
       - "As unrelated add-ons the customer picks from a catalog."
       - "As only Internet access with no connection to other services."
     correct_index: 0
-    explanation: "Use the layered portfolio map (foundation through apps) so the customer sees integrated design, not a random menu."
+    explanation: "Use the comprehensive suite of services so the customer sees integrated design, not a random menu."
   - question: "Where should you send someone for product-specific datasheets after this storyline?"
     options:
       - "Only the Business Capability PDF; ignore other folders."
@@ -41,18 +41,18 @@ knowledge_checks:
     explanation: "Use the Business Capability deck for the story and **Sales Resources** (plus the relevant product modules) for per-product evidence."
   - question: "What proof points anchor the 'why GPC' network story?"
     options:
-      - "Fiber-first access, Midwest IP reach, Tier-1 and IX relationships, and paths tuned for cloud/SaaS and end users."
+      - "Over a Century of Experience, Unmatched Local Support, Reliability Backed by 24/7 Network Monitoring, and Flexible, Scalable Solutions."
       - "Only the number of years in business, with no network specifics."
       - "A guarantee that every site worldwide has identical latency."
     correct_index: 0
-    explanation: "Lead with resilient Midwest foundation, fiber-first access, and efficient routes to cloud and SaaS—not generic longevity claims alone."
+    explanation: "Lead with the four main pillars: Century of Experience, Local Support, 24/7 Monitoring, and Scalable Solutions."
   - question: "In discovery, what should you clarify before you summarize fit in one sentence?"
     options:
       - "Only the customer's favorite brand of router."
-      - "Locations, critical apps, uptime tolerance, and cloud/voice moves—then reflect the layered stack."
+      - "Locations, critical apps, uptime tolerance, and cloud/voice moves—then reflect the comprehensive suite of services."
       - "Whether they prefer PDF or Word for internal memos."
     correct_index: 1
-    explanation: "The module ties discovery to footprint, workloads, and resilience so the recommended stack matches real operations."
+    explanation: "The module ties discovery to footprint, workloads, and resilience so the recommended services match real operations."
   - question: "How does this module relate to the Business Capability PDF versus the deep collateral library?"
     options:
       - "Ignore the PDF; the library replaces the storyline entirely."
@@ -70,10 +70,10 @@ knowledge_checks:
   - question: "Which stack order matches the portfolio map taught here?"
     options:
       - "Security first, then access, then WAN, then apps—with no ordering rules."
-      - "Access (fiber + backup) → WAN → security → UC, Cloud Connect, Wi-Fi, Video."
+      - "A comprehensive suite of 10 services including Fiber Internet, SD-WAN, Managed Firewall, UC, Cloud Connect, and Wi-Fi."
       - "Apps only; transport is irrelevant to the conversation."
     correct_index: 1
-    explanation: "Layer from foundation through applications so the customer sees a designed system, not a random SKU list."
+    explanation: "Present the comprehensive suite of services so the customer sees a designed system, not a random SKU list."
   - question: "What role should local support and monitoring play in the storyline?"
     options:
       - "They are optional talking points only if the customer complains."
@@ -84,18 +84,18 @@ knowledge_checks:
   - question: "What is a practical way to describe any deal using this module?"
     options:
       - "Quote random SKUs until something sticks."
-      - "Map the opportunity to 'access + path + policy + apps' against their sites and workloads."
+      - "Map the opportunity to the comprehensive suite of services against their sites and workloads."
       - "Focus exclusively on a single product name regardless of discovery."
     correct_index: 1
-    explanation: "Framing deals across access, path, policy, and apps aligns conversation with the layered portfolio map."
+    explanation: "Framing deals across the comprehensive suite of services aligns conversation with the portfolio map."
 scenarios:
   - title: "Retail chain, cloud POS, hates 'just another ISP'"
     situation: |
       A multi-site retailer wants reliable connectivity and says all carriers sound the same. They care about **uptime**, **local support**, and **paths to cloud POS and SaaS**.
     choices:
       - label: "Pitch a SKU list and lowest price first."
-        feedback: "Weak: you sound like a commodity. Open with outcomes, Midwest IP reach, monitoring, and local teams—then map layers to their sites."
-      - label: "Open with outcomes, partnership, and layered access + WAN + security + apps; offer collateral for proof."
+        feedback: "Weak: you sound like a commodity. Open with outcomes, Midwest IP reach, monitoring, and local teams—then map the comprehensive suite of services to their sites."
+      - label: "Open with outcomes, partnership, and the comprehensive suite of services; offer collateral for proof."
         feedback: "Strong: matches the executive storyline and portfolio map, and sets up discovery on sites and critical workloads."
   - title: "CFO joins the call halfway through"
     situation: |
@@ -103,26 +103,26 @@ scenarios:
     choices:
       - label: "Answer with fiber miles and technical jargon only."
         feedback: "Incomplete: add the business angle—competitive connectivity through a resilient Midwest network, partnership, and paths tuned for cloud/SaaS."
-      - label: "Summarize: reliable Midwest foundation, fiber-first access, layered services, and accountable local support—then offer the capability deck."
+      - label: "Summarize: reliable Midwest foundation, fiber-first access, comprehensive suite of services, and accountable local support—then offer the capability deck."
         feedback: "Strong: ties network proof points to partnership and gives them a concrete next artifact."
 roleplay:
   persona: "Skeptical CFO at a mid-size Midwest manufacturer"
   scenario: "Just sat through two carrier pitches that sounded identical. Asks point-blank why GPC is different before walking out of the room."
-  goal: "Deliver a one-sentence 'why GPC' answer grounded in outcomes and partnership, then anchor the conversation on the layered stack and offer the capability deck as a concrete next step."
+  goal: "Deliver a one-sentence 'why GPC' answer grounded in outcomes and partnership, then anchor the conversation on the comprehensive suite of services and offer the capability deck as a concrete next step."
 ---
 
 ## At a glance
 
-- **Story:** Outcomes and partnership first—**access (fiber + backup) → WAN → security → UC, Cloud Connect, and Wi‑Fi** as **one designed system**, not a SKU list.
-- **Proof:** **Midwest IP reach**, Tier-1/IX relationships, local teams, **24/7 NOC**—use the **Business Capability** materials for the narrative spine and **Sales Resources** for per-product evidence.
-- **Discovery:** Sites, critical apps, uptime tolerance, cloud/voice moves—then map the opportunity to **access + path + policy + apps** so the stack matches how they actually run.
+- **Story:** Outcomes and partnership first—**position our services as a comprehensive suite of 10 core solutions**, not a SKU list.
+- **Proof:** **Over a Century of Experience**, **Unmatched Local Support**, **Reliability Backed by 24/7 Network Monitoring**, and **Flexible, Scalable Solutions**—use the **Business Capability** materials for the narrative spine and **Sales Resources** for per-product evidence.
+- **Discovery:** Sites, critical apps, uptime tolerance, cloud/voice moves—then map the opportunity to the **comprehensive suite of services** so the stack matches how they actually run.
 
 ---
 
 ## Story stack
 
 ::: elevator [Elevator Pitch]
-GPC is a **layered technology partner** on a resilient Midwest fiber network: access (fiber + backup) → WAN → security → UC, Cloud Connect, and Wi-Fi as **one system**, not a SKU buffet. Proof: Midwest IP reach, Tier-1/IX paths, local teams, 24/7 NOC—use the capability deck for the story, Sales Resources for product evidence.
+Fiber Connectivity and Communications Solutions for the Modern Business. Make connectivity your competitive advantage. From multi-site enterprises to small storefronts, we provide a comprehensive suite of services to deliver the secure, flexible infrastructure your business needs. Proof: Over a Century of Experience, Unmatched Local Support, 24/7 Network Monitoring, and Scalable Solutions—use the capability deck for the story, Sales Resources for product evidence.
 :::
 
 ::: accordion Business Capability Overview
@@ -151,11 +151,11 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["You all sound the same."]
-Anchor on the layered stack: access → WAN → security → apps as one designed system—then ask what their current provider does when something breaks at 2 a.m.
+Anchor on the comprehensive suite of services as one designed system—then ask what their current provider does when something breaks at 2 a.m.
 :::
 
 ::: flip ["We just need basic Internet."]
-Ask about cloud apps, VoIP, and growth plans—then show how basic access becomes a foundation for the full stack.
+Ask about cloud apps, VoIP, and growth plans—then show how basic access becomes a foundation for the full suite of services.
 :::
 
 ::: flip ["We already have a national carrier."]
@@ -172,7 +172,7 @@ Reframe to **TCO**: downtime, truck rolls, change orders, and ticket volume—ch
 :::
 
 ::: flip ["We'll add security and WAN later."]
-Layered design from day one avoids rip-and-replace; position access + path + policy as one roadmap, even if phases differ.
+A comprehensive suite from day one avoids rip-and-replace; position the full suite of services as one roadmap, even if phases differ.
 
 :::
 
@@ -182,29 +182,35 @@ Layered design from day one avoids rip-and-replace; position access + path + pol
 
 ## Technical Deep Dive [deep]
 
-**Portfolio map (layers):**
+**Portfolio map (10 core services):**
 
-| Layer | What | Position / hook |
+| Service | What | Position / hook |
 | --- | --- | --- |
-| **Access + continuity** | Fiber primary; **wireless backup** when continuity matters | Fiber = capacity/perf; backup = **continuity**—not "second Internet." Backup → SD‑WAN + security; multi‑site → **Ethernet** |
-| **WAN** | **Ethernet** mesh; **SD‑WAN** for policy + multi‑link | Ethernet = predictable site mesh; SD‑WAN = orchestration + cloud breakout. → firewall/DDoS, **Cloud Connect**; new sites → fiber + Wi‑Fi |
-| **Protect** | Managed firewall, DDoS | Policy on the pipe—tie to ransomware, PCI, guest Wi‑Fi. → SD‑WAN, UC (SBC) where relevant; guest Wi‑Fi → **Managed Wi‑Fi** |
-| **Enable** | UC, **Cloud Connect**, Wi‑Fi, video (when vertical cares) | UC + experience; Cloud Connect = predictable cloud paths. Voice/video pain → check access/WAN/QoS + SD‑WAN; heavy SaaS → Cloud Connect + security |
+| **Fiber Internet** | Dedicated, symmetrical access | Fiber = capacity/perf; the foundation of the suite |
+| **Wireless Internet Backup** | 5G continuity | Backup = **continuity**—not "second Internet." |
+| **Managed Ethernet** | Private L2 site-to-site | Predictable site mesh for multi-site businesses |
+| **SD-WAN** | Intelligent routing & orchestration | Orchestration + cloud breakout. → firewall/DDoS |
+| **Managed Firewall** | Edge protection | Policy on the pipe—tie to ransomware, PCI, guest Wi‑Fi |
+| **Unified Communications** | Voice, meetings, collaboration | UC + experience; replace aging PBX |
+| **Cloud Connect** | Private path to CSPs | Predictable cloud paths for heavy SaaS |
+| **Managed Wi-Fi** | Full lifecycle wireless | Guest Wi‑Fi → **Managed Wi‑Fi** |
+| **DDoS Protection** | Proactive or on-demand mitigation | Keep critical services online |
+| **Video** | Streaming TV for business | When vertical cares (hospitality, retail, break rooms) |
 
-**Practice line:** any deal = **access + path + policy + apps** mapped to sites/workloads.
+**Practice line:** any deal = **comprehensive suite of services** mapped to sites/workloads.
 
 **Conversation flow:**
 - **Discovery:** sites, critical apps, uptime, cloud/voice moves, owners (network/security/voice).
-- **Order:** one-sentence fit → layered map → capability deck + **Sales Resources**.
+- **Order:** one-sentence fit → comprehensive suite → capability deck + **Sales Resources**.
 - **Checkpoints:** footprint → apps → RTO/RPO → ownership.
 
 ::: accordion Portfolio Stack Layers
-Visual breakdown of the layered portfolio—access through applications—from the capability deck.
+Visual breakdown of the comprehensive suite of services from the capability deck.
 
 
 :::
 
 ::: accordion Network Story & Proof Points
-Midwest IP, fiber-first access, and Tier-1/IX relationships—anchor the "why GPC" conversation with this network narrative slide.
+Fastest, Most Reliable Route to the Internet, direct Tier-1/IX connections, and Midwest IP reach—anchor the "why GPC" conversation with this network narrative slide.
 
 :::

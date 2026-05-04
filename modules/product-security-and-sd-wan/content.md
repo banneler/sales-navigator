@@ -170,7 +170,7 @@ Ask: do you have visibility into application performance across all sites? SD-WA
 :::
 
 ::: flip ["SD-WAN is too expensive."]
-SD-WAN pricing sits between SIA and DIA—often less than the MPLS it replaces. The ROI comes from eliminating MPLS costs, reducing truck rolls, and improving uptime for revenue-generating applications.
+SD-WAN pricing sits between SIA and DIA—often less than the MPLS it replaces. The ROI comes from eliminating complex and costly MPLS services and improving uptime for revenue-generating applications.
 :::
 
 ::: flip ["We only have sites in Nebraska."]

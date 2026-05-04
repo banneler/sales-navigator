@@ -4,44 +4,44 @@ title: "Operational Business Reviews"
 summary: "21-day cycles. Executive alignment. Strategic retention."
 sensitivity: "internal"
 five_minute_summary: |
-  - **Cycle length:** Twenty-one days from initiation through materials ready for the OBR meeting.
-  - **Swim lanes:** Initiation (rep), Design (network diagram), Data (billing & NOC snapshots), Marketing (format & layout), Production (print & assembly).
-  - **Critical handoff:** Day 14 marks the data/marketing boundary—marketing picks up formatted narrative and slides into final prep.
-  - **Finish line:** OBR meeting is flagged at the end of the window; use the Gantt to set expectations with customers and internal teams.
+  - **Cycle length:** 21-business-day cycle from initiation through materials ready for the OBR meeting.
+  - **Single Packet Handoff:** Marketing will not begin design until they receive a single email containing the completed OBR Sales Readiness Form and finalized Visio diagram.
+  - **Data Hygiene:** Sales must scrub and audit all data before handoff. Internal catalog codes must be translated into plain-English service descriptions.
+  - **Core Components:** The OBR slick features Network Design, Strategic Billing, NOC History, and a Strategic Roadmap.
 
 knowledge_checks:
   - question: "How many days does the standard OBR preparation cycle span in the Gantt?"
     options:
-      - "21 days"
+      - "21 business days"
       - "90 days"
       - "5 business days"
     correct_index: 0
-    explanation: "The header labels days 01–21 across the grid."
+    explanation: "The SOP defines a 21-business-day cycle."
 
-  - question: "The vertical 'Data Handoff' marker on the chart sits closest to which day?"
+  - question: "What is required for the 'Single Packet' Handoff to Marketing?"
     options:
-      - "Start of day 14"
-      - "Day 1"
-      - "Day 21"
+      - "A single email containing the completed OBR Sales Readiness Form and finalized Visio diagram"
+      - "A raw dump of billing data"
+      - "A verbal request to start design"
     correct_index: 0
-    explanation: "The handoff line is positioned at the start of day 14."
+    explanation: "Marketing requires a single, complete packet to begin design."
 
-  - question: "In the Marketing row, which activities fall after the handoff (days 14+)?"
+  - question: "What are the 6 phases of the OBR cycle?"
     options:
-      - "Format & layout, then review, leading into print & assembly"
-      - "Only the recon audit"
-      - "Kickoff call only"
+      - "Initiation, Data Recon, Design Phase, Data Collection, Marketing Design, Final Prep"
+      - "Initiation, Design, Data, Marketing, Production"
+      - "Kickoff, Review, Print"
     correct_index: 0
-    explanation: "Post-handoff bars cover format/layout, review, then production hands off to print."
+    explanation: "The SOP defines 6 specific phases across the 21-business-day cycle."
 
 scenarios:
-  - title: "Customer timeline vs. 21-day OBR cycle"
+  - title: "Customer timeline vs. 21-business-day OBR cycle"
     situation: |
-      An account rep promises the customer a **printed OBR deck in five days**. Delivery points to the **21-day Gantt**.
+      An account rep promises the customer a **printed OBR deck in five days**. Delivery points to the **21-business-day Gantt**.
     choices:
       - label: "Tell the customer five days is the standard."
-        feedback: "The documented cycle is **21 days**; reset expectations or escalate an approved exception path."
-      - label: "Align the rep to the 21-day model (or your approved fast-track process) before committing dates."
+        feedback: "The documented cycle is **21 business days**; reset expectations or escalate an approved exception path."
+      - label: "Align the rep to the 21-business-day model (or your approved fast-track process) before committing dates."
         feedback: "**Good.** The chart exists so sales and delivery quote the same timeline."
       - label: "Skip marketing formatting to save time."
         feedback: "Skipping lanes risks quality and handoffs; use leadership-approved exceptions only."
@@ -52,20 +52,32 @@ scenarios:
 
 Operational Business Reviews turn **network reality, financial signals, and marketing narrative** into a single executive conversation. Reps win when the **prep process is predictable**—this module trains the timeline, not just the slide deck.
 
-**How to use:** Walk new hires through **phases** below; use the **21-day** chart for swim-lane expectations; cross-link **Account Based Marketing** when tying executive outreach to review readiness.
+**How to use:** Walk new hires through **phases** below; use the **21-business-day** chart for swim-lane expectations.
 
-## 21-day OBR cycle
+## 21-business-day OBR cycle
 
-![OBR process: 21-day strategic cycle (reference Gantt)](assets/gantt/obr-21-day-cycle.png)
+![OBR process: 21-business-day strategic cycle (reference Gantt)](assets/gantt/obr-21-day-cycle.png)
 
 ## Phases (high level)
 
-- **Initiation:** Recon audit and scheduling the OBR—owned by the account rep in the model chart.
-- **Design:** Kickoff and network diagram work—labeled against your design owner in the source doc.
-- **Data:** Parallel billing and NOC history pulls so the story is grounded in fact.
-- **Marketing:** Format, layout, and review of customer-facing materials after the day-14 handoff.
-- **Production:** Print and assembly leading into the OBR meeting milestone.
+- **Initiation (Day 1):** Schedule the OBR (Account Rep).
+- **Data Recon (3 Days):** Audit of locations, addresses, and upgrades (Account Rep).
+- **Design Phase (10 Days):** Network Design w/ kickoff call.
+- **Data Collection (5 Days):** Billing & NOC data generation.
+- **Marketing Design (5 Days):** Professional formatting, branding, and Final Review.
+- **Final Prep (3 Days):** Printing, Pickup, and trifold insertion.
 
-## Keep the Gantt honest
+## Single Packet Handoff & Data Hygiene
 
-Document your **RACI**, **systems**, and **approval gates** in the live OBR SOP. When leadership updates the model, replace **`assets/gantt/obr-21-day-cycle.png`** so this module matches what delivery actually runs.
+Marketing will not begin design until they receive a **Single Packet** handoff via email containing:
+1. The completed **OBR Sales Readiness Form** (with scrubbed data tables).
+2. The finalized **Visio Diagram** (Verified).
+
+**No Raw Dumps:** Sales must scrub and audit all data before handoff. Marketing is for design, not data entry. Internal catalog codes must be translated into plain-English service descriptions (e.g., "100M Fiber DIA").
+
+## Core Components of the OBR Slick
+
+1. **Network Design:** High-fidelity "Current vs. Future State" Visio, verified against billing data.
+2. **Strategic Billing:** Totals and expirations, featuring "Modernization" and "Performance Spotlight" levers.
+3. **NOC History & Feedback Loop:** 12-mo performance snapshot and holistic partnership feedback loop.
+4. **Strategic Roadmap:** Planned upgrades, upcoming renewal sync, and GPC solution highlights.

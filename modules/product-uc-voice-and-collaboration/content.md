@@ -32,8 +32,8 @@ five_minute_summary: |
   - **Start with the clips:** Five short videos in this module (migration, Teams, desktop and mobile apps, hybrid work) are the fastest way to see what a customer will experience—watch before you lean on the text below.
   - **What you’re positioning:** A modern cloud stack for business voice, SMS, meetings, messaging, and files—**Ascend** / GPC UC—not a feature dump on day one. Tier names, storage, and add-ons come from **current matrices**, not memory.
   - **Teams:** Real deals split into two different conversations—**Ascend with Teams** (Microsoft licensing + our PBX) vs **embedded UC-in-Teams** FAQ/deck language. If the room argues licensing, **pause** and bring **SE/architects**; don’t improvise.
-  - **Where specialists earn their keep:** AI productivity lines, CRM/analytics (**DataHub** / **Extend**), and **contact center** (concurrent seats, channels, burst). Your job is to **qualify** and pull in the right people— not to quote SKUs or APIs from recall.
-  - **Trust headlines:** **99.999%** uptime story and **Triple Guard Security™** are the digestible proof points; **archiving and retention** are never “free forever”—confirm with the account team before you mention years.
+  - **Where specialists earn their keep:** AI productivity lines, CRM/analytics (**DataHub** / **Extend**), and **contact center** (concurrent seats, channels, burst). Your job is to **qualify** and pull in the right people— not to quote SKUs or APIs from recall. Our AI is built directly into the app to handle notes and protect private data without the $30 monthly upcharge others demand.
+  - **Trust headlines:** **99.999%** uptime story and **9th Consecutive JD Power Award** for technical support excellence; **archiving and retention** are never “free forever”—confirm with the account team before you mention years.
   - **Go deeper when you’re prepping:** Partner collateral themes (BYOC / IPN / Embedded narratives)—**100+** voice features, web fax, Mix & Match matrices, mobile SMS limits, MSP stats, device grids, Embedded vs **Direct Routing**, omnichannel CC—live in **Technical Deep Dive** below. Use that section for homework, not as a script to read to a prospect.
 
 knowledge_checks:
@@ -69,13 +69,13 @@ knowledge_checks:
     correct_index: 0
     explanation: "Concurrent—confirm matrix before commit."
 
-  - question: "What does **Triple Guard Security™** frame on the UC platform?"
+  - question: "What does **SecuriSync** frame on the UC platform?"
     options:
-      - "Trust themes: datacenters, certified security team, encryption, password management, 2FA"
+      - "Full backup and antivirus to stop ransomware before it starts, plus a one-click rollback to save files if hit by a virus or accidental deletion"
       - "Guaranteed on-site guard patrols at every customer site"
       - "Removal of all encryption to speed migrations"
     correct_index: 0
-    explanation: "DCs, cert team, encryption, passwords, 2FA."
+    explanation: "SecuriSync is a true security differentiator (backup, AV, rollback)—unlike basic storage like OneDrive."
 
   - question: "For non-UC voice, what does SIP trunking primarily provide?"
     options:
@@ -260,8 +260,11 @@ Use these **after** the core five questions (covered in the Discovery Break game
 2. **Where should call and SMS activity land for reporting—CRM, data warehouse, or spreadsheets?** (Uncovers DataHub/analytics and integration conversations.)
 3. **For Teams-heavy users: will they primarily use the Teams desktop app, mobile, or both for business calling and SMS?** (Surfaces embedded-Teams vs mobile gaps.)
 4. **Do you need company-owned SMS on business numbers vs personal SMS—who administers policy and compliance?** (Aligns with company vs personal SMS admin themes.)
-5. **Are you evaluating Mix & Match tiers (Express through Enterprise) or Ascend for Teams rows—who owns the matrix review with procurement?**
-6. **Is this account a renewal or competitive displacement—timing for migration and professional services?** (MSP/VAR “renewal moment” storyline—internal framing.)
+5. **How much time does your IT team spend troubleshooting 'version mismatch' issues and mandatory security updates when employees are just trying to join a meeting?** (Targets Zoom)
+6. **If you decided to change providers tomorrow, do you know exactly how much notice you’re required to give to avoid an automatic renewal?** (Targets RingCentral)
+7. **When a customer calls you back after a text, can your team see that entire history on one screen without hunting through different folders?** (Targets RingCentral)
+8. **Are you evaluating Mix & Match tiers (Express through Enterprise) or Ascend for Teams rows—who owns the matrix review with procurement?**
+9. **Is this account a renewal or competitive displacement—timing for migration and professional services?** (MSP/VAR “renewal moment” storyline—internal framing.)
 
 ---
 
@@ -274,7 +277,15 @@ Use these **after** the core five questions (covered in the Discovery Break game
 :::
 
 ::: flip ["Cloud is less secure than our on-prem system."]
-Triple Guard Security™: enterprise-grade data centers, certified security team, encryption, password management, and 2FA. Intermedia has been recognized 7 times by J.D. Power for technical support excellence. On-prem systems receive no automatic security updates.
+SecuriSync is a true security differentiator: full backup and antivirus to stop ransomware before it starts, plus a one-click rollback to save your files if you’re ever hit by a virus or accidental deletion. Intermedia has been recognized 9 years running by J.D. Power for technical support excellence. On-prem systems receive no automatic security updates.
+:::
+
+::: flip ["Zoom is cheaper at $10 a month."]
+By the time you add unlimited calling and analytics, the "cheap" license costs more than our all-in bundle. Zoom also struggles with complex routing and faxing.
+:::
+
+::: flip ["RingCentral has more integrations."]
+GPC's major integrations like Salesforce and Outlook work right out of the box without an IT expert. RingCentral's disjointed UX forces you to jump between 3 tabs, whereas GPC offers a single screen.
 :::
 
 ::: flip ["Switching will disrupt our business—or our people won't adopt."]

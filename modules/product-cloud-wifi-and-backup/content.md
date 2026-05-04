@@ -7,13 +7,13 @@ reference_files:
   - label: "Sales Resources (cloud, Wi‑Fi, backup collateral)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 discovery_questions:
-  - "Which cloud platforms or SaaS apps are most critical to your business—AWS, Azure, O365, Salesforce? How do you reach them today, and where do you feel latency or reliability pain?"
+  - "Which cloud platforms or SaaS apps are most critical to your business—AWS, Azure, Google, Salesforce? How do you reach them today, and where do you feel latency or reliability pain?"
   - "When your primary Internet circuit went down last—how long were you out, what broke first, and what did that cost the business?"
   - "Who manages your Wi-Fi today? Do you have separate guest and corporate networks, and are you dealing with any compliance requirements like PCI or HIPAA?"
   - "How many sites need coverage, and do any have outdoor or high-density requirements that a standard AP count might undersize?"
   - "Do you have applications—VoIP, payment terminals, patient records—that must stay up even during a fiber outage?"
 five_minute_summary: |
-  - **Cloud Connect:** Combine with Managed Ethernet to provide a private, predictable path to cloud providers and SaaS. Always align with an SE on cross-connects and diversity.
+  - **Cloud Connect:** Combine with Managed Ethernet to provide a private, predictable path to cloud providers and SaaS via Megaport. Always align with an SE on cross-connects and diversity.
   - **Managed Wi-Fi:** We manage the entire lifecycle including security (firewall, IDS/IPS) and network separation. Never quote access point counts before a proper site survey.
   - **5G Backup:** Provides automatic failover and fail-back with 24/7 NOC monitoring. Be transparent that speeds and deprioritization will vary by location.
   - **Resources:** Rely on official datasheets and on-network training shortcuts for detailed proof points.
@@ -22,7 +22,7 @@ knowledge_checks:
   - question: "What best describes Cloud Connect's primary value story in discovery?"
     options:
       - "A best-effort public Internet link sized for peak cloud usage"
-      - "A direct, private connection into GPC's cloud ecosystem with Managed Ethernet as the on-ramp"
+      - "A direct, private connection into the Megaport cloud ecosystem with Managed Ethernet as the on-ramp"
       - "Customer-owned long-haul fiber to every cloud region"
     correct_index: 1
     explanation: "Private path via Cloud Connect; Ethernet on-ramp—not Internet-only."
@@ -197,8 +197,8 @@ Split networks are common; still qualify density, security policy, and who owns 
 ## Technical Deep Dive [deep]
 
 **Cloud Connect specs:**
-- Private path to AWS, Azure, Google, and other clouds/SaaS via GPC's cloud ecosystem
-- Managed Ethernet on-ramp; up to 10 Gbps cited in collateral
+- Private path to AWS, Azure, Google, and other clouds/SaaS via the Megaport cloud integrator
+- Managed Ethernet on-ramp; 50 Mbps to 10 Gbps cited in collateral
 - Metro access: Omaha, Chicago, Denver
 - SE alignment required for cross-connect details, diversity, and security scope
 
@@ -207,7 +207,7 @@ Split networks are common; still qualify density, security policy, and who owns 
 - 5G Wireless Internet Backup: $68 MRC, unlimited data, carrier deprioritization applies
 - Wireless Internet Broadband (full-time): $175 MRC, unlimited, best-effort
 - Optional battery backup: up to 8 hours runtime during power failure (NRC TBD)
-- After failover data thresholds: >12 GB/day → up to 50 Mbps; >20 GB/day → up to 25 Mbps; >30 GB/day → up to 3 Mbps
+- After failover data thresholds: >12 GB/month → up to 50 Mbps; >20 GB/month → up to 25 Mbps; >30 GB/month → up to 3 Mbps
 - Failover time: approximately one minute; automatic fail-back when primary restores
 - Hardware: Cradlepoint X20 5G router; dual SIMs (Verizon + AT&T); best signal auto-selected at install
 - No static IP during wireless failover; static IPs work on landline only

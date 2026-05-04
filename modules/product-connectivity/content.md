@@ -14,7 +14,7 @@ discovery_questions:
   - "Are any sites data-center or hub locations where high-capacity optical transport between strategic endpoints might be relevant?"
 five_minute_summary: |
   - **Internet Access:** Use SIA for flexible, cost-sensitive shared access. Lead with DIA when the customer needs dedicated symmetrical bandwidth, SLA-grade operations, or stronger DDoS protection.
-  - **Private Transport:** Position Managed Ethernet for private Layer 2 site-to-site connectivity. Use Wave for high-capacity Layer 1 optical transport between data centers or hubs.
+  - **Private Transport:** Position Managed Ethernet for private Layer 2 site-to-site connectivity. Use Wave (10 Gbps to 400 Gbps) for high-capacity Layer 1 optical transport between data centers or hubs.
   - **Fiber vs. Satellite:** When competing against satellite, focus discovery on reliability, latency, and weather vulnerabilities.
   - **Pricing:** Treat training PDFs as internal references. Always use official quoting tools for customer-facing numbers.
 
@@ -170,7 +170,7 @@ Frame TCO: what does an hour of dropped VoIP calls, failed payment processing, o
 :::
 
 ::: flip ["Starlink is cheaper for our rural stores."]
-Acknowledge coverage; then qualify: does payment processing or VoIP tolerate 20–40ms variable latency, weather disruptions, or congestion during peak hours? Fiber delivers predictable, stable paths.
+Acknowledge coverage; then qualify: does payment processing or VoIP tolerate 21–30ms variable latency, weather disruptions, or congestion during peak hours? Fiber delivers predictable, stable paths.
 :::
 
 ::: flip ["We already have MPLS—why change?"]
@@ -200,7 +200,7 @@ Acknowledge calendar reality; contrast with ongoing cost of poor access; phased 
 | **SIA** | Shared, flexible, cost-sensitive; up to ~2 Gbps symmetrical per comparison sheet |
 | **DIA** | Dedicated, symmetrical; up to 100 Gbps symmetrical; stronger DDoS/NOC posture |
 | **Ethernet** | Private L2 (E-Line/EVPL/E-LAN); site-to-site—not Internet breakout |
-| **Wave** | L1 optical DC/hub links—not "more Internet"; qualify vs Internet |
+| **Wave** | L1 optical DC/hub links (10 Gbps to 400 Gbps)—not "more Internet"; qualify vs Internet |
 
 **When to lead:**
 - **SIA** = budget + tolerable shared path

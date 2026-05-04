@@ -73,7 +73,7 @@ const steps = [
         </p>
         <ul class="list-disc pl-5 text-slate-700 space-y-${mobile ? '1.5' : '2'} text-sm">
           <li><strong>Title and summary</strong> at the top set context.</li>
-          <li><strong>Five-minute summary</strong> bullets give a fast scan when present.</li>
+          <li><strong>Coffee Summary</strong> bullets give a fast scan when present.</li>
           <li>Major topics appear as <strong>section cards</strong>.</li>
           <li>Some modules include <strong>reference links</strong>${mobile ? '.' : ' in a side area when provided.'}</li>
         </ul>`,
@@ -162,19 +162,21 @@ const steps = [
               We're glad you're here. This space is built to help you ramp with confidence—alongside teammates who remember their first customer call, their first complex quote, and the questions that used to keep them up at night.
             </p>
           </div>
-          <div class="rounded-2xl border border-amber-200 bg-amber-50/80 p-5 md:p-6 shadow-sm backdrop-blur-sm">
-            <div class="flex items-start gap-3">
-              <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-sm" title="About 5 minutes">5m</span>
-              <div class="min-w-0 flex-1">
-                <p class="text-xs font-bold text-amber-950 uppercase tracking-wide">Five-minute summary</p>
-                <ul class="mt-3 space-y-2.5 text-sm text-amber-950/90">
-                  <li class="flex gap-2"><span class="text-amber-500 shrink-0">•</span> We're genuinely happy you chose to grow your career here—your wins matter to us.</li>
-                  <li class="flex gap-2"><span class="text-amber-500 shrink-0">•</span> Take training at your pace; come back to any module when you need a refresher or a talk track.</li>
-                  <li class="flex gap-2"><span class="text-amber-500 shrink-0">•</span> Showing up curious for customers beats memorizing slides—use this hub to prepare, then go have real conversations.</li>
-                </ul>
+          <section class="module-five-min w-full border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm backdrop-blur-sm" aria-labelledby="five-min-heading-getting-started">
+            <div class="flex w-full min-w-0 items-start gap-3">
+              <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center text-base" title="Coffee Summary"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></span>
+              <div class="min-w-0 flex-1 w-full">
+                <h3 id="five-min-heading-getting-started" class="text-lg font-bold text-amber-950 mb-2">Coffee Summary</h3>
+                <div class="module-markdown-body w-full text-amber-950/90 module-five-min-compact text-sm">
+                  <ul class="list-disc pl-5 space-y-2">
+                    <li>We're genuinely happy you chose to grow your career here—your wins matter to us.</li>
+                    <li>Take training at your pace; come back to any module when you need a refresher or a talk track.</li>
+                    <li>Showing up curious for customers beats memorizing slides—use this hub to prepare, then go have real conversations.</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
+          </section>
           <section class="rounded-2xl border border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white p-6 md:p-8 shadow-sm backdrop-blur-sm module-tour-discovery">
             <h3 class="text-lg font-bold text-slate-900">A note from the team</h3>
             <div class="text-sm text-slate-700 mt-3 space-y-3 leading-relaxed">
@@ -840,7 +842,7 @@ video_sections:
       **Fine print**
       - **$150+** MRC per site
       - Service within **500 feet** of the **fiber line** (not just the vault)
-      - Path **cannot** cross **railroads, streets, grassy areas, or building penetrations**
+      - Path **cannot** cross **railroads, streets, grassy areas, or run through buildings**
       - **Zip 68102** excluded
       - Discounts: **20%** max if not term-based; if term-based, use the table (e.g. **36-month** → **27%** max—and **0.01% over** disqualifies Pre-Approved)
 
@@ -879,7 +881,7 @@ video_sections:
       - **Cancellation** — **All** services out; **before** billing
       - **Disconnect** — **All** services out; **after** billing
 
-      **Change order** — **Conga Files** → **Change Order** → Word pack (sites, story, line edits) → keep **GPC Solution #** on it → sign → upload → email **Sales Manager** if **MRC / payback / cost** shifts, and **PMO / SF Admin / CRC** as the guide says. Admin **booking adjustment** → **PMO** project → **CRC** billing.
+      **Change order** — **Conga Files** → **Change Order** → Word document (sites, description of change, specific changes) → keep **GPC Solution #** on it → sign → upload → email **Sales Manager** if **MRC / payback / cost** shifts, and **PMO / SF Admin / CRC** as the guide says. Admin **booking adjustment** → **PMO** project → **CRC** billing.
 
       **MAC** — **Billed** world: new site, add, or change on what’s live—usually a **new GPC Solution** on the same opportunity; follow the MAC PDF by scenario.
 
@@ -1092,24 +1094,24 @@ discovery_questions:
   - "Who owns network, security, and voice decisions—are those the same team or separate?"
 five_minute_summary: |
   - **The Opening:** Focus on business outcomes and partnership (local support, proactive monitoring, Midwest presence) rather than dumping a list of SKUs.
-  - **The GPC Stack:** Position our services as one cohesive system, layering access, WAN, security, and unified communications.
+  - **The GPC Stack:** Position our services as a comprehensive suite of 10 core solutions (Fiber Internet, SD-WAN, Managed Firewall, UC, etc.).
   - **Providing Proof:** Use the capability deck to tell the high-level narrative, and lean on Sales Resources for specific product evidence.
   - **Running Discovery:** Uncover site counts, critical applications, uptime requirements, and cloud migrations before pitching a specific fit.
 knowledge_checks:
   - question: "What is the best opening for a portfolio conversation?"
     options:
       - "Lead with a full list of product SKUs and speeds."
-      - "Lead with business outcomes and GPC as a partner with a layered network story."
+      - "Lead with business outcomes and GPC as a partner with a comprehensive suite of services."
       - "Start only with pricing and contract terms."
     correct_index: 1
-    explanation: "The module emphasizes outcomes and partnership first; layer the stack (access → WAN → security → apps) and save SKU detail for follow-up collateral."
+    explanation: "The module emphasizes outcomes and partnership first; present the comprehensive suite of services and save SKU detail for follow-up collateral."
   - question: "How should you describe how GPC products fit together?"
     options:
-      - "As layers—access, WAN, security, then collaboration and cloud adjacency—so it reads as one system."
+      - "As a comprehensive suite of services designed for growth."
       - "As unrelated add-ons the customer picks from a catalog."
       - "As only Internet access with no connection to other services."
     correct_index: 0
-    explanation: "Use the layered portfolio map (foundation through apps) so the customer sees integrated design, not a random menu."
+    explanation: "Use the comprehensive suite of services so the customer sees integrated design, not a random menu."
   - question: "Where should you send someone for product-specific datasheets after this storyline?"
     options:
       - "Only the Business Capability PDF; ignore other folders."
@@ -1119,18 +1121,18 @@ knowledge_checks:
     explanation: "Use the Business Capability deck for the story and **Sales Resources** (plus the relevant product modules) for per-product evidence."
   - question: "What proof points anchor the 'why GPC' network story?"
     options:
-      - "Fiber-first access, Midwest IP reach, Tier-1 and IX relationships, and paths tuned for cloud/SaaS and end users."
+      - "Over a Century of Experience, Unmatched Local Support, Reliability Backed by 24/7 Network Monitoring, and Flexible, Scalable Solutions."
       - "Only the number of years in business, with no network specifics."
       - "A guarantee that every site worldwide has identical latency."
     correct_index: 0
-    explanation: "Lead with resilient Midwest foundation, fiber-first access, and efficient routes to cloud and SaaS—not generic longevity claims alone."
+    explanation: "Lead with the four main pillars: Century of Experience, Local Support, 24/7 Monitoring, and Scalable Solutions."
   - question: "In discovery, what should you clarify before you summarize fit in one sentence?"
     options:
       - "Only the customer's favorite brand of router."
-      - "Locations, critical apps, uptime tolerance, and cloud/voice moves—then reflect the layered stack."
+      - "Locations, critical apps, uptime tolerance, and cloud/voice moves—then reflect the comprehensive suite of services."
       - "Whether they prefer PDF or Word for internal memos."
     correct_index: 1
-    explanation: "The module ties discovery to footprint, workloads, and resilience so the recommended stack matches real operations."
+    explanation: "The module ties discovery to footprint, workloads, and resilience so the recommended services match real operations."
   - question: "How does this module relate to the Business Capability PDF versus the deep collateral library?"
     options:
       - "Ignore the PDF; the library replaces the storyline entirely."
@@ -1148,10 +1150,10 @@ knowledge_checks:
   - question: "Which stack order matches the portfolio map taught here?"
     options:
       - "Security first, then access, then WAN, then apps—with no ordering rules."
-      - "Access (fiber + backup) → WAN → security → UC, Cloud Connect, Wi-Fi, Video."
+      - "A comprehensive suite of 10 services including Fiber Internet, SD-WAN, Managed Firewall, UC, Cloud Connect, and Wi-Fi."
       - "Apps only; transport is irrelevant to the conversation."
     correct_index: 1
-    explanation: "Layer from foundation through applications so the customer sees a designed system, not a random SKU list."
+    explanation: "Present the comprehensive suite of services so the customer sees a designed system, not a random SKU list."
   - question: "What role should local support and monitoring play in the storyline?"
     options:
       - "They are optional talking points only if the customer complains."
@@ -1162,18 +1164,18 @@ knowledge_checks:
   - question: "What is a practical way to describe any deal using this module?"
     options:
       - "Quote random SKUs until something sticks."
-      - "Map the opportunity to 'access + path + policy + apps' against their sites and workloads."
+      - "Map the opportunity to the comprehensive suite of services against their sites and workloads."
       - "Focus exclusively on a single product name regardless of discovery."
     correct_index: 1
-    explanation: "Framing deals across access, path, policy, and apps aligns conversation with the layered portfolio map."
+    explanation: "Framing deals across the comprehensive suite of services aligns conversation with the portfolio map."
 scenarios:
   - title: "Retail chain, cloud POS, hates 'just another ISP'"
     situation: |
       A multi-site retailer wants reliable connectivity and says all carriers sound the same. They care about **uptime**, **local support**, and **paths to cloud POS and SaaS**.
     choices:
       - label: "Pitch a SKU list and lowest price first."
-        feedback: "Weak: you sound like a commodity. Open with outcomes, Midwest IP reach, monitoring, and local teams—then map layers to their sites."
-      - label: "Open with outcomes, partnership, and layered access + WAN + security + apps; offer collateral for proof."
+        feedback: "Weak: you sound like a commodity. Open with outcomes, Midwest IP reach, monitoring, and local teams—then map the comprehensive suite of services to their sites."
+      - label: "Open with outcomes, partnership, and the comprehensive suite of services; offer collateral for proof."
         feedback: "Strong: matches the executive storyline and portfolio map, and sets up discovery on sites and critical workloads."
   - title: "CFO joins the call halfway through"
     situation: |
@@ -1181,26 +1183,26 @@ scenarios:
     choices:
       - label: "Answer with fiber miles and technical jargon only."
         feedback: "Incomplete: add the business angle—competitive connectivity through a resilient Midwest network, partnership, and paths tuned for cloud/SaaS."
-      - label: "Summarize: reliable Midwest foundation, fiber-first access, layered services, and accountable local support—then offer the capability deck."
+      - label: "Summarize: reliable Midwest foundation, fiber-first access, comprehensive suite of services, and accountable local support—then offer the capability deck."
         feedback: "Strong: ties network proof points to partnership and gives them a concrete next artifact."
 roleplay:
   persona: "Skeptical CFO at a mid-size Midwest manufacturer"
   scenario: "Just sat through two carrier pitches that sounded identical. Asks point-blank why GPC is different before walking out of the room."
-  goal: "Deliver a one-sentence 'why GPC' answer grounded in outcomes and partnership, then anchor the conversation on the layered stack and offer the capability deck as a concrete next step."
+  goal: "Deliver a one-sentence 'why GPC' answer grounded in outcomes and partnership, then anchor the conversation on the comprehensive suite of services and offer the capability deck as a concrete next step."
 ---
 
 ## At a glance
 
-- **Story:** Outcomes and partnership first—**access (fiber + backup) → WAN → security → UC, Cloud Connect, and Wi‑Fi** as **one designed system**, not a SKU list.
-- **Proof:** **Midwest IP reach**, Tier-1/IX relationships, local teams, **24/7 NOC**—use the **Business Capability** materials for the narrative spine and **Sales Resources** for per-product evidence.
-- **Discovery:** Sites, critical apps, uptime tolerance, cloud/voice moves—then map the opportunity to **access + path + policy + apps** so the stack matches how they actually run.
+- **Story:** Outcomes and partnership first—**position our services as a comprehensive suite of 10 core solutions**, not a SKU list.
+- **Proof:** **Over a Century of Experience**, **Unmatched Local Support**, **Reliability Backed by 24/7 Network Monitoring**, and **Flexible, Scalable Solutions**—use the **Business Capability** materials for the narrative spine and **Sales Resources** for per-product evidence.
+- **Discovery:** Sites, critical apps, uptime tolerance, cloud/voice moves—then map the opportunity to the **comprehensive suite of services** so the stack matches how they actually run.
 
 ---
 
 ## Story stack
 
 ::: elevator [Elevator Pitch]
-GPC is a **layered technology partner** on a resilient Midwest fiber network: access (fiber + backup) → WAN → security → UC, Cloud Connect, and Wi-Fi as **one system**, not a SKU buffet. Proof: Midwest IP reach, Tier-1/IX paths, local teams, 24/7 NOC—use the capability deck for the story, Sales Resources for product evidence.
+Fiber Connectivity and Communications Solutions for the Modern Business. Make connectivity your competitive advantage. From multi-site enterprises to small storefronts, we provide a comprehensive suite of services to deliver the secure, flexible infrastructure your business needs. Proof: Over a Century of Experience, Unmatched Local Support, 24/7 Network Monitoring, and Scalable Solutions—use the capability deck for the story, Sales Resources for product evidence.
 :::
 
 ::: accordion Business Capability Overview
@@ -1229,11 +1231,11 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["You all sound the same."]
-Anchor on the layered stack: access → WAN → security → apps as one designed system—then ask what their current provider does when something breaks at 2 a.m.
+Anchor on the comprehensive suite of services as one designed system—then ask what their current provider does when something breaks at 2 a.m.
 :::
 
 ::: flip ["We just need basic Internet."]
-Ask about cloud apps, VoIP, and growth plans—then show how basic access becomes a foundation for the full stack.
+Ask about cloud apps, VoIP, and growth plans—then show how basic access becomes a foundation for the full suite of services.
 :::
 
 ::: flip ["We already have a national carrier."]
@@ -1250,7 +1252,7 @@ Reframe to **TCO**: downtime, truck rolls, change orders, and ticket volume—ch
 :::
 
 ::: flip ["We'll add security and WAN later."]
-Layered design from day one avoids rip-and-replace; position access + path + policy as one roadmap, even if phases differ.
+A comprehensive suite from day one avoids rip-and-replace; position the full suite of services as one roadmap, even if phases differ.
 
 :::
 
@@ -1260,30 +1262,36 @@ Layered design from day one avoids rip-and-replace; position access + path + pol
 
 ## Technical Deep Dive [deep]
 
-**Portfolio map (layers):**
+**Portfolio map (10 core services):**
 
-| Layer | What | Position / hook |
+| Service | What | Position / hook |
 | --- | --- | --- |
-| **Access + continuity** | Fiber primary; **wireless backup** when continuity matters | Fiber = capacity/perf; backup = **continuity**—not "second Internet." Backup → SD‑WAN + security; multi‑site → **Ethernet** |
-| **WAN** | **Ethernet** mesh; **SD‑WAN** for policy + multi‑link | Ethernet = predictable site mesh; SD‑WAN = orchestration + cloud breakout. → firewall/DDoS, **Cloud Connect**; new sites → fiber + Wi‑Fi |
-| **Protect** | Managed firewall, DDoS | Policy on the pipe—tie to ransomware, PCI, guest Wi‑Fi. → SD‑WAN, UC (SBC) where relevant; guest Wi‑Fi → **Managed Wi‑Fi** |
-| **Enable** | UC, **Cloud Connect**, Wi‑Fi, video (when vertical cares) | UC + experience; Cloud Connect = predictable cloud paths. Voice/video pain → check access/WAN/QoS + SD‑WAN; heavy SaaS → Cloud Connect + security |
+| **Fiber Internet** | Dedicated, symmetrical access | Fiber = capacity/perf; the foundation of the suite |
+| **Wireless Internet Backup** | 5G continuity | Backup = **continuity**—not "second Internet." |
+| **Managed Ethernet** | Private L2 site-to-site | Predictable site mesh for multi-site businesses |
+| **SD-WAN** | Intelligent routing & orchestration | Orchestration + cloud breakout. → firewall/DDoS |
+| **Managed Firewall** | Edge protection | Policy on the pipe—tie to ransomware, PCI, guest Wi‑Fi |
+| **Unified Communications** | Voice, meetings, collaboration | UC + experience; replace aging PBX |
+| **Cloud Connect** | Private path to CSPs | Predictable cloud paths for heavy SaaS |
+| **Managed Wi-Fi** | Full lifecycle wireless | Guest Wi‑Fi → **Managed Wi‑Fi** |
+| **DDoS Protection** | Proactive or on-demand mitigation | Keep critical services online |
+| **Video** | Streaming TV for business | When vertical cares (hospitality, retail, break rooms) |
 
-**Practice line:** any deal = **access + path + policy + apps** mapped to sites/workloads.
+**Practice line:** any deal = **comprehensive suite of services** mapped to sites/workloads.
 
 **Conversation flow:**
 - **Discovery:** sites, critical apps, uptime, cloud/voice moves, owners (network/security/voice).
-- **Order:** one-sentence fit → layered map → capability deck + **Sales Resources**.
+- **Order:** one-sentence fit → comprehensive suite → capability deck + **Sales Resources**.
 - **Checkpoints:** footprint → apps → RTO/RPO → ownership.
 
 ::: accordion Portfolio Stack Layers
-Visual breakdown of the layered portfolio—access through applications—from the capability deck.
+Visual breakdown of the comprehensive suite of services from the capability deck.
 
 
 :::
 
 ::: accordion Network Story & Proof Points
-Midwest IP, fiber-first access, and Tier-1/IX relationships—anchor the "why GPC" conversation with this network narrative slide.
+Fastest, Most Reliable Route to the Internet, direct Tier-1/IX connections, and Midwest IP reach—anchor the "why GPC" conversation with this network narrative slide.
 
 :::
 <!-- prettier-ignore-end -->
@@ -1311,7 +1319,7 @@ discovery_questions:
   - "Are any sites data-center or hub locations where high-capacity optical transport between strategic endpoints might be relevant?"
 five_minute_summary: |
   - **Internet Access:** Use SIA for flexible, cost-sensitive shared access. Lead with DIA when the customer needs dedicated symmetrical bandwidth, SLA-grade operations, or stronger DDoS protection.
-  - **Private Transport:** Position Managed Ethernet for private Layer 2 site-to-site connectivity. Use Wave for high-capacity Layer 1 optical transport between data centers or hubs.
+  - **Private Transport:** Position Managed Ethernet for private Layer 2 site-to-site connectivity. Use Wave (10 Gbps to 400 Gbps) for high-capacity Layer 1 optical transport between data centers or hubs.
   - **Fiber vs. Satellite:** When competing against satellite, focus discovery on reliability, latency, and weather vulnerabilities.
   - **Pricing:** Treat training PDFs as internal references. Always use official quoting tools for customer-facing numbers.
 
@@ -1467,7 +1475,7 @@ Frame TCO: what does an hour of dropped VoIP calls, failed payment processing, o
 :::
 
 ::: flip ["Starlink is cheaper for our rural stores."]
-Acknowledge coverage; then qualify: does payment processing or VoIP tolerate 20–40ms variable latency, weather disruptions, or congestion during peak hours? Fiber delivers predictable, stable paths.
+Acknowledge coverage; then qualify: does payment processing or VoIP tolerate 21–30ms variable latency, weather disruptions, or congestion during peak hours? Fiber delivers predictable, stable paths.
 :::
 
 ::: flip ["We already have MPLS—why change?"]
@@ -1497,7 +1505,7 @@ Acknowledge calendar reality; contrast with ongoing cost of poor access; phased 
 | **SIA** | Shared, flexible, cost-sensitive; up to ~2 Gbps symmetrical per comparison sheet |
 | **DIA** | Dedicated, symmetrical; up to 100 Gbps symmetrical; stronger DDoS/NOC posture |
 | **Ethernet** | Private L2 (E-Line/EVPL/E-LAN); site-to-site—not Internet breakout |
-| **Wave** | L1 optical DC/hub links—not "more Internet"; qualify vs Internet |
+| **Wave** | L1 optical DC/hub links (10 Gbps to 400 Gbps)—not "more Internet"; qualify vs Internet |
 
 **When to lead:**
 - **SIA** = budget + tolerable shared path
@@ -1708,7 +1716,7 @@ Ask: do you have visibility into application performance across all sites? SD-WA
 :::
 
 ::: flip ["SD-WAN is too expensive."]
-SD-WAN pricing sits between SIA and DIA—often less than the MPLS it replaces. The ROI comes from eliminating MPLS costs, reducing truck rolls, and improving uptime for revenue-generating applications.
+SD-WAN pricing sits between SIA and DIA—often less than the MPLS it replaces. The ROI comes from eliminating complex and costly MPLS services and improving uptime for revenue-generating applications.
 :::
 
 ::: flip ["We only have sites in Nebraska."]
@@ -1784,13 +1792,13 @@ reference_files:
   - label: "Sales Resources (cloud, Wi‑Fi, backup collateral)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 discovery_questions:
-  - "Which cloud platforms or SaaS apps are most critical to your business—AWS, Azure, O365, Salesforce? How do you reach them today, and where do you feel latency or reliability pain?"
+  - "Which cloud platforms or SaaS apps are most critical to your business—AWS, Azure, Google, Salesforce? How do you reach them today, and where do you feel latency or reliability pain?"
   - "When your primary Internet circuit went down last—how long were you out, what broke first, and what did that cost the business?"
   - "Who manages your Wi-Fi today? Do you have separate guest and corporate networks, and are you dealing with any compliance requirements like PCI or HIPAA?"
   - "How many sites need coverage, and do any have outdoor or high-density requirements that a standard AP count might undersize?"
   - "Do you have applications—VoIP, payment terminals, patient records—that must stay up even during a fiber outage?"
 five_minute_summary: |
-  - **Cloud Connect:** Combine with Managed Ethernet to provide a private, predictable path to cloud providers and SaaS. Always align with an SE on cross-connects and diversity.
+  - **Cloud Connect:** Combine with Managed Ethernet to provide a private, predictable path to cloud providers and SaaS via Megaport. Always align with an SE on cross-connects and diversity.
   - **Managed Wi-Fi:** We manage the entire lifecycle including security (firewall, IDS/IPS) and network separation. Never quote access point counts before a proper site survey.
   - **5G Backup:** Provides automatic failover and fail-back with 24/7 NOC monitoring. Be transparent that speeds and deprioritization will vary by location.
   - **Resources:** Rely on official datasheets and on-network training shortcuts for detailed proof points.
@@ -1799,7 +1807,7 @@ knowledge_checks:
   - question: "What best describes Cloud Connect's primary value story in discovery?"
     options:
       - "A best-effort public Internet link sized for peak cloud usage"
-      - "A direct, private connection into GPC's cloud ecosystem with Managed Ethernet as the on-ramp"
+      - "A direct, private connection into the Megaport cloud ecosystem with Managed Ethernet as the on-ramp"
       - "Customer-owned long-haul fiber to every cloud region"
     correct_index: 1
     explanation: "Private path via Cloud Connect; Ethernet on-ramp—not Internet-only."
@@ -1974,8 +1982,8 @@ Split networks are common; still qualify density, security policy, and who owns 
 ## Technical Deep Dive [deep]
 
 **Cloud Connect specs:**
-- Private path to AWS, Azure, Google, and other clouds/SaaS via GPC's cloud ecosystem
-- Managed Ethernet on-ramp; up to 10 Gbps cited in collateral
+- Private path to AWS, Azure, Google, and other clouds/SaaS via the Megaport cloud integrator
+- Managed Ethernet on-ramp; 50 Mbps to 10 Gbps cited in collateral
 - Metro access: Omaha, Chicago, Denver
 - SE alignment required for cross-connect details, diversity, and security scope
 
@@ -1984,7 +1992,7 @@ Split networks are common; still qualify density, security policy, and who owns 
 - 5G Wireless Internet Backup: $68 MRC, unlimited data, carrier deprioritization applies
 - Wireless Internet Broadband (full-time): $175 MRC, unlimited, best-effort
 - Optional battery backup: up to 8 hours runtime during power failure (NRC TBD)
-- After failover data thresholds: >12 GB/day → up to 50 Mbps; >20 GB/day → up to 25 Mbps; >30 GB/day → up to 3 Mbps
+- After failover data thresholds: >12 GB/month → up to 50 Mbps; >20 GB/month → up to 25 Mbps; >30 GB/month → up to 3 Mbps
 - Failover time: approximately one minute; automatic fail-back when primary restores
 - Hardware: Cradlepoint X20 5G router; dual SIMs (Verizon + AT&T); best signal auto-selected at install
 - No static IP during wireless failover; static IPs work on landline only
@@ -2130,13 +2138,13 @@ Position it for **mom-and-pop through larger sites**: the story is **customizabl
 
 | Theme | How to talk about it |
 |--------|----------------------|
-| **Replay TV** | Catch-up style viewing for busy teams and public areas—tie to “don’t miss the game” or “replay yesterday’s segment.” |
-| **Cloud DVR** | Record and store in the cloud where the product supports it—avoid over-specific storage numbers unless your current rate card says so. |
-| **HD channels** | Quality on modern displays; pair with **access** bandwidth so video doesn’t stutter. |
-| **Popular sports** | Strong for **hospitality, retail, and break rooms**—still confirm **local lineup** before promising a given RSN. |
-| **Local channels** | Collateral calls out **local news and weather**—good for community-facing businesses. |
+| **Replay TV** | REPLAY TV |
+| **Cloud DVR** | CLOUD DVR |
+| **HD channels** | HD CHANNELS |
+| **Popular sports** | POPULAR SPORTS CHANNELS |
+| **Local channels** | Local channels included, allowing you and your customers to stay on top of local events and weather. |
 | **Equipment savings** | “**Save money on monthly equipment and DVR rentals**” where the *streaming-first* model applies—**footnote:** some sites may still need **set-top boxes** at a **low monthly rate**. |
-| **Single bill** | **One bill for multiple services** when sold in a bundled commercial structure—confirm with **ordering/billing** so you quote what finance will invoice. |
+| **Single bill** | Convenient single bill for multiple services. |
 
 ## Delivery & lineup
 
@@ -2192,8 +2200,8 @@ five_minute_summary: |
   - **Start with the clips:** Five short videos in this module (migration, Teams, desktop and mobile apps, hybrid work) are the fastest way to see what a customer will experience—watch before you lean on the text below.
   - **What you’re positioning:** A modern cloud stack for business voice, SMS, meetings, messaging, and files—**Ascend** / GPC UC—not a feature dump on day one. Tier names, storage, and add-ons come from **current matrices**, not memory.
   - **Teams:** Real deals split into two different conversations—**Ascend with Teams** (Microsoft licensing + our PBX) vs **embedded UC-in-Teams** FAQ/deck language. If the room argues licensing, **pause** and bring **SE/architects**; don’t improvise.
-  - **Where specialists earn their keep:** AI productivity lines, CRM/analytics (**DataHub** / **Extend**), and **contact center** (concurrent seats, channels, burst). Your job is to **qualify** and pull in the right people— not to quote SKUs or APIs from recall.
-  - **Trust headlines:** **99.999%** uptime story and **Triple Guard Security™** are the digestible proof points; **archiving and retention** are never “free forever”—confirm with the account team before you mention years.
+  - **Where specialists earn their keep:** AI productivity lines, CRM/analytics (**DataHub** / **Extend**), and **contact center** (concurrent seats, channels, burst). Your job is to **qualify** and pull in the right people— not to quote SKUs or APIs from recall. Our AI is built directly into the app to handle notes and protect private data without the $30 monthly upcharge others demand.
+  - **Trust headlines:** **99.999%** uptime story and **9th Consecutive JD Power Award** for technical support excellence; **archiving and retention** are never “free forever”—confirm with the account team before you mention years.
   - **Go deeper when you’re prepping:** Partner collateral themes (BYOC / IPN / Embedded narratives)—**100+** voice features, web fax, Mix & Match matrices, mobile SMS limits, MSP stats, device grids, Embedded vs **Direct Routing**, omnichannel CC—live in **Technical Deep Dive** below. Use that section for homework, not as a script to read to a prospect.
 
 knowledge_checks:
@@ -2229,13 +2237,13 @@ knowledge_checks:
     correct_index: 0
     explanation: "Concurrent—confirm matrix before commit."
 
-  - question: "What does **Triple Guard Security™** frame on the UC platform?"
+  - question: "What does **SecuriSync** frame on the UC platform?"
     options:
-      - "Trust themes: datacenters, certified security team, encryption, password management, 2FA"
+      - "Full backup and antivirus to stop ransomware before it starts, plus a one-click rollback to save files if hit by a virus or accidental deletion"
       - "Guaranteed on-site guard patrols at every customer site"
       - "Removal of all encryption to speed migrations"
     correct_index: 0
-    explanation: "DCs, cert team, encryption, passwords, 2FA."
+    explanation: "SecuriSync is a true security differentiator (backup, AV, rollback)—unlike basic storage like OneDrive."
 
   - question: "For non-UC voice, what does SIP trunking primarily provide?"
     options:
@@ -2420,8 +2428,11 @@ Use these **after** the core five questions (covered in the Discovery Break game
 2. **Where should call and SMS activity land for reporting—CRM, data warehouse, or spreadsheets?** (Uncovers DataHub/analytics and integration conversations.)
 3. **For Teams-heavy users: will they primarily use the Teams desktop app, mobile, or both for business calling and SMS?** (Surfaces embedded-Teams vs mobile gaps.)
 4. **Do you need company-owned SMS on business numbers vs personal SMS—who administers policy and compliance?** (Aligns with company vs personal SMS admin themes.)
-5. **Are you evaluating Mix & Match tiers (Express through Enterprise) or Ascend for Teams rows—who owns the matrix review with procurement?**
-6. **Is this account a renewal or competitive displacement—timing for migration and professional services?** (MSP/VAR “renewal moment” storyline—internal framing.)
+5. **How much time does your IT team spend troubleshooting 'version mismatch' issues and mandatory security updates when employees are just trying to join a meeting?** (Targets Zoom)
+6. **If you decided to change providers tomorrow, do you know exactly how much notice you’re required to give to avoid an automatic renewal?** (Targets RingCentral)
+7. **When a customer calls you back after a text, can your team see that entire history on one screen without hunting through different folders?** (Targets RingCentral)
+8. **Are you evaluating Mix & Match tiers (Express through Enterprise) or Ascend for Teams rows—who owns the matrix review with procurement?**
+9. **Is this account a renewal or competitive displacement—timing for migration and professional services?** (MSP/VAR “renewal moment” storyline—internal framing.)
 
 ---
 
@@ -2434,7 +2445,15 @@ Use these **after** the core five questions (covered in the Discovery Break game
 :::
 
 ::: flip ["Cloud is less secure than our on-prem system."]
-Triple Guard Security™: enterprise-grade data centers, certified security team, encryption, password management, and 2FA. Intermedia has been recognized 7 times by J.D. Power for technical support excellence. On-prem systems receive no automatic security updates.
+SecuriSync is a true security differentiator: full backup and antivirus to stop ransomware before it starts, plus a one-click rollback to save your files if you’re ever hit by a virus or accidental deletion. Intermedia has been recognized 9 years running by J.D. Power for technical support excellence. On-prem systems receive no automatic security updates.
+:::
+
+::: flip ["Zoom is cheaper at $10 a month."]
+By the time you add unlimited calling and analytics, the "cheap" license costs more than our all-in bundle. Zoom also struggles with complex routing and faxing.
+:::
+
+::: flip ["RingCentral has more integrations."]
+GPC's major integrations like Salesforce and Outlook work right out of the box without an IT expert. RingCentral's disjointed UX forces you to jump between 3 tabs, whereas GPC offers a single screen.
 :::
 
 ::: flip ["Switching will disrupt our business—or our people won't adopt."]
@@ -2679,8 +2698,18 @@ roleplay:
 :::
 
 ::: accordion M&A / Cox Acquisition Battle Card
-Reference for positioning against acquisition-driven competitors—stability, service continuity, and factual comparison points.
+Reference for positioning against acquisition-driven competitors like Cox/Charter:
+- **NPS & Reputation:** GPC has significantly higher NPS than Cox/Spectrum/Charter, backed by a 4.1 average Google rating.
+- **Support:** Contrast Cox's promise to "return customer service to the US" with GPC's Midwest-based support team that *never left*.
+- **Network & Terms:** Emphasize GPC's 100% fiber network, symmetrical speeds up to 100 Gbps, negotiable term lengths for price locks, and $0 install/activation fees (contrasted against Cox's coax limitations, 12-month terms, auto-renewals, and $100 install fees).
+:::
 
+::: accordion Omaha Metro Competitors
+Positioning against the four main Omaha competitors:
+- **FiberFirst:** Counter their quick turnaround with GPC's 110+ years of stability, local employees, and built-in network redundancy.
+- **Metronet (T-Mobile):** Counter their lower prices and T-Mobile backing by highlighting GPC's ~98% buried fiber (vs. Metronet's quickly built aerial fiber) and 24x7 NOC.
+- **Allo:** Counter their "no contracts" by pitching GPC contracts as a benefit (rate locks). Note that Allo has pocketed availability, leases fiber from GPC, and has a reputation for rate increases.
+- **Google Fiber:** Counter their simplified 2-tier pricing by highlighting GPC's custom solutions and ability to support complex business needs (DDoS, SD-WAN, multi-site) rather than just basic bandwidth.
 :::
 
 ---
@@ -2712,7 +2741,7 @@ Speed tests measure a moment; position reliability, jitter, upload symmetry, and
 :::
 
 ::: flip ["Your competitor just got acquired—that makes them bigger."]
-Respond factually: stability, billing continuity, field response—GPC continuity themes. No gossip.
+Respond factually: GPC provides 110+ years of stability, Midwest-based support that never left the US, and 100% fiber with negotiable price locks—unlike competitors relying on coax, 12-month terms, and offshore support. No gossip.
 :::
 
 ::: flip ["I need to see the battle-card numbers."]
@@ -2775,32 +2804,32 @@ summary: "C-level targeting. 90-day sprints. Marketing air cover."
 sensitivity: "internal"
 five_minute_summary: |
   - **Purpose:** Coordinate sales prospecting and marketing so executive targets see a coherent story over ninety days—not random one-off touches.
-  - **Sales lane:** Eighteen sequenced touches across three months (intro through final call), mixing email, phone, LinkedIn, and optional field activity.
-  - **Marketing lane:** Month-by-month air cover (awareness, validation, retargeting) that reinforces the same narrative.
-  - **Systems:** Touches are designed to live in **Constellation-CRM**; use the Gantt below as the source-of-truth visual when coaching reps or planning campaigns.
+  - **Sales cadence:** 18 total touches over 90 days, with roughly 3 touches per target every two weeks using personalized phone and email.
+  - **Marketing coordination:** 1 touchpoint every 30 days, with optional add-on support when Sales runs a physical door pull.
+  - **Tracking:** Active and on-deck ABM status is maintained in the ABM master tracking spreadsheet per SOP governance.
 
 knowledge_checks:
-  - question: "Roughly how long is the C-level ABM sales sequence as shown in the standard Gantt?"
+  - question: "Roughly how long is the ABM sales sequence in the SOP?"
     options:
       - "90 days (three months of sequenced touches)"
       - "21 business days"
       - "One calendar week"
     correct_index: 0
-    explanation: "The chart is framed as a 90-day sequence with Month 1–3 columns."
-  - question: "What is marketing 'air cover' meant to do in this model?"
+    explanation: "The SOP defines a coordinated 90-day ABM effort."
+  - question: "How often should marketing run ABM coordination touchpoints in the SOP model?"
     options:
-      - "Reinforce awareness and validation while sales runs the touch sequence"
-      - "Replace outbound sales entirely for the quarter"
-      - "Only run after a closed-won deal"
+      - "One touchpoint every 30 days, with optional +1 support for door-pull motions"
+      - "Three touchpoints every week regardless of sales activity"
+      - "Only one touchpoint at the end of the 90-day cycle"
     correct_index: 0
-    explanation: "Air cover supports the same accounts across months while sales executes touches."
-  - question: "Where should reps log and execute the prescribed touches for this program?"
+    explanation: "The SOP defines monthly marketing coordination and optional increased support for door-pull execution."
+  - question: "Where is ABM activity and status tracked per SOP?"
     options:
-      - "Constellation-CRM (per the sales sequence standard)"
-      - "Only in email, with no CRM requirement"
-      - "A separate spreadsheet owned by marketing only"
+      - "Master ABM tracking spreadsheet with defined view/edit access"
+      - "Only in rep inboxes"
+      - "Only in a private document for each individual rep"
     correct_index: 0
-    explanation: "Constellation-CRM is the intended system for this sequence."
+    explanation: "The SOP names a master tracking spreadsheet as the source of truth for active and on-deck ABM accounts."
 
 scenarios:
   - title: "Skipping ahead in the ABM sequence"
@@ -2810,7 +2839,7 @@ scenarios:
       - label: "Yes—relationships always override the sequence."
         feedback: "Relationships matter, but the sequence keeps marketing air cover and messaging aligned. Exceptions should be explicit, not silent skips."
       - label: "Coach them to stay on-sequence unless leadership documents an exception, so air cover and reporting stay intact."
-        feedback: "**Good.** The sequence chart is the shared contract across sales and marketing."
+        feedback: "**Good.** The SOP sequence is the shared contract across sales and marketing."
       - label: "Tell them to restart the sequence from touch one."
         feedback: "Restarting isn't always required—focus on documented exceptions and alignment with marketing."
 
@@ -2818,33 +2847,38 @@ scenarios:
 
 ## Why ABM here
 
-Account-based programs work when **sales and marketing agree on the timeline, the touches, and the air cover**. This module captures the **90-day C-level sequence** your team already visualized in the Gantt: prospecting swim lanes by month, plus a marketing row for LinkedIn, direct mail, and retargeting.
+Account-based programs work when **sales and marketing agree on cadence, targets, and ownership**. This module mirrors the ABM SOP: a 90-day coordinated motion, clear target mix, staggered kickoff timing, and governed tracking.
 
 Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a named executive target?*
 
 ## 90-day sequence
 
-ABM campaign: 90-day C-level sequence (reference Gantt)
+- **Duration:** 90-day coordinated sequence
+- **Sales volume:** 18 total touches over the cycle
+- **Sales rhythm:** ~3 touches per target every 2 weeks
+- **Primary channels:** Personalized phone calls and email
+- **Optional motion:** Physical door pull using approved brochure support
+- **Marketing rhythm:** 1 touchpoint every 30 days (with optional +1 support for door pull)
 
 ## How to use this module
 
 1. Read the overview sections for **roles and intent** (you will refine copy as your SOP evolves).
-2. Use the **90-day sequence** chart above while coaching—the PNG in `assets/gantt/` is the source-of-truth visual; replace it when your SOP art updates.
+2. Coach to the SOP-defined sequence and guardrails: staggered kickoff, target hierarchy, cadence, and tracking controls.
 3. Pair this with **Operational Business Reviews** when discussing how executive conversations mature into review meetings.
 
 ## Sequence lanes (sales & marketing)
 
 ### Sales prospecting
 
-The Gantt shows **eighteen touches** staggered across three months: intros, calls, LinkedIn actions, case studies, meeting asks, OBR tie-ins, alignment, and close-out steps. Stacked bars in a single month are intentional—reps need to see **density** without guessing order.
+Sales executes an 18-touch, 90-day motion anchored on personalized phone and email outreach, with optional physical drop-ins where approved.
 
 ### Marketing air cover
 
-Month 1 emphasizes **awareness** (e.g. LinkedIn & paid search). Month 2 adds **validation** (e.g. direct mail). Month 3 focuses **conversion** (e.g. retargeting). Optional creative (brochure copy) is called out where it supports the same story.
+Marketing runs monthly support touchpoints to reinforce sales outreach, and can add support artifacts when door-pull activity is planned.
 
 ## Keep this module honest
 
-Name your **enablement owner**, **playbook links**, and **MQL/SQL** definitions in your internal wiki—this page stays intentionally generic. When the Gantt or narrative changes, swap **`assets/gantt/abm-90-day-sequence.png`** and align the bullets here with the live program.
+Name your **enablement owner**, **playbook links**, and **MQL/SQL** definitions in your internal wiki—this page stays intentionally generic. When the SOP changes, align these bullets and checks to the current approved version.
 <!-- prettier-ignore-end -->
 
 ---
@@ -2860,44 +2894,44 @@ title: "Operational Business Reviews"
 summary: "21-day cycles. Executive alignment. Strategic retention."
 sensitivity: "internal"
 five_minute_summary: |
-  - **Cycle length:** Twenty-one days from initiation through materials ready for the OBR meeting.
-  - **Swim lanes:** Initiation (rep), Design (network diagram), Data (billing & NOC snapshots), Marketing (format & layout), Production (print & assembly).
-  - **Critical handoff:** Day 14 marks the data/marketing boundary—marketing picks up formatted narrative and slides into final prep.
-  - **Finish line:** OBR meeting is flagged at the end of the window; use the Gantt to set expectations with customers and internal teams.
+  - **Cycle length:** 21-business-day cycle from initiation through materials ready for the OBR meeting.
+  - **Single Packet Handoff:** Marketing will not begin design until they receive a single email containing the completed OBR Sales Readiness Form and finalized Visio diagram.
+  - **Data Hygiene:** Sales must scrub and audit all data before handoff. Internal catalog codes must be translated into plain-English service descriptions.
+  - **Core Components:** The OBR slick features Network Design, Strategic Billing, NOC History, and a Strategic Roadmap.
 
 knowledge_checks:
   - question: "How many days does the standard OBR preparation cycle span in the Gantt?"
     options:
-      - "21 days"
+      - "21 business days"
       - "90 days"
       - "5 business days"
     correct_index: 0
-    explanation: "The header labels days 01–21 across the grid."
+    explanation: "The SOP defines a 21-business-day cycle."
 
-  - question: "The vertical 'Data Handoff' marker on the chart sits closest to which day?"
+  - question: "What is required for the 'Single Packet' Handoff to Marketing?"
     options:
-      - "Start of day 14"
-      - "Day 1"
-      - "Day 21"
+      - "A single email containing the completed OBR Sales Readiness Form and finalized Visio diagram"
+      - "A raw dump of billing data"
+      - "A verbal request to start design"
     correct_index: 0
-    explanation: "The handoff line is positioned at the start of day 14."
+    explanation: "Marketing requires a single, complete packet to begin design."
 
-  - question: "In the Marketing row, which activities fall after the handoff (days 14+)?"
+  - question: "What are the 6 phases of the OBR cycle?"
     options:
-      - "Format & layout, then review, leading into print & assembly"
-      - "Only the recon audit"
-      - "Kickoff call only"
+      - "Initiation, Data Recon, Design Phase, Data Collection, Marketing Design, Final Prep"
+      - "Initiation, Design, Data, Marketing, Production"
+      - "Kickoff, Review, Print"
     correct_index: 0
-    explanation: "Post-handoff bars cover format/layout, review, then production hands off to print."
+    explanation: "The SOP defines 6 specific phases across the 21-business-day cycle."
 
 scenarios:
-  - title: "Customer timeline vs. 21-day OBR cycle"
+  - title: "Customer timeline vs. 21-business-day OBR cycle"
     situation: |
-      An account rep promises the customer a **printed OBR deck in five days**. Delivery points to the **21-day Gantt**.
+      An account rep promises the customer a **printed OBR deck in five days**. Delivery points to the **21-business-day Gantt**.
     choices:
       - label: "Tell the customer five days is the standard."
-        feedback: "The documented cycle is **21 days**; reset expectations or escalate an approved exception path."
-      - label: "Align the rep to the 21-day model (or your approved fast-track process) before committing dates."
+        feedback: "The documented cycle is **21 business days**; reset expectations or escalate an approved exception path."
+      - label: "Align the rep to the 21-business-day model (or your approved fast-track process) before committing dates."
         feedback: "**Good.** The chart exists so sales and delivery quote the same timeline."
       - label: "Skip marketing formatting to save time."
         feedback: "Skipping lanes risks quality and handoffs; use leadership-approved exceptions only."
@@ -2908,23 +2942,35 @@ scenarios:
 
 Operational Business Reviews turn **network reality, financial signals, and marketing narrative** into a single executive conversation. Reps win when the **prep process is predictable**—this module trains the timeline, not just the slide deck.
 
-**How to use:** Walk new hires through **phases** below; use the **21-day** chart for swim-lane expectations; cross-link **Account Based Marketing** when tying executive outreach to review readiness.
+**How to use:** Walk new hires through **phases** below; use the **21-business-day** chart for swim-lane expectations.
 
-## 21-day OBR cycle
+## 21-business-day OBR cycle
 
-![OBR process: 21-day strategic cycle (reference Gantt)](assets/gantt/obr-21-day-cycle.png)
+![OBR process: 21-business-day strategic cycle (reference Gantt)](assets/gantt/obr-21-day-cycle.png)
 
 ## Phases (high level)
 
-- **Initiation:** Recon audit and scheduling the OBR—owned by the account rep in the model chart.
-- **Design:** Kickoff and network diagram work—labeled against your design owner in the source doc.
-- **Data:** Parallel billing and NOC history pulls so the story is grounded in fact.
-- **Marketing:** Format, layout, and review of customer-facing materials after the day-14 handoff.
-- **Production:** Print and assembly leading into the OBR meeting milestone.
+- **Initiation (Day 1):** Schedule the OBR (Account Rep).
+- **Data Recon (3 Days):** Audit of locations, addresses, and upgrades (Account Rep).
+- **Design Phase (10 Days):** Network Design w/ kickoff call.
+- **Data Collection (5 Days):** Billing & NOC data generation.
+- **Marketing Design (5 Days):** Professional formatting, branding, and Final Review.
+- **Final Prep (3 Days):** Printing, Pickup, and trifold insertion.
 
-## Keep the Gantt honest
+## Single Packet Handoff & Data Hygiene
 
-Document your **RACI**, **systems**, and **approval gates** in the live OBR SOP. When leadership updates the model, replace **`assets/gantt/obr-21-day-cycle.png`** so this module matches what delivery actually runs.
+Marketing will not begin design until they receive a **Single Packet** handoff via email containing:
+1. The completed **OBR Sales Readiness Form** (with scrubbed data tables).
+2. The finalized **Visio Diagram** (Verified).
+
+**No Raw Dumps:** Sales must scrub and audit all data before handoff. Marketing is for design, not data entry. Internal catalog codes must be translated into plain-English service descriptions (e.g., "100M Fiber DIA").
+
+## Core Components of the OBR Slick
+
+1. **Network Design:** High-fidelity "Current vs. Future State" Visio, verified against billing data.
+2. **Strategic Billing:** Totals and expirations, featuring "Modernization" and "Performance Spotlight" levers.
+3. **NOC History & Feedback Loop:** 12-mo performance snapshot and holistic partnership feedback loop.
+4. **Strategic Roadmap:** Planned upgrades, upcoming renewal sync, and GPC solution highlights.
 <!-- prettier-ignore-end -->
 
 ---

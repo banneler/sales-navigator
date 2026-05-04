@@ -36,7 +36,7 @@ video_sections:
       **Fine print**
       - **$150+** MRC per site
       - Service within **500 feet** of the **fiber line** (not just the vault)
-      - Path **cannot** cross **railroads, streets, grassy areas, or building penetrations**
+      - Path **cannot** cross **railroads, streets, grassy areas, or run through buildings**
       - **Zip 68102** excluded
       - Discounts: **20%** max if not term-based; if term-based, use the table (e.g. **36-month** → **27%** max—and **0.01% over** disqualifies Pre-Approved)
 
@@ -75,7 +75,7 @@ video_sections:
       - **Cancellation** — **All** services out; **before** billing
       - **Disconnect** — **All** services out; **after** billing
 
-      **Change order** — **Conga Files** → **Change Order** → Word pack (sites, story, line edits) → keep **GPC Solution #** on it → sign → upload → email **Sales Manager** if **MRC / payback / cost** shifts, and **PMO / SF Admin / CRC** as the guide says. Admin **booking adjustment** → **PMO** project → **CRC** billing.
+      **Change order** — **Conga Files** → **Change Order** → Word document (sites, description of change, specific changes) → keep **GPC Solution #** on it → sign → upload → email **Sales Manager** if **MRC / payback / cost** shifts, and **PMO / SF Admin / CRC** as the guide says. Admin **booking adjustment** → **PMO** project → **CRC** billing.
 
       **MAC** — **Billed** world: new site, add, or change on what’s live—usually a **new GPC Solution** on the same opportunity; follow the MAC PDF by scenario.
 
