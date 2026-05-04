@@ -845,31 +845,31 @@ Setting up Contract Signer and sending envelopes from Salesforce via Conga.
 
 <!-- prettier-ignore-start -->
 ---
-id: "sales-operations-and-approvals"
-title: "Sales Operations & Approvals"
-summary: "Solution approvals. Change orders. Clean revenue."
-sensitivity: "internal"
+id: sales-operations-and-approvals
+title: Sales Operations & Approvals
+summary: GPC Solutions. Change Orders vs MACs.
+sensitivity: internal
 sales_trio_hide_deep_dive: true
 video_sections_as_tabs: true
-video_sections_tabs_aria_label: "Pre-Approved, matrix, and change-order guides"
+video_sections_tabs_aria_label: 'Pre-Approved, matrix, and change-order guides'
 reference_files:
-  - label: "Approval Overview and Training Guide — 07/25"
-    sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Overview%20and%20Training%20Guide%20-%200725.pdf?csf=1&web=1&e=qy6LaI"
-  - label: "Pre-Approved Order Process Quick Reference Guide — 07/23"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29"
-  - label: "Approval Requirements Matrix v5.5 — 07/25"
-    sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=h64jqJ"
-  - label: "Change Order Process — Sales Team — 03/25"
-    sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Change%20Order%20Process%20-%20Sales%20Team%20-%200325.pdf?csf=1&web=1&e=STAe3w"
-  - label: "Costing Routing Quick Reference Guide — 11/23"
-    sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Costing%20Routing%20Quick%20Reference%20Guide%20-%201123.pdf?csf=1&web=1&e=Ta1aBx"
-  - label: "Move-Add-Change Processes — Sales Team — 11/23"
-    sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Move-Add-Change%20Processes%20-%20Sales%20Team%20-%201123.pdf?csf=1&web=1&e=zURGTj"
-  - label: "Salesforce Roadmap — shared link"
-    sharepoint_url: "https://gpcom.sharepoint.com/:b:/s/SalesforceRoadmap/IQCEYPLtQTCVS7H8aEnrSTrLARzxb0p97NTo17Rj8DeB_gg?e=RyiZUS"
+  - label: Approval Overview and Training Guide — 07/25
+    sharepoint_url: 'https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Overview%20and%20Training%20Guide%20-%200725.pdf?csf=1&web=1&e=qy6LaI'
+  - label: Pre-Approved Order Process Quick Reference Guide — 07/23
+    sharepoint_url: 'https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29'
+  - label: Approval Requirements Matrix v5.5 — 07/25
+    sharepoint_url: 'https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=h64jqJ'
+  - label: Change Order Process — Sales Team — 03/25
+    sharepoint_url: 'https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Change%20Order%20Process%20-%20Sales%20Team%20-%200325.pdf?csf=1&web=1&e=STAe3w'
+  - label: Costing Routing Quick Reference Guide — 11/23
+    sharepoint_url: 'https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Costing%20Routing%20Quick%20Reference%20Guide%20-%201123.pdf?csf=1&web=1&e=Ta1aBx'
+  - label: Move-Add-Change Processes — Sales Team — 11/23
+    sharepoint_url: 'https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Move-Add-Change%20Processes%20-%20Sales%20Team%20-%201123.pdf?csf=1&web=1&e=zURGTj'
+  - label: Salesforce Roadmap — shared link
+    sharepoint_url: 'https://gpcom.sharepoint.com/:b:/s/SalesforceRoadmap/IQCEYPLtQTCVS7H8aEnrSTrLARzxb0p97NTo17Rj8DeB_gg?e=RyiZUS'
 video_sections:
-  - heading: "Pre-Approved Fiber"
-    intro: The shortcut only applies when the deal is genuinely plain-vanilla fiber. If payback or the dollars feel fuzzy, use the normal approval path.
+  - heading: Pre-Approved Fiber
+    intro: 'The shortcut only applies when the deal is genuinely plain-vanilla fiber. If payback or the dollars feel fuzzy, use the normal approval path.'
     body: |
       **[Pre-Approved Order Process Quick Reference — 07/23](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)**
       - **Who:** Channel, Enterprise, and Wholesale AEs
@@ -887,8 +887,8 @@ video_sections:
       - Discounts: **20%** max if not term-based; if term-based, use the table (e.g. **36-month** → **27%** max—and **0.01% over** disqualifies Pre-Approved)
 
       **Check for product exclusions prior to proceeding.**
-  - heading: "Approval Requirements Matrix"
-    intro: Payback, discounts, and dollar thresholds live here.
+  - heading: Approval Requirements Matrix
+    intro: 'Payback, discounts, and dollar thresholds live here.'
     body: |
       **[Approval Requirements Matrix v5.5 — 07/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=h64jqJ)**
       - **Payback vs term:** Max **payback months** allowed for **auto-approve** depends on **contract term**—go over the limit for that term → **manager** approval (full table in PDF)
@@ -909,9 +909,8 @@ video_sections:
       - **Unfavorable investment** — always **manager**
       - **Product** line issues — **Product Manager**
       - **Dark fiber** — **manager** and **CRO**
-
-  - heading: "Change Order vs MAC"
-    intro: How much is changing, and has billing started? Wrong path = rework—the PDFs have every click and screenshot.
+  - heading: Change Order vs MAC
+    intro: 'How much is changing, and has billing started? Wrong path = rework—the PDFs have every click and screenshot.'
     body: |
       **[Change Order Process — Sales Team — 03/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Change%20Order%20Process%20-%20Sales%20Team%20-%200325.pdf?csf=1&web=1&e=STAe3w)** · **[Move-Add-Change Processes — Sales Team — 11/23](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Move-Add-Change%20Processes%20-%20Sales%20Team%20-%201123.pdf?csf=1&web=1&e=zURGTj)**
 
@@ -926,139 +925,64 @@ video_sections:
       **MAC** — **Billed** world: new site, add, or change on what’s live—usually a **new GPC Solution** on the same opportunity; follow the MAC PDF by scenario.
 
       **Fine print** — **Pending Billing** / **7–10 Day Order** can block Admin until **PMO/CRC** weigh in. Narrow **CRC/BCC** tweaks (e.g. **≤$30 MRC**-type adds/changes per MAC) → **businesscare@gpcom.com** (**no AE commission**); anything else → **Salesforce**.
-
 five_minute_summary: |
-  - **The Approval Process:** Reviewers evaluate site-level services, products, and quote math—not just the headline total. Track progress via the Approval History on the GPC Solution.
-  - **Handling Changes:** **Partial** contract changes only—billing status picks the tool:
-    - **Change Order** — after **Closed/Won**, **before** billing (**Booked**, not **Billed**)
-    - **MAC** (Move / Add / Change) — **after** billing has started
-    - **Cancellation** — customer removes **all** services **before** billing
-    - **Disconnect** — customer removes **all** services **after** billing
-  - **Manual Validation:** Checking "Request Manual Validation" skips automated routing and forces every department to review. Use this sparingly.
-  - **Pre-Approved Fast Track:** Clean fiber can skip the long approval chain when you pass **both** checklists in the tabbed guide—**Pre-Approved Fiber** first, then **Approval Requirements Matrix** (payback, discounts, deal size). Anything fuzzy? Run **standard** approvals.
-
+  - **Approval History:** Use this on the GPC Solution to approve, reject, or recall. Always include the Solution ID on every form and attachment so Operations isn't guessing what belongs where.
+  - **Change Order vs MAC:** A Change Order applies after a deal is Closed Won, but *before* billing starts. A Move-Add-Change (MAC) is used to modify an active, billing contract.
+  - **Disconnects:** This is only used when services are coming out entirely.
+  - **Request Manual Validation:** This pulls a site out of the automated routing flow for manual review. It slows the deal down. Use it only for genuine exceptions, never as a default.
 knowledge_checks:
-  - question: "When is a 'change order' appropriate in the narrow sense used here?"
+  - question: 'You just moved an opportunity to Closed Won, but the customer suddenly wants to upgrade their internet speed before the circuit is installed. What process do you use?'
     options:
-      - "After Closed/Won and before billing has started"
-      - "Any time the customer changes their mind, including after billing"
-      - "Only before the GPC Solution is approved the first time"
+      - 'A Change Order. The deal is won, but billing hasn''t started yet.'
+      - A Move-Add-Change (MAC). Any change to a signed contract requires a MAC.
+      - A Disconnect. You have to cancel the first order and write a brand new one.
     correct_index: 0
-    explanation: "Pre-billing contract change only; post-billing MAC/disconnect/cancel paths differ."
-
-  - question: "What does checking Request Manual Validation on a Solution Site do to costing routing?"
+    explanation: 'Change Orders handle pre-billing modifications. MACs are only for live, billing circuits.'
+  - question: When should you use the 'Request Manual Validation' button?
     options:
-      - "Skips automation so each participating department must review"
-      - "Speeds up routing by accepting all system estimates"
-      - "Removes the need for Solution Services on the site"
+      - Only for genuine edge cases and exceptions that require a human to review the site build.
+      - On every deal to ensure the engineering team double-checks your work.
+      - Whenever you want to expedite the deal through the system.
     correct_index: 0
-    explanation: "Forces manual departmental review."
-
-  - question: "After you submit a signed change order package, who typically performs the booking adjustment in Salesforce?"
+    explanation: 'Manual validation pulls the deal out of the automated fast lane. Use it rarely, or you are intentionally slowing down your own install.'
+  - question: You are attaching a custom pricing spreadsheet to the Salesforce record for approval. What must be included on the document?
     options:
-      - "Salesforce Administration"
-      - "The account executive alone"
-      - "The customer via self-service"
+      - The unique Solution ID.
+      - The VP of Sales' signature.
+      - The customer's billing account number.
     correct_index: 0
-    explanation: "SF Admin booking; PMO project; CRC billing—per change order process."
-
-  - question: "From the GPC Solution, where do you run Approve, Reject, Reassign, or Recall actions?"
-    options:
-      - "Approval History on the GPC Solution record"
-      - "Only the Leads tab"
-      - "Only the customer's email inbox"
-    correct_index: 0
-    explanation: "Approval History on the GPC Solution."
-
-  - question: "If billing has already started and the customer wants a partial in-life contract change, which path applies instead of a pre-billing change order?"
-    options:
-      - "Move-Add-Change (MAC) materials and process"
-      - "The same Conga change order template used before billing"
-      - "Only the Cancellation playbook"
-    correct_index: 0
-    explanation: "After billing, partial changes follow MAC."
-
-  - question: "If the customer wants all services removed after billing has started, what family of process should you use rather than MAC for partial tweaks?"
-    options:
-      - "Disconnection process materials"
-      - "Pre-billing Cancellation only"
-      - "A new lead record with no opportunity"
-    correct_index: 0
-    explanation: "Full removal post-billing → Disconnection."
-
-  - question: "When multiple services are selected on one Solution Site, how does costing routing typically consolidate paths?"
-    options:
-      - "It follows the path that requires the deepest review"
-      - "Each service is ignored if another is cheaper"
-      - "Routing always picks the fastest automated estimate only"
-    correct_index: 0
-    explanation: "Deepest-review path when multiple services apply."
-
-  - question: "If both New and Existing services are selected on one site, which routing path applies per common rules of thumb?"
-    options:
-      - "The New service path"
-      - "The Existing path only"
-      - "No routing runs until the customer sends a fax"
-    correct_index: 0
-    explanation: "New + Existing on one site → **New** path."
-
-  - question: "For change order submissions, which groups are typically in the loop alongside Sales Management when required?"
-    options:
-      - "PMO, Salesforce Administration, and CRC"
-      - "Only the customer's legal counsel"
-      - "Only product marketing"
-    correct_index: 0
-    explanation: "PMO, SF Admin, CRC for project, booking, billing."
-
-  - question: "What is OBR readiness material intended for relative to Salesforce approvals and costing?"
-    options:
-      - "Account planning cadence with ops leadership—not a substitute for SF approval or costing rules"
-      - "Replacing Approval History entirely"
-      - "Automating all Solution Site costing without review"
-    correct_index: 0
-    explanation: "OBR ≠ approval or costing; different purpose."
-
+    explanation: 'Without the Solution ID, Operations cannot tie your rogue attachment to the correct workflow. Add the ID.'
 scenarios:
-  - title: "Customer wants pricing changes after billing started"
+  - title: The Pre-Install Pivot
     situation: |
-      **Closed/Won** and **billing started**. Customer wants to change MRC on **part** of the contract—not remove all services.
+      Your customer signed a 36-month contract for a 1 Gig circuit. Two weeks before install, they acquire a new business and realize they need 2 Gigs instead. They haven't been billed yet.
     choices:
-      - label: "Use the pre-billing Change Order Conga path from the GPC Solution."
-        feedback: "Wrong. Pre-billing change orders only; post-billing partial → MAC."
-
-      - label: "Follow Move-Add-Change (MAC) process materials—not the pre-billing change order template."
-        feedback: "Correct."
-
-  - title: "Deepest review path on a multi-service site"
-    situation: |
-      One Solution Site has **multiple services** selected.
-    choices:
-      - label: "Routing follows the path that requires the deepest review when multiple services apply."
-        feedback: "Correct."
-
-      - label: "Each service is costed in parallel with no consolidation rule."
-        feedback: "Incorrect—deepest-review path applies."
+      - label: Submit a Move-Add-Change (MAC) ticket since they already signed the contract.
+        feedback: 'Incorrect. MACs are only for active, billing services. You need to submit a pre-billing Change Order.'
+      - label: Submit a pre-billing Change Order to modify the existing un-installed solution.
+        feedback: Correct. This keeps the install moving without messing up the billing triggers.
+discovery_questions:
+  - 'When a GPC Solution is in approval, how do you track approve, reject, or recall—and who needs to act next?'
+  - 'After Closed Won but before billing starts, what kind of change uses a Change Order versus a MAC?'
+  - What must appear on every custom pricing sheet or attachment so Operations can match it to the right solution?
+  - When would you use Request Manual Validation—and when should you avoid it?
+  - How do you handle a full disconnect versus a speed or service change on an already billing circuit?
 ---
 
 ## Overview
 
-Winning the deal means nothing if the **GPC Solution** cannot clear **approvals** and **costing**.
-
-- **Approvals** — Reviewers judge **site-level** services, products, and **quote math** before delivery—not a headline total.
-- **Change order vs MAC vs disconnect** — Billing status picks the tool. Wrong path = stalled installs and revenue fights.
-- **Costing routing** — Automation and **Manual Validation** route dollars to the right reviewers; learn the rules before you submit.
-
-Pick the path that matches **where the deal is in billing**, then keep the record clean enough for someone else to approve it.
+- **GPC Solution:** The core object where approvals, pricing, and technical scoping live.
+- **Change Order:** Pre-billing modification (e.g., changing port speed before install).
+- **MAC (Move-Add-Change):** Post-billing modification to a live service.
+- **Manual Validation:** Breaks automation. Use only for extreme exceptions.
 
 ---
 
 ## Key Guidelines
 
-1. **Check the Billing Status:** This determines your path. Pre-billing changes use the Change Order process. Post-billing partial changes require a MAC (Move-Add-Change). Full removals are Disconnects.
-2. **Verify Site-Level Data:** Reviewers validate site-level completeness, not just the headline MRC. Ensure each Solution Site has the correct services and products attached.
-3. **Check the Math:** Mismatches between line items and totals stall approvals and delay projects.
-4. **Include the GPC Solution ID:** Every form and required attachment must carry the GPC Solution ID. Missing IDs cause booking delays post-approval.
-5. **Use Manual Validation Sparingly:** Checking "Request Manual Validation" skips automation and routes the deal to every participating department. Only check it when human review is genuinely required.
+::: elevator [Elevator Pitch]
+Winning the deal is only half the battle. Get the paperwork wrong in Salesforce, and you stall billing, delay the install, and force an apology to a brand new customer. This module keeps you out of operational purgatory. We'll cover using Approval History and why the Solution ID belongs on every attachment. You'll learn the difference between a pre-billing Change Order, an active-contract Move-Add-Change, and a full Disconnect. We'll also cover why 'Request Manual Validation' is never a default option. Master the process, and turn your deals into installed revenue.
+:::
 
 ---
 
@@ -1066,28 +990,16 @@ Pick the path that matches **where the deal is in billing**, then keep the recor
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-::: flip ["I'll just submit a change order—the customer wants to adjust services."]
-First ask: has billing started? If yes, a change order is not the right tool. Partial in-life changes → MAC; full removal → Disconnect.
+::: flip ["I'll just click Manual Validation to make sure engineering looks at it."]
+**The Slow Lane:** Manual validation completely breaks the automated routing flow. You are guaranteeing your deal takes longer to process. Only use it if there is a known, unmappable physical barrier at the site.
 :::
 
-::: flip ["The approval is stuck—I'll fix it in a side channel with the reviewer."]
-Check Approval History for the current step and assignee. Escalate through Sales Management or the SF team—not Slack or email outside the record.
+::: flip ["I attached the pricing sheet, they'll figure it out."]
+**The Orphaned Document:** Operations processes hundreds of solutions a week. If your custom pricing sheet or floor plan doesn't have the GPC Solution ID explicitly written on it, it will get lost, and your deal will stall.
 :::
 
-::: flip ["I checked Manual Validation to be safe."]
-Manual Validation skips automation and routes to every participating department. Only check it when you genuinely need human review—not as a default.
-:::
-
-::: flip ["New and Existing services on the same site will just pick the faster path."]
-New + Existing on one site always routes via the New path. Know the rules before building the Solution Site.
-:::
-
-::: flip ["The quote in my email matches intent—that's enough for approval."]
-Reviewers validate **line items, totals, and site-level attachment** on the GPC Solution. Fix the record so quote math and services match what you're asking reviewers to approve.
-:::
-
-::: flip ["Site-level detail is busywork—the headline MRC is what counts."]
-Incomplete Solution Sites—missing services or products on a site—stall approvals and delay projects. Reviewers check site-level completeness, not just the rollup.
+::: flip ["The customer signed, so I need to submit a MAC to change the order."]
+**The MAC Mistake:** MACs are strictly for active accounts that have already received their first bill. If the fiber isn't lit yet, it is a Change Order. Using the wrong form sends the ticket to the wrong department.
 :::
 
 </div>
@@ -1096,19 +1008,7 @@ Incomplete Solution Sites—missing services or products on a site—stall appro
 
 ## Process Deep Dive [deep]
 
-**Where to look:** The **Module Reference Files** links are the real documents—**Approval Overview**, **Pre-Approved quick reference**, **Approval Requirements Matrix**, **Change Order**, **MAC**, **Costing Routing**. This deep dive is just the map; when a number matters, open the PDF.
-
-**Everyday approvals:** Live in **Approval History** on the GPC Solution—Approve, Reject, Reassign, Recall, comments. Reviewers care about **sites, services, products, and quote math**, not a tidy story in email. **Product Management**, **Sales Management**, and **SF** each have different jobs when something breaks. Stuck? Read who owns the step in **Approval History**, then escalate through **Sales Management** or **SF**—not a side thread.
-
-**Change order (before billing):** After **Closed/Won**, before **billing** starts, while the solution is **Booked** not **Billed**—that’s the Conga change-order lane: clean up the sites, keep the **GPC Solution ID** on everything, signatures, upload, loop **PMO / SF Admin / CRC** as the process says. If the site is **Pending Billing** or **7–10 Day Order**, booking changes might need **PMO/CRC** first—don’t promise same-day magic.
-
-**Costing shortcuts:** **New + Existing** on one site → **New** path. **Request Manual Validation** means you asked every department to touch it—only use that on purpose.
-
-**Before you submit anything:** Right object, real sites and lines, math that matches the quote, attachments with IDs, and Manual Validation only when you actually want full manual review.
-
-**Pre-Approved in Salesforce (what actually happens):** You set **Order Process** to **Pre-Approved** when you **create** the GPC Solution or while **Stage** is **Design**—if you’re past that, you **recall** to Design first. Pre-Approved solutions **skip costing** until you press **Closed Won**. Day-to-day: use **Preliminary Quote** on the button bar and pick the Conga output you need; when paperwork is signed, **Closed Won** and upload like you always would. These deals **won’t show on bookings/production reports** until **OSP / COE** (and the rest of the validation chain) clears them—that’s expected, not a bug.
-
-**Pre-Approved vs the matrix:** The **quick reference** is “does this fiber deal even qualify?” The **matrix** is “what do payback, discounts, and net investment do to routing?” A deal can look Pre-Approved on fiber rules and still need a manager because of **payback, churn, net investment, or product**—so you check **both** PDFs, not just one.
+See reference files for detailed guides.
 <!-- prettier-ignore-end -->
 
 ---
@@ -1119,150 +1019,84 @@ Incomplete Solution Sites—missing services or products on a site—stall appro
 
 <!-- prettier-ignore-start -->
 ---
-id: "portfolio-and-business-capabilities"
-title: "Portfolio & Business Capabilities"
-summary: "Layered technology. Midwest fiber. Outcome-led selling."
-sensitivity: "public"
+id: portfolio-and-business-capabilities
+title: Portfolio & Business Capabilities
+summary: The GPC Stack. Midwest fiber. Selling outcomes.
+sensitivity: public
 reference_files:
-  - label: "Sales Resources (collateral hub)"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+  - label: Sales Resources (collateral hub)
+    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
 discovery_questions:
-  - "How many locations do you have, and how are they connected today—shared Internet, MPLS, Ethernet, or SD-WAN?"
-  - "What are your most critical applications? Are any of them SaaS or cloud-hosted (O365, Salesforce, ERP)?"
-  - "What does an hour of downtime cost your business—and what was your last significant outage?"
-  - "Are you planning any cloud migrations or voice modernization in the next 12–24 months?"
-  - "Who owns network, security, and voice decisions—are those the same team or separate?"
+  - 'If your primary internet connection drops at 2:00 PM on a Tuesday, what exactly happens to your operations and revenue?'
+  - 'Which of your daily applications are hosted on-premise, and which are in the cloud (AWS, Azure, O365)?'
+  - 'Who is currently managing your edge security, and how long does it take them to respond to a ticket?'
+  - 'As your business expands over the next two years, what is your biggest technology bottleneck?'
+  - 'How many sites are in scope today, and who signs off when network, security, or voice designs change?'
 five_minute_summary: |
-  - **The Opening:** Focus on business outcomes and partnership (local support, proactive monitoring, Midwest presence) rather than dumping a list of SKUs.
-  - **The GPC Stack:** Position our services as a comprehensive suite of 10 core solutions (Fiber Internet, SD-WAN, Managed Firewall, UC, etc.).
-  - **Providing Proof:** Use the capability deck to tell the high-level narrative, and lean on Sales Resources for specific product evidence.
-  - **Running Discovery:** Uncover site counts, critical applications, uptime requirements, and cloud migrations before pitching a specific fit.
+  - **Stop selling SKUs:** If you just pitch another internet pipe, we are racing to the bottom on price. Pitch the layered technology partnership.
+  - **The Stack:** Access and Wireless Backup are the foundation. WAN sits on top. Security protects it. Unified Communications, Cloud Connect, and Wi-Fi deliver the edge experience.
+  - **The Anchors:** We win on our resilient Midwest IP reach, Tier-1 and IX relationships, local field teams, and a 24/7 NOC that actually answers the phone.
+  - **Discovery drives design:** You cannot build the right stack until you know their critical apps, site count, and true uptime tolerance.
 knowledge_checks:
-  - question: "What is the best opening for a portfolio conversation?"
+  - question: A prospect asks for your best price on a 500M circuit. What is your immediate next move?
     options:
-      - "Lead with a full list of product SKUs and speeds."
-      - "Lead with business outcomes and GPC as a partner with a comprehensive suite of services."
-      - "Start only with pricing and contract terms."
-    correct_index: 1
-    explanation: "The module emphasizes outcomes and partnership first; present the comprehensive suite of services and save SKU detail for follow-up collateral."
-  - question: "How should you describe how GPC products fit together?"
-    options:
-      - "As a comprehensive suite of services designed for growth."
-      - "As unrelated add-ons the customer picks from a catalog."
-      - "As only Internet access with no connection to other services."
+      - Pivot to discovery. Ask what applications are running over that circuit and what happens to the business if it goes down.
+      - Check the pricing tool and give them a verbal quote to keep their interest.
+      - 'Tell them GPC doesn''t compete on price, we only compete on value.'
     correct_index: 0
-    explanation: "Use the comprehensive suite of services so the customer sees integrated design, not a random menu."
-  - question: "Where should you send someone for product-specific datasheets after this storyline?"
+    explanation: 'If you answer with a price, you are just a commodity. Find the business pain first.'
+  - question: How should you position the GPC product portfolio to a new prospect?
     options:
-      - "Only the Business Capability PDF; ignore other folders."
-      - "Sales Resources and the product modules, while this page stays the narrative spine."
-      - "Generic web search only."
-    correct_index: 1
-    explanation: "Use the Business Capability deck for the story and **Sales Resources** (plus the relevant product modules) for per-product evidence."
-  - question: "What proof points anchor the 'why GPC' network story?"
-    options:
-      - "Over a Century of Experience, Unmatched Local Support, Reliability Backed by 24/7 Network Monitoring, and Flexible, Scalable Solutions."
-      - "Only the number of years in business, with no network specifics."
-      - "A guarantee that every site worldwide has identical latency."
+      - 'As an integrated, layered system where reliable fiber is the foundation for secure, cloud-ready operations.'
+      - As an à la carte menu where they can pick and choose the cheapest options.
+      - Lead with our most expensive SD-WAN solution to anchor the price high.
     correct_index: 0
-    explanation: "Lead with the four main pillars: Century of Experience, Local Support, 24/7 Monitoring, and Scalable Solutions."
-  - question: "In discovery, what should you clarify before you summarize fit in one sentence?"
+    explanation: 'Sell the stack. Access is just the enabler for the higher-value UC, Security, and Cloud services.'
+  - question: What are the core differentiators you should anchor your 'Why GPC' story on?
     options:
-      - "Only the customer's favorite brand of router."
-      - "Locations, critical apps, uptime tolerance, and cloud/voice moves—then reflect the comprehensive suite of services."
-      - "Whether they prefer PDF or Word for internal memos."
-    correct_index: 1
-    explanation: "The module ties discovery to footprint, workloads, and resilience so the recommended services match real operations."
-  - question: "How does this module relate to the Business Capability PDF versus the deep collateral library?"
-    options:
-      - "Ignore the PDF; the library replaces the storyline entirely."
-      - "Use this module and the Business Capability deck for the narrative spine; use Sales Resources and the product modules for per-product evidence."
-      - "Use only this module and never reference external collateral."
-    correct_index: 1
-    explanation: "Keep the executive storyline in the capability materials; pull datasheets and vertical proof from **Sales Resources** and product modules when needed."
-  - question: "When a CFO asks 'Why GPC vs anyone else?' in one sentence, what is a strong response?"
-    options:
-      - "List fiber miles with no business outcome."
-      - "Reliable Midwest foundation, fiber-first access, layered services, and accountable local support—then offer the capability deck."
-      - "Decline to answer until they attend a three-day workshop."
-    correct_index: 1
-    explanation: "Tie network differentiation to partnership and outcomes, then give a concrete next step (e.g., the capability presentation)."
-  - question: "Which stack order matches the portfolio map taught here?"
-    options:
-      - "Security first, then access, then WAN, then apps—with no ordering rules."
-      - "A comprehensive suite of 10 services including Fiber Internet, SD-WAN, Managed Firewall, UC, Cloud Connect, and Wi-Fi."
-      - "Apps only; transport is irrelevant to the conversation."
-    correct_index: 1
-    explanation: "Present the comprehensive suite of services so the customer sees a designed system, not a random SKU list."
-  - question: "What role should local support and monitoring play in the storyline?"
-    options:
-      - "They are optional talking points only if the customer complains."
-      - "They reinforce GPC as a partner—local teams and 24/7 monitoring differentiate from commodity ISP positioning."
-      - "They should never be mentioned to avoid setting expectations."
-    correct_index: 1
-    explanation: "Partnership and operational accountability are core to moving beyond 'just another carrier.'"
-  - question: "What is a practical way to describe any deal using this module?"
-    options:
-      - "Quote random SKUs until something sticks."
-      - "Map the opportunity to the comprehensive suite of services against their sites and workloads."
-      - "Focus exclusively on a single product name regardless of discovery."
-    correct_index: 1
-    explanation: "Framing deals across the comprehensive suite of services aligns conversation with the portfolio map."
+      - 'Resilient Midwest fiber, local support teams, and a true 24/7 NOC.'
+      - The fact that we are cheaper than the national cable providers.
+      - Our ability to offer month-to-month contracts with no commitment.
+    correct_index: 0
+    explanation: 'We win on reliability, local presence, and support. We are not the budget option.'
 scenarios:
-  - title: "Retail chain, cloud POS, hates 'just another ISP'"
+  - title: The Commodity Trap
     situation: |
-      A multi-site retailer wants reliable connectivity and says all carriers sound the same. They care about **uptime**, **local support**, and **paths to cloud POS and SaaS**.
+      An IT Director tells you, "Look, fiber is fiber. Whoever gives me the cheapest 1 Gig dedicated circuit gets the business."
     choices:
-      - label: "Pitch a SKU list and lowest price first."
-        feedback: "Weak: you sound like a commodity. Open with outcomes, Midwest IP reach, monitoring, and local teams—then map the comprehensive suite of services to their sites."
-      - label: "Open with outcomes, partnership, and the comprehensive suite of services; offer collateral for proof."
-        feedback: "Strong: matches the executive storyline and portfolio map, and sets up discovery on sites and critical workloads."
-  - title: "CFO joins the call halfway through"
-    situation: |
-      You were walking through services and the CFO asks **"Why GPC vs anyone else?"** in one sentence before they drop off.
-    choices:
-      - label: "Answer with fiber miles and technical jargon only."
-        feedback: "Incomplete: add the business angle—competitive connectivity through a resilient Midwest network, partnership, and paths tuned for cloud/SaaS."
-      - label: "Summarize: reliable Midwest foundation, fiber-first access, comprehensive suite of services, and accountable local support—then offer the capability deck."
-        feedback: "Strong: ties network proof points to partnership and gives them a concrete next artifact."
+      - label: 'Agree, and promise to go to your manager to get special pricing approved to win the logo.'
+        feedback: 'You just lost all your leverage. You are now playing their game, and even if you win, it''s a zero-margin deal.'
+      - label: 'Challenge the premise. ''Fiber is glass, but who manages the routing, who answers the phone at 2 a.m., and how is the network peered makes a massive difference to your uptime. Let''s talk about what an hour of downtime costs you.'''
+        feedback: Correct. Break them out of the commodity mindset and re-anchor on the cost of risk.
 roleplay:
-  persona: "Skeptical CFO at a mid-size Midwest manufacturer"
-  scenario: "Just sat through two carrier pitches that sounded identical. Asks point-blank why GPC is different before walking out of the room."
-  goal: "Deliver a one-sentence 'why GPC' answer grounded in outcomes and partnership, then anchor the conversation on the comprehensive suite of services and offer the capability deck as a concrete next step."
+  persona: Skeptical CFO at a mid-size Midwest manufacturer
+  scenario: Just sat through two carrier pitches that sounded identical. Asks point-blank why GPC is different before walking out of the room.
+  goal: 'Deliver a one-sentence ''why GPC'' answer grounded in outcomes and partnership, then anchor the conversation on the comprehensive suite of services and offer the capability deck as a concrete next step.'
 ---
 
 ## At a glance
 
-- **Story:** Outcomes and partnership first—**position our services as a comprehensive suite of 10 core solutions**, not a SKU list.
-- **Proof:** **Over a Century of Experience**, **Unmatched Local Support**, **Reliability Backed by 24/7 Network Monitoring**, and **Flexible, Scalable Solutions**—use the **Business Capability** materials for the narrative spine and **Sales Resources** for per-product evidence.
-- **Discovery:** Sites, critical apps, uptime tolerance, cloud/voice moves—then map the opportunity to the **comprehensive suite of services** so the stack matches how they actually run.
+- **The Goal:** Elevate the conversation from a telecom vendor to a technology partner.
+- **The Foundation:** GPC's wholly-owned, resilient Midwest fiber network.
+- **The Value Add:** We don't just provide the pipe; we secure the edge (Managed Firewall/SD-WAN), ensure survivability (5G Backup), and power the workforce (UC/Cloud Connect).
+- **The Handoff:** Once discovery reveals multi-site complexity, heavy cloud reliance, or strict compliance needs, bring in a Solutions Engineer to design the stack.
 
 ---
 
-## Story stack
+## Pitch
 
 ::: elevator [Elevator Pitch]
-Fiber Connectivity and Communications Solutions for the Modern Business. Make connectivity your competitive advantage. From multi-site enterprises to small storefronts, we provide a comprehensive suite of services to deliver the secure, flexible infrastructure your business needs. Proof: Over a Century of Experience, Unmatched Local Support, 24/7 Network Monitoring, and Scalable Solutions—use the capability deck for the story, Sales Resources for product evidence.
-:::
-
-::: accordion Business Capability Overview
-Cover slide from the GPC Business Capability presentation—use as the opening visual when framing outcomes and partnership.
-
+Stop selling SKUs and start selling outcomes. GPC isn't just another fiber pipe; we provide the secure, flexible infrastructure that keeps our customers' doors open. Whether you are pitching a multi-site enterprise or a regional storefront, lead with the full layered stack. Anchor your story on our resilient Midwest network, our 24/7 local NOC, and unmatched support. Use the capability deck for the high-level narrative, and only pull from Sales Resources when you need the hard evidence to close.
 :::
 
 ---
 
-## Discovery Run
+## Discovery Questions
 
-<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
-  <iframe
-    src="games/portfolio-level-1/index.html?embed=1&module=portfolio-and-business-capabilities"
-    title="Discovery Run — Level 1"
-    loading="lazy"
-    sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
-  ></iframe>
-</div>
+- "If your primary internet connection drops at 2:00 PM on a Tuesday, what exactly happens to your operations and revenue?"
+- "Which of your daily applications are hosted on-premise, and which are in the cloud (AWS, Azure, O365)?"
+- "Who is currently managing your edge security, and how long does it take them to respond to a ticket?"
+- "As your business expands over the next two years, what is your biggest technology bottleneck?"
 
 ---
 
@@ -1270,70 +1104,19 @@ Cover slide from the GPC Business Capability presentation—use as the opening v
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-::: flip ["You all sound the same."]
-Anchor on the comprehensive suite of services as one designed system—then ask what their current provider does when something breaks at 2 a.m.
+::: flip ["Your competitor is offering the same speed for 20% less."]
+Speed is a commodity; uptime is what you are paying for. When that connection goes down, does their SLA guarantee a local technician, or are you calling an overseas call center? We price for reliability and our 24/7 local NOC.
 :::
 
-::: flip ["We just need basic Internet."]
-Ask about cloud apps, VoIP, and growth plans—then show how basic access becomes a foundation for the full suite of services.
+::: flip ["We prefer to buy our network, security, and voice from different vendors."]
+Managing three different vendors means when something breaks, they all point fingers at each other while you stay offline. We provide a single throat to choke. One unified stack, one support number.
 :::
 
-::: flip ["We already have a national carrier."]
-Midwest IP reach, local field teams, NOC monitoring, and portfolio breadth—not price. Tie to TCO of downtime.
-:::
-
-::: flip ["We're not ready for a full solution."]
-Start with access; plant flags for WAN, security, and UC as next conversations once trust is established.
-:::
-
-::: flip ["We only buy on the lowest price."]
-Reframe to **TCO**: downtime, truck rolls, change orders, and ticket volume—cheap access can be expensive to operate.
-
-:::
-
-::: flip ["We'll add security and WAN later."]
-A comprehensive suite from day one avoids rip-and-replace; position the full suite of services as one roadmap, even if phases differ.
-
+::: flip ["We are too small for an enterprise stack."]
+Downtime hurts a small business just as much as an enterprise. Our solutions scale down seamlessly. We can start with robust fiber and 5G backup, and layer on security as you grow.
 :::
 
 </div>
-
----
-
-## Technical Deep Dive [deep]
-
-**Portfolio map (10 core services):**
-
-| Service | What | Position / hook |
-| --- | --- | --- |
-| **Fiber Internet** | Dedicated, symmetrical access | Fiber = capacity/perf; the foundation of the suite |
-| **Wireless Internet Backup** | 5G continuity | Backup = **continuity**—not "second Internet." |
-| **Managed Ethernet** | Private L2 site-to-site | Predictable site mesh for multi-site businesses |
-| **SD-WAN** | Intelligent routing & orchestration | Orchestration + cloud breakout. → firewall/DDoS |
-| **Managed Firewall** | Edge protection | Policy on the pipe—tie to ransomware, PCI, guest Wi‑Fi |
-| **Unified Communications** | Voice, meetings, collaboration | UC + experience; replace aging PBX |
-| **Cloud Connect** | Private path to CSPs | Predictable cloud paths for heavy SaaS |
-| **Managed Wi-Fi** | Full lifecycle wireless | Guest Wi‑Fi → **Managed Wi‑Fi** |
-| **DDoS Protection** | Proactive or on-demand mitigation | Keep critical services online |
-| **Video** | Streaming TV for business | When vertical cares (hospitality, retail, break rooms) |
-
-**Practice line:** any deal = **comprehensive suite of services** mapped to sites/workloads.
-
-**Conversation flow:**
-- **Discovery:** sites, critical apps, uptime, cloud/voice moves, owners (network/security/voice).
-- **Order:** one-sentence fit → comprehensive suite → capability deck + **Sales Resources**.
-- **Checkpoints:** footprint → apps → RTO/RPO → ownership.
-
-::: accordion Portfolio Stack Layers
-Visual breakdown of the comprehensive suite of services from the capability deck.
-
-
-:::
-
-::: accordion Network Story & Proof Points
-Fastest, Most Reliable Route to the Internet, direct Tier-1/IX connections, and Midwest IP reach—anchor the "why GPC" conversation with this network narrative slide.
-
-:::
 <!-- prettier-ignore-end -->
 
 ---
@@ -1344,161 +1127,84 @@ Fastest, Most Reliable Route to the Internet, direct Tier-1/IX connections, and 
 
 <!-- prettier-ignore-start -->
 ---
-id: "product-connectivity"
-title: "Connectivity & Access"
-summary: "Dedicated access. Private transport. Fiber vs satellite."
-sensitivity: "public"
+id: product-connectivity
+title: Connectivity & Access
+summary: DIA vs SIA. Ethernet. Beating Starlink.
+sensitivity: internal
 reference_files:
-  - label: "Sales Resources (product collateral)"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+  - label: Sales Resources (product collateral)
+    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
 discovery_questions:
-  - "What are your most critical applications—VoIP, cloud ERP, video conferencing, payment terminals? How much upload traffic do they generate compared to download?"
-  - "How are your locations connected today—shared broadband, MPLS, Ethernet, or SD-WAN? When does that contract expire?"
-  - "Have you experienced jitter, latency spikes, or outages? What broke first, and what did it cost you?"
-  - "Do you need static IPs, diversity (dual-path), or DDoS monitoring as part of your access design?"
-  - "Are any sites data-center or hub locations where high-capacity optical transport between strategic endpoints might be relevant?"
+  - 'Are your employees primarily downloading data, or are they constantly uploading large files to cloud servers?'
+  - 'How many physical locations do you have, and do they need to share private data directly with each other?'
+  - What happens to your customer experience if there is a 500-millisecond delay on your voice and video calls?
+  - 'What are your most critical applications day to day, and how much upstream bandwidth do they require?'
+  - 'How are sites connected today—shared broadband, MPLS, Ethernet, or SD-WAN—and when do those contracts renew?'
 five_minute_summary: |
-  - **Internet Access:** Use SIA for flexible, cost-sensitive shared access. Lead with DIA when the customer needs dedicated symmetrical bandwidth, SLA-grade operations, or stronger DDoS protection.
-  - **Private Transport:** Position Managed Ethernet for private Layer 2 site-to-site connectivity. Use Wave (10 Gbps to 400 Gbps) for high-capacity Layer 1 optical transport between data centers or hubs.
-  - **Fiber vs. Satellite:** When competing against satellite, focus discovery on reliability, latency, and weather vulnerabilities.
-  - **Pricing:** Treat training PDFs as internal references. Always use official quoting tools for customer-facing numbers.
-
+  - **SIA vs DIA:** Standard Internet (SIA) is for flexible, cost-sensitive needs on shared infrastructure. Dedicated Internet (DIA) is mandatory when they need symmetrical bandwidth, SLA-grade operations, and guaranteed throughput.
+  - **Managed Ethernet:** This is for private, Layer 2 connectivity between physical sites. It is an entirely different conversation than internet access.
+  - **Wavelength:** High-capacity optical transport for data centers and massive hubs. Do not pitch this as a default upgrade for a standard branch office.
+  - **The Starlink play:** Do not dismiss LEO satellite. Instead, anchor on the physics: fiber will always win on latency, weather reliability, and the true cost of downtime.
 knowledge_checks:
-  - question: "When should you lead with Dedicated Internet Access (DIA) over Standard Internet Access (SIA)?"
+  - question: A regional accounting firm needs to reliably upload massive tax files to the cloud. Which access product do you pitch?
     options:
-      - "Whenever the customer wants the cheapest option regardless of workload."
-      - "When they need symmetrical heavy use, SLA-style operations, diversity, stronger DDoS visibility, or have outgrown shared/best-effort access."
-      - "Only when they have no fiber at the site."
-    correct_index: 1
-    explanation: "DIA = performance/ops/symmetry—not minimum cost."
-
-  - question: "What is Managed Ethernet primarily for?"
-    options:
-      - "Private Layer 2 connectivity between sites (not Internet breakout), with EPL/EVPL and E-LAN options."
-      - "Replacing all voice systems with UC only."
-      - "Consumer-grade Wi-Fi in the office."
+      - Dedicated Internet Access (DIA). They need the guaranteed symmetrical upload speeds.
+      - Standard Internet Access (SIA). It's cheaper and downstream speed is all that matters.
+      - Managed Ethernet. They should just build a private network to the cloud.
     correct_index: 0
-    explanation: "Private L2 between sites—not DIA/SIA."
-
-  - question: "What is Wavelength (Wave) best positioned for?"
+    explanation: Heavy upload requirements and critical cloud apps demand the symmetrical SLA of DIA.
+  - question: When is Managed Ethernet the correct solution?
     options:
-      - "Small-branch guest Wi-Fi only."
-      - "Layer 1 optical, high-capacity point-to-point between strategic endpoints (e.g., DC/hub), not as a substitute for DIA/SIA Internet."
-      - "Email hosting for ten users."
-    correct_index: 1
-    explanation: "Big optical transport—qualify vs Internet."
-
-  - question: "Per the DIA vs SIA comparison in this module, which statement is accurate?"
-    options:
-      - "SIA and DIA both scale to the same documented maximum in the comparison sheet."
-      - "In the comparison, SIA tops out around 2 Gbps symmetrical while DIA scales up to 100 Gbps symmetrical—use that to frame scale and growth."
-      - "SIA always includes richer customer-specific DDoS monitoring than DIA."
-    correct_index: 1
-    explanation: "Use the comparison sheet—don't assume."
-
-  - question: "How should you use training PDFs that live in the pricing or internal folders?"
-    options:
-      - "Email them verbatim to customers as final quotes."
-      - "Treat them as internal references; customer-facing numbers and quotes come from standard tools and approved processes."
-      - "Ignore them completely even for internal planning."
-    correct_index: 1
-    explanation: "Internal until quoting validates."
-
-  - question: "When comparing GPC fiber to satellite for POS and VoIP, what is sound positioning?"
-    options:
-      - "Dismiss satellite without understanding their constraints."
-      - "Explore weather, latency, jitter, and congestion tactfully; contrast fiber reliability, stable low latency, and scalable symmetrical enterprise paths."
-      - "Promise identical performance in every geography without discovery."
-    correct_index: 1
-    explanation: "Qualify constraints; stay professional."
-
-  - question: "What problem does E-LAN (Ethernet LAN) address in the module's framing?"
-    options:
-      - "Single home-user email only."
-      - "Multipoint-to-multipoint Layer 2 reach so multiple UNIs can mesh—any site to any site within the service."
-      - "Public Internet breakout for guest Wi-Fi only."
-    correct_index: 1
-    explanation: "Mesh L2—not Internet."
-
-  - question: "A branch suffers upload congestion and jitter on shared Internet for cloud apps. What is a sensible first step?"
-    options:
-      - "Automatically quote Wave between every site without qualification."
-      - "Qualify SIA vs DIA (symmetry, latency, DDoS, support), pain points, and whether private Ethernet fits site-to-site needs."
-      - "Recommend only consumer broadband upgrades."
-    correct_index: 1
-    explanation: "Discovery before Wave."
-
-  - question: "What is the right mental model for **access** in this module?"
-    options:
-      - "Access is how traffic reaches the customer—SIA for flexible shared access, DIA for dedicated symmetrical paths and richer operations."
-      - "Access means only MPLS forever, with no Internet options."
-      - "Access is identical to SD-WAN policy routing in every case."
+      - 'When a customer needs private, secure, site-to-site connectivity without hitting the public internet.'
+      - When they want the fastest possible public internet connection.
+      - When they have remote workers who need to VPN into the office.
     correct_index: 0
-    explanation: "SIA vs DIA by workload—then Ethernet/Wave if private transport fits."
-
-  - question: "When should Wave be positioned instead of simply upsizing DIA/SIA?"
+    explanation: Ethernet is for private Layer 2 transport between physical locations.
+  - question: A prospect says they are just going to buy Starlink for their main office because it's cheaper and fast. How do you respond?
     options:
-      - "Whenever the customer mentions the word Internet."
-      - "For DC–DC or hub-to-hub big pipes, replication, or latency-sensitive workloads that need Layer 1 optical—not as a substitute for Internet access."
-      - "Only for sites under 10 Mbps total usage."
-    correct_index: 1
-    explanation: "Not default Internet uplift."
-
+      - 'Acknowledge Starlink is great for residential, but anchor on fiber''s superior latency, weather resilience, and SLA-backed reliability for business.'
+      - Tell them satellite internet is garbage and they will regret it.
+      - Offer to cut your DIA price in half to match the Starlink hardware cost.
+    correct_index: 0
+    explanation: Never attack the competitor emotionally. Attack the physics of satellite latency and the lack of an enterprise SLA.
 scenarios:
-  - title: "Branch complains about VPN and video over 'business broadband'"
+  - title: The SIA Squeeze
     situation: |
-      Shared Internet; **jitter and upload** pain for VoIP/cloud. Budget tight.
+      A medium-sized logistics company is complaining about their current cable provider dropping VoIP calls. They want a quote for your cheapest fiber option (SIA).
     choices:
-      - label: "Automatically quote Wave between every site."
-        feedback: "Wave = L1 big pipes—start with DIA/SIA/Ethernet discovery."
-
-      - label: "Qualify SIA vs DIA and whether Ethernet fits site-to-site."
-        feedback: "Correct."
-
-  - title: "Prospect compares GPC fiber to satellite for stores"
-    situation: |
-      **Starlink** / satellite for rural **POS + VoIP**.
-    choices:
-      - label: "Dismiss satellite without asking any questions."
-        feedback: "Explore latency/weather first—then fiber strengths."
-
-      - label: "Explore weather, latency, congestion; position fiber reliability and symmetrical paths."
-        feedback: "Correct."
-
+      - label: Quote the SIA to win the business easily.
+        feedback: 'You are setting them up to fail. VoIP requires low jitter and consistent throughput. If they are already having issues, shared infrastructure is a risk. You must pitch DIA.'
+      - label: 'Explain that shared infrastructure causes VoIP drops. Quote DIA, highlighting the symmetrical SLA that guarantees clean voice traffic.'
+        feedback: 'Correct. Solve the actual technical problem, don''t just sell the cheapest SKU.'
 roleplay:
-  persona: "Skeptical IT Director"
-  scenario: "Complaining about VPN jitter over shared broadband at three branch locations. Wants the cheapest fix and assumes upgrading bandwidth on the same SIA circuit will solve it."
-  goal: "Pivot from price to reliability—qualify the symmetry and latency requirements for VoIP and cloud apps, then position DIA or Managed Ethernet as the right solution rather than simply more shared bandwidth."
+  persona: Skeptical IT Director
+  scenario: Complaining about VPN jitter over shared broadband at three branch locations. Wants the cheapest fix and assumes upgrading bandwidth on the same SIA circuit will solve it.
+  goal: 'Pivot from price to reliability—qualify the symmetry and latency requirements for VoIP and cloud apps, then position DIA or Managed Ethernet as the right solution rather than simply more shared bandwidth.'
 ---
 
 ## At a glance
 
-- **SIA vs DIA:** Shared **SIA** when best-effort and cost dominate; **DIA** when symmetry, VoIP/video pain, SLA-style ops, diversity, or stronger DDoS visibility matter—more bandwidth on SIA does not fix jitter by itself.
-- **Private transport:** **Managed Ethernet** = Layer 2 site-to-site (not Internet breakout). **Wave** = Layer 1 optical between DCs/hubs—qualify discovery before positioning it as “faster Internet.”
-- **Fiber vs satellite:** Reframe on **reliability, latency, weather, congestion**—not a speed-test duel alone.
-- **Commercial:** Training PDFs stay **internal**; customer-facing numbers only through **approved quoting** and AE/pricing when scope is fuzzy.
+- **SIA (Standard Internet):** Best effort, asymmetrical, shared. Good for basic browsing and small storefronts.
+- **DIA (Dedicated Internet):** Symmetrical, guaranteed bandwidth, SLA-backed. Mandatory for VoIP, heavy cloud apps, and enterprise operations.
+- **Ethernet:** Private site-to-site transport. Replaces complex VPNs over public internet.
+- **Wavelength:** Massive, dedicated optical pipes (10G/100G/400G) for data centers.
+- **Pricing:** Keep your pricing internal. Always quote through the standard tools, never throw out "napkin math."
 
 ---
 
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-GPC's connectivity stack matches the right access technology to each customer's workload—not just the cheapest pipe available. **SIA** (Standard Internet Access) is the right fit for cost-sensitive, flexible needs. **DIA** (Dedicated Internet Access) delivers symmetrical bandwidth, stronger DDoS posture, and SLA-grade operations for businesses that can't afford jitter or downtime. **Managed Ethernet** provides private Layer 2 connectivity between sites. **Wave** moves large optical volumes between data centers and hubs. Discovery first—then quote the right product.
+Every single thing we sell—voice, security, cloud apps—lives or dies by the access connection. In this module, we are cutting through the noise so you know exactly which pipe to pitch. We'll cover when to position Standard Internet for cost-sensitive needs, and when to step up to Dedicated Internet for the symmetrical, SLA-grade performance that critical apps demand. You'll learn where Ethernet fits for private connectivity, and how to handle the Starlink conversation without being dismissive, anchoring instead on latency and reliability. Match the right pipe to the right problem, and make sure our foundation is rock solid.
 :::
 
 ---
 
-## Discovery Galaxy
+## Discovery Questions
 
-<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
-  <iframe
-    src="games/galactica-1/index.html?embed=1&module=product-connectivity"
-    title="Discovery Galaxy"
-    loading="lazy"
-    sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
-  ></iframe>
-</div>
+- "Are your employees primarily downloading data, or are they constantly uploading large files to cloud servers?"
+- "How many physical locations do you have, and do they need to share private data directly with each other?"
+- "What happens to your customer experience if there is a 500-millisecond delay on your voice and video calls?"
 
 ---
 
@@ -1506,30 +1212,16 @@ GPC's connectivity stack matches the right access technology to each customer's 
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-::: flip ["Just bump up our shared Internet—that'll fix the jitter."]
-More shared bandwidth doesn't guarantee upload symmetry or latency. Qualify what's actually causing jitter—often it's the shared nature, not raw capacity. DIA is the right answer for VoIP and cloud workloads.
+::: flip ["DIA is too expensive, I just want the SIA."]
+I completely understand watching the budget. However, because you run a heavy VoIP environment, SIA will leave you with the same dropped calls you have today. We need the symmetrical guarantee of DIA to actually solve your problem.
 :::
 
-::: flip ["DIA is too expensive."]
-Frame TCO: what does an hour of dropped VoIP calls, failed payment processing, or inaccessible cloud ERP cost? DIA delivers dedicated symmetry and a stronger ops posture.
+::: flip ["Starlink gets 150Mbps down, why should I pay more for your 100M fiber?"]
+Speed tests don't run businesses—latency does. Satellite inherently struggles with latency and weather fade. If your team is running cloud apps or voice, that delay is going to cause major friction. Fiber gives you the physical reliability and an actual SLA.
 :::
 
-::: flip ["Starlink is cheaper for our rural stores."]
-Acknowledge coverage; then qualify: does payment processing or VoIP tolerate 21–30ms variable latency, weather disruptions, or congestion during peak hours? Fiber delivers predictable, stable paths.
-:::
-
-::: flip ["We already have MPLS—why change?"]
-Ask when the contract expires and what it costs vs. throughput. SD-WAN over DIA often delivers better performance at lower cost with cloud breakout capability.
-:::
-
-::: flip ["We don't need symmetrical upload."]
-Qualify cloud backup, video, VoIP, and SaaS—many workloads are upload-heavy; discovery before assuming asymmetric is fine.
-
-:::
-
-::: flip ["Fiber build will take too long."]
-Acknowledge calendar reality; contrast with ongoing cost of poor access; phased cutover and project planning where applicable.
-
+::: flip ["We use VPNs over our internet to connect our offices. Why buy Ethernet?"]
+VPNs over public internet are subject to public internet traffic jams. Managed Ethernet provides a private, secure lane strictly for your data, lowering latency and massively increasing security between your sites.
 :::
 
 </div>
@@ -1538,43 +1230,18 @@ Acknowledge calendar reality; contrast with ongoing cost of poor access; phased 
 
 ## Technical Deep Dive [deep]
 
-**Access stack:**
+**SIA vs DIA Qualifiers:**
+- If the customer uses heavy VoIP, video conferencing, or relies heavily on cloud-hosted CRMs, **DIA is non-negotiable**.
+- SIA is strictly for environments where an occasional slowdown does not impact revenue (e.g., a waiting room Wi-Fi, a small retail shop's secondary terminal).
 
-| Layer | Role |
-| --- | --- |
-| **SIA** | Shared, flexible, cost-sensitive; up to ~2 Gbps symmetrical per comparison sheet |
-| **DIA** | Dedicated, symmetrical; up to 100 Gbps symmetrical; stronger DDoS/NOC posture |
-| **Ethernet** | Private L2 (E-Line/EVPL/E-LAN); site-to-site—not Internet breakout |
-| **Wave** | L1 optical DC/hub links (10 Gbps to 400 Gbps)—not "more Internet"; qualify vs Internet |
+**Beating Starlink (LEO Satellite):**
+- **The Physics:** LEO is better than legacy satellite, but it still cannot match the consistent sub-10ms latency of a local fiber network.
+- **The Weather:** "Rain fade" is a physical reality for satellite. Heavy cloud cover or storms will degrade the signal.
+- **The SLA:** Starlink is best-effort. GPC fiber is backed by an enterprise Service Level Agreement and a local 24/7 NOC.
 
-**When to lead:**
-- **SIA** = budget + tolerable shared path
-- **DIA** = symmetry, SLA-ish ops, diversity, VoIP/video pain on shared access
-- **Ethernet** = site-to-site private
-- **Wave** = big optical P2P when discovery proves it—not branch Wi‑Fi default
-
-**DIA pricing reference (from SD-WAN training doc—internal only):**
-- 50×50 Mbps DIA: ~$354/mo list
-- 100×100 Mbps DIA: ~$547/mo list
-- 500×500 Mbps DIA: ~$860/mo list
-- 1000×1000 Mbps DIA: ~$1,060/mo list
-- Customer-facing quotes: use standard quoting tools only
-
-**Discovery:** critical apps; upload vs download; static IPs / diversity; incumbent access; outages.
-
-**Pricing:** Quotes = standard tools + approvals. DIA/SIA/Ethernet/Wave pricing via quoting + Sales Resources—involve AE/pricing when scope is fuzzy.
-
-::: accordion DIA vs SIA Comparison
-Use the comparison sheet in **Sales Resources** for side-by-side dedicated vs shared Internet positioning.
-:::
-
-::: accordion Ethernet Battle Card
-Ethernet battle card and qualifiers sit in **Sales Resources**—pair with discovery on sites, handoffs, and SLAs.
-:::
-
-::: accordion Fiber vs Starlink Battlecard
-Fiber vs LEO positioning points live in competitive collateral on **Sales Resources**—confirm Starlink claims against the current approved card.
-:::
+**Wavelength vs Ethernet:**
+- Ethernet is typically sold in sub-10G increments and is highly flexible for multi-site WANs.
+- Wavelength is a raw, dedicated optical channel (typically 10G, 100G, or 400G) designed for massive point-to-point data replication between data centers. Do not pitch Wavelength to a standard enterprise branch.
 <!-- prettier-ignore-end -->
 
 ---
@@ -1824,237 +1491,99 @@ Healthcare SD-WAN talking points and compliance-oriented hooks are maintained in
 
 <!-- prettier-ignore-start -->
 ---
-id: "product-cloud-wifi-and-backup"
-title: "Cloud, Wi-Fi & Backup"
-summary: "Cloud on-ramps. Managed Wi-Fi. 5G continuity."
-sensitivity: "public"
+id: product-cloud-wifi-and-backup
+title: 'Cloud, Wi-Fi & Backup'
+summary: Cloud Connect. Managed Wi-Fi. 5G Failover.
+sensitivity: internal
 reference_files:
-  - label: "Sales Resources (cloud, Wi‑Fi, backup collateral)"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+  - label: 'Sales Resources (cloud, Wi‑Fi, backup collateral)'
+    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
 discovery_questions:
-  - "Which cloud platforms or SaaS apps are most critical to your business—AWS, Azure, Google, Salesforce? How do you reach them today, and where do you feel latency or reliability pain?"
-  - "When your primary Internet circuit went down last—how long were you out, what broke first, and what did that cost the business?"
-  - "Who manages your Wi-Fi today? Do you have separate guest and corporate networks, and are you dealing with any compliance requirements like PCI or HIPAA?"
-  - "How many sites need coverage, and do any have outdoor or high-density requirements that a standard AP count might undersize?"
-  - "Do you have applications—VoIP, payment terminals, patient records—that must stay up even during a fiber outage?"
+  - 'If the internet goes down, what happens to your point-of-sale system or cloud-based CRM?'
+  - Are your employees complaining about dead zones or slow connections in specific parts of the building?
+  - You mentioned moving your servers to AWS. How are you currently managing the latency and routing predictability to that environment?
+  - Which cloud or SaaS workloads are most sensitive to jitter or latency—and how do you reach them from each site today?
+  - 'Do you have a secondary path when fiber fails, and does it share trenches or poles with the primary circuit?'
 five_minute_summary: |
-  - **Cloud Connect:** Combine with Managed Ethernet to provide a private, predictable path to cloud providers and SaaS via Megaport. Always align with an SE on cross-connects and diversity.
-  - **Managed Wi-Fi:** We manage the entire lifecycle including security (firewall, IDS/IPS) and network separation. Never quote access point counts before a proper site survey.
-  - **5G Backup:** Provides automatic failover and fail-back with 24/7 NOC monitoring. Be transparent that speeds and deprioritization will vary by location.
-  - **Resources:** Rely on official datasheets and on-network training shortcuts for detailed proof points.
-
+  - **Cloud Connect:** This is not internet. It is a private, predictable, jitter-free path directly from our network to AWS, Azure, or Google Cloud. Pitch it when they run mission-critical SaaS apps.
+  - **Managed Wi-Fi:** We own the last 10 feet of connectivity. It includes guest network separation and fully managed lifecycle support. Never guess AP counts—always require a site survey.
+  - **5G Wireless Backup:** The ultimate insurance policy. It provides automatic failover and NOC monitoring when the primary fiber gets cut.
+  - **The pitch order:** Always sell the primary fiber first, then attach the 5G backup for redundancy, and finish with Wi-Fi to control the localized experience.
 knowledge_checks:
-  - question: "What best describes Cloud Connect's primary value story in discovery?"
+  - question: A prospect wants to know how much 15 Wi-Fi Access Points will cost for their new warehouse. What do you do?
     options:
-      - "A best-effort public Internet link sized for peak cloud usage"
-      - "A direct, private connection into the Megaport cloud ecosystem with Managed Ethernet as the on-ramp"
-      - "Customer-owned long-haul fiber to every cloud region"
-    correct_index: 1
-    explanation: "Private path via Cloud Connect; Ethernet on-ramp—not Internet-only."
-
-  - question: "Before quoting access point counts on Wi‑Fi, what should you do?"
-    options:
-      - "Promise a standard density from the first call to move the deal"
-      - "Defer AP counts and density assumptions to engineering after site survey"
-      - "Match the competitor's AP count from their proposal"
-    correct_index: 1
-    explanation: "Survey + engineering own density—don't promise counts on call one."
-
-  - question: "For 5G Wireless Internet Backup, what is a fair caution to set with the customer?"
-    options:
-      - "Speeds are identical at every site regardless of RF environment"
-      - "Performance can vary by location; tiered speeds and deprioritization may apply per collateral"
-      - "Battery runtime is unlimited on all SKUs"
-    correct_index: 1
-    explanation: "5G varies; tiers/deprioritization per collateral."
-
-  - question: "On Cloud Connect scope, what should you align with a solutions engineer before over-promising?"
-    options:
-      - "Cross-connect details, diversity, and security expectations"
-      - "Only the customer's logo colors for slide decks"
-      - "Retail gift-card budgets unrelated to transport"
+      - Refuse to quote AP counts blindly. Tell them a proper site survey is mandatory to ensure coverage and avoid dead zones.
+      - Look at the pricing sheet for 15 APs and send them a rough estimate.
+      - Assume a warehouse needs double the APs and quote them 30 just to be safe.
     correct_index: 0
-    explanation: "SE aligns XC, diversity, security—not every site needs full exchange day one."
-
-  - question: "In Managed Wi‑Fi discovery, which separation should you clarify early?"
+    explanation: 'Never guess on Wi-Fi. A warehouse full of metal racks is a nightmare for signal. Survey first, quote second.'
+  - question: What is the primary technical advantage of Cloud Connect over a standard Dedicated Internet Access (DIA) circuit?
     options:
-      - "Guest vs corporate SSIDs and traffic separation"
-      - "Only consumer smart-TV brands at each site"
-      - "Whether employees prefer light or dark UI themes"
+      - 'Cloud Connect bypasses the public internet entirely, eliminating variable latency and jitter for cloud workloads.'
+      - Cloud Connect is significantly cheaper than DIA.
+      - Cloud Connect provides built-in DDoS protection for their website.
     correct_index: 0
-    explanation: "Guest vs corporate + compliance + app mix."
-
-  - question: "What security stack elements does collateral associate with Managed Wi‑Fi positioning?"
+    explanation: 'DIA still uses the public internet. Cloud Connect is a private, dedicated lane straight to the cloud provider.'
+  - question: A customer says they don't need 5G Backup because they have a cheap coax cable connection from a competitor as their backup. What is your response?
     options:
-      - "Next-gen firewall, routing, and IDS/IPS alongside multiple SSIDs"
-      - "Open guest networks with no segmentation"
-      - "DNS over HTTPS as the only control plane"
+      - 'Point out that cable and fiber often share the same physical utility poles. If a truck hits the pole, both go down. 5G offers true path diversity.'
+      - Agree that cable is a fine backup and focus on selling the primary fiber.
+      - Offer to lower the price of our 5G Backup to beat the cable provider's price.
     correct_index: 0
-    explanation: "Firewall, routing, IDS/IPS, multiple SSIDs—managed stack."
-
-  - question: "For 5G Wireless Internet Backup, which operational proof point is accurate?"
-    options:
-      - "Automatic failover to wireless and automatic fail-back when primary returns"
-      - "Manual SIM swaps required for every outage"
-      - "No monitoring; customer self-diagnoses all events"
-    correct_index: 0
-    explanation: "Auto failover/fail-back + NOC."
-
-  - question: "What optional continuity feature is cited for 5G backup CPE deployments?"
-    options:
-      - "Optional battery runtime (collateral cites up to ~8 hours)"
-      - "Unlimited runtime on every router without checking SKU"
-      - "Solar panels bundled at no cost on all quotes"
-    correct_index: 0
-    explanation: "Optional battery ~8h—confirm SKU with quoting."
-
-  - question: "Where should sellers look for formal Cloud, Wi‑Fi, and Backup product training shortcuts?"
-    options:
-      - "Sales Resources and the enablement-maintained training links (SharePoint / approved shortcuts)"
-      - "Random search-engine results updated hourly"
-      - "Only unofficial third-party forums"
-    correct_index: 0
-    explanation: "Start with **Sales Resources** and the links your enablement team publishes—not open web search."
-
-  - question: "Which cloud/SaaS ecosystem framing matches the Cloud section's positioning?"
-    options:
-      - "Name major providers and multi-region redundancy mindset from a single interconnection strategy"
-      - "Assume every workload must use consumer broadband only"
-      - "Discourage any private paths to cloud regions"
-    correct_index: 0
-    explanation: "Major clouds + multi-region mindset; predictable vs Internet-only."
-
+    explanation: 'Wired backups often share the same physical vulnerabilities (trenches, poles, building entry). Wireless provides actual physical diversity.'
 scenarios:
-  - title: "Retail chain wants cloud ERP and guest Wi-Fi"
+  - title: The Jittery Cloud
     situation: |
-      Multi-site retailer; cloud ERP + guest Wi‑Fi; wants **12 APs/store** budgeted on first call.
+      A financial firm moved their entire database to AWS. They have a 1 Gig DIA circuit, but they are complaining about random lag spikes during the afternoon that disrupt their trading software.
     choices:
-      - label: "Quote twelve APs per store to match their budget request."
-        feedback: "Defer counts—survey + engineering."
-
-      - label: "Explain AP counts follow survey/engineering; discovery on coverage, guest vs corporate, compliance."
-        feedback: "Correct."
-
-      - label: "Decline Wi-Fi and only sell DIA."
-        feedback: "Position Wi‑Fi with engineering handoff."
-
-  - title: "Branch needs uptime when fiber fails"
-    situation: |
-      Fiber outage last month; wants **full speed 5G forever** with no caveats for the board.
-    choices:
-      - label: "Agree to unlimited headline speed at every site with no variability."
-        feedback: "Set honest RF/speed/tier expectations."
-
-      - label: "Position failover, NOC, prioritization; explain location-dependent speeds; confirm battery/data with quoting."
-        feedback: "Correct."
-
-      - label: "Recommend only redundant fiber and skip wireless backup."
-        feedback: "Backup is for fiber failure—pair honesty on 5G."
-
+      - label: Tell them to upgrade to a 2 Gig DIA circuit to power through the lag.
+        feedback: Throwing bandwidth at a latency problem doesn't work. The issue is public internet routing. They need Cloud Connect.
+      - label: Pitch Cloud Connect. Explain that jumping off the public internet and using a private cross-connect will eliminate the routing jitter.
+        feedback: Correct. Private paths solve latency variability. Match the tech to the problem.
 roleplay:
-  persona: "IT Manager at a healthcare clinic network"
-  scenario: "Had a fiber outage last month that took down patient scheduling and e-prescribing for four hours. Wants a solution but is skeptical of wireless backup speeds and worried about HIPAA data on a cellular network."
-  goal: "Position 5G backup as a managed, automatic failover solution with app prioritization and NOC monitoring—set honest speed/tier expectations while tying reliability to patient care continuity."
+  persona: IT Manager at a healthcare clinic network
+  scenario: Had a fiber outage last month that took down patient scheduling and e-prescribing for four hours. Wants a solution but is skeptical of wireless backup speeds and worried about HIPAA data on a cellular network.
+  goal: 'Position 5G backup as a managed, automatic failover solution with app prioritization and NOC monitoring—set honest speed/tier expectations while tying reliability to patient care continuity.'
 ---
 
 ## At a glance
 
-- **Cloud Connect:** Private, predictable paths to **AWS, Azure, Google**, and major SaaS—reduces “Internet-only” jitter for workloads that matter; qualify which clouds and apps drive the pain.
-- **Managed Wi‑Fi:** Full lifecycle (**design → install → maintain**), **guest vs corporate** segmentation, and integrated **firewall/IDS/IPS**—AP counts follow **survey/engineering**, not a guess on call one.
-- **5G Wireless Backup:** **Automatic failover / fail-back**, **24/7 NOC**, optional **battery**—position as **continuity** on GPC fiber; set honest expectations on **RF, speed tiers, and HIPAA** vs primary access.
+- **Cloud Connect:** Private transport to hyperscalers (AWS, Azure, GCP). Bypasses public internet routing.
+- **Managed Wi-Fi:** Fully managed edge. Requires a site survey. Do not quote blindly.
+- **5G Wireless Backup:** Automatic failover for primary circuits. True physical diversity compared to a secondary wired connection.
 
 ---
 
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Three products that extend the value of GPC fiber access: **Cloud Connect** gives SaaS-heavy and cloud-first businesses a private, predictable path to AWS, Azure, Google, and other platforms—no more Internet-only jitter for critical workloads. **Managed Wi-Fi** covers the last ten feet with a fully managed lifecycle (design, install, maintain), guest/corporate segmentation, and integrated firewall/IDS/IPS. **5G Wireless Backup** keeps the business running during fiber outages with automatic failover, automatic fail-back, 24/7 NOC monitoring, and optional battery protection—no manual intervention required.
+When critical apps go down, nobody cares how cheap their internet was. This module covers three products that elevate our fiber. First, Cloud Connect: giving SaaS-heavy clients a private path to AWS or Azure to bypass internet jitter. Second, Managed Wi-Fi: covering the last ten feet with security and fully managed support—and why we never guess AP counts before a site survey. Finally, 5G Wireless Backup: the ultimate insurance policy, delivering automatic failover and NOC monitoring. Jump in, learn the guardrails, and position these as the ultimate uptime guarantees.
 :::
 
 ---
 
-## Discovery Run
+## Discovery Questions
 
-<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
-  <iframe
-    src="games/portfolio-level-1/index.html?embed=1&module=product-cloud-wifi-and-backup"
-    title="Discovery Run — Level 1"
-    loading="lazy"
-    sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
-  ></iframe>
-</div>
-
----
-
-## Objection Handling
-
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-::: flip ["5G is fast enough to be my primary Internet."]
-Position honestly: wireless is best-effort, not symmetrical, and speeds vary by site. For primary access, fiber is the right answer; 5G backup is the continuity layer.
-:::
-
-::: flip ["Just tell me how many APs we need."]
-A site survey is required before any AP count—density depends on floor plan, device count, use case, and compliance. Promising counts on call one leads to under-engineered installs.
-:::
-
-::: flip ["We already connect to AWS directly."]
-Ask how—public Internet or a private path? Cloud Connect's private Ethernet on-ramp eliminates Internet jitter for latency-sensitive workloads and adds multi-region resilience.
-:::
-
-::: flip ["We don't want cellular data leaving our building for compliance reasons."]
-The Kajeet Sentinel portal filters non-business traffic during failover; GPC NOC monitors and manages the connection. Align specifics with SE and compliance team.
-:::
-
-::: flip ["5G backup is too expensive for a circuit we almost never use."]
-Frame as insurance: the 5G Backup SKU starts at $68/month—compare to the cost of one four-hour outage for payment processing, patient care, or customer service.
-:::
-
-::: flip ["We only need guest WiFi—corporate can stay on what we have."]
-Split networks are common; still qualify density, security policy, and who owns trouble tickets. Managed WiFi can isolate guest SSIDs while giving you one throat to choke for RF and firmware.
-:::
-
-</div>
+- "If the internet goes down, what happens to your point-of-sale system or cloud-based CRM?"
+- "Are your employees complaining about dead zones or slow connections in specific parts of the building?"
+- "You mentioned moving your servers to AWS. How are you currently managing the latency and routing predictability to that environment?"
 
 ---
 
 ## Technical Deep Dive [deep]
 
-**Cloud Connect specs:**
-- Private path to AWS, Azure, Google, and other clouds/SaaS via the Megaport cloud integrator
-- Managed Ethernet on-ramp; 50 Mbps to 10 Gbps cited in collateral
-- Metro access: Omaha, Chicago, Denver
-- SE alignment required for cross-connect details, diversity, and security scope
+**Cloud Connect:**
+- We establish a private NNI (Network-to-Network Interface) with the major cloud providers.
+- Bypassing the public internet inherently secures the transport layer and stabilizes latency.
+- Always involve a Solutions Engineer (SE) to map the cross-connects properly.
 
-**5G Backup pricing & tiers (from product launch collateral):**
-- LTE Wireless Internet Backup: $45 MRC, 1 GB included, $9/GB overage, 2-year minimum term
-- 5G Wireless Internet Backup: $68 MRC, unlimited data, carrier deprioritization applies
-- Wireless Internet Broadband (full-time): $175 MRC, unlimited, best-effort
-- Optional battery backup: up to 8 hours runtime during power failure (NRC TBD)
-- After failover data thresholds: >12 GB/month → up to 50 Mbps; >20 GB/month → up to 25 Mbps; >30 GB/month → up to 3 Mbps
-- Failover time: approximately one minute; automatic fail-back when primary restores
-- Hardware: Cradlepoint X20 5G router; dual SIMs (Verizon + AT&T); best signal auto-selected at install
-- No static IP during wireless failover; static IPs work on landline only
+**Managed Wi-Fi:**
+- Includes AP hardware, licensing, and NOC support.
+- Requires a predictive or physical site survey. Building materials (concrete, metal racks, glass) heavily impact radio frequencies. Guessing AP counts results in bad deployments and angry customers.
 
-**Managed Wi-Fi:** engineering-sized density post-survey; next-gen firewall, IDS/IPS, multiple SSIDs; analytics/branded portal available.
-
-**Business rules for 5G backup:**
-- Must be sold with new or existing SIA, DIA, or SD-WAN customers
-- Do not sell outside GPC territory (exception: multi-location customers with off-net sites within driving distance—approval required)
-- No SLA guarantees on wireless—all best-effort
-
-::: accordion Cloud Connect Battle Card
-Cloud Connect proof points and diagrams are maintained in **Sales Resources**—grab the latest battle card before customer calls.
-:::
-
-::: accordion Managed Wi-Fi Collateral
-Managed Wi‑Fi datasheets and survey talking points live under **Sales Resources**; engineering still sizes every design.
-:::
-
-::: accordion 5G Wireless Internet Backup
-Wireless backup specs, failover rules, and territory notes are in **Sales Resources**—align with quoting before you promise throughput.
-:::
+**5G Wireless Backup:**
+- Bandwidth is prioritized for critical applications, but it is technically "best effort" via the wireless carrier (Verizon/AT&T).
+- It is designed to keep the doors open and the registers ringing during an outage, not to run a 400-person video conference simultaneously. Set expectations accordingly.
 <!-- prettier-ignore-end -->
 
 ---
@@ -2207,383 +1736,113 @@ Position it for **mom-and-pop through larger sites**: the story is **customizabl
 
 <!-- prettier-ignore-start -->
 ---
-id: "product-uc-voice-and-collaboration"
-title: "UC, Voice & Collaboration"
-summary: "Cloud voice. Teams integration. Contact center scaling."
-sensitivity: "public"
+id: product-uc-voice-and-collaboration
+title: 'UC, Voice & Collaboration'
+summary: Cloud PBX. MS Teams integration. Contact Center.
+sensitivity: internal
 reference_files:
-  - label: "Sales Resources (UC, voice, contact center)"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+  - label: 'Sales Resources (UC, voice, contact center)'
+    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
 discovery_questions:
-  - "What phone system are you running today—on-prem PBX, hosted VoIP, or legacy key system? When did it last get a major upgrade, and is it still under support?"
-  - "Do your employees use Microsoft Teams for chat and meetings? Are they expecting to make and receive external calls from within Teams?"
-  - "How do people communicate when they're out of the office—cell phones, call forwarding, or a mobile app? Is that working well?"
-  - "Do you have a contact center or customer service queue? How many agents, what channels (phone, email, chat, SMS), and do you need supervisor monitoring or call recording?"
-  - "Are there compliance requirements for call recording or archiving—legal hold, financial services, healthcare? How long does data need to be retained?"
+  - How are your employees currently making external phone calls when they are working remotely?
+  - 'You mentioned using Microsoft Teams. Are you currently paying for the Teams Phone add-on license, or are you looking for a more cost-effective way to integrate voice?'
+  - 'For your customer service team, do you have visibility into metrics like hold times, abandoned calls, and agent performance?'
+  - Which CRM or service desk tools must voice and contact center data integrate with for screen pops and reporting?
+  - 'If Microsoft 365 or Teams has an outage, how do you still need to reach customers and partners by phone?'
 video_carousel:
-  - title: "Premises to UC"
-    src: "assets/UC/prem-to-uc.mp4"
-    poster: "assets/UC/prem-to-uc.png"
-  - title: "Microsoft Teams"
-    src: "assets/UC/teams.mp4"
-    poster: "assets/UC/teams.png"
-  - title: "Desktop app"
-    src: "assets/UC/desktop-app.mp4"
-    poster: "assets/UC/desktop-app.png"
-  - title: "Mobile app"
-    src: "assets/UC/mobile-app.mp4"
-    poster: "assets/UC/mobile-app.png"
-  - title: "Work better wherever"
-    src: "assets/UC/work-better-wherever.mp4"
-    poster: "assets/UC/work-better-wherever.png"
+  - title: Premises to UC
+    src: assets/UC/prem-to-uc.mp4
+    poster: assets/UC/prem-to-uc.png
+  - title: Microsoft Teams
+    src: assets/UC/teams.mp4
+    poster: assets/UC/teams.png
+  - title: Desktop app
+    src: assets/UC/desktop-app.mp4
+    poster: assets/UC/desktop-app.png
+  - title: Mobile app
+    src: assets/UC/mobile-app.mp4
+    poster: assets/UC/mobile-app.png
+  - title: Work better wherever
+    src: assets/UC/work-better-wherever.mp4
+    poster: assets/UC/work-better-wherever.png
 five_minute_summary: |
-  - **Start with the clips:** Five short videos in this module (migration, Teams, desktop and mobile apps, hybrid work) are the fastest way to see what a customer will experience—watch before you lean on the text below.
-  - **What you’re positioning:** A modern cloud stack for business voice, SMS, meetings, messaging, and files—**Ascend** / GPC UC—not a feature dump on day one. Tier names, storage, and add-ons come from **current matrices**, not memory.
-  - **Teams:** Real deals split into two different conversations—**Ascend with Teams** (Microsoft licensing + our PBX) vs **embedded UC-in-Teams** FAQ/deck language. If the room argues licensing, **pause** and bring **SE/architects**; don’t improvise.
-  - **Where specialists earn their keep:** AI productivity lines, CRM/analytics (**DataHub** / **Extend**), and **contact center** (concurrent seats, channels, burst). Your job is to **qualify** and pull in the right people— not to quote SKUs or APIs from recall. Our AI is built directly into the app to handle notes and protect private data without the $30 monthly upcharge others demand.
-  - **Trust headlines:** **99.999%** uptime story and **9th Consecutive JD Power Award** for technical support excellence; **archiving and retention** are never “free forever”—confirm with the account team before you mention years.
-  - **Go deeper when you’re prepping:** Partner collateral themes (BYOC / IPN / Embedded narratives)—**100+** voice features, web fax, Mix & Match matrices, mobile SMS limits, MSP stats, device grids, Embedded vs **Direct Routing**, omnichannel CC—live in **Technical Deep Dive** below. Use that section for homework, not as a script to read to a prospect.
-
+  - **The Microsoft Teams Play:** This is our golden goose. We embed our UC voice platform directly into Microsoft Teams. The massive differentiator? The customer does not have to buy the expensive Microsoft Teams Phone license to use our embedded app.
+  - **The Bundle:** Our platform (powered by Intermedia) includes enterprise calling, SMS/MMS, HD meetings, and AI recaps on a 99.999% uptime foundation.
+  - **Contact Center:** We sell an omnichannel CX add-on (Voice, SMS, chat). Licensing is concurrent, meaning they only pay for the maximum number of agents logged in at the same time, not a named license for every single employee.
+  - **Legacy:** We still support SIP and PRI for customers who aren't ready to move fully to the cloud, but the goal is always to pivot to UCaaS.
 knowledge_checks:
-  - question: "For **Ascend with Teams** (Teams as hub + GPC cloud PBX), what must the customer understand about Microsoft licensing?"
+  - question: A prospect wants to add external calling to Microsoft Teams. They think they need to buy Microsoft's 'Teams Phone' add-on license for every user. Are they right?
     options:
-      - "GPC UC includes all Microsoft Teams and Phone System entitlements in one SKU"
-      - "Microsoft Teams licenses and Phone System are purchased separately from GPC's cloud PBX SKU—clarify the joint picture early"
-      - "Teams Phone is never used with GPC; only SIP trunks apply"
-    correct_index: 1
-    explanation: "Typical attach motion: Teams + Phone System separate from GPC UC SKU—see embedded FAQ for alternate positioning."
-
-  - question: "What is the baseline call/chat archiving position you should state before quoting years of retention?"
-    options:
-      - "Free unlimited retention for all tiers on day one"
-      - "Free **30-day** rolling baseline in partner collateral; **1–10 year** paid tiers appear in places—always **confirm tier/matrix** with the account team before quoting"
-      - "Archiving is not offered on the UC platform"
-    correct_index: 1
-    explanation: "30-day baseline; paid longer retention—confirm matrix; partner PDFs cite multi-year tiers—never assume."
-
-  - question: "How should Contact Center 'bursting' or elastic concurrency be handled in customer conversations?"
-    options:
-      - "Quote burst seats from memory using a simple spreadsheet"
-      - "Treat bursting/elastic rules as internal sizing aligned with AE/pricing—not napkin math"
-      - "Promise unlimited concurrent agents for a flat monthly fee"
-    correct_index: 1
-    explanation: "Burst with AE/pricing."
-
-  - question: "How are CC Pro and CC Elite seats generally licensed in positioning?"
-    options:
-      - "Concurrent seats—confirm matrices and add-ons before customer commitments"
-      - "Named user seats only with no supervisor tools"
-      - "Unlimited agents on a single mailbox"
+      - 'No. With our embedded UC for Teams solution, they get full calling and SMS inside Teams without needing to buy the Microsoft Teams Phone license.'
+      - 'Yes. Microsoft requires the Teams Phone license for any external calling, regardless of the provider.'
+      - 'No, but they do need to buy the Microsoft E5 enterprise license first.'
     correct_index: 0
-    explanation: "Concurrent—confirm matrix before commit."
-
-  - question: "What does **SecuriSync** frame on the UC platform?"
+    explanation: This is our primary competitive advantage. We save them the Microsoft licensing fee while delivering a better voice network.
+  - question: How is our Contact Center (CCaaS) product licensed?
     options:
-      - "Full backup and antivirus to stop ransomware before it starts, plus a one-click rollback to save files if hit by a virus or accidental deletion"
-      - "Guaranteed on-site guard patrols at every customer site"
-      - "Removal of all encryption to speed migrations"
+      - Concurrent licensing. They pay for the maximum number of agents logged in simultaneously.
+      - Named user licensing. They pay a fee for every single employee in the company.
+      - Per-minute billing. They only pay for the time agents spend actively talking.
     correct_index: 0
-    explanation: "SecuriSync is a true security differentiator (backup, AV, rollback)—unlike basic storage like OneDrive."
-
-  - question: "For non-UC voice, what does SIP trunking primarily provide?"
+    explanation: Concurrent licensing is a massive cost-saver for businesses with shift workers or part-time agents.
+  - question: A customer experiences a complete Microsoft 365 outage and Teams goes down. What happens to their phones if they use our embedded UC solution?
     options:
-      - "VoIP handoff between customer PBX and GPC toward the PSTN with managed eSBC options"
-      - "Analog-only connectivity that cannot scale"
-      - "Cellular voice with no PBX involvement"
+      - They can still make and receive calls using our standalone desktop or mobile UC app. We provide continuity when Teams fails.
+      - Their phones go down completely until Microsoft fixes the issue.
+      - Calls are automatically forwarded to their personal cell phone voicemails.
     correct_index: 0
-    explanation: "SIP + eSBC toward PSTN."
-
-  - question: "When should you involve UC/Teams architects per the Teams attach section?"
-    options:
-      - "For coexistence, porting, and Phone System prerequisites across departments"
-      - "Only after the customer decommissions Microsoft 365 entirely"
-      - "Never—sales alone owns all dial-plan design"
-    correct_index: 0
-    explanation: "Coexistence, porting, Phone System—plus CSP if Teams bought elsewhere."
-
-  - question: "Where should internal rate tables and pricing books be used?"
-    options:
-      - "Internal sizing with AE/pricing alignment—never email ad-hoc rates from memory"
-      - "Paste into customer emails to win speed"
-      - "Post publicly on social media for transparency"
-    correct_index: 0
-    explanation: "Internal + AE—never email from memory."
-
-  - question: "Unite Enterprise vs lower UC tiers differ in part by what file-storage headline?"
-    options:
-      - "Brochure cites up to **200 GB** per user on Unite Enterprise vs lower tiers (e.g., 50 GB / 5 GB)"
-      - "All tiers include identical unlimited storage with no differences"
-      - "File storage is not part of UC at any tier"
-    correct_index: 0
-    explanation: "Enterprise vs lower storage tiers per brochure."
-
-  - question: "What uptime story does the UC section cite as a competitive talking point?"
-    options:
-      - "**99.999%** uptime—translate to minutes/year in customer language"
-      - "50% uptime is the published SLA"
-      - "Uptime is not discussed in collateral"
-    correct_index: 0
-    explanation: "99.999%—minutes/year in plain language."
-
-  - question: "When a customer mixes up **embedded UC-in-Teams** with **Microsoft Direct Routing**, what is the safe motion?"
-    options:
-      - "Quote licensing differences from memory so the deal moves fast"
-      - "Contrast at a high level, then bring SE/architects for anything contractual or regulated—do not invent PSTN or Microsoft entitlements from memory"
-      - "Tell them the terms are interchangeable"
-    correct_index: 1
-    explanation: "Embedded ≠ Direct Routing; SE validates entitlements and design."
-
-  - question: "RevOps wants call and SMS activity reflected in CRM and leadership dashboards. What do you do first?"
-    options:
-      - "Promise a fixed integration pack and API scope on call one"
-      - "Discovery: who owns CRM, reporting, and compliance; loop specialists for Extend/DataHub-style analytics before commitments"
-      - "Say UC does not connect to CRMs"
-    correct_index: 1
-    explanation: "Scope integrations with specialists—collateral teases CRM/analytics threads."
-
-  - question: "Before promising that **Teams mobile** matches **desktop** for business SMS and voice, you should:"
-    options:
-      - "Assume parity and close—buyers hate uncertainty"
-      - "Follow partner FAQ: **SMS in the Teams mobile app is not available yet**; calls with UC app installed differ from SMS workflow—confirm enablement, use Ascend mobile for SMS where approved"
-      - "State that SMS is never part of any Teams path"
-    correct_index: 1
-    explanation: "FAQ-specific mobile limits—don't improvise parity."
-
-  - question: "Partner **FAQ** contrasts **Embedded UC-in-Teams** with **Direct Routing**. Which pairing is accurate for training?"
-    options:
-      - "Embedded: UC tab + partner positioning often **without a Microsoft Teams Phone license**; Direct Routing: Microsoft’s native PSTN/dialer path—escalate for design and entitlements"
-      - "Embedded and Direct Routing are identical; use either term interchangeably"
-      - "Direct Routing never uses Microsoft infrastructure"
-    correct_index: 0
-    explanation: "FAQ/deck language—SE validates customer-specific design."
-
-  - question: "**Mix & Match** matrices in partner collateral apply to which combinations?"
-    options:
-      - "Standard UC tiers and **Ascend for Teams** rows each have their own matrix—features (AI, archiving, video, hunt groups) differ by row—confirm before you quote"
-      - "One global matrix covers every product with identical rows"
-      - "Mix & Match refers only to desk phone colors"
-    correct_index: 0
-    explanation: "Separate matrices—cells differ; don’t quote from memory."
-
+    explanation: 'Because our voice infrastructure is separate from Microsoft''s, a Teams outage doesn''t take down their ability to communicate.'
 scenarios:
-  - title: "Customer wants Teams Phone and GPC voice this quarter"
+  - title: The Microsoft Native Trap
     situation: |
-      Teams for chat/meetings; wants dialer voice next quarter; assumes one invoice covers Microsoft + GPC; **Phone System** not budgeted.
+      An IT Director tells you, "We are just going to buy Microsoft's native calling plan. It's easier to keep everything with one vendor."
     choices:
-      - label: "Confirm that a single GPC SKU replaces all Microsoft licensing."
-        feedback: "Teams + Phone System separate—clarify joint picture."
-
-      - label: "Explain Teams + Phone System prerequisites; separate Microsoft purchases; architects for coexistence/porting."
-        feedback: "Correct."
-
-      - label: "Tell them to abandon Teams and use only the UC softphone."
-        feedback: "Teams hub + GPC PBX is the motion."
-
-  - title: "Contact Center seat count on a first call"
-    situation: |
-      Wants **CC Elite** + digital channels; firm concurrent count + burst **today**; email pricing now.
-    choices:
-      - label: "Email internal rate tables from the pricing folder to win speed."
-        feedback: "Internal books—not external email from memory."
-
-      - label: "Stay in discovery; hand concurrent licensing + bursting to specialists and AE/pricing."
-        feedback: "Correct."
-
-      - label: "Quote CC Pro and Elite interchangeably at the same price."
-        feedback: "Confirm matrix—Elite extends capability."
-
-  - title: "AI recaps plus CRM-attributed reporting—firm answers this week"
-    situation: |
-      CX and RevOps want **AI** call/meeting summaries for supervisors and **every** customer touch logged against Salesforce opportunities. They want a **written** SKU list, API surface, and timeline **before** they bring procurement.
-    choices:
-      - label: "Email SKU and integration detail from memory to keep momentum."
-        feedback: "Confirm AI tier/SKU with AE/pricing; CRM and Extend-style scope needs SE/solutions—not memory."
-
-      - label: "Deepen discovery on owners, compliance, and reporting; align AI and analytics threads with AE, pricing, and specialists."
-        feedback: "Correct."
-
-      - label: "Say AI and CRM are out of scope for UC so the conversation stays simple."
-        feedback: "Partner positioning includes those threads—qualify and escalate, don't deny."
-
-  - title: "Embedded FAQ says no Teams Phone license—IT says the opposite"
-    situation: |
-      Champion read partner **FAQ** (**Embedded** vs **Direct Routing**) and wants the **no Microsoft Teams Phone license** story in writing. IT insists every Teams PSTN design requires **Phone System** and accuses sales of conflicting messaging.
-    choices:
-      - label: "Side with the champion and guarantee no Microsoft licensing in email."
-        feedback: "Licensing is design-specific—SE/architects reconcile FAQ positioning with Microsoft prerequisites; don’t guarantee in email."
-
-      - label: "Schedule SE + architects; map **Embedded** vs **attach/DR** paths to **their** tenant and procurement facts."
-        feedback: "Correct."
-
-      - label: "Tell them FAQ is wrong and only your first call script matters."
-        feedback: "FAQ is enablement input—validate with SE, don’t dismiss."
-
+      - label: Concede the point. Microsoft is too big to compete against for voice.
+        feedback: 'You just lost a massive revenue opportunity. Microsoft is a software company, not a telecom carrier. They struggle with complex routing, support, and uptime.'
+      - label: 'Challenge the uptime and support. Ask them who they are going to call when a port fails or a call drops. Remind them our solution sits inside Teams, saves them the MS licensing fee, and gives them a 99.999% SLA with a local NOC.'
+        feedback: Correct. Pivot away from software convenience and anchor on voice reliability and support.
 roleplay:
-  persona: "Operations Manager at a 75-person professional services firm"
-  scenario: "Stuck on an aging on-prem PBX that's out of warranty. The IT team uses Teams for chat and meetings but nobody can make external calls from it. Assumes replacing the PBX means buying new desk phones and a server."
-  goal: "Position GPC's cloud UC as the modern replacement—no on-prem server, enterprise-grade features from Teams or the native softphone, and a clear explanation of **Ascend with Teams** licensing vs when **embedded FAQ** positioning (no Teams Phone license vs Direct Routing) might apply—SE validates."
+  persona: Operations Manager at a 75-person professional services firm
+  scenario: Stuck on an aging on-prem PBX that's out of warranty. The IT team uses Teams for chat and meetings but nobody can make external calls from it. Assumes replacing the PBX means buying new desk phones and a server.
+  goal: 'Position GPC''s cloud UC as the modern replacement—no on-prem server, enterprise-grade features from Teams or the native softphone, and a clear explanation of **Ascend with Teams** licensing vs when **embedded FAQ** positioning (no Teams Phone license vs Direct Routing) might apply—SE validates.'
 ---
 
 ## At a glance
 
-- **Platform:** One cloud stack—voice, SMS, meetings, omnichannel CC, file sync—with **99.999%** uptime and **Triple Guard Security™** as headline trust; when **RevOps/CX** want CRM or analytics depth, **qualify specialists**—don’t improvise DataHub/Extend scope.
-- **Microsoft-first:** Separate **Ascend with Teams** (your PBX + Microsoft licensing picture) from **embedded UC-in-Teams** FAQ lines (**no Teams Phone license** vs **Direct Routing**)—**SE validates**; economics from current **Mix & Match** / **Ascend for Teams** matrices, not memory.
-- **Contact center:** **Concurrent** licensing on Pro/Elite and **burst** capacity—**hand concurrent + bursting to AE/pricing**, not napkin math on the call.
+- **UCaaS Platform:** 100+ business voice features, SMS, chat, HD meetings. 99.999% uptime.
+- **MS Teams Integration:** Embedded directly in the Teams app. **No MS Teams Phone license required.** Provides failover (if Teams goes down, our app stays up).
+- **Contact Center:** Omnichannel (Voice, SMS, Chat). Concurrent licensing model.
+- **AI Features:** AI call recaps, sentiment analysis, and supervisor-assist tools are built-in.
 
 ---
 
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Replace aging PBX with **one cloud stack**: voice, SMS, meetings, omnichannel CC, file sync—**99.999%** uptime and **Triple Guard Security™** as headline trust. When **RevOps/CX** care about CRM or analytics, qualify and bring specialists—don’t wing DataHub/Extend scope.
-
-**Microsoft-first accounts:** clarify **Ascend with Teams** (your PBX + Microsoft licensing picture) vs **embedded UC-in-Teams** FAQ language (**no Teams Phone license** vs **Direct Routing**)—**SE validates**, don’t freestyle. Economics and SKUs come from current **Mix & Match** / **Ascend for Teams** matrices, not memory.
-:::
-
-::: accordion UC Platform Brochure
-Pull the current Ascend / UC brochure PDF from **Sales Resources** (Module Reference Files)—never recycle an old revision from email.
+Voice deals almost always collide with Microsoft Teams. We have to own that conversation before licensing surprises kill the deal. This module breaks down our 99.999% uptime cloud platform—combining calling, SMS, meetings, and file sharing. We'll clarify exactly how our PBX embeds into Teams, saving them massive Microsoft licensing costs. For the Contact Center, we cover concurrent licensing and why you must hand burst capacity to your AE instead of doing napkin math on a call. Get the licensing straight, and let's go modernize some phone systems.
 :::
 
 ---
 
-## Discovery Break
+## Discovery Questions
 
-<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
-  <iframe
-    src="games/brick-breaker-1/index.html?embed=1&module=product-uc-voice-and-collaboration"
-    title="Discovery Break — Brick breaker"
-    loading="lazy"
-    sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; height: min(95vh, 85rem); min-height: 44rem; background: #f1f5f9;"
-  ></iframe>
-</div>
-
----
-
-## Extended discovery prompts
-
-Use these **after** the core five questions (covered in the Discovery Break game above) when the deal needs CRM, analytics, Teams UX, or procurement depth:
-
-1. **Do you need AI call/meeting summaries or supervisor-assist style analytics—who will own adoption and compliance?**
-2. **Where should call and SMS activity land for reporting—CRM, data warehouse, or spreadsheets?** (Uncovers DataHub/analytics and integration conversations.)
-3. **For Teams-heavy users: will they primarily use the Teams desktop app, mobile, or both for business calling and SMS?** (Surfaces embedded-Teams vs mobile gaps.)
-4. **Do you need company-owned SMS on business numbers vs personal SMS—who administers policy and compliance?** (Aligns with company vs personal SMS admin themes.)
-5. **How much time does your IT team spend troubleshooting 'version mismatch' issues and mandatory security updates when employees are just trying to join a meeting?** (Targets Zoom)
-6. **If you decided to change providers tomorrow, do you know exactly how much notice you’re required to give to avoid an automatic renewal?** (Targets RingCentral)
-7. **When a customer calls you back after a text, can your team see that entire history on one screen without hunting through different folders?** (Targets RingCentral)
-8. **Are you evaluating Mix & Match tiers (Express through Enterprise) or Ascend for Teams rows—who owns the matrix review with procurement?**
-9. **Is this account a renewal or competitive displacement—timing for migration and professional services?** (MSP/VAR “renewal moment” storyline—internal framing.)
-
----
-
-## Objection Handling
-
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-::: flip ["We already use Teams—we don't need a separate phone system."]
-**Two motions:** (1) **Ascend with Teams:** external PSTN calling typically needs **Phone System** + connectivity—GPC PBX delivers enterprise voice, SMS, queues, CC. (2) **Embedded UC-in-Teams** (FAQ/deck): voice/SMS/CC **inside** Teams is a different positioning—**no Teams Phone license** in that narrative vs **Direct Routing**—don’t blend talk tracks; bring architects.
-:::
-
-::: flip ["Cloud is less secure than our on-prem system."]
-SecuriSync is a true security differentiator: full backup and antivirus to stop ransomware before it starts, plus a one-click rollback to save your files if you’re ever hit by a virus or accidental deletion. Intermedia has been recognized 9 years running by J.D. Power for technical support excellence. On-prem systems receive no automatic security updates.
-:::
-
-::: flip ["Zoom is cheaper at $10 a month."]
-By the time you add unlimited calling and analytics, the "cheap" license costs more than our all-in bundle. Zoom also struggles with complex routing and faxing.
-:::
-
-::: flip ["RingCentral has more integrations."]
-GPC's major integrations like Salesforce and Outlook work right out of the box without an IT expert. RingCentral's disjointed UX forces you to jump between 3 tabs, whereas GPC offers a single screen.
-:::
-
-::: flip ["Switching will disrupt our business—or our people won't adopt."]
-OTT runs over your existing data network—no new wiring or PBX server install; number porting is staged with architects. For UX, Ascend apps mirror familiar patterns; Teams-heavy users often place calls from the Teams dialer—pilot groups and training plans reduce churn.
-:::
-
-::: flip ["We need to keep our current PBX for the alarm and fax lines."]
-SIP trunking and POTS analog lines can coexist. Specialty lines (alarms, fax, elevator) remain on legacy paths while the main voice system migrates to cloud UC.
-:::
-
-::: flip ["We already pay for Microsoft Teams Phone—why add GPC?"]
-Clarify **what** they bought (Teams Phone vs dial tone + routing) and **what outcomes** they still lack—SMS, CC, archiving, or PSTN design. **Embedded UC** positioning is different from **Direct Routing**; partner collateral contrasts them—bring architects, don't wing it.
-:::
-
-::: flip ["We only care about the Teams mobile app."]
-Qualify **voice vs SMS**. Partner FAQ: **SMS in the Teams mobile app is not available yet**; business **calls** may work with the **UC app** installed—**Ascend mobile** often carries SMS; confirm enablement.
-:::
-
-</div>
+- "How are your employees currently making external phone calls when they are working remotely?"
+- "You mentioned using Microsoft Teams. Are you currently paying for the Teams Phone add-on license, or are you looking for a more cost-effective way to integrate voice?"
+- "For your customer service team, do you have visibility into metrics like hold times, abandoned calls, and agent performance?"
 
 ---
 
 ## Technical Deep Dive [deep]
 
-*The Coffee Summary above stays light on purpose. This section is for **prep**—SE alignment, objections, and matrices—not a script to read to a buyer.*
+**The Teams Embedded Advantage:**
+- Only ~6% of Microsoft Teams users actually use Teams Phone, because Microsoft's native calling is expensive and lacks advanced PBX features.
+- Our solution (via Intermedia) uses an embedded app approach. It places a dial pad directly inside the Teams interface.
+- Because it is an app and not a Direct Routing setup, the customer avoids the Microsoft Teams Phone license requirement.
 
-**Partner theme alignment (Intermedia BYOC / IPN / Embedded extracts)**
-
-- **Module videos:** Same five clips as the carousel—migration, Teams, desktop/mobile apps, hybrid work; good prep before you absorb the bullets below.
-- **Unified “Ascend” stack:** One platform narrative for **100+** business voice features, SMS/company messaging, chat, **HD meetings**, **web fax**, and file sync/share—desktop, mobile, browser; tier storage differs; **30-day** archiving baseline with **paid longer retention** (partner collateral cites **up to 10 years** in places—**never** quote years without the account team).
-- **AI & productivity:** **AI Call Recap**, **AI Meeting Recap**, **AI Assistant**, supervisor/agent-assist; roadmap mentions (e.g. **AI Receptionist**, **AI Topics/Trends** “coming soon”)—**confirm tier/SKU** on current matrices.
-- **DataHub + integrations:** Analytics/reporting, **Extend**/API, CRM **screen pops**, and tying comms data to AI and business apps—**SE/solutions** for depth; **CRM lists** in partner decks include Salesforce, Zendesk, Dynamics, HubSpot, NetSuite, etc.
-- **Security & uptime:** **99.999% SLA**, **Triple Guard Security™**, archiving/compliance framing—align with GPC-approved wording externally.
-- **Microsoft Teams—two talk tracks:** (1) **Ascend with Teams:** Teams as hub + GPC cloud PBX; **Teams + Phone System** are **not** part of the GPC UC SKU—**joint licensing picture early**. (2) **Embedded UC-in-Teams** (partner FAQ/deck): positions voice/SMS/CC **inside Teams**, often **no Microsoft Teams Phone license** vs **Direct Routing** (Microsoft native dialer/PSTN path)—**do not** freestyle; **SE + FAQ**.
-- **Embedded UX:** Collaboration stays in Teams; calling/SMS often through **UC tab** on **desktop** (pin app, **plugin** per install guides). **Continuity:** UC web/mobile if Teams has connectivity issues—**approved messaging only**.
-- **Embedded mobile (FAQ):** Business **calls** can work from Teams mobile **with the UC app installed**; **SMS in the Teams mobile app is not available yet** (voice-oriented mobile; SMS planned)—use **Ascend mobile** for SMS where that’s the approved path; **confirm** current FAQ.
-- **Contact Center:** **Omnichannel** CX (voice, SMS, chat, email, **WhatsApp** where in matrix), AI for routing/sentiment/summaries, CRM/ERP integrations; **CC Pro/Elite concurrent** licensing—AE/pricing for **burst** and digital add-ons.
-- **Packaging & devices:** **Mix & Match** tier matrices (**Express / Essentials / Pro / Enterprise**) and separate **Ascend for Teams** rows—feature cells differ (AI, hunt groups, archiving, video limits); **phones & devices** SKUs (desk, DECT, conference, ATA, headsets, cameras) sit on comparison matrices—don’t quote from memory.
-- **MSP/VAR angle (partner decks):** Cloud voice growth, **low Teams Phone adoption** vs Teams users without integrated business voice/SMS, **renewals** as migration moments, **single provider** for Voice/CC/archiving/Teams—**internal** narrative; verify stats with source before customer use.
-- **Traditional voice:** SIP/PRI/POTS discovery before quoting.
-
-*Subsections below overlap these themes but add **datasheet row** and **implementation** emphasis (pin app, plugin, hunt groups, CC + Teams plugin, PDF caveats). Skim the checklist above first; drill into subsections when you need a specific row or escalation hook.*
-
-**UC plan tiers (Ascend/Intermedia platform):**
-- **UC Resource Line:** breakroom/lobby; 1 endpoint, no apps
-- **UC Express:** 1 phone + apps; voicemail, auto attendant, unlimited LD, business texting
-- **UC Collab Essentials:** meetings, call queue, mobility, desktop client, unlimited LD, voicemail, auto attendant, call recording
-- **UC Collab Pro:** full Essentials + contact center lite, AI meeting notes, unlimited recordings, end-to-end encryption, 200 GB file storage/user
-- **Unite Enterprise:** up to 200 GB/user file storage vs 50 GB (Essentials) vs 5 GB (Express)
-
-**Teams integration options (maps to `UCaaS_BYOC` / `UCaaS_IPN` / Embedded doc):**
-- **Ascend with Teams:** Teams for chat/meetings/files; Ascend desktop + mobile for phone workloads. SMS, Contact Center, CRM integrations—**confirm** “included” language on current matrix. SSO with M365 credentials.
-- **Ascend for Teams / embedded story:** Enterprise PBX features inside the Teams dialer; install: **pin app**, **desktop plugin** for telephony—follow the **Embedded** install guide, not hallway lore.
-- **Teams + Phone System:** Purchased separately from Microsoft for many **attach** designs—not bundled into GPC UC SKU. **Contrast:** partner **FAQ** positions **Embedded** as **no Microsoft Teams Phone license** vs **Direct Routing** (Microsoft native PSTN/dialer)—**SE** owns which applies.
-- **UC tab / UX:** Decks describe collaboration in Teams while voice/SMS run through the **UC** experience—demo flow in customer **PPTX** extracts; **PDFs** for exact Q&A.
-- **Presence sync / hunt groups / archiving backup** appear in integration blocks—verify row-by-row on datasheet.
-
-**AI & roadmap:** **AI Call Recap**, **AI Meeting Recap**, **AI Assistant**; CC-side AI (routing, sentiment, summaries); roadmap items (**AI Receptionist**, **Topics/Trends** “coming soon” in extracts)—**never** quote SKU from memory.
-
-**DataHub + CRM + Extend:** Analytics/reporting, APIs, screen pops, comms data feeding AI and business apps—**SE** for HIPAA/FINRA-style archiving flyers and integration depth.
-
-**Embedded mobile vs desktop:** FAQ: **SMS in Teams mobile not available yet**; calls with UC app; **sync** themes between Ascend mobile and Teams mobile for calling—confirm current FAQ before customer promises.
-
-**Continuity / MSP narrative:** Partner pitch: redundancy if Teams unavailable (**UC web/mobile**); **single provider** story for Voice + CC + Archiving + Teams—**approved** customer wording only; never invent outages.
-
-**Mix & Match packaging:** Separate matrices for **standard UC** (Express / Essentials / Pro / Enterprise) and **Ascend for Teams**—rows differ (AI, hunt groups, archiving, video caps). **Devices:** phone/DECT/conference/ATA/headset/camera comparison PDFs—endpoint SKUs off matrix.
-
-**Contact Center:**
-- CC Pro / CC Elite: **concurrent** licensing—confirm matrices.
-- **Omnichannel:** voice, SMS, chat, email, **WhatsApp** (where in matrix); AI-assisted routing and insights; CRM/ERP depth (Salesforce, Zendesk, Dynamics, HubSpot, NetSuite, etc.).
-- **CC with Teams:** Materials describe **UC for Teams Advanced** + CC—**Teams Desktop plugin** for Contact Center in some decks; can deploy with UC or add later—**AE/solutions**.
-- Burst/digital/elastic: AE/pricing—not napkin math. Supervisor: monitor, whisper, barge; Elite-class AI transcription/sentiment.
-
-**Voice (non-UC):** SIP → eSBC; PRI; POTS specialty lines.
-
-**Archiving:** **30-day** rolling baseline in collateral; **1–10 year** paid tiers in flyers—confirm before quoting retention **years**.
-
-**Uptime:** 99.999% SLA ≈ ~5.26 minutes downtime/year in customer language.
-
-**Pricing / extraction caveat:** Internal rate books; **PDF table extracts** are fragmented—**verify precision** against source PDFs for RFPs.
-
-**Naming noise (from themes doc):** **UC**, **Ascend**, occasional **Unite** in footnotes—align to GPC-approved terms externally.
-
-::: accordion UC for Teams Datasheet
-Device and feature rows change with matrix updates—open the latest **UC for Teams** / embedded datasheet from **Sales Resources** with your SE before you quote.
-:::
-
-::: accordion Phone Comparison
-Desk, DECT, conference, and headset grids live in partner comparison PDFs under **Sales Resources**—match the customer to the matrix, not memory.
-:::
+**Contact Center (CCaaS):**
+- Deep integrations with CRMs (Salesforce, Zendesk, HubSpot) for automatic screen pops.
+- "Concurrent" means if they have 50 total employees, but only 10 answer phones at any given time, they only buy 10 licenses.
+- Do not attempt to quote high-volume burst capacity or complex IVR routing on your own. Bring in your SE immediately.
 <!-- prettier-ignore-end -->
 
 ---

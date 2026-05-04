@@ -1,159 +1,82 @@
 ---
-id: "product-connectivity"
-title: "Connectivity & Access"
-summary: "Dedicated access. Private transport. Fiber vs satellite."
-sensitivity: "public"
+id: product-connectivity
+title: Connectivity & Access
+summary: DIA vs SIA. Ethernet. Beating Starlink.
+sensitivity: internal
 reference_files:
-  - label: "Sales Resources (product collateral)"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+  - label: Sales Resources (product collateral)
+    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
 discovery_questions:
-  - "What are your most critical applications—VoIP, cloud ERP, video conferencing, payment terminals? How much upload traffic do they generate compared to download?"
-  - "How are your locations connected today—shared broadband, MPLS, Ethernet, or SD-WAN? When does that contract expire?"
-  - "Have you experienced jitter, latency spikes, or outages? What broke first, and what did it cost you?"
-  - "Do you need static IPs, diversity (dual-path), or DDoS monitoring as part of your access design?"
-  - "Are any sites data-center or hub locations where high-capacity optical transport between strategic endpoints might be relevant?"
+  - 'Are your employees primarily downloading data, or are they constantly uploading large files to cloud servers?'
+  - 'How many physical locations do you have, and do they need to share private data directly with each other?'
+  - What happens to your customer experience if there is a 500-millisecond delay on your voice and video calls?
+  - 'What are your most critical applications day to day, and how much upstream bandwidth do they require?'
+  - 'How are sites connected today—shared broadband, MPLS, Ethernet, or SD-WAN—and when do those contracts renew?'
 five_minute_summary: |
-  - **Internet Access:** Use SIA for flexible, cost-sensitive shared access. Lead with DIA when the customer needs dedicated symmetrical bandwidth, SLA-grade operations, or stronger DDoS protection.
-  - **Private Transport:** Position Managed Ethernet for private Layer 2 site-to-site connectivity. Use Wave (10 Gbps to 400 Gbps) for high-capacity Layer 1 optical transport between data centers or hubs.
-  - **Fiber vs. Satellite:** When competing against satellite, focus discovery on reliability, latency, and weather vulnerabilities.
-  - **Pricing:** Treat training PDFs as internal references. Always use official quoting tools for customer-facing numbers.
-
+  - **SIA vs DIA:** Standard Internet (SIA) is for flexible, cost-sensitive needs on shared infrastructure. Dedicated Internet (DIA) is mandatory when they need symmetrical bandwidth, SLA-grade operations, and guaranteed throughput.
+  - **Managed Ethernet:** This is for private, Layer 2 connectivity between physical sites. It is an entirely different conversation than internet access.
+  - **Wavelength:** High-capacity optical transport for data centers and massive hubs. Do not pitch this as a default upgrade for a standard branch office.
+  - **The Starlink play:** Do not dismiss LEO satellite. Instead, anchor on the physics: fiber will always win on latency, weather reliability, and the true cost of downtime.
 knowledge_checks:
-  - question: "When should you lead with Dedicated Internet Access (DIA) over Standard Internet Access (SIA)?"
+  - question: A regional accounting firm needs to reliably upload massive tax files to the cloud. Which access product do you pitch?
     options:
-      - "Whenever the customer wants the cheapest option regardless of workload."
-      - "When they need symmetrical heavy use, SLA-style operations, diversity, stronger DDoS visibility, or have outgrown shared/best-effort access."
-      - "Only when they have no fiber at the site."
-    correct_index: 1
-    explanation: "DIA = performance/ops/symmetry—not minimum cost."
-
-  - question: "What is Managed Ethernet primarily for?"
-    options:
-      - "Private Layer 2 connectivity between sites (not Internet breakout), with EPL/EVPL and E-LAN options."
-      - "Replacing all voice systems with UC only."
-      - "Consumer-grade Wi-Fi in the office."
+      - Dedicated Internet Access (DIA). They need the guaranteed symmetrical upload speeds.
+      - Standard Internet Access (SIA). It's cheaper and downstream speed is all that matters.
+      - Managed Ethernet. They should just build a private network to the cloud.
     correct_index: 0
-    explanation: "Private L2 between sites—not DIA/SIA."
-
-  - question: "What is Wavelength (Wave) best positioned for?"
+    explanation: Heavy upload requirements and critical cloud apps demand the symmetrical SLA of DIA.
+  - question: When is Managed Ethernet the correct solution?
     options:
-      - "Small-branch guest Wi-Fi only."
-      - "Layer 1 optical, high-capacity point-to-point between strategic endpoints (e.g., DC/hub), not as a substitute for DIA/SIA Internet."
-      - "Email hosting for ten users."
-    correct_index: 1
-    explanation: "Big optical transport—qualify vs Internet."
-
-  - question: "Per the DIA vs SIA comparison in this module, which statement is accurate?"
-    options:
-      - "SIA and DIA both scale to the same documented maximum in the comparison sheet."
-      - "In the comparison, SIA tops out around 2 Gbps symmetrical while DIA scales up to 100 Gbps symmetrical—use that to frame scale and growth."
-      - "SIA always includes richer customer-specific DDoS monitoring than DIA."
-    correct_index: 1
-    explanation: "Use the comparison sheet—don't assume."
-
-  - question: "How should you use training PDFs that live in the pricing or internal folders?"
-    options:
-      - "Email them verbatim to customers as final quotes."
-      - "Treat them as internal references; customer-facing numbers and quotes come from standard tools and approved processes."
-      - "Ignore them completely even for internal planning."
-    correct_index: 1
-    explanation: "Internal until quoting validates."
-
-  - question: "When comparing GPC fiber to satellite for POS and VoIP, what is sound positioning?"
-    options:
-      - "Dismiss satellite without understanding their constraints."
-      - "Explore weather, latency, jitter, and congestion tactfully; contrast fiber reliability, stable low latency, and scalable symmetrical enterprise paths."
-      - "Promise identical performance in every geography without discovery."
-    correct_index: 1
-    explanation: "Qualify constraints; stay professional."
-
-  - question: "What problem does E-LAN (Ethernet LAN) address in the module's framing?"
-    options:
-      - "Single home-user email only."
-      - "Multipoint-to-multipoint Layer 2 reach so multiple UNIs can mesh—any site to any site within the service."
-      - "Public Internet breakout for guest Wi-Fi only."
-    correct_index: 1
-    explanation: "Mesh L2—not Internet."
-
-  - question: "A branch suffers upload congestion and jitter on shared Internet for cloud apps. What is a sensible first step?"
-    options:
-      - "Automatically quote Wave between every site without qualification."
-      - "Qualify SIA vs DIA (symmetry, latency, DDoS, support), pain points, and whether private Ethernet fits site-to-site needs."
-      - "Recommend only consumer broadband upgrades."
-    correct_index: 1
-    explanation: "Discovery before Wave."
-
-  - question: "What is the right mental model for **access** in this module?"
-    options:
-      - "Access is how traffic reaches the customer—SIA for flexible shared access, DIA for dedicated symmetrical paths and richer operations."
-      - "Access means only MPLS forever, with no Internet options."
-      - "Access is identical to SD-WAN policy routing in every case."
+      - 'When a customer needs private, secure, site-to-site connectivity without hitting the public internet.'
+      - When they want the fastest possible public internet connection.
+      - When they have remote workers who need to VPN into the office.
     correct_index: 0
-    explanation: "SIA vs DIA by workload—then Ethernet/Wave if private transport fits."
-
-  - question: "When should Wave be positioned instead of simply upsizing DIA/SIA?"
+    explanation: Ethernet is for private Layer 2 transport between physical locations.
+  - question: A prospect says they are just going to buy Starlink for their main office because it's cheaper and fast. How do you respond?
     options:
-      - "Whenever the customer mentions the word Internet."
-      - "For DC–DC or hub-to-hub big pipes, replication, or latency-sensitive workloads that need Layer 1 optical—not as a substitute for Internet access."
-      - "Only for sites under 10 Mbps total usage."
-    correct_index: 1
-    explanation: "Not default Internet uplift."
-
+      - 'Acknowledge Starlink is great for residential, but anchor on fiber''s superior latency, weather resilience, and SLA-backed reliability for business.'
+      - Tell them satellite internet is garbage and they will regret it.
+      - Offer to cut your DIA price in half to match the Starlink hardware cost.
+    correct_index: 0
+    explanation: Never attack the competitor emotionally. Attack the physics of satellite latency and the lack of an enterprise SLA.
 scenarios:
-  - title: "Branch complains about VPN and video over 'business broadband'"
+  - title: The SIA Squeeze
     situation: |
-      Shared Internet; **jitter and upload** pain for VoIP/cloud. Budget tight.
+      A medium-sized logistics company is complaining about their current cable provider dropping VoIP calls. They want a quote for your cheapest fiber option (SIA).
     choices:
-      - label: "Automatically quote Wave between every site."
-        feedback: "Wave = L1 big pipes—start with DIA/SIA/Ethernet discovery."
-
-      - label: "Qualify SIA vs DIA and whether Ethernet fits site-to-site."
-        feedback: "Correct."
-
-  - title: "Prospect compares GPC fiber to satellite for stores"
-    situation: |
-      **Starlink** / satellite for rural **POS + VoIP**.
-    choices:
-      - label: "Dismiss satellite without asking any questions."
-        feedback: "Explore latency/weather first—then fiber strengths."
-
-      - label: "Explore weather, latency, congestion; position fiber reliability and symmetrical paths."
-        feedback: "Correct."
-
+      - label: Quote the SIA to win the business easily.
+        feedback: 'You are setting them up to fail. VoIP requires low jitter and consistent throughput. If they are already having issues, shared infrastructure is a risk. You must pitch DIA.'
+      - label: 'Explain that shared infrastructure causes VoIP drops. Quote DIA, highlighting the symmetrical SLA that guarantees clean voice traffic.'
+        feedback: 'Correct. Solve the actual technical problem, don''t just sell the cheapest SKU.'
 roleplay:
-  persona: "Skeptical IT Director"
-  scenario: "Complaining about VPN jitter over shared broadband at three branch locations. Wants the cheapest fix and assumes upgrading bandwidth on the same SIA circuit will solve it."
-  goal: "Pivot from price to reliability—qualify the symmetry and latency requirements for VoIP and cloud apps, then position DIA or Managed Ethernet as the right solution rather than simply more shared bandwidth."
+  persona: Skeptical IT Director
+  scenario: Complaining about VPN jitter over shared broadband at three branch locations. Wants the cheapest fix and assumes upgrading bandwidth on the same SIA circuit will solve it.
+  goal: 'Pivot from price to reliability—qualify the symmetry and latency requirements for VoIP and cloud apps, then position DIA or Managed Ethernet as the right solution rather than simply more shared bandwidth.'
 ---
 
 ## At a glance
 
-- **SIA vs DIA:** Shared **SIA** when best-effort and cost dominate; **DIA** when symmetry, VoIP/video pain, SLA-style ops, diversity, or stronger DDoS visibility matter—more bandwidth on SIA does not fix jitter by itself.
-- **Private transport:** **Managed Ethernet** = Layer 2 site-to-site (not Internet breakout). **Wave** = Layer 1 optical between DCs/hubs—qualify discovery before positioning it as “faster Internet.”
-- **Fiber vs satellite:** Reframe on **reliability, latency, weather, congestion**—not a speed-test duel alone.
-- **Commercial:** Training PDFs stay **internal**; customer-facing numbers only through **approved quoting** and AE/pricing when scope is fuzzy.
+- **SIA (Standard Internet):** Best effort, asymmetrical, shared. Good for basic browsing and small storefronts.
+- **DIA (Dedicated Internet):** Symmetrical, guaranteed bandwidth, SLA-backed. Mandatory for VoIP, heavy cloud apps, and enterprise operations.
+- **Ethernet:** Private site-to-site transport. Replaces complex VPNs over public internet.
+- **Wavelength:** Massive, dedicated optical pipes (10G/100G/400G) for data centers.
+- **Pricing:** Keep your pricing internal. Always quote through the standard tools, never throw out "napkin math."
 
 ---
 
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-GPC's connectivity stack matches the right access technology to each customer's workload—not just the cheapest pipe available. **SIA** (Standard Internet Access) is the right fit for cost-sensitive, flexible needs. **DIA** (Dedicated Internet Access) delivers symmetrical bandwidth, stronger DDoS posture, and SLA-grade operations for businesses that can't afford jitter or downtime. **Managed Ethernet** provides private Layer 2 connectivity between sites. **Wave** moves large optical volumes between data centers and hubs. Discovery first—then quote the right product.
+Every single thing we sell—voice, security, cloud apps—lives or dies by the access connection. In this module, we are cutting through the noise so you know exactly which pipe to pitch. We'll cover when to position Standard Internet for cost-sensitive needs, and when to step up to Dedicated Internet for the symmetrical, SLA-grade performance that critical apps demand. You'll learn where Ethernet fits for private connectivity, and how to handle the Starlink conversation without being dismissive, anchoring instead on latency and reliability. Match the right pipe to the right problem, and make sure our foundation is rock solid.
 :::
 
 ---
 
-## Discovery Galaxy
+## Discovery Questions
 
-<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
-  <iframe
-    src="games/galactica-1/index.html?embed=1&module=product-connectivity"
-    title="Discovery Galaxy"
-    loading="lazy"
-    sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
-  ></iframe>
-</div>
+- "Are your employees primarily downloading data, or are they constantly uploading large files to cloud servers?"
+- "How many physical locations do you have, and do they need to share private data directly with each other?"
+- "What happens to your customer experience if there is a 500-millisecond delay on your voice and video calls?"
 
 ---
 
@@ -161,30 +84,16 @@ GPC's connectivity stack matches the right access technology to each customer's 
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-::: flip ["Just bump up our shared Internet—that'll fix the jitter."]
-More shared bandwidth doesn't guarantee upload symmetry or latency. Qualify what's actually causing jitter—often it's the shared nature, not raw capacity. DIA is the right answer for VoIP and cloud workloads.
+::: flip ["DIA is too expensive, I just want the SIA."]
+I completely understand watching the budget. However, because you run a heavy VoIP environment, SIA will leave you with the same dropped calls you have today. We need the symmetrical guarantee of DIA to actually solve your problem.
 :::
 
-::: flip ["DIA is too expensive."]
-Frame TCO: what does an hour of dropped VoIP calls, failed payment processing, or inaccessible cloud ERP cost? DIA delivers dedicated symmetry and a stronger ops posture.
+::: flip ["Starlink gets 150Mbps down, why should I pay more for your 100M fiber?"]
+Speed tests don't run businesses—latency does. Satellite inherently struggles with latency and weather fade. If your team is running cloud apps or voice, that delay is going to cause major friction. Fiber gives you the physical reliability and an actual SLA.
 :::
 
-::: flip ["Starlink is cheaper for our rural stores."]
-Acknowledge coverage; then qualify: does payment processing or VoIP tolerate 21–30ms variable latency, weather disruptions, or congestion during peak hours? Fiber delivers predictable, stable paths.
-:::
-
-::: flip ["We already have MPLS—why change?"]
-Ask when the contract expires and what it costs vs. throughput. SD-WAN over DIA often delivers better performance at lower cost with cloud breakout capability.
-:::
-
-::: flip ["We don't need symmetrical upload."]
-Qualify cloud backup, video, VoIP, and SaaS—many workloads are upload-heavy; discovery before assuming asymmetric is fine.
-
-:::
-
-::: flip ["Fiber build will take too long."]
-Acknowledge calendar reality; contrast with ongoing cost of poor access; phased cutover and project planning where applicable.
-
+::: flip ["We use VPNs over our internet to connect our offices. Why buy Ethernet?"]
+VPNs over public internet are subject to public internet traffic jams. Managed Ethernet provides a private, secure lane strictly for your data, lowering latency and massively increasing security between your sites.
 :::
 
 </div>
@@ -193,40 +102,15 @@ Acknowledge calendar reality; contrast with ongoing cost of poor access; phased 
 
 ## Technical Deep Dive [deep]
 
-**Access stack:**
+**SIA vs DIA Qualifiers:**
+- If the customer uses heavy VoIP, video conferencing, or relies heavily on cloud-hosted CRMs, **DIA is non-negotiable**.
+- SIA is strictly for environments where an occasional slowdown does not impact revenue (e.g., a waiting room Wi-Fi, a small retail shop's secondary terminal).
 
-| Layer | Role |
-| --- | --- |
-| **SIA** | Shared, flexible, cost-sensitive; up to ~2 Gbps symmetrical per comparison sheet |
-| **DIA** | Dedicated, symmetrical; up to 100 Gbps symmetrical; stronger DDoS/NOC posture |
-| **Ethernet** | Private L2 (E-Line/EVPL/E-LAN); site-to-site—not Internet breakout |
-| **Wave** | L1 optical DC/hub links (10 Gbps to 400 Gbps)—not "more Internet"; qualify vs Internet |
+**Beating Starlink (LEO Satellite):**
+- **The Physics:** LEO is better than legacy satellite, but it still cannot match the consistent sub-10ms latency of a local fiber network.
+- **The Weather:** "Rain fade" is a physical reality for satellite. Heavy cloud cover or storms will degrade the signal.
+- **The SLA:** Starlink is best-effort. GPC fiber is backed by an enterprise Service Level Agreement and a local 24/7 NOC.
 
-**When to lead:**
-- **SIA** = budget + tolerable shared path
-- **DIA** = symmetry, SLA-ish ops, diversity, VoIP/video pain on shared access
-- **Ethernet** = site-to-site private
-- **Wave** = big optical P2P when discovery proves it—not branch Wi‑Fi default
-
-**DIA pricing reference (from SD-WAN training doc—internal only):**
-- 50×50 Mbps DIA: ~$354/mo list
-- 100×100 Mbps DIA: ~$547/mo list
-- 500×500 Mbps DIA: ~$860/mo list
-- 1000×1000 Mbps DIA: ~$1,060/mo list
-- Customer-facing quotes: use standard quoting tools only
-
-**Discovery:** critical apps; upload vs download; static IPs / diversity; incumbent access; outages.
-
-**Pricing:** Quotes = standard tools + approvals. DIA/SIA/Ethernet/Wave pricing via quoting + Sales Resources—involve AE/pricing when scope is fuzzy.
-
-::: accordion DIA vs SIA Comparison
-Use the comparison sheet in **Sales Resources** for side-by-side dedicated vs shared Internet positioning.
-:::
-
-::: accordion Ethernet Battle Card
-Ethernet battle card and qualifiers sit in **Sales Resources**—pair with discovery on sites, handoffs, and SLAs.
-:::
-
-::: accordion Fiber vs Starlink Battlecard
-Fiber vs LEO positioning points live in competitive collateral on **Sales Resources**—confirm Starlink claims against the current approved card.
-:::
+**Wavelength vs Ethernet:**
+- Ethernet is typically sold in sub-10G increments and is highly flexible for multi-site WANs.
+- Wavelength is a raw, dedicated optical channel (typically 10G, 100G, or 400G) designed for massive point-to-point data replication between data centers. Do not pitch Wavelength to a standard enterprise branch.
