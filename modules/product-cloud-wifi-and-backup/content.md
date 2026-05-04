@@ -65,7 +65,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-When critical apps go down, nobody cares how cheap their internet was. This module covers three products that elevate our fiber. First, Cloud Connect: giving SaaS-heavy clients a private path to AWS or Azure to bypass internet jitter. Second, Managed Wi-Fi: covering the last ten feet with security and fully managed support—and why we never guess AP counts before a site survey. Finally, 5G Wireless Backup: the ultimate insurance policy, delivering automatic failover and NOC monitoring. Jump in, learn the guardrails, and position these as the ultimate uptime guarantees.
+When critical apps go down, nobody cares how cheap their internet was. We protect your uptime with a private, jitter-free Cloud Connect path to AWS/Azure, secure Managed Wi-Fi for the last ten feet, and 5G Wireless Backup as the ultimate insurance policy.
 :::
 
 ---

@@ -145,7 +145,7 @@ roleplay:
 ## Positioning snapshot
 
 ::: elevator [Elevator Pitch]
-**Discover first, then map GPC proof to their pain**—never lead with trash talk or unverified stats. Your levers: local fiber, 24/7 NOC, owned/redundant paths, full stack (access → WAN → security → apps). Outcome-led beats generic “we’re better.”
+Discover first, then map our proof to their pain. We don't win on trash talk or generic claims; we win on TCO, local fiber, a 24/7 NOC, and owned redundant paths. When competitors drop their price, we elevate the conversation to the true cost of downtime.
 :::
 
 

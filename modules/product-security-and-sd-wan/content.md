@@ -138,7 +138,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protection and intelligent routing at every edge. **Managed Firewall** (FortiGate-based, SOC-monitored) and **Managed Network Security (MNS)** stop threats at the edge and in email, with SIEM and assessment capabilities for regulated environments. **DDoS Protection** keeps critical services online—proactive for 24/7 mitigation, on-demand for cost-conscious accounts that understand the window. **SD-WAN (VeloCloud)** transforms multi-site WAN by routing traffic intelligently across any access type, with cloud breakout, QoS for VoIP, and a single management pane—all managed by GPC with local support and a 24/7 NOC.
+We put policy on the pipe. Our Security and SD-WAN portfolio stops threats at the edge and routes traffic intelligently across any access type. With SOC-monitored firewalls, proactive DDoS mitigation, and VeloCloud SD-WAN, we deliver enterprise-grade protection managed entirely by our local 24/7 NOC.
 :::
 
 ---

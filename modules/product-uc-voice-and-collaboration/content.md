@@ -82,7 +82,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Voice deals almost always collide with Microsoft Teams. We have to own that conversation before licensing surprises kill the deal. This module breaks down our 99.999% uptime cloud platform—combining calling, SMS, meetings, and file sharing. We'll clarify exactly how our PBX embeds into Teams, saving them massive Microsoft licensing costs. For the Contact Center, we cover concurrent licensing and why you must hand burst capacity to your AE instead of doing napkin math on a call. Get the licensing straight, and let's go modernize some phone systems.
+We deliver a 99.999% uptime cloud voice platform that embeds directly into Microsoft Teams—saving you massive Microsoft licensing costs. From enterprise calling and SMS to a fully omnichannel Contact Center with concurrent licensing, we modernize your communications without the hidden fees.
 :::
 
 ---

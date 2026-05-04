@@ -135,7 +135,7 @@ discovery_questions:
 ## Key Guidelines
 
 ::: elevator [Elevator Pitch]
-Winning the deal is only half the battle. Get the paperwork wrong in Salesforce, and you stall billing, delay the install, and force an apology to a brand new customer. This module keeps you out of operational purgatory. We'll cover using Approval History and why the Solution ID belongs on every attachment. You'll learn the difference between a pre-billing Change Order, an active-contract Move-Add-Change, and a full Disconnect. We'll also cover why 'Request Manual Validation' is never a default option. Master the process, and turn your deals into installed revenue.
+Winning the deal is only half the battle; clean paperwork turns deals into installed revenue. Know your motions: Change Orders before billing, MACs for active contracts, and Disconnects for full removals. Keep the Solution ID on every attachment, and never use Manual Validation unless it's a true edge case.
 :::
 
 ---

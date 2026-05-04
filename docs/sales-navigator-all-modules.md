@@ -981,7 +981,7 @@ discovery_questions:
 ## Key Guidelines
 
 ::: elevator [Elevator Pitch]
-Winning the deal is only half the battle. Get the paperwork wrong in Salesforce, and you stall billing, delay the install, and force an apology to a brand new customer. This module keeps you out of operational purgatory. We'll cover using Approval History and why the Solution ID belongs on every attachment. You'll learn the difference between a pre-billing Change Order, an active-contract Move-Add-Change, and a full Disconnect. We'll also cover why 'Request Manual Validation' is never a default option. Master the process, and turn your deals into installed revenue.
+Winning the deal is only half the battle; clean paperwork turns deals into installed revenue. Know your motions: Change Orders before billing, MACs for active contracts, and Disconnects for full removals. Keep the Solution ID on every attachment, and never use Manual Validation unless it's a true edge case.
 :::
 
 ---
@@ -1086,7 +1086,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Stop selling SKUs and start selling outcomes. GPC isn't just another fiber pipe; we provide the secure, flexible infrastructure that keeps our customers' doors open. Whether you are pitching a multi-site enterprise or a regional storefront, lead with the full layered stack. Anchor your story on our resilient Midwest network, our 24/7 local NOC, and unmatched support. Use the capability deck for the high-level narrative, and only pull from Sales Resources when you need the hard evidence to close.
+Stop selling SKUs and start selling outcomes. GPC isn't just a fiber pipe—we are the secure, flexible infrastructure that keeps your doors open. We layer Managed Wi-Fi, Security, and UC on top of a resilient Midwest network, all backed by a 24/7 local NOC that actually answers the phone.
 :::
 
 ---
@@ -1200,7 +1200,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Every single thing we sell—voice, security, cloud apps—lives or dies by the access connection. In this module, we are cutting through the noise so you know exactly which pipe to pitch. We'll cover when to position Standard Internet for cost-sensitive needs, and when to step up to Dedicated Internet for the symmetrical, SLA-grade performance that critical apps demand. You'll learn where Ethernet fits for private connectivity, and how to handle the Starlink conversation without being dismissive, anchoring instead on latency and reliability. Match the right pipe to the right problem, and make sure our foundation is rock solid.
+Every application you run lives or dies by the access connection. We don't just sell bandwidth; we sell the right pipe for the problem. From cost-effective Standard Internet to symmetrical, SLA-backed Dedicated Internet and private Managed Ethernet, we build the rock-solid foundation your business needs.
 :::
 
 ---
@@ -1402,7 +1402,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-GPC's Security & SD-WAN portfolio puts **policy on the pipe**—managed protection and intelligent routing at every edge. **Managed Firewall** (FortiGate-based, SOC-monitored) and **Managed Network Security (MNS)** stop threats at the edge and in email, with SIEM and assessment capabilities for regulated environments. **DDoS Protection** keeps critical services online—proactive for 24/7 mitigation, on-demand for cost-conscious accounts that understand the window. **SD-WAN (VeloCloud)** transforms multi-site WAN by routing traffic intelligently across any access type, with cloud breakout, QoS for VoIP, and a single management pane—all managed by GPC with local support and a 24/7 NOC.
+We put policy on the pipe. Our Security and SD-WAN portfolio stops threats at the edge and routes traffic intelligently across any access type. With SOC-monitored firewalls, proactive DDoS mitigation, and VeloCloud SD-WAN, we deliver enterprise-grade protection managed entirely by our local 24/7 NOC.
 :::
 
 ---
@@ -1568,7 +1568,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-When critical apps go down, nobody cares how cheap their internet was. This module covers three products that elevate our fiber. First, Cloud Connect: giving SaaS-heavy clients a private path to AWS or Azure to bypass internet jitter. Second, Managed Wi-Fi: covering the last ten feet with security and fully managed support—and why we never guess AP counts before a site survey. Finally, 5G Wireless Backup: the ultimate insurance policy, delivering automatic failover and NOC monitoring. Jump in, learn the guardrails, and position these as the ultimate uptime guarantees.
+When critical apps go down, nobody cares how cheap their internet was. We protect your uptime with a private, jitter-free Cloud Connect path to AWS/Azure, secure Managed Wi-Fi for the last ten feet, and 5G Wireless Backup as the ultimate insurance policy.
 :::
 
 ---
@@ -1836,7 +1836,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Voice deals almost always collide with Microsoft Teams. We have to own that conversation before licensing surprises kill the deal. This module breaks down our 99.999% uptime cloud platform—combining calling, SMS, meetings, and file sharing. We'll clarify exactly how our PBX embeds into Teams, saving them massive Microsoft licensing costs. For the Contact Center, we cover concurrent licensing and why you must hand burst capacity to your AE instead of doing napkin math on a call. Get the licensing straight, and let's go modernize some phone systems.
+We deliver a 99.999% uptime cloud voice platform that embeds directly into Microsoft Teams—saving you massive Microsoft licensing costs. From enterprise calling and SMS to a fully omnichannel Contact Center with concurrent licensing, we modernize your communications without the hidden fees.
 :::
 
 ---
@@ -2022,7 +2022,7 @@ roleplay:
 ## Positioning snapshot
 
 ::: elevator [Elevator Pitch]
-**Discover first, then map GPC proof to their pain**—never lead with trash talk or unverified stats. Your levers: local fiber, 24/7 NOC, owned/redundant paths, full stack (access → WAN → security → apps). Outcome-led beats generic “we’re better.”
+Discover first, then map our proof to their pain. We don't win on trash talk or generic claims; we win on TCO, local fiber, a 24/7 NOC, and owned redundant paths. When competitors drop their price, we elevate the conversation to the true cost of downtime.
 :::
 
 

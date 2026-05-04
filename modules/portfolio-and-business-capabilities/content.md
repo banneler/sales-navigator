@@ -66,7 +66,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Stop selling SKUs and start selling outcomes. GPC isn't just another fiber pipe; we provide the secure, flexible infrastructure that keeps our customers' doors open. Whether you are pitching a multi-site enterprise or a regional storefront, lead with the full layered stack. Anchor your story on our resilient Midwest network, our 24/7 local NOC, and unmatched support. Use the capability deck for the high-level narrative, and only pull from Sales Resources when you need the hard evidence to close.
+Stop selling SKUs and start selling outcomes. GPC isn't just a fiber pipe—we are the secure, flexible infrastructure that keeps your doors open. We layer Managed Wi-Fi, Security, and UC on top of a resilient Midwest network, all backed by a 24/7 local NOC that actually answers the phone.
 :::
 
 ---

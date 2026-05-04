@@ -67,7 +67,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Every single thing we sell—voice, security, cloud apps—lives or dies by the access connection. In this module, we are cutting through the noise so you know exactly which pipe to pitch. We'll cover when to position Standard Internet for cost-sensitive needs, and when to step up to Dedicated Internet for the symmetrical, SLA-grade performance that critical apps demand. You'll learn where Ethernet fits for private connectivity, and how to handle the Starlink conversation without being dismissive, anchoring instead on latency and reliability. Match the right pipe to the right problem, and make sure our foundation is rock solid.
+Every application you run lives or dies by the access connection. We don't just sell bandwidth; we sell the right pipe for the problem. From cost-effective Standard Internet to symmetrical, SLA-backed Dedicated Internet and private Managed Ethernet, we build the rock-solid foundation your business needs.
 :::
 
 ---
