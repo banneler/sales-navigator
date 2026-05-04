@@ -277,15 +277,10 @@ ROE exists to **protect pipelines** and **draw clean lines** on who works whom. 
 Applies to accounts not on the official Strategic Accounts list.
 
 | Topic | Rule (per ROE) |
-
 | --- | --- |
-
 | Customer | Customer status, no logged activity for 121+ days: others may work the account. Best practice: talk to the current owner before engaging, even if the record looks open by the numbers. |
-
 | Prospect | Prospect status, no logged activity for 61+ days: others may work the account. Keep relevant intel on the record (projects, contract timing). Notation alone is not enough—you need consistent contact (about every 60 days minimum) plus current information. |
-
 | Inbound leads | Assigned by sales or marketing leadership: first contact made and logged within 5 business days, or the lead may be reassigned. Does not apply to self-generated prospecting leads. |
-
 | Self-sourced | Not subject to the 5-business-day inbound clock. |
 
 ### Strategic accounts
