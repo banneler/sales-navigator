@@ -96,7 +96,7 @@ roleplay:
     title="Discovery Galaxy"
     loading="lazy"
     sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); background: #f1f5f9;"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
   ></iframe>
 </div>
 
