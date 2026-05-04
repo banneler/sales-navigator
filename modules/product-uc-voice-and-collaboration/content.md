@@ -29,18 +29,18 @@ video_carousel:
     src: assets/UC/work-better-wherever.mp4
     poster: assets/UC/work-better-wherever.png
 five_minute_summary: |
-  - **The Microsoft Teams Play:** This is our golden goose. We embed our UC voice platform directly into Microsoft Teams. The massive differentiator? The customer does not have to buy the expensive Microsoft Teams Phone license to use our embedded app.
+  - **The Microsoft Teams Play:** We have two motions. "Embedded UC" puts our app inside Teams and saves them the MS Teams Phone license. "Ascend with Teams" uses the native MS dialer and *does* require the MS Teams Phone license. Do not blend these pitches.
   - **The Bundle:** Our platform (powered by Intermedia) includes enterprise calling, SMS/MMS, HD meetings, and AI recaps on a 99.999% uptime foundation.
   - **Contact Center:** We sell an omnichannel CX add-on (Voice, SMS, chat). Licensing is concurrent, meaning they only pay for the maximum number of agents logged in at the same time, not a named license for every single employee.
   - **Legacy:** We still support SIP and PRI for customers who aren't ready to move fully to the cloud, but the goal is always to pivot to UCaaS.
 knowledge_checks:
-  - question: A prospect wants to add external calling to Microsoft Teams. They think they need to buy Microsoft's 'Teams Phone' add-on license for every user. Are they right?
+  - question: "A prospect wants to add external calling to Microsoft Teams. They think they need to buy Microsoft's 'Teams Phone' add-on license for every user. Are they right?"
     options:
-      - 'No. With our embedded UC for Teams solution, they get full calling and SMS inside Teams without needing to buy the Microsoft Teams Phone license.'
-      - 'Yes. Microsoft requires the Teams Phone license for any external calling, regardless of the provider.'
-      - 'No, but they do need to buy the Microsoft E5 enterprise license first.'
+      - "It depends on the design. Our 'Embedded UC' app bypasses the MS license, but if they want native 'Direct Routing' through the MS dialer, they must buy the MS Teams Phone license."
+      - "No. With our embedded UC for Teams solution, they get full calling and SMS inside Teams without needing to buy the Microsoft Teams Phone license."
+      - "Yes. Microsoft requires the Teams Phone license for any external calling, regardless of the provider."
     correct_index: 0
-    explanation: This is our primary competitive advantage. We save them the Microsoft licensing fee while delivering a better voice network.
+    explanation: "There are two different technical paths. Never guarantee 'no MS licensing' until an SE validates which path the customer actually wants."
   - question: How is our Contact Center (CCaaS) product licensed?
     options:
       - Concurrent licensing. They pay for the maximum number of agents logged in simultaneously.
