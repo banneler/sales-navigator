@@ -103,6 +103,12 @@ We deliver a 99.999% uptime cloud voice platform that embeds directly into Micro
 
 ## Technical Deep Dive [deep]
 
+**Brand hierarchy you'll hear in the field**
+
+- **GPC UC** — the approved external brand. This is what goes on customer-facing collateral, proposals, and slide titles.
+- **Ascend** — the **application** name (desktop / mobile / Teams add-ins) we sell under the GPC UC umbrella. Safe to mention by name when you're describing the user experience ("the **Ascend** desktop app").
+- **Unite** — the same application, sold direct by **Intermedia**. You will see it in partner collateral and FAQs. **Do not lead with "Unite" externally** — translate it to GPC UC / Ascend for the customer.
+
 **The Teams Embedded Advantage:**
 - Only ~6% of Microsoft Teams users actually use Teams Phone, because Microsoft's native calling is expensive and lacks advanced PBX features.
 - Our solution (via Intermedia) uses an embedded app approach. It places a dial pad directly inside the Teams interface.
