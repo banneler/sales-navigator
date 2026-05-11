@@ -6,6 +6,11 @@ sensitivity: internal
 reference_files:
   - label: 'Sales Resources (cloud, Wi‑Fi, backup collateral)'
     sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
+video_carousel:
+  - title: '5G Wireless Backup & Broadband — Product Launch'
+    src: assets/wireless-backup/5g-wireless-product-launch.mp4
+    poster: assets/wireless-backup/5g-wireless-product-launch.png
+video_carousel_intro: 'Guidde walkthrough from the GPC Product Launch deck—watch this before your first 5G Wireless Backup or Wireless Broadband conversation.'
 discovery_questions:
   - 'If the internet goes down, what happens to your point-of-sale system or cloud-based CRM?'
   - Are your employees complaining about dead zones or slow connections in specific parts of the building?
