@@ -1,14 +1,18 @@
 ---
-
 id: "account-based-marketing"
 title: "Account Based Marketing"
 summary: "C-level targeting. 90-day sprints. Marketing air cover."
 sensitivity: "internal"
+reference_files:
+  - label: "Account Based Marketing — SharePoint folder (SOP, tracking, collateral)"
+    sharepoint_url: "https://gpcom.sharepoint.com/:f:/r/sites/gpcSales/Sales%20Process/Account%20Based%20Marketing%20-%20ABM?csf=1&web=1&e=ZSvfY4"
 five_minute_summary: |
-  - **Purpose:** Coordinate sales prospecting and marketing so executive targets see a coherent story over ninety days—not random one-off touches.
-  - **Sales cadence:** 18 total touches over 90 days, with roughly 3 touches per target every two weeks using personalized phone and email.
-  - **Marketing coordination:** 1 touchpoint every 30 days, with optional add-on support when Sales runs a physical door pull.
-  - **Tracking:** Active and on-deck ABM status is maintained in the ABM master tracking spreadsheet per SOP governance.
+  - **The motion:** A **high-touch, 90-day coordinated effort** between Sales and Marketing on **high-value Strategic accounts**—18 personal sales touches with consistent marketing air cover, so GPC stays top-of-mind with the right decision-makers.
+  - **Rolling Three:** You run **3 active ABM accounts at a time**, with **3 on-deck** ready to backfill. As one completes its 90-day cycle, the next on-deck onboards immediately—no pipeline droughts, no scrambling.
+  - **Staggered kickoff:** New accounts kick off on a **30-day stagger** (Month 1 / Month 2 / Month 3). One account is always in the high-intensity opening phase while others are mid- or late-cycle.
+  - **Targets are a stack, not a list:** Minimum **3 targets per account (5 ideal)**—and **not all Executive**. Mix **Manager · Director/VP · Executive** so one person leaving doesn't kill the play.
+  - **Sequence rhythm:** **18 touches / 90 days**, **3 per target every 2 weeks** by phone and personalized email. Marketing runs **1 touchpoint every 30 days**, plus **+1** when Sales runs a physical **Door Pull** with the Enterprise Brochure.
+  - **One source of truth:** The **Master Tracking Spreadsheet** is the system of record for Active and On-Deck accounts—Marketing and Sales Leadership edit; everyone else has view-only.
 
 knowledge_checks:
   - question: "Roughly how long is the ABM sales sequence in the SOP?"
@@ -17,21 +21,79 @@ knowledge_checks:
       - "21 business days"
       - "One calendar week"
     correct_index: 0
-    explanation: "The SOP defines a coordinated 90-day ABM effort."
+    explanation: "The SOP defines a high-touch, 90-day coordinated effort between Sales and Marketing."
+
+  - question: "How many ABM accounts should an Account Representative run concurrently per the SOP?"
+    options:
+      - "Three active accounts at any time, with three on-deck ready to backfill (the Rolling Three)"
+      - "As many as the rep can manage—no defined cap"
+      - "One account at a time until it closes"
+    correct_index: 0
+    explanation: "Three concurrent active accounts + three on-deck = the Rolling Three pipeline model."
+
+  - question: "How are the three concurrent ABM accounts kicked off per the SOP?"
+    options:
+      - "All three start on the same day for momentum"
+      - "On a 30-day stagger: Account A Month 1, Account B Month 2, Account C Month 3"
+      - "Whenever the rep has free calendar time"
+    correct_index: 1
+    explanation: "Staggered 30-day kickoff ensures one account is always in the high-intensity opening phase while others are mid- or late-cycle."
+
+  - question: "Per the SOP, what is the minimum and ideal target volume per ABM account?"
+    options:
+      - "Minimum 3 targets per account, 5 ideal"
+      - "One executive target is enough"
+      - "Ten targets minimum to ensure coverage"
+    correct_index: 0
+    explanation: "Multi-threaded engagement is mandatory to avoid single-point-of-failure risk on the account."
+
+  - question: "Can all ABM targets at an account be executive-level decision makers?"
+    options:
+      - "Yes—executives close deals, so they're the only targets that matter"
+      - "No—the SOP forbids all-executive stacks; mix Manager, Director/VP, and Executive"
+      - "Only at Strategic accounts above a certain revenue threshold"
+    correct_index: 1
+    explanation: "The tier hierarchy is Manager (Operational/Technical) + Director/VP (Tactical/Strategic) + Executive (Financial/Final Decision Maker)."
+
+  - question: "Who attends the ABM kickoff meeting per the SOP?"
+    options:
+      - "Just the Account Representative"
+      - "Marketing, the Sales Manager, and the Account Representative"
+      - "The customer's executive team only"
+    correct_index: 1
+    explanation: "The kickoff officially starts the 90-day clock—Marketing, Sales Manager, and Account Rep all attend."
+
+  - question: "Which items belong on the Sales Readiness Checklist that the rep brings to ABM kickoff?"
+    options:
+      - "Account Intel, Status (Customer vs Prospect), Current Services, Location Scope, Prospecting History, and the finalized Target List"
+      - "Only the target list—everything else can be figured out in the meeting"
+      - "A draft proposal and a contract template"
+    correct_index: 0
+    explanation: "Walking in cold (no checklist) is the fastest way to lose a Marketing partner and stretch the cycle."
+
   - question: "How often should marketing run ABM coordination touchpoints in the SOP model?"
     options:
-      - "One touchpoint every 30 days, with optional +1 support for door-pull motions"
+      - "One touchpoint every 30 days, with +1 added when Sales runs a physical Door Pull"
       - "Three touchpoints every week regardless of sales activity"
       - "Only one touchpoint at the end of the 90-day cycle"
     correct_index: 0
-    explanation: "The SOP defines monthly marketing coordination and optional increased support for door-pull execution."
-  - question: "Where is ABM activity and status tracked per SOP?"
+    explanation: "Monthly marketing coordination; +1 brochure-leave-behind when Sales executes a Door Pull."
+
+  - question: "Where is ABM activity and pipeline status tracked per the SOP?"
     options:
-      - "Master ABM tracking spreadsheet with defined view/edit access"
-      - "Only in rep inboxes"
-      - "Only in a private document for each individual rep"
+      - "The Master Tracking Spreadsheet (source of truth for Active and On-Deck accounts)"
+      - "Each rep's personal Outlook tasks"
+      - "An internal email thread per account"
     correct_index: 0
-    explanation: "The SOP names a master tracking spreadsheet as the source of truth for active and on-deck ABM accounts."
+    explanation: "Master Tracking Spreadsheet is the system of record—it's also how leadership confirms the Rolling Three bench is healthy."
+
+  - question: "Who has edit access to the Master ABM Tracking Spreadsheet per the SOP?"
+    options:
+      - "Marketing and Sales Leadership only; general stakeholders are view-only"
+      - "Every Account Representative can edit any row"
+      - "Only the Salesforce admin team"
+    correct_index: 0
+    explanation: "Edit access is restricted to Marketing and Sales Leadership; everyone else has view-only access for FYI purposes."
 
 scenarios:
   - title: "Skipping ahead in the ABM sequence"
@@ -45,39 +107,96 @@ scenarios:
       - label: "Tell them to restart the sequence from touch one."
         feedback: "Restarting isn't always required—focus on documented exceptions and alignment with marketing."
 
+  - title: "The All-Exec Stack"
+    situation: |
+      A rep insists their three ABM targets at a strategic logo should be the **CFO, CIO, and CEO**—their logic: *"executives decide, why waste touches on managers?"*
+    choices:
+      - label: "Approve it—executives are the highest-leverage targets."
+        feedback: "The SOP explicitly forbids all-Executive target lists. Single-threading at the top is exactly the failure mode the tiered mix is designed to prevent."
+      - label: "Rebuild the target list before kickoff so the mix includes at least one Manager (Operational/Technical) and one Director/VP alongside the Executive."
+        feedback: "**Good.** That's the SOP's tier hierarchy—and the only way the play survives an executive change."
+      - label: "Approve it but add a fourth target as a 'just-in-case' backstop."
+        feedback: "More targets doesn't fix the tier problem—the SOP requires the **mix**, not just the count."
+
+  - title: "The Empty Bench"
+    situation: |
+      A rep is running three active ABM accounts hard but has **zero on-deck**. Account A wraps in April with nothing queued for May. The Sales Manager spots the gap in the Master Tracking Spreadsheet review.
+    choices:
+      - label: "Wait until April closes, then start sourcing the next account."
+        feedback: "That's the pipeline drought the Rolling Three exists to prevent. On-deck is part of the job, not an afterthought."
+      - label: "Surface it immediately to the Sales Manager; queue three on-deck accounts so May has a ready kickoff."
+        feedback: "**Good.** The bench is how leadership confirms the model is healthy—an empty on-deck list is a Rolling Three failure, not a normal state."
+      - label: "Move one of the active accounts to on-deck to free up time."
+        feedback: "You don't pause an in-flight 90-day cycle to fill the bench—you find the next three Strategic candidates and queue them."
+
 ---
 
 ## Why ABM here
 
-Account-based programs work when **sales and marketing agree on cadence, targets, and ownership**. This module mirrors the ABM SOP: a 90-day coordinated motion, clear target mix, staggered kickoff timing, and governed tracking.
+Account-based programs work when **Sales and Marketing agree on cadence, targets, and ownership**. This module mirrors the **ABM SOP** verbatim: a **high-touch, 90-day coordinated effort** between Sales and Marketing on **high-value Strategic accounts**, with **18 personal sales touches** under **consistent marketing air cover** so GPC stays **top-of-mind for key decision-makers**.
 
-Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a named executive target?*
+Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a named executive target—and what do I bring to kickoff?*
+
+## Before the 90-day clock starts
+
+The **Kickoff meeting** officially starts the 90-day clock. **Marketing, your Sales Manager, and the Account Representative** are in the room. Walk in with the **Sales Readiness Checklist** complete—not "we'll figure it out together":
+
+- **Account Intel** — comprehensive research and general background on the account.
+- **Status** — current Customer vs Prospect.
+- **Current Services** — what they buy today and where (if applicable / known).
+- **Location Scope** — density and geographic diversity of the account's locations.
+- **Prospecting History** — audit of prior attempts (calls, emails, LinkedIn, physical drop-ins).
+- **Target List** — finalized **3–5 specific targets** with roles and the tier mix below.
+
+A cold kickoff with no checklist is the fastest way to burn a Marketing partner—and the cycle goes long.
+
+### Target stack (mandatory mix)
+
+**Multi-threaded engagement is mandatory.** **Minimum 3 targets** per account, **5 ideal**. Targets **cannot all be Executive level**. The required mix:
+
+1. **Manager** (Operational / Technical)
+2. **Director / VP** (Tactical / Strategic)
+3. **Executive** (Financial / Final Decision Maker)
+
+One executive leaving the company shouldn't end the play. That's why the SOP forbids the all-exec stack.
+
+## The Rolling Three (active + on-deck)
+
+You manage **three concurrent ABM accounts** on a staggered cadence: one in the opening sprint, one mid-cycle, one finishing. Behind them sit **three on-deck accounts** queued for the next kickoff:
+
+- **Account A** — Month 1 kickoff
+- **Account B** — Month 2 kickoff
+- **Account C** — Month 3 kickoff
+- **On-deck (×3)** — ready to onboard immediately as actives complete
+
+As Account A wraps in April, the first on-deck account onboards for a **May** kickoff. The **Master Tracking Spreadsheet** enforces the model—it's where leadership confirms the bench is healthy. An empty on-deck list is a **Rolling Three failure**, not a normal state.
 
 ## 90-day sequence
 
-- **Duration:** 90-day coordinated sequence
-- **Sales volume:** 18 total touches over the cycle
-- **Sales rhythm:** ~3 touches per target every 2 weeks
-- **Primary channels:** Personalized phone calls and email
-- **Optional motion:** Physical door pull using approved brochure support
-- **Marketing rhythm:** 1 touchpoint every 30 days (with optional +1 support for door pull)
-
-## How to use this module
-
-1. Read the overview sections for **roles and intent** (you will refine copy as your SOP evolves).
-2. Coach to the SOP-defined sequence and guardrails: staggered kickoff, target hierarchy, cadence, and tracking controls.
-3. Pair this with **Operational Business Reviews** when discussing how executive conversations mature into review meetings.
+- **Duration:** 90-day coordinated motion, kicked off by the Sales + Marketing + Manager meeting.
+- **Sales volume:** **18 total personal sales touches** over the cycle.
+- **Sales rhythm:** **3 touches per target every 2 weeks**.
+- **Primary channels:** **Phone calls** and **personalized emails**.
+- **Optional Door Pull:** A physical drop-by using the **Enterprise Brochure** as a leave-behind.
+- **Marketing rhythm:** **1 touchpoint every 30 days** (e.g., LinkedIn / Google ads, direct mail), **+1** when Sales runs a Door Pull—Marketing provides custom copy / inserts for the brochure.
 
 ## Sequence lanes (sales & marketing)
 
 ### Sales prospecting
 
-Sales executes an 18-touch, 90-day motion anchored on personalized phone and email outreach, with optional physical drop-ins where approved.
+Sales executes the **18-touch, 90-day** motion anchored on **personalized phone and email**, with optional **Door Pull** drop-ins using the Enterprise Brochure where approved. The cadence is a fixed rhythm—persistent without being intrusive.
 
 ### Marketing air cover
 
-Marketing runs monthly support touchpoints to reinforce sales outreach, and can add support artifacts when door-pull activity is planned.
+Marketing runs **monthly support touchpoints** (LinkedIn / Google ads, direct mail) to reinforce sales outreach. When Sales schedules a **Door Pull**, Marketing increases by **+1 touchpoint** with custom copy and inserts for the brochure leave-behind.
+
+## How to use this module
+
+1. Read the overview sections for **roles, intent, and the Rolling Three model** before your first ABM kickoff.
+2. Bring the **Sales Readiness Checklist** to every kickoff—do not improvise. The checklist *is* the contract with Marketing.
+3. Coach to the SOP-defined sequence and guardrails: **staggered kickoff**, **tiered target mix**, **cadence**, and **Master Tracking Spreadsheet hygiene**.
+4. Pair this with **Operational Business Reviews** when discussing how executive conversations mature into review meetings.
 
 ## Keep this module honest
 
-Name your **enablement owner**, **playbook links**, and **MQL/SQL** definitions in your internal wiki—this page stays intentionally generic. When the SOP changes, align these bullets and checks to the current approved version.
+This page reflects the ABM SOP and is intentionally focused on it. When the SOP changes, align these bullets and checks to the current approved version—the **SharePoint folder linked above** is the live source of truth, not this app.
