@@ -392,6 +392,9 @@ const SAFE_UC_VIDEO_SRC =
 /** Optional static poster image next to MP4s. */
 const SAFE_UC_POSTER =
   /^assets\/(?:UC\/|training\/salesforce\/|wireless-backup\/)[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
+/** Relative image under site root for static collateral carousels. */
+const SAFE_IMAGE_CAROUSEL_SRC =
+  /^assets\/(?:battle-cards\/)(?:[a-zA-Z0-9._-]+\/)*[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
 
 /** Matches overview-style `module-section-card` shells used for `##` sections. */
 const TRAINING_SECTION_CARD_CLASSES =
@@ -440,6 +443,30 @@ function normalizeVideoItems(items) {
     let poster = typeof it?.poster === 'string' ? it.poster.trim() : '';
     if (poster && !SAFE_UC_POSTER.test(poster)) poster = '';
     entries.push({ src, title, poster });
+  }
+  return entries;
+}
+
+/**
+ * @param {unknown[]} items
+ * @returns {{ src: string; title: string; alt: string }[]}
+ */
+function normalizeImageItems(items) {
+  if (!Array.isArray(items)) return [];
+  /** @type {{ src: string; title: string; alt: string }[]} */
+  const entries = [];
+  for (const it of items) {
+    const src = typeof it?.src === 'string' ? it.src.trim() : '';
+    if (!SAFE_IMAGE_CAROUSEL_SRC.test(src)) continue;
+    const title =
+      typeof it?.title === 'string' && it.title.trim()
+        ? it.title.trim()
+        : `Slide ${entries.length + 1}`;
+    const alt =
+      typeof it?.alt === 'string' && it.alt.trim()
+        ? it.alt.trim()
+        : title;
+    entries.push({ src, title, alt });
   }
   return entries;
 }
@@ -499,6 +526,51 @@ function buildVideoCarouselChromeHtml(entries) {
 }
 
 /**
+ * Same carousel shell as videos, but each slide is a static collateral image.
+ * @param {{ src: string; title: string; alt: string }[]} entries
+ */
+function buildImageCarouselChromeHtml(entries) {
+  const n = entries.length;
+  if (n === 0) return '';
+
+  const slides = entries.map((e, i) => {
+    const hidden = i === 0 ? '' : ' hidden';
+    const srcEsc = escapeHtml(e.src);
+    return `<div class="vc-slide${hidden}" data-vc-slide="${i}">
+          <p class="text-base font-semibold text-slate-900 mb-3 tracking-tight">${escapeHtml(e.title)}</p>
+          <a href="${srcEsc}" target="_blank" rel="noopener" class="block rounded-xl border border-slate-200 bg-slate-100 overflow-hidden shadow-md">
+            <img src="${srcEsc}" alt="${escapeHtml(e.alt)}" class="w-full max-h-[min(72vh,760px)] object-contain bg-white" loading="lazy" decoding="async" />
+          </a>
+        </div>`;
+  });
+
+  const dots = entries
+    .map((e, i) => {
+      const active =
+        i === 0
+          ? 'bg-orange-500 ring-2 ring-orange-200'
+          : 'bg-slate-300 hover:bg-slate-400';
+      return `<button type="button" class="js-vc-carousel-dot h-2.5 w-2.5 shrink-0 rounded-full transition ${active}" data-vc-dot="${i}" aria-label="Slide ${i + 1} of ${n}: ${escapeHtml(e.title)}" aria-current="${i === 0 ? 'true' : 'false'}"></button>`;
+    })
+    .join('');
+
+  return `
+        <div class="vc-carousel rounded-xl border border-slate-200 bg-white p-3 md:p-4" data-vc-active="0" data-vc-count="${n}">
+          <div class="vc-carousel-slides min-h-[200px]">${slides.join('')}</div>
+          <div class="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-slate-200">
+            <button type="button" class="js-vc-carousel-prev inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 disabled:opacity-40 disabled:pointer-events-none" aria-label="Previous slide">
+              <i class="fa-solid fa-chevron-left text-xs" aria-hidden="true"></i> Previous
+            </button>
+            <span class="js-vc-carousel-indicator text-sm font-semibold text-slate-600 tabular-nums">1 / ${n}</span>
+            <button type="button" class="js-vc-carousel-next inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 disabled:opacity-40 disabled:pointer-events-none" aria-label="Next slide">
+              Next <i class="fa-solid fa-chevron-right text-xs" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="flex flex-wrap justify-center gap-2 mt-4 px-1 max-w-full">${dots}</div>
+        </div>`;
+}
+
+/**
  * One training card: heading, optional plain intro, optional markdown body, optional video carousel.
  * @param {Record<string, unknown>} section
  * @param {number} index
@@ -517,9 +589,12 @@ function buildVideoSectionCardHtml(section, index) {
   const entries = normalizeVideoItems(
     Array.isArray(section?.items) ? section.items : []
   );
+  const imageEntries = normalizeImageItems(
+    Array.isArray(section?.image_items) ? section.image_items : []
+  );
   const bodyRaw = typeof section?.body === 'string' ? section.body : '';
 
-  if (entries.length === 0) {
+  if (entries.length === 0 && imageEntries.length === 0) {
     if (!bodyRaw.trim()) return '';
     let bodyHtml;
     try {
@@ -547,7 +622,10 @@ function buildVideoSectionCardHtml(section, index) {
     }
   }
 
-  const carouselHtml = buildVideoCarouselChromeHtml(entries);
+  const carouselHtml =
+    entries.length > 0
+      ? buildVideoCarouselChromeHtml(entries)
+      : buildImageCarouselChromeHtml(imageEntries);
   const inner = `
         <h3 id="${sid}" class="text-xl font-bold text-slate-900 mb-4 tracking-tight">${escapeHtml(heading)}</h3>
         ${introHtml}
@@ -585,10 +663,13 @@ function buildVideoSectionsAsTabsHtml(meta) {
     const entries = normalizeVideoItems(
       Array.isArray(sec?.items) ? sec.items : []
     );
+    const imageEntries = normalizeImageItems(
+      Array.isArray(sec?.image_items) ? sec.image_items : []
+    );
     const bodyRaw = typeof sec?.body === 'string' ? sec.body : '';
 
     let blockHtml = '';
-    if (entries.length === 0) {
+    if (entries.length === 0 && imageEntries.length === 0) {
       if (!bodyRaw.trim() && !introHtml) continue;
       let bodyHtml = '';
       if (bodyRaw.trim()) {
@@ -609,7 +690,11 @@ function buildVideoSectionsAsTabsHtml(meta) {
           bodyBeforeCarousel = '';
         }
       }
-      blockHtml = `${introHtml}${bodyBeforeCarousel}${buildVideoCarouselChromeHtml(entries)}`;
+      const carouselHtml =
+        entries.length > 0
+          ? buildVideoCarouselChromeHtml(entries)
+          : buildImageCarouselChromeHtml(imageEntries);
+      blockHtml = `${introHtml}${bodyBeforeCarousel}${carouselHtml}`;
     }
 
     const tabId = `video-section-tab-${i}`;
@@ -663,7 +748,7 @@ function buildVideoSectionsAsTabsHtml(meta) {
  * Wired in {@link renderModuleDocumentHtml}.
  *
  * `video_sections` entries: `heading`, optional `intro` (plain text), optional `items` (same as video_carousel),
- * optional `body` (markdown for text-only cards or prose before a carousel).
+ * optional `image_items` (static collateral carousel), optional `body` (markdown for text-only cards or prose before a carousel).
  * With `video_sections_as_tabs: true`, sections render as tabs inside one card (needs ≥2 sections).
  */
 export function buildVideoSectionsHtml(meta) {

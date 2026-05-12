@@ -2052,6 +2052,63 @@ reference_files:
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx#product-battle-cards"
   - label: "Competitive battle cards"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx#competitive-battle-cards"
+video_sections_as_tabs: true
+video_sections_tabs_aria_label: "Battle-card library"
+video_sections:
+  - heading: "Product Battle Cards"
+    intro: "Use these as quick visual refreshers before calls. Open the approved SharePoint source when you need to forward or cite externally."
+    image_items:
+      - title: "5G Wireless Backup"
+        src: "assets/battle-cards/product/battlecard---5g-wireless-backup/page-001.png"
+      - title: "Ethernet Battle Card — page 1"
+        src: "assets/battle-cards/product/ethernet-battle-card-final/page-001.png"
+      - title: "Ethernet Battle Card — page 2"
+        src: "assets/battle-cards/product/ethernet-battle-card-final/page-002.png"
+      - title: "Cloud Connect Battle Card — page 1"
+        src: "assets/battle-cards/product/gpc-cloud-connect-battle-card-050321/page-001.png"
+      - title: "Cloud Connect Battle Card — page 2"
+        src: "assets/battle-cards/product/gpc-cloud-connect-battle-card-050321/page-002.png"
+      - title: "Managed Wi-Fi Battle Card — page 1"
+        src: "assets/battle-cards/product/gpc-managed-wifi-battle-card/page-001.png"
+      - title: "Managed Wi-Fi Battle Card — page 2"
+        src: "assets/battle-cards/product/gpc-managed-wifi-battle-card/page-002.png"
+      - title: "SD-WAN Battle Card — page 1"
+        src: "assets/battle-cards/product/gpc-sd-wan-battle-card-final/page-001.png"
+      - title: "SD-WAN Battle Card — page 2"
+        src: "assets/battle-cards/product/gpc-sd-wan-battle-card-final/page-002.png"
+      - title: "Managed Firewall Battle Card"
+        src: "assets/battle-cards/product/managed-firewall-battlecard-final/page-001.png"
+  - heading: "Competitor Battle Cards"
+    intro: "Start with discovery, then use the card that matches the customer’s stated alternative or objection."
+    image_items:
+      - title: "Fiber vs Starlink — page 1"
+        src: "assets/battle-cards/competitive/fiber-vs-starlink-battlecard/page-001.png"
+      - title: "Fiber vs Starlink — page 2"
+        src: "assets/battle-cards/competitive/fiber-vs-starlink-battlecard/page-002.png"
+      - title: "Fiber vs Starlink — page 3"
+        src: "assets/battle-cards/competitive/fiber-vs-starlink-battlecard/page-003.png"
+      - title: "Fiber vs Starlink — page 4"
+        src: "assets/battle-cards/competitive/fiber-vs-starlink-battlecard/page-004.png"
+      - title: "Fiber vs Starlink — page 5"
+        src: "assets/battle-cards/competitive/fiber-vs-starlink-battlecard/page-005.png"
+      - title: "Fiber vs Starlink — page 6"
+        src: "assets/battle-cards/competitive/fiber-vs-starlink-battlecard/page-006.png"
+      - title: "Fiber vs Starlink — page 7"
+        src: "assets/battle-cards/competitive/fiber-vs-starlink-battlecard/page-007.png"
+      - title: "Fiber vs Starlink — page 8"
+        src: "assets/battle-cards/competitive/fiber-vs-starlink-battlecard/page-008.png"
+      - title: "Omaha Metro Competitive Battle Card — page 1"
+        src: "assets/battle-cards/competitive/omaha-metro-competitive-battle-card-v3/page-001.png"
+      - title: "Omaha Metro Competitive Battle Card — page 2"
+        src: "assets/battle-cards/competitive/omaha-metro-competitive-battle-card-v3/page-002.png"
+      - title: "Omaha Metro Competitive Battle Card — page 3"
+        src: "assets/battle-cards/competitive/omaha-metro-competitive-battle-card-v3/page-003.png"
+      - title: "Omaha Metro Competitive Battle Card — page 4"
+        src: "assets/battle-cards/competitive/omaha-metro-competitive-battle-card-v3/page-004.png"
+      - title: "Omaha Metro Competitive Battle Card — page 5"
+        src: "assets/battle-cards/competitive/omaha-metro-competitive-battle-card-v3/page-005.png"
+      - title: "UC Competitor Battle Card"
+        src: "assets/battle-cards/competitive/uc-competitor-battle-card-031226/page-001.png"
 discovery_questions:
   - "Who answers the phone at 2 a.m. if your primary circuit goes down—and how long does it take them to respond on-site?"
   - "Which applications break first if upload latency spikes or a circuit drops? What does an hour of downtime cost the business?"
@@ -2061,7 +2118,7 @@ discovery_questions:
 five_minute_summary: |
   - **The Framework:** Map competitor weaknesses to GPC strengths using business risk and proof points (local support, NOC, redundancy). Avoid generic claims of superiority.
   - **Avoid Landmines:** Never make personal attacks or use absolutes. Verify battle-card stats with marketing before sharing externally, and bring in SEs early for architecture discussions.
-  - **Handling Objections:** When countering LEO satellite or M&A concerns, anchor the conversation on uptime, latency, and the total cost of downtime rather than just price or speed.
+  - **Handling Objections:** When countering LEO satellite or price pressure, anchor the conversation on uptime, latency, and the total cost of downtime rather than just price or speed.
   - **Using Tech Cards:** Lead with the customer's pain, wrap it in a GPC solution, ask qualifying questions, and provide verified proof.
 
 knowledge_checks:
@@ -2112,14 +2169,6 @@ knowledge_checks:
       - "Require it in every competitive meeting"
     correct_index: 0
     explanation: "Landmines forbid personal attacks."
-
-  - question: "When prospects hear M&A messaging, what do they typically want?"
-    options:
-      - "Stability, service quality, and honest comparison—not gossip"
-      - "Rumors and speculation without business relevance"
-      - "A guarantee their vendor will exit the market next week"
-    correct_index: 0
-    explanation: "Factual, customer-centric continuity."
 
   - question: "For SD-WAN battle-card use, what must you verify before citing awards or ratings?"
     options:
@@ -2178,14 +2227,6 @@ roleplay:
   goal: "Run discovery on application pain, TCO of outages, and local support gaps before presenting any GPC comparison—never lead with price or unverified stats."
 ---
 
-## At a glance
-
-- **Framework:** **Discover first**, then map **competitor angle → business risk for this account → proof you can support** (local teams, **24×7 NOC**, redundancy, portfolio)—avoid generic “we’re better.”
-- **Landmines:** No **personal disparagement**; no **battle-card stats** externally until **marketing** confirms currency; **SE/PM** for architecture-heavy or RFP-grade deals.
-- **Fiber vs LEO:** Anchor on **reliability, latency, weather/obstruction risk, and operational support**—not Mbps alone; **PM** for delivery/construction/contract threads when relevant.
-
----
-
 ## Positioning snapshot
 
 ::: elevator [Elevator Pitch]
@@ -2225,10 +2266,6 @@ Acknowledge coverage; pivot to latency, weather risk, SLA for VoIP/telehealth, a
 Speed tests measure a moment; position reliability, jitter, upload symmetry, and NOC response for business apps.
 :::
 
-::: flip ["Your competitor just got acquired—that makes them bigger."]
-Respond factually: GPC provides 110+ years of stability, Midwest-based support that never left the US, and 100% fiber with negotiable price locks—unlike competitors relying on coax, 12-month terms, and offshore support. No gossip.
-:::
-
 ::: flip ["I need to see the battle-card numbers."]
 Share collateral through approved channels; verify year/scope before any external citation.
 :::
@@ -2241,37 +2278,6 @@ Differentiate last mile, routing, peering, and repair SLAs—map to **their** ap
 </div>
 
 **Disengage signals:** bad-faith trash talk requests, pure price auction with zero fit, design questions past your lane without SE.
-
----
-
-## Technical Deep Dive [deep]
-
-**Framework detail:**
-1. **Discovery** — apps, sites, outcomes, topology, migration timelines, decision owners.
-2. **Map** — tie strengths/weaknesses to *their* stated needs.
-3. **Competitor → GPC** — their angle; risk *for this account*; proof (local, NOC, fiber design, symmetry, portfolio)—only what discovery supports.
-4. **Landmines** — no personal attacks; no external battle-card stats until marketing clears; no absolutes; acknowledge real competitor strengths; don't improvise architecture—bring **SE**.
-
-**Proof hierarchy:** concrete (build, redundancy, commercial terms) > generic; outcome-led; verify awards externally; keep directional stats internal.
-
-**Rebuttals:** outcomes > stunts; one beat at a time; M&A = factual; no uncited numbers; no verbal price exceptions.
-
-**Pull SE** — WAN/SD-WAN, MPLS migration, integrated security, hybrid paths, DDoS/regulated, fiber diversity, RFP validation. **PM** — timelines, construction, contract alignment.
-
-| Topic | Counter with |
-| --- | --- |
-| **Metro / local** | Install quality, support model, redundancy, owned vs leased, rate stability—not price alone |
-| **Fiber vs LEO** | Weather, jitter, congestion; fiber = predictable latency, symmetrical enterprise paths, pro install + support |
-| **M&A / churn** | Stability, billing, field response—factual; GPC continuity themes |
-| **Tech cards (SD-WAN pattern)** | Profile → pain → GPC wrap → qualifying Qs → proof; verify awards; SE validates design |
-
-::: accordion Fiber vs LEO Satellite Battle Card
-Side-by-side comparison of fiber vs Starlink/LEO—latency, weather risk, SLAs, and enterprise support. Pull the approved card from **Sales Resources** before you cite specifics externally.
-:::
-
-::: accordion Ethernet Competitive Battle Card
-Key differentiators for Ethernet positioning—use alongside the tech-card pattern when qualifying multi-site WAN opportunities. Current PDF lives in **Sales Resources**.
-:::
 <!-- prettier-ignore-end -->
 
 ---
