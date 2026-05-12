@@ -25,228 +25,73 @@ Single export in manifest order. **Canonical training source for each module is 
 
 # Getting started (`getting-started`)
 
-_No `modules/getting-started/content.md`. Excerpts from `js/components/getting-started.js`._
+<!-- prettier-ignore-start -->
+---
+id: "getting-started"
 
-## Onboarding tour — `steps`
+title: "Getting started"
 
-```javascript
-const steps = [
-    {
-      title: 'Welcome',
-      icon: 'fa-compass',
-      body: `
-        <p class="text-slate-800 leading-relaxed">
-          <strong>Sales-Navigator</strong> is your interactive training hub for GPC sales onboarding—modules, practice scenarios, and knowledge checks in one place.
-        </p>
-        <p class="text-slate-600 text-sm mt-3">
-          This short tour walks through how the app is organized so you can move through training with confidence.
-        </p>`,
-    },
-    {
-      title: mobile ? 'Navigation' : 'Left navigation',
-      icon: 'fa-bars',
-      body: mobile
-        ? `
-        <p class="text-slate-800 leading-relaxed mb-3">
-          Tap the <strong><i class="fa-solid fa-bars text-xs" aria-hidden="true"></i> menu button</strong> in the header to open the module list. Items are grouped by category${categories.length ? ` (${escapeHtml(categories.join(', '))})` : ''}.
-        </p>
-        <ul class="list-disc pl-5 text-slate-700 space-y-1.5 text-sm">
-          <li>Tap a module title to load it\u2014the menu closes automatically.</li>
-          <li>The <strong>highlighted</strong> item matches the page you are on.</li>
-        </ul>`
-        : `
-        <p class="text-slate-800 leading-relaxed mb-3">
-          Use the <strong>sidebar on the left</strong> to open any module. Items are grouped by category${categories.length ? ` (${escapeHtml(categories.join(', '))})` : ''}.
-        </p>
-        <ul class="list-disc pl-5 text-slate-700 space-y-2 text-sm">
-          <li>Click a module title to load it in the main area.</li>
-          <li>Use the <strong>chevron</strong> at the top of the sidebar to collapse it when you want more reading space.</li>
-          <li>The <strong>highlighted</strong> item matches the page you are on.</li>
-        </ul>`,
-    },
-    {
-      title: 'Inside a module',
-      icon: 'fa-book-open',
-      body: `
-        <p class="text-slate-800 leading-relaxed mb-3">
-          Each training module is built from structured content:
-        </p>
-        <ul class="list-disc pl-5 text-slate-700 space-y-${mobile ? '1.5' : '2'} text-sm">
-          <li><strong>Title and summary</strong> at the top set context.</li>
-          <li><strong>Coffee Summary</strong> bullets give a fast scan when present.</li>
-          <li>Major topics appear as <strong>section cards</strong>.</li>
-          <li>Some modules include <strong>reference links</strong>${mobile ? '.' : ' in a side area when provided.'}</li>
-        </ul>`,
-    },
-    {
-      title: 'Scenarios',
-      icon: 'fa-comments',
-      body: `
-        <p class="text-slate-800 leading-relaxed mb-3">
-          <strong>Scenarios</strong> give you a short situation, a few choices, and feedback—practice for real moments, not a test score.
-        </p>
-        <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
-          <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
-          ${mobile ? 'Scroll up and choose' : 'Choose'} the strongest response in the scenario to unlock <strong>Next</strong>.
-        </p>`,
-    },
-    {
-      title: 'Knowledge checks',
-      icon: 'fa-circle-question',
-      body: `
-        <p class="text-slate-800 leading-relaxed mb-3">
-          <strong>Knowledge checks</strong> are quick questions with explanations so you can self-check without pressure.
-        </p>
-        <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
-          <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
-          ${mobile ? 'Scroll up and pick' : 'Pick'} the best answer to unlock <strong>Next</strong>.
-        </p>`,
-    },
-    {
-      title: 'Executive Map Book',
-      icon: 'fa-map',
-      body: mapBook
-        ? `
-        <p class="text-slate-800 leading-relaxed mb-3">
-          <strong>${escapeHtml(mapBook.title)}</strong> is a digital version of our printed map book—a backdrop for executive customer conversations about footprint, reach, and strategy.
-        </p>
-        <p class="text-slate-600 text-sm">
-          ${mobile ? 'Open the <strong><i class="fa-solid fa-bars text-xs" aria-hidden="true"></i> menu</strong> and tap it to view' : 'Open it from the sidebar for'} full-width maps and executive views.
-        </p>`
-        : `
-        <p class="text-slate-800 leading-relaxed">Map-style resources appear in the navigation when enabled for your build.</p>`,
-    },
-    {
-      title: 'Fiber path',
-      icon: 'fa-route',
-      body: `
-        <p class="text-slate-800 leading-relaxed mb-3">
-          <strong>Fiber path</strong> in the header tracks your progress—what you've opened, what's next, and how the route fits together.
-        </p>
-        <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
-          <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
-          Tap <strong>Fiber path</strong> ${mobile ? '(<i class="fa-solid fa-route text-xs" aria-hidden="true"></i>) in the header' : 'in the header (the highlighted control)'} to unlock <strong>Next</strong>.
-        </p>`,
-    },
-    {
-      title: 'You are set',
-      icon: 'fa-circle-check',
-      body: `
-        <p class="text-slate-800 leading-relaxed mb-4">
-          You know how to navigate modules, check progress with Fiber path, find practice, and use the map book when needed. Jump into your first training module below.
-        </p>
-        ${
-          firstTraining
-            ? `<div class="flex flex-wrap gap-3">
-          <button type="button" data-goto="${escapeHtml(firstTraining.id)}" class="gs-goto inline-flex items-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold px-4 py-2.5 text-sm shadow-sm transition">
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-            Open ${escapeHtml(firstTraining.title)}
-          </button>
-        </div>`
-            : ''
-        }`,
-    },
-  ];
-```
+summary: "Quick tour of Sales-Navigator—welcome, Coffee Summary sample, practice scenario, and a light knowledge check."
 
-## Welcome demo — `buildDemoMarkup()` template
+sensitivity: "public"
 
-```html
+five_minute_summary: |
+  - We're genuinely happy you chose to grow your career here—your wins matter to us.
+  - Take training at your pace; come back to any module when you need a refresher or a talk track.
+  - Showing up curious for customers beats memorizing slides—use this hub to prepare, then go have real conversations.
 
-    <div class="tour-demo-content max-w-[1600px] mx-auto space-y-6 pb-4 select-none">
-      <div class="flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
-        <div class="w-full lg:flex-1 min-w-0 space-y-6 pointer-events-none" data-tour-target="module-core">
-          <div class="rounded-2xl border border-orange-200/90 bg-gradient-to-br from-orange-50/50 via-white to-slate-50/40 shadow-sm p-6 md:p-8 backdrop-blur-sm module-tour-elevator">
-            <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Welcome to Great Plains Communications</h2>
-            <p class="text-slate-600 mt-3 text-sm max-w-prose leading-relaxed">
-              We're glad you're here. This space is built to help you ramp with confidence—alongside teammates who remember their first customer call, their first complex quote, and the questions that used to keep them up at night.
-            </p>
-          </div>
-          <section class="module-five-min w-full border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm backdrop-blur-sm" aria-labelledby="five-min-heading-getting-started">
-            <div class="flex w-full min-w-0 items-start gap-3">
-              <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center text-base" title="Coffee Summary"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></span>
-              <div class="min-w-0 flex-1 w-full">
-                <h3 id="five-min-heading-getting-started" class="text-lg font-bold text-amber-950 mb-2">Coffee Summary</h3>
-                <div class="module-markdown-body w-full text-amber-950/90 module-five-min-compact text-sm">
-                  <ul class="list-disc pl-5 space-y-2">
-                    <li>We're genuinely happy you chose to grow your career here—your wins matter to us.</li>
-                    <li>Take training at your pace; come back to any module when you need a refresher or a talk track.</li>
-                    <li>Showing up curious for customers beats memorizing slides—use this hub to prepare, then go have real conversations.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="rounded-2xl border border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white p-6 md:p-8 shadow-sm backdrop-blur-sm module-tour-discovery">
-            <h3 class="text-lg font-bold text-slate-900">A note from the team</h3>
-            <div class="text-sm text-slate-700 mt-3 space-y-3 leading-relaxed">
-              <p>Dear teammate,</p>
-              <p>
-                Welcome to Great Plains Communications. Whether you're new to telecom or you've carried a bag for years, we're glad you're on the team. Sales-Navigator exists so you spend less time hunting for answers and more time listening to customers—rules of engagement, product depth, competitive positioning, and the workflows that keep deals moving are never more than a few clicks away.
-              </p>
-              <p>
-                Nobody expects you to know everything on day one. We do expect you to ask questions, use the resources here, and reach out when a deal needs an extra pair of eyes. That's how we get better together—and how our customers feel the difference between a vendor and a partner.
-              </p>
-              <p class="text-slate-600">With appreciation,<br><span class="text-slate-800 font-medium">Your Sales Leader</span></p>
-            </div>
-          </section>
-        </div>
-        <aside class="w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white/95 p-4 shadow-sm backdrop-blur-sm pointer-events-auto" data-tour-target="tour-scenarios">
-          <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Scenarios</p>
-          <p class="text-xs font-semibold text-slate-800 mt-3">Where is Waldo?</p>
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            You aren’t sure where to find the most recent product collateral for <strong>Unified Communications</strong>. What should you do?
-          </p>
-          <p class="text-xs text-slate-500 mt-3 uppercase tracking-wide">Pick a response</p>
-          <div class="mt-2 space-y-2" role="group" aria-label="Scenario responses">
-            <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-              Send an email to Everyone@gpcom.com and ask where to find it.
-            </button>
-            <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="true">
-              Check the Sales SharePoint site and look inside Sales Resources.
-            </button>
-            <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-              Email, call, and IM Sarah Tinkham relentlessly until she gives it up.
-            </button>
-          </div>
-          <p class="text-xs text-red-700 mt-2 min-h-[1.25rem] hidden" data-tour-scenario-feedback="" role="status" aria-live="polite"></p>
-          <p class="text-xs text-emerald-800 bg-emerald-50/90 border border-emerald-100 rounded-lg px-3 py-2 mt-3 hidden" data-tour-coach-note="">
-            <strong>Coach's note:</strong> Official hubs beat broadcast email—Sales Resources is there so you (and Sarah) aren’t playing hide-and-seek.
-          </p>
-        </aside>
-      </div>
-      <div class="rounded-xl border border-slate-200 bg-white/95 p-5 shadow-sm backdrop-blur-sm max-w-4xl pointer-events-auto" data-tour-target="tour-knowledge">
-        <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Knowledge checks</p>
-        <p class="text-sm font-medium text-slate-900 mt-3">What is the best Mexican restaurant in Blair, NE?</p>
-        <div class="mt-3 space-y-2 text-sm" role="group" aria-label="Knowledge check options">
-          <button type="button" class="tour-knowledge-opt flex w-full gap-2 items-start rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-left transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-            <span class="text-slate-400 shrink-0" aria-hidden="true">○</span>
-            <span>Taco Bell</span>
-          </button>
-          <button type="button" class="tour-knowledge-opt flex w-full gap-2 items-start rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-left transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="true">
-            <span class="text-slate-400 shrink-0" aria-hidden="true">○</span>
-            <span>El Vallarta Mexican Restaurant</span>
-          </button>
-          <button type="button" class="tour-knowledge-opt flex w-full gap-2 items-start rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-left transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-            <span class="text-slate-400 shrink-0" aria-hidden="true">○</span>
-            <span>Justin's leftover tacos in the fridge on floor 2</span>
-          </button>
-        </div>
-        <p class="text-xs text-red-700 mt-2 min-h-[1.25rem] hidden" data-tour-knowledge-feedback="" role="status" aria-live="polite"></p>
-        <div class="mt-3 hidden rounded-xl border-2 border-emerald-400/80 bg-gradient-to-br from-emerald-50 via-white to-orange-50 px-4 py-3 text-center shadow-lg ring-2 ring-emerald-400/30" data-tour-knowledge-affirmation role="status" aria-live="polite">
-          <p class="text-base" aria-hidden="true">✨</p>
-          <p class="text-sm font-semibold text-emerald-900">Blair has spoken—you’ve got great taste.</p>
-          <p class="mt-1 text-xs text-emerald-800/90">El Vallarta would be proud.</p>
-        </div>
-        <p class="text-xs text-slate-500 mt-3 italic" data-tour-knowledge-hint="">Not graded—just for fun.</p>
-        <div class="mt-4 flex gap-2">
-          <span class="h-2 w-8 rounded-full bg-orange-400/90"></span>
-          <span class="h-2 w-8 rounded-full bg-slate-200"></span>
-          <span class="h-2 w-8 rounded-full bg-slate-200"></span>
-        </div>
-      </div>
-    </div>
-```
+# Tour sample content (read by the Getting started page only—not the standard module scenarios/KC renderer.)
+getting_started_demo:
+  scenario:
+    title: "Where is Waldo?"
+    situation: |
+      You aren't sure where to find the most recent product collateral for **Unified Communications**. What should you do?
+    options:
+      - label: "Send an email to Everyone@gpcom.com and ask where to find it."
+        correct: false
+      - label: "Check the Sales SharePoint site and look inside Sales Resources."
+        correct: true
+      - label: "Email, call, and IM Sarah Tinkham relentlessly until she gives it up."
+        correct: false
+    incorrect_feedback: "Not quite—Waldo is in Sales Resources, not in everyone’s inbox."
+    coach_note: "Official hubs beat broadcast email—Sales Resources is there so you (and Sarah) aren’t playing hide-and-seek."
+  knowledge_check:
+    question: "What is the best Mexican restaurant in Blair, NE?"
+    options:
+      - label: "Taco Bell"
+        correct: false
+      - label: "El Vallarta Mexican Restaurant"
+        correct: true
+      - label: "Justin's leftover tacos in the fridge on floor 2"
+        correct: false
+    incorrect_feedback: "Nice try—unless you’re really craving Justin’s tacos."
+    affirmation_primary: "Blair has spoken—you’ve got great taste."
+    affirmation_secondary: "El Vallarta would be proud."
+    hint: "Not graded—just for fun."
+---
+
+## Welcome to Great Plains Communications
+
+We're glad you're here. This space is built to help you ramp with confidence—alongside teammates who remember their first customer call, their first complex quote, and the questions that used to keep them up at night.
+
+## A note from the team
+
+Dear teammate,
+
+Welcome to Great Plains Communications. Whether you're new to telecom or you've carried a bag for years, we're glad you're on the team. Sales-Navigator exists so you spend less time hunting for answers and more time listening to customers—rules of engagement, product depth, competitive positioning, and the workflows that keep deals moving are never more than a few clicks away.
+
+Nobody expects you to know everything on day one. We do expect you to ask questions, use the resources here, and reach out when a deal needs an extra pair of eyes. That's how we get better together—and how our customers feel the difference between a vendor and a partner.
+
+With appreciation,
+
+**Your Sales Leader**
+
+## Where to go next
+
+- When you're ready to leave the tour behind, open **Sales Rules of Engagement** for pipeline protection and idle windows, or **Sales Process & Salesforce** if you want the CRM motion first.
+- Product depth lives under **Connectivity & Access onward** in the sidebar; collapse the rail with the **chevron** whenever you want more reading room.
+- **Fiber path** in the header is your progress ribbon across modules—same chrome as the rest of the hub, just focused on what you've visited and what's next.
+<!-- prettier-ignore-end -->
 
 ---
 
@@ -271,7 +116,7 @@ five_minute_summary: |
   - **Idle windows:** On the general path, if there is no qualifying logged activity for the periods below, others may work the account. But don't be a cowboy—always reach out to the listed owner first before you pounce.
     - **Prospect:** 61+ days.
     - **Customer:** 121+ days.
-    - **Strategic list & USAC/E-Rate:** The 61/121 clocks do not apply here. Confirm treatment with leadership before you start chasing these accounts.
+    - **Strategic list & USAC/E-Rate:** The 61/121 clocks do not apply here—assume Strategic-style coverage and confirm with leadership before you work the account. **Named carve-out:** **ENA (Education Networks of America) in Indiana** stays with the **Out-State Team** per the ROE—not the usual USAC/Strategic path.
   - **The 5-day inbound clock:** Assigned an inbound lead by sales or marketing? You have exactly five business days to make first contact and log it in Salesforce. Miss it, and it gets reassigned. (Note: Self-sourced leads do not use this clock).
   - **Transfers:** Never play admin and reassign an account to yourself. Talk to the incumbent owner, get aligned, and then email your manager and sales leadership for the official sign-off.
 
@@ -455,7 +300,7 @@ ROE exists to **protect pipelines** and **draw clean lines** on who works whom. 
 
 - **Transfer through leadership** — Never self-reassign. Agree with the incumbent, then route through **manager + sales leadership** (per ROE).
 
-**General** accounts: **61+** (Prospect) / **121+** (Customer) idle rules. **Strategic** list and **USAC/E-Rate** coverage are stricter—confirm before you chase the logo.
+**General** accounts: **61+** (Prospect) / **121+** (Customer) idle rules. **Strategic** list and **USAC/E-Rate** coverage are stricter—confirm before you chase the logo. **Exception:** ENA (Education Networks of America) in **Indiana** → **Out-State Team** (per ROE).
 
 ---
 
@@ -497,7 +342,7 @@ ROE exists to **protect pipelines** and **draw clean lines** on who works whom. 
 
 ::: flip ["That school district falls under the 61/121 day rules."]
 
-**The USAC Trap:** USAC-funded entities follow Strategic-style treatment, even if they aren't explicitly on the list. Confirm coverage with leadership before assuming they are fair game.
+**The USAC Trap:** USAC-funded entities follow Strategic-style treatment, even if they aren't explicitly on the list. Confirm coverage with leadership before assuming they are fair game. **ENA in Indiana** is the named exception—it stays with the **Out-State Team**.
 
 :::
 
@@ -527,7 +372,7 @@ ROE exists to **protect pipelines** and **draw clean lines** on who works whom. 
 
 - Before creating accounts or contacts: search by address and name; do not open a second account for an existing entity; do not add a contact whose email already exists elsewhere without coordinating with that account owner.
 
-- Most situations (~80%) fit the ROE as written. Unique or unclear cases go to sales management case by case—do not improvise policy on your own.
+- **The 80/20 rule:** Most situations (~**80%**) fit the ROE as written. The rest are edge cases—unique ownership disputes, fuzzy Strategic vs. general boundaries, USAC/E-Rate questions, or anything that feels like *"this doesn't quite match the PDF."* Those go to **sales management case by case**. Do not improvise policy on your own and do not play lawyer with the ROE.
 
 ### General accounts (non-Strategic)
 
@@ -659,6 +504,8 @@ five_minute_summary: |
   - **The Contract Signer:** Set the Contract Signer on the GPC Solution early—before it ever hits Approval Pending. Trying to append it at the 11th hour will block your DocuSign envelope.
   - **DocuSign prep:** Every single recipient on a DocuSign envelope must exist as a Contact on the account first. No exceptions.
   - **Closed Lost:** Never delete a Closed Lost record. That history is critical for forecasting and future re-engagement campaigns.
+  - **Three Contact Roles are mandatory on every Closed-Won Solution:** Project Contact, Billing Contact, and Property Manager / On-Site Manager. Skip them and you don't fail the close—you stall the install, because PMO can't reach the building and the bill lands in the wrong inbox.
+  - **Costing Routing has three flags** that change the routing path: **Strategic Build** (geographic), **Zone Parent** (multi-site structural), and **Reusable** (procedural). Different flags, different rules—and Reusable is **not allowed** under a Zone Parent.
 
 your_coaches:
   coaches:
@@ -703,6 +550,42 @@ knowledge_checks:
       - "Revert the Opportunity back to a Lead so marketing can nurture them."
     correct_index: 0
     explanation: "Closed Lost history is highly valuable data. Deleting records destroys our competitive intelligence."
+
+  - question: "Which Contact Roles does the QRG say must be set on every Closed-Won GPC Solution?"
+    options:
+      - "Project Contact, Billing Contact, and Property Manager / On-Site Manager."
+      - "Just the Decision Maker—everything else is optional."
+      - "Sales' Main Contact and the Influencer. PMO figures the rest out post-close."
+    correct_index: 0
+    explanation: "Skipping the three required roles doesn't fail the close. It stalls the install (PMO can't reach the building) and routes the bill to the wrong inbox."
+    source: "Contact Roles Quick Reference Guide - 1023.pdf"
+
+  - question: "On the same Solution Site you've selected both New Services and Existing Services. Which costing routing path does Salesforce follow?"
+    options:
+      - "The New Services path."
+      - "The Existing Services path."
+      - "Both paths run in parallel and the system reconciles them at Close-Won."
+    correct_index: 0
+    explanation: "When New and Existing Services are both selected, the New Services path wins—always."
+    source: "Costing Routing Quick Reference Guide - 1123.pdf (Considerations)"
+
+  - question: "A Solution Site is associated with a Zone Parent Opportunity. Can it use the Reusable flag for costing?"
+    options:
+      - "No—Reusable is not allowed when a Solution Site is associated with a Zone Parent Opportunity."
+      - "Yes—Reusable speeds up multi-site deals, so Zone Parent + Reusable is the recommended combination."
+      - "Only if the site is also flagged Strategic Build."
+    correct_index: 0
+    explanation: "Strategic Build, Zone Parent, and Reusable are independent flags. The QRG is explicit: Reusable is not allowed under a Zone Parent."
+    source: "Costing Routing Quick Reference Guide - 1123.pdf (Considerations)"
+
+  - question: "What conditions flag a Solution Site as Strategic Build?"
+    options:
+      - "The site's GPS coordinates fall within geographical boundaries pre-loaded into Salesforce. When flagged, Individual Drop Cost and Individual Equipment Cost apply systematically."
+      - "Any deal over $50k MRC."
+      - "Any deal involving a Zone Parent Opportunity."
+    correct_index: 0
+    explanation: "Strategic Build is purely geographic, not financial. The geographic boundary triggers the systematic cost application."
+    source: "Costing Routing Quick Reference Guide - 1123.pdf (Considerations)"
 
 scenarios:
   - title: "The 11th Hour Signer"
@@ -787,6 +670,49 @@ Tasks, list views, and Home dashboards are the hygiene habit—if activity isn't
 ---
 
 ## Process Deep Dive [deep]
+
+### Contact Roles — the part that bites you later
+
+Every Closed-Won GPC Solution must carry **three Contact Roles**: **Project Contact**, **Billing Contact**, and **Property Manager / On-Site Manager**. Miss any of those three and the close goes through clean—but the install stalls (PMO can't reach the building) and the first bill lands in the wrong inbox. It's a slow, expensive way to break a customer's first 30 days with GPC.
+
+The full role list, from the Contact Roles QRG:
+
+- **Sales' Main Contact** — the person you reach out to about the sale or contract.
+- **Influencer** — encourages or recommends GPC to the Decision Maker.
+- **Decision Maker** — signs the contract. May or may not be the owner.
+- **Project Contact** — PMO's point of contact for installation. **Required on every Closed-Won Solution.**
+- **Billing Contact** — PMO and Business Customer Care's billing contact. **Required on every Closed-Won Solution.**
+- **Property Manager / On-Site Manager** — for site access. **Required on every Closed-Won Solution.**
+- **General Contractor** — only when construction is needed.
+- **IT / Technical / Data Contact** — coordinates with the customer's IT contractor.
+- **Phone System Contact** — coordinates Voice / phone-system installs (skip for UC-only deals).
+- **Agent (Channel)** — Channel Sales only.
+- **Business User** — the person actually using the service.
+- **Other** — last resort, when nothing else fits.
+
+**On the Contact record itself:** set **Status = Active** and populate **Preferred Contact Method** with the matching contact info. Stale-status contacts get dropped from automated comms—a clean record now saves a phone tag spiral later.
+
+### Costing Routing & Reusable — the three flags that change everything
+
+Every Solution Site is routed for costing based on the **Services**, **Site Type**, and **Products** selected. Start with the New-vs-Existing distinction:
+
+- **New Services** — Services that need a new install connection, or the customer is brand new to GPC.
+- **Existing Services** — Services GPC already provides at the site; you're upgrading, downgrading, or adding features.
+
+**Two rules to memorize.** Get either wrong and the Solution sits in the wrong queue for days:
+
+1. **If New *and* Existing Services are both selected on the same Solution Site, routing follows the New Services path.**
+2. **If multiple Services are selected on the same Site, routing follows the path of the Service that needs the deepest review.**
+
+**Three flags can change the routing path.** They are **independent of each other**—don't assume Strategic Build implies Reusable, or that Zone Parent gates Strategic Build:
+
+| Flag | What it does | When it applies |
+| --- | --- | --- |
+| **Strategic Build** | Individual Drop Cost and Individual Equipment Cost apply systematically—bypassing OSP review for those line items. | Site's GPS coordinates fall within geographic boundaries pre-loaded into Salesforce. |
+| **Zone Parent Opportunity** | Solution Sites under a Zone Parent may bypass automation in routing. | Multi-site deals with a parent Opportunity tying child Solutions together. |
+| **Reusable** | OSP and Network Engineering complete the costing routing on the team's behalf via the Reusable matrix. | Specific criteria are met (see QRG). **Not allowed under a Zone Parent.** |
+
+**Pinned landmine.** **Reusable is not allowed when a Solution Site is associated with a Zone Parent Opportunity.** Reps often assume Strategic Build and Reusable are the same fast-lane—they aren't. Strategic Build is *geographic* (does the site fall in the boundary?); Zone Parent is *structural* (is the deal multi-site?); Reusable is *procedural* (is the matrix populated?). Treat the flags as three separate conversations.
 
 <!--
 **Lifecycle flow:**
@@ -903,6 +829,35 @@ video_sections:
       - Discount not tied to term: 20% or less can auto-approve; over 20% requires manager approval.
       - Discount tied to term: caps increase with longer terms. Examples: 24–35 months allows 22%, 36–47 months allows 27%, 48–59 months allows 29%, and 60+ months allows 31%.
       - Enterprise, Channel, and Wholesale use the same discount rules.
+
+      **Payback Months — term-scaled auto-approve ladder** (above threshold → Manager review; full matrix in SharePoint):
+
+      | Contract term (months) | Auto-approves if Payback Months ≤ |
+      | --- | --- |
+      | 0–23 | 1 |
+      | 24–35 | 12 |
+      | 36–47 | 18 |
+      | 48–59 | 24 |
+      | 60–71 | 30 |
+      | 72–83 | 31 |
+      | 84–95 | 33 |
+      | 96–107 | 38 |
+      | 108–119 | 40 |
+      | 120+ | 44 |
+
+      **Payback bypasses:** Strategic Build Solution Site Type bypasses Payback Months entirely. **Wholesale Bulk Process** is not evaluated against the Payback Months requirement.
+
+      **Discount tied to term** (discountable-by-term products only; non-term-discountable products cap at **20%**):
+
+      | Contract term (months) | Auto-approves if discount ≤ |
+      | --- | --- |
+      | 0–23 | 20% |
+      | 24–35 | 22% |
+      | 36–47 | 27% |
+      | 48–59 | 29% |
+      | 60+ | 31% |
+
+      **Product-discount bypass:** Wholesale Bulk Process is not evaluated against the Product Discount requirement.
 
       Net investment approval bands:
 
@@ -1153,6 +1108,25 @@ Downtime hurts a small business just as much as an enterprise. Our solutions sca
 :::
 
 </div>
+
+---
+
+## Portfolio quick reference — deck order + national-cable proof
+
+**Ten product lines (deck order):** Fiber Internet · Managed Ethernet · SD-WAN · Wireless Internet Backup · Cloud Connect · Managed Firewall · Video (GPC iTV) · Managed Wi‑Fi · Unified Communications · DDoS Protection. Connectivity comes first—everything else stacks on the pipe.
+
+**GPC vs. Cox (national cable framing —** from the Cox Acquisition Battle Card v2; use when coax-heavy incumbents push *speed-for-price*):
+
+| Capability | GPC | Cox |
+| --- | --- | --- |
+| Delivery method | 100% fiber | Coax with limited fiber |
+| Symmetrical speeds | Yes | No (limited to fiber only) |
+| Max speeds available | 100 Gbps | 2 Gbps (coax) / 100 Gbps (fiber) |
+| Auto renewals | No | Yes |
+| Professional installation fees | None | $100 |
+| Activation fees | None | $25 / $99 (standard / gateway) |
+
+**Don't race them on sticker price.** Cox Spectrum Charter buyers still care about **symmetry, delivery method, term locks, and install/activation friction**—pull the conversation to total cost and operational fit, not the month-one number alone. Authoritative collateral lives in **Sales Resources**—this table is a memory anchor, not a second source of record.
 <!-- prettier-ignore-end -->
 
 ---
@@ -1276,8 +1250,48 @@ VPNs over public internet are subject to public internet traffic jams. Managed E
 - If the customer uses heavy VoIP, video conferencing, or relies heavily on cloud-hosted CRMs, **DIA is non-negotiable**.
 - SIA is strictly for environments where an occasional slowdown does not impact revenue (e.g., a waiting room Wi-Fi, a small retail shop's secondary terminal).
 
+**SIA vs. DIA — side-by-side** (from the DIA vs SIA comparison sheet—SE/quoting for the customer-facing PDF):
+
+| Feature | SIA — Standard Internet Access | DIA — Dedicated Internet Access |
+| --- | --- | --- |
+| Delivery methods | Fiber, copper, **and** coax | **Fiber only** |
+| Bandwidth model | Shared | Dedicated |
+| Speeds | Asymmetrical **and** symmetrical, up to 2 Gbps | **Symmetrical**, up to 100 Gbps |
+| Static IPs | 1 included | **3 included** |
+| DDoS protection | GPC network-level | **Customer-specific proactive monitoring + mitigation** |
+| Latency | Standard latency, best-effort objectives | **Premium low-latency performance objectives** |
+| Support tier | 24×7×365 Tier 1 Internet Service Center (ISC) | **24×7×365 NOC** for enhanced support and monitoring |
+| Access diversity | Standard | Standard, with multiple diverse access options available |
+
+**One sentence that captures the choice:** SIA is GPC's high-quality shared Internet—DIA is GPC's enterprise-grade dedicated Internet.
+
+**Fiber vs. Starlink — latency band you can quote on a whiteboard** (per Fiber vs Starlink battle card—always pivot peak Mbps to **latency consistency**):
+
+| Application need | Typical latency requirement |
+| --- | --- |
+| Video calls | <50 ms |
+| VoIP | <150 ms |
+| POS | <100 ms |
+| VPN | <100 ms |
+| Cloud apps | <100 ms |
+| Remote support | <100 ms |
+
+Typical **fiber** one-way latency band: **~5–15 ms.** Typical **Starlink** band in the same card: **~21–30 ms**—that's the gap that kills real-time apps when conditions aren't perfect.
+
+**Fiber vs. 5G — capability split** (from Fiber vs 5G one-sheet—5G wins portability; fiber wins always-on business grade):
+
+| Capability | Fiber | 5G |
+| --- | --- | --- |
+| Supports business growth + high bandwidth | ✓ |  |
+| Reliability (less interference from weather / network / obstacles) | ✓ |  |
+| High level of security | ✓ |  |
+| Portability and flexibility |  | ✓ |
+| Lower up-front costs |  | ✓ |
+
+This is also why **5G Wireless Backup** belongs **behind** primary fiber—not as a full-time substitute when the customer needs symmetric, low-jitter, all-hours performance.
+
 **Beating Starlink (LEO Satellite):**
-- **The Physics:** LEO is better than legacy satellite, but it still cannot match the consistent sub-10ms latency of a local fiber network.
+- **The Physics:** LEO is better than legacy satellite, but it still cannot match the consistent low-latency profile of a local fiber network—use the table above when a rep reaches for a number.
 - **The Weather:** "Rain fade" is a physical reality for satellite. Heavy cloud cover or storms will degrade the signal.
 - **The SLA:** Starlink is best-effort. GPC fiber is backed by an enterprise Service Level Agreement and a local 24/7 NOC.
 
@@ -1492,16 +1506,46 @@ No—next-gen firewall and IDS/IPS are optional add-ons, not bundled in base Vel
 - Business rule: at least one site on GPC fiber required
 - NGFW and IDS/IPS lines are optional add-ons—not included in base SD-WAN SKU; confirm with SE/quoting on every quote
 
-**SD-WAN commercial framing:** SD-WAN MRC sits **between SIA and DIA** at comparable speeds — often less than the MPLS it replaces. **Internet bandwidth is purchased separately** from the SD-WAN overlay; that split is worth flagging in every quote so the customer sees the full stack. Current rate cards live in **Sales Resources** (protected) — pull with quoting, never from memory.
+**SD-WAN commercial framing:** SD-WAN MRC sits **between SIA and DIA** at comparable speeds — often less than the MPLS it replaces. **Internet bandwidth is purchased separately** from the SD-WAN overlay; that split is worth flagging in every quote so the customer sees the full stack. Current rate cards live in **Sales Resources** (protected) — pull with quoting, never from memory. Proof point from the financial-services use-case set: one advisory shop saw **~60% savings on public broadband vs. private network services** after SD-WAN—cite with care; SE validates on every financial narrative.
 
-**Managed Firewall:** FortiGate-based edge + SOC monitoring. Don't quote throughput/compliance as fixed guarantees—SE + approved sheets required.
+**Managed Firewall — Fortinet platform tiers** (from the Managed Firewall datasheet—**SE picks the model**; don't quote throughput as a contractual guarantee without approved collateral):
 
-**MNS (Managed Network Security):** umbrella service = managed firewall + management of customer gear + SIEM + assessments + email security. Match SKU to buyer's actual need.
+| Tier | Office platforms | Firewall throughput | IPS throughput |
+| --- | --- | --- | --- |
+| Small Office | FG-30G | 4 Gbps | 800 Mbps |
+| Medium Office | FG-50G | 5 Gbps | 2.25 Gbps |
+| Large Office | FG-70G | 10 Gbps | 2.5 Gbps |
+| Hub/HQ Office | FG-90G | 28 Gbps | 4.5 Gbps |
 
-**DDoS:**
-- Proactive: 24×7 monitoring + automated mitigation
-- On-demand: mitigation **weekdays 8–17 only**—state explicitly; never equate with proactive timing
-- BGP/ASN DDoS designs → SE/security early
+| Tier | Data center platforms | Firewall throughput | IPS throughput |
+| --- | --- | --- | --- |
+| Small DC | FG-100F | 20 Gbps | 2.6 Gbps |
+| Medium DC | FG-120G | 39 Gbps | 5.3 Gbps |
+| Large DC | FG-400F | 79.5 Gbps | 12 Gbps |
+
+**Managed Firewall:** FortiGate-based edge + SOC monitoring on top of this hardware ladder. Compliance and real-world throughput still route through **SE + approved sheets**.
+
+**MNS (Managed Network Security) — six components** (umbrella; match SKU to what the buyer actually runs today):
+
+1. **Managed Firewall** — fully managed Fortinet NGFW, 24×7 monitoring, threat detection, VPN access, optional zero-trust.
+2. **Firewall Management** — 24×7 management of **their existing** firewalls across **Cisco, Fortinet, Palo Alto**, and more.
+3. **Firewall Plus with Managed SIEM** — data aggregation, threat prioritization, log retention, actionable insight.
+4. **Firewall & Enterprise Security Assessments** — architecture / policy review, vulnerability findings, remediation roadmap.
+5. **Vulnerability Scanning** — scheduled active + passive monitoring with expert interpretation.
+6. **Managed Email Security** — AI-driven threat and DLP coverage for platforms like Microsoft 365 and Slack.
+
+**DDoS Protection — Proactive vs. On-Demand** (from the DDoS product sheet—**never** let a customer assume 24×7 mitigation on the wrong SKU):
+
+| Feature | Proactive DDoS | On-Demand DDoS |
+| --- | --- | --- |
+| Monitoring portal + traffic analysis | ✓ | ✓ |
+| 24×7 automated monitoring + notifications | ✓ | ✓ |
+| **Mitigation** | **24×7 automated mitigation** | **Mitigation weekdays 8 am–5 pm only** |
+| Bandwidth thresholds per customer | ✓ | ✓ |
+| Bandwidth range | 10 Mbps – 100 Gbps | 10 Mbps – 100 Gbps |
+| BGP FlowSpec + TMS | ✓ | BGP FlowSpec only |
+
+**The line that saves your renewal:** e-commerce at 2 a.m. needs **Proactive**. A brick-and-mortar shop whose web ordering is mostly business-hours *might* be fine on **On-Demand**—document the trade-off in writing before signature.
 
 **Handoffs:** SE/security for HA, BGP/ASN DDoS, mixed-vendor firewall management, regulated environments, unusual scale. Pricing PDFs are internal until quoting validates.
 
@@ -1677,7 +1721,15 @@ When critical apps go down, nobody cares how cheap their internet was. We protec
 - Sits behind the customer's primary GPC wireline circuit (SIA, DIA, or SD-WAN). Only active during a primary-circuit outage—fails over and fails back automatically.
 - Hardware: Cradlepoint X20-5G CPE (or E100 LTE on the lower tier) installed and managed by GPC; optional ~8-hour backup battery for site-wide power loss.
 - Cellular underlay is Verizon and/or AT&T; the wireless connectivity itself is procured through Kajeet. Failover typically completes in about a minute.
-- "Best effort"—no SLA. After failover, heavy daily usage hits a carrier-side throttle (the 5G tier deprioritizes after ~12 GB/day). The product is designed to keep the doors open and the registers ringing during an outage, not to run a 400-person video conference simultaneously. Set expectations.
+- "Best effort"—no SLA. After failover, heavy daily usage hits a **carrier-side throttle** on the 5G tier—the customer doesn't get "unlimited at full speed" through a multi-day outage. Walk the table **before** signature so nobody panic-calls you mid-disaster:
+
+| Daily usage on failover (approx.) | Speed cap after throttle |
+| --- | --- |
+| After **12 GB** | Up to **50 Mbps** |
+| After **20 GB** | Up to **25 Mbps** |
+| After **30 GB** | Up to **3 Mbps** |
+
+The product is designed to keep the doors open and the registers ringing during an outage, not to run a 400-person video conference simultaneously. Set expectations.
 - **Static IP gotcha:** Static IPs work on the GPC landline side, but the carrier hands out a different (DHCP) IP during failover. If the customer has inbound services tied to a static IP, they break during the outage—document this expectation up front.
 
 **5G Wireless Broadband:**
@@ -1817,6 +1869,19 @@ roleplay:
 
 ---
 
+## Common Pitfalls
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+::: flip ["Streaming-only means zero hardware—we never need a box."]
+**The "No Equipment Promise" Trap:** Standard iTV collateral is **streaming-first**—but the footnote is explicit: **some** businesses or TV setups still need **set-top boxes** at a **low monthly rate**. Promise a 100% box-free install without qualifying the site and you'll fight the customer at truck roll. Call STB possibility out in discovery *before* you quote.
+
+:::
+
+</div>
+
+---
+
 ## Discovery Galaxy
 
 <div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
@@ -1902,7 +1967,7 @@ video_carousel:
 five_minute_summary: |
   - **The Microsoft Teams Play:** We have two motions. "Embedded UC" puts our app inside Teams and saves them the MS Teams Phone license. "Ascend with Teams" uses the native MS dialer and *does* require the MS Teams Phone license. Do not blend these pitches.
   - **The Bundle:** Our platform (powered by Intermedia) includes enterprise calling, SMS/MMS, HD meetings, and AI recaps on a 99.999% uptime foundation.
-  - **The Plan Ladder:** Four tiers — **Express** (voice only), **Essentials** (adds video up to 25 + AI recap + call recording), **Pro** (adds inbound Call Center + CRM integrations + video to 100), **Enterprise** (Pro + video to 200 + 200 GB storage). Pick by **workload**, not company size — most multi-site customers run a *mix* (Express at reception, Pro for sales, Enterprise at HQ).
+  - **The Plan Ladder:** Five tiers — **Resource Line** (one concurrent endpoint, no apps; for front-desk, lobby, and conference-room phones that just need to ring), **Express** (voice only), **Essentials** (adds video up to 25 + AI recap + call recording), **Pro** (adds inbound Call Center + CRM integrations + video to 100), **Enterprise** (Pro + video to 200 + 200 GB storage). Pick by **workload**, not company size — plans **mix and match per user**, so most multi-site customers run a *blend* (Resource Lines at lobby phones, Express at reception, Pro for sales, Enterprise at HQ).
   - **Contact Center:** We sell an omnichannel CX add-on (Voice, SMS, chat). Licensing is concurrent, meaning they only pay for the maximum number of agents logged in at the same time, not a named license for every single employee. Note: UC Pro and Enterprise already include *inbound* Call Center features (queueing, supervisor monitor/whisper/barge); the dedicated **CCaaS** product is the separate omnichannel SKU.
   - **Legacy:** We still support SIP and PRI for customers who aren't ready to move fully to the cloud, but the goal is always to pivot to UCaaS.
 knowledge_checks:
@@ -1955,6 +2020,34 @@ knowledge_checks:
       - Stop and bring in your Solutions Engineer. IPN/OffNet porting under an active carrier contract, multi-level IVR scoping, and Salesforce CTI integration are all SE-validated designs — promising any of them on your own creates an install fight you can't win.
     correct_index: 2
     explanation: 'The deep-dive rule already says "Do not attempt to quote high-volume burst capacity or complex IVR routing on your own. Bring in your SE immediately." Extend that rule to **IPN/OffNet porting** (existing-carrier contract handoffs) and **CRM CTI integrations** (Salesforce/ServiceNow/Dynamics screen-pops). When you see any of the three, pause and pull in the SE.'
+
+  - question: "Name the five GPC UC plan tiers, lowest to highest."
+    options:
+      - "Resource Line → UC Express → UC Essentials → UC Pro → UC Enterprise."
+      - "UC Lite → UC Standard → UC Plus → UC Pro → UC Enterprise."
+      - "UC Express → UC Essentials → UC Pro → UC Enterprise → UC Enterprise+."
+    correct_index: 0
+    explanation: "Resource Line is the standalone-endpoint floor (one concurrent line, no apps, for lobby / conference-room / common-area phones). Everything above it scales by video participants, storage, call-center features, and CRM integrations."
+    source: "UC Plan Comparison - Internal use only 2026.pdf"
+
+  - question: "A customer needs 40 omnichannel agents with outbound calling, supervisor monitor/whisper/barge, queued callback, and post-call surveys. Which CCaaS tier do you anchor the quote on?"
+    options:
+      - "CC Elite — outbound dialer, supervisor monitor/whisper/barge, queued callback, and post-call surveys are Elite-only capabilities."
+      - "CC Pro — Pro is the default; Elite is just a marketing tier."
+      - "UC Pro's Advanced Hunt Groups — same feature set, lower cost."
+    correct_index: 0
+    explanation: "Both tiers are concurrent-seat licensed and both are omnichannel-capable, but supervisor coaching, outbound dialer, callback, and post-call surveys are explicit Elite-tier capabilities. Quoting Pro for an outbound-heavy or supervisor-coaching workload creates a feature-gap fight at install."
+    source: "Contact Center datasheet 050925.pdf"
+
+  - question: "A customer is replacing their front-desk receptionist's phone. They want a large color touch screen with on-screen line management. Which Yealink model do you spec?"
+    options:
+      - "T57W (Advanced) — 7-inch, 800×480 capacitive touch screen."
+      - "T53W (Basic) — 3.7-inch graphical LCD, 8 line keys."
+      - "T54W (Intermediate) — 4.3-inch color LCD, 10 line keys."
+    correct_index: 0
+    explanation: "Pick by **role**, not by what's cheapest. Front desk gets Advanced (T57W) because the receptionist needs a touch-screen line-management experience. Back-office workers who just answer their own line are well-served by the T53W Basic."
+    source: "UC Phone Comparison sheet.pdf"
+
 scenarios:
   - title: The Microsoft Native Trap
     situation: |
@@ -2028,18 +2121,52 @@ We deliver a 99.999% uptime cloud voice platform that embeds directly into Micro
 
 | Tier | Voice | Video participants | Storage / user | Call Center features | CRM integrations | Lead with when… |
 | --- | --- | --- | --- | --- | --- | --- |
+| **Resource Line** | 1 concurrent endpoint (no apps) | — | — | — | — | Standalone resource lines — front-desk, lobby, conference-room, common-area phones; the line just needs to ring |
 | **Express** | Unlimited | — (no video) | — | — | Active Directory, Chrome Click-to-Call | Reception desks, freelancers, dispatchers, scheduling-only roles |
 | **Essentials** | Unlimited | 25 | 5 GB | — | — | Hybrid teams, customer support, sales on the go, MS 365 integration |
 | **Pro** | Unlimited | 100 | 50 GB | Queueing, Wallboards, Supervisor Monitor/Whisper/Barge, End-to-End Encryption | Salesforce, ServiceNow, NetSuite, MS Dynamics, Sugar, Zoho, Zendesk | Inbound call-center workloads, high-volume sales/support, CRM-integrated desks |
 | **Enterprise** | Unlimited | 200 | 200 GB | Pro + Smart Greetings + Additional Recording Storage | Same as Pro | Large all-hands, company-wide voice, town-hall meetings |
 
-**Plan-tier landmine:** Don't default to Enterprise just because the customer is enterprise-sized. Match the **plan** to the **workload** — most multi-site customers run a *mix* (e.g., Express at reception desks + Pro for sales + Enterprise at HQ for the monthly all-hands). The 25 / 100 / 200-participant video ceiling is the most common forcing function on tier selection.
+**Plan-tier landmine:** Don't default to Enterprise just because the customer is enterprise-sized. Match the **plan** to the **workload** — plans **mix and match per user**, so most multi-site customers run a *blend* (e.g., Resource Lines at the lobby and conference rooms + Express at reception + Pro for sales + Enterprise at HQ for the monthly all-hands). The 25 / 100 / 200-participant video ceiling is the most common forcing function on tier selection. Quoting Pro for a phone that just needs to ring is over-licensing—that's what Resource Line is for.
+
+**Phone hardware — the Yealink ladder:**
+
+Three desk-phone tiers, all with USB 2.0, dual-band 2.4/5 GHz Wi-Fi, and support for the Yealink EXP50 expansion module. Pick by **role**, not by tier name — front desk gets Advanced, back office gets Basic.
+
+| Tier | Model | Display | Line Keys |
+| --- | --- | --- | --- |
+| **Basic** | Yealink T53W | 3.7", 360×160 graphical LCD | 8 line keys with LED |
+| **Intermediate** | Yealink T54W | 4.3", 480×272 color LCD | 10 line keys with LED |
+| **Advanced** | Yealink T57W | 7", 800×480 capacitive touch screen | Touch-screen based |
 
 **Contact Center (CCaaS):**
 - **UC Pro/Enterprise already include inbound Call Center features** — queueing, hunt groups, wallboards, and Supervisor Monitor/Whisper/Barge — enough to run a small/medium **voice-only** help desk. The dedicated **CCaaS** product is a separate SKU for **omnichannel** workloads (voice + SMS + chat), advanced IVR, deep CRM screen-pops, and concurrent licensing across channels. Don't conflate the two when scoping.
 - Deep integrations with CRMs (Salesforce, Zendesk, HubSpot) for automatic screen pops.
 - "Concurrent" means if they have 50 total employees, but only 10 answer phones at any given time, they only buy 10 licenses.
 - Do not attempt to quote high-volume burst capacity, complex IVR routing, IPN/OffNet ports under an active carrier contract, or CRM CTI integrations on your own. Bring in your SE immediately.
+
+**CC Pro vs. CC Elite — which tier fits:**
+
+The dedicated CCaaS product ships in **two tiers**. Both are concurrent-seat licensed; both are omnichannel-capable (voice / chat / email / SMS / WhatsApp queues, depending on add-ons); both include the standard analytics + reporting stack. CC Elite is the supervisor-heavy / outbound-heavy tier.
+
+| Capability | CC Pro | CC Elite |
+| --- | --- | --- |
+| Concurrent-seat licensing | ✓ | ✓ |
+| Inbound Voice Queues, ACD, customizable IVR | ✓ | ✓ |
+| Pre-built CRM integrations (Salesforce, Dynamics, Zendesk, Slack) | ✓ | ✓ |
+| Real-time + historical reporting, dashboards | ✓ | ✓ |
+| Skill-Based Routing | ✓ | ✓ |
+| Supervisor Monitor / Whisper / Barge-In | — | ✓ |
+| Outbound Voice + Outbound Dialer (scheduled power dialing) | — | ✓ |
+| Geo-Routing + Advanced Rules-Based Routing (Last Agent / Preferred Agent) | — | ✓ |
+| Queued Callback + Queued Voicemail | — | ✓ |
+| Real-Time Customizable Threshold Alerts | — | ✓ |
+| Post-Call Surveys + Call Scripting | — | ✓ |
+| Custom Agent Status + Elastic Demand Support | — | ✓ |
+
+**Add-ons available on both tiers (additional cost):** Chat / Email / WhatsApp Channel Queues, Dynamic Notification (Voice/Email/SMS), Schedule Manager, AI Agent Evaluator, Screen Recording, omnichannel Archiving across voice / SMS / chat / email / screen recordings.
+
+**Pick CC Elite when** you see outbound calling, supervisor coaching workflows, callback functionality, post-call surveys, or strict SLA threshold alerts on the requirements list. Otherwise CC Pro is the right anchor. **Don't conflate UC Pro's Advanced Hunt Groups with the CCaaS product** — UC Pro is light-call-center for voice-only; CC Pro/Elite is the real omnichannel CCaaS.
 <!-- prettier-ignore-end -->
 
 ---
@@ -2195,6 +2322,33 @@ knowledge_checks:
     correct_index: 0
     explanation: "PM = delivery/construction/contract alongside SE."
 
+  - question: "Per the Omaha Metro battle card, what is one structural weakness of Allo that GPC reps can lean into?"
+    options:
+      - "Allo does not fully own their network — they lease fiber from GPC and others."
+      - "Allo only sells to residential customers and has no Omaha presence."
+      - "Allo has no fiber footprint in the metro and resells satellite Internet."
+    correct_index: 0
+    explanation: "Use this once in a head-to-head Allo conversation as a supporting line — never as your opening move. The factoid lands as gloating if it's how you open."
+    source: "Omaha Metro competitive battle card v3.pdf (Allo section)"
+
+  - question: "On a Managed Firewall opportunity, the customer says 'we already have someone doing this.' Per the Managed Firewall battle card, what's the right framing to lead with?"
+    options:
+      - "Service consolidation — fewer vendors, single bill, single point of contact, 24/7 SOC. Don't try to win 'we're better at firewalls than your MSP.'"
+      - "Aggressively detail every feature GPC's firewall has that the incumbent's doesn't."
+      - "Drop the topic — if they already have a firewall vendor, the deal is dead."
+    correct_index: 0
+    explanation: "The Managed Firewall battle card explicitly names 'most customers already have firewalls from someone' as Challenge #1. The defensible pivot is operational simplicity, not feature combat."
+    source: "Managed Firewall Battlecard FINAL.pdf (Challenge #1)"
+
+  - question: "Per the Omaha Metro battle card, what is the T-Mobile / Metronet acquisition nuance reps should be ready to surface?"
+    options:
+      - "T-Mobile bought Metronet; residential goes under T-Mobile brand, but B2B remains Metronet — 'could mean instability as the business side is still branded Metronet.'"
+      - "T-Mobile bought Metronet and rebranded the entire business under T-Mobile Fiber."
+      - "T-Mobile sold Metronet to a private equity firm and exited the market."
+    correct_index: 0
+    explanation: "The split-brand outcome (residential → T-Mobile; B2B → Metronet) is the explicit nuance the card flags. Reps who don't know this miss the 'why is your B2B sales rep still saying Metronet?' opening."
+    source: "Omaha Metro competitive battle card v3.pdf (Metronet section)"
+
 scenarios:
   - title: "Starlink vs fiber at a rural clinic"
     situation: |
@@ -2278,6 +2432,48 @@ Differentiate last mile, routing, peering, and repair SLAs—map to **their** ap
 
 </div>
 
+---
+
+## How We Win — by competitor (field reference)
+
+The image-library tabs above ship the visual battle cards. This section ships the **textual factoids** that make those cards quotable in conversation—the lines that actually carry the meeting.
+
+### National carriers (Cox, Spectrum, Charter, Lumen, Windstream, Zayo)
+
+- **Cox / Charter / Spectrum acquisition** — Charter/Spectrum has acquired Cox. Use as **context**, not FUD. The position GPC has earned is **stability and continuity**: *"we're not changing hands; the team you onboard with is the team you renew with."* *"They'll be distracted for two years"* is a fear tactic that lands as desperation—the card explicitly steers away from that framing.
+- **Network-level differentiator vs. Cox** — Cox tops at ~2 Gbps asymmetrical on coax. GPC delivers symmetrical 100 Gbps on fiber across the footprint. When the conversation drifts to *"are you big enough?"*, anchor on **16,500-mile fiber network, 29+ Midwest data centers, MEF / SOC II / Tier-IV credentials, real Blair-Nebraska NOC.**
+
+### Omaha metro upstarts (FiberFirst, Metronet, Allo, Google Fiber)
+
+- **FiberFirst** — strategic entry in underserved areas, but staff churn, incomplete installs, limited nationwide redundancy, and no Omaha storefront. **GPC's win:** local employees, ~2-week costing-to-construction turnaround, 110+ years of established Midwest reputation.
+- **Metronet** — now T-Mobile-owned. **The acquisition split is the key nuance:** residential goes under the T-Mobile brand; **B2B remains Metronet**—the card flags this explicitly as *"could mean instability as the business side is still branded Metronet."* Network is aerial-built (cheap and fast); GPC's Omaha footprint is **~98% buried fiber**—weather-resilient and harder to dig-cut.
+- **Allo** — lower advertised pricing, multiple storefronts. The structural weakness: **Allo doesn't fully own their network—they lease fiber from GPC and others.** Use it once in a head-to-head conversation as a supporting line; never as the opening move. Plus, no business contracts, pocketed Omaha availability (the card notes a deal GPC won back because *"Allo couldn't get to the customer"*), and recent voluntary layoffs.
+- **Google Fiber** — simplified two-tier pricing, Wi-Fi included, lower advertised price. **GPC's win:** no local support presence (everything remote / automated), no DDoS, no SD-WAN, no managed firewall, and a two-tier-only structure that forces smaller businesses to pay for things they don't need.
+
+### The single line that flips the conversation
+
+**"We have a diverse, 100% referenceable customer base."** Straight from the Omaha Metro battle card. It flips the burden of proof—*"if we work for them, we'll work for you."* Always have one or two named reference customers ready in the prospect's vertical before the meeting.
+
+### Managed Firewall — the service-consolidation pivot
+
+Almost every Managed Firewall prospect **already has someone doing it**: a carrier, an MSP, an internal IT vendor, or themselves. The Managed Firewall Battle Card names this as Challenge #1: *"Most potential customers already have Internet with firewalls and other security services from someone… They may not be interested in adding yet another vendor."*
+
+**The defensible win isn't *"we're better at firewalls than your MSP."*** That's a feature-comparison fight you might lose, and it puts you on the back foot.
+
+**The defensible win is service consolidation.** Fewer vendors, single bill, single point of contact, 24/7 SOC, FortiGuard Enterprise Protection rolled into the rest of the GPC stack the customer is already buying. *"You already have GPC for connectivity—roll firewall under the same contract and you go from three vendors to one"* wins on operational simplicity, not on firewall expertise.
+
+### 5G Wireless Backup — vs. Verizon / AT&T direct
+
+A common brush-off on 5G Backup deals: *"why don't I just buy this direct from Verizon or AT&T?"* The card's response:
+
+- **GPC's 5G Backup selects the best signal between Verizon and AT&T automatically.** Buying direct from one carrier locks the customer to that carrier's coverage.
+- **Local access, local support, 24/7 NOC monitoring, bundled bill.** Direct-from-carrier means another vendor, another support hotline, another bill.
+- **Backed by Verizon + AT&T + Cradlepoint.** The underlying network credibility is the same; the operational layer is what GPC adds.
+
+Target characteristics from the card: **25-or-fewer people at the location**, with top fit in Healthcare, Retail, Financial Services, Automotive, and Municipal Government.
+
+---
+
 **Disengage signals:** bad-faith trash talk requests, pure price auction with zero fit, design questions past your lane without SE.
 <!-- prettier-ignore-end -->
 
@@ -2307,8 +2503,8 @@ five_minute_summary: |
   - **Rolling Three:** You run **3 active ABM accounts at a time**, with **3 on-deck** ready to backfill. As one completes its 90-day cycle, the next on-deck onboards immediately—no pipeline droughts, no scrambling.
   - **Staggered kickoff:** New accounts kick off on a **30-day stagger** (Month 1 / Month 2 / Month 3). One account is always in the high-intensity opening phase while others are mid- or late-cycle.
   - **Targets are a stack, not a list:** Minimum **3 targets per account (5 ideal)**—and **not all Executive**. Mix **Manager · Director/VP · Executive** so one person leaving doesn't kill the play.
-  - **Sequence rhythm:** **18 touches / 90 days**, **3 per target every 2 weeks** by phone and personalized email. Marketing runs **1 touchpoint every 30 days**, plus **+1** when Sales runs a physical **Door Pull** with the Enterprise Brochure.
-  - **One source of truth:** The **Master Tracking Spreadsheet** is the system of record for Active and On-Deck accounts—Marketing and Sales Leadership edit; everyone else has view-only.
+  - **Sequence rhythm:** **18 touches / 90 days**, **3 per target every 2 weeks** by phone and personalized email. Marketing runs **1 coordination touchpoint every 30 days**; when Sales schedules a physical **Door Pull** (Enterprise Brochure), that's the **named SOP trigger** for **+1** extra marketing touch that cycle—custom brochure copy and inserts, not a discretionary maybe.
+  - **One source of truth:** The **Master Tracking Spreadsheet** is the system of record for Active and On-Deck accounts. **Edit access** is limited to **Marketing and Sales Leadership**; **everyone else is view-only**—do not request write access to "fix" your row; work through the owners on the sheet.
 
 knowledge_checks:
   - question: "How many ABM accounts should an Account Representative run concurrently per the SOP?"
@@ -2350,6 +2546,15 @@ knowledge_checks:
       - "Only one touchpoint at the end of the 90-day cycle"
     correct_index: 0
     explanation: "Monthly marketing coordination; +1 brochure-leave-behind when Sales executes a Door Pull. The Door Pull is the named SOP trigger for the extra marketing touch."
+
+  - question: "Who may edit the Master Tracking Spreadsheet per the ABM operating model?"
+    options:
+      - "Marketing and Sales Leadership only—everyone else is view-only."
+      - "Any account rep working an Active ABM account may edit their own row."
+      - "Sales Operations owns the spreadsheet; Marketing is view-only."
+    correct_index: 0
+    explanation: "The master file stays authoritative when only Marketing and Sales Leadership hold edit rights. Reps who need a change route it through those owners—no shadow copies, no self-edit."
+    source: "ABM SOP (Master Tracking Spreadsheet — permissions)"
 
 scenarios:
   - title: "Skipping ahead in the ABM sequence"
@@ -2430,7 +2635,7 @@ You manage **three concurrent ABM accounts** on a staggered cadence: one in the 
 - **Account C** — Month 3 kickoff
 - **On-deck (×3)** — ready to onboard immediately as actives complete
 
-As Account A wraps in April, the first on-deck account onboards for a **May** kickoff. The **Master Tracking Spreadsheet** enforces the model—it's where leadership confirms the bench is healthy. An empty on-deck list is a **Rolling Three failure**, not a normal state.
+As Account A wraps in April, the first on-deck account onboards for a **May** kickoff. The **Master Tracking Spreadsheet** enforces the model—it's where leadership confirms the bench is healthy. An empty on-deck list is a **Rolling Three failure**, not a normal state. **Permissions:** only **Marketing** and **Sales Leadership** may edit the master file; account reps and the broader team are **view-only** so the Active / On-Deck counts stay authoritative.
 
 ## 90-day sequence
 
@@ -2439,7 +2644,7 @@ As Account A wraps in April, the first on-deck account onboards for a **May** ki
 - **Sales rhythm:** **3 touches per target every 2 weeks**.
 - **Primary channels:** **Phone calls** and **personalized emails**.
 - **Optional Door Pull:** A physical drop-by using the **Enterprise Brochure** as a leave-behind.
-- **Marketing rhythm:** **1 touchpoint every 30 days** (e.g., LinkedIn / Google ads, direct mail), **+1** when Sales runs a Door Pull—Marketing provides custom copy / inserts for the brochure.
+- **Marketing rhythm:** **1 coordination touchpoint every 30 days** (e.g., LinkedIn / Google ads, direct mail). **`+1` named SOP trigger:** when Sales schedules a physical **Door Pull** with the **Enterprise Brochure**, Marketing adds **one extra** touch that cycle—custom copy / inserts aligned to the leave-behind (not optional flair once the Door Pull is on the calendar).
 
 ## Sequence lanes (sales & marketing)
 
@@ -2449,7 +2654,7 @@ Sales executes the **18-touch, 90-day** motion anchored on **personalized phone 
 
 ### Marketing air cover
 
-Marketing runs **monthly support touchpoints** (LinkedIn / Google ads, direct mail) to reinforce sales outreach. When Sales schedules a **Door Pull**, Marketing increases by **+1 touchpoint** with custom copy and inserts for the brochure leave-behind.
+Marketing runs **monthly support touchpoints** (LinkedIn / Google ads, direct mail) to reinforce sales outreach. **Door Pull = automatic +1:** the SOP treats a scheduled physical Door Pull as the trigger for an **extra** marketing coordination touch in that window—which gets **custom copy and inserts** for the Enterprise Brochure—not a nice-to-have add-on after the fact.
 
 ## How to use this module
 
@@ -2600,6 +2805,8 @@ The deliverable is a **front/back trifold insert** ("the Slick") with four compo
 | **Marketing Design** | 5 days | **Sarah** → Account Team Final Review | Professional formatting and branding. |
 | **Final Prep** | 3 days | Sarah → Account Rep | Printing, pickup, and trifold insertion. |
 | **The Meeting** | **Day 21** | Account Team | OBR Meeting. |
+
+**Why 21 business days, not 26?** If you add the phase slices naively—**3 + 10 + 5 + 5 + 3**—you get **26** business days. The SOP still lands on **21** because **Network Design** (10 days) and **Billing / NOC data collection** (5 days) **overlap** during Days 5–14. Teaching reps *why* the overlap exists is how you stop the *"just promise two weeks"* fire drill before it starts.
 
 **Why Day 14 is the hinge:** Marketing Design + Final Prep take seven business days. Miss the Day 14 handoff and you compress design and print into a fire drill—the opposite of the Zero-Fire-Drills criterion.
 

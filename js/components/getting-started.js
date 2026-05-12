@@ -1,4 +1,7 @@
 import { setRouteModuleId } from '../router.js';
+import { parseFrontMatter } from '../lib/front-matter.js';
+import { splitMarkdownByH2, parseH2DeepMarker } from '../lib/markdown-sections.js';
+import { parseMarkdownToSafeHtml } from '../lib/markdown-config.js';
 
 const GETTING_STARTED_ID = 'getting-started';
 const OVERLAY_ID = 'getting-started-tour-overlay';
@@ -26,101 +29,178 @@ function orderedUserModules(manifest) {
   );
 }
 
-function buildDemoMarkup() {
+/**
+ * @param {Record<string, unknown>} meta
+ * @param {string} body
+ */
+function buildGettingStartedMarkup(meta, body) {
+  const sections = splitMarkdownByH2(body || '');
+  if (sections.length === 0) {
+    return '<p class="text-red-700 p-6">Getting started content is missing body sections.</p>';
+  }
+
+  let letterIdx = sections.findIndex((s) =>
+    /note from the team/i.test(parseH2DeepMarker(s.title).displayTitle)
+  );
+  if (letterIdx < 0) letterIdx = Math.min(1, sections.length - 1);
+
+  const welcomeSec = sections[0];
+  const letterSec = sections[letterIdx];
+  const { displayTitle: welcomeTitle } = parseH2DeepMarker(welcomeSec.title);
+  const { displayTitle: letterHeading } = parseH2DeepMarker(letterSec.title);
+
+  const welcomeBodyHtml = parseMarkdownToSafeHtml(welcomeSec.markdown || '');
+  const letterBodyHtml = parseMarkdownToSafeHtml(letterSec.markdown || '');
+
+  const wayfindingHtml = sections
+    .filter((_, i) => i !== 0 && i !== letterIdx)
+    .map((s) => {
+      const { displayTitle: wTitle } = parseH2DeepMarker(s.title);
+      const inner = parseMarkdownToSafeHtml(s.markdown || '');
+      return `
+        <section class="rounded-2xl border border-slate-200/80 bg-white/90 p-6 md:p-8 shadow-sm backdrop-blur-sm">
+          <h3 class="text-lg font-bold text-slate-900">${escapeHtml(wTitle)}</h3>
+          <div class="text-sm text-slate-700 mt-3 module-markdown-body leading-relaxed">${inner}</div>
+        </section>`;
+    })
+    .join('');
+
+  const five = meta.five_minute_summary;
+  const coffeeInner =
+    typeof five === 'string' && five.trim()
+      ? `<div class="module-markdown-body w-full text-amber-950/90 module-five-min-compact text-sm">${parseMarkdownToSafeHtml(five)}</div>`
+      : '';
+
+  const demo = /** @type {{ scenario?: Record<string, unknown>; knowledge_check?: Record<string, unknown> }} */ (
+    meta.getting_started_demo || {}
+  );
+  const scenarioAside = buildDemoScenarioAside(
+    /** @type {GettingStartedScenario} */ (demo.scenario || {})
+  );
+  const knowledgeBlock = buildDemoKnowledgeBlock(
+    /** @type {GettingStartedKnowledge} */ (demo.knowledge_check || {})
+  );
+
   return `
     <div class="tour-demo-content max-w-[1600px] mx-auto space-y-6 pb-4 select-none">
       <div class="flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
         <div class="w-full lg:flex-1 min-w-0 space-y-6 pointer-events-none" data-tour-target="module-core">
           <div class="rounded-2xl border border-orange-200/90 bg-gradient-to-br from-orange-50/50 via-white to-slate-50/40 shadow-sm p-6 md:p-8 backdrop-blur-sm module-tour-elevator">
-            <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Welcome to Great Plains Communications</h2>
-            <p class="text-slate-600 mt-3 text-sm max-w-prose leading-relaxed">
-              We're glad you're here. This space is built to help you ramp with confidence—alongside teammates who remember their first customer call, their first complex quote, and the questions that used to keep them up at night.
-            </p>
+            <h2 class="text-2xl font-bold text-slate-900 tracking-tight">${escapeHtml(welcomeTitle)}</h2>
+            <div class="text-slate-600 mt-3 text-sm max-w-prose leading-relaxed module-markdown-body">
+              ${welcomeBodyHtml}
+            </div>
           </div>
           <section class="module-five-min w-full border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm backdrop-blur-sm" aria-labelledby="five-min-heading-getting-started">
             <div class="flex w-full min-w-0 items-start gap-3">
               <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center text-base" title="Coffee Summary"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></span>
               <div class="min-w-0 flex-1 w-full">
                 <h3 id="five-min-heading-getting-started" class="text-lg font-bold text-amber-950 mb-2">Coffee Summary</h3>
-                <div class="module-markdown-body w-full text-amber-950/90 module-five-min-compact text-sm">
-                  <ul class="list-disc pl-5 space-y-2">
-                    <li>We're genuinely happy you chose to grow your career here—your wins matter to us.</li>
-                    <li>Take training at your pace; come back to any module when you need a refresher or a talk track.</li>
-                    <li>Showing up curious for customers beats memorizing slides—use this hub to prepare, then go have real conversations.</li>
-                  </ul>
-                </div>
+                ${coffeeInner}
               </div>
             </div>
           </section>
           <section class="rounded-2xl border border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white p-6 md:p-8 shadow-sm backdrop-blur-sm module-tour-discovery">
-            <h3 class="text-lg font-bold text-slate-900">A note from the team</h3>
-            <div class="text-sm text-slate-700 mt-3 space-y-3 leading-relaxed">
-              <p>Dear teammate,</p>
-              <p>
-                Welcome to Great Plains Communications. Whether you're new to telecom or you've carried a bag for years, we're glad you're on the team. Sales-Navigator exists so you spend less time hunting for answers and more time listening to customers—rules of engagement, product depth, competitive positioning, and the workflows that keep deals moving are never more than a few clicks away.
-              </p>
-              <p>
-                Nobody expects you to know everything on day one. We do expect you to ask questions, use the resources here, and reach out when a deal needs an extra pair of eyes. That's how we get better together—and how our customers feel the difference between a vendor and a partner.
-              </p>
-              <p class="text-slate-600">With appreciation,<br><span class="text-slate-800 font-medium">Your Sales Leader</span></p>
+            <h3 class="text-lg font-bold text-slate-900">${escapeHtml(letterHeading)}</h3>
+            <div class="text-sm text-slate-700 mt-3 space-y-3 leading-relaxed module-markdown-body">
+              ${letterBodyHtml}
             </div>
           </section>
+          ${wayfindingHtml}
         </div>
+        ${scenarioAside}
+      </div>
+      ${knowledgeBlock}
+    </div>`;
+}
+
+/**
+ * @typedef {{ title?: string; situation?: string; options?: Array<{ label?: string; correct?: boolean }>; coach_note?: string }} GettingStartedScenario
+ */
+
+/**
+ * @param {GettingStartedScenario} sc
+ */
+function buildDemoScenarioAside(sc) {
+  const title = typeof sc.title === 'string' ? sc.title : '';
+  const situation = typeof sc.situation === 'string' ? sc.situation : '';
+  const situationHtml = parseMarkdownToSafeHtml(situation);
+  const options = Array.isArray(sc.options) ? sc.options : [];
+  const coachNote = typeof sc.coach_note === 'string' ? sc.coach_note : '';
+  const choiceBtn =
+    'tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400';
+  const btns = options
+    .map((o) => {
+      const label = typeof o?.label === 'string' ? o.label : '';
+      const ok = o?.correct === true;
+      return `<button type="button" class="${choiceBtn}" data-tour-correct="${ok ? 'true' : 'false'}">${escapeHtml(label)}</button>`;
+    })
+    .join('');
+
+  return `
         <aside class="w-full lg:basis-[30%] lg:flex-none lg:max-w-[30%] rounded-xl border border-slate-200 bg-white/95 p-4 shadow-sm backdrop-blur-sm pointer-events-auto" data-tour-target="tour-scenarios">
           <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Scenarios</p>
-          <p class="text-xs font-semibold text-slate-800 mt-3">Where is Waldo?</p>
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            You aren’t sure where to find the most recent product collateral for <strong>Unified Communications</strong>. What should you do?
-          </p>
+          <p class="text-xs font-semibold text-slate-800 mt-3">${escapeHtml(title)}</p>
+          <div class="text-sm text-slate-600 mt-2 leading-relaxed module-markdown-body">
+            ${situationHtml}
+          </div>
           <p class="text-xs text-slate-500 mt-3 uppercase tracking-wide">Pick a response</p>
           <div class="mt-2 space-y-2" role="group" aria-label="Scenario responses">
-            <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-              Send an email to Everyone@gpcom.com and ask where to find it.
-            </button>
-            <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="true">
-              Check the Sales SharePoint site and look inside Sales Resources.
-            </button>
-            <button type="button" class="tour-scenario-opt w-full rounded-lg border border-slate-200 bg-slate-50/90 px-3 py-2.5 text-sm text-slate-700 text-left transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-              Email, call, and IM Sarah Tinkham relentlessly until she gives it up.
-            </button>
+            ${btns}
           </div>
           <p class="text-xs text-red-700 mt-2 min-h-[1.25rem] hidden" data-tour-scenario-feedback="" role="status" aria-live="polite"></p>
           <p class="text-xs text-emerald-800 bg-emerald-50/90 border border-emerald-100 rounded-lg px-3 py-2 mt-3 hidden" data-tour-coach-note="">
-            <strong>Coach's note:</strong> Official hubs beat broadcast email—Sales Resources is there so you (and Sarah) aren’t playing hide-and-seek.
+            <strong>Coach's note:</strong> ${escapeHtml(coachNote)}
           </p>
-        </aside>
-      </div>
+        </aside>`;
+}
+
+/**
+ * @typedef {{ question?: string; options?: Array<{ label?: string; correct?: boolean }>; affirmation_primary?: string; affirmation_secondary?: string; hint?: string }} GettingStartedKnowledge
+ */
+
+/**
+ * @param {GettingStartedKnowledge} kc
+ */
+function buildDemoKnowledgeBlock(kc) {
+  const q = typeof kc.question === 'string' ? kc.question : '';
+  const options = Array.isArray(kc.options) ? kc.options : [];
+  const aff1 = typeof kc.affirmation_primary === 'string' ? kc.affirmation_primary : '';
+  const aff2 = typeof kc.affirmation_secondary === 'string' ? kc.affirmation_secondary : '';
+  const hint = typeof kc.hint === 'string' ? kc.hint : '';
+  const optBtn =
+    'tour-knowledge-opt flex w-full gap-2 items-start rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-left transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400';
+  const btns = options
+    .map((o) => {
+      const label = typeof o?.label === 'string' ? o.label : '';
+      const ok = o?.correct === true;
+      return `<button type="button" class="${optBtn}" data-tour-correct="${ok ? 'true' : 'false'}">
+            <span class="text-slate-400 shrink-0" aria-hidden="true">○</span>
+            <span>${escapeHtml(label)}</span>
+          </button>`;
+    })
+    .join('');
+
+  return `
       <div class="rounded-xl border border-slate-200 bg-white/95 p-5 shadow-sm backdrop-blur-sm max-w-4xl pointer-events-auto" data-tour-target="tour-knowledge">
         <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">Knowledge checks</p>
-        <p class="text-sm font-medium text-slate-900 mt-3">What is the best Mexican restaurant in Blair, NE?</p>
+        <p class="text-sm font-medium text-slate-900 mt-3">${escapeHtml(q)}</p>
         <div class="mt-3 space-y-2 text-sm" role="group" aria-label="Knowledge check options">
-          <button type="button" class="tour-knowledge-opt flex w-full gap-2 items-start rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-left transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-            <span class="text-slate-400 shrink-0" aria-hidden="true">○</span>
-            <span>Taco Bell</span>
-          </button>
-          <button type="button" class="tour-knowledge-opt flex w-full gap-2 items-start rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-left transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="true">
-            <span class="text-slate-400 shrink-0" aria-hidden="true">○</span>
-            <span>El Vallarta Mexican Restaurant</span>
-          </button>
-          <button type="button" class="tour-knowledge-opt flex w-full gap-2 items-start rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-left transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" data-tour-correct="false">
-            <span class="text-slate-400 shrink-0" aria-hidden="true">○</span>
-            <span>Justin's leftover tacos in the fridge on floor 2</span>
-          </button>
+          ${btns}
         </div>
         <p class="text-xs text-red-700 mt-2 min-h-[1.25rem] hidden" data-tour-knowledge-feedback="" role="status" aria-live="polite"></p>
         <div class="mt-3 hidden rounded-xl border-2 border-emerald-400/80 bg-gradient-to-br from-emerald-50 via-white to-orange-50 px-4 py-3 text-center shadow-lg ring-2 ring-emerald-400/30" data-tour-knowledge-affirmation role="status" aria-live="polite">
           <p class="text-base" aria-hidden="true">✨</p>
-          <p class="text-sm font-semibold text-emerald-900">Blair has spoken—you’ve got great taste.</p>
-          <p class="mt-1 text-xs text-emerald-800/90">El Vallarta would be proud.</p>
+          <p class="text-sm font-semibold text-emerald-900">${escapeHtml(aff1)}</p>
+          <p class="mt-1 text-xs text-emerald-800/90">${escapeHtml(aff2)}</p>
         </div>
-        <p class="text-xs text-slate-500 mt-3 italic" data-tour-knowledge-hint="">Not graded—just for fun.</p>
+        <p class="text-xs text-slate-500 mt-3 italic" data-tour-knowledge-hint="">${escapeHtml(hint)}</p>
         <div class="mt-4 flex gap-2">
           <span class="h-2 w-8 rounded-full bg-orange-400/90"></span>
           <span class="h-2 w-8 rounded-full bg-slate-200"></span>
           <span class="h-2 w-8 rounded-full bg-slate-200"></span>
         </div>
-      </div>
-    </div>`;
+      </div>`;
 }
 
 /** @returns {{ left: number; top: number; width: number; height: number } | null} */
@@ -402,10 +482,46 @@ function positionGlassCard(hostEl, stepIndex, rect) {
  * @param {HTMLElement} container - #module-host
  * @param {object} manifest
  */
-export function loadGettingStarted(container, manifest) {
+export async function loadGettingStarted(container, manifest) {
   destroyGettingStartedOverlay();
 
   container.className = 'w-full max-w-[1600px] mx-auto min-h-[200px] px-0';
+
+  const baseUrl = new URL('.', window.location.href);
+  const mdUrl = new URL('modules/getting-started/content.md', baseUrl).href;
+  let meta;
+  let body;
+  try {
+    const res = await fetch(mdUrl, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const parsed = parseFrontMatter(await res.text());
+    meta = parsed.meta;
+    body = parsed.body;
+  } catch (e) {
+    container.innerHTML = `
+      <div class="bg-red-50 border border-red-200 text-red-800 rounded-xl p-6">
+        <p class="font-bold">Could not load Getting started content.</p>
+        <p class="text-sm mt-2">Serve from a local web server so <code>modules/getting-started/content.md</code> can be fetched.</p>
+      </div>`;
+    console.error(e);
+    return;
+  }
+
+  const demo = meta.getting_started_demo;
+  if (
+    !demo ||
+    typeof demo !== 'object' ||
+    !demo.scenario ||
+    !demo.knowledge_check ||
+    typeof demo.scenario !== 'object' ||
+    typeof demo.knowledge_check !== 'object'
+  ) {
+    container.innerHTML = `
+      <div class="bg-red-50 border border-red-200 text-red-800 rounded-xl p-6">
+        <p class="font-bold">Getting started content is missing <code>getting_started_demo</code> in YAML.</p>
+      </div>`;
+    return;
+  }
 
   const modules = orderedUserModules(manifest);
   const firstTraining = modules.find(
@@ -534,7 +650,7 @@ export function loadGettingStarted(container, manifest) {
     },
   ];
 
-  container.innerHTML = buildDemoMarkup();
+  container.innerHTML = buildGettingStartedMarkup(meta, body);
 
   const overlay = document.createElement('div');
   overlay.id = OVERLAY_ID;
@@ -597,6 +713,15 @@ export function loadGettingStarted(container, manifest) {
     });
   }
 
+  const scenarioWrong =
+    typeof demo.scenario?.incorrect_feedback === 'string'
+      ? demo.scenario.incorrect_feedback
+      : '';
+  const knowledgeWrong =
+    typeof demo.knowledge_check?.incorrect_feedback === 'string'
+      ? demo.knowledge_check.incorrect_feedback
+      : '';
+
   function bindDemoInteractions() {
     const root = container;
     const scenarioBtns = root.querySelectorAll('.tour-scenario-opt');
@@ -631,7 +756,7 @@ export function loadGettingStarted(container, manifest) {
         } else {
           btn.classList.add('ring-2', 'ring-red-400', 'bg-red-50');
           if (feedback) {
-            feedback.textContent = 'Not quite—Waldo is in Sales Resources, not in everyone’s inbox.';
+            feedback.textContent = scenarioWrong;
             feedback.classList.remove('hidden');
           }
         }
@@ -674,7 +799,7 @@ export function loadGettingStarted(container, manifest) {
           btn.classList.add('ring-2', 'ring-red-400', 'bg-red-50');
           knowledgeComplete = false;
           if (feedback) {
-            feedback.textContent = 'Nice try—unless you’re really craving Justin’s tacos.';
+            feedback.textContent = knowledgeWrong;
             feedback.classList.remove('hidden');
           }
         }

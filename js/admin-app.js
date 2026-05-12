@@ -143,7 +143,7 @@ async function main() {
   const manifestRes = await fetch('modules-manifest.json');
   const manifest = await manifestRes.json();
   const modules = [...(manifest.modules || [])].sort((a, b) => (a.order || 0) - (b.order || 0));
-  const skipAdminCms = new Set(['getting-started', 'map-book']);
+  const skipAdminCms = new Set(['map-book']);
   for (const m of modules) {
     if (skipAdminCms.has(m.id)) continue;
     const opt = document.createElement('option');

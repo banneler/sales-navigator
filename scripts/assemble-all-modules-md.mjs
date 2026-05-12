@@ -56,35 +56,6 @@ for (const m of mods) {
     lines.push(fs.readFileSync(mdPath, 'utf8').trimEnd());
     lines.push('<!-- prettier-ignore-end -->');
     lines.push('');
-  } else if (m.id === 'getting-started') {
-    lines.push(
-      '_No `modules/getting-started/content.md`. Excerpts from `js/components/getting-started.js`._'
-    );
-    lines.push('');
-    const src = fs.readFileSync(
-      path.join(root, 'js/components/getting-started.js'),
-      'utf8'
-    );
-    const start = src.indexOf('const steps = [');
-    const end = start >= 0 ? src.indexOf('];', start + 50) : -1;
-    const slice = start >= 0 && end > start ? src.slice(start, end + 2) : '';
-    lines.push('## Onboarding tour — `steps`');
-    lines.push('');
-    lines.push('```javascript');
-    lines.push(slice);
-    lines.push('```');
-    lines.push('');
-    lines.push('## Welcome demo — `buildDemoMarkup()` template');
-    lines.push('');
-    const bm = src.indexOf('function buildDemoMarkup()');
-    const ret = bm >= 0 ? src.indexOf('return `', bm) : -1;
-    const close = ret >= 0 ? src.indexOf('`;', ret + 8) : -1;
-    const tmpl =
-      ret >= 0 && close > ret ? src.slice(ret + 8, close) : '';
-    lines.push('```html');
-    lines.push(tmpl);
-    lines.push('```');
-    lines.push('');
   } else if (m.id === 'map-book') {
     lines.push(
       '_No `modules/map-book/content.md`. Map book uses `map-book/embed.html` and `map-book/content.json`._'

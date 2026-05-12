@@ -87,7 +87,7 @@ async function main() {
       await loadMapBook(host);
     } else if (id === GETTING_STARTED_ID) {
       document.body.classList.remove('map-book-active');
-      loadGettingStarted(host, manifest);
+      await loadGettingStarted(host, manifest);
     } else {
       document.body.classList.remove('map-book-active');
       await loadAndRenderModule(id, host, manifest);
