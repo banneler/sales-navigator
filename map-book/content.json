@@ -18,6 +18,7 @@
   "mapData": {
     "national": {
       "id": "national",
+      "protocolFocus": "l1",
       "title": "The Network",
       "subtitle": "National Footprint & Coverages",
       "placeholder": "Load National_Map.svg",
@@ -31,6 +32,7 @@
     },
     "layer2": {
       "id": "layer2",
+      "protocolFocus": "l2",
       "title": "Layer 2 Core",
       "subtitle": "High-Availability Redundant Architecture",
       "placeholder": "Load Layer_2_Rings.svg",
@@ -44,6 +46,7 @@
     },
     "ip-network": {
       "id": "ip-network",
+      "protocolFocus": "l3",
       "title": "IP Network & Peering",
       "subtitle": "Connected and Resilient Cloud Access",
       "placeholder": "Load IP_Network_Map.svg",
@@ -56,6 +59,7 @@
     },
     "towers": {
       "id": "towers",
+      "protocolFocus": "l1",
       "title": "Fiber to the Tower",
       "subtitle": "Fast & Reliable Wireless Backhaul",
       "placeholder": "Load Towers_Map.svg",
@@ -68,6 +72,7 @@
     },
     "nebraska": {
       "id": "nebraska",
+      "protocolFocus": "l1",
       "title": "Nebraska Market",
       "subtitle": "Statewide Infrastructure Detail",
       "placeholder": "Load Nebraska_Detail.svg",
@@ -80,6 +85,7 @@
     },
     "omaha-metro": {
       "id": "omaha-metro",
+      "protocolFocus": "l1",
       "title": "Omaha / Council Bluffs",
       "subtitle": "Metro Area Street Level Routing",
       "placeholder": "Load Omaha_Metro.svg",
@@ -139,6 +145,7 @@
     },
     "data-centers": {
       "id": "data-centers",
+      "protocolFocus": "l3",
       "title": "Data Centers",
       "subtitle": "Colocation & Interconnection Facilities",
       "type": "html",
