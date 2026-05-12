@@ -413,6 +413,17 @@ function cardOverlapsAny(cardRect, rects) {
 /**
  * Remove tour overlay and listeners (call when leaving Getting started route).
  */
+/**
+ * Remove every tour overlay node (duplicate `id` can leave a stale HUD if load races).
+ */
+function removeAllGettingStartedOverlaysFromDom() {
+  let el;
+  while ((el = document.getElementById(OVERLAY_ID))) {
+    el.remove();
+  }
+  overlayEl = null;
+}
+
 export function destroyGettingStartedOverlay() {
   if (resizeObs) {
     try {
@@ -431,8 +442,7 @@ export function destroyGettingStartedOverlay() {
     document.getElementById('main-panel')?.removeEventListener('scroll', onMainScroll);
     onMainScroll = null;
   }
-  document.getElementById(OVERLAY_ID)?.remove();
-  overlayEl = null;
+  removeAllGettingStartedOverlaysFromDom();
 }
 
 function applySpotlightLayers(root, rect, pad = 8) {
@@ -537,23 +547,52 @@ function positionGlassCard(hostEl, stepIndex, rect) {
   const sw = spotlight.width;
   const sh = spotlight.height;
 
+  const rightGutterLeft = sx + sw + gap;
+  const leftGutterLeft = sx - cardW - gap;
+
   /** Prefer true viewport gutters first—plain clamping pulled candidates back into the spotlight. */
   const ordered = [];
-  const rightGutterLeft = sx + sw + gap;
-  if (rightGutterLeft + cardW <= vw - gap) {
-    ordered.push({ left: rightGutterLeft, top: clampY(sy) });
+
+  if (stepIndex === 2) {
+    /** "Inside a module": keep the HUD on the right; avoid stacking below the tall main column (clips off-screen). */
+    if (rightGutterLeft + cardW <= vw - gap) {
+      ordered.push({ left: rightGutterLeft, top: clampY(sy) });
+    }
+    ordered.push({ left: vw - cardW - gap, top: clampY(sy) });
+    ordered.push({
+      left: vw - cardW - gap,
+      top: clampY(sy + Math.max(0, (sh - cardH) / 2)),
+    });
+    if (leftGutterLeft >= gap) {
+      ordered.push({ left: leftGutterLeft, top: clampY(sy) });
+    }
+    if (rightGutterLeft + cardW <= vw - gap) {
+      ordered.push({
+        left: rightGutterLeft,
+        top: clampY(sy + Math.max(0, (sh - cardH) / 2)),
+      });
+    }
+  } else {
+    if (rightGutterLeft + cardW <= vw - gap) {
+      ordered.push({ left: rightGutterLeft, top: clampY(sy) });
+    }
+    if (leftGutterLeft >= gap) {
+      ordered.push({ left: leftGutterLeft, top: clampY(sy) });
+    }
+    ordered.push({ left: vw - cardW - gap, top: clampY(sy + sh + gap) });
+    ordered.push({ left: gap, top: clampY(sy + sh + gap) });
+    ordered.push({ left: clampX(sx), top: sy + sh + gap });
+    ordered.push({ left: clampX(sx), top: sy - cardH - gap });
+    ordered.push({ left: vw - cardW - gap, top: gap });
+    ordered.push({ left: gap, top: gap });
+    ordered.push({ left: gap, top: vh - cardH - gap });
   }
-  const leftGutterLeft = sx - cardW - gap;
-  if (leftGutterLeft >= gap) {
-    ordered.push({ left: leftGutterLeft, top: clampY(sy) });
+
+  if (stepIndex === 2) {
+    ordered.push({ left: vw - cardW - gap, top: gap });
+    ordered.push({ left: gap, top: clampY(sy + sh + gap) });
+    ordered.push({ left: clampX(sx), top: sy + sh + gap });
   }
-  ordered.push({ left: vw - cardW - gap, top: clampY(sy + sh + gap) });
-  ordered.push({ left: gap, top: clampY(sy + sh + gap) });
-  ordered.push({ left: clampX(sx), top: sy + sh + gap });
-  ordered.push({ left: clampX(sx), top: sy - cardH - gap });
-  ordered.push({ left: vw - cardW - gap, top: gap });
-  ordered.push({ left: gap, top: gap });
-  ordered.push({ left: gap, top: vh - cardH - gap });
 
   let best = null;
   for (const c of ordered) {
@@ -1114,10 +1153,12 @@ export async function loadGettingStarted(container, manifest) {
     bindCardActions(glassRoot);
 
     requestAnimationFrame(() => {
-      const host = glassRoot.querySelector('.tour-glass-card-host');
-      if (!host) return;
-      positionGlassCard(host, stepIndex, rect);
-      requestAnimationFrame(() => positionGlassCard(host, stepIndex, getSpotlightRect(stepIndex)));
+      requestAnimationFrame(() => {
+        const host = glassRoot.querySelector('.tour-glass-card-host');
+        if (!host) return;
+        const rNow = getSpotlightRect(stepIndex);
+        positionGlassCard(host, stepIndex, rNow);
+      });
     });
 
     refreshNextGate();
