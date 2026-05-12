@@ -168,6 +168,8 @@ function updateImageLibraryViewer(root, button, pageIndex) {
   const zoomImg = zoomOverlay?.querySelector('.js-image-library-zoom-image');
   const zoomTitle = zoomOverlay?.querySelector('.js-image-library-zoom-title');
   const zoomLabel = zoomOverlay?.querySelector('.js-image-library-zoom-label');
+  const zoomPrev = zoomOverlay?.querySelector('.js-image-library-zoom-prev');
+  const zoomNext = zoomOverlay?.querySelector('.js-image-library-zoom-next');
 
   if (shelf) shelf.classList.add('hidden');
   if (viewer) viewer.classList.remove('hidden');
@@ -194,6 +196,8 @@ function updateImageLibraryViewer(root, button, pageIndex) {
   }
   if (prev) prev.disabled = i === 0;
   if (next) next.disabled = i === pages.length - 1;
+  if (zoomPrev) zoomPrev.disabled = i === 0;
+  if (zoomNext) zoomNext.disabled = i === pages.length - 1;
 }
 
 function getImageLibraryZoomOverlay(root) {
@@ -250,6 +254,30 @@ function bindImageLibraryDocumentHandlers() {
     const overlay = e.target.closest('.js-image-library-zoom-overlay');
     if (overlay && e.target === overlay) {
       setImageLibraryZoom(overlay.__imageLibraryRoot, false);
+      return;
+    }
+
+    const zoomPrev = e.target.closest('.js-image-library-zoom-prev');
+    if (zoomPrev) {
+      const overlay = zoomPrev.closest('.js-image-library-zoom-overlay');
+      const root = overlay?.__imageLibraryRoot;
+      const active = root?.querySelector('.js-image-library-open[aria-pressed="true"]');
+      if (root && active) {
+        const cur = Number(active.getAttribute('data-library-current')) || 0;
+        updateImageLibraryViewer(root, active, cur - 1);
+      }
+      return;
+    }
+
+    const zoomNext = e.target.closest('.js-image-library-zoom-next');
+    if (zoomNext) {
+      const overlay = zoomNext.closest('.js-image-library-zoom-overlay');
+      const root = overlay?.__imageLibraryRoot;
+      const active = root?.querySelector('.js-image-library-open[aria-pressed="true"]');
+      if (root && active) {
+        const cur = Number(active.getAttribute('data-library-current')) || 0;
+        updateImageLibraryViewer(root, active, cur + 1);
+      }
     }
   });
 

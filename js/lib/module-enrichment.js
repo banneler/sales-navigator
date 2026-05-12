@@ -669,9 +669,17 @@ function buildImageLibraryHtml(docs) {
                     <p class="js-image-library-zoom-title text-sm font-bold text-white">${escapeHtml(firstDoc.title)}</p>
                     <p class="js-image-library-zoom-label text-xs font-medium text-slate-300">Page 1 / ${firstDoc.pages.length}</p>
                   </div>
-                  <button type="button" class="js-image-library-zoom-close inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/15" aria-label="Close enlarged battle-card view">
-                    <i class="fa-solid fa-xmark text-xs" aria-hidden="true"></i> Close
-                  </button>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <button type="button" class="js-image-library-zoom-prev inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/15 disabled:opacity-40 disabled:pointer-events-none" aria-label="Previous zoomed page">
+                      <i class="fa-solid fa-chevron-left text-xs" aria-hidden="true"></i> Previous
+                    </button>
+                    <button type="button" class="js-image-library-zoom-next inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/15 disabled:opacity-40 disabled:pointer-events-none" aria-label="Next zoomed page">
+                      Next <i class="fa-solid fa-chevron-right text-xs" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="js-image-library-zoom-close inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/15" aria-label="Close enlarged battle-card view">
+                      <i class="fa-solid fa-xmark text-xs" aria-hidden="true"></i> Close
+                    </button>
+                  </div>
                 </div>
                 <div class="min-h-0 flex-1 overflow-auto bg-slate-900 p-1 md:p-3">
                   <img src="${escapeHtml(firstPage.src)}" alt="${escapeHtml(firstPage.alt)}" class="js-image-library-zoom-image mx-auto max-w-none rounded-lg bg-white shadow-xl" style="width: min(96vw, 1800px); max-height: none;" loading="lazy" decoding="async" />
