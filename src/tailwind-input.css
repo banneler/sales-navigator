@@ -97,10 +97,11 @@
 .module-markdown-body tr:nth-child(even) {
   background-color: #f8fafc;
 }
-/* Module-embedded game iframes: avoid browser focus outline that reads like a selection highlight */
+/* Module-embedded game iframes: avoid focus ring that reads like a second frame */
 .module-section-discovery iframe,
 .module-section-card iframe {
   outline: none;
+  box-shadow: none;
 }
 /* Card-wrapped wide tables (e.g. UC plan ladder): fit main column, avoid horizontal scroll */
 .module-markdown-body .module-plan-ladder-table-wrap {
