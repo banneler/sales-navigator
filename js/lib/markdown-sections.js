@@ -255,6 +255,8 @@ function tryRenderSalesTrioGuidelinesOnlyLayout(sections) {
  * With `meta.sales_trio_hide_overview === true`, the Overview body stays in the DOM
  * (hidden) and only Key Guidelines + Common Pitfalls appear as tabs—e.g. when the
  * Coffee Summary already covers the overview narrative.
+ * With `meta.sales_trio_hide_guidelines === true`, the Key Guidelines body stays in the DOM
+ * (hidden) and only Overview + Common Pitfalls appear as tabs.
  * With `meta.sales_trio_hide_deep_dive === true`, **Process Deep Dive [deep]** is kept
  * in the DOM but hidden (cards + PDFs carry the narrative in the UI).
  * @param {Array<{ title: string | null; markdown: string }>} sections
@@ -285,8 +287,10 @@ function tryRenderSalesTrioTabLayout(sections, meta) {
   }
 
   const hideOverview = Boolean(meta && meta.sales_trio_hide_overview === true);
+  const hideGuidelines = Boolean(meta && meta.sales_trio_hide_guidelines === true);
 
   let overviewSuppressedHtml = '';
+  let guidelinesSuppressedHtml = '';
   /** @type {typeof parsed} */
   let tabSecs;
   /** @type {string[]} */
@@ -302,8 +306,30 @@ function tryRenderSalesTrioTabLayout(sections, meta) {
     <div class="module-sales-trio-overview-suppressed hidden" aria-hidden="true">
       <div class="module-markdown-body w-full max-w-none">${overviewInner}</div>
     </div>`;
+  }
+
+  if (hideGuidelines) {
+    let guidelinesInner;
+    try {
+      guidelinesInner = parseMarkdownToSafeHtml(b.markdown || '');
+    } catch (e) {
+      guidelinesInner = `<p class="text-red-600">${escapeHtml(e instanceof Error ? e.message : String(e))}</p>`;
+    }
+    guidelinesSuppressedHtml = `
+    <div class="module-sales-trio-guidelines-suppressed hidden" aria-hidden="true">
+      <div class="module-markdown-body w-full max-w-none">${guidelinesInner}</div>
+    </div>`;
+  }
+
+  if (hideOverview && hideGuidelines) {
+    tabSecs = [c];
+    tabLabels = ['Common Pitfalls'];
+  } else if (hideOverview) {
     tabSecs = [b, c];
     tabLabels = ['Key Guidelines', 'Common Pitfalls'];
+  } else if (hideGuidelines) {
+    tabSecs = [a, c];
+    tabLabels = ['Overview', 'Common Pitfalls'];
   } else {
     tabSecs = [a, b, c];
     tabLabels = ['Overview', 'Key Guidelines', 'Common Pitfalls'];
@@ -357,13 +383,19 @@ function tryRenderSalesTrioTabLayout(sections, meta) {
     });
   }
 
-  const tablistLabel = hideOverview
-    ? 'Key guidelines and common pitfalls'
-    : 'Sales process sections';
+  const tablistLabel =
+    hideOverview && hideGuidelines
+      ? 'Common pitfalls'
+      : hideOverview
+        ? 'Key guidelines and common pitfalls'
+        : hideGuidelines
+          ? 'Overview and common pitfalls'
+          : 'Sales process sections';
 
   return `
     <div class="module-sales-trio space-y-6">
       ${overviewSuppressedHtml}
+      ${guidelinesSuppressedHtml}
       <div class="module-sales-trio-shell rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden">
         <div role="tablist" aria-label="${escapeHtml(tablistLabel)}" class="flex flex-wrap border-b border-slate-200 bg-slate-50/90">
           ${tabButtons}

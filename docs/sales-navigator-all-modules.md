@@ -850,6 +850,7 @@ title: Sales Operations & Approvals
 summary: GPC Solutions. Change Orders vs MACs.
 sensitivity: internal
 sales_trio_hide_deep_dive: true
+sales_trio_hide_guidelines: true
 video_sections_as_tabs: true
 video_sections_tabs_aria_label: 'Pre-Approved, matrix, and change-order guides'
 reference_files:
@@ -871,65 +872,92 @@ video_sections:
   - heading: Pre-Approved Fiber
     intro: 'The shortcut only applies when the deal is genuinely plain-vanilla fiber. If payback or the dollars feel fuzzy, use the normal approval path.'
     body: |
-      **[Pre-Approved Order Process Quick Reference — 07/23](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)**
-      - **Who:** Channel, Enterprise, and Wholesale AEs
-      - **36+ month** term
-      - **No** promos, free months, buyouts, or promo credits
-      - **Build Fiber** or **On-Net Fiber** sites only (**fiber only**—not copper or coax)
-      - New logos or renewals / upgrades
-      - Tied to a **Zone Parent** opportunity that is **Booked, In Progress, or Completed**
+      [Pre-Approved Order Process Quick Reference — 07/23](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)
 
-      **Fine print**
-      - **$150+** MRC per site
-      - Service within **500 feet** of the **fiber line** (not just the vault)
-      - Path **cannot** cross **railroads, streets, grassy areas, or run through buildings**
-      - **Zip 68102** excluded
-      - Discounts: **20%** max if not term-based; if term-based, use the table (e.g. **36-month** → **27%** max—and **0.01% over** disqualifies Pre-Approved)
+      Use the pre-approved path only when the deal stays inside a narrow lane:
 
-      **Check for product exclusions prior to proceeding.**
+      - Channel, Enterprise, or Wholesale AE
+      - 36-month term or longer
+      - Build Fiber or On-Net Fiber sites only; no copper or coax
+      - New logo, renewal, or upgrade
+      - Zone Parent opportunity is Booked, In Progress, or Completed
+      - No promos, free months, buyouts, or promotional credits
+
+      Watch-outs:
+
+      - MRC must be at least $150 per site.
+      - Service must be within 500 feet of the fiber line, not just the vault.
+      - The path cannot cross railroads, streets, grassy areas, or run through buildings.
+      - Zip 68102 is excluded.
+      - Discounts max at 20% unless the term-based table allows more. For example, a 36-month term allows up to 27%; 27.01% no longer qualifies.
+      - Check product exclusions before you proceed.
   - heading: Approval Requirements Matrix
     intro: 'Payback, discounts, and dollar thresholds live here.'
     body: |
-      **[Approval Requirements Matrix v5.5 — 07/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=h64jqJ)**
-      - **Payback vs term:** Max **payback months** allowed for **auto-approve** depends on **contract term**—go over the limit for that term → **manager** approval (full table in PDF)
-      - **Strategic Build** (solution site type): **bypasses** the payback-month requirement in the matrix
-      - **Discount (not by term):** **≤20%** auto; **>20%** → **manager**
-      - **Discount (by term):** caps **step up** with longer terms—e.g. **24–35 mo** → **22%** max, **36–47 mo** → **27%**, **48–59 mo** → **29%**, **60+ mo** → **31%**
-      - **Who it applies to:** **Enterprise, Channel, and Wholesale** use the same discount rules 
+      [Approval Requirements Matrix v5.5 — 07/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=h64jqJ)
 
-      **Net investment (deal size)**
-      - **Under $50k** — auto-approve band
-      - **$50k+** — **manager**
-      - **$75k+** — **CRO**
-      - **$100k+** — **CFO**
-      - **$500k+** — **CEO**
+      Use the matrix when payback, discounting, churn, or net investment could push the deal out of the auto-approval lane.
 
-      **Other triggers**
-      - **Churn:** **≤10%** auto; **>10%** → **manager** and **CRO**
-      - **Unfavorable investment** — always **manager**
-      - **Product** line issues — **Product Manager**
-      - **Dark fiber** — **manager** and **CRO**
+      - Payback: auto-approval depends on contract term. If payback months exceed the limit for that term, manager approval is required.
+      - Strategic Build: bypasses the matrix payback-month requirement.
+      - Discount not tied to term: 20% or less can auto-approve; over 20% requires manager approval.
+      - Discount tied to term: caps increase with longer terms. Examples: 24–35 months allows 22%, 36–47 months allows 27%, 48–59 months allows 29%, and 60+ months allows 31%.
+      - Enterprise, Channel, and Wholesale use the same discount rules.
+
+      Net investment approval bands:
+
+      | Net investment | Approval path |
+      | --- | --- |
+      | Under $50k | Auto-approval band |
+      | $50k+ | Manager |
+      | $75k+ | CRO |
+      | $100k+ | CFO |
+      | $500k+ | CEO |
+
+      Other triggers:
+
+      - Churn over 10% requires manager and CRO review.
+      - Unfavorable investment always requires manager review.
+      - Product line issues route to the Product Manager.
+      - Dark fiber requires manager and CRO review.
   - heading: Change Order vs MAC
     intro: 'How much is changing, and has billing started? Wrong path = rework—the PDFs have every click and screenshot.'
     body: |
-      **[Change Order Process — Sales Team — 03/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Change%20Order%20Process%20-%20Sales%20Team%20-%200325.pdf?csf=1&web=1&e=STAe3w)** · **[Move-Add-Change Processes — Sales Team — 11/23](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Move-Add-Change%20Processes%20-%20Sales%20Team%20-%201123.pdf?csf=1&web=1&e=zURGTj)**
+      [Change Order Process — Sales Team — 03/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Change%20Order%20Process%20-%20Sales%20Team%20-%200325.pdf?csf=1&web=1&e=STAe3w) · [Move-Add-Change Processes — Sales Team — 11/23](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Move-Add-Change%20Processes%20-%20Sales%20Team%20-%201123.pdf?csf=1&web=1&e=zURGTj)
 
-      **Pick one**
-      - **Change Order** — **Part** of the contract; **Closed/Won**; **Booked**, **not Billed**
-      - **MAC** — **Part** of the contract; **already billing** (**Move / Add / Change**)
-      - **Cancellation** — **All** services out; **before** billing
-      - **Disconnect** — **All** services out; **after** billing
+      Start with one question: has billing started?
 
-      **Change order** — **Conga Files** → **Change Order** → Word document (sites, description of change, specific changes) → keep **GPC Solution #** on it → sign → upload → email **Sales Manager** if **MRC / payback / cost** shifts, and **PMO / SF Admin / CRC** as the guide says. Admin **booking adjustment** → **PMO** project → **CRC** billing.
+      | Situation | Use |
+      | --- | --- |
+      | Change part of a Closed/Won contract before billing | Change Order |
+      | Change part of an active billing contract | MAC |
+      | Remove all services before billing | Cancellation |
+      | Remove all services after billing | Disconnect |
 
-      **MAC** — **Billed** world: new site, add, or change on what’s live—usually a **new GPC Solution** on the same opportunity; follow the MAC PDF by scenario.
+      Change Order path:
 
-      **Fine print** — **Pending Billing** / **7–10 Day Order** can block Admin until **PMO/CRC** weigh in. Narrow **CRC/BCC** tweaks (e.g. **≤$30 MRC**-type adds/changes per MAC) → **businesscare@gpcom.com** (**no AE commission**); anything else → **Salesforce**.
+      1. Open the GPC Solution.
+      2. Go to Conga Files → Change Order.
+      3. Generate the Word document and describe the affected sites, the reason for the change, and the exact service changes.
+      4. Keep the GPC Solution number on the document.
+      5. Get signatures, upload the signed PDF, and send the package to the right workflow owners.
+
+      Notify the Sales Manager early if MRC, payback, or cost shifts. The guide also calls out PMO, Salesforce Admin, and CRC steps after the signed package is uploaded.
+
+      MAC path:
+
+      Use a MAC when the service is already billing and the customer needs a move, add, or change on the live account. Most MAC scenarios require a new GPC Solution on the same opportunity; follow the MAC guide by scenario.
+
+      Watch-outs:
+
+      - Pending Billing or 7–10 Day Order can block Admin action until PMO or CRC weighs in.
+      - Very small CRC/BCC changes may go to businesscare@gpcom.com instead of Salesforce.
+      - The MAC guide calls out no AE commission for those narrow Business Care changes.
 five_minute_summary: |
-  - **Approval History:** Use this on the GPC Solution to approve, reject, or recall. Always include the Solution ID on every form and attachment so Operations isn't guessing what belongs where.
-  - **Change Order vs MAC:** A Change Order applies after a deal is Closed Won, but *before* billing starts. A Move-Add-Change (MAC) is used to modify an active, billing contract.
-  - **Disconnects:** This is only used when services are coming out entirely.
-  - **Request Manual Validation:** This pulls a site out of the automated routing flow for manual review. It slows the deal down. Use it only for genuine exceptions, never as a default.
+  - Use Approval History on the GPC Solution to approve, reject, or recall. Put the Solution ID on every form and attachment so Operations can match documents to the right workflow.
+  - Change Orders are for post-signature changes before billing starts. MACs are for changes to active billing contracts.
+  - Use Cancellation before billing when all services are coming out; use Disconnect after billing.
+  - Request Manual Validation only for real exceptions. It pulls the site out of automated routing and slows the deal down.
 knowledge_checks:
   - question: 'You just moved an opportunity to Closed Won, but the customer suddenly wants to upgrade their internet speed before the circuit is installed. What process do you use?'
     options:
@@ -971,18 +999,14 @@ discovery_questions:
 
 ## Overview
 
-- **GPC Solution:** The core object where approvals, pricing, and technical scoping live.
-- **Change Order:** Pre-billing modification (e.g., changing port speed before install).
-- **MAC (Move-Add-Change):** Post-billing modification to a live service.
-- **Manual Validation:** Breaks automation. Use only for extreme exceptions.
+- GPC Solution: the core object where approvals, pricing, and technical scoping live.
+- Change Order: a pre-billing modification, such as changing port speed before install.
+- MAC: a Move-Add-Change on a live billing service.
+- Manual Validation: an exception path that breaks automation. Use it sparingly.
 
 ---
 
 ## Key Guidelines
-
-::: elevator [Elevator Pitch]
-Winning the deal is only half the battle; clean paperwork turns deals into installed revenue. Know your motions: Change Orders before billing, MACs for active contracts, and Disconnects for full removals. Keep the Solution ID on every attachment, and never use Manual Validation unless it's a true edge case.
-:::
 
 ---
 
@@ -991,15 +1015,15 @@ Winning the deal is only half the battle; clean paperwork turns deals into insta
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["I'll just click Manual Validation to make sure engineering looks at it."]
-**The Slow Lane:** Manual validation completely breaks the automated routing flow. You are guaranteeing your deal takes longer to process. Only use it if there is a known, unmappable physical barrier at the site.
+The slow lane: manual validation breaks automated routing and makes the deal take longer. Use it only when there is a known, unmappable physical barrier at the site.
 :::
 
 ::: flip ["I attached the pricing sheet, they'll figure it out."]
-**The Orphaned Document:** Operations processes hundreds of solutions a week. If your custom pricing sheet or floor plan doesn't have the GPC Solution ID explicitly written on it, it will get lost, and your deal will stall.
+The orphaned document: Operations processes hundreds of solutions a week. If the custom pricing sheet or floor plan does not show the GPC Solution ID, the deal can stall while people figure out where it belongs.
 :::
 
 ::: flip ["The customer signed, so I need to submit a MAC to change the order."]
-**The MAC Mistake:** MACs are strictly for active accounts that have already received their first bill. If the fiber isn't lit yet, it is a Change Order. Using the wrong form sends the ticket to the wrong department.
+The MAC mistake: MACs are for active accounts that have already started billing. If the service is not billing yet, use a Change Order so the request lands with the right team.
 :::
 
 </div>
@@ -1426,7 +1450,7 @@ We put policy on the pipe. Our Security and SD-WAN portfolio stops threats at th
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["We manage our own Cisco gear."]
-GPC's fully managed SD-WAN eliminates upfront CapEx and frees your team from network management. A single monthly charge covers install, management, and 24/7 NOC monitoring. Gartner has ranked VMware VeloCloud at the top of the leader quadrant for SD-WAN.
+GPC's fully managed SD-WAN eliminates upfront CapEx and frees your team from network management. A single monthly charge covers install, management, and 24/7 NOC monitoring — your team gets out of break-fix and back to the business.
 :::
 
 ::: flip ["Our current solution works fine."]
@@ -1434,7 +1458,7 @@ Ask: do you have visibility into application performance across all sites? SD-WA
 :::
 
 ::: flip ["SD-WAN is too expensive."]
-SD-WAN pricing sits between SIA and DIA—often less than the MPLS it replaces. The ROI comes from eliminating complex and costly MPLS services and improving uptime for revenue-generating applications.
+SD-WAN pricing sits between SIA and DIA—often less than the MPLS it replaces. The ROI comes from eliminating complex and costly MPLS services and improving uptime for revenue-generating applications. Walk current pricing through **Sales Resources** with quoting—not from memory.
 :::
 
 ::: flip ["We only have sites in Nebraska."]
@@ -1461,12 +1485,7 @@ No—next-gen firewall and IDS/IPS are optional add-ons, not bundled in base Vel
 - Business rule: at least one site on GPC fiber required
 - NGFW and IDS/IPS lines are optional add-ons—not included in base SD-WAN SKU; confirm with SE/quoting on every quote
 
-**SD-WAN pricing reference (internal):**
-- 50×50 Mbps: SD-WAN ~$147/mo; SIA CLEC ~$110; DIA ~$354
-- 100×100 Mbps: SD-WAN ~$199/mo; SIA CLEC ~$176; DIA ~$547
-- 500×500 Mbps: SD-WAN ~$481/mo; SIA CLEC ~$278; DIA ~$860
-- 1000×1000 Mbps: SD-WAN ~$699/mo; SIA CLEC ~$365; DIA ~$1,060
-- Internet bandwidth is **not included** in SD-WAN pricing—purchased separately
+**SD-WAN commercial framing:** SD-WAN MRC sits **between SIA and DIA** at comparable speeds — often less than the MPLS it replaces. **Internet bandwidth is purchased separately** from the SD-WAN overlay; that split is worth flagging in every quote so the customer sees the full stack. Current rate cards live in **Sales Resources** (protected) — pull with quoting, never from memory.
 
 **Managed Firewall:** FortiGate-based edge + SOC monitoring. Don't quote throughput/compliance as fixed guarantees—SE + approved sheets required.
 
@@ -1504,22 +1523,29 @@ Healthcare SD-WAN talking points and compliance-oriented hooks are maintained in
 ---
 id: product-cloud-wifi-and-backup
 title: 'Cloud, Wi-Fi & Backup'
-summary: Cloud Connect. Managed Wi-Fi. 5G Failover.
+summary: Cloud Connect. Managed Wi-Fi. 5G Wireless Backup & Broadband.
 sensitivity: internal
 reference_files:
   - label: 'Sales Resources (cloud, Wi‑Fi, backup collateral)'
     sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
+video_carousel:
+  - title: '5G Wireless Backup & Broadband — Product Launch'
+    src: assets/wireless-backup/5g-wireless-product-launch.mp4
+    poster: assets/wireless-backup/5g-wireless-product-launch.png
 discovery_questions:
   - 'If the internet goes down, what happens to your point-of-sale system or cloud-based CRM?'
   - Are your employees complaining about dead zones or slow connections in specific parts of the building?
   - You mentioned moving your servers to AWS. How are you currently managing the latency and routing predictability to that environment?
   - Which cloud or SaaS workloads are most sensitive to jitter or latency—and how do you reach them from each site today?
   - 'Do you have a secondary path when fiber fails, and does it share trenches or poles with the primary circuit?'
+  - When you stand up a new site, how long can you afford to wait for the fiber build before the location has to be open for business?
+  - 'Are there locations on your footprint—seasonal, satellite, or rural—where fiber isn''t available today, and what are you running there now?'
 five_minute_summary: |
   - **Cloud Connect:** This is not internet. It is a private, predictable, jitter-free path directly from our network to AWS, Azure, or Google Cloud. Pitch it when they run mission-critical SaaS apps.
   - **Managed Wi-Fi:** We own the last 10 feet of connectivity. It includes guest network separation and fully managed lifecycle support. Never guess AP counts—always require a site survey.
-  - **5G Wireless Backup:** The ultimate insurance policy. It provides automatic failover and NOC monitoring when the primary fiber gets cut.
-  - **The pitch order:** Always sell the primary fiber first, then attach the 5G backup for redundancy, and finish with Wi-Fi to control the localized experience.
+  - **5G Wireless Backup:** The insurance policy *behind* primary fiber. Cradlepoint X20-5G with automatic failover, automatic reversion, and an optional 8-hour backup battery. The cellular underlay is Verizon/AT&T—heavy users hit a daily throttle after failover, so set expectations.
+  - **5G Wireless Broadband:** Cellular as the *primary* internet path. Two motions: (1) a temporary bridge while a fiber build is in flight, or (2) the long-term answer where fiber isn't available. Same Cradlepoint hardware as Backup, but the carrier hands out a DHCP IP—anything hosted on prem will not be reachable from the internet. Temporary wireless service is **non-commissionable**; you earn the commission once the fiber circuit lights.
+  - **The pitch order & ground rules:** Sell primary fiber first, attach 5G Backup for redundancy, and finish with Managed Wi-Fi for the localized experience. Use 5G Broadband to bridge a fiber install gap or to cover a site fiber can't reach. Wireless is **in-territory only** and **only attaches to SIA / DIA / SD-WAN**—it's not a stand-alone offer. No SLAs: every wireless circuit is "best effort."
 knowledge_checks:
   - question: A prospect wants to know how much 15 Wi-Fi Access Points will cost for their new warehouse. What do you do?
     options:
@@ -1542,6 +1568,27 @@ knowledge_checks:
       - Offer to lower the price of our 5G Backup to beat the cable provider's price.
     correct_index: 0
     explanation: 'Wired backups often share the same physical vulnerabilities (trenches, poles, building entry). Wireless provides actual physical diversity.'
+  - question: "A customer's new retail location goes live in 14 days, but the fiber build for that address won't be ready for 90. They're already a GPC SIA customer at their main office. What's the right play?"
+    options:
+      - Tell them to delay the store opening until the fiber circuit lights.
+      - Sell them 5G Wireless Broadband as a temporary bridge—the Cradlepoint goes in now, and once fiber lights it converts into a Wireless Backup attachment behind the new SIA/DIA.
+      - 'Sell them a permanent 5G Wireless Broadband contract since cellular is effectively the same as fiber for a retail site.'
+    correct_index: 1
+    explanation: 'Bridging a fiber install gap is the textbook temporary use case for Wireless Broadband. Same hardware re-roles as Backup once fiber turns up—remember the commission lands on the SIA/DIA, not the temporary bridge.'
+  - question: "A prospect wants to run a small ERP server on-premise and reach it from the public internet. They love the idea of 5G Wireless Broadband as their primary connection because it installs faster than fiber. Are they a fit?"
+    options:
+      - 'Yes—Cradlepoint will port-forward a public IP through to the on-prem server.'
+      - 'Yes—you can request a static IP from the cellular carrier for an additional fee.'
+      - 'No—Wireless Broadband uses a DHCP IP from the carrier, so anything hosted on prem is unreachable from the internet. They need SIA or DIA for that workload.'
+    correct_index: 2
+    explanation: 'Static IPs work on the GPC landline side only. Neither Backup (during failover) nor Broadband supports prem-hosted services reachable from the internet. If the customer hosts inbound services, lead with SIA/DIA.'
+  - question: "You close a 5G Wireless Broadband deal at a customer site that's still waiting on a fiber install. When do you get commissioned?"
+    options:
+      - At install, like every other wireless circuit.
+      - Never. Temporary wireless service is non-commissionable—you're commissioned on the SIA/DIA contract once the fiber circuit lights and the wireless converts to Backup.
+      - At half the rate of a permanent wireless contract.
+    correct_index: 1
+    explanation: 'Temporary wireless service is non-commissionable—a hard GPC business rule. Plan your pipeline accordingly and stay close to the fiber install date so the SIA/DIA commission actually lands.'
 scenarios:
   - title: The Jittery Cloud
     situation: |
@@ -1551,6 +1598,26 @@ scenarios:
         feedback: Throwing bandwidth at a latency problem doesn't work. The issue is public internet routing. They need Cloud Connect.
       - label: Pitch Cloud Connect. Explain that jumping off the public internet and using a private cross-connect will eliminate the routing jitter.
         feedback: Correct. Private paths solve latency variability. Match the tech to the problem.
+  - title: The Fiber-Island Bridge
+    situation: |
+      A regional grocery chain is opening a 12,000-sq-ft satellite store on the edge of GPC's serviceable footprint. Go-live is 30 days out. The fiber build for that address has a 75-day engineering and trench window. They already have GPC DIA at HQ.
+    choices:
+      - label: Tell them to push the store opening—fiber is the only safe option, and a 45-day gap is the cost of doing business.
+        feedback: Pushing a store opening for a 45-day fiber gap will torch the relationship. There is a faster, GPC-approved play.
+      - label: 'Sell 5G Wireless Broadband as a temporary bridge. Engineering installs the Cradlepoint X20-5G now; when fiber lights at day 75, the same hardware re-roles as 5G Backup behind the new SIA/DIA circuit.'
+        feedback: 'Correct. Bridge the install gap with wireless, then convert to Backup at fiber turn-up. Two things to remember: the bridge period is non-commissionable (your commission lands on the SIA/DIA when fiber lights), and the store cannot host inbound services on the wireless DHCP IP during the bridge.'
+      - label: Sell them a cheap consumer cellular hotspot as a stopgap and circle back when fiber's ready.
+        feedback: Off-net and unmanaged—GPC has nothing to monitor or warranty, and you have no path to convert to Backup. This gap is exactly what our Wireless Broadband SKU is designed to close.
+  - title: The Static-IP Trap
+    situation: |
+      A small accounting firm wants to ditch their slow cable internet. They love that 5G Wireless Broadband can install in days instead of waiting for a fiber build. They also self-host a client portal on a server in their back office and need it reachable from the public internet.
+    choices:
+      - label: Sell the 5G Wireless Broadband and tell them you'll request a static IP from the carrier as a follow-up.
+        feedback: There is no carrier-provided static IP path on Wireless Broadband—the carrier hands out DHCP. Promising a static IP is a commitment you cannot deliver.
+      - label: Walk back from Wireless Broadband. Position SIA or DIA as the right product because they need a static IP for inbound traffic to their on-prem portal—then attach 5G Backup for true path diversity.
+        feedback: 'Correct. Static IP is a wireline-only feature in our portfolio. Lead with SIA/DIA when on-prem hosting is in scope, and use 5G as the redundancy layer.'
+      - label: Sell them the Wireless Broadband anyway and have Cradlepoint port-forward through the carrier IP.
+        feedback: Port-forwarding through a DHCP carrier IP is unreliable and unsupported as a managed deliverable. The right answer is a wireline circuit with a static IP.
 roleplay:
   persona: IT Manager at a healthcare clinic network
   scenario: Had a fiber outage last month that took down patient scheduling and e-prescribing for four hours. Wants a solution but is skeptical of wireless backup speeds and worried about HIPAA data on a cellular network.
@@ -1562,13 +1629,14 @@ roleplay:
 - **Cloud Connect:** Private transport to hyperscalers (AWS, Azure, GCP). Bypasses public internet routing.
 - **Managed Wi-Fi:** Fully managed edge. Requires a site survey. Do not quote blindly.
 - **5G Wireless Backup:** Automatic failover for primary circuits. True physical diversity compared to a secondary wired connection.
+- **5G Wireless Broadband:** Cellular as the *primary* internet path—either a temporary bridge while a fiber build runs, or the long-term answer where fiber isn't available. Attaches to SIA / DIA / SD-WAN only; in-territory only.
 
 ---
 
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-When critical apps go down, nobody cares how cheap their internet was. We protect your uptime with a private, jitter-free Cloud Connect path to AWS/Azure, secure Managed Wi-Fi for the last ten feet, and 5G Wireless Backup as the ultimate insurance policy.
+When critical apps go down, nobody cares how cheap their internet was. We protect your uptime with a private, jitter-free Cloud Connect path to AWS/Azure, secure Managed Wi-Fi for the last ten feet, and 5G Wireless—either as the insurance policy behind primary fiber, or as the primary path itself when fiber isn't there yet.
 :::
 
 ---
@@ -1599,8 +1667,26 @@ When critical apps go down, nobody cares how cheap their internet was. We protec
 - Requires a predictive or physical site survey. Building materials (concrete, metal racks, glass) heavily impact radio frequencies. Guessing AP counts results in bad deployments and angry customers.
 
 **5G Wireless Backup:**
-- Bandwidth is prioritized for critical applications, but it is technically "best effort" via the wireless carrier (Verizon/AT&T).
-- It is designed to keep the doors open and the registers ringing during an outage, not to run a 400-person video conference simultaneously. Set expectations accordingly.
+- Sits behind the customer's primary GPC wireline circuit (SIA, DIA, or SD-WAN). Only active during a primary-circuit outage—fails over and fails back automatically.
+- Hardware: Cradlepoint X20-5G CPE (or E100 LTE on the lower tier) installed and managed by GPC; optional ~8-hour backup battery for site-wide power loss.
+- Cellular underlay is Verizon and/or AT&T; the wireless connectivity itself is procured through Kajeet. Failover typically completes in about a minute.
+- "Best effort"—no SLA. After failover, heavy daily usage hits a carrier-side throttle (the 5G tier deprioritizes after ~12 GB/day). The product is designed to keep the doors open and the registers ringing during an outage, not to run a 400-person video conference simultaneously. Set expectations.
+- **Static IP gotcha:** Static IPs work on the GPC landline side, but the carrier hands out a different (DHCP) IP during failover. If the customer has inbound services tied to a static IP, they break during the outage—document this expectation up front.
+
+**5G Wireless Broadband:**
+- Cellular as the *primary* internet path—full-time, not failover. Same Cradlepoint X20-5G CPE and Verizon/AT&T underlay (via Kajeet) as Backup; managed and monitored by GPC.
+- **Two motions:**
+    - **Temporary bridge:** Wireless covers a new site that needs to be open for business before its fiber build completes. When fiber turns up, the same Cradlepoint re-roles as 5G Backup behind the new SIA/DIA circuit. Customer is billed at the contracted SIA/DIA rate from day one; the temporary wireless service is **non-commissionable**, so reps earn the commission on the wireline circuit when fiber lights.
+    - **Permanent:** Wireless is the long-term primary at sites where fiber isn't available (in-footprint but unreachable, rural, MDU edges). Unlimited data, no overage charges, no bandwidth limits—but still "best effort."
+- Throughput is typically **up to ~100 Mbps and higher**, varying by carrier, location, signal, building penetration, and tower congestion. Wireless is asymmetric and every location is different—never quote it like fiber.
+- **No static IP** on Wireless Broadband. The customer's public IP comes from the carrier via DHCP, so anything hosted on prem (mail server, VPN concentrator, ERP web frontend, etc.) is **not reachable from the internet**. If on-prem hosting is in scope, lead with SIA/DIA.
+
+**Wireless business rules (Backup *and* Broadband):**
+- Sell **in GPC territory only**.
+- Wireless Internet attaches to **new or existing SIA, DIA, or SD-WAN** customers—it's not a stand-alone offer.
+- **No SLA guarantees**—all wireless circuits are "best effort."
+- **Temporary wireless service is non-commissionable** (see commission rule above). Permanent Broadband and standalone Backup commission normally.
+- Wireless Broadband (temporary) converts to Backup automatically once the customer's fiber install lights up.
 <!-- prettier-ignore-end -->
 
 ---
@@ -1663,6 +1749,30 @@ knowledge_checks:
       - "Cash-only billing at the truck roll."
     correct_index: 1
     explanation: "Single-bill convenience is a stated benefit—keep fulfillment aligned to reality."
+
+  - question: "A prospect is interested in GPC iTV but their Internet today is with a national cable carrier. What's the right opening move per the iTV product sheet?"
+    options:
+      - "Sell GPC iTV as-is over their existing carrier circuit—it's a streaming app, so any decent broadband works."
+      - "Walk away—iTV isn't a fit for anyone on a competitor's ISP."
+      - "Position iTV alongside GPC Internet (SIA, DIA, or Broadband) as the underlying access path; pair with the Connectivity & Access module to qualify a path before quoting iTV."
+    correct_index: 2
+    explanation: "The product sheet ties iTV to the customer's *GPC* Internet connection. Don't sell it as carrier-agnostic—qualify the access path first or you'll have a delivery and support problem at install."
+
+  - question: "A prospect insists you guarantee specific regional sports networks over the phone before they share their site address. How should you respond per the iTV product sheet?"
+    options:
+      - "Guarantee the full lineup verbally so you don't lose the meeting—channel mixes are mostly consistent across markets."
+      - "Decline to guarantee specific channels. The product sheet's QR code resolves to a *local lineup* that varies by market—qualify the address first, then confirm channel carriage from the official lineup tool or SharePoint asset."
+      - "Tell them all sports channels are always included with every iTV plan."
+    correct_index: 1
+    explanation: "Channel lineup is market-dependent. The product sheet directs customers to a QR code for their *local* lineup—verbal channel guarantees before address qualification are how reps end up over-promising and apologizing at install."
+
+  - question: "How does the GPC iTV product sheet describe the target customer profile?"
+    options:
+      - "National enterprises with multi-market broadcast needs only."
+      - "Single-screen residential customers in GPC's footprint."
+      - "Customizable to businesses of all sizes and industries—from small mom-and-pop shops through larger businesses."
+    correct_index: 2
+    explanation: "Verbatim from the product sheet: iTV is positioned for the full spectrum from mom-and-pop through larger sites. The differentiator is *customizable*, not size-bound."
 
 scenarios:
   - title: "Waiting room TVs on a competitor ISP"
@@ -1785,7 +1895,8 @@ video_carousel:
 five_minute_summary: |
   - **The Microsoft Teams Play:** We have two motions. "Embedded UC" puts our app inside Teams and saves them the MS Teams Phone license. "Ascend with Teams" uses the native MS dialer and *does* require the MS Teams Phone license. Do not blend these pitches.
   - **The Bundle:** Our platform (powered by Intermedia) includes enterprise calling, SMS/MMS, HD meetings, and AI recaps on a 99.999% uptime foundation.
-  - **Contact Center:** We sell an omnichannel CX add-on (Voice, SMS, chat). Licensing is concurrent, meaning they only pay for the maximum number of agents logged in at the same time, not a named license for every single employee.
+  - **The Plan Ladder:** Four tiers — **Express** (voice only), **Essentials** (adds video up to 25 + AI recap + call recording), **Pro** (adds inbound Call Center + CRM integrations + video to 100), **Enterprise** (Pro + video to 200 + 200 GB storage). Pick by **workload**, not company size — most multi-site customers run a *mix* (Express at reception, Pro for sales, Enterprise at HQ).
+  - **Contact Center:** We sell an omnichannel CX add-on (Voice, SMS, chat). Licensing is concurrent, meaning they only pay for the maximum number of agents logged in at the same time, not a named license for every single employee. Note: UC Pro and Enterprise already include *inbound* Call Center features (queueing, supervisor monitor/whisper/barge); the dedicated **CCaaS** product is the separate omnichannel SKU.
   - **Legacy:** We still support SIP and PRI for customers who aren't ready to move fully to the cloud, but the goal is always to pivot to UCaaS.
 knowledge_checks:
   - question: "A prospect wants to add external calling to Microsoft Teams. They think they need to buy Microsoft's 'Teams Phone' add-on license for every user. Are they right?"
@@ -1809,6 +1920,34 @@ knowledge_checks:
       - Calls are automatically forwarded to their personal cell phone voicemails.
     correct_index: 0
     explanation: 'Because our voice infrastructure is separate from Microsoft''s, a Teams outage doesn''t take down their ability to communicate.'
+  - question: A 12-person law firm wants UC. Mostly desk-phone client calls, occasional Zoom-style meetings with up to 8 people, no contact center. Which UC plan should you lead with?
+    options:
+      - UC Enterprise — clients deserve the top tier regardless of workload.
+      - UC Essentials — voice calling plus video conferencing for up to 25 participants, AI Meeting Recap, and Call Recording. The Call Center features in Pro and Enterprise aren't needed.
+      - UC Express — small firms only need voice, so video is overkill.
+    correct_index: 1
+    explanation: Match the plan to the **workload**, not the company size. Essentials covers their video need (Express has no video) without paying for Pro/Enterprise call-center features they won't use.
+  - question: 'A prospect says "we need a contact center." UC Pro already advertises Call Queueing, Agent Log-In/Out, Wallboards, and Supervisor Monitor/Whisper/Barge. Should you sell them UC Pro or the dedicated CCaaS add-on?'
+    options:
+      - 'Always sell CCaaS — it has more features and a bigger price tag.'
+      - 'Always sell UC Pro — the call-center features inside the plan are equivalent to the dedicated CCaaS product.'
+      - 'It depends on the workload. UC Pro/Enterprise covers a small/medium **inbound voice** call-center (queue, hunt, supervisor). The dedicated **CCaaS** product is the answer for **omnichannel** (voice + SMS + chat), advanced IVR, deep CRM screen-pops, and concurrent licensing across channels. Get an SE to scope before quoting.'
+    correct_index: 2
+    explanation: UC Pro/Enterprise's Call Center features are a fully usable inbound voice operation — perfect for a 10-seat help desk. CCaaS is the separate omnichannel product. Conflating the two at quote time creates an install fight; let the SE scope it.
+  - question: A 175-person company wants UC for their monthly all-hands video call. What is the minimum UC plan tier that supports the meeting size?
+    options:
+      - UC Essentials — video conferencing is included.
+      - UC Pro — video conferencing for up to 100 participants.
+      - UC Enterprise — video conferencing for up to 200 participants. Essentials caps at 25 and Pro caps at 100, so a 175-person all-hands won't fit either.
+    correct_index: 2
+    explanation: The participant ceilings step **25 → 100 → 200** across Essentials / Pro / Enterprise. For a 175-person meeting, Enterprise is the floor.
+  - question: A prospect wants to port in 8 existing carrier DIDs that are still under contract with their current provider, plus a 4-level IVR menu with after-hours routing and a Salesforce screen-pop integration. What's the right next step?
+    options:
+      - Quote UC Pro and move on — these are all standard features.
+      - Promise it all yourself, then have the SE figure out the SOW after the contract is signed.
+      - Stop and bring in your Solutions Engineer. IPN/OffNet porting under an active carrier contract, multi-level IVR scoping, and Salesforce CTI integration are all SE-validated designs — promising any of them on your own creates an install fight you can't win.
+    correct_index: 2
+    explanation: 'The deep-dive rule already says "Do not attempt to quote high-volume burst capacity or complex IVR routing on your own. Bring in your SE immediately." Extend that rule to **IPN/OffNet porting** (existing-carrier contract handoffs) and **CRM CTI integrations** (Salesforce/ServiceNow/Dynamics screen-pops). When you see any of the three, pause and pull in the SE.'
 scenarios:
   - title: The Microsoft Native Trap
     situation: |
@@ -1818,10 +1957,20 @@ scenarios:
         feedback: 'You just lost a massive revenue opportunity. Microsoft is a software company, not a telecom carrier. They struggle with complex routing, support, and uptime.'
       - label: 'Challenge the uptime and support. Ask them who they are going to call when a port fails or a call drops. Remind them our solution sits inside Teams, saves them the MS licensing fee, and gives them a 99.999% SLA with a local NOC.'
         feedback: Correct. Pivot away from software convenience and anchor on voice reliability and support.
+  - title: The License Blender
+    situation: |
+      You're in a Teams discovery meeting and pitch: "We put GPC's app inside Microsoft Teams, you don't need to buy the Teams Phone license, and your users will dial from the native Teams interface just like they always have." The IT director nods.
+    choices:
+      - label: Pitch landed clean. Send the quote.
+        feedback: 'That pitch is internally contradictory and you just promised both motions at once. **Embedded UC** = GPC dial pad inside Teams; no MS Teams Phone license required; user is **not** dialing from the native MS dialer. **Ascend with Teams** (Direct Routing) = native MS dialer; **does** require an MS Teams Phone license per user. The SE will have to walk back one half of your pitch and you''ll lose trust.'
+      - label: 'Pause and disambiguate before quoting: "Do you want users dialing from the native Teams interface — which requires an MS Teams Phone license per user — or do you want a GPC dial pad embedded inside Teams that bypasses the MS license?" Quote the motion they pick.'
+        feedback: 'Correct. The two motions are not interchangeable. Force the customer to pick the experience first, then price the corresponding motion. Never blend them.'
+      - label: Promise both and let the SE sort it out in the SOW.
+        feedback: '"No MS license + native MS dialer" is a SOW conflict that can''t be resolved — one of those statements has to come out. The customer will lose confidence the moment the SE clarifies. Disambiguate during discovery, not after the contract.'
 roleplay:
   persona: Operations Manager at a 75-person professional services firm
   scenario: Stuck on an aging on-prem PBX that's out of warranty. The IT team uses Teams for chat and meetings but nobody can make external calls from it. Assumes replacing the PBX means buying new desk phones and a server.
-  goal: 'Position GPC''s cloud UC as the modern replacement—no on-prem server, enterprise-grade features from Teams or the native softphone, and a clear explanation of **Ascend with Teams** licensing vs when **embedded FAQ** positioning (no Teams Phone license vs Direct Routing) might apply—SE validates.'
+  goal: 'Position GPC''s cloud UC as the modern replacement—no on-prem server, enterprise-grade features from Teams or the native softphone, and a clear explanation of **Embedded UC** (GPC dial pad inside Teams, no MS Teams Phone license) vs **Ascend with Teams** / Direct Routing (native MS dialer, MS Teams Phone license required)—SE validates the final design.'
 ---
 
 ## At a glance
@@ -1857,15 +2006,33 @@ We deliver a 99.999% uptime cloud voice platform that embeds directly into Micro
 
 ## Technical Deep Dive [deep]
 
+**Brand hierarchy you'll hear in the field**
+
+- **GPC UC** — the approved external brand. This is what goes on customer-facing collateral, proposals, and slide titles.
+- **Ascend** — the **application** name (desktop / mobile / Teams add-ins) we sell under the GPC UC umbrella. Safe to mention by name when you're describing the user experience ("the **Ascend** desktop app").
+- **Unite** — the same application, sold direct by **Intermedia**. You will see it in partner collateral and FAQs. **Do not lead with "Unite" externally** — translate it to GPC UC / Ascend for the customer.
+
 **The Teams Embedded Advantage:**
 - Only ~6% of Microsoft Teams users actually use Teams Phone, because Microsoft's native calling is expensive and lacks advanced PBX features.
 - Our solution (via Intermedia) uses an embedded app approach. It places a dial pad directly inside the Teams interface.
 - Because it is an app and not a Direct Routing setup, the customer avoids the Microsoft Teams Phone license requirement.
 
+**The plan ladder (which UC tier fits the workload):**
+
+| Tier | Voice | Video participants | Storage / user | Call Center features | CRM integrations | Lead with when… |
+| --- | --- | --- | --- | --- | --- | --- |
+| **Express** | Unlimited | — (no video) | — | — | Active Directory, Chrome Click-to-Call | Reception desks, freelancers, dispatchers, scheduling-only roles |
+| **Essentials** | Unlimited | 25 | 5 GB | — | — | Hybrid teams, customer support, sales on the go, MS 365 integration |
+| **Pro** | Unlimited | 100 | 50 GB | Queueing, Wallboards, Supervisor Monitor/Whisper/Barge, End-to-End Encryption | Salesforce, ServiceNow, NetSuite, MS Dynamics, Sugar, Zoho, Zendesk | Inbound call-center workloads, high-volume sales/support, CRM-integrated desks |
+| **Enterprise** | Unlimited | 200 | 200 GB | Pro + Smart Greetings + Additional Recording Storage | Same as Pro | Large all-hands, company-wide voice, town-hall meetings |
+
+**Plan-tier landmine:** Don't default to Enterprise just because the customer is enterprise-sized. Match the **plan** to the **workload** — most multi-site customers run a *mix* (e.g., Express at reception desks + Pro for sales + Enterprise at HQ for the monthly all-hands). The 25 / 100 / 200-participant video ceiling is the most common forcing function on tier selection.
+
 **Contact Center (CCaaS):**
+- **UC Pro/Enterprise already include inbound Call Center features** — queueing, hunt groups, wallboards, and Supervisor Monitor/Whisper/Barge — enough to run a small/medium **voice-only** help desk. The dedicated **CCaaS** product is a separate SKU for **omnichannel** workloads (voice + SMS + chat), advanced IVR, deep CRM screen-pops, and concurrent licensing across channels. Don't conflate the two when scoping.
 - Deep integrations with CRMs (Salesforce, Zendesk, HubSpot) for automatic screen pops.
 - "Concurrent" means if they have 50 total employees, but only 10 answer phones at any given time, they only buy 10 licenses.
-- Do not attempt to quote high-volume burst capacity or complex IVR routing on your own. Bring in your SE immediately.
+- Do not attempt to quote high-volume burst capacity, complex IVR routing, IPN/OffNet ports under an active carrier contract, or CRM CTI integrations on your own. Bring in your SE immediately.
 <!-- prettier-ignore-end -->
 
 ---
@@ -2115,39 +2282,67 @@ Key differentiators for Ethernet positioning—use alongside the tech-card patte
 
 <!-- prettier-ignore-start -->
 ---
-
 id: "account-based-marketing"
 title: "Account Based Marketing"
 summary: "C-level targeting. 90-day sprints. Marketing air cover."
 sensitivity: "internal"
+reference_files:
+  - label: "Account Based Marketing — SharePoint folder (SOP, tracking, collateral)"
+    sharepoint_url: "https://gpcom.sharepoint.com/:f:/r/sites/gpcSales/Sales%20Process/Account%20Based%20Marketing%20-%20ABM?csf=1&web=1&e=ZSvfY4"
+discovery_questions:
+  - 'Does this account meet the **Strategic** threshold to justify a 90-day ABM cycle, or is it a transactional opportunity that''s better suited to the standard sequence?'
+  - 'Do I have **three identifiable targets across Manager, Director/VP, and Executive tiers** at this account today — and not all Executive? If not, what''s my plan to surface them in week one?'
+  - 'Where does this account fit in my **Rolling Three**? Am I filling an on-deck slot, or proposing to displace an active cycle?'
+  - 'Have I completed all six Sales Readiness Checklist items (Account Intel, Status, Current Services, Location Scope, Prospecting History, finalized Target List) before requesting kickoff?'
+  - 'Which **Marketing partner** owns the air cover for this account, and have we aligned on the monthly touchpoint cadence + any planned **Door Pulls** in the 90-day window?'
 five_minute_summary: |
-  - **Purpose:** Coordinate sales prospecting and marketing so executive targets see a coherent story over ninety days—not random one-off touches.
-  - **Sales cadence:** 18 total touches over 90 days, with roughly 3 touches per target every two weeks using personalized phone and email.
-  - **Marketing coordination:** 1 touchpoint every 30 days, with optional add-on support when Sales runs a physical door pull.
-  - **Tracking:** Active and on-deck ABM status is maintained in the ABM master tracking spreadsheet per SOP governance.
+  - **The motion:** A **high-touch, 90-day coordinated effort** between Sales and Marketing on **high-value Strategic accounts**—18 personal sales touches with consistent marketing air cover, so GPC stays top-of-mind with the right decision-makers.
+  - **Rolling Three:** You run **3 active ABM accounts at a time**, with **3 on-deck** ready to backfill. As one completes its 90-day cycle, the next on-deck onboards immediately—no pipeline droughts, no scrambling.
+  - **Staggered kickoff:** New accounts kick off on a **30-day stagger** (Month 1 / Month 2 / Month 3). One account is always in the high-intensity opening phase while others are mid- or late-cycle.
+  - **Targets are a stack, not a list:** Minimum **3 targets per account (5 ideal)**—and **not all Executive**. Mix **Manager · Director/VP · Executive** so one person leaving doesn't kill the play.
+  - **Sequence rhythm:** **18 touches / 90 days**, **3 per target every 2 weeks** by phone and personalized email. Marketing runs **1 touchpoint every 30 days**, plus **+1** when Sales runs a physical **Door Pull** with the Enterprise Brochure.
+  - **One source of truth:** The **Master Tracking Spreadsheet** is the system of record for Active and On-Deck accounts—Marketing and Sales Leadership edit; everyone else has view-only.
 
 knowledge_checks:
-  - question: "Roughly how long is the ABM sales sequence in the SOP?"
+  - question: "How many ABM accounts should an Account Representative run concurrently per the SOP?"
     options:
-      - "90 days (three months of sequenced touches)"
-      - "21 business days"
-      - "One calendar week"
+      - "Three active accounts at any time, with three on-deck ready to backfill (the Rolling Three)"
+      - "As many as the rep can manage—no defined cap"
+      - "One account at a time until it closes"
     correct_index: 0
-    explanation: "The SOP defines a coordinated 90-day ABM effort."
+    explanation: "Three concurrent active accounts + three on-deck = the Rolling Three pipeline model."
+
+  - question: "How are the three concurrent ABM accounts kicked off per the SOP?"
+    options:
+      - "All three start on the same day for momentum"
+      - "On a 30-day stagger: Account A Month 1, Account B Month 2, Account C Month 3"
+      - "Whenever the rep has free calendar time"
+    correct_index: 1
+    explanation: "Staggered 30-day kickoff ensures one account is always in the high-intensity opening phase while others are mid- or late-cycle."
+
+  - question: "Can all ABM targets at an account be executive-level decision makers?"
+    options:
+      - "Yes—executives close deals, so they're the only targets that matter"
+      - "No—the SOP forbids all-executive stacks; mix Manager, Director/VP, and Executive"
+      - "Only at Strategic accounts above a certain revenue threshold"
+    correct_index: 1
+    explanation: "The tier hierarchy is Manager (Operational/Technical) + Director/VP (Tactical/Strategic) + Executive (Financial/Final Decision Maker). Single-threading at the top is exactly what the mix is designed to prevent."
+
+  - question: "Which items belong on the Sales Readiness Checklist that the rep brings to ABM kickoff?"
+    options:
+      - "Account Intel, Status (Customer vs Prospect), Current Services, Location Scope, Prospecting History, and the finalized Target List"
+      - "Only the target list—everything else can be figured out in the meeting"
+      - "A draft proposal and a contract template"
+    correct_index: 0
+    explanation: "Walking in cold (no checklist) is the fastest way to lose a Marketing partner and stretch the 90-day cycle."
+
   - question: "How often should marketing run ABM coordination touchpoints in the SOP model?"
     options:
-      - "One touchpoint every 30 days, with optional +1 support for door-pull motions"
+      - "One touchpoint every 30 days, with +1 added when Sales runs a physical Door Pull"
       - "Three touchpoints every week regardless of sales activity"
       - "Only one touchpoint at the end of the 90-day cycle"
     correct_index: 0
-    explanation: "The SOP defines monthly marketing coordination and optional increased support for door-pull execution."
-  - question: "Where is ABM activity and status tracked per SOP?"
-    options:
-      - "Master ABM tracking spreadsheet with defined view/edit access"
-      - "Only in rep inboxes"
-      - "Only in a private document for each individual rep"
-    correct_index: 0
-    explanation: "The SOP names a master tracking spreadsheet as the source of truth for active and on-deck ABM accounts."
+    explanation: "Monthly marketing coordination; +1 brochure-leave-behind when Sales executes a Door Pull. The Door Pull is the named SOP trigger for the extra marketing touch."
 
 scenarios:
   - title: "Skipping ahead in the ABM sequence"
@@ -2161,42 +2356,104 @@ scenarios:
       - label: "Tell them to restart the sequence from touch one."
         feedback: "Restarting isn't always required—focus on documented exceptions and alignment with marketing."
 
+  - title: "The All-Exec Stack"
+    situation: |
+      A rep insists their three ABM targets at a strategic logo should be the **CFO, CIO, and CEO**—their logic: *"executives decide, why waste touches on managers?"*
+    choices:
+      - label: "Approve it—executives are the highest-leverage targets."
+        feedback: "The SOP explicitly forbids all-Executive target lists. Single-threading at the top is exactly the failure mode the tiered mix is designed to prevent."
+      - label: "Rebuild the target list before kickoff so the mix includes at least one Manager (Operational/Technical) and one Director/VP alongside the Executive."
+        feedback: "**Good.** That's the SOP's tier hierarchy—and the only way the play survives an executive change."
+      - label: "Approve it but add a fourth target as a 'just-in-case' backstop."
+        feedback: "More targets doesn't fix the tier problem—the SOP requires the **mix**, not just the count."
+
+  - title: "The Empty Bench"
+    situation: |
+      A rep is running three active ABM accounts hard but has **zero on-deck**. Account A wraps in April with nothing queued for May. The Sales Manager spots the gap in the Master Tracking Spreadsheet review.
+    choices:
+      - label: "Wait until April closes, then start sourcing the next account."
+        feedback: "That's the pipeline drought the Rolling Three exists to prevent. On-deck is part of the job, not an afterthought."
+      - label: "Surface it immediately to the Sales Manager; queue three on-deck accounts so May has a ready kickoff."
+        feedback: "**Good.** The bench is how leadership confirms the model is healthy—an empty on-deck list is a Rolling Three failure, not a normal state."
+      - label: "Move one of the active accounts to on-deck to free up time."
+        feedback: "You don't pause an in-flight 90-day cycle to fill the bench—you find the next three Strategic candidates and queue them."
+
+roleplay:
+  persona: 'Sales Manager in your weekly 1:1; gatekeeper of the Rolling Three slots on the Master Tracking Spreadsheet.'
+  scenario: |
+    You're pitching a regional manufacturer as your next ABM target. The Sales Manager pulls up the Master Tracking Spreadsheet — you currently have **three active accounts** (one wrapping in 21 days) and **two on-deck**, not three. They'll approve a kickoff only if you can defend the Rolling Three math, name a tier-mixed target stack, and confirm a completed Sales Readiness Checklist on demand.
+  goal: 'Defend the slot in SOP language: (1) which active account is wrapping and on what date so the Rolling Three stays at 3 active + 3 on-deck; (2) the **three named targets** at the right tier mix — Manager (Operational/Technical) + Director/VP (Tactical/Strategic) + Executive (Financial/Final Decision Maker), and explicitly **not** all Executive; (3) all six Sales Readiness Checklist items completed (Account Intel, Status, Current Services, Location Scope, Prospecting History, finalized Target List); (4) the named Marketing partner aligned on monthly touchpoints + any planned Door Pulls in the 90 days. The Sales Manager will say no if you can''t produce the checklist on demand — that''s how the Rolling Three stays healthy.'
 ---
 
 ## Why ABM here
 
-Account-based programs work when **sales and marketing agree on cadence, targets, and ownership**. This module mirrors the ABM SOP: a 90-day coordinated motion, clear target mix, staggered kickoff timing, and governed tracking.
+Account-based programs work when **Sales and Marketing agree on cadence, targets, and ownership**. This module mirrors the **ABM SOP** verbatim: a **high-touch, 90-day coordinated effort** between Sales and Marketing on **high-value Strategic accounts**, with **18 personal sales touches** under **consistent marketing air cover** so GPC stays **top-of-mind for key decision-makers**.
 
-Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a named executive target?*
+Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a named executive target—and what do I bring to kickoff?*
+
+## Before the 90-day clock starts
+
+The **Kickoff meeting** officially starts the 90-day clock. **Marketing, your Sales Manager, and the Account Representative** are in the room. Walk in with the **Sales Readiness Checklist** complete—not "we'll figure it out together":
+
+- **Account Intel** — comprehensive research and general background on the account.
+- **Status** — current Customer vs Prospect.
+- **Current Services** — what they buy today and where (if applicable / known).
+- **Location Scope** — density and geographic diversity of the account's locations.
+- **Prospecting History** — audit of prior attempts (calls, emails, LinkedIn, physical drop-ins).
+- **Target List** — finalized **3–5 specific targets** with roles and the tier mix below.
+
+A cold kickoff with no checklist is the fastest way to burn a Marketing partner—and the cycle goes long.
+
+### Target stack (mandatory mix)
+
+**Multi-threaded engagement is mandatory.** **Minimum 3 targets** per account, **5 ideal**. Targets **cannot all be Executive level**. The required mix:
+
+1. **Manager** (Operational / Technical)
+2. **Director / VP** (Tactical / Strategic)
+3. **Executive** (Financial / Final Decision Maker)
+
+One executive leaving the company shouldn't end the play. That's why the SOP forbids the all-exec stack.
+
+## The Rolling Three (active + on-deck)
+
+You manage **three concurrent ABM accounts** on a staggered cadence: one in the opening sprint, one mid-cycle, one finishing. Behind them sit **three on-deck accounts** queued for the next kickoff:
+
+- **Account A** — Month 1 kickoff
+- **Account B** — Month 2 kickoff
+- **Account C** — Month 3 kickoff
+- **On-deck (×3)** — ready to onboard immediately as actives complete
+
+As Account A wraps in April, the first on-deck account onboards for a **May** kickoff. The **Master Tracking Spreadsheet** enforces the model—it's where leadership confirms the bench is healthy. An empty on-deck list is a **Rolling Three failure**, not a normal state.
 
 ## 90-day sequence
 
-- **Duration:** 90-day coordinated sequence
-- **Sales volume:** 18 total touches over the cycle
-- **Sales rhythm:** ~3 touches per target every 2 weeks
-- **Primary channels:** Personalized phone calls and email
-- **Optional motion:** Physical door pull using approved brochure support
-- **Marketing rhythm:** 1 touchpoint every 30 days (with optional +1 support for door pull)
-
-## How to use this module
-
-1. Read the overview sections for **roles and intent** (you will refine copy as your SOP evolves).
-2. Coach to the SOP-defined sequence and guardrails: staggered kickoff, target hierarchy, cadence, and tracking controls.
-3. Pair this with **Operational Business Reviews** when discussing how executive conversations mature into review meetings.
+- **Duration:** 90-day coordinated motion, kicked off by the Sales + Marketing + Manager meeting.
+- **Sales volume:** **18 total personal sales touches** over the cycle.
+- **Sales rhythm:** **3 touches per target every 2 weeks**.
+- **Primary channels:** **Phone calls** and **personalized emails**.
+- **Optional Door Pull:** A physical drop-by using the **Enterprise Brochure** as a leave-behind.
+- **Marketing rhythm:** **1 touchpoint every 30 days** (e.g., LinkedIn / Google ads, direct mail), **+1** when Sales runs a Door Pull—Marketing provides custom copy / inserts for the brochure.
 
 ## Sequence lanes (sales & marketing)
 
 ### Sales prospecting
 
-Sales executes an 18-touch, 90-day motion anchored on personalized phone and email outreach, with optional physical drop-ins where approved.
+Sales executes the **18-touch, 90-day** motion anchored on **personalized phone and email**, with optional **Door Pull** drop-ins using the Enterprise Brochure where approved. The cadence is a fixed rhythm—persistent without being intrusive.
 
 ### Marketing air cover
 
-Marketing runs monthly support touchpoints to reinforce sales outreach, and can add support artifacts when door-pull activity is planned.
+Marketing runs **monthly support touchpoints** (LinkedIn / Google ads, direct mail) to reinforce sales outreach. When Sales schedules a **Door Pull**, Marketing increases by **+1 touchpoint** with custom copy and inserts for the brochure leave-behind.
+
+## How to use this module
+
+1. Read the overview sections for **roles, intent, and the Rolling Three model** before your first ABM kickoff.
+2. Bring the **Sales Readiness Checklist** to every kickoff—do not improvise. The checklist *is* the contract with Marketing.
+3. Coach to the SOP-defined sequence and guardrails: **staggered kickoff**, **tiered target mix**, **cadence**, and **Master Tracking Spreadsheet hygiene**.
+4. Pair this with **Operational Business Reviews** when discussing how executive conversations mature into review meetings.
 
 ## Keep this module honest
 
-Name your **enablement owner**, **playbook links**, and **MQL/SQL** definitions in your internal wiki—this page stays intentionally generic. When the SOP changes, align these bullets and checks to the current approved version.
+This page reflects the ABM SOP and is intentionally focused on it. When the SOP changes, align these bullets and checks to the current approved version—the **SharePoint folder linked above** is the live source of truth, not this app.
 <!-- prettier-ignore-end -->
 
 ---
@@ -2209,86 +2466,157 @@ Name your **enablement owner**, **playbook links**, and **MQL/SQL** definitions 
 ---
 id: "operational-business-reviews"
 title: "Operational Business Reviews"
-summary: "21-day cycles. Executive alignment. Strategic retention."
+summary: "21-day cycle. Day-14 handoff. Single Packet. No Raw Dump."
 sensitivity: "internal"
+reference_files:
+  - label: 'Operational Business Reviews — SOP & Sales Readiness Form (SharePoint)'
+    sharepoint_url: "https://gpcom.sharepoint.com/:f:/r/sites/gpcSales/Sales%20Process/Operational%20Business%20Review%20-%20OBR?csf=1&web=1&e=EbAsNB"
+discovery_questions:
+  - When was the last time you walked your strategic accounts through their full network footprint, billing structure, and 12-month performance picture in a single conversation?
+  - 'How do you currently surface contract expirations and renewal sync windows on your top accounts—before the customer''s procurement team asks?'
+  - When something goes wrong at a strategic account, how does your team translate raw NOC ticket history into something the customer's executive sponsor can act on?
+  - Which of your top accounts has billing or service-address data that has not been audited for accuracy in the last twelve months?
+  - 'If your customer''s exec sponsor walked into the room tomorrow asking "what is next on the roadmap with GPC," how confident are you in the answer—on paper?'
 five_minute_summary: |
-  - **Cycle length:** 21-business-day cycle from initiation through materials ready for the OBR meeting.
-  - **Single Packet Handoff:** Marketing will not begin design until they receive a single email containing the completed OBR Sales Readiness Form and finalized Visio diagram.
-  - **Data Hygiene:** Sales must scrub and audit all data before handoff. Internal catalog codes must be translated into plain-English service descriptions.
-  - **Core Components:** The OBR slick features Network Design, Strategic Billing, NOC History, and a Strategic Roadmap.
+  - **The Slick is the deliverable.** A front/back trifold insert with four components: **Network Design** (Current vs. Future State Visio, verified against billing), **Strategic Billing** (totals + expirations, surfaced through the "Modernization" and "Performance Spotlight" levers), **NOC History & Feedback Loop** (12-month performance snapshot + partnership feedback), and **Strategic Roadmap** (planned upgrades, renewal sync, GPC solution highlights).
+  - **The 21-business-day cycle with named owners.** Day 1: Account Rep schedules. Days 2–4: Account Rep audits locations and addresses. Days 5–14: **Jerry Ehrenberg** drives the Network Design (10 days, kicked off with a 15-minute call). Days 10–14: **Jill / NOC** generate billing and NOC data (5 days, overlapping). Days 15–19: **Sarah** formats and brands the slick (5 days, with Account Team Final Review). Days 19–21: Sarah and the Account Rep handle print, pickup, and trifold insertion. **Day 21 is the OBR Meeting.**
+  - **Success Criteria—the three numbers to memorize.** *Zero Fire Drills* (every asset handed to Marketing by **Business Day 14**), *100% Accuracy* (billing locations and network diagrams synchronized), and *Client Value* (customer leaves with a clear understanding of network health and the roadmap).
+  - **The "No Raw Dump" Rule.** Sales must scrub and audit all data before handoff. **Marketing is for design, not data entry or CID deciphering.** Translate internal catalog codes into plain-English service descriptions (e.g., `100M Fiber DIA`).
+  - **The "Single Packet" Handoff.** Marketing will not start design until one email lands containing **both** the completed **OBR Sales Readiness Form** (with scrubbed data tables) **and** the finalized **Visio diagram**. Anything less stops the clock.
+  - **The Sales Readiness Form is the Source of Truth.** Complete it early. It locks in the strategic copy for Marketing, carries all audited billing/NOC data, and feeds the trifold's narrative.
 
 knowledge_checks:
-  - question: "How many days does the standard OBR preparation cycle span in the Gantt?"
+  - question: How many business days does the OBR cycle run, from initiation through the meeting itself?
     options:
-      - "21 business days"
-      - "90 days"
-      - "5 business days"
+      - 21 business days
+      - 14 business days
+      - 30 business days
     correct_index: 0
-    explanation: "The SOP defines a 21-business-day cycle."
-
-  - question: "What is required for the 'Single Packet' Handoff to Marketing?"
+    explanation: 'The SOP defines a 21-business-day cycle, ending with the OBR Meeting on Day 21.'
+  - question: '"Zero Fire Drills" is one of the OBR''s three Success Criteria. What does it mean operationally?'
     options:
-      - "A single email containing the completed OBR Sales Readiness Form and finalized Visio diagram"
-      - "A raw dump of billing data"
-      - "A verbal request to start design"
+      - Every asset is ready and handed to Marketing by Business Day 14.
+      - No support tickets can be open on the customer's circuits during OBR week.
+      - The OBR meeting cannot be rescheduled.
     correct_index: 0
-    explanation: "Marketing requires a single, complete packet to begin design."
-
-  - question: "What are the 6 phases of the OBR cycle?"
+    explanation: '"Zero Fire Drills" is the SOP''s name for the Business Day 14 handoff milestone—seven business days before the meeting, Marketing has everything they need.'
+  - question: Marketing will not begin design until the "Single Packet" handoff arrives. What must that single email contain?
     options:
-      - "Initiation, Data Recon, Design Phase, Data Collection, Marketing Design, Final Prep"
-      - "Initiation, Design, Data, Marketing, Production"
-      - "Kickoff, Review, Print"
+      - The completed OBR Sales Readiness Form (with scrubbed data tables) and the finalized Visio diagram (verified).
+      - A raw export from the billing platform plus a verbal walkthrough.
+      - A calendar invite for the OBR meeting and the customer's logo.
     correct_index: 0
-    explanation: "The SOP defines 6 specific phases across the 21-business-day cycle."
+    explanation: 'Marketing requires one packet, audited and complete. Sending pieces separately—or sending raw data—violates the Single Packet rule and stops the design clock.'
+  - question: 'The SOP enforces a "No Raw Dump" rule. What is the stated rationale?'
+    options:
+      - Marketing is for design, not data entry or CID deciphering. Sales owns the scrub.
+      - Raw billing data violates customer NDAs.
+      - The Visio software cannot ingest raw exports.
+    correct_index: 0
+    explanation: 'Verbatim from §3 of the SOP—Sales must scrub and audit data before handoff. Marketing receives audited, plain-English data, not internal catalog soup.'
+  - question: 'When you audit billing during OBR prep, the SOP names two specific "sales levers" the slick should surface. Which pair?'
+    options:
+      - '"Modernization" and "Performance Spotlight"'
+      - '"Discount" and "Bundle"'
+      - '"Renewal" and "Cross-sell"'
+    correct_index: 0
+    explanation: 'Strategic Billing on the slick features the "Modernization" lever (e.g., upgrade an aging tier) and the "Performance Spotlight" lever (showcase services performing well). Surface both.'
 
 scenarios:
-  - title: "Customer timeline vs. 21-business-day OBR cycle"
+  - title: The 5-Day Promise
     situation: |
-      An account rep promises the customer a **printed OBR deck in five days**. Delivery points to the **21-business-day Gantt**.
+      An account rep promises the customer a **printed OBR deck in five business days**. Delivery points to the **21-business-day SOP**.
     choices:
-      - label: "Tell the customer five days is the standard."
-        feedback: "The documented cycle is **21 business days**; reset expectations or escalate an approved exception path."
-      - label: "Align the rep to the 21-business-day model (or your approved fast-track process) before committing dates."
-        feedback: "**Good.** The chart exists so sales and delivery quote the same timeline."
-      - label: "Skip marketing formatting to save time."
-        feedback: "Skipping lanes risks quality and handoffs; use leadership-approved exceptions only."
+      - label: Tell the customer five days is the standard.
+        feedback: 'The SOP cycle is 21 business days for a reason—Design (Jerry, 10 days), Data Collection (Jill / NOC, 5 days), Marketing Design (Sarah, 5 days), and Final Prep (3 days). A five-day promise breaks the Zero-Fire-Drills criterion before the cycle even starts.'
+      - label: Reset expectations to the 21-business-day cycle (or document a leadership-approved exception path) before committing a date.
+        feedback: '**Correct.** The SOP exists so Sales, Engineering, NOC, and Marketing all quote the same timeline. Exceptions go through your manager, not the customer-facing meeting date.'
+      - label: Skip the Marketing Design phase to save time and hand the rep an unbranded slick.
+        feedback: 'Skipping the Marketing Design phase strips the slick of the Final Review step and the brand consistency that makes the trifold readable. Use a documented fast-track only.'
+  - title: The Raw-Dump Reflex
+    situation: |
+      Friday afternoon. The OBR meeting is fourteen business days out. The rep has just exported the customer's billing detail to a CSV, attached it to an email titled "Billing for [Customer]," and is about to add Sarah to the To: line.
+    choices:
+      - label: Hit send—Marketing can sort the spreadsheet on Monday.
+        feedback: 'That is the **Raw Dump** the SOP exists to prevent. Marketing is for design, not data entry. The slick comes back wrong, or it comes back late.'
+      - label: 'Pause. Complete the Sales Readiness Form, translate catalog codes to plain English, attach the finalized Visio diagram, and send **one email** containing the Single Packet.'
+        feedback: '**Correct.** Sales owns the scrub. One packet, one email, complete data—Marketing starts the design clock immediately.'
+      - label: Send the CSV now and the Visio later when it is ready.
+        feedback: 'Two emails is not a Single Packet. Marketing will not begin design until the complete packet arrives—any partial send stops the clock and risks the Day 14 handoff.'
+  - title: The Modernization Lever
+    situation: |
+      During the billing audit for a Strategic account, the rep discovers the customer has been paying for a **100M Fiber DIA** circuit at a site that was upgraded to **1G** last year but never re-tiered in billing.
+    choices:
+      - label: Quietly fix the billing internally before the OBR so it does not come up.
+        feedback: 'Half right. Fix it, yes—but the SOP says to **surface** the proactive fix during the OBR. "Presenting an internal fix during the OBR proves proactive account management." Hiding it forfeits the trust dividend.'
+      - label: 'Surface it on the slick under **Strategic Billing** as a Modernization lever: "Tier corrected from 100M to 1G; back-credit applied; current rate aligned with as-deployed service."'
+        feedback: '**Correct.** This is exactly the Modernization lever the SOP calls out. Catching the error early **and** showing the work converts an awkward audit moment into a trust-building one.'
+      - label: Tell the customer about it verbally in the meeting but leave it off the slick.
+        feedback: 'Verbal-only loses the receipts. The trifold is the takeaway—if it is not on the slick, it did not happen.'
+
+roleplay:
+  persona: VP of IT at a ~$40M regional logistics company; long-time GPC strategic customer with six locations and a mixed DIA / SIA / SD-WAN footprint.
+  scenario: The CFO is now copy-on every contract renewal and pushing back on "what are we actually getting." The VP of IT wants to defend the relationship at the next quarterly check-in but is buried in tickets and has no consolidated view of network health, billing, or roadmap.
+  goal: 'Use the OBR as the answer. Walk the VP through what the slick will contain (Network Design / Strategic Billing / NOC History / Strategic Roadmap), the 21-business-day cycle, and the Sales Readiness Form data you need from their side. Set the meeting date and lock the Day 14 handoff backwards from there.'
 
 ---
 
 ## Why OBRs matter
 
-Operational Business Reviews turn **network reality, financial signals, and marketing narrative** into a single executive conversation. Reps win when the **prep process is predictable**—this module trains the timeline, not just the slide deck.
+Operational Business Reviews turn **network reality, financial signals, and partnership history** into a single executive conversation that the customer's CFO *and* VP-IT can both act on. Reps win when the **prep process is predictable**—this module trains the SOP, not just the slide deck.
 
-**How to use:** Walk new hires through **phases** below; use the **21-business-day** chart for swim-lane expectations.
+## The OBR Slick — what we deliver
 
-## 21-business-day OBR cycle
+The deliverable is a **front/back trifold insert** ("the Slick") with four components:
+
+1. **Network Design:** High-fidelity "Current vs. Future State" Visio, verified against billing data.
+2. **Strategic Billing:** Totals and expirations, featuring the **"Modernization"** and **"Performance Spotlight"** levers.
+3. **NOC History & Feedback Loop:** 12-month performance snapshot and holistic partnership feedback loop.
+4. **Strategic Roadmap:** Planned upgrades, upcoming renewal sync, and GPC solution highlights.
+
+## Success Criteria — memorize the three
+
+- **Zero Fire Drills** — every asset is ready and handed to Marketing by **Business Day 14**.
+- **100% Accuracy** — billing locations and network diagrams are fully synchronized.
+- **Client Value** — the customer leaves the meeting with a clear understanding of their network health and our roadmap.
+
+## The 21-business-day OBR cycle
 
 ![OBR process: 21-business-day strategic cycle (reference Gantt)](assets/gantt/obr-21-day-cycle.png)
 
-## Phases (high level)
+| Phase | Interval | Owner | Action |
+|---|---|---|---|
+| **Initiation** | Day 1 | Account Rep | Schedule the OBR. |
+| **Data Recon** | 3 days | Account Rep | Audit of locations, addresses, and upgrades. |
+| **Design Phase** | 10 days | **Jerry Ehrenberg** | Network Design (with kickoff call). |
+| **Data Collection** | 5 days | **Jill / NOC** | Billing & NOC data generation. |
+| **Marketing Design** | 5 days | **Sarah** → Account Team Final Review | Professional formatting and branding. |
+| **Final Prep** | 3 days | Sarah → Account Rep | Printing, pickup, and trifold insertion. |
+| **The Meeting** | **Day 21** | Account Team | OBR Meeting. |
 
-- **Initiation (Day 1):** Schedule the OBR (Account Rep).
-- **Data Recon (3 Days):** Audit of locations, addresses, and upgrades (Account Rep).
-- **Design Phase (10 Days):** Network Design w/ kickoff call.
-- **Data Collection (5 Days):** Billing & NOC data generation.
-- **Marketing Design (5 Days):** Professional formatting, branding, and Final Review.
-- **Final Prep (3 Days):** Printing, Pickup, and trifold insertion.
+**Why Day 14 is the hinge:** Marketing Design + Final Prep take seven business days. Miss the Day 14 handoff and you compress design and print into a fire drill—the opposite of the Zero-Fire-Drills criterion.
 
-## Single Packet Handoff & Data Hygiene
+## Data Hygiene & the Single Packet
 
-Marketing will not begin design until they receive a **Single Packet** handoff via email containing:
+**The "No Raw Dump" Rule.** Sales must scrub and audit all data before handoff. **Marketing is for design, not data entry or CID deciphering.** Translate internal catalog codes into plain-English service descriptions (e.g., `100M Fiber DIA`).
+
+**Proactive Billing Wins.** Audit for address, tier, and MRC errors early. **Presenting an internal fix during the OBR proves proactive account management**—surface the correction on the slick under the Modernization lever instead of quietly burying it.
+
+**The Single Packet Handoff.** Marketing will not begin design until **one email** lands containing:
+
 1. The completed **OBR Sales Readiness Form** (with scrubbed data tables).
-2. The finalized **Visio Diagram** (Verified).
+2. The finalized **Visio Diagram** (verified).
 
-**No Raw Dumps:** Sales must scrub and audit all data before handoff. Marketing is for design, not data entry. Internal catalog codes must be translated into plain-English service descriptions (e.g., "100M Fiber DIA").
+Partial sends do not start the clock.
 
-## Core Components of the OBR Slick
+## Communication templates — subject-line discipline
 
-1. **Network Design:** High-fidelity "Current vs. Future State" Visio, verified against billing data.
-2. **Strategic Billing:** Totals and expirations, featuring "Modernization" and "Performance Spotlight" levers.
-3. **NOC History & Feedback Loop:** 12-mo performance snapshot and holistic partnership feedback loop.
-4. **Strategic Roadmap:** Planned upgrades, upcoming renewal sync, and GPC solution highlights.
+The SOP ships four kickoff templates. Use the subject-line pattern verbatim—it is the operating signal that the cycle is on rails.
+
+- **Design Request → Jerry Ehrenberg.** *Subject:* `OBR Design Request: [Customer Name] | DUE: 10 Business Days from Today`. Include known active locations and a 15-minute kickoff calendar hold.
+- **Billing Request → Billing Team.** *Subject:* `OBR Billing Request: [Customer Name] | DUE: 5 Business Days from Today`. Ask for location-specific totals, product/service breakouts, and contract expiration dates.
+- **Performance Request → NOC.** *Subject:* `OBR Performance Request: [Customer Name] | DUE: 5 Business Days from Today`. Ask for a 12-month ticket history snapshot (total volume, incident duration, services impacted, high-level resolution summaries) against the known CIDs and service addresses.
+- **Final Assets → Sarah.** *Subject:* `OBR FINAL ASSETS: [Customer Name] | Review Requested: [5 Business Days from Today]`. Include the audited Sales Readiness Form (strategic copy + data) and the finalized Visio. The slick goes to proof when Sarah signs off.
 <!-- prettier-ignore-end -->
 
 ---

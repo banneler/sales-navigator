@@ -4,6 +4,7 @@ title: Sales Operations & Approvals
 summary: GPC Solutions. Change Orders vs MACs.
 sensitivity: internal
 sales_trio_hide_deep_dive: true
+sales_trio_hide_guidelines: true
 video_sections_as_tabs: true
 video_sections_tabs_aria_label: 'Pre-Approved, matrix, and change-order guides'
 reference_files:
@@ -25,65 +26,92 @@ video_sections:
   - heading: Pre-Approved Fiber
     intro: 'The shortcut only applies when the deal is genuinely plain-vanilla fiber. If payback or the dollars feel fuzzy, use the normal approval path.'
     body: |
-      **[Pre-Approved Order Process Quick Reference — 07/23](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)**
-      - **Who:** Channel, Enterprise, and Wholesale AEs
-      - **36+ month** term
-      - **No** promos, free months, buyouts, or promo credits
-      - **Build Fiber** or **On-Net Fiber** sites only (**fiber only**—not copper or coax)
-      - New logos or renewals / upgrades
-      - Tied to a **Zone Parent** opportunity that is **Booked, In Progress, or Completed**
+      [Pre-Approved Order Process Quick Reference — 07/23](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)
 
-      **Fine print**
-      - **$150+** MRC per site
-      - Service within **500 feet** of the **fiber line** (not just the vault)
-      - Path **cannot** cross **railroads, streets, grassy areas, or run through buildings**
-      - **Zip 68102** excluded
-      - Discounts: **20%** max if not term-based; if term-based, use the table (e.g. **36-month** → **27%** max—and **0.01% over** disqualifies Pre-Approved)
+      Use the pre-approved path only when the deal stays inside a narrow lane:
 
-      **Check for product exclusions prior to proceeding.**
+      - Channel, Enterprise, or Wholesale AE
+      - 36-month term or longer
+      - Build Fiber or On-Net Fiber sites only; no copper or coax
+      - New logo, renewal, or upgrade
+      - Zone Parent opportunity is Booked, In Progress, or Completed
+      - No promos, free months, buyouts, or promotional credits
+
+      Watch-outs:
+
+      - MRC must be at least $150 per site.
+      - Service must be within 500 feet of the fiber line, not just the vault.
+      - The path cannot cross railroads, streets, grassy areas, or run through buildings.
+      - Zip 68102 is excluded.
+      - Discounts max at 20% unless the term-based table allows more. For example, a 36-month term allows up to 27%; 27.01% no longer qualifies.
+      - Check product exclusions before you proceed.
   - heading: Approval Requirements Matrix
     intro: 'Payback, discounts, and dollar thresholds live here.'
     body: |
-      **[Approval Requirements Matrix v5.5 — 07/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=h64jqJ)**
-      - **Payback vs term:** Max **payback months** allowed for **auto-approve** depends on **contract term**—go over the limit for that term → **manager** approval (full table in PDF)
-      - **Strategic Build** (solution site type): **bypasses** the payback-month requirement in the matrix
-      - **Discount (not by term):** **≤20%** auto; **>20%** → **manager**
-      - **Discount (by term):** caps **step up** with longer terms—e.g. **24–35 mo** → **22%** max, **36–47 mo** → **27%**, **48–59 mo** → **29%**, **60+ mo** → **31%**
-      - **Who it applies to:** **Enterprise, Channel, and Wholesale** use the same discount rules 
+      [Approval Requirements Matrix v5.5 — 07/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Approval%20Requirements%20Matrix%20v5.5%20-%200725.pdf?csf=1&web=1&e=h64jqJ)
 
-      **Net investment (deal size)**
-      - **Under $50k** — auto-approve band
-      - **$50k+** — **manager**
-      - **$75k+** — **CRO**
-      - **$100k+** — **CFO**
-      - **$500k+** — **CEO**
+      Use the matrix when payback, discounting, churn, or net investment could push the deal out of the auto-approval lane.
 
-      **Other triggers**
-      - **Churn:** **≤10%** auto; **>10%** → **manager** and **CRO**
-      - **Unfavorable investment** — always **manager**
-      - **Product** line issues — **Product Manager**
-      - **Dark fiber** — **manager** and **CRO**
+      - Payback: auto-approval depends on contract term. If payback months exceed the limit for that term, manager approval is required.
+      - Strategic Build: bypasses the matrix payback-month requirement.
+      - Discount not tied to term: 20% or less can auto-approve; over 20% requires manager approval.
+      - Discount tied to term: caps increase with longer terms. Examples: 24–35 months allows 22%, 36–47 months allows 27%, 48–59 months allows 29%, and 60+ months allows 31%.
+      - Enterprise, Channel, and Wholesale use the same discount rules.
+
+      Net investment approval bands:
+
+      | Net investment | Approval path |
+      | --- | --- |
+      | Under $50k | Auto-approval band |
+      | $50k+ | Manager |
+      | $75k+ | CRO |
+      | $100k+ | CFO |
+      | $500k+ | CEO |
+
+      Other triggers:
+
+      - Churn over 10% requires manager and CRO review.
+      - Unfavorable investment always requires manager review.
+      - Product line issues route to the Product Manager.
+      - Dark fiber requires manager and CRO review.
   - heading: Change Order vs MAC
     intro: 'How much is changing, and has billing started? Wrong path = rework—the PDFs have every click and screenshot.'
     body: |
-      **[Change Order Process — Sales Team — 03/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Change%20Order%20Process%20-%20Sales%20Team%20-%200325.pdf?csf=1&web=1&e=STAe3w)** · **[Move-Add-Change Processes — Sales Team — 11/23](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Move-Add-Change%20Processes%20-%20Sales%20Team%20-%201123.pdf?csf=1&web=1&e=zURGTj)**
+      [Change Order Process — Sales Team — 03/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Change%20Order%20Process%20-%20Sales%20Team%20-%200325.pdf?csf=1&web=1&e=STAe3w) · [Move-Add-Change Processes — Sales Team — 11/23](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Move-Add-Change%20Processes%20-%20Sales%20Team%20-%201123.pdf?csf=1&web=1&e=zURGTj)
 
-      **Pick one**
-      - **Change Order** — **Part** of the contract; **Closed/Won**; **Booked**, **not Billed**
-      - **MAC** — **Part** of the contract; **already billing** (**Move / Add / Change**)
-      - **Cancellation** — **All** services out; **before** billing
-      - **Disconnect** — **All** services out; **after** billing
+      Start with one question: has billing started?
 
-      **Change order** — **Conga Files** → **Change Order** → Word document (sites, description of change, specific changes) → keep **GPC Solution #** on it → sign → upload → email **Sales Manager** if **MRC / payback / cost** shifts, and **PMO / SF Admin / CRC** as the guide says. Admin **booking adjustment** → **PMO** project → **CRC** billing.
+      | Situation | Use |
+      | --- | --- |
+      | Change part of a Closed/Won contract before billing | Change Order |
+      | Change part of an active billing contract | MAC |
+      | Remove all services before billing | Cancellation |
+      | Remove all services after billing | Disconnect |
 
-      **MAC** — **Billed** world: new site, add, or change on what’s live—usually a **new GPC Solution** on the same opportunity; follow the MAC PDF by scenario.
+      Change Order path:
 
-      **Fine print** — **Pending Billing** / **7–10 Day Order** can block Admin until **PMO/CRC** weigh in. Narrow **CRC/BCC** tweaks (e.g. **≤$30 MRC**-type adds/changes per MAC) → **businesscare@gpcom.com** (**no AE commission**); anything else → **Salesforce**.
+      1. Open the GPC Solution.
+      2. Go to Conga Files → Change Order.
+      3. Generate the Word document and describe the affected sites, the reason for the change, and the exact service changes.
+      4. Keep the GPC Solution number on the document.
+      5. Get signatures, upload the signed PDF, and send the package to the right workflow owners.
+
+      Notify the Sales Manager early if MRC, payback, or cost shifts. The guide also calls out PMO, Salesforce Admin, and CRC steps after the signed package is uploaded.
+
+      MAC path:
+
+      Use a MAC when the service is already billing and the customer needs a move, add, or change on the live account. Most MAC scenarios require a new GPC Solution on the same opportunity; follow the MAC guide by scenario.
+
+      Watch-outs:
+
+      - Pending Billing or 7–10 Day Order can block Admin action until PMO or CRC weighs in.
+      - Very small CRC/BCC changes may go to businesscare@gpcom.com instead of Salesforce.
+      - The MAC guide calls out no AE commission for those narrow Business Care changes.
 five_minute_summary: |
-  - **Approval History:** Use this on the GPC Solution to approve, reject, or recall. Always include the Solution ID on every form and attachment so Operations isn't guessing what belongs where.
-  - **Change Order vs MAC:** A Change Order applies after a deal is Closed Won, but *before* billing starts. A Move-Add-Change (MAC) is used to modify an active, billing contract.
-  - **Disconnects:** This is only used when services are coming out entirely.
-  - **Request Manual Validation:** This pulls a site out of the automated routing flow for manual review. It slows the deal down. Use it only for genuine exceptions, never as a default.
+  - Use Approval History on the GPC Solution to approve, reject, or recall. Put the Solution ID on every form and attachment so Operations can match documents to the right workflow.
+  - Change Orders are for post-signature changes before billing starts. MACs are for changes to active billing contracts.
+  - Use Cancellation before billing when all services are coming out; use Disconnect after billing.
+  - Request Manual Validation only for real exceptions. It pulls the site out of automated routing and slows the deal down.
 knowledge_checks:
   - question: 'You just moved an opportunity to Closed Won, but the customer suddenly wants to upgrade their internet speed before the circuit is installed. What process do you use?'
     options:
@@ -125,18 +153,14 @@ discovery_questions:
 
 ## Overview
 
-- **GPC Solution:** The core object where approvals, pricing, and technical scoping live.
-- **Change Order:** Pre-billing modification (e.g., changing port speed before install).
-- **MAC (Move-Add-Change):** Post-billing modification to a live service.
-- **Manual Validation:** Breaks automation. Use only for extreme exceptions.
+- GPC Solution: the core object where approvals, pricing, and technical scoping live.
+- Change Order: a pre-billing modification, such as changing port speed before install.
+- MAC: a Move-Add-Change on a live billing service.
+- Manual Validation: an exception path that breaks automation. Use it sparingly.
 
 ---
 
 ## Key Guidelines
-
-::: elevator [Elevator Pitch]
-Winning the deal is only half the battle; clean paperwork turns deals into installed revenue. Know your motions: Change Orders before billing, MACs for active contracts, and Disconnects for full removals. Keep the Solution ID on every attachment, and never use Manual Validation unless it's a true edge case.
-:::
 
 ---
 
@@ -145,15 +169,15 @@ Winning the deal is only half the battle; clean paperwork turns deals into insta
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["I'll just click Manual Validation to make sure engineering looks at it."]
-**The Slow Lane:** Manual validation completely breaks the automated routing flow. You are guaranteeing your deal takes longer to process. Only use it if there is a known, unmappable physical barrier at the site.
+The slow lane: manual validation breaks automated routing and makes the deal take longer. Use it only when there is a known, unmappable physical barrier at the site.
 :::
 
 ::: flip ["I attached the pricing sheet, they'll figure it out."]
-**The Orphaned Document:** Operations processes hundreds of solutions a week. If your custom pricing sheet or floor plan doesn't have the GPC Solution ID explicitly written on it, it will get lost, and your deal will stall.
+The orphaned document: Operations processes hundreds of solutions a week. If the custom pricing sheet or floor plan does not show the GPC Solution ID, the deal can stall while people figure out where it belongs.
 :::
 
 ::: flip ["The customer signed, so I need to submit a MAC to change the order."]
-**The MAC Mistake:** MACs are strictly for active accounts that have already received their first bill. If the fiber isn't lit yet, it is a Change Order. Using the wrong form sends the ticket to the wrong department.
+The MAC mistake: MACs are for active accounts that have already started billing. If the service is not billing yet, use a Change Order so the request lands with the right team.
 :::
 
 </div>
