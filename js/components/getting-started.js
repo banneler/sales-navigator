@@ -397,13 +397,14 @@ function findTourCardPositionClearOfSpotlight(spotlight, cardW, cardH, vw, vh, g
 
 /**
  * Extra regions the tour card must not cover (viewport coords).
- * Steps 3–4 on mid widths: stacked layout—keep the HUD off the tall main column.
+ * Scenario step on mid widths: stacked layout—keep the HUD off the tall main column.
+ * (Welcome/tabs step intentionally omitted so a centered-above HUD can sit in the main column.)
  * @param {number} stepIndex
  * @param {number} vw
  * @returns {Array<{ left: number; top: number; width: number; height: number }>}
  */
 function getTourCardAvoidRects(stepIndex, vw) {
-  if ((stepIndex !== 3 && stepIndex !== 4) || vw >= 1280) return [];
+  if (stepIndex !== 4 || vw >= 1280) return [];
   const el = document.querySelector('[data-tour-target="module-core"]');
   if (!el) return [];
   return [rectLike(el.getBoundingClientRect())];
@@ -535,14 +536,6 @@ function positionGlassCard(hostEl, stepIndex, rect) {
     return;
   }
 
-  /** Coffee Summary: compact spotlight—center the HUD on the viewport (ok to float over the highlight). */
-  if (stepIndex === 2) {
-    hostEl.style.left = '50%';
-    hostEl.style.top = '50%';
-    hostEl.style.transform = 'translate(-50%, -50%)';
-    return;
-  }
-
   /** Avoid centering over the viewport when the spotlight isn't ready yet (prevents HUD over the hole). */
   if (!rect || rect.width <= 0 || rect.height <= 0) {
     hostEl.style.left = `${Math.max(gap, vw - cardW - gap)}px`;
@@ -558,52 +551,51 @@ function positionGlassCard(hostEl, stepIndex, rect) {
   const sw = spotlight.width;
   const sh = spotlight.height;
 
+  /** Coffee Summary + Welcome: center the HUD above the spotlight (fallback below if no room). */
+  if (stepIndex === 2 || stepIndex === 3) {
+    const centerX = sx + sw / 2;
+    let left = clampX(centerX - cardW / 2);
+    let top = sy - cardH - gap;
+    if (top < gap) top = sy + sh + gap;
+    top = clampY(top);
+    let cardRect = { left, top, width: cardW, height: cardH };
+    if (!rectsOverlap(cardRect, spotlight) && !cardOverlapsAny(cardRect, avoidRects)) {
+      hostEl.style.left = `${left}px`;
+      hostEl.style.top = `${top}px`;
+      hostEl.style.transform = 'none';
+      return;
+    }
+    if (top < sy) {
+      top = clampY(sy + sh + gap);
+      cardRect = { left, top, width: cardW, height: cardH };
+      if (!rectsOverlap(cardRect, spotlight) && !cardOverlapsAny(cardRect, avoidRects)) {
+        hostEl.style.left = `${left}px`;
+        hostEl.style.top = `${top}px`;
+        hostEl.style.transform = 'none';
+        return;
+      }
+    }
+  }
+
   const rightGutterLeft = sx + sw + gap;
   const leftGutterLeft = sx - cardW - gap;
 
   /** Prefer true viewport gutters first—plain clamping pulled candidates back into the spotlight. */
   const ordered = [];
 
-  if (stepIndex === 3) {
-    /** Welcome / tabs: keep the HUD on the right; avoid stacking below a tall column (clips off-screen). */
-    if (rightGutterLeft + cardW <= vw - gap) {
-      ordered.push({ left: rightGutterLeft, top: clampY(sy) });
-    }
-    ordered.push({ left: vw - cardW - gap, top: clampY(sy) });
-    ordered.push({
-      left: vw - cardW - gap,
-      top: clampY(sy + Math.max(0, (sh - cardH) / 2)),
-    });
-    if (leftGutterLeft >= gap) {
-      ordered.push({ left: leftGutterLeft, top: clampY(sy) });
-    }
-    if (rightGutterLeft + cardW <= vw - gap) {
-      ordered.push({
-        left: rightGutterLeft,
-        top: clampY(sy + Math.max(0, (sh - cardH) / 2)),
-      });
-    }
-  } else {
-    if (rightGutterLeft + cardW <= vw - gap) {
-      ordered.push({ left: rightGutterLeft, top: clampY(sy) });
-    }
-    if (leftGutterLeft >= gap) {
-      ordered.push({ left: leftGutterLeft, top: clampY(sy) });
-    }
-    ordered.push({ left: vw - cardW - gap, top: clampY(sy + sh + gap) });
-    ordered.push({ left: gap, top: clampY(sy + sh + gap) });
-    ordered.push({ left: clampX(sx), top: sy + sh + gap });
-    ordered.push({ left: clampX(sx), top: sy - cardH - gap });
-    ordered.push({ left: vw - cardW - gap, top: gap });
-    ordered.push({ left: gap, top: gap });
-    ordered.push({ left: gap, top: vh - cardH - gap });
+  if (rightGutterLeft + cardW <= vw - gap) {
+    ordered.push({ left: rightGutterLeft, top: clampY(sy) });
   }
-
-  if (stepIndex === 3) {
-    ordered.push({ left: vw - cardW - gap, top: gap });
-    ordered.push({ left: gap, top: clampY(sy + sh + gap) });
-    ordered.push({ left: clampX(sx), top: sy + sh + gap });
+  if (leftGutterLeft >= gap) {
+    ordered.push({ left: leftGutterLeft, top: clampY(sy) });
   }
+  ordered.push({ left: vw - cardW - gap, top: clampY(sy + sh + gap) });
+  ordered.push({ left: gap, top: clampY(sy + sh + gap) });
+  ordered.push({ left: clampX(sx), top: sy + sh + gap });
+  ordered.push({ left: clampX(sx), top: sy - cardH - gap });
+  ordered.push({ left: vw - cardW - gap, top: gap });
+  ordered.push({ left: gap, top: gap });
+  ordered.push({ left: gap, top: vh - cardH - gap });
 
   let best = null;
   for (const c of ordered) {
@@ -636,7 +628,7 @@ function positionGlassCard(hostEl, stepIndex, rect) {
     };
   }
 
-  if ((stepIndex === 3 || stepIndex === 4) && vw < 1280 && avoidRects.length) {
+  if (stepIndex === 4 && vw < 1280 && avoidRects.length) {
     const chosen = { left: best.left, top: best.top, width: cardW, height: cardH };
     if (cardOverlapsAny(chosen, avoidRects)) {
       const hero = avoidRects[0];
