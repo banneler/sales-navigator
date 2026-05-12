@@ -392,7 +392,7 @@ const SAFE_UC_VIDEO_SRC =
 /** Optional static poster image next to MP4s. */
 const SAFE_UC_POSTER =
   /^assets\/(?:UC\/|training\/salesforce\/|wireless-backup\/)[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
-/** Relative image under site root for static collateral carousels. */
+/** Relative image under site root for static collateral views. */
 const SAFE_IMAGE_CAROUSEL_SRC =
   /^assets\/(?:battle-cards\/)(?:[a-zA-Z0-9._-]+\/)*[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
 
@@ -469,6 +469,35 @@ function normalizeImageItems(items) {
     entries.push({ src, title, alt });
   }
   return entries;
+}
+
+/**
+ * @param {unknown[]} docs
+ * @returns {{ title: string; pages: { src: string; alt: string }[] }[]}
+ */
+function normalizeImageLibrary(docs) {
+  if (!Array.isArray(docs)) return [];
+  /** @type {{ title: string; pages: { src: string; alt: string }[] }[]} */
+  const out = [];
+  for (const doc of docs) {
+    const title =
+      typeof doc?.title === 'string' && doc.title.trim()
+        ? doc.title.trim()
+        : `Battle Card ${out.length + 1}`;
+    const pagesRaw = Array.isArray(doc?.pages) ? doc.pages : [];
+    const pages = [];
+    for (const page of pagesRaw) {
+      const src = typeof page?.src === 'string' ? page.src.trim() : '';
+      if (!SAFE_IMAGE_CAROUSEL_SRC.test(src)) continue;
+      const alt =
+        typeof page?.alt === 'string' && page.alt.trim()
+          ? page.alt.trim()
+          : title;
+      pages.push({ src, alt });
+    }
+    if (pages.length > 0) out.push({ title, pages });
+  }
+  return out;
 }
 
 function buildTrainingIntroParagraph(intro) {
@@ -571,6 +600,80 @@ function buildImageCarouselChromeHtml(entries) {
 }
 
 /**
+ * Thumbnail library for battle-card documents. Multi-page cards open as one item.
+ * @param {{ title: string; pages: { src: string; alt: string }[] }[]} docs
+ */
+function buildImageLibraryHtml(docs) {
+  if (docs.length === 0) return '';
+  const firstDoc = docs[0];
+  const firstPage = firstDoc.pages[0];
+
+  const shelf = docs
+    .map((doc, i) => {
+      const thumb = doc.pages[0];
+      const srcEsc = escapeHtml(thumb.src);
+      const pagesText = `${doc.pages.length} page${doc.pages.length === 1 ? '' : 's'}`;
+      const pageData = doc.pages
+        .map((p) => escapeHtml(p.src))
+        .join('|');
+      const selected =
+        i === 0
+          ? 'border-orange-300 bg-orange-50/70 ring-2 ring-orange-200'
+          : 'border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/40';
+      const corner =
+        doc.pages.length > 1
+          ? `<span class="absolute right-0 top-0 h-10 w-10 overflow-hidden rounded-tr-xl" aria-hidden="true">
+              <span class="absolute right-0 top-0 h-10 w-10 bg-gradient-to-bl from-orange-200 via-orange-100 to-transparent shadow-inner"></span>
+              <span class="absolute right-1 top-1 text-[10px] font-black text-orange-700">${doc.pages.length}</span>
+            </span>`
+          : '';
+      return `<button type="button" class="js-image-library-open group relative flex min-w-0 flex-col rounded-xl border p-2 text-left shadow-sm transition ${selected}" data-library-index="${i}" data-library-title="${escapeHtml(doc.title)}" data-library-pages="${pageData}" data-library-current="0" aria-pressed="${i === 0 ? 'true' : 'false'}">
+            <span class="relative block aspect-[4/3] w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-100">
+              <img src="${srcEsc}" alt="" class="h-full w-full object-cover object-top transition duration-200 group-hover:scale-[1.03]" loading="lazy" decoding="async" />
+              ${corner}
+            </span>
+            <span class="mt-2 line-clamp-2 min-h-[2.5rem] text-xs font-semibold leading-snug text-slate-800">${escapeHtml(doc.title)}</span>
+            <span class="mt-1 text-[11px] font-medium text-slate-500">${pagesText}</span>
+          </button>`;
+    })
+    .join('');
+
+  return `
+        <div class="js-image-library rounded-xl border border-slate-200 bg-white p-3 md:p-4" data-library-active="0">
+          <div class="js-image-library-shelf grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            ${shelf}
+          </div>
+          <div class="js-image-library-viewer mt-4 hidden rounded-xl border border-slate-200 bg-slate-950 p-3 shadow-lg md:p-4" aria-live="polite">
+            <div class="mb-3 flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <p class="js-image-library-title text-sm font-bold text-white">${escapeHtml(firstDoc.title)}</p>
+                <p class="js-image-library-page-label text-xs font-medium text-slate-300">Page 1 / ${firstDoc.pages.length}</p>
+              </div>
+              <button type="button" class="js-image-library-close inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/15" aria-label="Close battle-card viewer">
+                <i class="fa-solid fa-xmark text-xs" aria-hidden="true"></i> Close
+              </button>
+            </div>
+            <div class="relative overflow-hidden rounded-xl border border-white/10 bg-white">
+              <span class="js-image-library-corner absolute right-0 top-0 z-[1] hidden h-14 w-14 overflow-hidden rounded-tr-xl" aria-hidden="true">
+                <span class="absolute right-0 top-0 h-14 w-14 bg-gradient-to-bl from-orange-300 via-orange-100 to-transparent shadow-inner"></span>
+                <span class="absolute right-2 top-2 text-[10px] font-black uppercase tracking-wide text-orange-800">flip</span>
+              </span>
+              <img src="${escapeHtml(firstPage.src)}" alt="${escapeHtml(firstPage.alt)}" class="js-image-library-image max-h-[min(78vh,900px)] w-full object-contain bg-white transition duration-300 ease-out" loading="lazy" decoding="async" />
+            </div>
+            <div class="mt-3 flex flex-wrap items-center justify-between gap-3">
+              <button type="button" class="js-image-library-prev inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/15 disabled:opacity-40 disabled:pointer-events-none">
+                <i class="fa-solid fa-chevron-left text-xs" aria-hidden="true"></i> Previous page
+              </button>
+              <span class="js-image-library-flip-hint text-xs font-semibold uppercase tracking-wide text-orange-200"></span>
+              <button type="button" class="js-image-library-next inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/15 disabled:opacity-40 disabled:pointer-events-none">
+                Next page <i class="fa-solid fa-chevron-right text-xs" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>`;
+}
+
+/**
  * One training card: heading, optional plain intro, optional markdown body, optional video carousel.
  * @param {Record<string, unknown>} section
  * @param {number} index
@@ -592,9 +695,12 @@ function buildVideoSectionCardHtml(section, index) {
   const imageEntries = normalizeImageItems(
     Array.isArray(section?.image_items) ? section.image_items : []
   );
+  const imageLibrary = normalizeImageLibrary(
+    Array.isArray(section?.image_library) ? section.image_library : []
+  );
   const bodyRaw = typeof section?.body === 'string' ? section.body : '';
 
-  if (entries.length === 0 && imageEntries.length === 0) {
+  if (entries.length === 0 && imageEntries.length === 0 && imageLibrary.length === 0) {
     if (!bodyRaw.trim()) return '';
     let bodyHtml;
     try {
@@ -625,7 +731,9 @@ function buildVideoSectionCardHtml(section, index) {
   const carouselHtml =
     entries.length > 0
       ? buildVideoCarouselChromeHtml(entries)
-      : buildImageCarouselChromeHtml(imageEntries);
+      : imageLibrary.length > 0
+        ? buildImageLibraryHtml(imageLibrary)
+        : buildImageCarouselChromeHtml(imageEntries);
   const inner = `
         <h3 id="${sid}" class="text-xl font-bold text-slate-900 mb-4 tracking-tight">${escapeHtml(heading)}</h3>
         ${introHtml}
@@ -666,10 +774,13 @@ function buildVideoSectionsAsTabsHtml(meta) {
     const imageEntries = normalizeImageItems(
       Array.isArray(sec?.image_items) ? sec.image_items : []
     );
+    const imageLibrary = normalizeImageLibrary(
+      Array.isArray(sec?.image_library) ? sec.image_library : []
+    );
     const bodyRaw = typeof sec?.body === 'string' ? sec.body : '';
 
     let blockHtml = '';
-    if (entries.length === 0 && imageEntries.length === 0) {
+    if (entries.length === 0 && imageEntries.length === 0 && imageLibrary.length === 0) {
       if (!bodyRaw.trim() && !introHtml) continue;
       let bodyHtml = '';
       if (bodyRaw.trim()) {
@@ -693,7 +804,9 @@ function buildVideoSectionsAsTabsHtml(meta) {
       const carouselHtml =
         entries.length > 0
           ? buildVideoCarouselChromeHtml(entries)
-          : buildImageCarouselChromeHtml(imageEntries);
+          : imageLibrary.length > 0
+            ? buildImageLibraryHtml(imageLibrary)
+            : buildImageCarouselChromeHtml(imageEntries);
       blockHtml = `${introHtml}${bodyBeforeCarousel}${carouselHtml}`;
     }
 

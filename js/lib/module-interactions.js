@@ -126,6 +126,77 @@ function initVideoCarousels(container) {
   });
 }
 
+function getLibraryPages(button) {
+  const raw = button?.getAttribute('data-library-pages') || '';
+  return raw.split('|').filter(Boolean);
+}
+
+function updateImageLibraryViewer(root, button, pageIndex) {
+  if (!root || !button) return;
+  const pages = getLibraryPages(button);
+  if (pages.length === 0) return;
+  const i = Math.max(0, Math.min(pageIndex, pages.length - 1));
+  button.setAttribute('data-library-current', String(i));
+  root.setAttribute('data-library-active', button.getAttribute('data-library-index') || '0');
+
+  root.querySelectorAll('.js-image-library-open').forEach((btn) => {
+    const on = btn === button;
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.classList.toggle('border-orange-300', on);
+    btn.classList.toggle('bg-orange-50/70', on);
+    btn.classList.toggle('ring-2', on);
+    btn.classList.toggle('ring-orange-200', on);
+    btn.classList.toggle('border-slate-200', !on);
+    btn.classList.toggle('bg-white', !on);
+    btn.classList.toggle('hover:border-orange-200', !on);
+    btn.classList.toggle('hover:bg-orange-50/40', !on);
+  });
+
+  const title = button.getAttribute('data-library-title') || 'Battle Card';
+  const viewer = root.querySelector('.js-image-library-viewer');
+  const shelf = root.querySelector('.js-image-library-shelf');
+  const img = root.querySelector('.js-image-library-image');
+  const titleEl = root.querySelector('.js-image-library-title');
+  const pageEl = root.querySelector('.js-image-library-page-label');
+  const corner = root.querySelector('.js-image-library-corner');
+  const hint = root.querySelector('.js-image-library-flip-hint');
+  const prev = root.querySelector('.js-image-library-prev');
+  const next = root.querySelector('.js-image-library-next');
+
+  if (shelf) shelf.classList.add('hidden');
+  if (viewer) viewer.classList.remove('hidden');
+  if (titleEl) titleEl.textContent = title;
+  if (pageEl) pageEl.textContent = `Page ${i + 1} / ${pages.length}`;
+  if (img) {
+    img.classList.add('opacity-0', 'scale-[0.98]');
+    window.setTimeout(() => {
+      img.setAttribute('src', pages[i]);
+      img.setAttribute('alt', `${title} page ${i + 1}`);
+      img.classList.remove('opacity-0', 'scale-[0.98]');
+    }, 90);
+  }
+  if (corner) corner.classList.toggle('hidden', pages.length < 2);
+  if (hint) {
+    hint.textContent =
+      pages.length > 1 ? `Flip card: ${i + 1} of ${pages.length}` : '';
+  }
+  if (prev) prev.disabled = i === 0;
+  if (next) next.disabled = i === pages.length - 1;
+}
+
+function closeImageLibraryViewer(root) {
+  const viewer = root?.querySelector('.js-image-library-viewer');
+  const shelf = root?.querySelector('.js-image-library-shelf');
+  if (viewer) viewer.classList.add('hidden');
+  if (shelf) shelf.classList.remove('hidden');
+}
+
+function initImageLibraries(container) {
+  container.querySelectorAll('.js-image-library').forEach((root) => {
+    closeImageLibraryViewer(root);
+  });
+}
+
 function updateScenarioProgress(scenariosInner) {
   const cards = scenariosInner.querySelectorAll('.scenario-card');
   const total = cards.length;
@@ -204,6 +275,42 @@ function handleClick(e) {
     if (root) {
       const di = Number(vcDot.getAttribute('data-vc-dot'));
       updateVideoCarousel(root, di);
+    }
+    return;
+  }
+
+  const libraryOpen = e.target.closest('.js-image-library-open');
+  if (libraryOpen) {
+    const root = libraryOpen.closest('.js-image-library');
+    updateImageLibraryViewer(root, libraryOpen, 0);
+    return;
+  }
+
+  const libraryClose = e.target.closest('.js-image-library-close');
+  if (libraryClose) {
+    const root = libraryClose.closest('.js-image-library');
+    closeImageLibraryViewer(root);
+    return;
+  }
+
+  const libraryPrev = e.target.closest('.js-image-library-prev');
+  if (libraryPrev) {
+    const root = libraryPrev.closest('.js-image-library');
+    const active = root?.querySelector('.js-image-library-open[aria-pressed="true"]');
+    if (root && active) {
+      const cur = Number(active.getAttribute('data-library-current')) || 0;
+      updateImageLibraryViewer(root, active, cur - 1);
+    }
+    return;
+  }
+
+  const libraryNext = e.target.closest('.js-image-library-next');
+  if (libraryNext) {
+    const root = libraryNext.closest('.js-image-library');
+    const active = root?.querySelector('.js-image-library-open[aria-pressed="true"]');
+    if (root && active) {
+      const cur = Number(active.getAttribute('data-library-current')) || 0;
+      updateImageLibraryViewer(root, active, cur + 1);
     }
     return;
   }
@@ -348,5 +455,6 @@ export function bindModuleInteractions(container) {
   handlerByEl.set(container, fn);
   initKnowledgeCarousels(container);
   initVideoCarousels(container);
+  initImageLibraries(container);
   initScenarioProgress(container);
 }
