@@ -40,14 +40,10 @@
             0% { transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px); }
             100% { transform: perspective(500px) rotateX(60deg) translateY(0px) translateZ(-200px); }
         }
-        /* Strategic architecture ladder — active rung (#EA580C = gpc-orange) */
-        .arch-ladder-marker-active {
-            opacity: 1 !important;
-            box-shadow: 0 0 12px rgba(234, 88, 12, 0.85);
-        }
-        .arch-ladder-label-active {
+        /* Persistent map HUD (telemetry + ladder) */
+        .hud-ladder-active {
             color: #EA580C;
-            text-shadow: 0 0 14px rgba(234, 88, 12, 0.5);
+            filter: drop-shadow(0 0 8px rgba(234, 88, 12, 0.8));
         }
     </style>
 </head>
@@ -105,78 +101,53 @@
                     <div id="stats-container" class="flex gap-3 sm:gap-5 flex-wrap fade-in justify-end items-end"></div>
                 </div>
                 <div class="flex-1 relative overflow-hidden flex items-stretch justify-center min-h-0 p-3">
-            <div class="w-full h-full bg-slate-50 rounded-xl border border-gpc-border/60 relative overflow-hidden flex">
-                
-                <div id="map-layer" class="absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 bg-slate-50 z-0">
-                    <img id="map-image" src="" alt="Network Map" class="w-full h-full object-contain hidden p-4">
-                    <div id="guest-talking-points" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden w-[960px] max-w-[95vw] max-h-[85%] overflow-y-auto bg-white/60 backdrop-blur-md border border-slate-200/70 rounded-2xl shadow-floating p-8">
-                        <h4 id="guest-talking-points-title" class="text-2xl font-bold text-gpc-orange uppercase tracking-widest mb-6">Strategic Capabilities</h4>
-                        <ul id="guest-talking-points-list" class="list-outside list-disc pl-8 space-y-6 text-3xl text-slate-800 leading-relaxed"></ul>
-                    </div>
-                    <div id="map-fallback" class="text-center pointer-events-none">
-                        <svg class="w-20 h-20 text-slate-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
-                        <h3 class="text-xl font-semibold text-slate-600 uppercase tracking-wide" id="placeholder-text">Waiting for Data</h3>
-                    </div>
-                </div>
+                    <div class="w-full h-full bg-slate-50 rounded-xl border border-gpc-border/60 relative overflow-hidden flex min-h-0">
 
-                <div id="html-layer" class="absolute inset-0 hidden overflow-y-auto p-12 bg-slate-50 z-0">
-                    </div>
+                        <div id="map-layer" class="absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 bg-slate-50 z-0">
+                            <img id="map-image" src="" alt="Network Map" class="w-full h-full object-contain hidden p-4">
+                            <div id="guest-talking-points" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden w-[960px] max-w-[95vw] max-h-[85%] overflow-y-auto bg-white/60 backdrop-blur-md border border-slate-200/70 rounded-2xl shadow-floating p-8">
+                                <h4 id="guest-talking-points-title" class="text-2xl font-bold text-gpc-orange uppercase tracking-widest mb-6">Strategic Capabilities</h4>
+                                <ul id="guest-talking-points-list" class="list-outside list-disc pl-8 space-y-6 text-3xl text-slate-800 leading-relaxed"></ul>
+                            </div>
+                            <div id="map-fallback" class="text-center pointer-events-none">
+                                <svg class="w-20 h-20 text-slate-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                                <h3 class="text-xl font-semibold text-slate-600 uppercase tracking-wide" id="placeholder-text">Waiting for Data</h3>
+                            </div>
+                        </div>
 
-            </div>
-                </div>
-            </div>
+                        <div id="html-layer" class="absolute inset-0 hidden overflow-y-auto p-12 bg-slate-50 z-0">
+                        </div>
 
-            <div id="insight-container" class="absolute left-12 bottom-12 z-20 flex flex-col items-start gap-4 transition-opacity duration-500 opacity-0 pointer-events-none">
-                <div id="insight-modal" class="bg-gpc-navy/85 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl w-[22rem] max-w-[calc(100vw-6rem)] hidden opacity-0 transition-all duration-500 translate-y-4 origin-bottom-left">
-                    <h4 id="insight-heading" class="text-gpc-orange font-bold text-[11px] uppercase tracking-[0.28em] mb-4 border-b border-white/10 pb-3">Technical Briefing</h4>
-                    <p id="insight-headline" class="text-slate-100 text-sm font-semibold leading-snug mb-4 hidden tracking-tight"></p>
-                    <div id="insight-metrics-wrap" class="hidden mb-4">
-                        <p class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.28em] mb-2">Tech specs</p>
-                        <div id="insight-metrics" class="space-y-2.5 rounded-lg border border-white/10 bg-slate-950/40 backdrop-blur-sm px-3 py-3"></div>
-                    </div>
-                    <p id="insight-summary" class="text-slate-300 text-sm leading-relaxed"></p>
-                    <button type="button" onclick="toggleInsight()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">✕</button>
-                </div>
-                <button id="insight-trigger" type="button" onclick="toggleInsight()" class="w-14 h-14 rounded-full shadow-floating flex items-center justify-center text-gpc-orange hover:bg-gpc-orange hover:text-white transition-all duration-500 border border-white/15 bg-white/90 backdrop-blur-xl">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
-                </button>
-            </div>
+                        <div id="map-hud" class="absolute inset-0 pointer-events-none z-20 transition-opacity duration-500 opacity-0" aria-live="polite">
+                            <div id="telemetry-readout" class="absolute bottom-24 left-8 text-xs font-mono text-gpc-green/80 leading-relaxed space-y-0.5 max-w-md"></div>
+                            <div id="architecture-ladder" class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col items-end gap-8">
+                                <span id="hud-ladder-ip" class="text-[11px] font-bold tracking-[0.35em] text-slate-500 transition-colors duration-300">IP</span>
+                                <span id="hud-ladder-eth" class="text-[11px] font-bold tracking-[0.35em] text-slate-500 transition-colors duration-300">ETH</span>
+                                <span id="hud-ladder-wave" class="text-[11px] font-bold tracking-[0.35em] text-slate-500 transition-colors duration-300">WAVE</span>
+                            </div>
+                        </div>
 
-            <div id="architecture-ladder" class="pointer-events-none absolute right-0 top-1/2 z-20 -translate-y-1/2 opacity-0 transition-opacity duration-500 border-l border-white/10 bg-gpc-navy/50 backdrop-blur-xl py-14 pl-5 pr-7 rounded-l-xl" aria-hidden="true">
-                <div class="flex flex-col items-end gap-12 transition-opacity duration-500">
-                    <div id="arch-ladder-ip" class="flex items-center gap-3 justify-end transition-all duration-500">
-                        <span class="arch-ladder-marker w-1 h-5 shrink-0 rounded-full bg-gpc-orange opacity-0 transition-all duration-500"></span>
-                        <span class="arch-ladder-label text-[11px] font-bold tracking-[0.35em] text-slate-500/40 transition-all duration-500">IP</span>
-                    </div>
-                    <div id="arch-ladder-eth" class="flex items-center gap-3 justify-end transition-all duration-500">
-                        <span class="arch-ladder-marker w-1 h-5 shrink-0 rounded-full bg-gpc-orange opacity-0 transition-all duration-500"></span>
-                        <span class="arch-ladder-label text-[11px] font-bold tracking-[0.35em] text-slate-500/40 transition-all duration-500">ETH</span>
-                    </div>
-                    <div id="arch-ladder-wave" class="flex items-center gap-3 justify-end transition-all duration-500">
-                        <span class="arch-ladder-marker w-1 h-5 shrink-0 rounded-full bg-gpc-orange opacity-0 transition-all duration-500"></span>
-                        <span class="arch-ladder-label text-[11px] font-bold tracking-[0.35em] text-slate-500/40 transition-all duration-500">WAVE</span>
-                    </div>
-                </div>
-            </div>
+                        <div id="map-controls" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex z-20 transition-opacity duration-300 w-max">
+                            <div class="bg-white/90 backdrop-blur-md border border-slate-200 rounded-full px-6 py-3 shadow-floating flex items-center gap-6">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest shrink-0">View Layers</span>
 
-           <div id="map-controls" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex z-20 transition-opacity duration-300 w-max">
-                <div class="bg-white/90 backdrop-blur-md border border-slate-200 rounded-full px-6 py-3 shadow-floating flex items-center gap-6">
-                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest shrink-0">View Layers</span>
-                    
-                    <div class="h-5 w-px bg-slate-300"></div> <label class="flex items-center gap-3 cursor-pointer group">
-                        <span class="text-xs font-semibold text-slate-700 whitespace-nowrap">Fiber</span>
-                        <div class="relative scale-90 origin-left"><input type="checkbox" checked class="sr-only peer"><div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:after:translate-x-full after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gpc-green"></div></div>
-                    </label>
-                    
-                    <label class="flex items-center gap-3 cursor-pointer group">
-                        <span class="text-xs font-semibold text-slate-700 whitespace-nowrap">400G Capacity</span>
-                        <div class="relative scale-90 origin-left"><input type="checkbox" checked class="sr-only peer"><div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:after:translate-x-full after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gpc-blue"></div></div>
-                    </label>
-                    
-                    <label class="flex items-center gap-3 cursor-pointer group pr-2">
-                        <span class="text-xs font-semibold text-slate-700 whitespace-nowrap">Unique Route</span>
-                        <div class="relative scale-90 origin-left"><input type="checkbox" checked class="sr-only peer"><div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:after:translate-x-full after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gpc-orange"></div></div>
-                    </label>
+                                <div class="h-5 w-px bg-slate-300"></div> <label class="flex items-center gap-3 cursor-pointer group">
+                                    <span class="text-xs font-semibold text-slate-700 whitespace-nowrap">Fiber</span>
+                                    <div class="relative scale-90 origin-left"><input type="checkbox" checked class="sr-only peer"><div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:after:translate-x-full after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gpc-green"></div></div>
+                                </label>
+
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <span class="text-xs font-semibold text-slate-700 whitespace-nowrap">400G Capacity</span>
+                                    <div class="relative scale-90 origin-left"><input type="checkbox" checked class="sr-only peer"><div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:after:translate-x-full after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gpc-blue"></div></div>
+                                </label>
+
+                                <label class="flex items-center gap-3 cursor-pointer group pr-2">
+                                    <span class="text-xs font-semibold text-slate-700 whitespace-nowrap">Unique Route</span>
+                                    <div class="relative scale-90 origin-left"><input type="checkbox" checked class="sr-only peer"><div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:after:translate-x-full after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gpc-orange"></div></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -190,14 +161,7 @@
         let navOrder = [];
         let pageContent = {};
 
-        const ARCH_LADDER_ROW_BY_LAYER = { L3: 'arch-ladder-ip', L2: 'arch-ladder-eth', L1: 'arch-ladder-wave' };
-
-        function normalizeArchitectureLayer(raw) {
-            if (!raw || typeof raw !== 'string') return null;
-            const u = raw.trim().toUpperCase();
-            if (u === 'L1' || u === 'L2' || u === 'L3') return u;
-            return null;
-        }
+        const HUD_LADDER_IDS = { IP: 'hud-ladder-ip', ETH: 'hud-ladder-eth', WAVE: 'hud-ladder-wave' };
 
         function escapeHtml(str) {
             if (str == null) return '';
@@ -208,103 +172,57 @@
                 .replace(/"/g, '&quot;');
         }
 
-        function updateArchitectureLadder(architectureLayer) {
-            const ladder = document.getElementById('architecture-ladder');
-            if (!ladder) return;
-            const layer = normalizeArchitectureLayer(architectureLayer);
-            const show = !!layer;
+        function telemetryLabel(key) {
+            return String(key || '')
+                .replace(/_/g, ' ')
+                .replace(/([a-z])([A-Z])/g, '$1 $2')
+                .trim()
+                .toUpperCase();
+        }
 
-            ladder.setAttribute('aria-hidden', show ? 'false' : 'true');
+        /**
+         * Persistent HUD: ladder + terminal-style readout from data.telemetry.
+         * Fades out when no telemetry (e.g. Case Studies, Products).
+         */
+        function updateTelemetryHud(data) {
+            const hud = document.getElementById('map-hud');
+            const readout = document.getElementById('telemetry-readout');
+            if (!hud || !readout) return;
 
-            ['L3', 'L2', 'L1'].forEach((key) => {
-                const row = document.getElementById(ARCH_LADDER_ROW_BY_LAYER[key]);
-                if (!row) return;
-                const marker = row.querySelector('.arch-ladder-marker');
-                const label = row.querySelector('.arch-ladder-label');
-                const active = show && layer === key;
-                if (marker) {
-                    marker.classList.toggle('opacity-100', active);
-                    marker.classList.toggle('opacity-0', !active);
-                    marker.classList.toggle('arch-ladder-marker-active', active);
-                }
-                if (label) {
-                    label.classList.toggle('arch-ladder-label-active', active);
-                    label.classList.toggle('text-slate-500/40', !active);
-                }
+            const tel = data && data.telemetry && typeof data.telemetry === 'object' ? data.telemetry : null;
+            const entries = tel ? Object.entries(tel).filter(([, v]) => v != null && String(v).length > 0) : [];
+
+            if (entries.length === 0) {
+                hud.classList.remove('opacity-100');
+                hud.classList.add('opacity-0');
+                readout.innerHTML = '';
+                Object.keys(HUD_LADDER_IDS).forEach((k) => {
+                    const el = document.getElementById(HUD_LADDER_IDS[k]);
+                    if (!el) return;
+                    el.classList.remove('text-gpc-orange', 'hud-ladder-active');
+                    el.classList.add('text-slate-500');
+                });
+                return;
+            }
+
+            hud.classList.remove('opacity-0');
+            hud.classList.add('opacity-100');
+
+            readout.innerHTML = entries
+                .map(([k, v]) => `<div>${escapeHtml(telemetryLabel(k))}: ${escapeHtml(String(v))}</div>`)
+                .join('');
+
+            const layerRaw = typeof tel.layer === 'string' ? tel.layer.trim().toUpperCase() : '';
+            Object.keys(HUD_LADDER_IDS).forEach((k) => {
+                const el = document.getElementById(HUD_LADDER_IDS[k]);
+                if (!el) return;
+                const active = layerRaw === k;
+                el.classList.toggle('text-gpc-orange', active);
+                el.classList.toggle('hud-ladder-active', active);
+                el.classList.toggle('text-slate-500', !active);
             });
-
-            if (show) {
-                ladder.classList.remove('opacity-0');
-                ladder.classList.add('opacity-100');
-            } else {
-                ladder.classList.remove('opacity-100');
-                ladder.classList.add('opacity-0');
-            }
         }
 
-        function fillTechnicalBriefingModal(data) {
-            const headlineEl = document.getElementById('insight-headline');
-            const metricsWrap = document.getElementById('insight-metrics-wrap');
-            const metricsEl = document.getElementById('insight-metrics');
-            const summaryEl = document.getElementById('insight-summary');
-            if (!headlineEl || !metricsWrap || !metricsEl || !summaryEl) return;
-            const tb = data.technicalBriefing;
-
-            if (tb && typeof tb === 'object') {
-                if (tb.headline) {
-                    headlineEl.textContent = tb.headline;
-                    headlineEl.classList.remove('hidden');
-                } else {
-                    headlineEl.textContent = '';
-                    headlineEl.classList.add('hidden');
-                }
-                const metrics = Array.isArray(tb.metrics) ? tb.metrics : [];
-                if (metrics.length > 0) {
-                    metricsEl.innerHTML = metrics.map((m) => `
-                        <div class="flex justify-between gap-4 items-baseline text-[11px]">
-                            <span class="text-slate-500 uppercase tracking-wider shrink-0">${escapeHtml(m.label)}</span>
-                            <span class="font-mono text-xs text-slate-100 text-right tabular-nums tracking-tight">${escapeHtml(m.value)}</span>
-                        </div>
-                    `).join('');
-                    metricsWrap.classList.remove('hidden');
-                } else {
-                    metricsEl.innerHTML = '';
-                    metricsWrap.classList.add('hidden');
-                }
-                summaryEl.textContent = tb.summary || '';
-            } else if (data.insight) {
-                headlineEl.classList.add('hidden');
-                headlineEl.textContent = '';
-                metricsWrap.classList.add('hidden');
-                metricsEl.innerHTML = '';
-                summaryEl.textContent = data.insight;
-            } else {
-                headlineEl.classList.add('hidden');
-                metricsWrap.classList.add('hidden');
-                metricsEl.innerHTML = '';
-                summaryEl.textContent = '';
-            }
-        }
-
-        function syncInsightBulb(data) {
-            const insightContainer = document.getElementById('insight-container');
-            const heading = document.getElementById('insight-heading');
-            const tb = data.technicalBriefing;
-            const hasStructured = tb && typeof tb === 'object' && (tb.summary || tb.headline || (Array.isArray(tb.metrics) && tb.metrics.length > 0));
-            const hasLegacy = typeof data.insight === 'string' && data.insight.length > 0;
-            const hasContent = hasStructured || hasLegacy;
-
-            if (heading) heading.textContent = 'Technical Briefing';
-
-            if (hasContent) {
-                fillTechnicalBriefingModal(data);
-                insightContainer.classList.remove('opacity-0', 'pointer-events-none');
-                insightContainer.classList.add('opacity-100');
-            } else {
-                insightContainer.classList.add('opacity-0', 'pointer-events-none');
-                insightContainer.classList.remove('opacity-100');
-            }
-        }
         /** Full section list (wholesale + enterprise views merged). */
         function getFilteredNavOrder() {
             return [...navOrder];
@@ -377,7 +295,13 @@
                         { label: 'Network Footprint', value: '20,000+ Mi', color: 'text-gpc-green' },
                         { label: 'Tower Backhaul', value: '650+', color: 'text-gpc-orange' },
                         { label: 'Core Capacity', value: 'Up to 400G', color: 'text-slate-900' }
-                    ]
+                    ],
+                    telemetry: {
+                        layer: 'WAVE',
+                        status: 'L1 TRANSPORT',
+                        latency: '<1ms/100mi',
+                        capacity: '400G STD'
+                    }
                 };
                 // Ensure guest is always the very first item in the nav
                 if (!navOrder.includes('guest')) navOrder.unshift('guest');
@@ -438,10 +362,6 @@
             const mapLayer = document.getElementById('map-layer');
             const htmlLayer = document.getElementById('html-layer');
             const mapControls = document.getElementById('map-controls');
-            const insightModal = document.getElementById('insight-modal');
-
-            // Force hide the modal popup if it was open from a previous view
-            insightModal.classList.add('hidden', 'opacity-0', 'translate-y-4');
 
             if (data.type === 'map') {
                 htmlLayer.classList.add('hidden');
@@ -488,8 +408,7 @@
                 renderHTMLContent(viewId, htmlLayer);
             }
 
-            updateArchitectureLadder(data.architectureLayer);
-            syncInsightBulb(data);
+            updateTelemetryHud(data);
         }
 
         // --- HTML CONTENT RENDERER ---
@@ -586,22 +505,6 @@
             }
             
             container.innerHTML = html;
-        }
-
-        // --- TOGGLE INSIGHT POPUP ---
-        function toggleInsight() {
-            const modal = document.getElementById('insight-modal');
-            if (modal.classList.contains('hidden')) {
-                modal.classList.remove('hidden');
-                setTimeout(() => {
-                    modal.classList.remove('opacity-0', 'translate-y-4');
-                }, 10);
-            } else {
-                modal.classList.add('opacity-0', 'translate-y-4');
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                }, 500);
-            }
         }
 
         // --- SCREENSAVER (ATTRACT MODE) ---
