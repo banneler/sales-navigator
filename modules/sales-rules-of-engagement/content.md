@@ -14,7 +14,7 @@ five_minute_summary: |
   - **Idle windows:** On the general path, if there is no qualifying logged activity for the periods below, others may work the account. But don't be a cowboy—always reach out to the listed owner first before you pounce.
     - **Prospect:** 61+ days.
     - **Customer:** 121+ days.
-    - **Strategic list & USAC/E-Rate:** The 61/121 clocks do not apply here. Confirm treatment with leadership before you start chasing these accounts.
+    - **Strategic list & USAC/E-Rate:** The 61/121 clocks do not apply here—assume Strategic-style coverage and confirm with leadership before you work the account. **Named carve-out:** **ENA (Education Networks of America) in Indiana** stays with the **Out-State Team** per the ROE—not the usual USAC/Strategic path.
   - **The 5-day inbound clock:** Assigned an inbound lead by sales or marketing? You have exactly five business days to make first contact and log it in Salesforce. Miss it, and it gets reassigned. (Note: Self-sourced leads do not use this clock).
   - **Transfers:** Never play admin and reassign an account to yourself. Talk to the incumbent owner, get aligned, and then email your manager and sales leadership for the official sign-off.
 
@@ -198,7 +198,7 @@ ROE exists to **protect pipelines** and **draw clean lines** on who works whom. 
 
 - **Transfer through leadership** — Never self-reassign. Agree with the incumbent, then route through **manager + sales leadership** (per ROE).
 
-**General** accounts: **61+** (Prospect) / **121+** (Customer) idle rules. **Strategic** list and **USAC/E-Rate** coverage are stricter—confirm before you chase the logo.
+**General** accounts: **61+** (Prospect) / **121+** (Customer) idle rules. **Strategic** list and **USAC/E-Rate** coverage are stricter—confirm before you chase the logo. **Exception:** ENA (Education Networks of America) in **Indiana** → **Out-State Team** (per ROE).
 
 ---
 
@@ -240,7 +240,7 @@ ROE exists to **protect pipelines** and **draw clean lines** on who works whom. 
 
 ::: flip ["That school district falls under the 61/121 day rules."]
 
-**The USAC Trap:** USAC-funded entities follow Strategic-style treatment, even if they aren't explicitly on the list. Confirm coverage with leadership before assuming they are fair game.
+**The USAC Trap:** USAC-funded entities follow Strategic-style treatment, even if they aren't explicitly on the list. Confirm coverage with leadership before assuming they are fair game. **ENA in Indiana** is the named exception—it stays with the **Out-State Team**.
 
 :::
 
@@ -270,7 +270,7 @@ ROE exists to **protect pipelines** and **draw clean lines** on who works whom. 
 
 - Before creating accounts or contacts: search by address and name; do not open a second account for an existing entity; do not add a contact whose email already exists elsewhere without coordinating with that account owner.
 
-- Most situations (~80%) fit the ROE as written. Unique or unclear cases go to sales management case by case—do not improvise policy on your own.
+- **The 80/20 rule:** Most situations (~**80%**) fit the ROE as written. The rest are edge cases—unique ownership disputes, fuzzy Strategic vs. general boundaries, USAC/E-Rate questions, or anything that feels like *"this doesn't quite match the PDF."* Those go to **sales management case by case**. Do not improvise policy on your own and do not play lawyer with the ROE.
 
 ### General accounts (non-Strategic)
 

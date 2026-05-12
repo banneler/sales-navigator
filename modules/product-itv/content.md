@@ -112,6 +112,19 @@ roleplay:
 
 ---
 
+## Common Pitfalls
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+::: flip ["Streaming-only means zero hardware—we never need a box."]
+**The "No Equipment Promise" Trap:** Standard iTV collateral is **streaming-first**—but the footnote is explicit: **some** businesses or TV setups still need **set-top boxes** at a **low monthly rate**. Promise a 100% box-free install without qualifying the site and you'll fight the customer at truck roll. Call STB possibility out in discovery *before* you quote.
+
+:::
+
+</div>
+
+---
+
 ## Discovery Galaxy
 
 <div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">

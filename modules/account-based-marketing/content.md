@@ -17,8 +17,8 @@ five_minute_summary: |
   - **Rolling Three:** You run **3 active ABM accounts at a time**, with **3 on-deck** ready to backfill. As one completes its 90-day cycle, the next on-deck onboards immediately—no pipeline droughts, no scrambling.
   - **Staggered kickoff:** New accounts kick off on a **30-day stagger** (Month 1 / Month 2 / Month 3). One account is always in the high-intensity opening phase while others are mid- or late-cycle.
   - **Targets are a stack, not a list:** Minimum **3 targets per account (5 ideal)**—and **not all Executive**. Mix **Manager · Director/VP · Executive** so one person leaving doesn't kill the play.
-  - **Sequence rhythm:** **18 touches / 90 days**, **3 per target every 2 weeks** by phone and personalized email. Marketing runs **1 touchpoint every 30 days**, plus **+1** when Sales runs a physical **Door Pull** with the Enterprise Brochure.
-  - **One source of truth:** The **Master Tracking Spreadsheet** is the system of record for Active and On-Deck accounts—Marketing and Sales Leadership edit; everyone else has view-only.
+  - **Sequence rhythm:** **18 touches / 90 days**, **3 per target every 2 weeks** by phone and personalized email. Marketing runs **1 coordination touchpoint every 30 days**; when Sales schedules a physical **Door Pull** (Enterprise Brochure), that's the **named SOP trigger** for **+1** extra marketing touch that cycle—custom brochure copy and inserts, not a discretionary maybe.
+  - **One source of truth:** The **Master Tracking Spreadsheet** is the system of record for Active and On-Deck accounts. **Edit access** is limited to **Marketing and Sales Leadership**; **everyone else is view-only**—do not request write access to "fix" your row; work through the owners on the sheet.
 
 knowledge_checks:
   - question: "How many ABM accounts should an Account Representative run concurrently per the SOP?"
@@ -60,6 +60,15 @@ knowledge_checks:
       - "Only one touchpoint at the end of the 90-day cycle"
     correct_index: 0
     explanation: "Monthly marketing coordination; +1 brochure-leave-behind when Sales executes a Door Pull. The Door Pull is the named SOP trigger for the extra marketing touch."
+
+  - question: "Who may edit the Master Tracking Spreadsheet per the ABM operating model?"
+    options:
+      - "Marketing and Sales Leadership only—everyone else is view-only."
+      - "Any account rep working an Active ABM account may edit their own row."
+      - "Sales Operations owns the spreadsheet; Marketing is view-only."
+    correct_index: 0
+    explanation: "The master file stays authoritative when only Marketing and Sales Leadership hold edit rights. Reps who need a change route it through those owners—no shadow copies, no self-edit."
+    source: "ABM SOP (Master Tracking Spreadsheet — permissions)"
 
 scenarios:
   - title: "Skipping ahead in the ABM sequence"
@@ -140,7 +149,7 @@ You manage **three concurrent ABM accounts** on a staggered cadence: one in the 
 - **Account C** — Month 3 kickoff
 - **On-deck (×3)** — ready to onboard immediately as actives complete
 
-As Account A wraps in April, the first on-deck account onboards for a **May** kickoff. The **Master Tracking Spreadsheet** enforces the model—it's where leadership confirms the bench is healthy. An empty on-deck list is a **Rolling Three failure**, not a normal state.
+As Account A wraps in April, the first on-deck account onboards for a **May** kickoff. The **Master Tracking Spreadsheet** enforces the model—it's where leadership confirms the bench is healthy. An empty on-deck list is a **Rolling Three failure**, not a normal state. **Permissions:** only **Marketing** and **Sales Leadership** may edit the master file; account reps and the broader team are **view-only** so the Active / On-Deck counts stay authoritative.
 
 ## 90-day sequence
 
@@ -149,7 +158,7 @@ As Account A wraps in April, the first on-deck account onboards for a **May** ki
 - **Sales rhythm:** **3 touches per target every 2 weeks**.
 - **Primary channels:** **Phone calls** and **personalized emails**.
 - **Optional Door Pull:** A physical drop-by using the **Enterprise Brochure** as a leave-behind.
-- **Marketing rhythm:** **1 touchpoint every 30 days** (e.g., LinkedIn / Google ads, direct mail), **+1** when Sales runs a Door Pull—Marketing provides custom copy / inserts for the brochure.
+- **Marketing rhythm:** **1 coordination touchpoint every 30 days** (e.g., LinkedIn / Google ads, direct mail). **`+1` named SOP trigger:** when Sales schedules a physical **Door Pull** with the **Enterprise Brochure**, Marketing adds **one extra** touch that cycle—custom copy / inserts aligned to the leave-behind (not optional flair once the Door Pull is on the calendar).
 
 ## Sequence lanes (sales & marketing)
 
@@ -159,7 +168,7 @@ Sales executes the **18-touch, 90-day** motion anchored on **personalized phone 
 
 ### Marketing air cover
 
-Marketing runs **monthly support touchpoints** (LinkedIn / Google ads, direct mail) to reinforce sales outreach. When Sales schedules a **Door Pull**, Marketing increases by **+1 touchpoint** with custom copy and inserts for the brochure leave-behind.
+Marketing runs **monthly support touchpoints** (LinkedIn / Google ads, direct mail) to reinforce sales outreach. **Door Pull = automatic +1:** the SOP treats a scheduled physical Door Pull as the trigger for an **extra** marketing coordination touch in that window—which gets **custom copy and inserts** for the Enterprise Brochure—not a nice-to-have add-on after the fact.
 
 ## How to use this module
 
