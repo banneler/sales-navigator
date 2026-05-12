@@ -109,3 +109,22 @@ Downtime hurts a small business just as much as an enterprise. Our solutions sca
 :::
 
 </div>
+
+---
+
+## Portfolio quick reference — deck order + national-cable proof
+
+**Ten product lines (deck order):** Fiber Internet · Managed Ethernet · SD-WAN · Wireless Internet Backup · Cloud Connect · Managed Firewall · Video (GPC iTV) · Managed Wi‑Fi · Unified Communications · DDoS Protection. Connectivity comes first—everything else stacks on the pipe.
+
+**GPC vs. Cox (national cable framing —** from the Cox Acquisition Battle Card v2; use when coax-heavy incumbents push *speed-for-price*):
+
+| Capability | GPC | Cox |
+| --- | --- | --- |
+| Delivery method | 100% fiber | Coax with limited fiber |
+| Symmetrical speeds | Yes | No (limited to fiber only) |
+| Max speeds available | 100 Gbps | 2 Gbps (coax) / 100 Gbps (fiber) |
+| Auto renewals | No | Yes |
+| Professional installation fees | None | $100 |
+| Activation fees | None | $25 / $99 (standard / gateway) |
+
+**Don't race them on sticker price.** Cox Spectrum Charter buyers still care about **symmetry, delivery method, term locks, and install/activation friction**—pull the conversation to total cost and operational fit, not the month-one number alone. Authoritative collateral lives in **Sales Resources**—this table is a memory anchor, not a second source of record.

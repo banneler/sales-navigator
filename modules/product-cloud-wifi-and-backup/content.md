@@ -148,7 +148,15 @@ When critical apps go down, nobody cares how cheap their internet was. We protec
 - Sits behind the customer's primary GPC wireline circuit (SIA, DIA, or SD-WAN). Only active during a primary-circuit outage—fails over and fails back automatically.
 - Hardware: Cradlepoint X20-5G CPE (or E100 LTE on the lower tier) installed and managed by GPC; optional ~8-hour backup battery for site-wide power loss.
 - Cellular underlay is Verizon and/or AT&T; the wireless connectivity itself is procured through Kajeet. Failover typically completes in about a minute.
-- "Best effort"—no SLA. After failover, heavy daily usage hits a carrier-side throttle (the 5G tier deprioritizes after ~12 GB/day). The product is designed to keep the doors open and the registers ringing during an outage, not to run a 400-person video conference simultaneously. Set expectations.
+- "Best effort"—no SLA. After failover, heavy daily usage hits a **carrier-side throttle** on the 5G tier—the customer doesn't get "unlimited at full speed" through a multi-day outage. Walk the table **before** signature so nobody panic-calls you mid-disaster:
+
+| Daily usage on failover (approx.) | Speed cap after throttle |
+| --- | --- |
+| After **12 GB** | Up to **50 Mbps** |
+| After **20 GB** | Up to **25 Mbps** |
+| After **30 GB** | Up to **3 Mbps** |
+
+The product is designed to keep the doors open and the registers ringing during an outage, not to run a 400-person video conference simultaneously. Set expectations.
 - **Static IP gotcha:** Static IPs work on the GPC landline side, but the carrier hands out a different (DHCP) IP during failover. If the customer has inbound services tied to a static IP, they break during the outage—document this expectation up front.
 
 **5G Wireless Broadband:**

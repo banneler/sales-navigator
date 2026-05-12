@@ -129,6 +129,8 @@ The deliverable is a **front/back trifold insert** ("the Slick") with four compo
 | **Final Prep** | 3 days | Sarah → Account Rep | Printing, pickup, and trifold insertion. |
 | **The Meeting** | **Day 21** | Account Team | OBR Meeting. |
 
+**Why 21 business days, not 26?** If you add the phase slices naively—**3 + 10 + 5 + 5 + 3**—you get **26** business days. The SOP still lands on **21** because **Network Design** (10 days) and **Billing / NOC data collection** (5 days) **overlap** during Days 5–14. Teaching reps *why* the overlap exists is how you stop the *"just promise two weeks"* fire drill before it starts.
+
 **Why Day 14 is the hinge:** Marketing Design + Final Prep take seven business days. Miss the Day 14 handoff and you compress design and print into a fire drill—the opposite of the Zero-Fire-Drills criterion.
 
 ## Data Hygiene & the Single Packet

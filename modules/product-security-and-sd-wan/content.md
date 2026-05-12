@@ -197,16 +197,46 @@ No—next-gen firewall and IDS/IPS are optional add-ons, not bundled in base Vel
 - Business rule: at least one site on GPC fiber required
 - NGFW and IDS/IPS lines are optional add-ons—not included in base SD-WAN SKU; confirm with SE/quoting on every quote
 
-**SD-WAN commercial framing:** SD-WAN MRC sits **between SIA and DIA** at comparable speeds — often less than the MPLS it replaces. **Internet bandwidth is purchased separately** from the SD-WAN overlay; that split is worth flagging in every quote so the customer sees the full stack. Current rate cards live in **Sales Resources** (protected) — pull with quoting, never from memory.
+**SD-WAN commercial framing:** SD-WAN MRC sits **between SIA and DIA** at comparable speeds — often less than the MPLS it replaces. **Internet bandwidth is purchased separately** from the SD-WAN overlay; that split is worth flagging in every quote so the customer sees the full stack. Current rate cards live in **Sales Resources** (protected) — pull with quoting, never from memory. Proof point from the financial-services use-case set: one advisory shop saw **~60% savings on public broadband vs. private network services** after SD-WAN—cite with care; SE validates on every financial narrative.
 
-**Managed Firewall:** FortiGate-based edge + SOC monitoring. Don't quote throughput/compliance as fixed guarantees—SE + approved sheets required.
+**Managed Firewall — Fortinet platform tiers** (from the Managed Firewall datasheet—**SE picks the model**; don't quote throughput as a contractual guarantee without approved collateral):
 
-**MNS (Managed Network Security):** umbrella service = managed firewall + management of customer gear + SIEM + assessments + email security. Match SKU to buyer's actual need.
+| Tier | Office platforms | Firewall throughput | IPS throughput |
+| --- | --- | --- | --- |
+| Small Office | FG-30G | 4 Gbps | 800 Mbps |
+| Medium Office | FG-50G | 5 Gbps | 2.25 Gbps |
+| Large Office | FG-70G | 10 Gbps | 2.5 Gbps |
+| Hub/HQ Office | FG-90G | 28 Gbps | 4.5 Gbps |
 
-**DDoS:**
-- Proactive: 24×7 monitoring + automated mitigation
-- On-demand: mitigation **weekdays 8–17 only**—state explicitly; never equate with proactive timing
-- BGP/ASN DDoS designs → SE/security early
+| Tier | Data center platforms | Firewall throughput | IPS throughput |
+| --- | --- | --- | --- |
+| Small DC | FG-100F | 20 Gbps | 2.6 Gbps |
+| Medium DC | FG-120G | 39 Gbps | 5.3 Gbps |
+| Large DC | FG-400F | 79.5 Gbps | 12 Gbps |
+
+**Managed Firewall:** FortiGate-based edge + SOC monitoring on top of this hardware ladder. Compliance and real-world throughput still route through **SE + approved sheets**.
+
+**MNS (Managed Network Security) — six components** (umbrella; match SKU to what the buyer actually runs today):
+
+1. **Managed Firewall** — fully managed Fortinet NGFW, 24×7 monitoring, threat detection, VPN access, optional zero-trust.
+2. **Firewall Management** — 24×7 management of **their existing** firewalls across **Cisco, Fortinet, Palo Alto**, and more.
+3. **Firewall Plus with Managed SIEM** — data aggregation, threat prioritization, log retention, actionable insight.
+4. **Firewall & Enterprise Security Assessments** — architecture / policy review, vulnerability findings, remediation roadmap.
+5. **Vulnerability Scanning** — scheduled active + passive monitoring with expert interpretation.
+6. **Managed Email Security** — AI-driven threat and DLP coverage for platforms like Microsoft 365 and Slack.
+
+**DDoS Protection — Proactive vs. On-Demand** (from the DDoS product sheet—**never** let a customer assume 24×7 mitigation on the wrong SKU):
+
+| Feature | Proactive DDoS | On-Demand DDoS |
+| --- | --- | --- |
+| Monitoring portal + traffic analysis | ✓ | ✓ |
+| 24×7 automated monitoring + notifications | ✓ | ✓ |
+| **Mitigation** | **24×7 automated mitigation** | **Mitigation weekdays 8 am–5 pm only** |
+| Bandwidth thresholds per customer | ✓ | ✓ |
+| Bandwidth range | 10 Mbps – 100 Gbps | 10 Mbps – 100 Gbps |
+| BGP FlowSpec + TMS | ✓ | BGP FlowSpec only |
+
+**The line that saves your renewal:** e-commerce at 2 a.m. needs **Proactive**. A brick-and-mortar shop whose web ordering is mostly business-hours *might* be fine on **On-Demand**—document the trade-off in writing before signature.
 
 **Handoffs:** SE/security for HA, BGP/ASN DDoS, mixed-vendor firewall management, regulated environments, unusual scale. Pricing PDFs are internal until quoting validates.
 

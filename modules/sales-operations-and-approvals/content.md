@@ -58,6 +58,35 @@ video_sections:
       - Discount tied to term: caps increase with longer terms. Examples: 24–35 months allows 22%, 36–47 months allows 27%, 48–59 months allows 29%, and 60+ months allows 31%.
       - Enterprise, Channel, and Wholesale use the same discount rules.
 
+      **Payback Months — term-scaled auto-approve ladder** (above threshold → Manager review; full matrix in SharePoint):
+
+      | Contract term (months) | Auto-approves if Payback Months ≤ |
+      | --- | --- |
+      | 0–23 | 1 |
+      | 24–35 | 12 |
+      | 36–47 | 18 |
+      | 48–59 | 24 |
+      | 60–71 | 30 |
+      | 72–83 | 31 |
+      | 84–95 | 33 |
+      | 96–107 | 38 |
+      | 108–119 | 40 |
+      | 120+ | 44 |
+
+      **Payback bypasses:** Strategic Build Solution Site Type bypasses Payback Months entirely. **Wholesale Bulk Process** is not evaluated against the Payback Months requirement.
+
+      **Discount tied to term** (discountable-by-term products only; non-term-discountable products cap at **20%**):
+
+      | Contract term (months) | Auto-approves if discount ≤ |
+      | --- | --- |
+      | 0–23 | 20% |
+      | 24–35 | 22% |
+      | 36–47 | 27% |
+      | 48–59 | 29% |
+      | 60+ | 31% |
+
+      **Product-discount bypass:** Wholesale Bulk Process is not evaluated against the Product Discount requirement.
+
       Net investment approval bands:
 
       | Net investment | Approval path |

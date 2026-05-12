@@ -112,8 +112,48 @@ VPNs over public internet are subject to public internet traffic jams. Managed E
 - If the customer uses heavy VoIP, video conferencing, or relies heavily on cloud-hosted CRMs, **DIA is non-negotiable**.
 - SIA is strictly for environments where an occasional slowdown does not impact revenue (e.g., a waiting room Wi-Fi, a small retail shop's secondary terminal).
 
+**SIA vs. DIA — side-by-side** (from the DIA vs SIA comparison sheet—SE/quoting for the customer-facing PDF):
+
+| Feature | SIA — Standard Internet Access | DIA — Dedicated Internet Access |
+| --- | --- | --- |
+| Delivery methods | Fiber, copper, **and** coax | **Fiber only** |
+| Bandwidth model | Shared | Dedicated |
+| Speeds | Asymmetrical **and** symmetrical, up to 2 Gbps | **Symmetrical**, up to 100 Gbps |
+| Static IPs | 1 included | **3 included** |
+| DDoS protection | GPC network-level | **Customer-specific proactive monitoring + mitigation** |
+| Latency | Standard latency, best-effort objectives | **Premium low-latency performance objectives** |
+| Support tier | 24×7×365 Tier 1 Internet Service Center (ISC) | **24×7×365 NOC** for enhanced support and monitoring |
+| Access diversity | Standard | Standard, with multiple diverse access options available |
+
+**One sentence that captures the choice:** SIA is GPC's high-quality shared Internet—DIA is GPC's enterprise-grade dedicated Internet.
+
+**Fiber vs. Starlink — latency band you can quote on a whiteboard** (per Fiber vs Starlink battle card—always pivot peak Mbps to **latency consistency**):
+
+| Application need | Typical latency requirement |
+| --- | --- |
+| Video calls | <50 ms |
+| VoIP | <150 ms |
+| POS | <100 ms |
+| VPN | <100 ms |
+| Cloud apps | <100 ms |
+| Remote support | <100 ms |
+
+Typical **fiber** one-way latency band: **~5–15 ms.** Typical **Starlink** band in the same card: **~21–30 ms**—that's the gap that kills real-time apps when conditions aren't perfect.
+
+**Fiber vs. 5G — capability split** (from Fiber vs 5G one-sheet—5G wins portability; fiber wins always-on business grade):
+
+| Capability | Fiber | 5G |
+| --- | --- | --- |
+| Supports business growth + high bandwidth | ✓ |  |
+| Reliability (less interference from weather / network / obstacles) | ✓ |  |
+| High level of security | ✓ |  |
+| Portability and flexibility |  | ✓ |
+| Lower up-front costs |  | ✓ |
+
+This is also why **5G Wireless Backup** belongs **behind** primary fiber—not as a full-time substitute when the customer needs symmetric, low-jitter, all-hours performance.
+
 **Beating Starlink (LEO Satellite):**
-- **The Physics:** LEO is better than legacy satellite, but it still cannot match the consistent sub-10ms latency of a local fiber network.
+- **The Physics:** LEO is better than legacy satellite, but it still cannot match the consistent low-latency profile of a local fiber network—use the table above when a rep reaches for a number.
 - **The Weather:** "Rain fade" is a physical reality for satellite. Heavy cloud cover or storms will degrade the signal.
 - **The SLA:** Starlink is best-effort. GPC fiber is backed by an enterprise Service Level Agreement and a local 24/7 NOC.
 
