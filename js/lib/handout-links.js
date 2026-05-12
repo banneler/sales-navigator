@@ -7,6 +7,12 @@ function escapeHtml(s) {
     .replace(/"/g, '&quot;');
 }
 
+// Feature flag — temporarily hide the "View handout" button across every
+// module page. The full handout concept (build function, preview modal,
+// click handler, handout PDFs on disk, print stylesheet) stays wired up;
+// nothing renders the trigger until this flips back to true.
+const HANDOUT_BUTTON_ENABLED = false;
+
 /**
  * Compact handout + optional AI roleplay controls for the module title row (right-aligned).
  * @param {string} [moduleId] - Must match `handouts/pdf` filenames
@@ -20,8 +26,27 @@ export function buildHandoutToolbarHtml(moduleId, options = {}) {
 
   const { hasRoleplay } = options;
 
+  if (!HANDOUT_BUTTON_ENABLED && !hasRoleplay) return '';
+
   const pdfPath = `handouts/pdf/${encodeURIComponent(id)}.pdf`;
   const pdfName = `Sales-Navigator-handout-${id}.pdf`;
+
+  const handoutBlock = HANDOUT_BUTTON_ENABLED
+    ? `
+          <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Handout</span>
+          <button type="button"
+            data-handout-preview
+            data-handout-pdf="${escapeHtml(pdfPath)}"
+            data-handout-filename="${escapeHtml(pdfName)}"
+            class="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-sm transition hover:border-orange-300 hover:bg-orange-50/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400">
+            <i class="fa-solid fa-file-pdf text-red-500" aria-hidden="true"></i>
+            View handout
+          </button>`
+    : '';
+
+  const handoutSeparator = HANDOUT_BUTTON_ENABLED
+    ? '<span class="mx-1 hidden h-5 w-px self-center bg-slate-200 sm:inline-block" aria-hidden="true"></span>'
+    : '';
 
   const roleplayBlock = hasRoleplay
     ? `
@@ -32,21 +57,13 @@ export function buildHandoutToolbarHtml(moduleId, options = {}) {
             <i class="fa-solid fa-lightbulb text-white/95" aria-hidden="true"></i>
             Start AI Roleplay
           </button>
-          <span class="mx-1 hidden h-5 w-px self-center bg-slate-200 sm:inline-block" aria-hidden="true"></span>`
+          ${handoutSeparator}`
     : '';
 
   return `
         <div class="module-handout-toolbar pointer-events-auto flex flex-wrap items-center justify-end gap-2 gap-y-2 shrink-0 sm:pt-0.5" data-module-handout-toolbar>
           ${roleplayBlock}
-          <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Handout</span>
-          <button type="button"
-            data-handout-preview
-            data-handout-pdf="${escapeHtml(pdfPath)}"
-            data-handout-filename="${escapeHtml(pdfName)}"
-            class="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-sm transition hover:border-orange-300 hover:bg-orange-50/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400">
-            <i class="fa-solid fa-file-pdf text-red-500" aria-hidden="true"></i>
-            View handout
-          </button>
+          ${handoutBlock}
         </div>`;
 }
 
