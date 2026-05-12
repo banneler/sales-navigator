@@ -52,6 +52,30 @@ knowledge_checks:
     correct_index: 1
     explanation: "Single-bill convenience is a stated benefit—keep fulfillment aligned to reality."
 
+  - question: "A prospect is interested in GPC iTV but their Internet today is with a national cable carrier. What's the right opening move per the iTV product sheet?"
+    options:
+      - "Sell GPC iTV as-is over their existing carrier circuit—it's a streaming app, so any decent broadband works."
+      - "Walk away—iTV isn't a fit for anyone on a competitor's ISP."
+      - "Position iTV alongside GPC Internet (SIA, DIA, or Broadband) as the underlying access path; pair with the Connectivity & Access module to qualify a path before quoting iTV."
+    correct_index: 2
+    explanation: "The product sheet ties iTV to the customer's *GPC* Internet connection. Don't sell it as carrier-agnostic—qualify the access path first or you'll have a delivery and support problem at install."
+
+  - question: "A prospect insists you guarantee specific regional sports networks over the phone before they share their site address. How should you respond per the iTV product sheet?"
+    options:
+      - "Guarantee the full lineup verbally so you don't lose the meeting—channel mixes are mostly consistent across markets."
+      - "Decline to guarantee specific channels. The product sheet's QR code resolves to a *local lineup* that varies by market—qualify the address first, then confirm channel carriage from the official lineup tool or SharePoint asset."
+      - "Tell them all sports channels are always included with every iTV plan."
+    correct_index: 1
+    explanation: "Channel lineup is market-dependent. The product sheet directs customers to a QR code for their *local* lineup—verbal channel guarantees before address qualification are how reps end up over-promising and apologizing at install."
+
+  - question: "How does the GPC iTV product sheet describe the target customer profile?"
+    options:
+      - "National enterprises with multi-market broadcast needs only."
+      - "Single-screen residential customers in GPC's footprint."
+      - "Customizable to businesses of all sizes and industries—from small mom-and-pop shops through larger businesses."
+    correct_index: 2
+    explanation: "Verbatim from the product sheet: iTV is positioned for the full spectrum from mom-and-pop through larger sites. The differentiator is *customizable*, not size-bound."
+
 scenarios:
   - title: "Waiting room TVs on a competitor ISP"
     situation: |
