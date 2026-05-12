@@ -318,7 +318,7 @@ ROE exists to **protect pipelines** and **draw clean lines** on who works whom. 
 
 ---
 
-## Common Pitfalls
+## Common Landmines
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -637,7 +637,7 @@ Cutting corners—**no opportunity** on conversion, deleting **Closed/Lost**, a 
 
 ---
 
-## Common Pitfalls
+## Common Landmines
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -809,7 +809,7 @@ video_sections:
       - Zone Parent opportunity is Booked, In Progress, or Completed
       - No promos, free months, buyouts, or promotional credits
 
-      Watch-outs:
+      Landmines:
 
       - MRC must be at least $150 per site.
       - Service must be within 500 feet of the fiber line, not just the vault.
@@ -903,7 +903,7 @@ video_sections:
 
       Use a MAC when the service is already billing and the customer needs a move, add, or change on the live account. Most MAC scenarios require a new GPC Solution on the same opportunity; follow the MAC guide by scenario.
 
-      Watch-outs:
+      Landmines:
 
       - Pending Billing or 7–10 Day Order can block Admin action until PMO or CRC weighs in.
       - Very small CRC/BCC changes may go to businesscare@gpcom.com instead of Salesforce.
@@ -965,7 +965,7 @@ discovery_questions:
 
 ---
 
-## Common Pitfalls
+## Common Landmines
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -1104,7 +1104,7 @@ Managing three different vendors means when something breaks, they all point fin
 :::
 
 ::: flip ["We are too small for an enterprise stack."]
-Downtime hurts a small business just as much as an enterprise. Our solutions scale down seamlessly. We can start with robust fiber and 5G backup, and layer on security as you grow.
+Downtime hurts a small business the same way it hurts an enterprise—sometimes worse, because there is no bench. You do not need the whole stack on day one: start with dependable fiber and 5G backup, then layer security as you grow.
 :::
 
 </div>
@@ -1869,7 +1869,7 @@ roleplay:
 
 ---
 
-## Common Pitfalls
+## Common Landmines
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 

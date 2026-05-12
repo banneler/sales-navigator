@@ -27,6 +27,8 @@ const TITLE_TO_ROLE = new Map(
     /** Narrative bridge after Coffee Summary — same layout role as sales Overview tab */
     'at a glance': 'overview',
     'key guidelines': 'guidelines',
+    'common landmines': 'pitfalls',
+    /** @deprecated Prefer `## Common Landmines`; kept so old exports still map. */
     'common pitfalls': 'pitfalls',
   }).map(([k, v]) => [k, /** @type {SectionRole} */ (v)])
 );

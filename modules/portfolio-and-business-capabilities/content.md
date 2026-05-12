@@ -105,7 +105,7 @@ Managing three different vendors means when something breaks, they all point fin
 :::
 
 ::: flip ["We are too small for an enterprise stack."]
-Downtime hurts a small business just as much as an enterprise. Our solutions scale down seamlessly. We can start with robust fiber and 5G backup, and layer on security as you grow.
+Downtime hurts a small business the same way it hurts an enterprise—sometimes worse, because there is no bench. You do not need the whole stack on day one: start with dependable fiber and 5G backup, then layer security as you grow.
 :::
 
 </div>

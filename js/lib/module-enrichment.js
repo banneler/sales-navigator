@@ -764,7 +764,7 @@ function buildVideoSectionCardHtml(section, index) {
 
 /**
  * When `meta.video_sections_as_tabs === true`, stack `video_sections` as one tabbed shell
- * (same tab behavior as sales-trio Guidelines/Pitfalls). Falls back to separate cards if
+ * (same tab behavior as sales-trio Guidelines/Landmines). Falls back to separate cards if
  * fewer than two sections render.
  * @param {Record<string, unknown>} meta
  * @returns {string | null}

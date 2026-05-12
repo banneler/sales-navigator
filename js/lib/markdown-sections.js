@@ -187,7 +187,7 @@ function renderOneSectionCard(markdown, options) {
 }
 
 /**
- * Sales trio variant: only **Key Guidelines** and **Common Pitfalls** as tabs (no Overview tab, no Process Deep Dive block).
+ * Sales trio variant: only **Key Guidelines** and **Common Landmines** as tabs (no Overview tab, no Process Deep Dive block).
  * Opt in per module via front matter `sales_trio_guidelines_only: true`.
  * @param {Array<{ title: string | null; markdown: string }>} sections
  * @returns {string | null}
@@ -242,7 +242,7 @@ function tryRenderSalesTrioGuidelinesOnlyLayout(sections) {
   return `
     <div class="module-sales-trio space-y-6">
       <div class="module-sales-trio-shell rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden">
-        <div role="tablist" aria-label="Guidelines and pitfalls" class="flex flex-wrap border-b border-slate-200 bg-slate-50/90">
+        <div role="tablist" aria-label="Guidelines and landmines" class="flex flex-wrap border-b border-slate-200 bg-slate-50/90">
           ${tabButtons}
         </div>
         ${tabPanels}
@@ -253,10 +253,10 @@ function tryRenderSalesTrioGuidelinesOnlyLayout(sections) {
 /**
  * Sales trio: first three H2s as tabs, Process Deep Dive stays collapsible.
  * With `meta.sales_trio_hide_overview === true`, the Overview body stays in the DOM
- * (hidden) and only Key Guidelines + Common Pitfalls appear as tabs—e.g. when the
+ * (hidden) and only Key Guidelines + Common Landmines appear as tabs—e.g. when the
  * Coffee Summary already covers the overview narrative.
  * With `meta.sales_trio_hide_guidelines === true`, the Key Guidelines body stays in the DOM
- * (hidden) and only Overview + Common Pitfalls appear as tabs.
+ * (hidden) and only Overview + Common Landmines appear as tabs.
  * With `meta.sales_trio_hide_deep_dive === true`, **Process Deep Dive [deep]** is kept
  * in the DOM but hidden (cards + PDFs carry the narrative in the UI).
  * @param {Array<{ title: string | null; markdown: string }>} sections
@@ -323,16 +323,16 @@ function tryRenderSalesTrioTabLayout(sections, meta) {
 
   if (hideOverview && hideGuidelines) {
     tabSecs = [c];
-    tabLabels = ['Common Pitfalls'];
+    tabLabels = ['Common Landmines'];
   } else if (hideOverview) {
     tabSecs = [b, c];
-    tabLabels = ['Key Guidelines', 'Common Pitfalls'];
+    tabLabels = ['Key Guidelines', 'Common Landmines'];
   } else if (hideGuidelines) {
     tabSecs = [a, c];
-    tabLabels = ['Overview', 'Common Pitfalls'];
+    tabLabels = ['Overview', 'Common Landmines'];
   } else {
     tabSecs = [a, b, c];
-    tabLabels = ['Overview', 'Key Guidelines', 'Common Pitfalls'];
+    tabLabels = ['Overview', 'Key Guidelines', 'Common Landmines'];
   }
 
   const panels = tabSecs.map((sec, i) => {
@@ -385,11 +385,11 @@ function tryRenderSalesTrioTabLayout(sections, meta) {
 
   const tablistLabel =
     hideOverview && hideGuidelines
-      ? 'Common pitfalls'
+      ? 'Common landmines'
       : hideOverview
-        ? 'Key guidelines and common pitfalls'
+        ? 'Key guidelines and common landmines'
         : hideGuidelines
-          ? 'Overview and common pitfalls'
+          ? 'Overview and common landmines'
           : 'Sales process sections';
 
   return `

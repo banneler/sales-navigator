@@ -15,7 +15,7 @@ The app maps `##` headings to **section roles** for typography and layout (`js/l
 | Discovery | `## Discovery Questions` |
 | Objections | `## Objection Handling` |
 | Technical deep | `## Technical Deep Dive [deep]` |
-| Sales trio (tabs) | `## Overview` → `## Key Guidelines` → `## Common Pitfalls` → `## Process Deep Dive [deep]` |
+| Sales trio (tabs) | `## Overview` → `## Key Guidelines` → `## Common Landmines` → `## Process Deep Dive [deep]` |
 
 **Sales trio modules** (`sales-rules-of-engagement`, `sales-process-and-salesforce`, `sales-operations-and-approvals`): the first three sections render as **tabs** when this order and titles match.
 

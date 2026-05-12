@@ -37,7 +37,7 @@ video_sections:
       - Zone Parent opportunity is Booked, In Progress, or Completed
       - No promos, free months, buyouts, or promotional credits
 
-      Watch-outs:
+      Landmines:
 
       - MRC must be at least $150 per site.
       - Service must be within 500 feet of the fiber line, not just the vault.
@@ -131,7 +131,7 @@ video_sections:
 
       Use a MAC when the service is already billing and the customer needs a move, add, or change on the live account. Most MAC scenarios require a new GPC Solution on the same opportunity; follow the MAC guide by scenario.
 
-      Watch-outs:
+      Landmines:
 
       - Pending Billing or 7–10 Day Order can block Admin action until PMO or CRC weighs in.
       - Very small CRC/BCC changes may go to businesscare@gpcom.com instead of Salesforce.
@@ -193,7 +193,7 @@ discovery_questions:
 
 ---
 
-## Common Pitfalls
+## Common Landmines
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
