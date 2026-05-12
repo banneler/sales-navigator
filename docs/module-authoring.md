@@ -73,7 +73,7 @@ Use an **empty `##` line** (`##` plus a space, nothing else) when you want the s
 
 The **Discovery Run** (platformer), **Discovery Galaxy** (shooter), and **Discovery Break** (brick breaker) games load their five in-game prompts from the **host module’s** YAML front matter—not from hardcoded JavaScript.
 
-**Front matter** — add a top-level list with **exactly five** strings (current game mechanics require this count):
+**Front matter** — add a top-level list with **at least five** strings. Each game run still uses **five** prompts. If you list **more than five**, the game **randomly picks five** on each load (refresh gets a new mix).
 
 ```yaml
 discovery_questions:
@@ -82,6 +82,7 @@ discovery_questions:
   - "…"
   - "…"
   - "Fifth prompt…"
+  # optional: sixth, seventh, … (sampled randomly with the others)
 ```
 
 **Iframe** — point the game at your module’s `id` (same value as `id:` in the front matter):
@@ -100,7 +101,7 @@ Use `games/galactica-1/index.html` or `games/brick-breaker-1/index.html` instead
 **Operational notes**
 
 - Serve the app from a **local web server** (same as module `content.md` loading); `file://` may block `fetch`.
-- If the list is missing, not an array, or not exactly five entries, the game shows an error on the start screen and keeps **START** disabled.
+- If the list is missing, not an array, or has **fewer than five** entries, the game shows an error on the start screen and keeps **START** disabled.
 
 ## App behavior (not authoring)
 
