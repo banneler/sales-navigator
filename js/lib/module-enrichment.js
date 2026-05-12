@@ -391,7 +391,7 @@ const SAFE_UC_VIDEO_SRC =
   /^assets\/(?:UC\/|training\/salesforce\/|wireless-backup\/|capabilities\/)[a-zA-Z0-9._-]+\.mp4$/;
 /** Optional static poster image next to MP4s. */
 const SAFE_UC_POSTER =
-  /^assets\/(?:UC\/|training\/salesforce\/|wireless-backup\/)[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
+  /^assets\/(?:UC\/|training\/salesforce\/|wireless-backup\/|capabilities\/)[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
 /** Relative image under site root for static collateral views. */
 const SAFE_IMAGE_CAROUSEL_SRC =
   /^assets\/(?:battle-cards\/)(?:[a-zA-Z0-9._-]+\/)*[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;

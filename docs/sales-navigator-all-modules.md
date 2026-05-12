@@ -1056,6 +1056,7 @@ video_sections:
     items:
       - title: Accelerating Business Performance with Fiber Connectivity
         src: assets/capabilities/accelerating-business-performance-with-fiber-connectivity.mp4
+        poster: assets/capabilities/accelerating-business-performance-with-fiber-connectivity.png
 discovery_questions:
   - 'If your primary internet connection drops at 2:00 PM on a Tuesday, what exactly happens to your operations and revenue?'
   - 'Which of your daily applications are hosted on-premise, and which are in the cloud (AWS, Azure, O365)?'
