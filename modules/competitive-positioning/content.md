@@ -258,30 +258,28 @@ Differentiate last mile, routing, peering, and repair SLAs—map to **their** ap
 
 ## How We Win — by competitor (field reference)
 
-The tabs above are the full cards. This is the **short list** of what to actually say—open the card when you need depth or proof.
+The tabs above hold the full battle cards. **This block is the cheat sheet**—open the card when you need cites, tables, or nuance.
 
 ### National carriers (Cox, Spectrum, Charter, Lumen, Windstream, Zayo)
 
-- **Acquisition (Cox / Charter / Spectrum):** Use as **context**, not FUD—stability and continuity (“same team at onboard and renewal”). The cards don’t endorse *“they’ll be distracted for two years.”*
-- **vs. Cox on scale:** Coax caps around **~2 Gbps asymmetrical**; GPC is **symmetrical fiber to 100 Gbps**. If they challenge “are you big enough?,” answer with **16,500-mile footprint, 29+ Midwest data centers, MEF / SOC II / Tier-IV, Blair NOC**—then tie to *their* risk.
+Treat the **Cox / Charter / Spectrum acquisition** as context, not FUD. Stable story: same local team at onboard and renewal—the cards do **not** green-light “they’ll be distracted for two years.” On **scale vs. Cox**, coax caps around **~2 Gbps asymmetrical**; GPC is **symmetrical fiber to 100 Gbps**. If they push “are you big enough?” lead with **16,500-mile footprint, 29+ Midwest data centers, MEF / SOC II / Tier-IV, Blair NOC**, then tie it to **their** outage and latency risk.
 
-### Omaha metro upstarts
+### Omaha metro upstarts (FiberFirst, Metronet, Allo, Google Fiber)
 
-- **FiberFirst** — Entry in gaps; weak on execution and storefront. **You:** local team, fast build cycle, 110+ years in-market.
-- **Metronet (T‑Mobile)** — **B2B still Metronet** while residential is T‑Mobile—cards call out possible instability from that split. They’re **aerial-heavy**; you’re **~98% buried fiber** in Omaha metro—weather and cut resilience.
-- **Allo** — Loud on price and retail presence. **Supporting line only:** they **don’t fully own the network** (lease from GPC and others)—never your opener. Save deeper Allo talk for the card.
-- **Google Fiber** — Simple consumer-style tiers and price. **You:** business-grade stack (local support, DDoS, SD‑WAN, managed firewall options)—not a two-tier retail fit for many SMBs.
+**FiberFirst** — fills gaps but is thin on execution and storefront presence; you bring local team, fast build, 110+ years in-market. **Metronet (T‑Mobile)** — residential is T‑Mobile branding, B2B stays Metronet (split = possible instability per the card); they’re **aerial-heavy**, you’re **~98% buried fiber** in metro for weather and dig resilience. **Allo** — price and retail energy; **they don’t fully own the network** (lease from GPC and others)—use only as a **supporting line**, never the opener. **Google Fiber** — retail-style two-tier story; you win on **business-grade** scope: local support, DDoS, SD‑WAN, managed firewall—and packaging that fits how they actually operate.
 
-### Line that changes the room
+### Reference line (Omaha Metro card)
 
-**“We have a diverse, 100% referenceable customer base.”** (Omaha Metro card.) Have **one or two named references** in their vertical ready before you lean on it.
+**“We have a diverse, 100% referenceable customer base.”** Have **one or two named references** in their **vertical** ready before you use it.
 
 ### Managed Firewall
 
-They **already have** a firewall story (carrier, MSP, IT, or DIY)—Challenge #1 on the card. **Don’t** wage a feature war on “we’re better than your MSP.” **Do** pitch **consolidation**: fewer vendors, one bill, one throat to choke, **SOC + FortiGuard** folded into connectivity they already buy from GPC.
+They **already** have someone doing firewall (carrier, MSP, IT, DIY)—that’s Challenge #1 on the card. **Don’t** pick a feature fight with their incumbent MSP. **Do** sell **consolidation**: fewer vendors, one bill, one throat to choke, **SOC + FortiGuard** riding on GPC connectivity they may already buy.
 
-### 5G Wireless Backup (vs. buying Verizon / AT&T direct)
+### 5G Wireless Backup (vs. Verizon / AT&T direct)
 
-**Dual-carrier selection** (not locked to one map), **local support + NOC + one bill**—same underlying carriers/Cradlepoint story, **GPC runs the operational wrapper.** Card fit: **≤25 people at the site**; strongest in healthcare, retail, financial services, auto, municipal.
+**Dual-carrier** signal choice (not locked to one map), **local support + NOC + one bill**—same underlying Verizon / AT&T / Cradlepoint credibility; **GPC owns the operational layer.** Card sweet spot: **≤25 people at the site**; strongest lanes include healthcare, retail, financial services, auto, municipal.
 
-**Disengage when:** trash‑talk bait, pure price auction with no fit, or architecture you need an **SE** for.
+### When to disengage
+
+**Trash-talk bait**, a **pure price auction** with no fit, or **architecture** that needs an **SE**—not a lone rep improv session.
