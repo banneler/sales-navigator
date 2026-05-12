@@ -2600,33 +2600,7 @@ As Account A wraps in April, the first on-deck account onboards for a **May** ki
 
 ## 90-day sequence
 
-- **Duration:** 90-day coordinated motion, kicked off by the Sales + Marketing + Manager meeting.
-- **Sales volume:** **18 total personal sales touches** over the cycle.
-- **Sales rhythm:** **3 touches per target every 2 weeks**.
-- **Primary channels:** **Phone calls** and **personalized emails**.
-- **Optional Door Pull:** A physical drop-by using the **Enterprise Brochure** as a leave-behind.
-- **Marketing rhythm:** **1 coordination touchpoint every 30 days** (e.g., LinkedIn / Google ads, direct mail). **`+1` named SOP trigger:** when Sales schedules a physical **Door Pull** with the **Enterprise Brochure**, Marketing adds **one extra** touch that cycle—custom copy / inserts aligned to the leave-behind (not optional flair once the Door Pull is on the calendar).
-
-## Sequence lanes (sales & marketing)
-
-### Sales prospecting
-
-Sales executes the **18-touch, 90-day** motion anchored on **personalized phone and email**, with optional **Door Pull** drop-ins using the Enterprise Brochure where approved. The cadence is a fixed rhythm—persistent without being intrusive.
-
-### Marketing air cover
-
-Marketing runs **monthly support touchpoints** (LinkedIn / Google ads, direct mail) to reinforce sales outreach. **Door Pull = automatic +1:** the SOP treats a scheduled physical Door Pull as the trigger for an **extra** marketing coordination touch in that window—which gets **custom copy and inserts** for the Enterprise Brochure—not a nice-to-have add-on after the fact.
-
-## How to use this module
-
-1. Read the overview sections for **roles, intent, and the Rolling Three model** before your first ABM kickoff.
-2. Bring the **Sales Readiness Checklist** to every kickoff—do not improvise. The checklist *is* the contract with Marketing.
-3. Coach to the SOP-defined sequence and guardrails: **staggered kickoff**, **tiered target mix**, **cadence**, and **Master Tracking Spreadsheet hygiene**.
-4. Pair this with **Operational Business Reviews** when discussing how executive conversations mature into review meetings.
-
-## Keep this module honest
-
-This page reflects the ABM SOP and is intentionally focused on it. When the SOP changes, align these bullets and checks to the current approved version—the **SharePoint folder linked above** is the live source of truth, not this app.
+![ABM process: 90-day sales and marketing coordination (reference Gantt)](assets/gantt/abm-90-day-sequence.png)
 <!-- prettier-ignore-end -->
 
 ---
