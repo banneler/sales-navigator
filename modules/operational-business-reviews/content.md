@@ -13,12 +13,11 @@ discovery_questions:
   - Which of your top accounts has billing or service-address data that has not been audited for accuracy in the last twelve months?
   - 'If your customer''s exec sponsor walked into the room tomorrow asking "what is next on the roadmap with GPC," how confident are you in the answer—on paper?'
 five_minute_summary: |
-  - **The Slick is the deliverable.** A front/back trifold insert with four components: **Network Design** (Current vs. Future State Visio, verified against billing), **Strategic Billing** (totals + expirations, surfaced through the "Modernization" and "Performance Spotlight" levers), **NOC History & Feedback Loop** (12-month performance snapshot + partnership feedback), and **Strategic Roadmap** (planned upgrades, renewal sync, GPC solution highlights).
-  - **The 21-business-day cycle with named owners.** Day 1: Account Rep schedules. Days 2–4: Account Rep audits locations and addresses. Days 5–14: **Jerry Ehrenberg** drives the Network Design (10 days, kicked off with a 15-minute call). Days 10–14: **Jill / NOC** generate billing and NOC data (5 days, overlapping). Days 15–19: **Sarah** formats and brands the slick (5 days, with Account Team Final Review). Days 19–21: Sarah and the Account Rep handle print, pickup, and trifold insertion. **Day 21 is the OBR Meeting.**
-  - **Success Criteria—the three numbers to memorize.** *Zero Fire Drills* (every asset handed to Marketing by **Business Day 14**), *100% Accuracy* (billing locations and network diagrams synchronized), and *Client Value* (customer leaves with a clear understanding of network health and the roadmap).
-  - **The "No Raw Dump" Rule.** Sales must scrub and audit all data before handoff. **Marketing is for design, not data entry or CID deciphering.** Translate internal catalog codes into plain-English service descriptions (e.g., `100M Fiber DIA`).
-  - **The "Single Packet" Handoff.** Marketing will not start design until one email lands containing **both** the completed **OBR Sales Readiness Form** (with scrubbed data tables) **and** the finalized **Visio diagram**. Anything less stops the clock.
-  - **The Sales Readiness Form is the Source of Truth.** Complete it early. It locks in the strategic copy for Marketing, carries all audited billing/NOC data, and feeds the trifold's narrative.
+  - **Why OBRs:** Strategic accounts deserve **one credible story** in the room—how footprint, billing, performance, and roadmap connect—not a collage of orphan spreadsheets and slides.
+  - **Sales** sets the bar: relationship ownership, audited sites and services, and a readiness handoff the rest of the org can run with (not a "dump it over the fence" moment).
+  - **Engineering and NOC** anchor **what's actually built and how it behaves**; **finance / billing** keeps the money picture aligned with reality so you're not arguing two different truths with the customer.
+  - **Marketing** steps in **after** that scrub: design and narrative so an executive leaves with something they can hold—not a rescue mission piecing together raw CID exports.
+  - **The through-line is partnership.** Clean handoffs mean no fire drills; messy handoffs mean the customer feels our chaos. The sections and SOP below spell out *how* we keep the chain intact.
 
 knowledge_checks:
   - question: "How many business days does the OBR cycle run, from initiation through the meeting itself?"

@@ -13,12 +13,11 @@ discovery_questions:
   - 'Have I completed all six Sales Readiness Checklist items (Account Intel, Status, Current Services, Location Scope, Prospecting History, finalized Target List) before requesting kickoff?'
   - 'Which **Marketing partner** owns the air cover for this account, and have we aligned on the monthly touchpoint cadence + any planned **Door Pulls** in the 90-day window?'
 five_minute_summary: |
-  - **The motion:** A **high-touch, 90-day coordinated effort** between Sales and Marketing on **high-value Strategic accounts**—18 personal sales touches with consistent marketing air cover, so GPC stays top-of-mind with the right decision-makers.
-  - **Rolling Three:** You run **3 active ABM accounts at a time**, with **3 on-deck** ready to backfill. As one completes its 90-day cycle, the next on-deck onboards immediately—no pipeline droughts, no scrambling.
-  - **Staggered kickoff:** New accounts kick off on a **30-day stagger** (Month 1 / Month 2 / Month 3). One account is always in the high-intensity opening phase while others are mid- or late-cycle.
-  - **Targets are a stack, not a list:** Minimum **3 targets per account (5 ideal)**—and **not all Executive**. Mix **Manager · Director/VP · Executive** so one person leaving doesn't kill the play.
-  - **Sequence rhythm:** **18 touches / 90 days**, **3 per target every 2 weeks** by phone and personalized email. Marketing runs **1 coordination touchpoint every 30 days**; when Sales schedules a physical **Door Pull** (Enterprise Brochure), that's the **named SOP trigger** for **+1** extra marketing touch that cycle—custom brochure copy and inserts, not a discretionary maybe.
-  - **One source of truth:** The **Master Tracking Spreadsheet** is the system of record for Active and On-Deck accounts. **Edit access** is limited to **Marketing and Sales Leadership**; **everyone else is view-only**—do not request write access to "fix" your row; work through the owners on the sheet.
+  - **Why ABM:** Top logos don't move because someone sent more cadence emails—they move when **the right buyers** keep seeing **one consistent GPC story** between your conversations.
+  - **Sales** owns the account: who matters (tiered targets, not a single hero exec), the tempo of outreach, and the integrity of kickoff—so Marketing isn't inventing context from thin air.
+  - **Marketing** owns **air cover**: coordinated touches that reinforce what Sales is saying, timed to the play—not a generic newsletter blast that arrives a random week after your last call.
+  - **It's deliberately joint:** when both sides run the same 90-day motion, you avoid the classic failure mode—reps grinding alone at the C-suite while **brand and field feel like two different companies.**
+  - **Leadership keeps the model honest** (bench, kickoff discipline, shared visibility) so the program stays strategic—not a pile of heroic one-offs. Cadence, Door Pulls, and tracking live in the SOP and sections below.
 
 knowledge_checks:
   - question: "How many ABM accounts should an Account Representative run concurrently per the SOP?"

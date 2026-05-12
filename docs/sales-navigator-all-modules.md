@@ -2461,12 +2461,11 @@ discovery_questions:
   - 'Have I completed all six Sales Readiness Checklist items (Account Intel, Status, Current Services, Location Scope, Prospecting History, finalized Target List) before requesting kickoff?'
   - 'Which **Marketing partner** owns the air cover for this account, and have we aligned on the monthly touchpoint cadence + any planned **Door Pulls** in the 90-day window?'
 five_minute_summary: |
-  - **The motion:** A **high-touch, 90-day coordinated effort** between Sales and Marketing on **high-value Strategic accounts**—18 personal sales touches with consistent marketing air cover, so GPC stays top-of-mind with the right decision-makers.
-  - **Rolling Three:** You run **3 active ABM accounts at a time**, with **3 on-deck** ready to backfill. As one completes its 90-day cycle, the next on-deck onboards immediately—no pipeline droughts, no scrambling.
-  - **Staggered kickoff:** New accounts kick off on a **30-day stagger** (Month 1 / Month 2 / Month 3). One account is always in the high-intensity opening phase while others are mid- or late-cycle.
-  - **Targets are a stack, not a list:** Minimum **3 targets per account (5 ideal)**—and **not all Executive**. Mix **Manager · Director/VP · Executive** so one person leaving doesn't kill the play.
-  - **Sequence rhythm:** **18 touches / 90 days**, **3 per target every 2 weeks** by phone and personalized email. Marketing runs **1 coordination touchpoint every 30 days**; when Sales schedules a physical **Door Pull** (Enterprise Brochure), that's the **named SOP trigger** for **+1** extra marketing touch that cycle—custom brochure copy and inserts, not a discretionary maybe.
-  - **One source of truth:** The **Master Tracking Spreadsheet** is the system of record for Active and On-Deck accounts. **Edit access** is limited to **Marketing and Sales Leadership**; **everyone else is view-only**—do not request write access to "fix" your row; work through the owners on the sheet.
+  - **Why ABM:** Top logos don't move because someone sent more cadence emails—they move when **the right buyers** keep seeing **one consistent GPC story** between your conversations.
+  - **Sales** owns the account: who matters (tiered targets, not a single hero exec), the tempo of outreach, and the integrity of kickoff—so Marketing isn't inventing context from thin air.
+  - **Marketing** owns **air cover**: coordinated touches that reinforce what Sales is saying, timed to the play—not a generic newsletter blast that arrives a random week after your last call.
+  - **It's deliberately joint:** when both sides run the same 90-day motion, you avoid the classic failure mode—reps grinding alone at the C-suite while **brand and field feel like two different companies.**
+  - **Leadership keeps the model honest** (bench, kickoff discipline, shared visibility) so the program stays strategic—not a pile of heroic one-offs. Cadence, Door Pulls, and tracking live in the SOP and sections below.
 
 knowledge_checks:
   - question: "How many ABM accounts should an Account Representative run concurrently per the SOP?"
@@ -2652,12 +2651,11 @@ discovery_questions:
   - Which of your top accounts has billing or service-address data that has not been audited for accuracy in the last twelve months?
   - 'If your customer''s exec sponsor walked into the room tomorrow asking "what is next on the roadmap with GPC," how confident are you in the answer—on paper?'
 five_minute_summary: |
-  - **The Slick is the deliverable.** A front/back trifold insert with four components: **Network Design** (Current vs. Future State Visio, verified against billing), **Strategic Billing** (totals + expirations, surfaced through the "Modernization" and "Performance Spotlight" levers), **NOC History & Feedback Loop** (12-month performance snapshot + partnership feedback), and **Strategic Roadmap** (planned upgrades, renewal sync, GPC solution highlights).
-  - **The 21-business-day cycle with named owners.** Day 1: Account Rep schedules. Days 2–4: Account Rep audits locations and addresses. Days 5–14: **Jerry Ehrenberg** drives the Network Design (10 days, kicked off with a 15-minute call). Days 10–14: **Jill / NOC** generate billing and NOC data (5 days, overlapping). Days 15–19: **Sarah** formats and brands the slick (5 days, with Account Team Final Review). Days 19–21: Sarah and the Account Rep handle print, pickup, and trifold insertion. **Day 21 is the OBR Meeting.**
-  - **Success Criteria—the three numbers to memorize.** *Zero Fire Drills* (every asset handed to Marketing by **Business Day 14**), *100% Accuracy* (billing locations and network diagrams synchronized), and *Client Value* (customer leaves with a clear understanding of network health and the roadmap).
-  - **The "No Raw Dump" Rule.** Sales must scrub and audit all data before handoff. **Marketing is for design, not data entry or CID deciphering.** Translate internal catalog codes into plain-English service descriptions (e.g., `100M Fiber DIA`).
-  - **The "Single Packet" Handoff.** Marketing will not start design until one email lands containing **both** the completed **OBR Sales Readiness Form** (with scrubbed data tables) **and** the finalized **Visio diagram**. Anything less stops the clock.
-  - **The Sales Readiness Form is the Source of Truth.** Complete it early. It locks in the strategic copy for Marketing, carries all audited billing/NOC data, and feeds the trifold's narrative.
+  - **Why OBRs:** Strategic accounts deserve **one credible story** in the room—how footprint, billing, performance, and roadmap connect—not a collage of orphan spreadsheets and slides.
+  - **Sales** sets the bar: relationship ownership, audited sites and services, and a readiness handoff the rest of the org can run with (not a "dump it over the fence" moment).
+  - **Engineering and NOC** anchor **what's actually built and how it behaves**; **finance / billing** keeps the money picture aligned with reality so you're not arguing two different truths with the customer.
+  - **Marketing** steps in **after** that scrub: design and narrative so an executive leaves with something they can hold—not a rescue mission piecing together raw CID exports.
+  - **The through-line is partnership.** Clean handoffs mean no fire drills; messy handoffs mean the customer feels our chaos. The sections and SOP below spell out *how* we keep the chain intact.
 
 knowledge_checks:
   - question: "How many business days does the OBR cycle run, from initiation through the meeting itself?"
