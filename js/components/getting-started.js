@@ -30,6 +30,95 @@ function orderedUserModules(manifest) {
 }
 
 /**
+ * @param {string} letterHeading
+ * @param {string} letterBodyHtml - safe HTML
+ * @param {Array<{ title: string; html: string }>} wayfindingParts - safe HTML per block
+ */
+function buildLetterWayfindingTabsHtml(letterHeading, letterBodyHtml, wayfindingParts) {
+  const baseShell =
+    'rounded-2xl border border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white shadow-sm backdrop-blur-sm module-tour-discovery pointer-events-auto';
+
+  if (wayfindingParts.length === 0) {
+    return `
+          <section class="${baseShell} p-6 md:p-8">
+            <h3 class="text-lg font-bold text-slate-900">${escapeHtml(letterHeading)}</h3>
+            <div class="text-sm text-slate-700 mt-3 space-y-3 leading-relaxed module-markdown-body">
+              ${letterBodyHtml}
+            </div>
+          </section>`;
+  }
+
+  const secondLabel =
+    wayfindingParts.length === 1 ? wayfindingParts[0].title : 'Where to go next';
+  const secondBody =
+    wayfindingParts.length === 1
+      ? wayfindingParts[0].html
+      : wayfindingParts
+          .map(
+            (p) => `
+            <div class="mb-6 last:mb-0">
+              <h4 class="text-sm font-bold text-slate-900">${escapeHtml(p.title)}</h4>
+              <div class="text-sm text-slate-700 mt-2 module-markdown-body leading-relaxed">${p.html}</div>
+            </div>`
+          )
+          .join('');
+
+  const tabBtn =
+    'js-gs-main-tab flex-1 min-w-[8rem] px-4 py-3 text-sm font-semibold transition border-b-2 -mb-px focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-orange-400';
+
+  return `
+          <div class="${baseShell} overflow-hidden" data-gs-main-tabs>
+            <div class="flex flex-wrap border-b border-emerald-200/80 bg-emerald-50/60" role="tablist" aria-label="Welcome and next steps">
+              <button type="button" id="gs-main-tab-0" role="tab" class="${tabBtn} border-orange-500 text-orange-900 bg-white" aria-selected="true" aria-controls="gs-main-panel-0" data-gs-tab="0" tabindex="0">${escapeHtml(letterHeading)}</button>
+              <button type="button" id="gs-main-tab-1" role="tab" class="${tabBtn} border-transparent text-slate-600 hover:text-slate-900 hover:bg-white/70" aria-selected="false" aria-controls="gs-main-panel-1" data-gs-tab="1" tabindex="-1">${escapeHtml(secondLabel)}</button>
+            </div>
+            <div class="p-6 md:p-8">
+              <div id="gs-main-panel-0" role="tabpanel" aria-labelledby="gs-main-tab-0" data-gs-panel="0" class="text-sm text-slate-700 module-markdown-body leading-relaxed space-y-3">
+                ${letterBodyHtml}
+              </div>
+              <div id="gs-main-panel-1" role="tabpanel" aria-labelledby="gs-main-tab-1" data-gs-panel="1" class="text-sm text-slate-700 module-markdown-body leading-relaxed hidden" hidden>
+                ${secondBody}
+              </div>
+            </div>
+          </div>`;
+}
+
+/**
+ * @param {HTMLElement} root - #module-host
+ */
+function bindGettingStartedMainTabs(root) {
+  const shell = root.querySelector('[data-gs-main-tabs]');
+  if (!shell) return;
+  const tabs = shell.querySelectorAll('[data-gs-tab]');
+  const panels = shell.querySelectorAll('[data-gs-panel]');
+  if (!tabs.length || !panels.length) return;
+
+  const select = (idx) => {
+    tabs.forEach((tab, i) => {
+      const on = i === idx;
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      tab.tabIndex = on ? 0 : -1;
+      tab.classList.toggle('border-orange-500', on);
+      tab.classList.toggle('text-orange-900', on);
+      tab.classList.toggle('bg-white', on);
+      tab.classList.toggle('border-transparent', !on);
+      tab.classList.toggle('text-slate-600', !on);
+      tab.classList.toggle('hover:text-slate-900', !on);
+      tab.classList.toggle('hover:bg-white/70', !on);
+    });
+    panels.forEach((panel, i) => {
+      const on = i === idx;
+      panel.classList.toggle('hidden', !on);
+      panel.hidden = !on;
+    });
+  };
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => select(i));
+  });
+}
+
+/**
  * @param {Record<string, unknown>} meta
  * @param {string} body
  */
@@ -51,18 +140,18 @@ function buildGettingStartedMarkup(meta, body) {
 
   const letterBodyHtml = parseMarkdownToSafeHtml(letterSec.markdown || '');
 
-  const wayfindingHtml = sections
+  const wayfindingParts = sections
     .filter((_, i) => i !== letterIdx)
     .map((s) => {
       const { displayTitle: wTitle } = parseH2DeepMarker(s.title);
-      const inner = parseMarkdownToSafeHtml(s.markdown || '');
-      return `
-        <section class="rounded-2xl border border-slate-200/80 bg-white/90 p-6 md:p-8 shadow-sm backdrop-blur-sm">
-          <h3 class="text-lg font-bold text-slate-900">${escapeHtml(wTitle)}</h3>
-          <div class="text-sm text-slate-700 mt-3 module-markdown-body leading-relaxed">${inner}</div>
-        </section>`;
-    })
-    .join('');
+      return { title: wTitle, html: parseMarkdownToSafeHtml(s.markdown || '') };
+    });
+
+  const letterTabsHtml = buildLetterWayfindingTabsHtml(
+    letterHeading,
+    letterBodyHtml,
+    wayfindingParts
+  );
 
   const five = meta.five_minute_summary;
   const coffeeInner =
@@ -94,13 +183,7 @@ function buildGettingStartedMarkup(meta, body) {
               </div>
             </div>
           </section>
-          <section class="rounded-2xl border border-emerald-200/70 bg-gradient-to-b from-emerald-50/35 to-white p-6 md:p-8 shadow-sm backdrop-blur-sm module-tour-discovery">
-            <h3 class="text-lg font-bold text-slate-900">${escapeHtml(letterHeading)}</h3>
-            <div class="text-sm text-slate-700 mt-3 space-y-3 leading-relaxed module-markdown-body">
-              ${letterBodyHtml}
-            </div>
-          </section>
-          ${wayfindingHtml}
+          ${letterTabsHtml}
         </div>
         ${scenarioAside}
       </div>
@@ -426,47 +509,54 @@ function positionGlassCard(hostEl, stepIndex, rect) {
   hostEl.style.bottom = '';
   hostEl.style.right = 'auto';
 
-  const avoidRects = getTourCardAvoidRects(stepIndex, vw);
-
-  if (stepIndex === 0 || !rect) {
-    hostEl.style.left = '50%';
-    hostEl.style.top = '50%';
-    hostEl.style.transform = 'translate(-50%, -50%)';
-    return;
-  }
-
-  const hugeSpotlight =
-    rect.width > vw * 0.55 || rect.height > vh * 0.72;
-  if (hugeSpotlight && stepIndex !== 2) {
-    hostEl.style.left = '50%';
-    hostEl.style.top = '50%';
-    hostEl.style.transform = 'translate(-50%, -50%)';
-    return;
-  }
-
   const gap = 16;
   const cardW = Math.min(448, vw - 32);
   const cardH = hostEl.offsetHeight || 380;
   const clampX = (x) => Math.max(gap, Math.min(x, vw - cardW - gap));
   const clampY = (y) => Math.max(gap, Math.min(y, vh - cardH - gap));
-  const spotlight = { left: rect.left, top: rect.top, width: rect.width, height: rect.height };
 
-  const candidates = [
-    { left: rect.left + rect.width + gap, top: rect.top },
-    { left: rect.left - cardW - gap, top: rect.top },
-    { left: rect.left, top: rect.top + rect.height + gap },
-    { left: rect.left, top: rect.top - cardH - gap },
-  ].map((c) => ({ left: clampX(c.left), top: clampY(c.top) }));
-
-  if (vw < 1280) {
-    candidates.unshift(
-      { left: clampX(rect.left), top: clampY(rect.top + rect.height + gap) },
-      { left: clampX(rect.left), top: clampY(rect.top - cardH - gap) }
-    );
+  if (stepIndex === 0) {
+    hostEl.style.left = '50%';
+    hostEl.style.top = '50%';
+    hostEl.style.transform = 'translate(-50%, -50%)';
+    return;
   }
 
+  /** Avoid centering over the viewport when the spotlight isn't ready yet (prevents HUD over the hole). */
+  if (!rect || rect.width <= 0 || rect.height <= 0) {
+    hostEl.style.left = `${Math.max(gap, vw - cardW - gap)}px`;
+    hostEl.style.top = `${gap}px`;
+    hostEl.style.transform = 'none';
+    return;
+  }
+
+  const avoidRects = getTourCardAvoidRects(stepIndex, vw);
+  const spotlight = { left: rect.left, top: rect.top, width: rect.width, height: rect.height };
+  const sx = spotlight.left;
+  const sy = spotlight.top;
+  const sw = spotlight.width;
+  const sh = spotlight.height;
+
+  /** Prefer true viewport gutters first—plain clamping pulled candidates back into the spotlight. */
+  const ordered = [];
+  const rightGutterLeft = sx + sw + gap;
+  if (rightGutterLeft + cardW <= vw - gap) {
+    ordered.push({ left: rightGutterLeft, top: clampY(sy) });
+  }
+  const leftGutterLeft = sx - cardW - gap;
+  if (leftGutterLeft >= gap) {
+    ordered.push({ left: leftGutterLeft, top: clampY(sy) });
+  }
+  ordered.push({ left: vw - cardW - gap, top: clampY(sy + sh + gap) });
+  ordered.push({ left: gap, top: clampY(sy + sh + gap) });
+  ordered.push({ left: clampX(sx), top: sy + sh + gap });
+  ordered.push({ left: clampX(sx), top: sy - cardH - gap });
+  ordered.push({ left: vw - cardW - gap, top: gap });
+  ordered.push({ left: gap, top: gap });
+  ordered.push({ left: gap, top: vh - cardH - gap });
+
   let best = null;
-  for (const c of candidates) {
+  for (const c of ordered) {
     const cardRect = { left: c.left, top: c.top, width: cardW, height: cardH };
     if (
       !rectsOverlap(cardRect, spotlight) &&
@@ -478,9 +568,21 @@ function positionGlassCard(hostEl, stepIndex, rect) {
   }
 
   if (!best) {
+    best = findTourCardPositionClearOfSpotlight(
+      spotlight,
+      cardW,
+      cardH,
+      vw,
+      vh,
+      gap,
+      avoidRects
+    );
+  }
+
+  if (!best) {
     best = {
-      left: clampX((vw - cardW) / 2),
-      top: clampY(vh - cardH - gap),
+      left: Math.max(gap, vw - cardW - gap),
+      top: gap,
     };
   }
 
@@ -488,10 +590,7 @@ function positionGlassCard(hostEl, stepIndex, rect) {
     const chosen = { left: best.left, top: best.top, width: cardW, height: cardH };
     if (cardOverlapsAny(chosen, avoidRects)) {
       const hero = avoidRects[0];
-      const stackBottom = Math.max(
-        hero.top + hero.height,
-        spotlight.top + spotlight.height
-      );
+      const stackBottom = Math.max(hero.top + hero.height, spotlight.top + spotlight.height);
       const underStack = {
         left: clampX((vw - cardW) / 2),
         top: clampY(stackBottom + gap),
@@ -512,21 +611,18 @@ function positionGlassCard(hostEl, stepIndex, rect) {
     }
   }
 
-  /** Tour step "Inside a module" / "Scenarios": bottom-centered fallback can still cover the spotlight—relocate. */
-  if (best && spotlight.width > 0 && spotlight.height > 0) {
-    const placed = { left: best.left, top: best.top, width: cardW, height: cardH };
-    if (rectsOverlap(placed, spotlight)) {
-      const rescued = findTourCardPositionClearOfSpotlight(
-        spotlight,
-        cardW,
-        cardH,
-        vw,
-        vh,
-        gap,
-        avoidRects
-      );
-      if (rescued) best = rescued;
-    }
+  const placed = { left: best.left, top: best.top, width: cardW, height: cardH };
+  if (rectsOverlap(placed, spotlight)) {
+    const rescued = findTourCardPositionClearOfSpotlight(
+      spotlight,
+      cardW,
+      cardH,
+      vw,
+      vh,
+      gap,
+      avoidRects
+    );
+    if (rescued) best = rescued;
   }
 
   hostEl.style.left = `${best.left}px`;
@@ -709,6 +805,7 @@ export async function loadGettingStarted(container, manifest) {
 
   container.innerHTML = buildGettingStartedMarkup(meta, body);
 
+  bindGettingStartedMainTabs(container);
   const overlay = document.createElement('div');
   overlay.id = OVERLAY_ID;
   overlay.className = 'fixed inset-0 z-[100] pointer-events-none';
