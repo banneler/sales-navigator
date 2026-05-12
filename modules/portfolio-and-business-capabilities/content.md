@@ -6,6 +6,12 @@ sensitivity: public
 reference_files:
   - label: Sales Resources (collateral hub)
     sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
+video_sections:
+  - heading: Business Performance with Fiber Connectivity
+    intro: Use this capabilities presentation to frame the portfolio as business infrastructure, not a commodity pipe.
+    items:
+      - title: Accelerating Business Performance with Fiber Connectivity
+        src: assets/capabilities/accelerating-business-performance-with-fiber-connectivity.mp4
 discovery_questions:
   - 'If your primary internet connection drops at 2:00 PM on a Tuesday, what exactly happens to your operations and revenue?'
   - 'Which of your daily applications are hosted on-premise, and which are in the cloud (AWS, Azure, O365)?'
