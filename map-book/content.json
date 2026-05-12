@@ -18,7 +18,16 @@
   "mapData": {
     "national": {
       "id": "national",
-      "protocolFocus": "l1",
+      "architectureLayer": "L1",
+      "technicalBriefing": {
+        "headline": "GPC Advantage: Deterministic Transport",
+        "summary": "National optical fabric built for predictable performance—dedicated wavelengths that skirt shared packet domains and preserve timing integrity for replication, clearing, and long-haul backhaul.",
+        "metrics": [
+          { "label": "JITTER PROFILE", "value": "Minimal (λ-native)" },
+          { "label": "PATH MODEL", "value": "Dedicated wave" },
+          { "label": "CAPACITY ANCHOR", "value": "400G-aligned" }
+        ]
+      },
       "title": "The Network",
       "subtitle": "National Footprint & Coverages",
       "placeholder": "Load National_Map.svg",
@@ -32,13 +41,21 @@
     },
     "layer2": {
       "id": "layer2",
-      "protocolFocus": "l2",
+      "architectureLayer": "L2",
+      "technicalBriefing": {
+        "headline": "GPC Advantage: Ring-Protected Ethernet",
+        "summary": "Enterprise-grade Ethernet transported across redundant metro and intercity rings—prioritizing fast Layer 2 convergence and operational simplicity for wholesale, towers, and campus mesh designs.",
+        "metrics": [
+          { "label": "FAILOVER", "value": "<1s typical" },
+          { "label": "CORE QUOTE", "value": "200G–400G" },
+          { "label": "ACCESS SPAN", "value": "1G–100G" }
+        ]
+      },
       "title": "Layer 2 Core",
       "subtitle": "High-Availability Redundant Architecture",
       "placeholder": "Load Layer_2_Rings.svg",
       "file": "layer_2.png",
       "type": "map",
-      "insight": "Our high-availability network is engineered to meet the mission-critical demands of enterprises, wholesale clients, and FTTT customers, offering 200G and 400G city-to-city routes, a redundant ring architecture and seamless scalability across 1G, 10G, and 100G services.",
       "stats": [
         { "label": "Core Capacity", "value": "400G Standard", "color": "text-gpc-orange" },
         { "label": "Scalability", "value": "1G to 100G", "color": "text-gpc-green" }
@@ -46,7 +63,16 @@
     },
     "ip-network": {
       "id": "ip-network",
-      "protocolFocus": "l3",
+      "architectureLayer": "L3",
+      "technicalBriefing": {
+        "headline": "Strategic Peering: Cloud-Optimized IP",
+        "summary": "IP architecture weighted toward localized breakout and dense peering—trimming roundabout paths so cloud, SaaS, and carrier offload see stable latency instead of commodity internet variance.",
+        "metrics": [
+          { "label": "LATENCY POSTURE", "value": "Ultra-low edge" },
+          { "label": "ROUTING", "value": "Localized" },
+          { "label": "PEERING DENSITY", "value": "25+ IX anchors" }
+        ]
+      },
       "title": "IP Network & Peering",
       "subtitle": "Connected and Resilient Cloud Access",
       "placeholder": "Load IP_Network_Map.svg",
@@ -59,7 +85,16 @@
     },
     "towers": {
       "id": "towers",
-      "protocolFocus": "l1",
+      "architectureLayer": "L1",
+      "technicalBriefing": {
+        "headline": "Strategic Edge: Hardened Backhaul Transport",
+        "summary": "Tower-grade transport prioritizes symmetrical headroom and NOC-backed resiliency—Layer 1 and converged Ethernet options keep RAN evolution and small-cell aggregation off best-effort public paths.",
+        "metrics": [
+          { "label": "SITE REACH", "value": "650+ towers" },
+          { "label": "STATES ON-NET", "value": "13" },
+          { "label": "QUALITY BAR", "value": "Carrier-grade" }
+        ]
+      },
       "title": "Fiber to the Tower",
       "subtitle": "Fast & Reliable Wireless Backhaul",
       "placeholder": "Load Towers_Map.svg",
@@ -72,7 +107,16 @@
     },
     "nebraska": {
       "id": "nebraska",
-      "protocolFocus": "l1",
+      "architectureLayer": "L1",
+      "technicalBriefing": {
+        "headline": "Regional Continuity: Statewide Optical Depth",
+        "summary": "Uniform transport characteristics across metros, secondary markets, and rural aggregation nodes—purpose-built for statewide agencies, healthcare systems, and carrier wholesale continuity.",
+        "metrics": [
+          { "label": "FIBER MI", "value": "10,000+" },
+          { "label": "COMMUNITIES", "value": "163 lit" },
+          { "label": "ARCHITECTURE", "value": "Contiguous λ" }
+        ]
+      },
       "title": "Nebraska Market",
       "subtitle": "Statewide Infrastructure Detail",
       "placeholder": "Load Nebraska_Detail.svg",
@@ -85,7 +129,16 @@
     },
     "omaha-metro": {
       "id": "omaha-metro",
-      "protocolFocus": "l1",
+      "architectureLayer": "L1",
+      "technicalBriefing": {
+        "headline": "Metro Mesh: Dense Handoff Topology",
+        "summary": "Short-haul and metro corridors engineered for deterministic handoffs into regional core and TierPoint-heavy interconnection—a low-loss substrate for hyperscale campuses and financial adjacency.",
+        "metrics": [
+          { "label": "METRO FIBER", "value": "800+ mi" },
+          { "label": "INTERCONNECT", "value": "DC-adjacent" },
+          { "label": "PATH LOSS", "value": "Minimal" }
+        ]
+      },
       "title": "Omaha / Council Bluffs",
       "subtitle": "Metro Area Street Level Routing",
       "placeholder": "Load Omaha_Metro.svg",
@@ -145,7 +198,16 @@
     },
     "data-centers": {
       "id": "data-centers",
-      "protocolFocus": "l3",
+      "architectureLayer": "L3",
+      "technicalBriefing": {
+        "headline": "Meet-Me Posture: Controlled IP Handoffs",
+        "summary": "Twenty-five-plus colocation footprints stitched into the national fiber roster—purpose-built for controlled routing policy, private cloud adjacency, and deterministic cross-connect economics.",
+        "metrics": [
+          { "label": "FACILITY COUNT", "value": "25+" },
+          { "label": "INTEGRATION", "value": "100% fiber attach" },
+          { "label": "TRAFFIC SHAPE", "value": "Private IP core" }
+        ]
+      },
       "title": "Data Centers",
       "subtitle": "Colocation & Interconnection Facilities",
       "type": "html",

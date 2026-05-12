@@ -40,6 +40,15 @@
             0% { transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px); }
             100% { transform: perspective(500px) rotateX(60deg) translateY(0px) translateZ(-200px); }
         }
+        /* Strategic architecture ladder — active rung (#EA580C = gpc-orange) */
+        .arch-ladder-marker-active {
+            opacity: 1 !important;
+            box-shadow: 0 0 12px rgba(234, 88, 12, 0.85);
+        }
+        .arch-ladder-label-active {
+            color: #EA580C;
+            text-shadow: 0 0 14px rgba(234, 88, 12, 0.5);
+        }
     </style>
 </head>
 <body class="bg-slate-100 text-slate-800 h-full flex flex-col overflow-hidden relative select-none font-sans antialiased" oncontextmenu="return false;">
@@ -117,29 +126,36 @@
                 </div>
             </div>
 
-            <div id="insight-container" class="absolute left-12 bottom-12 z-20 hidden flex-col items-start gap-4 transition-opacity duration-300">
-                <div id="insight-modal" class="bg-gpc-navy/95 backdrop-blur-md border border-slate-700/50 rounded-2xl p-6 shadow-2xl w-80 hidden opacity-0 transition-all duration-300 translate-y-4 origin-bottom-left">
-                    <h4 id="insight-heading" class="text-gpc-orange font-bold text-sm uppercase tracking-widest mb-3">Key Insight</h4>
-                    <p id="insight-text" class="text-slate-300 text-sm leading-relaxed"></p>
-                    <button onclick="toggleInsight()" class="absolute top-4 right-4 text-slate-400 hover:text-white">✕</button>
+            <div id="insight-container" class="absolute left-12 bottom-12 z-20 flex flex-col items-start gap-4 transition-opacity duration-500 opacity-0 pointer-events-none">
+                <div id="insight-modal" class="bg-gpc-navy/85 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl w-[22rem] max-w-[calc(100vw-6rem)] hidden opacity-0 transition-all duration-500 translate-y-4 origin-bottom-left">
+                    <h4 id="insight-heading" class="text-gpc-orange font-bold text-[11px] uppercase tracking-[0.28em] mb-4 border-b border-white/10 pb-3">Technical Briefing</h4>
+                    <p id="insight-headline" class="text-slate-100 text-sm font-semibold leading-snug mb-4 hidden tracking-tight"></p>
+                    <div id="insight-metrics-wrap" class="hidden mb-4">
+                        <p class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.28em] mb-2">Tech specs</p>
+                        <div id="insight-metrics" class="space-y-2.5 rounded-lg border border-white/10 bg-slate-950/40 backdrop-blur-sm px-3 py-3"></div>
+                    </div>
+                    <p id="insight-summary" class="text-slate-300 text-sm leading-relaxed"></p>
+                    <button type="button" onclick="toggleInsight()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">✕</button>
                 </div>
-                <button onclick="toggleInsight()" class="w-14 h-14 bg-white rounded-full shadow-floating flex items-center justify-center text-gpc-orange hover:bg-gpc-orange hover:text-white transition-colors border border-slate-200">
+                <button id="insight-trigger" type="button" onclick="toggleInsight()" class="w-14 h-14 rounded-full shadow-floating flex items-center justify-center text-gpc-orange hover:bg-gpc-orange hover:text-white transition-all duration-500 border border-white/15 bg-white/90 backdrop-blur-xl">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
                 </button>
             </div>
 
-            <div id="protocol-hud" class="absolute right-8 bottom-12 z-20 hidden flex flex-col gap-2 w-[11rem] p-3 rounded-2xl bg-gpc-navy/90 backdrop-blur-md border border-slate-700 pointer-events-none" aria-hidden="true">
-                <div id="protocol-hud-l3" class="rounded-lg border border-slate-700 px-3 py-2 transition-all duration-500 opacity-30 scale-100">
-                    <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-0.5">Layer 3</span>
-                    <span class="text-xs font-semibold text-slate-200 leading-snug">IP / Routing</span>
-                </div>
-                <div id="protocol-hud-l2" class="rounded-lg border border-slate-700 px-3 py-2 transition-all duration-500 opacity-30 scale-100">
-                    <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-0.5">Layer 2</span>
-                    <span class="text-xs font-semibold text-slate-200 leading-snug">Ethernet / Switching</span>
-                </div>
-                <div id="protocol-hud-l1" class="rounded-lg border border-slate-700 px-3 py-2 transition-all duration-500 opacity-30 scale-100">
-                    <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-0.5">Layer 1</span>
-                    <span class="text-xs font-semibold text-slate-200 leading-snug">Transport / Waves</span>
+            <div id="architecture-ladder" class="pointer-events-none absolute right-0 top-1/2 z-20 -translate-y-1/2 opacity-0 transition-opacity duration-500 border-l border-white/10 bg-gpc-navy/50 backdrop-blur-xl py-14 pl-5 pr-7 rounded-l-xl" aria-hidden="true">
+                <div class="flex flex-col items-end gap-12 transition-opacity duration-500">
+                    <div id="arch-ladder-ip" class="flex items-center gap-3 justify-end transition-all duration-500">
+                        <span class="arch-ladder-marker w-1 h-5 shrink-0 rounded-full bg-gpc-orange opacity-0 transition-all duration-500"></span>
+                        <span class="arch-ladder-label text-[11px] font-bold tracking-[0.35em] text-slate-500/40 transition-all duration-500">IP</span>
+                    </div>
+                    <div id="arch-ladder-eth" class="flex items-center gap-3 justify-end transition-all duration-500">
+                        <span class="arch-ladder-marker w-1 h-5 shrink-0 rounded-full bg-gpc-orange opacity-0 transition-all duration-500"></span>
+                        <span class="arch-ladder-label text-[11px] font-bold tracking-[0.35em] text-slate-500/40 transition-all duration-500">ETH</span>
+                    </div>
+                    <div id="arch-ladder-wave" class="flex items-center gap-3 justify-end transition-all duration-500">
+                        <span class="arch-ladder-marker w-1 h-5 shrink-0 rounded-full bg-gpc-orange opacity-0 transition-all duration-500"></span>
+                        <span class="arch-ladder-label text-[11px] font-bold tracking-[0.35em] text-slate-500/40 transition-all duration-500">WAVE</span>
+                    </div>
                 </div>
             </div>
 
@@ -174,39 +190,119 @@
         let navOrder = [];
         let pageContent = {};
 
-        const PROTOCOL_HUD_LAYER_BASE = 'rounded-lg border border-slate-700 px-3 py-2 transition-all duration-500';
-        const PROTOCOL_ONBOARDING_PITCHES = {
-            l1: 'Selling Wavelengths? Focus on the physics. No packet processing means zero jitter and absolute dedicated bandwidth for massive data center replication.',
-            l2: 'Selling Ethernet? Highlight our redundant rings. Layer 2 switching handles failures faster than IP routing, ensuring enterprise-grade uptime.',
-            l3: 'Selling IP Transit? It\'s about the path. Our direct peering at 25+ IXPs means we bypass the public internet congestion for direct cloud access.'
-        };
+        const ARCH_LADDER_ROW_BY_LAYER = { L3: 'arch-ladder-ip', L2: 'arch-ladder-eth', L1: 'arch-ladder-wave' };
 
-        function updateProtocolHud(protocolFocus) {
-            const hud = document.getElementById('protocol-hud');
-            if (!hud) return;
-            const valid = protocolFocus === 'l1' || protocolFocus === 'l2' || protocolFocus === 'l3';
-            hud.classList.toggle('hidden', !valid);
-            hud.setAttribute('aria-hidden', valid ? 'false' : 'true');
-            ['l3', 'l2', 'l1'].forEach((layerKey) => {
-                const el = document.getElementById(`protocol-hud-${layerKey}`);
-                if (!el) return;
-                const active = valid && protocolFocus === layerKey;
-                el.className = `${PROTOCOL_HUD_LAYER_BASE} ${active ? 'bg-gpc-blue/40 opacity-100 scale-105' : 'opacity-30 scale-100'}`;
+        function normalizeArchitectureLayer(raw) {
+            if (!raw || typeof raw !== 'string') return null;
+            const u = raw.trim().toUpperCase();
+            if (u === 'L1' || u === 'L2' || u === 'L3') return u;
+            return null;
+        }
+
+        function escapeHtml(str) {
+            if (str == null) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        function updateArchitectureLadder(architectureLayer) {
+            const ladder = document.getElementById('architecture-ladder');
+            if (!ladder) return;
+            const layer = normalizeArchitectureLayer(architectureLayer);
+            const show = !!layer;
+
+            ladder.setAttribute('aria-hidden', show ? 'false' : 'true');
+
+            ['L3', 'L2', 'L1'].forEach((key) => {
+                const row = document.getElementById(ARCH_LADDER_ROW_BY_LAYER[key]);
+                if (!row) return;
+                const marker = row.querySelector('.arch-ladder-marker');
+                const label = row.querySelector('.arch-ladder-label');
+                const active = show && layer === key;
+                if (marker) {
+                    marker.classList.toggle('opacity-100', active);
+                    marker.classList.toggle('opacity-0', !active);
+                    marker.classList.toggle('arch-ladder-marker-active', active);
+                }
+                if (label) {
+                    label.classList.toggle('arch-ladder-label-active', active);
+                    label.classList.toggle('text-slate-500/40', !active);
+                }
             });
+
+            if (show) {
+                ladder.classList.remove('opacity-0');
+                ladder.classList.add('opacity-100');
+            } else {
+                ladder.classList.remove('opacity-100');
+                ladder.classList.add('opacity-0');
+            }
+        }
+
+        function fillTechnicalBriefingModal(data) {
+            const headlineEl = document.getElementById('insight-headline');
+            const metricsWrap = document.getElementById('insight-metrics-wrap');
+            const metricsEl = document.getElementById('insight-metrics');
+            const summaryEl = document.getElementById('insight-summary');
+            if (!headlineEl || !metricsWrap || !metricsEl || !summaryEl) return;
+            const tb = data.technicalBriefing;
+
+            if (tb && typeof tb === 'object') {
+                if (tb.headline) {
+                    headlineEl.textContent = tb.headline;
+                    headlineEl.classList.remove('hidden');
+                } else {
+                    headlineEl.textContent = '';
+                    headlineEl.classList.add('hidden');
+                }
+                const metrics = Array.isArray(tb.metrics) ? tb.metrics : [];
+                if (metrics.length > 0) {
+                    metricsEl.innerHTML = metrics.map((m) => `
+                        <div class="flex justify-between gap-4 items-baseline text-[11px]">
+                            <span class="text-slate-500 uppercase tracking-wider shrink-0">${escapeHtml(m.label)}</span>
+                            <span class="font-mono text-xs text-slate-100 text-right tabular-nums tracking-tight">${escapeHtml(m.value)}</span>
+                        </div>
+                    `).join('');
+                    metricsWrap.classList.remove('hidden');
+                } else {
+                    metricsEl.innerHTML = '';
+                    metricsWrap.classList.add('hidden');
+                }
+                summaryEl.textContent = tb.summary || '';
+            } else if (data.insight) {
+                headlineEl.classList.add('hidden');
+                headlineEl.textContent = '';
+                metricsWrap.classList.add('hidden');
+                metricsEl.innerHTML = '';
+                summaryEl.textContent = data.insight;
+            } else {
+                headlineEl.classList.add('hidden');
+                metricsWrap.classList.add('hidden');
+                metricsEl.innerHTML = '';
+                summaryEl.textContent = '';
+            }
         }
 
         function syncInsightBulb(data) {
             const insightContainer = document.getElementById('insight-container');
-            const insightHeading = document.getElementById('insight-heading');
-            const insightTextEl = document.getElementById('insight-text');
-            const pitch = data.protocolFocus && PROTOCOL_ONBOARDING_PITCHES[data.protocolFocus];
-            const bodyText = pitch || data.insight;
-            if (insightHeading) insightHeading.innerText = pitch ? 'Onboarding Pitch' : 'Key Insight';
-            if (bodyText) {
-                insightContainer.classList.remove('hidden');
-                insightTextEl.innerText = bodyText;
+            const heading = document.getElementById('insight-heading');
+            const tb = data.technicalBriefing;
+            const hasStructured = tb && typeof tb === 'object' && (tb.summary || tb.headline || (Array.isArray(tb.metrics) && tb.metrics.length > 0));
+            const hasLegacy = typeof data.insight === 'string' && data.insight.length > 0;
+            const hasContent = hasStructured || hasLegacy;
+
+            if (heading) heading.textContent = 'Technical Briefing';
+
+            if (hasContent) {
+                fillTechnicalBriefingModal(data);
+                insightContainer.classList.remove('opacity-0', 'pointer-events-none');
+                insightContainer.classList.add('opacity-100');
             } else {
-                insightContainer.classList.add('hidden');
+                insightContainer.classList.add('opacity-0', 'pointer-events-none');
+                insightContainer.classList.remove('opacity-100');
             }
         }
         /** Full section list (wholesale + enterprise views merged). */
@@ -392,7 +488,7 @@
                 renderHTMLContent(viewId, htmlLayer);
             }
 
-            updateProtocolHud(data.protocolFocus);
+            updateArchitectureLadder(data.architectureLayer);
             syncInsightBulb(data);
         }
 
@@ -504,7 +600,7 @@
                 modal.classList.add('opacity-0', 'translate-y-4');
                 setTimeout(() => {
                     modal.classList.add('hidden');
-                }, 300);
+                }, 500);
             }
         }
 
