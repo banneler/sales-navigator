@@ -112,7 +112,7 @@ roleplay:
 
 ## Why ABM here
 
-Account-based programs work when **Sales and Marketing agree on cadence, targets, and ownership**. This module mirrors the **ABM SOP** verbatim: a **high-touch, 90-day coordinated effort** between Sales and Marketing on **high-value Strategic accounts**, with **18 personal sales touches** under **consistent marketing air cover** so GPC stays **top-of-mind for key decision-makers**.
+Account-based programs work when sales and marketing agree on cadence, targets, and who owns what. This module tracks the ABM SOP: a ninety-day, coordinated motion on strategic accounts—reps carrying the personal outreach, marketing providing air cover—so the people who matter keep hearing one consistent story from GPC.
 
 Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a named executive target—and what do I bring to kickoff?*
 
