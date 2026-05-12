@@ -59,34 +59,24 @@
     html.sn-embed body {
       min-height: 0;
       height: 100%;
-      padding: 0.5rem;
+      padding: 0;
       margin: 0;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
       box-sizing: border-box;
+      background: transparent !important;
     }
     html.sn-embed body > div {
       flex: 1;
       min-height: 0;
       min-width: 0;
       width: 100%;
+      max-width: none;
       display: flex;
       flex-direction: column;
       justify-content: center;
-    }
-    html.sn-embed section[aria-label="Discovery Galaxy game"] {
-      flex: 1;
-      min-height: 0;
-      min-width: 0;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0.75rem !important;
-      margin: 0;
-      box-sizing: border-box;
     }
     html.sn-embed .game-stack {
       flex: 1;
@@ -105,9 +95,36 @@
       height: auto;
       max-height: 100%;
       object-fit: contain;
+      /* Parent module section already frames the game; cyan border read as focus/selection */
+      border: none;
+      outline: none;
+      box-shadow: none;
     }
+    /* Single chrome: Sales-Navigator discovery card wraps iframe — flatten inner shell */
+    html.sn-embed section[aria-label="Discovery Galaxy game"] {
+      flex: 1;
+      min-height: 0;
+      min-width: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 !important;
+      margin: 0;
+      box-sizing: border-box;
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+    }
+    html.sn-embed body,
     html.sn-embed body.sn-embed-body {
-      padding: 0.5rem !important;
+      background: transparent !important;
+      padding: 0 !important;
+    }
+    /* Softer HUD bar; avoid second emerald “card” accent */
+    html.sn-embed section[aria-label="Discovery Galaxy game"] > div.mt-3 {
+      border-top-color: rgb(226 232 240 / 0.75);
     }
   </style>
   <script>
