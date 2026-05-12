@@ -31,7 +31,7 @@ video_carousel:
 five_minute_summary: |
   - **The Microsoft Teams Play:** We have two motions. "Embedded UC" puts our app inside Teams and saves them the MS Teams Phone license. "Ascend with Teams" uses the native MS dialer and *does* require the MS Teams Phone license. Do not blend these pitches.
   - **The Bundle:** Our platform (powered by Intermedia) includes enterprise calling, SMS/MMS, HD meetings, and AI recaps on a 99.999% uptime foundation.
-  - **The Plan Ladder:** Four tiers — **Express** (voice only), **Essentials** (adds video up to 25 + AI recap + call recording), **Pro** (adds inbound Call Center + CRM integrations + video to 100), **Enterprise** (Pro + video to 200 + 200 GB storage). Pick by **workload**, not company size — most multi-site customers run a *mix* (Express at reception, Pro for sales, Enterprise at HQ).
+  - **The Plan Ladder:** Five tiers — **Resource Line** (one concurrent endpoint, no apps; for front-desk, lobby, and conference-room phones that just need to ring), **Express** (voice only), **Essentials** (adds video up to 25 + AI recap + call recording), **Pro** (adds inbound Call Center + CRM integrations + video to 100), **Enterprise** (Pro + video to 200 + 200 GB storage). Pick by **workload**, not company size — plans **mix and match per user**, so most multi-site customers run a *blend* (Resource Lines at lobby phones, Express at reception, Pro for sales, Enterprise at HQ).
   - **Contact Center:** We sell an omnichannel CX add-on (Voice, SMS, chat). Licensing is concurrent, meaning they only pay for the maximum number of agents logged in at the same time, not a named license for every single employee. Note: UC Pro and Enterprise already include *inbound* Call Center features (queueing, supervisor monitor/whisper/barge); the dedicated **CCaaS** product is the separate omnichannel SKU.
   - **Legacy:** We still support SIP and PRI for customers who aren't ready to move fully to the cloud, but the goal is always to pivot to UCaaS.
 knowledge_checks:
@@ -84,6 +84,34 @@ knowledge_checks:
       - Stop and bring in your Solutions Engineer. IPN/OffNet porting under an active carrier contract, multi-level IVR scoping, and Salesforce CTI integration are all SE-validated designs — promising any of them on your own creates an install fight you can't win.
     correct_index: 2
     explanation: 'The deep-dive rule already says "Do not attempt to quote high-volume burst capacity or complex IVR routing on your own. Bring in your SE immediately." Extend that rule to **IPN/OffNet porting** (existing-carrier contract handoffs) and **CRM CTI integrations** (Salesforce/ServiceNow/Dynamics screen-pops). When you see any of the three, pause and pull in the SE.'
+
+  - question: "Name the five GPC UC plan tiers, lowest to highest."
+    options:
+      - "Resource Line → UC Express → UC Essentials → UC Pro → UC Enterprise."
+      - "UC Lite → UC Standard → UC Plus → UC Pro → UC Enterprise."
+      - "UC Express → UC Essentials → UC Pro → UC Enterprise → UC Enterprise+."
+    correct_index: 0
+    explanation: "Resource Line is the standalone-endpoint floor (one concurrent line, no apps, for lobby / conference-room / common-area phones). Everything above it scales by video participants, storage, call-center features, and CRM integrations."
+    source: "UC Plan Comparison - Internal use only 2026.pdf"
+
+  - question: "A customer needs 40 omnichannel agents with outbound calling, supervisor monitor/whisper/barge, queued callback, and post-call surveys. Which CCaaS tier do you anchor the quote on?"
+    options:
+      - "CC Elite — outbound dialer, supervisor monitor/whisper/barge, queued callback, and post-call surveys are Elite-only capabilities."
+      - "CC Pro — Pro is the default; Elite is just a marketing tier."
+      - "UC Pro's Advanced Hunt Groups — same feature set, lower cost."
+    correct_index: 0
+    explanation: "Both tiers are concurrent-seat licensed and both are omnichannel-capable, but supervisor coaching, outbound dialer, callback, and post-call surveys are explicit Elite-tier capabilities. Quoting Pro for an outbound-heavy or supervisor-coaching workload creates a feature-gap fight at install."
+    source: "Contact Center datasheet 050925.pdf"
+
+  - question: "A customer is replacing their front-desk receptionist's phone. They want a large color touch screen with on-screen line management. Which Yealink model do you spec?"
+    options:
+      - "T57W (Advanced) — 7-inch, 800×480 capacitive touch screen."
+      - "T53W (Basic) — 3.7-inch graphical LCD, 8 line keys."
+      - "T54W (Intermediate) — 4.3-inch color LCD, 10 line keys."
+    correct_index: 0
+    explanation: "Pick by **role**, not by what's cheapest. Front desk gets Advanced (T57W) because the receptionist needs a touch-screen line-management experience. Back-office workers who just answer their own line are well-served by the T53W Basic."
+    source: "UC Phone Comparison sheet.pdf"
+
 scenarios:
   - title: The Microsoft Native Trap
     situation: |
@@ -157,15 +185,49 @@ We deliver a 99.999% uptime cloud voice platform that embeds directly into Micro
 
 | Tier | Voice | Video participants | Storage / user | Call Center features | CRM integrations | Lead with when… |
 | --- | --- | --- | --- | --- | --- | --- |
+| **Resource Line** | 1 concurrent endpoint (no apps) | — | — | — | — | Standalone resource lines — front-desk, lobby, conference-room, common-area phones; the line just needs to ring |
 | **Express** | Unlimited | — (no video) | — | — | Active Directory, Chrome Click-to-Call | Reception desks, freelancers, dispatchers, scheduling-only roles |
 | **Essentials** | Unlimited | 25 | 5 GB | — | — | Hybrid teams, customer support, sales on the go, MS 365 integration |
 | **Pro** | Unlimited | 100 | 50 GB | Queueing, Wallboards, Supervisor Monitor/Whisper/Barge, End-to-End Encryption | Salesforce, ServiceNow, NetSuite, MS Dynamics, Sugar, Zoho, Zendesk | Inbound call-center workloads, high-volume sales/support, CRM-integrated desks |
 | **Enterprise** | Unlimited | 200 | 200 GB | Pro + Smart Greetings + Additional Recording Storage | Same as Pro | Large all-hands, company-wide voice, town-hall meetings |
 
-**Plan-tier landmine:** Don't default to Enterprise just because the customer is enterprise-sized. Match the **plan** to the **workload** — most multi-site customers run a *mix* (e.g., Express at reception desks + Pro for sales + Enterprise at HQ for the monthly all-hands). The 25 / 100 / 200-participant video ceiling is the most common forcing function on tier selection.
+**Plan-tier landmine:** Don't default to Enterprise just because the customer is enterprise-sized. Match the **plan** to the **workload** — plans **mix and match per user**, so most multi-site customers run a *blend* (e.g., Resource Lines at the lobby and conference rooms + Express at reception + Pro for sales + Enterprise at HQ for the monthly all-hands). The 25 / 100 / 200-participant video ceiling is the most common forcing function on tier selection. Quoting Pro for a phone that just needs to ring is over-licensing—that's what Resource Line is for.
+
+**Phone hardware — the Yealink ladder:**
+
+Three desk-phone tiers, all with USB 2.0, dual-band 2.4/5 GHz Wi-Fi, and support for the Yealink EXP50 expansion module. Pick by **role**, not by tier name — front desk gets Advanced, back office gets Basic.
+
+| Tier | Model | Display | Line Keys |
+| --- | --- | --- | --- |
+| **Basic** | Yealink T53W | 3.7", 360×160 graphical LCD | 8 line keys with LED |
+| **Intermediate** | Yealink T54W | 4.3", 480×272 color LCD | 10 line keys with LED |
+| **Advanced** | Yealink T57W | 7", 800×480 capacitive touch screen | Touch-screen based |
 
 **Contact Center (CCaaS):**
 - **UC Pro/Enterprise already include inbound Call Center features** — queueing, hunt groups, wallboards, and Supervisor Monitor/Whisper/Barge — enough to run a small/medium **voice-only** help desk. The dedicated **CCaaS** product is a separate SKU for **omnichannel** workloads (voice + SMS + chat), advanced IVR, deep CRM screen-pops, and concurrent licensing across channels. Don't conflate the two when scoping.
 - Deep integrations with CRMs (Salesforce, Zendesk, HubSpot) for automatic screen pops.
 - "Concurrent" means if they have 50 total employees, but only 10 answer phones at any given time, they only buy 10 licenses.
 - Do not attempt to quote high-volume burst capacity, complex IVR routing, IPN/OffNet ports under an active carrier contract, or CRM CTI integrations on your own. Bring in your SE immediately.
+
+**CC Pro vs. CC Elite — which tier fits:**
+
+The dedicated CCaaS product ships in **two tiers**. Both are concurrent-seat licensed; both are omnichannel-capable (voice / chat / email / SMS / WhatsApp queues, depending on add-ons); both include the standard analytics + reporting stack. CC Elite is the supervisor-heavy / outbound-heavy tier.
+
+| Capability | CC Pro | CC Elite |
+| --- | --- | --- |
+| Concurrent-seat licensing | ✓ | ✓ |
+| Inbound Voice Queues, ACD, customizable IVR | ✓ | ✓ |
+| Pre-built CRM integrations (Salesforce, Dynamics, Zendesk, Slack) | ✓ | ✓ |
+| Real-time + historical reporting, dashboards | ✓ | ✓ |
+| Skill-Based Routing | ✓ | ✓ |
+| Supervisor Monitor / Whisper / Barge-In | — | ✓ |
+| Outbound Voice + Outbound Dialer (scheduled power dialing) | — | ✓ |
+| Geo-Routing + Advanced Rules-Based Routing (Last Agent / Preferred Agent) | — | ✓ |
+| Queued Callback + Queued Voicemail | — | ✓ |
+| Real-Time Customizable Threshold Alerts | — | ✓ |
+| Post-Call Surveys + Call Scripting | — | ✓ |
+| Custom Agent Status + Elastic Demand Support | — | ✓ |
+
+**Add-ons available on both tiers (additional cost):** Chat / Email / WhatsApp Channel Queues, Dynamic Notification (Voice/Email/SMS), Schedule Manager, AI Agent Evaluator, Screen Recording, omnichannel Archiving across voice / SMS / chat / email / screen recordings.
+
+**Pick CC Elite when** you see outbound calling, supervisor coaching workflows, callback functionality, post-call surveys, or strict SLA threshold alerts on the requirements list. Otherwise CC Pro is the right anchor. **Don't conflate UC Pro's Advanced Hunt Groups with the CCaaS product** — UC Pro is light-call-center for voice-only; CC Pro/Elite is the real omnichannel CCaaS.

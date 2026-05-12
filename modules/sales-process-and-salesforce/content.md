@@ -57,6 +57,8 @@ five_minute_summary: |
   - **The Contract Signer:** Set the Contract Signer on the GPC Solution early—before it ever hits Approval Pending. Trying to append it at the 11th hour will block your DocuSign envelope.
   - **DocuSign prep:** Every single recipient on a DocuSign envelope must exist as a Contact on the account first. No exceptions.
   - **Closed Lost:** Never delete a Closed Lost record. That history is critical for forecasting and future re-engagement campaigns.
+  - **Three Contact Roles are mandatory on every Closed-Won Solution:** Project Contact, Billing Contact, and Property Manager / On-Site Manager. Skip them and you don't fail the close—you stall the install, because PMO can't reach the building and the bill lands in the wrong inbox.
+  - **Costing Routing has three flags** that change the routing path: **Strategic Build** (geographic), **Zone Parent** (multi-site structural), and **Reusable** (procedural). Different flags, different rules—and Reusable is **not allowed** under a Zone Parent.
 
 your_coaches:
   coaches:
@@ -101,6 +103,42 @@ knowledge_checks:
       - "Revert the Opportunity back to a Lead so marketing can nurture them."
     correct_index: 0
     explanation: "Closed Lost history is highly valuable data. Deleting records destroys our competitive intelligence."
+
+  - question: "Which Contact Roles does the QRG say must be set on every Closed-Won GPC Solution?"
+    options:
+      - "Project Contact, Billing Contact, and Property Manager / On-Site Manager."
+      - "Just the Decision Maker—everything else is optional."
+      - "Sales' Main Contact and the Influencer. PMO figures the rest out post-close."
+    correct_index: 0
+    explanation: "Skipping the three required roles doesn't fail the close. It stalls the install (PMO can't reach the building) and routes the bill to the wrong inbox."
+    source: "Contact Roles Quick Reference Guide - 1023.pdf"
+
+  - question: "On the same Solution Site you've selected both New Services and Existing Services. Which costing routing path does Salesforce follow?"
+    options:
+      - "The New Services path."
+      - "The Existing Services path."
+      - "Both paths run in parallel and the system reconciles them at Close-Won."
+    correct_index: 0
+    explanation: "When New and Existing Services are both selected, the New Services path wins—always."
+    source: "Costing Routing Quick Reference Guide - 1123.pdf (Considerations)"
+
+  - question: "A Solution Site is associated with a Zone Parent Opportunity. Can it use the Reusable flag for costing?"
+    options:
+      - "No—Reusable is not allowed when a Solution Site is associated with a Zone Parent Opportunity."
+      - "Yes—Reusable speeds up multi-site deals, so Zone Parent + Reusable is the recommended combination."
+      - "Only if the site is also flagged Strategic Build."
+    correct_index: 0
+    explanation: "Strategic Build, Zone Parent, and Reusable are independent flags. The QRG is explicit: Reusable is not allowed under a Zone Parent."
+    source: "Costing Routing Quick Reference Guide - 1123.pdf (Considerations)"
+
+  - question: "What conditions flag a Solution Site as Strategic Build?"
+    options:
+      - "The site's GPS coordinates fall within geographical boundaries pre-loaded into Salesforce. When flagged, Individual Drop Cost and Individual Equipment Cost apply systematically."
+      - "Any deal over $50k MRC."
+      - "Any deal involving a Zone Parent Opportunity."
+    correct_index: 0
+    explanation: "Strategic Build is purely geographic, not financial. The geographic boundary triggers the systematic cost application."
+    source: "Costing Routing Quick Reference Guide - 1123.pdf (Considerations)"
 
 scenarios:
   - title: "The 11th Hour Signer"
@@ -185,6 +223,49 @@ Tasks, list views, and Home dashboards are the hygiene habit—if activity isn't
 ---
 
 ## Process Deep Dive [deep]
+
+### Contact Roles — the part that bites you later
+
+Every Closed-Won GPC Solution must carry **three Contact Roles**: **Project Contact**, **Billing Contact**, and **Property Manager / On-Site Manager**. Miss any of those three and the close goes through clean—but the install stalls (PMO can't reach the building) and the first bill lands in the wrong inbox. It's a slow, expensive way to break a customer's first 30 days with GPC.
+
+The full role list, from the Contact Roles QRG:
+
+- **Sales' Main Contact** — the person you reach out to about the sale or contract.
+- **Influencer** — encourages or recommends GPC to the Decision Maker.
+- **Decision Maker** — signs the contract. May or may not be the owner.
+- **Project Contact** — PMO's point of contact for installation. **Required on every Closed-Won Solution.**
+- **Billing Contact** — PMO and Business Customer Care's billing contact. **Required on every Closed-Won Solution.**
+- **Property Manager / On-Site Manager** — for site access. **Required on every Closed-Won Solution.**
+- **General Contractor** — only when construction is needed.
+- **IT / Technical / Data Contact** — coordinates with the customer's IT contractor.
+- **Phone System Contact** — coordinates Voice / phone-system installs (skip for UC-only deals).
+- **Agent (Channel)** — Channel Sales only.
+- **Business User** — the person actually using the service.
+- **Other** — last resort, when nothing else fits.
+
+**On the Contact record itself:** set **Status = Active** and populate **Preferred Contact Method** with the matching contact info. Stale-status contacts get dropped from automated comms—a clean record now saves a phone tag spiral later.
+
+### Costing Routing & Reusable — the three flags that change everything
+
+Every Solution Site is routed for costing based on the **Services**, **Site Type**, and **Products** selected. Start with the New-vs-Existing distinction:
+
+- **New Services** — Services that need a new install connection, or the customer is brand new to GPC.
+- **Existing Services** — Services GPC already provides at the site; you're upgrading, downgrading, or adding features.
+
+**Two rules to memorize.** Get either wrong and the Solution sits in the wrong queue for days:
+
+1. **If New *and* Existing Services are both selected on the same Solution Site, routing follows the New Services path.**
+2. **If multiple Services are selected on the same Site, routing follows the path of the Service that needs the deepest review.**
+
+**Three flags can change the routing path.** They are **independent of each other**—don't assume Strategic Build implies Reusable, or that Zone Parent gates Strategic Build:
+
+| Flag | What it does | When it applies |
+| --- | --- | --- |
+| **Strategic Build** | Individual Drop Cost and Individual Equipment Cost apply systematically—bypassing OSP review for those line items. | Site's GPS coordinates fall within geographic boundaries pre-loaded into Salesforce. |
+| **Zone Parent Opportunity** | Solution Sites under a Zone Parent may bypass automation in routing. | Multi-site deals with a parent Opportunity tying child Solutions together. |
+| **Reusable** | OSP and Network Engineering complete the costing routing on the team's behalf via the Reusable matrix. | Specific criteria are met (see QRG). **Not allowed under a Zone Parent.** |
+
+**Pinned landmine.** **Reusable is not allowed when a Solution Site is associated with a Zone Parent Opportunity.** Reps often assume Strategic Build and Reusable are the same fast-lane—they aren't. Strategic Build is *geographic* (does the site fall in the boundary?); Zone Parent is *structural* (is the deal multi-site?); Reusable is *procedural* (is the matrix populated?). Treat the flags as three separate conversations.
 
 <!--
 **Lifecycle flow:**
