@@ -97,13 +97,27 @@
 .module-markdown-body tr:nth-child(even) {
   background-color: #f8fafc;
 }
-/* Card-wrapped wide tables (e.g. UC plan ladder): flush inner margins, align multi-line cells */
+/* Card-wrapped wide tables (e.g. UC plan ladder): fit main column, avoid horizontal scroll */
+.module-markdown-body .module-plan-ladder-table-wrap {
+  /* table uses layout: fixed + wrap; keep auto only for very narrow emergency scroll */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .module-markdown-body .module-plan-ladder-table-wrap table {
   margin: 0;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  max-width: 100%;
+  font-size: 0.6875rem;
+  line-height: 1.35;
 }
 .module-markdown-body .module-plan-ladder-table-wrap th,
 .module-markdown-body .module-plan-ladder-table-wrap td {
   vertical-align: top;
+  padding: 0.35rem 0.45rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 .module-markdown-body img {
   display: block;
