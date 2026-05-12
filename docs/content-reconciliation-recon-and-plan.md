@@ -6,6 +6,15 @@
 
 ---
 
+> ## Status — 2026-05-11
+>
+> - **Passes 2, 3, 4, 5 complete** across the five top-priority modules (`account-based-marketing`, `operational-business-reviews`, `product-itv`, `product-cloud-wifi-and-backup`, `product-uc-voice-and-collaboration`).
+> - **Pass 2 hallucination strikes** landed in `cc6c75f`; the **flagged-claims SME-review log** is now at `docs/flagged-claims-for-sme-review.md` (5 open items).
+> - **Pass 1 (deep-link the 7 remaining hub-only `reference_files`) is deferred** pending SharePoint URLs from the product owner. ABM and OBR already have folder-specific links; the remaining 7 modules continue pointing at the Sales Resources hub root, which is functional but not optimal.
+> - When Pass 1 resumes, the work is mechanical: drop the URL into the `reference_files[].sharepoint_url` field and re-validate the front matter. No content edits required.
+
+---
+
 ## 1. Source-of-truth inventory
 
 What we already have on disk — and what each artifact is *good for* vs *bad for*.
