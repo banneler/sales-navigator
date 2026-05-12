@@ -1,12 +1,14 @@
 ---
 id: product-cloud-wifi-and-backup
-title: 'Cloud, Wi-Fi & Backup'
+title: 'Cloud, Wi-Fi, 5G'
 summary: Cloud Connect. Managed Wi-Fi. 5G Wireless Backup & Broadband.
 sensitivity: internal
 reference_files:
-  - label: 'Product Collateral (cloud, Wi‑Fi, backup)'
+  - label: 'Product Collateral (Cloud, Wi‑Fi, 5G)'
     sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/Product%20Collateral/Forms/AllItems.aspx?viewid=855b9d9a%2D724a%2D4ba1%2D876e%2D2325aaaf29e5'
 video_carousel:
+  - title: 'GPC Cloud Connect — Overview'
+    src: assets/cloud-wifi-5g/gpc-cloud-connect-overview.mp4
   - title: '5G Wireless Backup & Broadband — Product Launch'
     src: assets/wireless-backup/5g-wireless-product-launch.mp4
     poster: assets/wireless-backup/5g-wireless-product-launch.png

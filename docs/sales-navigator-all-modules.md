@@ -11,7 +11,7 @@ Single export in manifest order. **Canonical training source for each module is 
 - [Portfolio & Business Capabilities (`portfolio-and-business-capabilities`)](#portfolio-business-capabilities-portfolio-and-business-capabilities)
 - [Connectivity & Access (`product-connectivity`)](#connectivity-access-product-connectivity)
 - [Security & SD-WAN (`product-security-and-sd-wan`)](#security-sd-wan-product-security-and-sd-wan)
-- [Cloud, Wi-Fi & Backup (`product-cloud-wifi-and-backup`)](#cloud-wi-fi-backup-product-cloud-wifi-and-backup)
+- [Cloud, Wi-Fi, 5G (`product-cloud-wifi-and-backup`)](#cloud-wi-fi-5g-product-cloud-wifi-and-backup)
 - [GPC iTV for Business (`product-itv`)](#gpc-itv-for-business-product-itv)
 - [UC, Voice & Collaboration (`product-uc-voice-and-collaboration`)](#uc-voice-collaboration-product-uc-voice-and-collaboration)
 - [Competitive Positioning (`competitive-positioning`)](#competitive-positioning-competitive-positioning)
@@ -1517,20 +1517,22 @@ Healthcare SD-WAN talking points and compliance-oriented hooks are maintained in
 
 ---
 
-<a id="cloud-wi-fi-backup-product-cloud-wifi-and-backup"></a>
+<a id="cloud-wi-fi-5g-product-cloud-wifi-and-backup"></a>
 
-# Cloud, Wi-Fi & Backup (`product-cloud-wifi-and-backup`)
+# Cloud, Wi-Fi, 5G (`product-cloud-wifi-and-backup`)
 
 <!-- prettier-ignore-start -->
 ---
 id: product-cloud-wifi-and-backup
-title: 'Cloud, Wi-Fi & Backup'
+title: 'Cloud, Wi-Fi, 5G'
 summary: Cloud Connect. Managed Wi-Fi. 5G Wireless Backup & Broadband.
 sensitivity: internal
 reference_files:
-  - label: 'Product Collateral (cloud, Wi‑Fi, backup)'
+  - label: 'Product Collateral (Cloud, Wi‑Fi, 5G)'
     sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/Product%20Collateral/Forms/AllItems.aspx?viewid=855b9d9a%2D724a%2D4ba1%2D876e%2D2325aaaf29e5'
 video_carousel:
+  - title: 'GPC Cloud Connect — Overview'
+    src: assets/cloud-wifi-5g/gpc-cloud-connect-overview.mp4
   - title: '5G Wireless Backup & Broadband — Product Launch'
     src: assets/wireless-backup/5g-wireless-product-launch.mp4
     poster: assets/wireless-backup/5g-wireless-product-launch.png

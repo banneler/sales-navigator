@@ -1,4 +1,4 @@
-# Cloud, Wi-Fi & Backup — Handout
+# Cloud, Wi-Fi, 5G — Handout
 
 *Sales-Navigator · Great Plains Communications*
 
