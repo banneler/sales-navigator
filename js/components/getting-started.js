@@ -551,12 +551,20 @@ function positionGlassCard(hostEl, stepIndex, rect) {
   const sw = spotlight.width;
   const sh = spotlight.height;
 
-  /** Coffee Summary + Welcome: center the HUD above the spotlight (fallback below if no room). */
-  if (stepIndex === 2 || stepIndex === 3) {
+  /** Coffee Summary, Welcome, Knowledge check: center HUD above spotlight (below only if it fits in the viewport). */
+  if (stepIndex === 2 || stepIndex === 3 || stepIndex === 5) {
     const centerX = sx + sw / 2;
     let left = clampX(centerX - cardW / 2);
+    const belowTop = sy + sh + gap;
+    const belowFits = belowTop + cardH <= vh - gap;
     let top = sy - cardH - gap;
-    if (top < gap) top = sy + sh + gap;
+    if (top < gap) {
+      if (stepIndex === 5 && !belowFits) {
+        top = gap;
+      } else {
+        top = belowTop;
+      }
+    }
     top = clampY(top);
     let cardRect = { left, top, width: cardW, height: cardH };
     if (!rectsOverlap(cardRect, spotlight) && !cardOverlapsAny(cardRect, avoidRects)) {
@@ -565,8 +573,8 @@ function positionGlassCard(hostEl, stepIndex, rect) {
       hostEl.style.transform = 'none';
       return;
     }
-    if (top < sy) {
-      top = clampY(sy + sh + gap);
+    if (top < sy && (stepIndex !== 5 || belowFits)) {
+      top = clampY(belowTop);
       cardRect = { left, top, width: cardW, height: cardH };
       if (!rectsOverlap(cardRect, spotlight) && !cardOverlapsAny(cardRect, avoidRects)) {
         hostEl.style.left = `${left}px`;
