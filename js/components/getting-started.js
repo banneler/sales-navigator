@@ -40,7 +40,7 @@ function buildLetterWayfindingTabsHtml(letterHeading, letterBodyHtml, wayfinding
 
   if (wayfindingParts.length === 0) {
     return `
-          <section class="${baseShell} p-6 md:p-8">
+          <section class="${baseShell} p-6 md:p-8" data-tour-target="tour-welcome-tabs">
             <h3 class="text-lg font-bold text-slate-900">${escapeHtml(letterHeading)}</h3>
             <div class="text-sm text-slate-700 mt-3 space-y-3 leading-relaxed module-markdown-body">
               ${letterBodyHtml}
@@ -67,7 +67,7 @@ function buildLetterWayfindingTabsHtml(letterHeading, letterBodyHtml, wayfinding
     'js-gs-main-tab flex-1 min-w-[8rem] px-4 py-3 text-sm font-semibold transition border-b-2 -mb-px focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-orange-400';
 
   return `
-          <div class="${baseShell} overflow-hidden" data-gs-main-tabs>
+          <div class="${baseShell} overflow-hidden" data-gs-main-tabs data-tour-target="tour-welcome-tabs">
             <div class="flex flex-wrap border-b border-emerald-200/80 bg-emerald-50/60" role="tablist" aria-label="Welcome and next steps">
               <button type="button" id="gs-main-tab-0" role="tab" class="${tabBtn} border-orange-500 text-orange-900 bg-white" aria-selected="true" aria-controls="gs-main-panel-0" data-gs-tab="0" tabindex="0">${escapeHtml(letterHeading)}</button>
               <button type="button" id="gs-main-tab-1" role="tab" class="${tabBtn} border-transparent text-slate-600 hover:text-slate-900 hover:bg-white/70" aria-selected="false" aria-controls="gs-main-panel-1" data-gs-tab="1" tabindex="-1">${escapeHtml(secondLabel)}</button>
@@ -173,7 +173,7 @@ function buildGettingStartedMarkup(meta, body) {
     <div class="tour-demo-content max-w-[1600px] mx-auto space-y-6 pb-4 select-none">
       <div class="flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
         <div class="w-full lg:flex-1 min-w-0 space-y-6 pointer-events-none" data-tour-target="module-core">
-          <section class="module-five-min w-full border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm backdrop-blur-sm" aria-labelledby="five-min-heading-getting-started">
+          <section class="module-five-min w-full border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm backdrop-blur-sm" aria-labelledby="five-min-heading-getting-started" data-tour-target="tour-coffee-summary">
             <div class="flex w-full min-w-0 items-start gap-3">
               <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center text-base" title="Coffee Summary"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></span>
               <div class="min-w-0 flex-1 w-full">
@@ -294,18 +294,22 @@ function getSpotlightRect(stepIndex) {
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
     case 2: {
-      const el = document.querySelector('[data-tour-target="module-core"]');
+      const el = document.querySelector('[data-tour-target="tour-coffee-summary"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
     case 3: {
-      const el = document.querySelector('[data-tour-target="tour-scenarios"]');
+      const el = document.querySelector('[data-tour-target="tour-welcome-tabs"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
     case 4: {
-      const el = document.querySelector('[data-tour-target="tour-knowledge"]');
+      const el = document.querySelector('[data-tour-target="tour-scenarios"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
     case 5: {
+      const el = document.querySelector('[data-tour-target="tour-knowledge"]');
+      return el ? rectLike(el.getBoundingClientRect()) : null;
+    }
+    case 6: {
       if (isMobileViewport()) {
         const el = document.getElementById('mobile-menu-btn');
         return el ? rectLike(el.getBoundingClientRect()) : null;
@@ -313,11 +317,11 @@ function getSpotlightRect(stepIndex) {
       const el = document.querySelector('[data-module-id="map-book"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
-    case 6: {
+    case 7: {
       const el = document.getElementById('fiber-path-btn');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
-    case 7:
+    case 8:
       return null;
     default:
       return null;
@@ -393,14 +397,13 @@ function findTourCardPositionClearOfSpotlight(spotlight, cardW, cardH, vw, vh, g
 
 /**
  * Extra regions the tour card must not cover (viewport coords).
- * Steps 2–3 on mid widths: stacked layout makes the main column tall—keep the HUD off it
- * so the spotlight on the scenarios rail (step 3) or the main column (step 2) stays visible.
+ * Steps 3–4 on mid widths: stacked layout—keep the HUD off the tall main column.
  * @param {number} stepIndex
  * @param {number} vw
  * @returns {Array<{ left: number; top: number; width: number; height: number }>}
  */
 function getTourCardAvoidRects(stepIndex, vw) {
-  if ((stepIndex !== 2 && stepIndex !== 3) || vw >= 1280) return [];
+  if ((stepIndex !== 3 && stepIndex !== 4) || vw >= 1280) return [];
   const el = document.querySelector('[data-tour-target="module-core"]');
   if (!el) return [];
   return [rectLike(el.getBoundingClientRect())];
@@ -532,6 +535,14 @@ function positionGlassCard(hostEl, stepIndex, rect) {
     return;
   }
 
+  /** Coffee Summary: compact spotlight—center the HUD on the viewport (ok to float over the highlight). */
+  if (stepIndex === 2) {
+    hostEl.style.left = '50%';
+    hostEl.style.top = '50%';
+    hostEl.style.transform = 'translate(-50%, -50%)';
+    return;
+  }
+
   /** Avoid centering over the viewport when the spotlight isn't ready yet (prevents HUD over the hole). */
   if (!rect || rect.width <= 0 || rect.height <= 0) {
     hostEl.style.left = `${Math.max(gap, vw - cardW - gap)}px`;
@@ -553,8 +564,8 @@ function positionGlassCard(hostEl, stepIndex, rect) {
   /** Prefer true viewport gutters first—plain clamping pulled candidates back into the spotlight. */
   const ordered = [];
 
-  if (stepIndex === 2) {
-    /** "Inside a module": keep the HUD on the right; avoid stacking below the tall main column (clips off-screen). */
+  if (stepIndex === 3) {
+    /** Welcome / tabs: keep the HUD on the right; avoid stacking below a tall column (clips off-screen). */
     if (rightGutterLeft + cardW <= vw - gap) {
       ordered.push({ left: rightGutterLeft, top: clampY(sy) });
     }
@@ -588,7 +599,7 @@ function positionGlassCard(hostEl, stepIndex, rect) {
     ordered.push({ left: gap, top: vh - cardH - gap });
   }
 
-  if (stepIndex === 2) {
+  if (stepIndex === 3) {
     ordered.push({ left: vw - cardW - gap, top: gap });
     ordered.push({ left: gap, top: clampY(sy + sh + gap) });
     ordered.push({ left: clampX(sx), top: sy + sh + gap });
@@ -625,7 +636,7 @@ function positionGlassCard(hostEl, stepIndex, rect) {
     };
   }
 
-  if ((stepIndex === 2 || stepIndex === 3) && vw < 1280 && avoidRects.length) {
+  if ((stepIndex === 3 || stepIndex === 4) && vw < 1280 && avoidRects.length) {
     const chosen = { left: best.left, top: best.top, width: cardW, height: cardH };
     if (cardOverlapsAny(chosen, avoidRects)) {
       const hero = avoidRects[0];
@@ -759,17 +770,27 @@ export async function loadGettingStarted(container, manifest) {
         </ul>`,
     },
     {
-      title: 'Inside a module',
-      icon: 'fa-book-open',
+      title: 'Coffee Summary',
+      icon: 'fa-mug-hot',
       body: `
         <p class="text-slate-800 leading-relaxed mb-3">
-          Each training module is built from structured content:
+          Most modules open with a <strong>Coffee Summary</strong>—a quick scan of the ideas worth remembering before you dive into the full narrative.
         </p>
         <ul class="list-disc pl-5 text-slate-700 space-y-${mobile ? '1.5' : '2'} text-sm">
-          <li><strong>Title and summary</strong> at the top set context.</li>
-          <li><strong>Coffee Summary</strong> bullets give a fast scan when present.</li>
-          <li>Major topics appear as <strong>section cards</strong>.</li>
-          <li>Some modules include <strong>reference links</strong>${mobile ? '.' : ' in a side area when provided.'}</li>
+          <li>Use it to <strong>prep fast</strong> before a call or internal huddle.</li>
+          <li>When you need depth, scroll into the section cards and references below—this block is the cheat sheet, not the whole story.</li>
+        </ul>`,
+    },
+    {
+      title: 'Welcome & next steps',
+      icon: 'fa-handshake',
+      body: `
+        <p class="text-slate-800 leading-relaxed mb-3">
+          The <strong>body</strong> of a module is where the story lives—letters, guidelines, deep dives, and (on this page) tabs for <strong>what happens next</strong>.
+        </p>
+        <ul class="list-disc pl-5 text-slate-700 space-y-${mobile ? '1.5' : '2'} text-sm">
+          <li>Elsewhere in the catalog you will see <strong>section cards</strong> for each major topic.</li>
+          <li>Some modules add <strong>reference links</strong> and side-by-side <strong>scenarios</strong> like the sample on the right.</li>
         </ul>`,
     },
     {
@@ -876,14 +897,14 @@ export async function loadGettingStarted(container, manifest) {
     const next = host?.querySelector('.gs-next');
     if (!next) return;
     const blocked =
-      (stepIndex === 3 && !scenarioComplete) ||
-      (stepIndex === 4 && !knowledgeComplete) ||
-      (stepIndex === 6 && !fiberPathComplete);
+      (stepIndex === 4 && !scenarioComplete) ||
+      (stepIndex === 5 && !knowledgeComplete) ||
+      (stepIndex === 7 && !fiberPathComplete);
     next.disabled = blocked;
     next.classList.toggle('opacity-50', blocked);
     next.classList.toggle('cursor-not-allowed', blocked);
     next.title = blocked
-      ? stepIndex === 6 && !fiberPathComplete
+      ? stepIndex === 7 && !fiberPathComplete
         ? 'Click Fiber path in the header first.'
         : 'Complete the activity in the highlighted area first.'
       : '';
@@ -892,7 +913,7 @@ export async function loadGettingStarted(container, manifest) {
   /** Recompute spotlight hole + glass card after demo content height changes (e.g. coach note). */
   function syncSpotlightAndCard() {
     const r = getSpotlightRect(stepIndex);
-    const skipOverlay = isMobileViewport() && (stepIndex === 2 || stepIndex === 3 || stepIndex === 4);
+    const skipOverlay = isMobileViewport() && stepIndex >= 2 && stepIndex <= 5;
     applySpotlightLayers(overlay, skipOverlay ? null : r);
     const host = glassRoot?.querySelector('.tour-glass-card-host');
     if (host) positionGlassCard(host, stepIndex, r);
@@ -1006,7 +1027,7 @@ export async function loadGettingStarted(container, manifest) {
     const btn = document.getElementById('fiber-path-btn');
     if (!btn) return;
     btn.addEventListener('click', () => {
-      if (stepIndex !== 6) return;
+      if (stepIndex !== 7) return;
       fiberPathComplete = true;
       refreshNextGate();
       scheduleSpotlightReflow();
@@ -1018,9 +1039,9 @@ export async function loadGettingStarted(container, manifest) {
 
   function bindCardActions(cardEl) {
     cardEl.querySelector('.gs-next')?.addEventListener('click', () => {
-      if (stepIndex === 3 && !scenarioComplete) return;
-      if (stepIndex === 4 && !knowledgeComplete) return;
-      if (stepIndex === 6 && !fiberPathComplete) return;
+      if (stepIndex === 4 && !scenarioComplete) return;
+      if (stepIndex === 5 && !knowledgeComplete) return;
+      if (stepIndex === 7 && !fiberPathComplete) return;
       if (stepIndex < steps.length - 1) {
         stepIndex += 1;
         render();
@@ -1048,41 +1069,52 @@ export async function loadGettingStarted(container, manifest) {
     const total = steps.length;
     const isLast = stepIndex === total - 1;
     const nextBlocked =
-      (stepIndex === 3 && !scenarioComplete) ||
-      (stepIndex === 4 && !knowledgeComplete) ||
-      (stepIndex === 6 && !fiberPathComplete);
+      (stepIndex === 4 && !scenarioComplete) ||
+      (stepIndex === 5 && !knowledgeComplete) ||
+      (stepIndex === 7 && !fiberPathComplete);
     const nextTitle = nextBlocked
-      ? stepIndex === 6 && !fiberPathComplete
+      ? stepIndex === 7 && !fiberPathComplete
         ? 'Click Fiber path in the header first.'
         : 'Complete the activity in the highlighted area first.'
       : '';
 
     const mobileView = isMobileViewport();
 
+    if (stepIndex === 2) {
+      document
+        .querySelector('[data-tour-target="tour-coffee-summary"]')
+        ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
     if (stepIndex === 3) {
+      document
+        .querySelector('[data-tour-target="tour-welcome-tabs"]')
+        ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    if (stepIndex === 4) {
       const el = document.querySelector('[data-tour-target="tour-scenarios"]');
       el?.scrollIntoView({ block: mobileView ? 'start' : 'nearest', behavior: 'smooth' });
     }
 
-    if (stepIndex === 4) {
+    if (stepIndex === 5) {
       const el = document.querySelector('[data-tour-target="tour-knowledge"]');
       el?.scrollIntoView({ block: mobileView ? 'start' : 'center', behavior: 'auto' });
     }
 
     const rect = getSpotlightRect(stepIndex);
-    if (mobileView && (stepIndex === 2 || stepIndex === 3 || stepIndex === 4)) {
+    if (mobileView && stepIndex >= 2 && stepIndex <= 5) {
       applySpotlightLayers(overlay, null);
     } else {
       applySpotlightLayers(overlay, rect);
     }
 
-    if (stepIndex === 5) {
+    if (stepIndex === 6) {
       document
         .querySelector('[data-module-id="map-book"]')
         ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
 
-    if (stepIndex === 6) {
+    if (stepIndex === 7) {
       document
         .getElementById('fiber-path-btn')
         ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
@@ -1180,12 +1212,16 @@ export async function loadGettingStarted(container, manifest) {
     const scenarioEl = container.querySelector('[data-tour-target="tour-scenarios"]');
     const knowledgeEl = container.querySelector('[data-tour-target="tour-knowledge"]');
     const moduleCoreEl = container.querySelector('[data-tour-target="module-core"]');
+    const coffeeEl = container.querySelector('[data-tour-target="tour-coffee-summary"]');
+    const welcomeTabsEl = container.querySelector('[data-tour-target="tour-welcome-tabs"]');
     if (host) resizeObs.observe(host);
     if (sb) resizeObs.observe(sb);
     if (fiberBtn) resizeObs.observe(fiberBtn);
     if (scenarioEl) resizeObs.observe(scenarioEl);
     if (knowledgeEl) resizeObs.observe(knowledgeEl);
     if (moduleCoreEl) resizeObs.observe(moduleCoreEl);
+    if (coffeeEl) resizeObs.observe(coffeeEl);
+    if (welcomeTabsEl) resizeObs.observe(welcomeTabsEl);
   }
 
   render();
