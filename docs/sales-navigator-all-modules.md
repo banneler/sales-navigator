@@ -2743,31 +2743,24 @@ The deliverable is a **front/back trifold insert** ("the Slick") with four compo
 | **Final Prep** | 3 days | Sarah → Account Rep | Printing, pickup, and trifold insertion. |
 | **The Meeting** | **Day 21** | Account Team | OBR Meeting. |
 
-**Why 21 business days, not 26?** If you add the phase slices naively—**3 + 10 + 5 + 5 + 3**—you get **26** business days. The SOP still lands on **21** because **Network Design** (10 days) and **Billing / NOC data collection** (5 days) **overlap** during Days 5–14. Teaching reps *why* the overlap exists is how you stop the *"just promise two weeks"* fire drill before it starts.
-
-**Why Day 14 is the hinge:** Marketing Design + Final Prep take seven business days. Miss the Day 14 handoff and you compress design and print into a fire drill—the opposite of the Zero-Fire-Drills criterion.
-
 ## Data Hygiene & the Single Packet
 
-**The "No Raw Dump" Rule.** Sales must scrub and audit all data before handoff. **Marketing is for design, not data entry or CID deciphering.** Translate internal catalog codes into plain-English service descriptions (e.g., `100M Fiber DIA`).
+### The "No Raw Dump" rule
 
-**Proactive Billing Wins.** Audit for address, tier, and MRC errors early. **Presenting an internal fix during the OBR proves proactive account management**—surface the correction on the slick under the Modernization lever instead of quietly burying it.
+Sales must scrub and audit all data before handoff. **Marketing is for design, not data entry or CID deciphering.** Translate internal catalog codes into plain-English service descriptions (e.g., `100M Fiber DIA`).
 
-**The Single Packet Handoff.** Marketing will not begin design until **one email** lands containing:
+### Proactive billing wins
+
+Audit for address, tier, and MRC errors early. Presenting an internal fix during the OBR proves proactive account management—surface the correction on the slick under the **Modernization** lever instead of quietly burying it.
+
+### The Single Packet handoff
+
+Marketing will not begin design until **one email** contains **both** of the following:
 
 1. The completed **OBR Sales Readiness Form** (with scrubbed data tables).
-2. The finalized **Visio Diagram** (verified).
+2. The finalized **Visio diagram** (verified).
 
 Partial sends do not start the clock.
-
-## Communication templates — subject-line discipline
-
-The SOP ships four kickoff templates. Use the subject-line pattern verbatim—it is the operating signal that the cycle is on rails.
-
-- **Design Request → Jerry Ehrenberg.** *Subject:* `OBR Design Request: [Customer Name] | DUE: 10 Business Days from Today`. Include known active locations and a 15-minute kickoff calendar hold.
-- **Billing Request → Billing Team.** *Subject:* `OBR Billing Request: [Customer Name] | DUE: 5 Business Days from Today`. Ask for location-specific totals, product/service breakouts, and contract expiration dates.
-- **Performance Request → NOC.** *Subject:* `OBR Performance Request: [Customer Name] | DUE: 5 Business Days from Today`. Ask for a 12-month ticket history snapshot (total volume, incident duration, services impacted, high-level resolution summaries) against the known CIDs and service addresses.
-- **Final Assets → Sarah.** *Subject:* `OBR FINAL ASSETS: [Customer Name] | Review Requested: [5 Business Days from Today]`. Include the audited Sales Readiness Form (strategic copy + data) and the finalized Visio. The slick goes to proof when Sarah signs off.
 <!-- prettier-ignore-end -->
 
 ---
