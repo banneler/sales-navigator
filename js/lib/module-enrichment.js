@@ -388,10 +388,10 @@ export function buildRoleplayHtml(meta) {
 
 /** Relative MP4 under site root (internal training paths only). */
 const SAFE_UC_VIDEO_SRC =
-  /^assets\/(?:UC\/|training\/salesforce\/)[a-zA-Z0-9._-]+\.mp4$/;
+  /^assets\/(?:UC\/|training\/salesforce\/|wireless-backup\/)[a-zA-Z0-9._-]+\.mp4$/;
 /** Optional static poster image next to MP4s. */
 const SAFE_UC_POSTER =
-  /^assets\/(?:UC\/|training\/salesforce\/)[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
+  /^assets\/(?:UC\/|training\/salesforce\/|wireless-backup\/)[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp)$/i;
 
 /** Matches overview-style `module-section-card` shells used for `##` sections. */
 const TRAINING_SECTION_CARD_CLASSES =
