@@ -18,10 +18,10 @@ import {
   isSalesTrioModule,
 } from './section-roles.js';
 
-/** Level-2 heading only (`##`), not `###`. */
+/** Level-2 heading only (`##`), not `###`. Bare `##` is an empty title. */
 function isH2Line(line) {
   if (line.startsWith('###')) return false;
-  return /^##\s/.test(line);
+  return /^##($|\s)/.test(line);
 }
 
 /**
@@ -66,7 +66,7 @@ export function splitMarkdownByH2(body) {
   for (const line of lines) {
     if (isH2Line(line)) {
       pushSection();
-      currentTitle = line.replace(/^##\s+/, '').trim();
+      currentTitle = line.replace(/^##\s*/, '').trim();
       currentLines = [];
     } else {
       currentLines.push(line);

@@ -59,7 +59,7 @@ roleplay:
 
 ---
 
-##
+## Pitch
 
 ::: elevator [Elevator Pitch]
 We deliver HD business TV, local sports, and cloud DVR right over your existing GPC internet connection. It's one reliable streaming service and one simple bill, keeping your breakrooms and lobbies entertained without the hassle of satellite dishes or messy wiring.
@@ -67,17 +67,15 @@ We deliver HD business TV, local sports, and cloud DVR right over your existing 
 
 ---
 
-##
+## Discovery Galaxy
 
-<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
-  <iframe
-    src="games/galactica-1/index.html?embed=1&module=product-itv"
-    title="Discovery Galaxy"
-    loading="lazy"
-    sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); background: #f1f5f9;"
-  ></iframe>
-</div>
+<iframe
+  src="games/galactica-1/index.html?embed=1&module=product-itv"
+  title="Discovery Galaxy"
+  loading="lazy"
+  sandbox="allow-scripts allow-same-origin"
+  style="width: 100%; border: 0; display: block; height: 40rem; max-height: min(88vh, 44rem); border-radius: 0.75rem; background: #0f172a;"
+></iframe>
 
 ---
 
