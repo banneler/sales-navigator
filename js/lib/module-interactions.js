@@ -158,7 +158,6 @@ function updateImageLibraryViewer(root, button, pageIndex) {
   const img = root.querySelector('.js-image-library-image');
   const titleEl = root.querySelector('.js-image-library-title');
   const pageEl = root.querySelector('.js-image-library-page-label');
-  const corner = root.querySelector('.js-image-library-corner');
   const hint = root.querySelector('.js-image-library-flip-hint');
   const prev = root.querySelector('.js-image-library-prev');
   const next = root.querySelector('.js-image-library-next');
@@ -168,17 +167,17 @@ function updateImageLibraryViewer(root, button, pageIndex) {
   if (titleEl) titleEl.textContent = title;
   if (pageEl) pageEl.textContent = `Page ${i + 1} / ${pages.length}`;
   if (img) {
+    img.setAttribute('src', pages[i]);
+    img.setAttribute('alt', `${title} page ${i + 1}`);
+    img.classList.remove('opacity-0', 'scale-[0.98]');
     img.classList.add('opacity-0', 'scale-[0.98]');
-    window.setTimeout(() => {
-      img.setAttribute('src', pages[i]);
-      img.setAttribute('alt', `${title} page ${i + 1}`);
+    requestAnimationFrame(() => {
       img.classList.remove('opacity-0', 'scale-[0.98]');
-    }, 90);
+    });
   }
-  if (corner) corner.classList.toggle('hidden', pages.length < 2);
   if (hint) {
     hint.textContent =
-      pages.length > 1 ? `Flip card: ${i + 1} of ${pages.length}` : '';
+      pages.length > 1 ? `Page ${i + 1} of ${pages.length}` : '';
   }
   if (prev) prev.disabled = i === 0;
   if (next) next.disabled = i === pages.length - 1;

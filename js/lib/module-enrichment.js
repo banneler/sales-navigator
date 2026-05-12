@@ -620,17 +620,9 @@ function buildImageLibraryHtml(docs) {
         i === 0
           ? 'border-orange-300 bg-orange-50/70 ring-2 ring-orange-200'
           : 'border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/40';
-      const corner =
-        doc.pages.length > 1
-          ? `<span class="absolute right-0 top-0 h-10 w-10 overflow-hidden rounded-tr-xl" aria-hidden="true">
-              <span class="absolute right-0 top-0 h-10 w-10 bg-gradient-to-bl from-orange-200 via-orange-100 to-transparent shadow-inner"></span>
-              <span class="absolute right-1 top-1 text-[10px] font-black text-orange-700">${doc.pages.length}</span>
-            </span>`
-          : '';
       return `<button type="button" class="js-image-library-open group relative flex min-w-0 flex-col rounded-xl border p-2 text-left shadow-sm transition ${selected}" data-library-index="${i}" data-library-title="${escapeHtml(doc.title)}" data-library-pages="${pageData}" data-library-current="0" aria-pressed="${i === 0 ? 'true' : 'false'}">
             <span class="relative block aspect-[4/3] w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-100">
               <img src="${srcEsc}" alt="" class="h-full w-full object-cover object-top transition duration-200 group-hover:scale-[1.03]" loading="lazy" decoding="async" />
-              ${corner}
             </span>
             <span class="mt-2 line-clamp-2 min-h-[2.5rem] text-xs font-semibold leading-snug text-slate-800">${escapeHtml(doc.title)}</span>
             <span class="mt-1 text-[11px] font-medium text-slate-500">${pagesText}</span>
@@ -654,10 +646,6 @@ function buildImageLibraryHtml(docs) {
               </button>
             </div>
             <div class="relative overflow-hidden rounded-xl border border-white/10 bg-white">
-              <span class="js-image-library-corner absolute right-0 top-0 z-[1] hidden h-14 w-14 overflow-hidden rounded-tr-xl" aria-hidden="true">
-                <span class="absolute right-0 top-0 h-14 w-14 bg-gradient-to-bl from-orange-300 via-orange-100 to-transparent shadow-inner"></span>
-                <span class="absolute right-2 top-2 text-[10px] font-black uppercase tracking-wide text-orange-800">flip</span>
-              </span>
               <img src="${escapeHtml(firstPage.src)}" alt="${escapeHtml(firstPage.alt)}" class="js-image-library-image max-h-[min(78vh,900px)] w-full object-contain bg-white transition duration-300 ease-out" loading="lazy" decoding="async" />
             </div>
             <div class="mt-3 flex flex-wrap items-center justify-between gap-3">
