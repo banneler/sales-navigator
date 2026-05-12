@@ -88,7 +88,8 @@ function buildGettingStartedMarkup(meta, body) {
             <div class="flex w-full min-w-0 items-start gap-3">
               <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center text-base" title="Coffee Summary"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></span>
               <div class="min-w-0 flex-1 w-full">
-                <h3 id="five-min-heading-getting-started" class="text-lg font-bold text-amber-950 mb-2">Coffee Summary</h3>
+                <h3 id="five-min-heading-getting-started" class="text-lg font-bold text-amber-950 mb-1">Coffee Summary</h3>
+                <p class="text-base font-semibold text-amber-900/95 tracking-tight mb-3">Welcome to Great Plains Communications</p>
                 ${coffeeInner}
               </div>
             </div>
