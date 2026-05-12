@@ -2406,7 +2406,7 @@ Differentiate last mile, routing, peering, and repair SLAs—map to **their** ap
 
 ### National carriers
 
-- **M&A (Cox / Charter / Spectrum):** Stability and continuity—**not** acquisition FUD.
+- **M&A (Cox / Charter / Spectrum):** Stability and continuity—**not** fear, uncertainty, and doubt (FUD) about the acquisition.
 - **Scale:** Symmetrical fiber and footprint vs. coax story—then tie to **their** downtime / latency risk.
 
 ### Omaha metro
@@ -2427,10 +2427,6 @@ They already have someone (Challenge #1). Sell **consolidation**—not “we’r
 ### 5G Wireless Backup
 
 **Dual-carrier choice, one bill, local + NOC**—vs. another direct-carrier relationship. Card skews **small sites** (see card for verticals).
-
-### When to disengage
-
-Trash-talk prompts, **price-only** with no fit, or design that needs an **SE**.
 <!-- prettier-ignore-end -->
 
 ---
