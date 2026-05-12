@@ -241,15 +241,3 @@ No—next-gen firewall and IDS/IPS are optional add-ons, not bundled in base Vel
 **Handoffs:** SE/security for HA, BGP/ASN DDoS, mixed-vendor firewall management, regulated environments, unusual scale. Pricing PDFs are internal until quoting validates.
 
 **Vertical fit:** retail stores, regional healthcare, community banking, insurance brokers, government, education, manufacturing—any multi-site business with VoIP/SaaS pain.
-
-::: accordion DDoS Protection Overview
-DDoS proactive vs on-demand positioning and mitigation windows are in **Sales Resources**—read the current product sheet before you promise 24×7 coverage on the wrong SKU.
-:::
-
-::: accordion SD-WAN Retail Brief
-Retail vertical briefs and proof points live in **Sales Resources**—pair with SE when the design is non-standard.
-:::
-
-::: accordion SD-WAN Healthcare Brief
-Healthcare SD-WAN talking points and compliance-oriented hooks are maintained in **Sales Resources**—validate PHI/regulated claims with SE.
-:::
