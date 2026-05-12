@@ -1090,8 +1090,8 @@ title: Connectivity & Access
 summary: DIA vs SIA. Ethernet. Beating Starlink.
 sensitivity: internal
 reference_files:
-  - label: Sales Resources (product collateral)
-    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
+  - label: Product Collateral (connectivity & access)
+    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/Product%20Collateral/Forms/AllItems.aspx?viewid=855b9d9a%2D724a%2D4ba1%2D876e%2D2325aaaf29e5'
 discovery_questions:
   - 'Are your employees primarily downloading data, or are they constantly uploading large files to cloud servers?'
   - 'How many physical locations do you have, and do they need to share private data directly with each other?'
@@ -1264,8 +1264,8 @@ title: "Security & SD-WAN"
 summary: "Managed edge. DDoS mitigation. Multi-site SD-WAN."
 sensitivity: "public"
 reference_files:
-  - label: "Sales Resources (security & SD-WAN collateral)"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+  - label: "Product Collateral (security & SD-WAN)"
+    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/Product%20Collateral/Forms/AllItems.aspx?viewid=855b9d9a%2D724a%2D4ba1%2D876e%2D2325aaaf29e5"
 discovery_questions:
   - "How many locations do you have, and which ones are on GPC fiber vs. other broadband or MPLS?"
   - "How are those locations connected today—VPN over shared Internet, MPLS, Ethernet? When does that contract expire?"
@@ -1528,8 +1528,8 @@ title: 'Cloud, Wi-Fi & Backup'
 summary: Cloud Connect. Managed Wi-Fi. 5G Wireless Backup & Broadband.
 sensitivity: internal
 reference_files:
-  - label: 'Sales Resources (cloud, Wi‑Fi, backup collateral)'
-    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
+  - label: 'Product Collateral (cloud, Wi‑Fi, backup)'
+    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/Product%20Collateral/Forms/AllItems.aspx?viewid=855b9d9a%2D724a%2D4ba1%2D876e%2D2325aaaf29e5'
 video_carousel:
   - title: '5G Wireless Backup & Broadband — Product Launch'
     src: assets/wireless-backup/5g-wireless-product-launch.mp4
@@ -1718,8 +1718,8 @@ title: "GPC iTV for Business"
 summary: "Business streaming. Cloud DVR. Single-bill simplicity."
 sensitivity: "internal"
 reference_files:
-  - label: "GPC iTV collateral — SharePoint (source of truth)"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+  - label: "Product Collateral — GPC iTV for Business"
+    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/Product%20Collateral/Forms/AllItems.aspx?viewid=855b9d9a%2D724a%2D4ba1%2D876e%2D2325aaaf29e5"
 discovery_questions:
   - "What type of business is this, how many screens need TV, and which channels or sports are must-haves for staff or customers?"
   - "Who provides Internet at each site today—and is it already on GPC fiber or broadband, or still with another carrier?"
@@ -1896,8 +1896,8 @@ title: 'UC, Voice & Collaboration'
 summary: Cloud PBX. MS Teams integration. Contact Center.
 sensitivity: internal
 reference_files:
-  - label: 'Sales Resources (UC, voice, contact center)'
-    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
+  - label: 'Product Collateral (UC, voice, contact center)'
+    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/Product%20Collateral/Forms/AllItems.aspx?viewid=855b9d9a%2D724a%2D4ba1%2D876e%2D2325aaaf29e5'
 discovery_questions:
   - How are your employees currently making external phone calls when they are working remotely?
   - 'You mentioned using Microsoft Teams. Are you currently paying for the Teams Phone add-on license, or are you looking for a more cost-effective way to integrate voice?'

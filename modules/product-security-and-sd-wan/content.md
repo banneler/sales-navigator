@@ -4,8 +4,8 @@ title: "Security & SD-WAN"
 summary: "Managed edge. DDoS mitigation. Multi-site SD-WAN."
 sensitivity: "public"
 reference_files:
-  - label: "Sales Resources (security & SD-WAN collateral)"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+  - label: "Product Collateral (security & SD-WAN)"
+    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/Product%20Collateral/Forms/AllItems.aspx?viewid=855b9d9a%2D724a%2D4ba1%2D876e%2D2325aaaf29e5"
 discovery_questions:
   - "How many locations do you have, and which ones are on GPC fiber vs. other broadband or MPLS?"
   - "How are those locations connected today—VPN over shared Internet, MPLS, Ethernet? When does that contract expire?"

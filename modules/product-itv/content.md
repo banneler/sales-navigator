@@ -4,8 +4,8 @@ title: "GPC iTV for Business"
 summary: "Business streaming. Cloud DVR. Single-bill simplicity."
 sensitivity: "internal"
 reference_files:
-  - label: "GPC iTV collateral — SharePoint (source of truth)"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
+  - label: "Product Collateral — GPC iTV for Business"
+    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/Product%20Collateral/Forms/AllItems.aspx?viewid=855b9d9a%2D724a%2D4ba1%2D876e%2D2325aaaf29e5"
 discovery_questions:
   - "What type of business is this, how many screens need TV, and which channels or sports are must-haves for staff or customers?"
   - "Who provides Internet at each site today—and is it already on GPC fiber or broadband, or still with another carrier?"

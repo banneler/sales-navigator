@@ -4,8 +4,8 @@ title: Connectivity & Access
 summary: DIA vs SIA. Ethernet. Beating Starlink.
 sensitivity: internal
 reference_files:
-  - label: Sales Resources (product collateral)
-    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
+  - label: Product Collateral (connectivity & access)
+    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/Product%20Collateral/Forms/AllItems.aspx?viewid=855b9d9a%2D724a%2D4ba1%2D876e%2D2325aaaf29e5'
 discovery_questions:
   - 'Are your employees primarily downloading data, or are they constantly uploading large files to cloud servers?'
   - 'How many physical locations do you have, and do they need to share private data directly with each other?'

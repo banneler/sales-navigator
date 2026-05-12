@@ -4,8 +4,8 @@ title: 'UC, Voice & Collaboration'
 summary: Cloud PBX. MS Teams integration. Contact Center.
 sensitivity: internal
 reference_files:
-  - label: 'Sales Resources (UC, voice, contact center)'
-    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
+  - label: 'Product Collateral (UC, voice, contact center)'
+    sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/Product%20Collateral/Forms/AllItems.aspx?viewid=855b9d9a%2D724a%2D4ba1%2D876e%2D2325aaaf29e5'
 discovery_questions:
   - How are your employees currently making external phone calls when they are working remotely?
   - 'You mentioned using Microsoft Teams. Are you currently paying for the Teams Phone add-on license, or are you looking for a more cost-effective way to integrate voice?'
