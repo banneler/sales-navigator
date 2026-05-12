@@ -1020,7 +1020,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Stop selling SKUs and start selling outcomes. GPC isn't just a fiber pipe—we are the secure, flexible infrastructure that keeps your doors open. We layer Managed Wi-Fi, Security, and UC on top of a resilient Midwest network, all backed by a 24/7 local NOC that actually answers the phone.
+Most carriers just sell you a pipe and disappear. We build your network as one complete system—fiber access, secure routing, and cloud connectivity—all backed by our local Midwest team and a 24/7 NOC. Our goal is simple: you stop worrying about downtime, and start focusing on your business.
 :::
 
 ---
@@ -1156,7 +1156,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Every application you run lives or dies by the access connection. We don't just sell bandwidth; we sell the right pipe for the problem. From cost-effective Standard Internet to symmetrical, SLA-backed Dedicated Internet and private Managed Ethernet, we build the rock-solid foundation your business needs.
+Your network shouldn't be the reason your video calls drop or your cloud apps lag. We match the right fiber access to your actual business needs—whether that's dedicated, symmetrical internet for perfect voice quality, or private, high-capacity transport between your data centers.
 :::
 
 ---
@@ -1398,7 +1398,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-We put policy on the pipe. Our Security and SD-WAN portfolio stops threats at the edge and routes traffic intelligently across any access type. With SOC-monitored firewalls, proactive DDoS mitigation, and VeloCloud SD-WAN, we deliver enterprise-grade protection managed entirely by our local 24/7 NOC.
+We don't just connect your sites; we secure and optimize them. With our managed firewalls, automated DDoS protection, and intelligent SD-WAN, we prioritize your most critical apps and stop threats at the edge—all monitored 24/7 by our security team so you don't have to.
 :::
 
 ---
@@ -1644,7 +1644,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-When critical apps go down, nobody cares how cheap their internet was. We protect your uptime with a private, jitter-free Cloud Connect path to AWS/Azure, secure Managed Wi-Fi for the last ten feet, and 5G Wireless—either as the insurance policy behind primary fiber, or as the primary path itself when fiber isn't there yet.
+We make sure your team can actually reach the cloud without the public internet slowing them down. From private paths into AWS and Azure, to fully managed Wi-Fi in your office, right down to automatic 5G backup if a fiber line gets cut—we keep your critical apps running.
 :::
 
 ---
@@ -1822,6 +1822,10 @@ roleplay:
 - **Architecture:** iTV is **streaming TV for business** (channels, **Cloud DVR**, **Replay TV**) over the customer’s **GPC Internet**—qualify access first; don’t sell iTV as carrier-agnostic broadband entertainment.
 - **Footprint:** Collateral spans **small shops to larger sites**; some installs still need **set-top boxes** at a **low monthly rate**—call that out in discovery so expectations match the quote.
 - **Truth sources:** **SharePoint** (and official tools) for **lineups, QR “learn more,” rate cards, and packaging**—this module is enablement, not a second source of record.
+
+::: elevator [Elevator Pitch]
+We deliver HD business TV, local sports, and cloud DVR right over your existing GPC internet connection. It's one reliable streaming service and one simple bill, keeping your breakrooms and lobbies entertained without the hassle of satellite dishes or messy wiring.
+:::
 
 ---
 
@@ -2047,7 +2051,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-We deliver a 99.999% uptime cloud voice platform that embeds directly into Microsoft Teams—saving you massive Microsoft licensing costs. From enterprise calling and SMS to a fully omnichannel Contact Center with concurrent licensing, we modernize your communications without the hidden fees.
+We replace aging phone systems with a single, secure cloud platform. Whether your team lives in Microsoft Teams or needs a full customer contact center, we give you voice, SMS, and video meetings with 99.999% uptime, so your team can work from anywhere without dropping the ball.
 :::
 
 ---
@@ -2347,7 +2351,7 @@ roleplay:
 ## Positioning snapshot
 
 ::: elevator [Elevator Pitch]
-Discover first, then map our proof to their pain. We don't win on trash talk or generic claims; we win on TCO, local fiber, a 24/7 NOC, and owned redundant paths. When competitors drop their price, we elevate the conversation to the true cost of downtime.
+If you're tired of national carriers treating you like an account number when things break, that's where we step in. We own our Midwest fiber, we run a 24/7 NOC, and we dispatch local teams. We don't just compete on price; we compete on keeping your business online.
 :::
 
 

@@ -155,7 +155,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-We deliver a 99.999% uptime cloud voice platform that embeds directly into Microsoft Teams—saving you massive Microsoft licensing costs. From enterprise calling and SMS to a fully omnichannel Contact Center with concurrent licensing, we modernize your communications without the hidden fees.
+We replace aging phone systems with a single, secure cloud platform. Whether your team lives in Microsoft Teams or needs a full customer contact center, we give you voice, SMS, and video meetings with 99.999% uptime, so your team can work from anywhere without dropping the ball.
 :::
 
 ---

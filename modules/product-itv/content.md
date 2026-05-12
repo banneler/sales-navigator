@@ -109,6 +109,10 @@ roleplay:
 - **Footprint:** Collateral spans **small shops to larger sites**; some installs still need **set-top boxes** at a **low monthly rate**—call that out in discovery so expectations match the quote.
 - **Truth sources:** **SharePoint** (and official tools) for **lineups, QR “learn more,” rate cards, and packaging**—this module is enablement, not a second source of record.
 
+::: elevator [Elevator Pitch]
+We deliver HD business TV, local sports, and cloud DVR right over your existing GPC internet connection. It's one reliable streaming service and one simple bill, keeping your breakrooms and lobbies entertained without the hassle of satellite dishes or messy wiring.
+:::
+
 ---
 
 ## Common Landmines

@@ -76,7 +76,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Stop selling SKUs and start selling outcomes. GPC isn't just a fiber pipe—we are the secure, flexible infrastructure that keeps your doors open. We layer Managed Wi-Fi, Security, and UC on top of a resilient Midwest network, all backed by a 24/7 local NOC that actually answers the phone.
+Most carriers just sell you a pipe and disappear. We build your network as one complete system—fiber access, secure routing, and cloud connectivity—all backed by our local Midwest team and a 24/7 NOC. Our goal is simple: you stop worrying about downtime, and start focusing on your business.
 :::
 
 ---

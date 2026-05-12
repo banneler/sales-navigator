@@ -138,7 +138,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-We put policy on the pipe. Our Security and SD-WAN portfolio stops threats at the edge and routes traffic intelligently across any access type. With SOC-monitored firewalls, proactive DDoS mitigation, and VeloCloud SD-WAN, we deliver enterprise-grade protection managed entirely by our local 24/7 NOC.
+We don't just connect your sites; we secure and optimize them. With our managed firewalls, automated DDoS protection, and intelligent SD-WAN, we prioritize your most critical apps and stop threats at the edge—all monitored 24/7 by our security team so you don't have to.
 :::
 
 ---

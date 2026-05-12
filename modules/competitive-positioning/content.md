@@ -207,7 +207,7 @@ roleplay:
 ## Positioning snapshot
 
 ::: elevator [Elevator Pitch]
-Discover first, then map our proof to their pain. We don't win on trash talk or generic claims; we win on TCO, local fiber, a 24/7 NOC, and owned redundant paths. When competitors drop their price, we elevate the conversation to the true cost of downtime.
+If you're tired of national carriers treating you like an account number when things break, that's where we step in. We own our Midwest fiber, we run a 24/7 NOC, and we dispatch local teams. We don't just compete on price; we compete on keeping your business online.
 :::
 
 

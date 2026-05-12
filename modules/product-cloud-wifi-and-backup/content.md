@@ -120,7 +120,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-When critical apps go down, nobody cares how cheap their internet was. We protect your uptime with a private, jitter-free Cloud Connect path to AWS/Azure, secure Managed Wi-Fi for the last ten feet, and 5G Wireless—either as the insurance policy behind primary fiber, or as the primary path itself when fiber isn't there yet.
+We make sure your team can actually reach the cloud without the public internet slowing them down. From private paths into AWS and Azure, to fully managed Wi-Fi in your office, right down to automatic 5G backup if a fiber line gets cut—we keep your critical apps running.
 :::
 
 ---

@@ -70,7 +70,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Every application you run lives or dies by the access connection. We don't just sell bandwidth; we sell the right pipe for the problem. From cost-effective Standard Internet to symmetrical, SLA-backed Dedicated Internet and private Managed Ethernet, we build the rock-solid foundation your business needs.
+Your network shouldn't be the reason your video calls drop or your cloud apps lag. We match the right fiber access to your actual business needs—whether that's dedicated, symmetrical internet for perfect voice quality, or private, high-capacity transport between your data centers.
 :::
 
 ---
