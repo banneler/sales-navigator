@@ -35,13 +35,6 @@ knowledge_checks:
       - The OBR meeting cannot be rescheduled.
     correct_index: 0
     explanation: '"Zero Fire Drills" is the SOP''s name for the Business Day 14 handoff milestone—seven business days before the meeting, Marketing has everything they need.'
-  - question: Which four components make up the OBR Slick?
-    options:
-      - 'Network Design, Strategic Billing, NOC History & Feedback Loop, Strategic Roadmap.'
-      - 'Discovery, Quoting, Provisioning, Renewals.'
-      - 'Cover Letter, Pricing Sheet, Logo, Signature Page.'
-    correct_index: 0
-    explanation: 'The SOP names these four components verbatim. Each has a defined data source and owner on the 21-day timeline.'
   - question: Marketing will not begin design until the "Single Packet" handoff arrives. What must that single email contain?
     options:
       - The completed OBR Sales Readiness Form (with scrubbed data tables) and the finalized Visio diagram (verified).
@@ -49,13 +42,6 @@ knowledge_checks:
       - A calendar invite for the OBR meeting and the customer's logo.
     correct_index: 0
     explanation: 'Marketing requires one packet, audited and complete. Sending pieces separately—or sending raw data—violates the Single Packet rule and stops the design clock.'
-  - question: The Design Phase of the OBR cycle takes ten business days. Who owns it?
-    options:
-      - Jerry Ehrenberg (Engineering Design)
-      - Sarah (Marketing)
-      - The Account Rep
-    correct_index: 0
-    explanation: 'Jerry Ehrenberg owns the Design Phase: the Current-vs-Future-State Visio, kicked off with a 15-minute call early in the cycle.'
   - question: 'The SOP enforces a "No Raw Dump" rule. What is the stated rationale?'
     options:
       - Marketing is for design, not data entry or CID deciphering. Sales owns the scrub.
@@ -70,27 +56,6 @@ knowledge_checks:
       - '"Renewal" and "Cross-sell"'
     correct_index: 0
     explanation: 'Strategic Billing on the slick features the "Modernization" lever (e.g., upgrade an aging tier) and the "Performance Spotlight" lever (showcase services performing well). Surface both.'
-  - question: A rep types `100M FE-DIA-CMTS-3yr` into the service-description column of the Sales Readiness Form. What is wrong with that?
-    options:
-      - Internal catalog codes must be translated into customer-facing language (e.g., "100M Fiber DIA"). Internal codes do not belong on the slick.
-      - Nothing—internal codes are precise and that is what Marketing needs.
-      - The code is missing the contract end date.
-    correct_index: 0
-    explanation: 'The SOP''s data-hygiene section requires plain-English service descriptions. Internal codes belong in the back-office system, not on the customer-facing slick.'
-  - question: The OBR Sales Readiness Form (Fillable PDF) plays one specific role in the process. Which?
-    options:
-      - It is the Source of Truth that locks in strategic copy for Marketing—containing all audited billing/NOC data and the strategic narrative.
-      - It is a customer-facing satisfaction survey filled out after the meeting.
-      - It is the printer's spec sheet for the trifold.
-    correct_index: 0
-    explanation: 'The SOP names the Form the Source of Truth for strategic copy. It is the spine of the Single Packet handoff.'
-  - question: 'A rep is on Day 12 of the cycle and has not yet kicked off the Marketing handoff. What does that risk?'
-    options:
-      - Missing the Day 14 Zero-Fire-Drill milestone. Marketing has five days for design plus three for print prep; every day past Day 14 compresses Marketing and Final Prep into a fire drill.
-      - Nothing, as long as the meeting still hits Day 21.
-      - The Account Rep loses commission on the OBR.
-    correct_index: 0
-    explanation: 'The seven business days between the Day 14 handoff and the Day 21 meeting are not slack—they are Marketing Design (5) plus Final Prep (3, partially overlapping). Lose Day 14 and you lose meeting quality.'
 
 scenarios:
   - title: The 5-Day Promise

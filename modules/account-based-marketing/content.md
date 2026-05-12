@@ -15,14 +15,6 @@ five_minute_summary: |
   - **One source of truth:** The **Master Tracking Spreadsheet** is the system of record for Active and On-Deck accounts—Marketing and Sales Leadership edit; everyone else has view-only.
 
 knowledge_checks:
-  - question: "Roughly how long is the ABM sales sequence in the SOP?"
-    options:
-      - "90 days (three months of sequenced touches)"
-      - "21 business days"
-      - "One calendar week"
-    correct_index: 0
-    explanation: "The SOP defines a high-touch, 90-day coordinated effort between Sales and Marketing."
-
   - question: "How many ABM accounts should an Account Representative run concurrently per the SOP?"
     options:
       - "Three active accounts at any time, with three on-deck ready to backfill (the Rolling Three)"
@@ -39,29 +31,13 @@ knowledge_checks:
     correct_index: 1
     explanation: "Staggered 30-day kickoff ensures one account is always in the high-intensity opening phase while others are mid- or late-cycle."
 
-  - question: "Per the SOP, what is the minimum and ideal target volume per ABM account?"
-    options:
-      - "Minimum 3 targets per account, 5 ideal"
-      - "One executive target is enough"
-      - "Ten targets minimum to ensure coverage"
-    correct_index: 0
-    explanation: "Multi-threaded engagement is mandatory to avoid single-point-of-failure risk on the account."
-
   - question: "Can all ABM targets at an account be executive-level decision makers?"
     options:
       - "Yes—executives close deals, so they're the only targets that matter"
       - "No—the SOP forbids all-executive stacks; mix Manager, Director/VP, and Executive"
       - "Only at Strategic accounts above a certain revenue threshold"
     correct_index: 1
-    explanation: "The tier hierarchy is Manager (Operational/Technical) + Director/VP (Tactical/Strategic) + Executive (Financial/Final Decision Maker)."
-
-  - question: "Who attends the ABM kickoff meeting per the SOP?"
-    options:
-      - "Just the Account Representative"
-      - "Marketing, the Sales Manager, and the Account Representative"
-      - "The customer's executive team only"
-    correct_index: 1
-    explanation: "The kickoff officially starts the 90-day clock—Marketing, Sales Manager, and Account Rep all attend."
+    explanation: "The tier hierarchy is Manager (Operational/Technical) + Director/VP (Tactical/Strategic) + Executive (Financial/Final Decision Maker). Single-threading at the top is exactly what the mix is designed to prevent."
 
   - question: "Which items belong on the Sales Readiness Checklist that the rep brings to ABM kickoff?"
     options:
@@ -69,7 +45,7 @@ knowledge_checks:
       - "Only the target list—everything else can be figured out in the meeting"
       - "A draft proposal and a contract template"
     correct_index: 0
-    explanation: "Walking in cold (no checklist) is the fastest way to lose a Marketing partner and stretch the cycle."
+    explanation: "Walking in cold (no checklist) is the fastest way to lose a Marketing partner and stretch the 90-day cycle."
 
   - question: "How often should marketing run ABM coordination touchpoints in the SOP model?"
     options:
@@ -77,23 +53,7 @@ knowledge_checks:
       - "Three touchpoints every week regardless of sales activity"
       - "Only one touchpoint at the end of the 90-day cycle"
     correct_index: 0
-    explanation: "Monthly marketing coordination; +1 brochure-leave-behind when Sales executes a Door Pull."
-
-  - question: "Where is ABM activity and pipeline status tracked per the SOP?"
-    options:
-      - "The Master Tracking Spreadsheet (source of truth for Active and On-Deck accounts)"
-      - "Each rep's personal Outlook tasks"
-      - "An internal email thread per account"
-    correct_index: 0
-    explanation: "Master Tracking Spreadsheet is the system of record—it's also how leadership confirms the Rolling Three bench is healthy."
-
-  - question: "Who has edit access to the Master ABM Tracking Spreadsheet per the SOP?"
-    options:
-      - "Marketing and Sales Leadership only; general stakeholders are view-only"
-      - "Every Account Representative can edit any row"
-      - "Only the Salesforce admin team"
-    correct_index: 0
-    explanation: "Edit access is restricted to Marketing and Sales Leadership; everyone else has view-only access for FYI purposes."
+    explanation: "Monthly marketing coordination; +1 brochure-leave-behind when Sales executes a Door Pull. The Door Pull is the named SOP trigger for the extra marketing touch."
 
 scenarios:
   - title: "Skipping ahead in the ABM sequence"
