@@ -192,7 +192,12 @@ We replace aging phone systems with a single, secure cloud platform. Whether you
 - Our solution (via Intermedia) uses an embedded app approach. It places a dial pad directly inside the Teams interface.
 - Because it is an app and not a Direct Routing setup, the customer avoids the Microsoft Teams Phone license requirement.
 
-**The plan ladder (which UC tier fits the workload):**
+<div class="module-plan-ladder my-5 rounded-2xl border border-slate-200/90 bg-white shadow-sm shadow-slate-900/5 overflow-hidden">
+<div class="module-plan-ladder-head border-b border-slate-200/80 bg-gradient-to-br from-slate-50 via-white to-violet-50/40 px-4 py-3.5">
+<p class="m-0 text-sm font-bold tracking-tight text-slate-900">UC plan ladder — tier vs. workload</p>
+<p class="m-0 mt-1.5 text-xs leading-relaxed text-slate-600">Match <strong>workload</strong> to tier; licenses <strong>mix per user</strong> on one account. Video caps step <strong>25 → 100 → 200</strong> across Essentials / Pro / Enterprise.</p>
+</div>
+<div class="module-plan-ladder-table-wrap overflow-x-auto p-2 sm:p-3">
 
 | Tier | Voice | Video participants | Storage / user | Call Center features | CRM integrations | Lead with when… |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -202,17 +207,8 @@ We replace aging phone systems with a single, secure cloud platform. Whether you
 | **Pro** | Unlimited | 100 | 50 GB | Queueing, Wallboards, Supervisor Monitor/Whisper/Barge, End-to-End Encryption | Salesforce, ServiceNow, NetSuite, MS Dynamics, Sugar, Zoho, Zendesk | Inbound call-center workloads, high-volume sales/support, CRM-integrated desks |
 | **Enterprise** | Unlimited | 200 | 200 GB | Pro + Smart Greetings + Additional Recording Storage | Same as Pro | Large all-hands, company-wide voice, town-hall meetings |
 
-**Plan-tier landmine:** Don't default to Enterprise just because the customer is enterprise-sized. Match the **plan** to the **workload** — plans **mix and match per user**, so most multi-site customers run a *blend* (e.g., Resource Lines at the lobby and conference rooms + Express at reception + Pro for sales + Enterprise at HQ for the monthly all-hands). The 25 / 100 / 200-participant video ceiling is the most common forcing function on tier selection. Quoting Pro for a phone that just needs to ring is over-licensing—that's what Resource Line is for.
-
-**Phone hardware — the Yealink ladder:**
-
-Three desk-phone tiers, all with USB 2.0, dual-band 2.4/5 GHz Wi-Fi, and support for the Yealink EXP50 expansion module. Pick by **role**, not by tier name — front desk gets Advanced, back office gets Basic.
-
-| Tier | Model | Display | Line Keys |
-| --- | --- | --- | --- |
-| **Basic** | Yealink T53W | 3.7", 360×160 graphical LCD | 8 line keys with LED |
-| **Intermediate** | Yealink T54W | 4.3", 480×272 color LCD | 10 line keys with LED |
-| **Advanced** | Yealink T57W | 7", 800×480 capacitive touch screen | Touch-screen based |
+</div>
+</div>
 
 **Contact Center (CCaaS):**
 - **UC Pro/Enterprise already include inbound Call Center features** — queueing, hunt groups, wallboards, and Supervisor Monitor/Whisper/Barge — enough to run a small/medium **voice-only** help desk. The dedicated **CCaaS** product is a separate SKU for **omnichannel** workloads (voice + SMS + chat), advanced IVR, deep CRM screen-pops, and concurrent licensing across channels. Don't conflate the two when scoping.

@@ -97,6 +97,14 @@
 .module-markdown-body tr:nth-child(even) {
   background-color: #f8fafc;
 }
+/* Card-wrapped wide tables (e.g. UC plan ladder): flush inner margins, align multi-line cells */
+.module-markdown-body .module-plan-ladder-table-wrap table {
+  margin: 0;
+}
+.module-markdown-body .module-plan-ladder-table-wrap th,
+.module-markdown-body .module-plan-ladder-table-wrap td {
+  vertical-align: top;
+}
 .module-markdown-body img {
   display: block;
   max-width: 100%;
