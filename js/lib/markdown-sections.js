@@ -137,11 +137,13 @@ function markdownBodyWrapperClasses(role, displayTitle) {
 
 /**
  * @param {string} markdown
- * @param {{ displayTitle: string; useDeepCollapse: boolean; sectionRole?: import('./section-roles.js').SectionRole }} options
+ * @param {{ displayTitle: string; useDeepCollapse: boolean; sectionRole?: import('./section-roles.js').SectionRole; trailingHtml?: string }} options
  */
 function renderOneSectionCard(markdown, options) {
   const { useDeepCollapse, displayTitle } = options;
   const sectionRole = options.sectionRole ?? 'generic';
+  const trailingHtml =
+    typeof options.trailingHtml === 'string' ? options.trailingHtml.trim() : '';
   let safe;
   try {
     safe = parseMarkdownToSafeHtml(markdown || '');
@@ -173,7 +175,7 @@ function renderOneSectionCard(markdown, options) {
           <i class="fa-solid fa-chevron-down module-section-deep-chevron shrink-0 text-slate-400 transition-transform duration-200" aria-hidden="true"></i>
         </summary>
         <div class="border-t border-slate-200/80 px-6 md:px-8 pb-6 md:pb-8 pt-6">
-          <div class="${bodyCls}">${safe}</div>
+          <div class="${bodyCls}">${safe}${trailingHtml}</div>
         </div>
       </details>`;
   }
@@ -182,8 +184,90 @@ function renderOneSectionCard(markdown, options) {
   return `
       <section class="${shell}">
         ${heading}
-        <div class="${bodyCls}">${safe}</div>
+        <div class="${bodyCls}">${safe}${trailingHtml}</div>
       </section>`;
+}
+
+/**
+ * Optional structured tabs inside a collapsed Technical Deep Dive card.
+ * Front matter shape:
+ * technical_deep_dive_tabs:
+ *   aria_label: "..."
+ *   intro: "..."
+ *   tabs:
+ *     - label: "..."
+ *       body: |
+ *         markdown
+ *
+ * @param {Record<string, unknown> | undefined} meta
+ * @returns {string}
+ */
+function buildTechnicalDeepDiveTabsHtml(meta) {
+  const config = meta?.technical_deep_dive_tabs;
+  if (!config || typeof config !== 'object') return '';
+
+  const tabs = Array.isArray(config.tabs) ? config.tabs : [];
+  const panels = tabs
+    .map((tab, i) => {
+      const label =
+        typeof tab?.label === 'string' && tab.label.trim()
+          ? tab.label.trim()
+          : `Topic ${i + 1}`;
+      const body = typeof tab?.body === 'string' ? tab.body : '';
+      if (!body.trim()) return null;
+
+      let inner;
+      try {
+        inner = parseMarkdownToSafeHtml(body);
+      } catch (e) {
+        inner = `<p class="text-red-600">${escapeHtml(e instanceof Error ? e.message : String(e))}</p>`;
+      }
+
+      const selected = i === 0;
+      return {
+        label,
+        tabId: `technical-deep-dive-tab-${i}`,
+        panelId: `technical-deep-dive-panel-${i}`,
+        selected,
+        inner,
+      };
+    })
+    .filter(Boolean);
+
+  if (panels.length < 2) return '';
+
+  const intro =
+    typeof config.intro === 'string' && config.intro.trim()
+      ? `<p class="mb-4 text-sm leading-relaxed text-slate-600">${escapeHtml(config.intro.trim())}</p>`
+      : '';
+  const tablistLabel =
+    typeof config.aria_label === 'string' && config.aria_label.trim()
+      ? config.aria_label.trim()
+      : 'Technical deep dive topics';
+
+  const tabButtons = panels
+    .map((p) => {
+      return `<button type="button" role="tab" id="${p.tabId}" class="js-sales-trio-tab flex-1 min-w-[8rem] px-4 py-3 text-sm font-semibold transition border-b-2 -mb-px focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-orange-400 ${p.selected ? 'border-orange-500 text-orange-800 bg-white' : 'border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50/80'}" aria-selected="${p.selected ? 'true' : 'false'}" aria-controls="${p.panelId}" tabindex="${p.selected ? '0' : '-1'}">${escapeHtml(p.label)}</button>`;
+    })
+    .join('');
+
+  const tabPanels = panels
+    .map(
+      (p) =>
+        `<div role="tabpanel" id="${p.panelId}" class="js-sales-trio-panel module-sales-trio-panel p-6 md:p-8${p.selected ? '' : ' hidden'}" aria-labelledby="${p.tabId}"><div class="module-markdown-body module-sales-trio-panel-body w-full max-w-none">${p.inner}</div></div>`
+    )
+    .join('');
+
+  return `
+    <div class="module-technical-deep-dive-tabs mt-5 space-y-4">
+      ${intro}
+      <div class="module-sales-trio-shell rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden">
+        <div role="tablist" aria-label="${escapeHtml(tablistLabel)}" class="flex flex-wrap border-b border-slate-200 bg-slate-50/90">
+          ${tabButtons}
+        </div>
+        ${tabPanels}
+      </div>
+    </div>`;
 }
 
 /**
@@ -430,10 +514,13 @@ export function renderSectionsToHtml(sections, opts = {}) {
       const useDeepCollapse =
         requestsDeep && total > 1 && Boolean(displayTitle.trim());
       const sectionRole = getSectionRole(displayTitle);
+      const trailingHtml =
+        sectionRole === 'deep' ? buildTechnicalDeepDiveTabsHtml(meta) : '';
       return renderOneSectionCard(markdown, {
         displayTitle,
         useDeepCollapse,
         sectionRole,
+        trailingHtml,
       });
     })
     .join('');

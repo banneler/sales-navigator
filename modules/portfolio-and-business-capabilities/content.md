@@ -21,15 +21,16 @@ discovery_questions:
   - 'How many sites are in scope today, and who signs off when network, security, or voice designs change?'
 five_minute_summary: |
   - **Stop selling SKUs:** If you just pitch another internet pipe, we are racing to the bottom on price. Pitch the layered technology partnership.
-  - **The Stack:** Access and Wireless Backup are the foundation. WAN sits on top. Security protects it. Unified Communications, Cloud Connect, and Wi-Fi deliver the edge experience.
+  - **What we offer:** Fiber access, private transport, wireless resiliency, cloud connectivity, managed Wi-Fi, security, UC, voice, video, and managed services—one portfolio that can grow with the customer.
+  - **The Stack:** Access and Wireless Backup are the foundation. WAN sits on top. Security protects it. Cloud Connect, Wi-Fi, UC, and video deliver the daily user experience.
   - **The Anchors:** We win on our resilient Midwest IP reach, Tier-1 and IX relationships, local field teams, and a 24/7 NOC that actually answers the phone.
   - **Discovery drives design:** You cannot build the right stack until you know their critical apps, site count, and true uptime tolerance.
 knowledge_checks:
   - question: "A prospect asks for your best price on a 500M circuit. What is your immediate next move?"
     options:
-      - "Check the pricing tool and give them a verbal quote to keep their interest."
-      - "Pivot to discovery. Ask what applications are running over that circuit and what happens to the business if it goes down."
-      - "Tell them GPC doesn't compete on price, we only compete on value."
+      - "Check the pricing tool and send a quick number before the prospect loses interest."
+      - "Pivot to discovery: what runs over that circuit, and what breaks if it goes down?"
+      - "Decline the price question and say GPC only competes on long-term value."
     correct_index: 1
     explanation: "If you answer with a price, you are just a commodity. Find the business pain first."
 
@@ -37,7 +38,7 @@ knowledge_checks:
     options:
       - "As an à la carte menu where they can pick and choose the cheapest options."
       - "Lead with our most expensive SD-WAN solution to anchor the price high."
-      - "As an integrated, layered system where reliable fiber is the foundation for secure, cloud-ready operations."
+      - "As a layered system: access first, then resilience, security, cloud, Wi-Fi, UC, and video."
     correct_index: 2
     explanation: "Sell the stack. Access is just the enabler for the higher-value UC, Security, and Cloud services."
 
@@ -56,7 +57,7 @@ scenarios:
     choices:
       - label: 'Agree, and promise to go to your manager to get special pricing approved to win the logo.'
         feedback: 'You just lost all your leverage. You are now playing their game, and even if you win, it''s a zero-margin deal.'
-      - label: 'Challenge the premise. ''Fiber is glass, but who manages the routing, who answers the phone at 2 a.m., and how is the network peered makes a massive difference to your uptime. Let''s talk about what an hour of downtime costs you.'''
+      - label: 'Challenge the premise and re-anchor the discussion on uptime, support, and the cost of downtime.'
         feedback: Correct. Break them out of the commodity mindset and re-anchor on the cost of risk.
 roleplay:
   persona: Skeptical CFO at a mid-size Midwest manufacturer
@@ -67,8 +68,9 @@ roleplay:
 ## At a glance
 
 - **The Goal:** Elevate the conversation from a telecom vendor to a technology partner.
-- **The Foundation:** GPC's wholly-owned, resilient Midwest fiber network.
-- **The Value Add:** We don't just provide the pipe; we secure the edge (Managed Firewall/SD-WAN), ensure survivability (5G Backup), and power the workforce (UC/Cloud Connect).
+- **The Foundation:** GPC's resilient Midwest fiber network and local operating model.
+- **The Portfolio:** Connectivity, transport, wireless backup, cloud paths, managed Wi-Fi, security, UC, video, and managed services.
+- **The Value Add:** We don't just provide the pipe; we help design the stack that keeps sites, apps, and teams working.
 - **The Handoff:** Once discovery reveals multi-site complexity, heavy cloud reliance, or strict compliance needs, bring in a Solutions Engineer to design the stack.
 
 ---
@@ -115,11 +117,19 @@ Downtime hurts a small business the same way it hurts an enterprise—sometimes 
 
 ---
 
-## Portfolio quick reference — deck order + national-cable proof
+## Portfolio quick reference — capabilities map
 
 **Ten product lines (deck order):** Fiber Internet · Managed Ethernet · SD-WAN · Wireless Internet Backup · Cloud Connect · Managed Firewall · Video (GPC iTV) · Managed Wi‑Fi · Unified Communications · DDoS Protection. Connectivity comes first—everything else stacks on the pipe.
 
-**GPC vs. Cox (national cable framing —** from the Cox Acquisition Battle Card v2; use when coax-heavy incumbents push *speed-for-price*):
+Use this as the rep's mental map:
+
+- **Access and transport:** Fiber Internet, DIA/SIA, Managed Ethernet, and wavelength-style capacity connect the business.
+- **Resilience:** 5G Wireless Backup and Wireless Broadband protect uptime or bridge fiber timing gaps.
+- **Cloud and site experience:** Cloud Connect stabilizes critical cloud paths; Managed Wi-Fi owns the last 10 feet of the user experience.
+- **Security and WAN:** Managed Firewall, MNS, DDoS, and SD-WAN protect and orchestrate the edge.
+- **Workforce and customer communications:** UC, Contact Center, and iTV support how employees, customers, and guests communicate.
+
+**Light competitive lens:** when coax-heavy incumbents push *speed-for-price*, pull the conversation back to total fit and operating risk:
 
 | Capability | GPC | Cox |
 | --- | --- | --- |
@@ -130,4 +140,4 @@ Downtime hurts a small business the same way it hurts an enterprise—sometimes 
 | Professional installation fees | None | $100 |
 | Activation fees | None | $25 / $99 (standard / gateway) |
 
-**Don't race them on sticker price.** Cox Spectrum Charter buyers still care about **symmetry, delivery method, term locks, and install/activation friction**—pull the conversation to total cost and operational fit, not the month-one number alone. Authoritative collateral lives in **Sales Resources**—this table is a memory anchor, not a second source of record.
+**Don't race them on sticker price.** Buyers comparing GPC to coax-led national providers still care about **symmetry, delivery method, term locks, and install/activation friction**—pull the conversation to total cost and operational fit, not the month-one number alone. Authoritative collateral lives in **Sales Resources**—this table is a memory anchor, not a second source of record.

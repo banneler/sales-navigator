@@ -53,11 +53,12 @@ five_minute_flow:
     - title: "Multi-site"
       caption: "Video → 30 min live"
 five_minute_summary: |
+  - **Work this in order:** This is not a cram module. Follow the sequence—Salesforce 101, Check In 1, GPC Solution, then multi-site—because each step builds the next live selling habit.
   - **Convert to Opportunity:** Always create the opportunity upon lead conversion. Skipping this to "keep your pipeline clean" actually breaks reporting and stalls the approval flow later.
   - **The Contract Signer:** Set the Contract Signer on the GPC Solution early—before it ever hits Approval Pending. Trying to append it at the 11th hour will block your DocuSign envelope.
   - **DocuSign prep:** Every single recipient on a DocuSign envelope must exist as a Contact on the account first. No exceptions.
   - **Closed Lost:** Never delete a Closed Lost record. That history is critical for forecasting and future re-engagement campaigns.
-  - **Three Contact Roles are mandatory on every Closed-Won Solution:** Project Contact, Billing Contact, and Property Manager / On-Site Manager. Skip them and you don't fail the close—you stall the install, because PMO can't reach the building and the bill lands in the wrong inbox.
+  - **Three Contact Roles are mandatory on every Closed-Won Solution:** Project Contact, Billing Contact, and Property Manager / On-Site Manager. Skip them and you don't fail the close—you stall the install, because the project team can't reach the building and the bill lands in the wrong inbox.
   - **Costing Routing has three flags** that change the routing path: **Strategic Build** (geographic), **Zone Parent** (multi-site structural), and **Reusable** (procedural). Different flags, different rules—and Reusable is **not allowed** under a Zone Parent.
 
 your_coaches:
@@ -104,13 +105,13 @@ knowledge_checks:
     correct_index: 2
     explanation: "Closed Lost history is highly valuable data. Deleting records destroys our competitive intelligence."
 
-  - question: "Which Contact Roles does the QRG say must be set on every Closed-Won GPC Solution?"
+  - question: "Which Contact Roles does the Quick Reference Guide (QRG) say must be set on every Closed-Won GPC Solution?"
     options:
       - "Just the Decision Maker—everything else is optional."
       - "Project Contact, Billing Contact, and Property Manager / On-Site Manager."
-      - "Sales' Main Contact and the Influencer. PMO figures the rest out post-close."
+      - "Sales' Main Contact and the Influencer. The project team figures the rest out post-close."
     correct_index: 1
-    explanation: "Skipping the three required roles doesn't fail the close. It stalls the install (PMO can't reach the building) and routes the bill to the wrong inbox."
+    explanation: "Skipping the three required roles doesn't fail the close. It stalls the install because the project team cannot reach the building, and it can route the bill to the wrong inbox."
     source: "Contact Roles Quick Reference Guide - 1023.pdf"
 
   - question: "On the same Solution Site you've selected both New Services and Existing Services. Which costing routing path does Salesforce follow?"
@@ -133,11 +134,11 @@ knowledge_checks:
 
   - question: "What conditions flag a Solution Site as Strategic Build?"
     options:
-      - "Any deal over $50k MRC."
-      - "Any deal involving a Zone Parent Opportunity."
-      - "The site's GPS coordinates fall within geographical boundaries pre-loaded into Salesforce. When flagged, Individual Drop Cost and Individual Equipment Cost apply systematically."
+      - "Any deal over $50k MRC that needs extra construction or CFO review."
+      - "Any deal attached to a Zone Parent Opportunity, regardless of location."
+      - "The site falls inside pre-loaded Strategic Build geographic boundaries."
     correct_index: 2
-    explanation: "Strategic Build is purely geographic, not financial. The geographic boundary triggers the systematic cost application."
+    explanation: "Strategic Build is geographic, not financial or Zone Parent-driven. When the boundary triggers, Individual Drop Cost and Individual Equipment Cost apply systematically."
     source: "Costing Routing Quick Reference Guide - 1123.pdf (Considerations)"
 
 scenarios:
@@ -226,7 +227,7 @@ Tasks, list views, and Home dashboards are the hygiene habit—if activity isn't
 
 ### Contact Roles — the part that bites you later
 
-Every Closed-Won GPC Solution must carry **three Contact Roles**: **Project Contact**, **Billing Contact**, and **Property Manager / On-Site Manager**. Miss any of those three and the close goes through clean—but the install stalls (PMO can't reach the building) and the first bill lands in the wrong inbox. It's a slow, expensive way to break a customer's first 30 days with GPC.
+Every Closed-Won GPC Solution must carry **three Contact Roles**: **Project Contact**, **Billing Contact**, and **Property Manager / On-Site Manager**. Miss any of those three and the close goes through clean—but the install stalls because the project management team can't reach the building, and the first bill lands in the wrong inbox. It's a slow, expensive way to break a customer's first 30 days with GPC.
 
 The full role list, from the Contact Roles QRG:
 

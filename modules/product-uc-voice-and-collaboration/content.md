@@ -29,6 +29,7 @@ video_carousel:
     src: assets/UC/work-better-wherever.mp4
     poster: assets/UC/work-better-wherever.png
 five_minute_summary: |
+  - **Pace yourself:** Treat this as three connected conversations: UC plan ladder, Teams path, then Contact Center scope. You do not have to design the solution alone.
   - **What you’re selling:** Cloud UC (Intermedia) — voice, SMS/MMS, HD meetings, AI recaps; **99.999%** uptime line.
   - **Seat / plan ladder:** Match **workload**, not company size; tiers **mix per user**. Typical blend: lobby/resource lines + reception Express + floor Pro + HQ Enterprise.
     - **Resource Line** — one concurrent endpoint, no apps (lobby, conference room, front desk that only needs to ring).
@@ -42,9 +43,9 @@ five_minute_summary: |
 knowledge_checks:
   - question: "A prospect wants to add external calling to Microsoft Teams. They think they need to buy Microsoft's 'Teams Phone' add-on license for every user. Are they right?"
     options:
-      - "No. With our embedded UC for Teams solution, they get full calling and SMS inside Teams without needing to buy the Microsoft Teams Phone license."
-      - "It depends on the design. Our 'Embedded UC' app bypasses the MS license, but if they want native 'Direct Routing' through the MS dialer, they must buy the MS Teams Phone license."
-      - "Yes. Microsoft requires the Teams Phone license for any external calling, regardless of the provider."
+      - "No. Embedded UC is the only Teams path we sell, and it never requires a Microsoft Teams Phone license."
+      - "It depends. Embedded UC can avoid the license; Direct Routing/native Teams dialing requires it."
+      - "Yes. Any Teams calling path requires the Microsoft Teams Phone license before GPC can quote."
     correct_index: 1
     explanation: "There are two different technical paths. Never guarantee 'no MS licensing' until an SE validates which path the customer actually wants."
 
@@ -68,31 +69,31 @@ knowledge_checks:
     options:
       - "UC Enterprise — clients deserve the top tier regardless of workload."
       - "UC Express — small firms only need voice, so video is overkill."
-      - "UC Essentials — voice calling plus video conferencing for up to 25 participants, AI Meeting Recap, and Call Recording. The Call Center features in Pro and Enterprise aren't needed."
+      - "UC Essentials — it covers voice and small meetings without paying for call-center features."
     correct_index: 2
     explanation: "Match the plan to the **workload**, not the company size. Essentials covers their video need (Express has no video) without paying for Pro/Enterprise call-center features they won't use."
 
   - question: "A prospect says \"we need a contact center.\" UC Pro already advertises Call Queueing, Agent Log-In/Out, Wallboards, and Supervisor Monitor/Whisper/Barge. Should you sell them UC Pro or the dedicated CCaaS add-on?"
     options:
-      - "It depends on the workload. UC Pro/Enterprise covers a small/medium **inbound voice** call-center (queue, hunt, supervisor). The dedicated **CCaaS** product is the answer for **omnichannel** (voice + SMS + chat), advanced IVR, deep CRM screen-pops, and concurrent licensing across channels. Get an SE to scope before quoting."
-      - "Always sell CCaaS — it has more features and a bigger price tag."
-      - "Always sell UC Pro — the call-center features inside the plan are equivalent to the dedicated CCaaS product."
+      - "Scope the workload first. UC Pro can fit voice-only inbound queues; CCaaS fits omnichannel or advanced workflows."
+      - "Default to CCaaS every time. It has more features, so it is always the safer quote."
+      - "Default to UC Pro every time. Its call-center tools fully replace the dedicated CCaaS product."
     correct_index: 0
     explanation: "UC Pro/Enterprise's Call Center features are a fully usable inbound voice operation — perfect for a 10-seat help desk. CCaaS is the separate omnichannel product. Conflating the two at quote time creates an install fight; let the SE scope it."
 
   - question: "A 175-person company wants UC for their monthly all-hands video call. What is the minimum UC plan tier that supports the meeting size?"
     options:
-      - "UC Enterprise — video conferencing for up to 200 participants. Essentials caps at 25 and Pro caps at 100, so a 175-person all-hands won't fit either."
-      - "UC Essentials — video conferencing is included."
-      - "UC Pro — video conferencing for up to 100 participants."
+      - "UC Enterprise — it supports the larger all-hands meeting size."
+      - "UC Essentials — it includes video meetings, so it covers the all-hands."
+      - "UC Pro — it is the right middle tier for larger meetings."
     correct_index: 0
     explanation: "The participant ceilings step **25 → 100 → 200** across Essentials / Pro / Enterprise. For a 175-person meeting, Enterprise is the floor."
 
   - question: "A prospect wants to port in 8 existing carrier DIDs that are still under contract with their current provider, plus a 4-level IVR menu with after-hours routing and a Salesforce screen-pop integration. What's the right next step?"
     options:
-      - "Quote UC Pro and move on — these are all standard features."
-      - "Stop and bring in your Solutions Engineer. IPN/OffNet porting under an active carrier contract, multi-level IVR scoping, and Salesforce CTI integration are all SE-validated designs — promising any of them on your own creates an install fight you can't win."
-      - "Promise it all yourself, then have the SE figure out the SOW after the contract is signed."
+      - "Quote UC Pro and note the porting, IVR, and Salesforce items as standard features."
+      - "Pause and bring in your Solutions Engineer before quoting the port, IVR, and CTI scope."
+      - "Promise the full scope now, then let the SE refine the SOW after signature."
     correct_index: 1
     explanation: "The deep-dive rule already says \"Do not attempt to quote high-volume burst capacity or complex IVR routing on your own. Bring in your SE immediately.\" Extend that rule to **IPN/OffNet porting** (existing-carrier contract handoffs) and **CRM CTI integrations** (Salesforce/ServiceNow/Dynamics screen-pops). When you see any of the three, pause and pull in the SE."
 
@@ -109,7 +110,7 @@ knowledge_checks:
     options:
       - "CC Pro — Pro is the default; Elite is just a marketing tier."
       - "UC Pro's Advanced Hunt Groups — same feature set, lower cost."
-      - "CC Elite — outbound dialer, supervisor monitor/whisper/barge, queued callback, and post-call surveys are Elite-only capabilities."
+      - "CC Elite — the listed supervisor, outbound, callback, and survey needs point above Pro."
     correct_index: 2
     explanation: "Both tiers are concurrent-seat licensed and both are omnichannel-capable, but supervisor coaching, outbound dialer, callback, and post-call surveys are explicit Elite-tier capabilities. Quoting Pro for an outbound-heavy or supervisor-coaching workload creates a feature-gap fight at install."
     source: "Contact Center datasheet 050925.pdf"
@@ -129,9 +130,9 @@ scenarios:
       An IT Director tells you, "We are just going to buy Microsoft's native calling plan. It's easier to keep everything with one vendor."
     choices:
       - label: Concede the point. Microsoft is too big to compete against for voice.
-        feedback: 'You just lost a massive revenue opportunity. Microsoft is a software company, not a telecom carrier. They struggle with complex routing, support, and uptime.'
-      - label: 'Challenge the uptime and support. Ask them who they are going to call when a port fails or a call drops. Remind them our solution sits inside Teams, saves them the MS licensing fee, and gives them a 99.999% SLA with a local NOC.'
-        feedback: Correct. Pivot away from software convenience and anchor on voice reliability and support.
+        feedback: 'You just lost the chance to test whether convenience is masking voice risk. Stay factual: routing, porting, support model, and uptime are still telecom decisions.'
+      - label: 'Challenge the voice operations risk. Ask who supports ports, dropped calls, routing changes, and outages; then position the right GPC Teams path with SE validation.'
+        feedback: Correct. Pivot away from software convenience and anchor on reliability, support, and the specific Teams motion the customer wants.
   - title: The License Blender
     situation: |
       You're in a Teams discovery meeting and pitch: "We put GPC's app inside Microsoft Teams, you don't need to buy the Teams Phone license, and your users will dial from the native Teams interface just like they always have." The IT director nods.
@@ -151,7 +152,7 @@ roleplay:
 ## At a glance
 
 - **UCaaS Platform:** 100+ business voice features, SMS, chat, HD meetings. 99.999% uptime.
-- **MS Teams Integration:** Embedded directly in the Teams app. **No MS Teams Phone license required.** Provides failover (if Teams goes down, our app stays up).
+- **MS Teams Integration:** Two paths, two licensing stories. **Embedded UC** puts a GPC dial pad inside Teams and can avoid the MS Teams Phone license; **Direct Routing / native Teams dialing** requires that license. SE validates the path before you promise the experience.
 - **Contact Center:** Omnichannel (Voice, SMS, Chat). Concurrent licensing model.
 - **AI Features:** AI call recaps, sentiment analysis, and supervisor-assist tools are built-in.
 
@@ -188,7 +189,7 @@ We replace aging phone systems with a single, secure cloud platform. Whether you
 - **Unite** — the same application, sold direct by **Intermedia**. You will see it in partner collateral and FAQs. **Do not lead with "Unite" externally** — translate it to GPC UC / Ascend for the customer.
 
 **The Teams Embedded Advantage:**
-- Only ~6% of Microsoft Teams users actually use Teams Phone, because Microsoft's native calling is expensive and lacks advanced PBX features.
+- Many organizations standardize on Teams for chat and meetings without adopting Teams Phone for enterprise voice, often because native calling changes licensing, PBX features, and support expectations.
 - Our solution (via Intermedia) uses an embedded app approach. It places a dial pad directly inside the Teams interface.
 - Because it is an app and not a Direct Routing setup, the customer avoids the Microsoft Teams Phone license requirement.
 

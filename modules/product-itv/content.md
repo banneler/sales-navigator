@@ -23,7 +23,7 @@ knowledge_checks:
     options:
       - "The customer must have or be purchasing GPC Internet."
       - "They must have a smart TV."
-      - "They must buy a satellite dish."
+      - "They can use any ISP circuit if the bandwidth looks sufficient."
     correct_index: 0
     explanation: "iTV is delivered over the customer's GPC Internet connection. Qualify access first."
 
@@ -31,7 +31,7 @@ knowledge_checks:
     options:
       - "Guarantee it to keep the deal moving."
       - "Use the public lineup/QR flows on SharePoint to verify market-specific availability."
-      - "Tell them every channel in the world is included."
+      - "Rely on last year's channel deck if the package name sounds the same."
     correct_index: 1
     explanation: "Lineups are market-dependent. Always use official SharePoint tools."
 

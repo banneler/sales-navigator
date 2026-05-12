@@ -37,9 +37,9 @@ knowledge_checks:
 
   - question: "Who holds the authoritative list of Strategic Accounts?"
     options:
-      - "The Account Executive who last worked the deal."
-      - "Sales Managers and the VP of Sales, via the official repository on Sales SharePoint."
-      - "Any rep can tag an account as Strategic if the MRC is projected over $5,000."
+      - "The Account Executive who last worked the deal and kept personal notes."
+      - "Sales Managers and the VP of Sales, using the official Sales SharePoint repository."
+      - "Any rep can tag an account Strategic when projected MRC clears the threshold."
     correct_index: 1
     explanation: "Only Sales Managers and the VP of Sales maintain the official Strategic list. Informal spreadsheets or personal tags don't count."
 
@@ -49,7 +49,7 @@ knowledge_checks:
       - "121+ days."
       - "365 days."
     correct_index: 1
-    explanation: "121+ days idle for a Customer account on the general path."
+    explanation: "A general Customer account opens after 121+ days with no qualifying logged activity. Even then, use the transfer path instead of grabbing the account cold."
 
   - question: "For a general Prospect account, how many days of zero logged activity must pass before the ROE window opens?"
     options:
@@ -57,7 +57,7 @@ knowledge_checks:
       - "61+ days."
       - "90 days."
     correct_index: 1
-    explanation: "61+ days for a Prospect account on the general path."
+    explanation: "A general Prospect account opens after 61+ days with no qualifying logged activity. The rule protects active prospecting while giving abandoned accounts a path forward."
 
   - question: "Does the strict five-business-day clock apply to leads you prospect and self-source?"
     options:
@@ -69,9 +69,9 @@ knowledge_checks:
 
   - question: "You've noticed an account is past its idle window and you want to work it. What is the approved transfer process?"
     options:
-      - "Change the owner in Salesforce to yourself, then send a courtesy Teams message to the prior owner."
-      - "Tag the VP of Sales in a Chatter post and wait for them to reassign it."
-      - "Connect with the current owner. Once agreed, email your manager and sales leadership for approval and transfer."
+      - "Change the owner to yourself, then notify the prior owner and your manager afterward."
+      - "Ask leadership to review the idle account without first contacting the current owner."
+      - "Align with the current owner, then email your manager and sales leadership for transfer approval."
     correct_index: 2
     explanation: "Never reassign an account unilaterally. Get incumbent agreement, then get leadership's blessing."
 
@@ -79,9 +79,9 @@ knowledge_checks:
     options:
       - "They follow the exact same 61/121 rules as any standard general Prospect or Customer."
       - "They are exempt from Salesforce tracking entirely."
-      - "They follow Strategic-style treatment regardless of list inclusion (with noted exceptions like ENA in Indiana)."
+      - "They receive Strategic-style treatment, with named exceptions like ENA in Indiana."
     correct_index: 2
-    explanation: "USAC entities get Strategic-style protection per the ROE. Always verify with leadership."
+    explanation: "USAC entities get Strategic-style protection per the ROE, even when they are not on the standard list. Verify with leadership before you work the account."
 
   - question: "When leadership is settling an account ownership dispute, what is the ONLY evidence that matters?"
     options:
@@ -107,7 +107,7 @@ scenarios:
 
       - label: "Ping the current owner first. If you align (or they ghost you), escalate through the ROE transfer steps with leadership before dialing."
 
-        feedback: "Correct. Protect your reputation internally. Align with the owner or use the approved transfer paths."
+        feedback: "Correct. The idle window creates a path to work the account, not permission to ambush the owner. Align first, then use the approved transfer path."
 
   - title: "The 'Sent Folder' Defense"
 
@@ -123,7 +123,7 @@ scenarios:
 
       - label: "Admit defeat. You failed to log the activity in Salesforce within 5 business days, so the lead is gone."
 
-        feedback: "Correct. Salesforce is the system of record. Log it or lose it."
+        feedback: "Correct. Salesforce is the system of record, so the email only counts when it is logged. Log it or lose it."
 
 reference_files:
 

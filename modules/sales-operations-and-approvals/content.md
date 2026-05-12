@@ -137,6 +137,7 @@ video_sections:
       - Very small CRC/BCC changes may go to businesscare@gpcom.com instead of Salesforce.
       - The MAC guide calls out no AE commission for those narrow Business Care changes.
 five_minute_summary: |
+  - **Start with the trigger:** What changed, has billing started, and does the deal still fit the automated path? Those three questions point you to the right guide.
   - Use Approval History on the GPC Solution to approve, reject, or recall. Put the Solution ID on every form and attachment so Operations can match documents to the right workflow.
   - Change Orders are for post-signature changes before billing starts. MACs are for changes to active billing contracts.
   - Use Cancellation before billing when all services are coming out; use Disconnect after billing.
@@ -185,6 +186,8 @@ discovery_questions:
 
 ## Overview
 
+This module is your routing map for deals that need approval or change after the customer says yes. Start with the business trigger, then use the reference guides for the click-by-click workflow.
+
 - GPC Solution: the core object where approvals, pricing, and technical scoping live.
 - Change Order: a pre-billing modification, such as changing port speed before install.
 - MAC: a Move-Add-Change on a live billing service.
@@ -218,4 +221,10 @@ The MAC mistake: MACs are for active accounts that have already started billing.
 
 ## Process Deep Dive [deep]
 
-See reference files for detailed guides.
+Use the reference files as job aids once you know which lane you are in:
+
+- Plain-vanilla new fiber inside the pre-approved rules: start with the Pre-Approved Order Process guide.
+- Payback, discount, churn, or net investment questions: open the Approval Requirements Matrix.
+- Customer signed but billing has not started: use Change Order.
+- Service is already billing: use MAC, Cancellation, or Disconnect based on what is changing.
+- Site routing looks wrong or physically unmappable: consider Manual Validation, but expect the deal to slow down.

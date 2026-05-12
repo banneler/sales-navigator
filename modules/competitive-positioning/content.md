@@ -66,6 +66,7 @@ discovery_questions:
   - "Are you running SaaS applications like O365, Salesforce, or cloud ERP? Where are those workloads hosted?"
   - "What does your current vendor do when there's a service issue—do they have local field technicians or is everything remote?"
 five_minute_summary: |
+  - **Pace yourself:** Learn the framework first, then pick the one card that matches the customer’s named alternative. The gallery is a lookup tool, not a memorization assignment.
   - **The Framework:** Map competitor weaknesses to GPC strengths using business risk and proof points (local support, NOC, redundancy). Avoid generic claims of superiority.
   - **Avoid Landmines:** Never make personal attacks or use absolutes. Verify battle-card stats with marketing before sharing externally, and bring in SEs early for architecture discussions.
   - **Handling Objections:** When countering LEO satellite or price pressure, anchor the conversation on uptime, latency, and the total cost of downtime rather than just price or speed.
@@ -90,9 +91,9 @@ knowledge_checks:
 
   - question: "When should you engage SE early?"
     options:
-      - "Only after the customer signs an order"
-      - "Never—sales should own all topology design alone"
-      - "For multi-site WAN/SD-WAN, integrated security, hybrid on/off-net, regulated workloads, fiber feasibility, or RFP-style validation"
+      - "Only after the customer signs and the implementation team opens the project"
+      - "Never; sales should own topology, security, and feasibility design alone"
+      - "For complex WAN, security, hybrid, regulated, feasibility, or RFP validation"
     correct_index: 2
     explanation: "Complex WAN/security/hybrid/regulated/RFP → SE."
 
@@ -100,7 +101,7 @@ knowledge_checks:
     options:
       - "Only a slogan and no customer specifics"
       - "Personal attacks on the competitor's executives"
-      - "Their pitch or truth, business risk for this customer, and proof you can support (local teams, NOC, redundancy, portfolio)"
+      - "Their pitch, the customer’s business risk, and proof GPC can support"
     correct_index: 2
     explanation: "Truth + risk + proof—not slogans."
 
@@ -130,13 +131,13 @@ knowledge_checks:
 
   - question: "What dimensions help compare operators during metro/local competition beyond headline price?"
     options:
-      - "Only the color of the competitor's logo"
-      - "Wi-Fi router aesthetics in consumer reviews only"
+      - "Headline monthly price and advertised download speed only"
+      - "Consumer review themes that do not map to the buyer’s business sites"
       - "Install quality, support model, redundancy, fiber depth vs pocketed coverage, and rate stability"
     correct_index: 2
     explanation: "Ops fit—not logo or consumer reviews."
 
-  - question: "What is PM engagement used for per the module?"
+  - question: "What is project manager (PM) engagement used for per the module?"
     options:
       - "Replacing all sales discovery on the first call"
       - "Delivery timelines, construction, and contract alignment"
@@ -146,8 +147,8 @@ knowledge_checks:
 
   - question: "Per the Omaha Metro battle card, what is one structural weakness of Allo that GPC reps can lean into?"
     options:
-      - "Allo only sells to residential customers and has no Omaha presence."
-      - "Allo has no fiber footprint in the metro and resells satellite Internet."
+      - "Allo is always the lowest-cost provider, so GPC should avoid the topic."
+      - "Allo owns every route end to end, so support model is the only fair angle."
       - "Allo does not fully own their network — they lease fiber from GPC and others."
     correct_index: 2
     explanation: "Use this once in a head-to-head Allo conversation as a supporting line — never as your opening move. The factoid lands as gloating if it's how you open."

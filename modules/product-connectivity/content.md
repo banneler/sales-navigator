@@ -36,9 +36,9 @@ knowledge_checks:
 
   - question: "A prospect says they are just going to buy Starlink for their main office because it's cheaper and fast. How do you respond?"
     options:
-      - "Tell them satellite internet is garbage and they will regret it."
-      - "Acknowledge Starlink is great for residential, but anchor on fiber's superior latency, weather resilience, and SLA-backed reliability for business."
-      - "Offer to cut your DIA price in half to match the Starlink hardware cost."
+      - "Dismiss the comparison and tell them satellite is not a serious business option."
+      - "Acknowledge the use case, then anchor on latency, weather resilience, and SLA-backed reliability."
+      - "Match the hardware cost verbally so the conversation stays focused on price."
     correct_index: 1
     explanation: "Never attack the competitor emotionally. Attack the physics of satellite latency and the lack of an enterprise SLA."
 
