@@ -1163,7 +1163,7 @@ Your network shouldn't be the reason your video calls drop or your cloud apps la
 
 ## Discovery Galaxy
 
-<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
     src="games/galactica-1/index.html?embed=1&module=product-connectivity"
     title="Discovery Galaxy"
@@ -1411,7 +1411,7 @@ We don't just connect your sites; we secure and optimize them. With our managed 
     title="Discovery Break — Brick breaker"
     loading="lazy"
     sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; height: min(95vh, 85rem); min-height: 44rem; background: #f1f5f9;"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 14; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
   ></iframe>
 </div>
 
@@ -1785,7 +1785,7 @@ We deliver HD business TV, local sports, and cloud DVR right over your existing 
 
 ## Discovery Galaxy
 
-<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
     src="games/galactica-1/index.html?embed=1&module=product-itv"
     title="Discovery Galaxy"
@@ -1995,7 +1995,7 @@ We replace aging phone systems with a single, secure cloud platform. Whether you
     title="Discovery Break — Brick breaker"
     loading="lazy"
     sandbox="allow-scripts allow-same-origin"
-    style="width: 100%; border: 0; display: block; height: min(95vh, 85rem); min-height: 44rem; background: #f1f5f9;"
+    style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 14; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
   ></iframe>
 </div>
 

@@ -77,7 +77,7 @@ Your network shouldn't be the reason your video calls drop or your cloud apps la
 
 ## Discovery Galaxy
 
-<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
     src="games/galactica-1/index.html?embed=1&module=product-connectivity"
     title="Discovery Galaxy"

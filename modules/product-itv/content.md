@@ -69,7 +69,7 @@ We deliver HD business TV, local sports, and cloud DVR right over your existing 
 
 ## Discovery Galaxy
 
-<div class="rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
+<div class="mt-4 rounded-2xl border border-emerald-200/80 overflow-hidden bg-slate-50 shadow-sm">
   <iframe
     src="games/galactica-1/index.html?embed=1&module=product-itv"
     title="Discovery Galaxy"
