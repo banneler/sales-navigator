@@ -42,18 +42,17 @@ function buildGettingStartedMarkup(meta, body) {
   let letterIdx = sections.findIndex((s) =>
     /note from the team/i.test(parseH2DeepMarker(s.title).displayTitle)
   );
-  if (letterIdx < 0) letterIdx = Math.min(1, sections.length - 1);
+  if (letterIdx < 0) {
+    return '<p class="text-red-700 p-6">Getting started content must include a <code>## A note from the team</code> section.</p>';
+  }
 
-  const welcomeSec = sections[0];
   const letterSec = sections[letterIdx];
-  const { displayTitle: welcomeTitle } = parseH2DeepMarker(welcomeSec.title);
   const { displayTitle: letterHeading } = parseH2DeepMarker(letterSec.title);
 
-  const welcomeBodyHtml = parseMarkdownToSafeHtml(welcomeSec.markdown || '');
   const letterBodyHtml = parseMarkdownToSafeHtml(letterSec.markdown || '');
 
   const wayfindingHtml = sections
-    .filter((_, i) => i !== 0 && i !== letterIdx)
+    .filter((_, i) => i !== letterIdx)
     .map((s) => {
       const { displayTitle: wTitle } = parseH2DeepMarker(s.title);
       const inner = parseMarkdownToSafeHtml(s.markdown || '');
@@ -85,12 +84,6 @@ function buildGettingStartedMarkup(meta, body) {
     <div class="tour-demo-content max-w-[1600px] mx-auto space-y-6 pb-4 select-none">
       <div class="flex flex-col lg:flex-row lg:gap-8 gap-6 items-start">
         <div class="w-full lg:flex-1 min-w-0 space-y-6 pointer-events-none" data-tour-target="module-core">
-          <div class="rounded-2xl border border-orange-200/90 bg-gradient-to-br from-orange-50/50 via-white to-slate-50/40 shadow-sm p-6 md:p-8 backdrop-blur-sm module-tour-elevator">
-            <h2 class="text-2xl font-bold text-slate-900 tracking-tight">${escapeHtml(welcomeTitle)}</h2>
-            <div class="text-slate-600 mt-3 text-sm max-w-prose leading-relaxed module-markdown-body">
-              ${welcomeBodyHtml}
-            </div>
-          </div>
           <section class="module-five-min w-full border border-amber-200 bg-amber-50/80 rounded-xl p-6 shadow-sm backdrop-blur-sm" aria-labelledby="five-min-heading-getting-started">
             <div class="flex w-full min-w-0 items-start gap-3">
               <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center text-base" title="Coffee Summary"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></span>
@@ -270,14 +263,60 @@ function rectsOverlap(a, b) {
 }
 
 /**
+ * Find a fixed position for the tour card that does not overlap the spotlight rect
+ * (and optional extra regions), for desktop layout only.
+ * @param {{ left: number; top: number; width: number; height: number }} spotlight
+ * @param {Array<{ left: number; top: number; width: number; height: number }>} [extraAvoid]
+ * @returns {{ left: number; top: number } | null}
+ */
+function findTourCardPositionClearOfSpotlight(spotlight, cardW, cardH, vw, vh, gap, extraAvoid) {
+  if (!spotlight || spotlight.width <= 0 || spotlight.height <= 0) return null;
+  const avoid = extraAvoid || [];
+
+  const tryCorner = (left, top) => {
+    const l = Math.max(gap, Math.min(left, vw - cardW - gap));
+    const t = Math.max(gap, Math.min(top, vh - cardH - gap));
+    const cr = { left: l, top: t, width: cardW, height: cardH };
+    if (rectsOverlap(cr, spotlight)) return null;
+    if (avoid.some((r) => rectsOverlap(cr, r))) return null;
+    return { left: l, top: t };
+  };
+
+  const sx = spotlight.left;
+  const sy = spotlight.top;
+  const sw = spotlight.width;
+  const sh = spotlight.height;
+  const candidates = [
+    [sx + sw + gap, sy],
+    [sx - cardW - gap, sy],
+    [sx, sy + sh + gap],
+    [sx, sy - cardH - gap],
+    [(vw - cardW) / 2, sy + sh + gap],
+    [vw - cardW - gap, sy],
+    [gap, sy],
+    [vw - cardW - gap, gap],
+    [gap, gap],
+    [gap, vh - cardH - gap],
+    [vw - cardW - gap, vh - cardH - gap],
+  ];
+
+  for (const [x, y] of candidates) {
+    const pt = tryCorner(x, y);
+    if (pt) return pt;
+  }
+  return null;
+}
+
+/**
  * Extra regions the tour card must not cover (viewport coords).
- * Step 3: scenarios sit under a tall stacked hero — avoid covering module-core on mid widths.
+ * Steps 2–3 on mid widths: stacked layout makes the main column tall—keep the HUD off it
+ * so the spotlight on the scenarios rail (step 3) or the main column (step 2) stays visible.
  * @param {number} stepIndex
  * @param {number} vw
  * @returns {Array<{ left: number; top: number; width: number; height: number }>}
  */
 function getTourCardAvoidRects(stepIndex, vw) {
-  if (stepIndex !== 3 || vw >= 1280) return [];
+  if ((stepIndex !== 2 && stepIndex !== 3) || vw >= 1280) return [];
   const el = document.querySelector('[data-tour-target="module-core"]');
   if (!el) return [];
   return [rectLike(el.getBoundingClientRect())];
@@ -444,7 +483,7 @@ function positionGlassCard(hostEl, stepIndex, rect) {
     };
   }
 
-  if (stepIndex === 3 && vw < 1280 && avoidRects.length) {
+  if ((stepIndex === 2 || stepIndex === 3) && vw < 1280 && avoidRects.length) {
     const chosen = { left: best.left, top: best.top, width: cardW, height: cardH };
     if (cardOverlapsAny(chosen, avoidRects)) {
       const hero = avoidRects[0];
@@ -469,6 +508,23 @@ function positionGlassCard(hostEl, stepIndex, rect) {
       ) {
         best = underStack;
       }
+    }
+  }
+
+  /** Tour step "Inside a module" / "Scenarios": bottom-centered fallback can still cover the spotlight—relocate. */
+  if (best && spotlight.width > 0 && spotlight.height > 0) {
+    const placed = { left: best.left, top: best.top, width: cardW, height: cardH };
+    if (rectsOverlap(placed, spotlight)) {
+      const rescued = findTourCardPositionClearOfSpotlight(
+        spotlight,
+        cardW,
+        cardH,
+        vw,
+        vh,
+        gap,
+        avoidRects
+      );
+      if (rescued) best = rescued;
     }
   }
 

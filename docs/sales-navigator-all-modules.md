@@ -36,6 +36,8 @@ summary: "Quick tour of Sales-Navigator—welcome, Coffee Summary sample, practi
 sensitivity: "public"
 
 five_minute_summary: |
+  We're glad you're here. This space is built to help you ramp with confidence—alongside teammates who remember their first customer call, their first complex quote, and the questions that used to keep them up at night.
+
   - We're genuinely happy you chose to grow your career here—your wins matter to us.
   - Take training at your pace; come back to any module when you need a refresher or a talk track.
   - Showing up curious for customers beats memorizing slides—use this hub to prepare, then go have real conversations.
@@ -69,10 +71,6 @@ getting_started_demo:
     affirmation_secondary: "El Vallarta would be proud."
     hint: "Not graded—just for fun."
 ---
-
-## Welcome to Great Plains Communications
-
-We're glad you're here. This space is built to help you ramp with confidence—alongside teammates who remember their first customer call, their first complex quote, and the questions that used to keep them up at night.
 
 ## A note from the team
 
