@@ -662,9 +662,9 @@ function buildImageLibraryHtml(docs) {
                 Next page <i class="fa-solid fa-chevron-right text-xs" aria-hidden="true"></i>
               </button>
             </div>
-            <div class="js-image-library-zoom-overlay fixed inset-0 z-[80] hidden bg-slate-950/90 p-3 backdrop-blur-sm md:p-6" role="dialog" aria-modal="true" aria-label="Enlarged battle-card view">
-              <div class="flex h-full min-h-0 flex-col rounded-2xl border border-white/15 bg-slate-950 shadow-2xl">
-                <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 px-4 py-3">
+            <div class="js-image-library-zoom-overlay fixed inset-0 z-[80] hidden bg-slate-950/90 p-1 backdrop-blur-sm md:p-3" role="dialog" aria-modal="true" aria-label="Enlarged battle-card view">
+              <div class="flex h-full min-h-0 flex-col rounded-xl border border-white/15 bg-slate-950 shadow-2xl">
+                <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 px-3 py-2 md:px-4">
                   <div>
                     <p class="js-image-library-zoom-title text-sm font-bold text-white">${escapeHtml(firstDoc.title)}</p>
                     <p class="js-image-library-zoom-label text-xs font-medium text-slate-300">Page 1 / ${firstDoc.pages.length}</p>
@@ -673,8 +673,8 @@ function buildImageLibraryHtml(docs) {
                     <i class="fa-solid fa-xmark text-xs" aria-hidden="true"></i> Close
                   </button>
                 </div>
-                <div class="min-h-0 flex-1 overflow-auto bg-slate-900 p-3 md:p-6">
-                  <img src="${escapeHtml(firstPage.src)}" alt="${escapeHtml(firstPage.alt)}" class="js-image-library-zoom-image mx-auto w-auto max-w-none rounded-lg bg-white shadow-xl" style="max-height: none; min-width: min(1100px, 100%);" loading="lazy" decoding="async" />
+                <div class="min-h-0 flex-1 overflow-auto bg-slate-900 p-1 md:p-3">
+                  <img src="${escapeHtml(firstPage.src)}" alt="${escapeHtml(firstPage.alt)}" class="js-image-library-zoom-image mx-auto max-w-none rounded-lg bg-white shadow-xl" style="width: min(96vw, 1800px); max-height: none;" loading="lazy" decoding="async" />
                 </div>
               </div>
             </div>
