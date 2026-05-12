@@ -7,6 +7,8 @@ import { awardXP } from './gamification.js';
 
 const handlerByEl = new WeakMap();
 const keyHandlerByEl = new WeakMap();
+const zoomOverlayByRoot = new WeakMap();
+let imageLibraryDocumentHandlersBound = false;
 
 /** @type {WeakMap<Element, (boolean | null)[]>} Last check result per question index; null = not checked yet */
 const scoreStateByCarousel = new WeakMap();
@@ -162,9 +164,10 @@ function updateImageLibraryViewer(root, button, pageIndex) {
   const hint = root.querySelector('.js-image-library-flip-hint');
   const prev = root.querySelector('.js-image-library-prev');
   const next = root.querySelector('.js-image-library-next');
-  const zoomImg = root.querySelector('.js-image-library-zoom-image');
-  const zoomTitle = root.querySelector('.js-image-library-zoom-title');
-  const zoomLabel = root.querySelector('.js-image-library-zoom-label');
+  const zoomOverlay = getImageLibraryZoomOverlay(root);
+  const zoomImg = zoomOverlay?.querySelector('.js-image-library-zoom-image');
+  const zoomTitle = zoomOverlay?.querySelector('.js-image-library-zoom-title');
+  const zoomLabel = zoomOverlay?.querySelector('.js-image-library-zoom-label');
 
   if (shelf) shelf.classList.add('hidden');
   if (viewer) viewer.classList.remove('hidden');
@@ -193,14 +196,69 @@ function updateImageLibraryViewer(root, button, pageIndex) {
   if (next) next.disabled = i === pages.length - 1;
 }
 
+function getImageLibraryZoomOverlay(root) {
+  if (!root) return null;
+  const cached = zoomOverlayByRoot.get(root);
+  if (cached) return cached;
+  const overlay = root.querySelector('.js-image-library-zoom-overlay');
+  if (overlay) {
+    zoomOverlayByRoot.set(root, overlay);
+  }
+  return overlay;
+}
+
 function setImageLibraryZoom(root, open) {
-  const overlay = root?.querySelector('.js-image-library-zoom-overlay');
+  const overlay = getImageLibraryZoomOverlay(root);
   if (!overlay) return;
+
+  if (open && overlay.parentElement !== document.body) {
+    const placeholder = document.createComment('image-library-zoom-overlay');
+    overlay.parentNode.insertBefore(placeholder, overlay);
+    overlay.__imageLibraryPlaceholder = placeholder;
+    overlay.__imageLibraryRoot = root;
+    document.body.appendChild(overlay);
+  }
+
   overlay.classList.toggle('hidden', !open);
+  document.body.style.overflow = open ? 'hidden' : '';
+
   if (open) {
     const close = overlay.querySelector('.js-image-library-zoom-close');
     if (close) close.focus();
+  } else {
+    const placeholder = overlay.__imageLibraryPlaceholder;
+    if (placeholder?.parentNode) {
+      placeholder.parentNode.insertBefore(overlay, placeholder);
+      placeholder.remove();
+    }
+    delete overlay.__imageLibraryPlaceholder;
   }
+}
+
+function bindImageLibraryDocumentHandlers() {
+  if (imageLibraryDocumentHandlersBound) return;
+  imageLibraryDocumentHandlersBound = true;
+
+  document.addEventListener('click', (e) => {
+    const zoomClose = e.target.closest('.js-image-library-zoom-close');
+    if (zoomClose) {
+      const overlay = zoomClose.closest('.js-image-library-zoom-overlay');
+      setImageLibraryZoom(overlay?.__imageLibraryRoot, false);
+      return;
+    }
+
+    const overlay = e.target.closest('.js-image-library-zoom-overlay');
+    if (overlay && e.target === overlay) {
+      setImageLibraryZoom(overlay.__imageLibraryRoot, false);
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.js-image-library-zoom-overlay:not(.hidden)').forEach((overlay) => {
+      setImageLibraryZoom(overlay.__imageLibraryRoot, false);
+    });
+  });
 }
 
 function closeImageLibraryViewer(root) {
@@ -489,6 +547,7 @@ function handleClick(e) {
 
 export function bindModuleInteractions(container) {
   if (!container) return;
+  bindImageLibraryDocumentHandlers();
   const prev = handlerByEl.get(container);
   if (prev) container.removeEventListener('click', prev);
   const prevKey = keyHandlerByEl.get(container);
