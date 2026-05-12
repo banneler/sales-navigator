@@ -74,69 +74,69 @@ your_coaches:
 knowledge_checks:
   - question: "You are converting a warm lead, but they haven't given a firm verbal commitment yet. Do you create the Opportunity?"
     options:
-      - "Yes. Always create the opportunity upon conversion so the system tracks the progression and approvals route correctly."
       - "No. Wait until they verbally commit so you don't clutter the team pipeline with 'maybes'."
+      - "Yes. Always create the opportunity upon conversion so the system tracks the progression and approvals route correctly."
       - "No. Just leave them as a Lead and set a reminder task for next week."
-    correct_index: 0
+    correct_index: 1
     explanation: "Skipping the opportunity creation breaks the entire downstream reporting and approval chain. Convert and create."
 
   - question: "When is the correct time to assign the Contract Signer to the GPC Solution?"
     options:
-      - "Early in the process, before the solution ever reaches Approval Pending."
       - "Right after the solution gets fully approved, just before you hit the Conga merge button."
+      - "Early in the process, before the solution ever reaches Approval Pending."
       - "It doesn't matter, as long as it happens before the customer opens the email."
-    correct_index: 0
+    correct_index: 1
     explanation: "If you wait until it is Approval Pending, the system locks and blocks your DocuSign envelope."
 
   - question: "You need the customer's CFO to sign the final agreement, but you've only been dealing with the IT Director. What must you do in Salesforce first?"
     options:
-      - "Create the CFO as a Contact on the Account record before sending the DocuSign."
       - "Just type the CFO's email address manually into the DocuSign routing window."
       - "Send it to the IT Director and ask them to forward the DocuSign to the CFO."
-    correct_index: 0
+      - "Create the CFO as a Contact on the Account record before sending the DocuSign."
+    correct_index: 2
     explanation: "Every DocuSign recipient must be a formalized Contact on the Account. Period."
 
   - question: "A prospect just signed a 36-month deal with a competitor. What do you do with the Opportunity?"
     options:
-      - "Mark it Closed Lost with the correct competitor reason. Never delete the record."
       - "Delete the record so leadership doesn't think you are hoarding dead pipeline."
       - "Revert the Opportunity back to a Lead so marketing can nurture them."
-    correct_index: 0
+      - "Mark it Closed Lost with the correct competitor reason. Never delete the record."
+    correct_index: 2
     explanation: "Closed Lost history is highly valuable data. Deleting records destroys our competitive intelligence."
 
   - question: "Which Contact Roles does the QRG say must be set on every Closed-Won GPC Solution?"
     options:
-      - "Project Contact, Billing Contact, and Property Manager / On-Site Manager."
       - "Just the Decision Maker—everything else is optional."
+      - "Project Contact, Billing Contact, and Property Manager / On-Site Manager."
       - "Sales' Main Contact and the Influencer. PMO figures the rest out post-close."
-    correct_index: 0
+    correct_index: 1
     explanation: "Skipping the three required roles doesn't fail the close. It stalls the install (PMO can't reach the building) and routes the bill to the wrong inbox."
     source: "Contact Roles Quick Reference Guide - 1023.pdf"
 
   - question: "On the same Solution Site you've selected both New Services and Existing Services. Which costing routing path does Salesforce follow?"
     options:
-      - "The New Services path."
       - "The Existing Services path."
+      - "The New Services path."
       - "Both paths run in parallel and the system reconciles them at Close-Won."
-    correct_index: 0
+    correct_index: 1
     explanation: "When New and Existing Services are both selected, the New Services path wins—always."
     source: "Costing Routing Quick Reference Guide - 1123.pdf (Considerations)"
 
   - question: "A Solution Site is associated with a Zone Parent Opportunity. Can it use the Reusable flag for costing?"
     options:
-      - "No—Reusable is not allowed when a Solution Site is associated with a Zone Parent Opportunity."
       - "Yes—Reusable speeds up multi-site deals, so Zone Parent + Reusable is the recommended combination."
+      - "No—Reusable is not allowed when a Solution Site is associated with a Zone Parent Opportunity."
       - "Only if the site is also flagged Strategic Build."
-    correct_index: 0
+    correct_index: 1
     explanation: "Strategic Build, Zone Parent, and Reusable are independent flags. The QRG is explicit: Reusable is not allowed under a Zone Parent."
     source: "Costing Routing Quick Reference Guide - 1123.pdf (Considerations)"
 
   - question: "What conditions flag a Solution Site as Strategic Build?"
     options:
-      - "The site's GPS coordinates fall within geographical boundaries pre-loaded into Salesforce. When flagged, Individual Drop Cost and Individual Equipment Cost apply systematically."
       - "Any deal over $50k MRC."
       - "Any deal involving a Zone Parent Opportunity."
-    correct_index: 0
+      - "The site's GPS coordinates fall within geographical boundaries pre-loaded into Salesforce. When flagged, Individual Drop Cost and Individual Equipment Cost apply systematically."
+    correct_index: 2
     explanation: "Strategic Build is purely geographic, not financial. The geographic boundary triggers the systematic cost application."
     source: "Costing Routing Quick Reference Guide - 1123.pdf (Considerations)"
 

@@ -142,27 +142,30 @@ five_minute_summary: |
   - Use Cancellation before billing when all services are coming out; use Disconnect after billing.
   - Request Manual Validation only for real exceptions. It pulls the site out of automated routing and slows the deal down.
 knowledge_checks:
-  - question: 'You just moved an opportunity to Closed Won, but the customer suddenly wants to upgrade their internet speed before the circuit is installed. What process do you use?'
+  - question: "You just moved an opportunity to Closed Won, but the customer suddenly wants to upgrade their internet speed before the circuit is installed. What process do you use?"
     options:
-      - 'A Change Order. The deal is won, but billing hasn''t started yet.'
-      - A Move-Add-Change (MAC). Any change to a signed contract requires a MAC.
-      - A Disconnect. You have to cancel the first order and write a brand new one.
-    correct_index: 0
-    explanation: 'Change Orders handle pre-billing modifications. MACs are only for live, billing circuits.'
-  - question: When should you use the 'Request Manual Validation' button?
+      - "A Move-Add-Change (MAC). Any change to a signed contract requires a MAC."
+      - "A Disconnect. You have to cancel the first order and write a brand new one."
+      - "A Change Order. The deal is won, but billing hasn't started yet."
+    correct_index: 2
+    explanation: "Change Orders handle pre-billing modifications. MACs are only for live, billing circuits."
+
+  - question: "When should you use the 'Request Manual Validation' button?"
     options:
-      - Only for genuine edge cases and exceptions that require a human to review the site build.
-      - On every deal to ensure the engineering team double-checks your work.
-      - Whenever you want to expedite the deal through the system.
-    correct_index: 0
-    explanation: 'Manual validation pulls the deal out of the automated fast lane. Use it rarely, or you are intentionally slowing down your own install.'
-  - question: You are attaching a custom pricing spreadsheet to the Salesforce record for approval. What must be included on the document?
+      - "On every deal to ensure the engineering team double-checks your work."
+      - "Only for genuine edge cases and exceptions that require a human to review the site build."
+      - "Whenever you want to expedite the deal through the system."
+    correct_index: 1
+    explanation: "Manual validation pulls the deal out of the automated fast lane. Use it rarely, or you are intentionally slowing down your own install."
+
+  - question: "You are attaching a custom pricing spreadsheet to the Salesforce record for approval. What must be included on the document?"
     options:
-      - The unique Solution ID.
-      - The VP of Sales' signature.
-      - The customer's billing account number.
-    correct_index: 0
-    explanation: 'Without the Solution ID, Operations cannot tie your rogue attachment to the correct workflow. Add the ID.'
+      - "The VP of Sales' signature."
+      - "The unique Solution ID."
+      - "The customer's billing account number."
+    correct_index: 1
+    explanation: "Without the Solution ID, Operations cannot tie your rogue attachment to the correct workflow. Add the ID."
+
 scenarios:
   - title: The Pre-Install Pivot
     situation: |

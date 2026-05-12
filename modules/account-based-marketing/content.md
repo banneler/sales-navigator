@@ -23,50 +23,50 @@ five_minute_summary: |
 knowledge_checks:
   - question: "How many ABM accounts should an Account Representative run concurrently per the SOP?"
     options:
-      - "Three active accounts at any time, with three on-deck ready to backfill (the Rolling Three)"
       - "As many as the rep can manage—no defined cap"
+      - "Three active accounts at any time, with three on-deck ready to backfill (the Rolling Three)"
       - "One account at a time until it closes"
-    correct_index: 0
+    correct_index: 1
     explanation: "Three concurrent active accounts + three on-deck = the Rolling Three pipeline model."
 
   - question: "How are the three concurrent ABM accounts kicked off per the SOP?"
     options:
       - "All three start on the same day for momentum"
-      - "On a 30-day stagger: Account A Month 1, Account B Month 2, Account C Month 3"
       - "Whenever the rep has free calendar time"
-    correct_index: 1
+      - "On a 30-day stagger: Account A Month 1, Account B Month 2, Account C Month 3"
+    correct_index: 2
     explanation: "Staggered 30-day kickoff ensures one account is always in the high-intensity opening phase while others are mid- or late-cycle."
 
   - question: "Can all ABM targets at an account be executive-level decision makers?"
     options:
-      - "Yes—executives close deals, so they're the only targets that matter"
       - "No—the SOP forbids all-executive stacks; mix Manager, Director/VP, and Executive"
+      - "Yes—executives close deals, so they're the only targets that matter"
       - "Only at Strategic accounts above a certain revenue threshold"
-    correct_index: 1
+    correct_index: 0
     explanation: "The tier hierarchy is Manager (Operational/Technical) + Director/VP (Tactical/Strategic) + Executive (Financial/Final Decision Maker). Single-threading at the top is exactly what the mix is designed to prevent."
 
   - question: "Which items belong on the Sales Readiness Checklist that the rep brings to ABM kickoff?"
     options:
-      - "Account Intel, Status (Customer vs Prospect), Current Services, Location Scope, Prospecting History, and the finalized Target List"
       - "Only the target list—everything else can be figured out in the meeting"
       - "A draft proposal and a contract template"
-    correct_index: 0
+      - "Account Intel, Status (Customer vs Prospect), Current Services, Location Scope, Prospecting History, and the finalized Target List"
+    correct_index: 2
     explanation: "Walking in cold (no checklist) is the fastest way to lose a Marketing partner and stretch the 90-day cycle."
 
   - question: "How often should marketing run ABM coordination touchpoints in the SOP model?"
     options:
-      - "One touchpoint every 30 days, with +1 added when Sales runs a physical Door Pull"
       - "Three touchpoints every week regardless of sales activity"
+      - "One touchpoint every 30 days, with +1 added when Sales runs a physical Door Pull"
       - "Only one touchpoint at the end of the 90-day cycle"
-    correct_index: 0
+    correct_index: 1
     explanation: "Monthly marketing coordination; +1 brochure-leave-behind when Sales executes a Door Pull. The Door Pull is the named SOP trigger for the extra marketing touch."
 
   - question: "Who may edit the Master Tracking Spreadsheet per the ABM operating model?"
     options:
-      - "Marketing and Sales Leadership only—everyone else is view-only."
       - "Any account rep working an Active ABM account may edit their own row."
+      - "Marketing and Sales Leadership only—everyone else is view-only."
       - "Sales Operations owns the spreadsheet; Marketing is view-only."
-    correct_index: 0
+    correct_index: 1
     explanation: "The master file stays authoritative when only Marketing and Sales Leadership hold edit rights. Reps who need a change route it through those owners—no shadow copies, no self-edit."
     source: "ABM SOP (Master Tracking Spreadsheet — permissions)"
 

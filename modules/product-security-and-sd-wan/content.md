@@ -22,81 +22,81 @@ knowledge_checks:
   - question: "How does DDoS Protection proactive differ from on-demand for mitigation windows?"
     options:
       - "There is no difference; both are always 24×7 mitigation."
-      - "Proactive includes 24×7 automated monitoring and mitigation; on-demand mitigation on the on-demand SKU is weekdays 8–17—qualify so customers don't assume 24×7."
       - "On-demand always includes faster mitigation than proactive."
-    correct_index: 1
+      - "Proactive includes 24×7 automated monitoring and mitigation; on-demand mitigation on the on-demand SKU is weekdays 8–17—qualify so customers don't assume 24×7."
+    correct_index: 2
     explanation: "On-demand ≠ 24×7 mitigation on that SKU."
 
   - question: "What must be true for the standard SD-WAN positioning in this module?"
     options:
       - "Single home office on any broadband with no GPC sites."
-      - "At least one site on GPC fiber and a multi-site WAN footprint (including possible off-net U.S. branches)."
       - "DDoS proactive service on every circuit automatically."
-    correct_index: 1
+      - "At least one site on GPC fiber and a multi-site WAN footprint (including possible off-net U.S. branches)."
+    correct_index: 2
     explanation: "Multi-site + ≥1 GPC fiber site."
 
   - question: "What should you avoid promising on SD-WAN without SE review?"
     options:
+      - "Both of the above."
       - "That every advanced security feature on collateral is in the base SKU, or feature parity vs any competitor SD-WAN without validation."
       - "That MPLS migration always finishes in one weekend with zero planning."
-      - "Both of the above."
-    correct_index: 2
+    correct_index: 0
     explanation: "Don't assume base = full NGFW; don't promise overnight MPLS cut without plan."
 
   - question: "What does Managed Network Security (MNS) represent relative to Managed Firewall alone?"
     options:
-      - "MNS is only a rebranded logo with no extra scope."
       - "MNS is the umbrella: managed firewall plus firewall management of customer gear, SIEM, assessments, email security, and related services—scope to the buyer's need."
+      - "MNS is only a rebranded logo with no extra scope."
       - "MNS replaces SD-WAN in every WAN design."
-    correct_index: 1
+    correct_index: 0
     explanation: "MNS when SIEM, assessments, email, or multi-vendor ops matter."
 
   - question: "What is an accurate statement about Managed Firewall in this module?"
     options:
-      - "It is Fortinet-based managed edge protection with SOC monitoring and a documented feature set—avoid quoting throughput as a fixed guarantee without SE context."
       - "It guarantees compliance certification by itself without review."
+      - "It is Fortinet-based managed edge protection with SOC monitoring and a documented feature set—avoid quoting throughput as a fixed guarantee without SE context."
       - "It never includes 24/7 monitoring."
-    correct_index: 0
+    correct_index: 1
     explanation: "SOC + Forti story; throughput/compliance via SE/approved artifacts."
 
   - question: "When a customer wants always-on DDoS mitigation but selected on-demand for price, what should you do?"
     options:
       - "Tell them on-demand matches proactive mitigation timing."
-      - "Explain proactive vs on-demand mitigation windows, confirm business-hour constraints on on-demand, and align SKU to uptime needs."
       - "Avoid documenting what they purchased."
-    correct_index: 1
+      - "Explain proactive vs on-demand mitigation windows, confirm business-hour constraints on on-demand, and align SKU to uptime needs."
+    correct_index: 2
     explanation: "Align SKU to real uptime need."
 
   - question: "For SD-WAN discovery, what should you confirm regarding security features?"
     options:
       - "Assume IDS/IPS and every NGFW line on collateral are in the base SD-WAN SKU."
-      - "Next-gen firewall / IDS lines may be optional add-ons—confirm scope in every quote with SE/quoting."
       - "Security features are irrelevant to SD-WAN."
-    correct_index: 1
+      - "Next-gen firewall / IDS lines may be optional add-ons—confirm scope in every quote with SE/quoting."
+    correct_index: 2
     explanation: "Map RFP lines to quoted SKUs."
 
   - question: "When should you engage SE/security early per this module?"
     options:
-      - "Never—sales owns all firewall and BGP design alone."
       - "For complex routing/HA, mixed-vendor firewall management, BGP/ASN DDoS designs, regulated environments, or high-scale data center needs."
+      - "Never—sales owns all firewall and BGP design alone."
       - "Only after the customer has paid in full for five years."
-    correct_index: 1
+    correct_index: 0
     explanation: "Complex/regulated/high-scale → early."
 
   - question: "What is sound positioning for the SD-WAN platform vs competitors?"
     options:
       - "Cite unverified spec-for-spec claims as facts."
-      - "Use local GPC support plus the WAN-edge platform as positioning themes—not unverified apples-to-apples specs."
       - "Promise feature parity with any competitor SD-WAN without review."
-    correct_index: 1
+      - "Use local GPC support plus the WAN-edge platform as positioning themes—not unverified apples-to-apples specs."
+    correct_index: 2
     explanation: "Support + fit; SE-approved competitive talk."
 
   - question: "How should internal fee schedules and pricing PDFs be used?"
     options:
       - "Post them publicly on the customer website."
-      - "Internal reference with quoting teams—not customer-facing until validated and approved."
       - "Discard them; pricing is always verbal only."
-    correct_index: 1
+      - "Internal reference with quoting teams—not customer-facing until validated and approved."
+    correct_index: 2
     explanation: "Pre-quote internal tools only."
 
 scenarios:

@@ -23,57 +23,57 @@ knowledge_checks:
   - question: "What does GPC iTV primarily rely on at the customer site?"
     options:
       - "Any third-party ISP circuit with no relationship to GPC access products."
-      - "The customer’s GPC Internet connection as the delivery path for the streaming TV service."
       - "Satellite backhaul only, independent of fiber or broadband."
-    correct_index: 1
+      - "The customer’s GPC Internet connection as the delivery path for the streaming TV service."
+    correct_index: 2
     explanation: "Collateral positions iTV over existing GPC Internet—qualify access first."
 
   - question: "Which pair are called out as headline features on standard GPC iTV marketing collateral?"
     options:
-      - "Cloud DVR and Replay TV."
       - "Dedicated wavelength transport and MPLS only."
       - "On-premises PBX licensing and analog-only voice."
-    correct_index: 0
+      - "Cloud DVR and Replay TV."
+    correct_index: 2
     explanation: "Marketing collateral leads with Replay TV and Cloud DVR alongside HD, sports, and locals."
 
   - question: "What should you disclose when TV setups or business types may not support a pure streaming experience?"
     options:
-      - "That no additional hardware ever applies."
       - "That set-top boxes may be required for some businesses or TV set-ups, typically at a low monthly rate—confirm with current packaging."
+      - "That no additional hardware ever applies."
       - "That sports channels are never included."
-    correct_index: 1
+    correct_index: 0
     explanation: "The asterisked footnote on standard collateral covers STB scenarios."
 
   - question: "How does standard iTV collateral describe the billing story for customers with multiple services?"
     options:
       - "Separate invoices per stream with no bundle option."
-      - "A convenient single bill for multiple services when sold in that model—validate with ordering and billing teams."
       - "Cash-only billing at the truck roll."
-    correct_index: 1
+      - "A convenient single bill for multiple services when sold in that model—validate with ordering and billing teams."
+    correct_index: 2
     explanation: "Single-bill convenience is a stated benefit—keep fulfillment aligned to reality."
 
   - question: "A prospect is interested in GPC iTV but their Internet today is with a national cable carrier. What's the right opening move per the iTV product sheet?"
     options:
       - "Sell GPC iTV as-is over their existing carrier circuit—it's a streaming app, so any decent broadband works."
-      - "Walk away—iTV isn't a fit for anyone on a competitor's ISP."
       - "Position iTV alongside GPC Internet (SIA, DIA, or Broadband) as the underlying access path; pair with the Connectivity & Access module to qualify a path before quoting iTV."
-    correct_index: 2
+      - "Walk away—iTV isn't a fit for anyone on a competitor's ISP."
+    correct_index: 1
     explanation: "The product sheet ties iTV to the customer's *GPC* Internet connection. Don't sell it as carrier-agnostic—qualify the access path first or you'll have a delivery and support problem at install."
 
   - question: "A prospect insists you guarantee specific regional sports networks over the phone before they share their site address. How should you respond per the iTV product sheet?"
     options:
-      - "Guarantee the full lineup verbally so you don't lose the meeting—channel mixes are mostly consistent across markets."
       - "Decline to guarantee specific channels. The product sheet's QR code resolves to a *local lineup* that varies by market—qualify the address first, then confirm channel carriage from the official lineup tool or SharePoint asset."
+      - "Guarantee the full lineup verbally so you don't lose the meeting—channel mixes are mostly consistent across markets."
       - "Tell them all sports channels are always included with every iTV plan."
-    correct_index: 1
+    correct_index: 0
     explanation: "Channel lineup is market-dependent. The product sheet directs customers to a QR code for their *local* lineup—verbal channel guarantees before address qualification are how reps end up over-promising and apologizing at install."
 
   - question: "How does the GPC iTV product sheet describe the target customer profile?"
     options:
+      - "Customizable to businesses of all sizes and industries—from small mom-and-pop shops through larger businesses."
       - "National enterprises with multi-market broadcast needs only."
       - "Single-screen residential customers in GPC's footprint."
-      - "Customizable to businesses of all sizes and industries—from small mom-and-pop shops through larger businesses."
-    correct_index: 2
+    correct_index: 0
     explanation: "Verbatim from the product sheet: iTV is positioned for the full spectrum from mom-and-pop through larger sites. The differentiator is *customizable*, not size-bound."
 
 scenarios:
@@ -101,7 +101,6 @@ roleplay:
   persona: "Frugal retail owner"
   scenario: "Two screens in a coffee shop, wants local morning shows and weekend sports for patrons, skeptical of 'another box fee.' Worried about equipment clutter."
   goal: "Explain streaming-first value (Cloud DVR, Replay TV, HD), acknowledge when set-top boxes may be needed per current collateral footnotes, and anchor on GPC Internet + single-bill simplicity without overpromising channel counts before lineup confirmation."
-
 ---
 
 ## At a glance

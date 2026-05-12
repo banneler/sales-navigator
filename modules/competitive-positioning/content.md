@@ -74,100 +74,100 @@ five_minute_summary: |
 knowledge_checks:
   - question: "Before positioning against a competitor's strength, what should you do first?"
     options:
-      - "Lead with your best battle-card stat regardless of their stack"
       - "Run discovery on applications, sites, and outcomes so claims map to their stated needs"
+      - "Lead with your best battle-card stat regardless of their stack"
       - "Assume their network is always inferior to yours"
-    correct_index: 1
+    correct_index: 0
     explanation: "Discovery before claims—then map fit."
 
   - question: "Which behavior is a stated landmine to avoid?"
     options:
-      - "Citing battle-card statistics externally without confirming currency with marketing"
       - "Acknowledging where a competitor is legitimately strong"
+      - "Citing battle-card statistics externally without confirming currency with marketing"
       - "Using qualifying questions to earn a technical conversation"
-    correct_index: 0
+    correct_index: 1
     explanation: "Don't cite stats externally until cleared."
 
   - question: "When should you engage SE early?"
     options:
       - "Only after the customer signs an order"
-      - "For multi-site WAN/SD-WAN, integrated security, hybrid on/off-net, regulated workloads, fiber feasibility, or RFP-style validation"
       - "Never—sales should own all topology design alone"
-    correct_index: 1
+      - "For multi-site WAN/SD-WAN, integrated security, hybrid on/off-net, regulated workloads, fiber feasibility, or RFP-style validation"
+    correct_index: 2
     explanation: "Complex WAN/security/hybrid/regulated/RFP → SE."
 
   - question: "What should competitor → GPC responses pair for each angle?"
     options:
-      - "Their pitch or truth, business risk for this customer, and proof you can support (local teams, NOC, redundancy, portfolio)"
       - "Only a slogan and no customer specifics"
       - "Personal attacks on the competitor's executives"
-    correct_index: 0
+      - "Their pitch or truth, business risk for this customer, and proof you can support (local teams, NOC, redundancy, portfolio)"
+    correct_index: 2
     explanation: "Truth + risk + proof—not slogans."
 
   - question: "Against fiber vs LEO satellite interest, what reframe beats a speed-test-only debate?"
     options:
-      - "Reliability, latency, weather/obstruction risk, and operational support for business apps"
       - "Monthly sticker price as the only decision factor"
+      - "Reliability, latency, weather/obstruction risk, and operational support for business apps"
       - "Ignore their interest and refuse to discuss satellite"
-    correct_index: 0
+    correct_index: 1
     explanation: "Business outcomes—not Mbps alone."
 
   - question: "What does the framework say about personal disparagement of competitors?"
     options:
-      - "Avoid it—stay factual and customer-centric"
       - "Encourage it whenever you are behind on price"
+      - "Avoid it—stay factual and customer-centric"
       - "Require it in every competitive meeting"
-    correct_index: 0
+    correct_index: 1
     explanation: "Landmines forbid personal attacks."
 
   - question: "For SD-WAN battle-card use, what must you verify before citing awards or ratings?"
     options:
-      - "Year and scope—confirm accuracy before external claims"
       - "Nothing—repeat any headline from memory"
+      - "Year and scope—confirm accuracy before external claims"
       - "Only the competitor's stock price"
-    correct_index: 0
+    correct_index: 1
     explanation: "Verify scope/year before external use."
 
   - question: "What dimensions help compare operators during metro/local competition beyond headline price?"
     options:
-      - "Install quality, support model, redundancy, fiber depth vs pocketed coverage, and rate stability"
       - "Only the color of the competitor's logo"
       - "Wi-Fi router aesthetics in consumer reviews only"
-    correct_index: 0
+      - "Install quality, support model, redundancy, fiber depth vs pocketed coverage, and rate stability"
+    correct_index: 2
     explanation: "Ops fit—not logo or consumer reviews."
 
   - question: "What is PM engagement used for per the module?"
     options:
-      - "Delivery timelines, construction, and contract alignment"
       - "Replacing all sales discovery on the first call"
+      - "Delivery timelines, construction, and contract alignment"
       - "Writing competitor press releases"
-    correct_index: 0
+    correct_index: 1
     explanation: "PM = delivery/construction/contract alongside SE."
 
   - question: "Per the Omaha Metro battle card, what is one structural weakness of Allo that GPC reps can lean into?"
     options:
-      - "Allo does not fully own their network — they lease fiber from GPC and others."
       - "Allo only sells to residential customers and has no Omaha presence."
       - "Allo has no fiber footprint in the metro and resells satellite Internet."
-    correct_index: 0
+      - "Allo does not fully own their network — they lease fiber from GPC and others."
+    correct_index: 2
     explanation: "Use this once in a head-to-head Allo conversation as a supporting line — never as your opening move. The factoid lands as gloating if it's how you open."
     source: "Omaha Metro competitive battle card v3.pdf (Allo section)"
 
   - question: "On a Managed Firewall opportunity, the customer says 'we already have someone doing this.' Per the Managed Firewall battle card, what's the right framing to lead with?"
     options:
-      - "Service consolidation — fewer vendors, single bill, single point of contact, 24/7 SOC. Don't try to win 'we're better at firewalls than your MSP.'"
       - "Aggressively detail every feature GPC's firewall has that the incumbent's doesn't."
+      - "Service consolidation — fewer vendors, single bill, single point of contact, 24/7 SOC. Don't try to win 'we're better at firewalls than your MSP.'"
       - "Drop the topic — if they already have a firewall vendor, the deal is dead."
-    correct_index: 0
+    correct_index: 1
     explanation: "The Managed Firewall battle card explicitly names 'most customers already have firewalls from someone' as Challenge #1. The defensible pivot is operational simplicity, not feature combat."
     source: "Managed Firewall Battlecard FINAL.pdf (Challenge #1)"
 
   - question: "Per the Omaha Metro battle card, what is the T-Mobile / Metronet acquisition nuance reps should be ready to surface?"
     options:
-      - "T-Mobile bought Metronet; residential goes under T-Mobile brand, but B2B remains Metronet — 'could mean instability as the business side is still branded Metronet.'"
       - "T-Mobile bought Metronet and rebranded the entire business under T-Mobile Fiber."
+      - "T-Mobile bought Metronet; residential goes under T-Mobile brand, but B2B remains Metronet — 'could mean instability as the business side is still branded Metronet.'"
       - "T-Mobile sold Metronet to a private equity firm and exited the market."
-    correct_index: 0
+    correct_index: 1
     explanation: "The split-brand outcome (residential → T-Mobile; B2B → Metronet) is the explicit nuance the card flags. Reps who don't know this miss the 'why is your B2B sales rep still saying Metronet?' opening."
     source: "Omaha Metro competitive battle card v3.pdf (Metronet section)"
 

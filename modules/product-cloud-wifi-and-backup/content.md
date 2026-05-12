@@ -25,48 +25,54 @@ five_minute_summary: |
   - **5G Wireless Broadband:** Cellular as the *primary* internet path. Two motions: (1) a temporary bridge while a fiber build is in flight, or (2) the long-term answer where fiber isn't available. Same Cradlepoint hardware as Backup, but the carrier hands out a DHCP IP—anything hosted on prem will not be reachable from the internet. Temporary wireless service is **non-commissionable**; you earn the commission once the fiber circuit lights.
   - **The pitch order & ground rules:** Sell primary fiber first, attach 5G Backup for redundancy, and finish with Managed Wi-Fi for the localized experience. Use 5G Broadband to bridge a fiber install gap or to cover a site fiber can't reach. Wireless is **in-territory only** and **only attaches to SIA / DIA / SD-WAN**—it's not a stand-alone offer. No SLAs: every wireless circuit is "best effort."
 knowledge_checks:
-  - question: A prospect wants to know how much 15 Wi-Fi Access Points will cost for their new warehouse. What do you do?
+  - question: "A prospect wants to know how much 15 Wi-Fi Access Points will cost for their new warehouse. What do you do?"
     options:
-      - Refuse to quote AP counts blindly. Tell them a proper site survey is mandatory to ensure coverage and avoid dead zones.
-      - Look at the pricing sheet for 15 APs and send them a rough estimate.
-      - Assume a warehouse needs double the APs and quote them 30 just to be safe.
-    correct_index: 0
-    explanation: 'Never guess on Wi-Fi. A warehouse full of metal racks is a nightmare for signal. Survey first, quote second.'
-  - question: What is the primary technical advantage of Cloud Connect over a standard Dedicated Internet Access (DIA) circuit?
+      - "Look at the pricing sheet for 15 APs and send them a rough estimate."
+      - "Assume a warehouse needs double the APs and quote them 30 just to be safe."
+      - "Refuse to quote AP counts blindly. Tell them a proper site survey is mandatory to ensure coverage and avoid dead zones."
+    correct_index: 2
+    explanation: "Never guess on Wi-Fi. A warehouse full of metal racks is a nightmare for signal. Survey first, quote second."
+
+  - question: "What is the primary technical advantage of Cloud Connect over a standard Dedicated Internet Access (DIA) circuit?"
     options:
-      - 'Cloud Connect bypasses the public internet entirely, eliminating variable latency and jitter for cloud workloads.'
-      - Cloud Connect is significantly cheaper than DIA.
-      - Cloud Connect provides built-in DDoS protection for their website.
-    correct_index: 0
-    explanation: 'DIA still uses the public internet. Cloud Connect is a private, dedicated lane straight to the cloud provider.'
-  - question: A customer says they don't need 5G Backup because they have a cheap coax cable connection from a competitor as their backup. What is your response?
+      - "Cloud Connect is significantly cheaper than DIA."
+      - "Cloud Connect bypasses the public internet entirely, eliminating variable latency and jitter for cloud workloads."
+      - "Cloud Connect provides built-in DDoS protection for their website."
+    correct_index: 1
+    explanation: "DIA still uses the public internet. Cloud Connect is a private, dedicated lane straight to the cloud provider."
+
+  - question: "A customer says they don't need 5G Backup because they have a cheap coax cable connection from a competitor as their backup. What is your response?"
     options:
-      - 'Point out that cable and fiber often share the same physical utility poles. If a truck hits the pole, both go down. 5G offers true path diversity.'
-      - Agree that cable is a fine backup and focus on selling the primary fiber.
-      - Offer to lower the price of our 5G Backup to beat the cable provider's price.
-    correct_index: 0
-    explanation: 'Wired backups often share the same physical vulnerabilities (trenches, poles, building entry). Wireless provides actual physical diversity.'
+      - "Agree that cable is a fine backup and focus on selling the primary fiber."
+      - "Point out that cable and fiber often share the same physical utility poles. If a truck hits the pole, both go down. 5G offers true path diversity."
+      - "Offer to lower the price of our 5G Backup to beat the cable provider's price."
+    correct_index: 1
+    explanation: "Wired backups often share the same physical vulnerabilities (trenches, poles, building entry). Wireless provides actual physical diversity."
+
   - question: "A customer's new retail location goes live in 14 days, but the fiber build for that address won't be ready for 90. They're already a GPC SIA customer at their main office. What's the right play?"
     options:
-      - Tell them to delay the store opening until the fiber circuit lights.
-      - Sell them 5G Wireless Broadband as a temporary bridge—the Cradlepoint goes in now, and once fiber lights it converts into a Wireless Backup attachment behind the new SIA/DIA.
-      - 'Sell them a permanent 5G Wireless Broadband contract since cellular is effectively the same as fiber for a retail site.'
-    correct_index: 1
-    explanation: 'Bridging a fiber install gap is the textbook temporary use case for Wireless Broadband. Same hardware re-roles as Backup once fiber turns up—remember the commission lands on the SIA/DIA, not the temporary bridge.'
+      - "Sell them 5G Wireless Broadband as a temporary bridge—the Cradlepoint goes in now, and once fiber lights it converts into a Wireless Backup attachment behind the new SIA/DIA."
+      - "Tell them to delay the store opening until the fiber circuit lights."
+      - "Sell them a permanent 5G Wireless Broadband contract since cellular is effectively the same as fiber for a retail site."
+    correct_index: 0
+    explanation: "Bridging a fiber install gap is the textbook temporary use case for Wireless Broadband. Same hardware re-roles as Backup once fiber turns up—remember the commission lands on the SIA/DIA, not the temporary bridge."
+
   - question: "A prospect wants to run a small ERP server on-premise and reach it from the public internet. They love the idea of 5G Wireless Broadband as their primary connection because it installs faster than fiber. Are they a fit?"
     options:
-      - 'Yes—Cradlepoint will port-forward a public IP through to the on-prem server.'
-      - 'Yes—you can request a static IP from the cellular carrier for an additional fee.'
-      - 'No—Wireless Broadband uses a DHCP IP from the carrier, so anything hosted on prem is unreachable from the internet. They need SIA or DIA for that workload.'
-    correct_index: 2
-    explanation: 'Static IPs work on the GPC landline side only. Neither Backup (during failover) nor Broadband supports prem-hosted services reachable from the internet. If the customer hosts inbound services, lead with SIA/DIA.'
+      - "Yes—Cradlepoint will port-forward a public IP through to the on-prem server."
+      - "No—Wireless Broadband uses a DHCP IP from the carrier, so anything hosted on prem is unreachable from the internet. They need SIA or DIA for that workload."
+      - "Yes—you can request a static IP from the cellular carrier for an additional fee."
+    correct_index: 1
+    explanation: "Static IPs work on the GPC landline side only. Neither Backup (during failover) nor Broadband supports prem-hosted services reachable from the internet. If the customer hosts inbound services, lead with SIA/DIA."
+
   - question: "You close a 5G Wireless Broadband deal at a customer site that's still waiting on a fiber install. When do you get commissioned?"
     options:
-      - At install, like every other wireless circuit.
-      - Never. Temporary wireless service is non-commissionable—you're commissioned on the SIA/DIA contract once the fiber circuit lights and the wireless converts to Backup.
-      - At half the rate of a permanent wireless contract.
-    correct_index: 1
-    explanation: 'Temporary wireless service is non-commissionable—a hard GPC business rule. Plan your pipeline accordingly and stay close to the fiber install date so the SIA/DIA commission actually lands.'
+      - "At install, like every other wireless circuit."
+      - "At half the rate of a permanent wireless contract."
+      - "Never. Temporary wireless service is non-commissionable—you're commissioned on the SIA/DIA contract once the fiber circuit lights and the wireless converts to Backup."
+    correct_index: 2
+    explanation: "Temporary wireless service is non-commissionable—a hard GPC business rule. Plan your pipeline accordingly and stay close to the fiber install date so the SIA/DIA commission actually lands."
+
 scenarios:
   - title: The Jittery Cloud
     situation: |

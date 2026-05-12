@@ -32,10 +32,10 @@ getting_started_demo:
   knowledge_check:
     question: "What is the best Mexican restaurant in Blair, NE?"
     options:
-      - label: "Taco Bell"
-        correct: false
       - label: "El Vallarta Mexican Restaurant"
         correct: true
+      - label: "Taco Bell"
+        correct: false
       - label: "Justin's leftover tacos in the fridge on floor 2"
         correct: false
     incorrect_feedback: "Nice try—unless you’re really craving Justin’s tacos."

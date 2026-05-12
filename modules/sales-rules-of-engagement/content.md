@@ -19,131 +19,76 @@ five_minute_summary: |
   - **Transfers:** Never play admin and reassign an account to yourself. Talk to the incumbent owner, get aligned, and then email your manager and sales leadership for the official sign-off.
 
 knowledge_checks:
-
   - question: "Before creating a new account or contact in Salesforce, what is the mandatory first step?"
-
     options:
-
-      - "Search Salesforce by name and address to ensure it doesn't already exist."
-
       - "Create the account immediately so you can log your notes, then ask Ops to merge duplicates later."
-
+      - "Search Salesforce by name and address to ensure it doesn't already exist."
       - "Check ZoomInfo, and if the data looks clean, automatically import it as a new record."
-
-    correct_index: 0
-
+    correct_index: 1
     explanation: "Search first. One entity, one account. Duplicates create massive commission headaches down the road."
 
   - question: "Marketing assigns you a hot inbound lead. How long do you have to make first contact and log it?"
-
     options:
-
-      - "5 business days."
-
       - "5 calendar days."
-
       - "14 days, since it takes time to properly research the account before reaching out."
-
-    correct_index: 0
-
+      - "5 business days."
+    correct_index: 2
     explanation: "You have exactly five business days for assigned inbound leads. If it isn't logged in Salesforce by then, it can be pulled."
 
   - question: "Who holds the authoritative list of Strategic Accounts?"
-
     options:
-
-      - "Sales Managers and the VP of Sales, via the official repository on Sales SharePoint."
-
       - "The Account Executive who last worked the deal."
-
+      - "Sales Managers and the VP of Sales, via the official repository on Sales SharePoint."
       - "Any rep can tag an account as Strategic if the MRC is projected over $5,000."
-
-    correct_index: 0
-
+    correct_index: 1
     explanation: "Only Sales Managers and the VP of Sales maintain the official Strategic list. Informal spreadsheets or personal tags don't count."
 
   - question: "For a general Customer account (non-strategic), how many days of zero logged activity must pass before the ROE window opens?"
-
     options:
-
-      - "121+ days."
-
       - "90 days."
-
+      - "121+ days."
       - "365 days."
-
-    correct_index: 0
-
+    correct_index: 1
     explanation: "121+ days idle for a Customer account on the general path."
 
   - question: "For a general Prospect account, how many days of zero logged activity must pass before the ROE window opens?"
-
     options:
-
-      - "61+ days."
-
       - "30 days."
-
+      - "61+ days."
       - "90 days."
-
-    correct_index: 0
-
+    correct_index: 1
     explanation: "61+ days for a Prospect account on the general path."
 
   - question: "Does the strict five-business-day clock apply to leads you prospect and self-source?"
-
     options:
-
-      - "No; that clock is specific to sales- or marketing-assigned inbound leads."
-
       - "Yes; every lead type uses the same five-business-day clock to maintain pipeline velocity."
-
+      - "No; that clock is specific to sales- or marketing-assigned inbound leads."
       - "Self-sourced leads actually must be converted within 48 hours."
-
-    correct_index: 0
-
+    correct_index: 1
     explanation: "The five-day clock only applies to assigned inbound leads, not your own self-sourced prospecting."
 
   - question: "You've noticed an account is past its idle window and you want to work it. What is the approved transfer process?"
-
     options:
-
-      - "Connect with the current owner. Once agreed, email your manager and sales leadership for approval and transfer."
-
       - "Change the owner in Salesforce to yourself, then send a courtesy Teams message to the prior owner."
-
       - "Tag the VP of Sales in a Chatter post and wait for them to reassign it."
-
-    correct_index: 0
-
+      - "Connect with the current owner. Once agreed, email your manager and sales leadership for approval and transfer."
+    correct_index: 2
     explanation: "Never reassign an account unilaterally. Get incumbent agreement, then get leadership's blessing."
 
   - question: "How are USAC-funded entities treated under the rules of engagement?"
-
     options:
-
-      - "They follow Strategic-style treatment regardless of list inclusion (with noted exceptions like ENA in Indiana)."
-
       - "They follow the exact same 61/121 rules as any standard general Prospect or Customer."
-
       - "They are exempt from Salesforce tracking entirely."
-
-    correct_index: 0
-
+      - "They follow Strategic-style treatment regardless of list inclusion (with noted exceptions like ENA in Indiana)."
+    correct_index: 2
     explanation: "USAC entities get Strategic-style protection per the ROE. Always verify with leadership."
 
   - question: "When leadership is settling an account ownership dispute, what is the ONLY evidence that matters?"
-
     options:
-
-      - "Logged activity and clean data in Salesforce."
-
       - "Your Outlook 'Sent' folder showing you emailed the prospect."
-
+      - "Logged activity and clean data in Salesforce."
       - "A verbal conversation you had with the customer at a trade show."
-
-    correct_index: 0
-
+    correct_index: 1
     explanation: "Salesforce is the system of record. If it's not logged there, it didn't happen."
 
 scenarios:
@@ -185,7 +130,6 @@ reference_files:
   - label: "Sales Rules of Engagement (ROE) — Revised August 2025"
 
     sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/gpcSales/ROE/Sales%20Rules%20of%20Engagement%20(ROE)%20-%20Revised%20August%2025.pdf?csf=1&web=1&e=7aw2jN"
-
 ---
 
 ## Overview

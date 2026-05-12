@@ -37,78 +37,84 @@ five_minute_summary: |
 knowledge_checks:
   - question: "A prospect wants to add external calling to Microsoft Teams. They think they need to buy Microsoft's 'Teams Phone' add-on license for every user. Are they right?"
     options:
-      - "It depends on the design. Our 'Embedded UC' app bypasses the MS license, but if they want native 'Direct Routing' through the MS dialer, they must buy the MS Teams Phone license."
       - "No. With our embedded UC for Teams solution, they get full calling and SMS inside Teams without needing to buy the Microsoft Teams Phone license."
+      - "It depends on the design. Our 'Embedded UC' app bypasses the MS license, but if they want native 'Direct Routing' through the MS dialer, they must buy the MS Teams Phone license."
       - "Yes. Microsoft requires the Teams Phone license for any external calling, regardless of the provider."
-    correct_index: 0
-    explanation: "There are two different technical paths. Never guarantee 'no MS licensing' until an SE validates which path the customer actually wants."
-  - question: How is our Contact Center (CCaaS) product licensed?
-    options:
-      - Concurrent licensing. They pay for the maximum number of agents logged in simultaneously.
-      - Named user licensing. They pay a fee for every single employee in the company.
-      - Per-minute billing. They only pay for the time agents spend actively talking.
-    correct_index: 0
-    explanation: Concurrent licensing is a massive cost-saver for businesses with shift workers or part-time agents.
-  - question: A customer experiences a complete Microsoft 365 outage and Teams goes down. What happens to their phones if they use our embedded UC solution?
-    options:
-      - They can still make and receive calls using our standalone desktop or mobile UC app. We provide continuity when Teams fails.
-      - Their phones go down completely until Microsoft fixes the issue.
-      - Calls are automatically forwarded to their personal cell phone voicemails.
-    correct_index: 0
-    explanation: 'Because our voice infrastructure is separate from Microsoft''s, a Teams outage doesn''t take down their ability to communicate.'
-  - question: A 12-person law firm wants UC. Mostly desk-phone client calls, occasional Zoom-style meetings with up to 8 people, no contact center. Which UC plan should you lead with?
-    options:
-      - UC Enterprise — clients deserve the top tier regardless of workload.
-      - UC Essentials — voice calling plus video conferencing for up to 25 participants, AI Meeting Recap, and Call Recording. The Call Center features in Pro and Enterprise aren't needed.
-      - UC Express — small firms only need voice, so video is overkill.
     correct_index: 1
-    explanation: Match the plan to the **workload**, not the company size. Essentials covers their video need (Express has no video) without paying for Pro/Enterprise call-center features they won't use.
-  - question: 'A prospect says "we need a contact center." UC Pro already advertises Call Queueing, Agent Log-In/Out, Wallboards, and Supervisor Monitor/Whisper/Barge. Should you sell them UC Pro or the dedicated CCaaS add-on?'
+    explanation: "There are two different technical paths. Never guarantee 'no MS licensing' until an SE validates which path the customer actually wants."
+
+  - question: "How is our Contact Center (CCaaS) product licensed?"
     options:
-      - 'Always sell CCaaS — it has more features and a bigger price tag.'
-      - 'Always sell UC Pro — the call-center features inside the plan are equivalent to the dedicated CCaaS product.'
-      - 'It depends on the workload. UC Pro/Enterprise covers a small/medium **inbound voice** call-center (queue, hunt, supervisor). The dedicated **CCaaS** product is the answer for **omnichannel** (voice + SMS + chat), advanced IVR, deep CRM screen-pops, and concurrent licensing across channels. Get an SE to scope before quoting.'
-    correct_index: 2
-    explanation: UC Pro/Enterprise's Call Center features are a fully usable inbound voice operation — perfect for a 10-seat help desk. CCaaS is the separate omnichannel product. Conflating the two at quote time creates an install fight; let the SE scope it.
-  - question: A 175-person company wants UC for their monthly all-hands video call. What is the minimum UC plan tier that supports the meeting size?
+      - "Named user licensing. They pay a fee for every single employee in the company."
+      - "Concurrent licensing. They pay for the maximum number of agents logged in simultaneously."
+      - "Per-minute billing. They only pay for the time agents spend actively talking."
+    correct_index: 1
+    explanation: "Concurrent licensing is a massive cost-saver for businesses with shift workers or part-time agents."
+
+  - question: "A customer experiences a complete Microsoft 365 outage and Teams goes down. What happens to their phones if they use our embedded UC solution?"
     options:
-      - UC Essentials — video conferencing is included.
-      - UC Pro — video conferencing for up to 100 participants.
-      - UC Enterprise — video conferencing for up to 200 participants. Essentials caps at 25 and Pro caps at 100, so a 175-person all-hands won't fit either.
-    correct_index: 2
-    explanation: The participant ceilings step **25 → 100 → 200** across Essentials / Pro / Enterprise. For a 175-person meeting, Enterprise is the floor.
-  - question: A prospect wants to port in 8 existing carrier DIDs that are still under contract with their current provider, plus a 4-level IVR menu with after-hours routing and a Salesforce screen-pop integration. What's the right next step?
+      - "Their phones go down completely until Microsoft fixes the issue."
+      - "They can still make and receive calls using our standalone desktop or mobile UC app. We provide continuity when Teams fails."
+      - "Calls are automatically forwarded to their personal cell phone voicemails."
+    correct_index: 1
+    explanation: "Because our voice infrastructure is separate from Microsoft's, a Teams outage doesn't take down their ability to communicate."
+
+  - question: "A 12-person law firm wants UC. Mostly desk-phone client calls, occasional Zoom-style meetings with up to 8 people, no contact center. Which UC plan should you lead with?"
     options:
-      - Quote UC Pro and move on — these are all standard features.
-      - Promise it all yourself, then have the SE figure out the SOW after the contract is signed.
-      - Stop and bring in your Solutions Engineer. IPN/OffNet porting under an active carrier contract, multi-level IVR scoping, and Salesforce CTI integration are all SE-validated designs — promising any of them on your own creates an install fight you can't win.
+      - "UC Enterprise — clients deserve the top tier regardless of workload."
+      - "UC Express — small firms only need voice, so video is overkill."
+      - "UC Essentials — voice calling plus video conferencing for up to 25 participants, AI Meeting Recap, and Call Recording. The Call Center features in Pro and Enterprise aren't needed."
     correct_index: 2
-    explanation: 'The deep-dive rule already says "Do not attempt to quote high-volume burst capacity or complex IVR routing on your own. Bring in your SE immediately." Extend that rule to **IPN/OffNet porting** (existing-carrier contract handoffs) and **CRM CTI integrations** (Salesforce/ServiceNow/Dynamics screen-pops). When you see any of the three, pause and pull in the SE.'
+    explanation: "Match the plan to the **workload**, not the company size. Essentials covers their video need (Express has no video) without paying for Pro/Enterprise call-center features they won't use."
+
+  - question: "A prospect says \"we need a contact center.\" UC Pro already advertises Call Queueing, Agent Log-In/Out, Wallboards, and Supervisor Monitor/Whisper/Barge. Should you sell them UC Pro or the dedicated CCaaS add-on?"
+    options:
+      - "It depends on the workload. UC Pro/Enterprise covers a small/medium **inbound voice** call-center (queue, hunt, supervisor). The dedicated **CCaaS** product is the answer for **omnichannel** (voice + SMS + chat), advanced IVR, deep CRM screen-pops, and concurrent licensing across channels. Get an SE to scope before quoting."
+      - "Always sell CCaaS — it has more features and a bigger price tag."
+      - "Always sell UC Pro — the call-center features inside the plan are equivalent to the dedicated CCaaS product."
+    correct_index: 0
+    explanation: "UC Pro/Enterprise's Call Center features are a fully usable inbound voice operation — perfect for a 10-seat help desk. CCaaS is the separate omnichannel product. Conflating the two at quote time creates an install fight; let the SE scope it."
+
+  - question: "A 175-person company wants UC for their monthly all-hands video call. What is the minimum UC plan tier that supports the meeting size?"
+    options:
+      - "UC Enterprise — video conferencing for up to 200 participants. Essentials caps at 25 and Pro caps at 100, so a 175-person all-hands won't fit either."
+      - "UC Essentials — video conferencing is included."
+      - "UC Pro — video conferencing for up to 100 participants."
+    correct_index: 0
+    explanation: "The participant ceilings step **25 → 100 → 200** across Essentials / Pro / Enterprise. For a 175-person meeting, Enterprise is the floor."
+
+  - question: "A prospect wants to port in 8 existing carrier DIDs that are still under contract with their current provider, plus a 4-level IVR menu with after-hours routing and a Salesforce screen-pop integration. What's the right next step?"
+    options:
+      - "Quote UC Pro and move on — these are all standard features."
+      - "Stop and bring in your Solutions Engineer. IPN/OffNet porting under an active carrier contract, multi-level IVR scoping, and Salesforce CTI integration are all SE-validated designs — promising any of them on your own creates an install fight you can't win."
+      - "Promise it all yourself, then have the SE figure out the SOW after the contract is signed."
+    correct_index: 1
+    explanation: "The deep-dive rule already says \"Do not attempt to quote high-volume burst capacity or complex IVR routing on your own. Bring in your SE immediately.\" Extend that rule to **IPN/OffNet porting** (existing-carrier contract handoffs) and **CRM CTI integrations** (Salesforce/ServiceNow/Dynamics screen-pops). When you see any of the three, pause and pull in the SE."
 
   - question: "Name the five GPC UC plan tiers, lowest to highest."
     options:
-      - "Resource Line → UC Express → UC Essentials → UC Pro → UC Enterprise."
       - "UC Lite → UC Standard → UC Plus → UC Pro → UC Enterprise."
+      - "Resource Line → UC Express → UC Essentials → UC Pro → UC Enterprise."
       - "UC Express → UC Essentials → UC Pro → UC Enterprise → UC Enterprise+."
-    correct_index: 0
+    correct_index: 1
     explanation: "Resource Line is the standalone-endpoint floor (one concurrent line, no apps, for lobby / conference-room / common-area phones). Everything above it scales by video participants, storage, call-center features, and CRM integrations."
     source: "UC Plan Comparison - Internal use only 2026.pdf"
 
   - question: "A customer needs 40 omnichannel agents with outbound calling, supervisor monitor/whisper/barge, queued callback, and post-call surveys. Which CCaaS tier do you anchor the quote on?"
     options:
-      - "CC Elite — outbound dialer, supervisor monitor/whisper/barge, queued callback, and post-call surveys are Elite-only capabilities."
       - "CC Pro — Pro is the default; Elite is just a marketing tier."
       - "UC Pro's Advanced Hunt Groups — same feature set, lower cost."
-    correct_index: 0
+      - "CC Elite — outbound dialer, supervisor monitor/whisper/barge, queued callback, and post-call surveys are Elite-only capabilities."
+    correct_index: 2
     explanation: "Both tiers are concurrent-seat licensed and both are omnichannel-capable, but supervisor coaching, outbound dialer, callback, and post-call surveys are explicit Elite-tier capabilities. Quoting Pro for an outbound-heavy or supervisor-coaching workload creates a feature-gap fight at install."
     source: "Contact Center datasheet 050925.pdf"
 
   - question: "A customer is replacing their front-desk receptionist's phone. They want a large color touch screen with on-screen line management. Which Yealink model do you spec?"
     options:
-      - "T57W (Advanced) — 7-inch, 800×480 capacitive touch screen."
       - "T53W (Basic) — 3.7-inch graphical LCD, 8 line keys."
+      - "T57W (Advanced) — 7-inch, 800×480 capacitive touch screen."
       - "T54W (Intermediate) — 4.3-inch color LCD, 10 line keys."
-    correct_index: 0
+    correct_index: 1
     explanation: "Pick by **role**, not by what's cheapest. Front desk gets Advanced (T57W) because the receptionist needs a touch-screen line-management experience. Back-office workers who just answer their own line are well-served by the T53W Basic."
     source: "UC Phone Comparison sheet.pdf"
 

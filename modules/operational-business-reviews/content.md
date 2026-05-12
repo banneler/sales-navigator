@@ -21,41 +21,45 @@ five_minute_summary: |
   - **The Sales Readiness Form is the Source of Truth.** Complete it early. It locks in the strategic copy for Marketing, carries all audited billing/NOC data, and feeds the trifold's narrative.
 
 knowledge_checks:
-  - question: How many business days does the OBR cycle run, from initiation through the meeting itself?
+  - question: "How many business days does the OBR cycle run, from initiation through the meeting itself?"
     options:
-      - 21 business days
-      - 14 business days
-      - 30 business days
-    correct_index: 0
-    explanation: 'The SOP defines a 21-business-day cycle, ending with the OBR Meeting on Day 21.'
-  - question: '"Zero Fire Drills" is one of the OBR''s three Success Criteria. What does it mean operationally?'
+      - "14 business days"
+      - "21 business days"
+      - "30 business days"
+    correct_index: 1
+    explanation: "The SOP defines a 21-business-day cycle, ending with the OBR Meeting on Day 21."
+
+  - question: "\"Zero Fire Drills\" is one of the OBR's three Success Criteria. What does it mean operationally?"
     options:
-      - Every asset is ready and handed to Marketing by Business Day 14.
-      - No support tickets can be open on the customer's circuits during OBR week.
-      - The OBR meeting cannot be rescheduled.
-    correct_index: 0
-    explanation: '"Zero Fire Drills" is the SOP''s name for the Business Day 14 handoff milestone—seven business days before the meeting, Marketing has everything they need.'
-  - question: Marketing will not begin design until the "Single Packet" handoff arrives. What must that single email contain?
+      - "No support tickets can be open on the customer's circuits during OBR week."
+      - "The OBR meeting cannot be rescheduled."
+      - "Every asset is ready and handed to Marketing by Business Day 14."
+    correct_index: 2
+    explanation: "\"Zero Fire Drills\" is the SOP's name for the Business Day 14 handoff milestone—seven business days before the meeting, Marketing has everything they need."
+
+  - question: "Marketing will not begin design until the \"Single Packet\" handoff arrives. What must that single email contain?"
     options:
-      - The completed OBR Sales Readiness Form (with scrubbed data tables) and the finalized Visio diagram (verified).
-      - A raw export from the billing platform plus a verbal walkthrough.
-      - A calendar invite for the OBR meeting and the customer's logo.
-    correct_index: 0
-    explanation: 'Marketing requires one packet, audited and complete. Sending pieces separately—or sending raw data—violates the Single Packet rule and stops the design clock.'
-  - question: 'The SOP enforces a "No Raw Dump" rule. What is the stated rationale?'
+      - "A raw export from the billing platform plus a verbal walkthrough."
+      - "A calendar invite for the OBR meeting and the customer's logo."
+      - "The completed OBR Sales Readiness Form (with scrubbed data tables) and the finalized Visio diagram (verified)."
+    correct_index: 2
+    explanation: "Marketing requires one packet, audited and complete. Sending pieces separately—or sending raw data—violates the Single Packet rule and stops the design clock."
+
+  - question: "The SOP enforces a \"No Raw Dump\" rule. What is the stated rationale?"
     options:
-      - Marketing is for design, not data entry or CID deciphering. Sales owns the scrub.
-      - Raw billing data violates customer NDAs.
-      - The Visio software cannot ingest raw exports.
-    correct_index: 0
-    explanation: 'Verbatim from §3 of the SOP—Sales must scrub and audit data before handoff. Marketing receives audited, plain-English data, not internal catalog soup.'
-  - question: 'When you audit billing during OBR prep, the SOP names two specific "sales levers" the slick should surface. Which pair?'
+      - "Raw billing data violates customer NDAs."
+      - "Marketing is for design, not data entry or CID deciphering. Sales owns the scrub."
+      - "The Visio software cannot ingest raw exports."
+    correct_index: 1
+    explanation: "Verbatim from §3 of the SOP—Sales must scrub and audit data before handoff. Marketing receives audited, plain-English data, not internal catalog soup."
+
+  - question: "When you audit billing during OBR prep, the SOP names two specific \"sales levers\" the slick should surface. Which pair?"
     options:
-      - '"Modernization" and "Performance Spotlight"'
-      - '"Discount" and "Bundle"'
-      - '"Renewal" and "Cross-sell"'
-    correct_index: 0
-    explanation: 'Strategic Billing on the slick features the "Modernization" lever (e.g., upgrade an aging tier) and the "Performance Spotlight" lever (showcase services performing well). Surface both.'
+      - "\"Discount\" and \"Bundle\""
+      - "\"Modernization\" and \"Performance Spotlight\""
+      - "\"Renewal\" and \"Cross-sell\""
+    correct_index: 1
+    explanation: "Strategic Billing on the slick features the \"Modernization\" lever (e.g., upgrade an aging tier) and the \"Performance Spotlight\" lever (showcase services performing well). Surface both."
 
 scenarios:
   - title: The 5-Day Promise
@@ -93,7 +97,6 @@ roleplay:
   persona: VP of IT at a ~$40M regional logistics company; long-time GPC strategic customer with six locations and a mixed DIA / SIA / SD-WAN footprint.
   scenario: The CFO is now copy-on every contract renewal and pushing back on "what are we actually getting." The VP of IT wants to defend the relationship at the next quarterly check-in but is buried in tickets and has no consolidated view of network health, billing, or roadmap.
   goal: 'Use the OBR as the answer. Walk the VP through what the slick will contain (Network Design / Strategic Billing / NOC History / Strategic Roadmap), the 21-business-day cycle, and the Sales Readiness Form data you need from their side. Set the meeting date and lock the Day 14 handoff backwards from there.'
-
 ---
 
 ## Why OBRs matter

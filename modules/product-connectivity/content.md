@@ -18,27 +18,30 @@ five_minute_summary: |
   - **Wavelength:** High-capacity optical transport for data centers and massive hubs. Do not pitch this as a default upgrade for a standard branch office.
   - **The Starlink play:** Do not dismiss LEO satellite. Instead, anchor on the physics: fiber will always win on latency, weather reliability, and the true cost of downtime.
 knowledge_checks:
-  - question: A regional accounting firm needs to reliably upload massive tax files to the cloud. Which access product do you pitch?
+  - question: "A regional accounting firm needs to reliably upload massive tax files to the cloud. Which access product do you pitch?"
     options:
-      - Dedicated Internet Access (DIA). They need the guaranteed symmetrical upload speeds.
-      - Standard Internet Access (SIA). It's cheaper and downstream speed is all that matters.
-      - Managed Ethernet. They should just build a private network to the cloud.
-    correct_index: 0
-    explanation: Heavy upload requirements and critical cloud apps demand the symmetrical SLA of DIA.
-  - question: When is Managed Ethernet the correct solution?
+      - "Standard Internet Access (SIA). It's cheaper and downstream speed is all that matters."
+      - "Managed Ethernet. They should just build a private network to the cloud."
+      - "Dedicated Internet Access (DIA). They need the guaranteed symmetrical upload speeds."
+    correct_index: 2
+    explanation: "Heavy upload requirements and critical cloud apps demand the symmetrical SLA of DIA."
+
+  - question: "When is Managed Ethernet the correct solution?"
     options:
-      - 'When a customer needs private, secure, site-to-site connectivity without hitting the public internet.'
-      - When they want the fastest possible public internet connection.
-      - When they have remote workers who need to VPN into the office.
-    correct_index: 0
-    explanation: Ethernet is for private Layer 2 transport between physical locations.
-  - question: A prospect says they are just going to buy Starlink for their main office because it's cheaper and fast. How do you respond?
+      - "When they want the fastest possible public internet connection."
+      - "When a customer needs private, secure, site-to-site connectivity without hitting the public internet."
+      - "When they have remote workers who need to VPN into the office."
+    correct_index: 1
+    explanation: "Ethernet is for private Layer 2 transport between physical locations."
+
+  - question: "A prospect says they are just going to buy Starlink for their main office because it's cheaper and fast. How do you respond?"
     options:
-      - 'Acknowledge Starlink is great for residential, but anchor on fiber''s superior latency, weather resilience, and SLA-backed reliability for business.'
-      - Tell them satellite internet is garbage and they will regret it.
-      - Offer to cut your DIA price in half to match the Starlink hardware cost.
-    correct_index: 0
-    explanation: Never attack the competitor emotionally. Attack the physics of satellite latency and the lack of an enterprise SLA.
+      - "Tell them satellite internet is garbage and they will regret it."
+      - "Acknowledge Starlink is great for residential, but anchor on fiber's superior latency, weather resilience, and SLA-backed reliability for business."
+      - "Offer to cut your DIA price in half to match the Starlink hardware cost."
+    correct_index: 1
+    explanation: "Never attack the competitor emotionally. Attack the physics of satellite latency and the lack of an enterprise SLA."
+
 scenarios:
   - title: The SIA Squeeze
     situation: |

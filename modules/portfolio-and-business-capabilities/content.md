@@ -25,27 +25,30 @@ five_minute_summary: |
   - **The Anchors:** We win on our resilient Midwest IP reach, Tier-1 and IX relationships, local field teams, and a 24/7 NOC that actually answers the phone.
   - **Discovery drives design:** You cannot build the right stack until you know their critical apps, site count, and true uptime tolerance.
 knowledge_checks:
-  - question: A prospect asks for your best price on a 500M circuit. What is your immediate next move?
+  - question: "A prospect asks for your best price on a 500M circuit. What is your immediate next move?"
     options:
-      - Pivot to discovery. Ask what applications are running over that circuit and what happens to the business if it goes down.
-      - Check the pricing tool and give them a verbal quote to keep their interest.
-      - 'Tell them GPC doesn''t compete on price, we only compete on value.'
-    correct_index: 0
-    explanation: 'If you answer with a price, you are just a commodity. Find the business pain first.'
-  - question: How should you position the GPC product portfolio to a new prospect?
+      - "Check the pricing tool and give them a verbal quote to keep their interest."
+      - "Pivot to discovery. Ask what applications are running over that circuit and what happens to the business if it goes down."
+      - "Tell them GPC doesn't compete on price, we only compete on value."
+    correct_index: 1
+    explanation: "If you answer with a price, you are just a commodity. Find the business pain first."
+
+  - question: "How should you position the GPC product portfolio to a new prospect?"
     options:
-      - 'As an integrated, layered system where reliable fiber is the foundation for secure, cloud-ready operations.'
-      - As an à la carte menu where they can pick and choose the cheapest options.
-      - Lead with our most expensive SD-WAN solution to anchor the price high.
-    correct_index: 0
-    explanation: 'Sell the stack. Access is just the enabler for the higher-value UC, Security, and Cloud services.'
-  - question: What are the core differentiators you should anchor your 'Why GPC' story on?
+      - "As an à la carte menu where they can pick and choose the cheapest options."
+      - "Lead with our most expensive SD-WAN solution to anchor the price high."
+      - "As an integrated, layered system where reliable fiber is the foundation for secure, cloud-ready operations."
+    correct_index: 2
+    explanation: "Sell the stack. Access is just the enabler for the higher-value UC, Security, and Cloud services."
+
+  - question: "What are the core differentiators you should anchor your 'Why GPC' story on?"
     options:
-      - 'Resilient Midwest fiber, local support teams, and a true 24/7 NOC.'
-      - The fact that we are cheaper than the national cable providers.
-      - Our ability to offer month-to-month contracts with no commitment.
-    correct_index: 0
-    explanation: 'We win on reliability, local presence, and support. We are not the budget option.'
+      - "The fact that we are cheaper than the national cable providers."
+      - "Resilient Midwest fiber, local support teams, and a true 24/7 NOC."
+      - "Our ability to offer month-to-month contracts with no commitment."
+    correct_index: 1
+    explanation: "We win on reliability, local presence, and support. We are not the budget option."
+
 scenarios:
   - title: The Commodity Trap
     situation: |
