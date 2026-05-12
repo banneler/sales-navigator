@@ -641,9 +641,14 @@ function buildImageLibraryHtml(docs) {
                 <p class="js-image-library-title text-sm font-bold text-white">${escapeHtml(firstDoc.title)}</p>
                 <p class="js-image-library-page-label text-xs font-medium text-slate-300">Page 1 / ${firstDoc.pages.length}</p>
               </div>
-              <button type="button" class="js-image-library-close inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/15" aria-label="Close battle-card viewer">
-                <i class="fa-solid fa-xmark text-xs" aria-hidden="true"></i> Close
-              </button>
+              <div class="flex flex-wrap items-center gap-2">
+                <button type="button" class="js-image-library-zoom inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/15" aria-label="Open enlarged battle-card view">
+                  <i class="fa-solid fa-magnifying-glass-plus text-xs" aria-hidden="true"></i> Zoom
+                </button>
+                <button type="button" class="js-image-library-close inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/15" aria-label="Close battle-card viewer">
+                  <i class="fa-solid fa-xmark text-xs" aria-hidden="true"></i> Close
+                </button>
+              </div>
             </div>
             <div class="relative overflow-hidden rounded-xl border border-white/10 bg-white">
               <img src="${escapeHtml(firstPage.src)}" alt="${escapeHtml(firstPage.alt)}" class="js-image-library-image max-h-[min(78vh,900px)] w-full object-contain bg-white transition duration-300 ease-out" loading="lazy" decoding="async" />
@@ -656,6 +661,22 @@ function buildImageLibraryHtml(docs) {
               <button type="button" class="js-image-library-next inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/15 disabled:opacity-40 disabled:pointer-events-none">
                 Next page <i class="fa-solid fa-chevron-right text-xs" aria-hidden="true"></i>
               </button>
+            </div>
+            <div class="js-image-library-zoom-overlay fixed inset-0 z-[80] hidden bg-slate-950/90 p-3 backdrop-blur-sm md:p-6" role="dialog" aria-modal="true" aria-label="Enlarged battle-card view">
+              <div class="flex h-full min-h-0 flex-col rounded-2xl border border-white/15 bg-slate-950 shadow-2xl">
+                <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 px-4 py-3">
+                  <div>
+                    <p class="js-image-library-zoom-title text-sm font-bold text-white">${escapeHtml(firstDoc.title)}</p>
+                    <p class="js-image-library-zoom-label text-xs font-medium text-slate-300">Page 1 / ${firstDoc.pages.length}</p>
+                  </div>
+                  <button type="button" class="js-image-library-zoom-close inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/15" aria-label="Close enlarged battle-card view">
+                    <i class="fa-solid fa-xmark text-xs" aria-hidden="true"></i> Close
+                  </button>
+                </div>
+                <div class="min-h-0 flex-1 overflow-auto bg-slate-900 p-3 md:p-6">
+                  <img src="${escapeHtml(firstPage.src)}" alt="${escapeHtml(firstPage.alt)}" class="js-image-library-zoom-image mx-auto w-auto max-w-none rounded-lg bg-white shadow-xl" style="max-height: none; min-width: min(1100px, 100%);" loading="lazy" decoding="async" />
+                </div>
+              </div>
             </div>
           </div>
         </div>`;

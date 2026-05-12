@@ -6,6 +6,7 @@ import { awardXP } from './gamification.js';
  */
 
 const handlerByEl = new WeakMap();
+const keyHandlerByEl = new WeakMap();
 
 /** @type {WeakMap<Element, (boolean | null)[]>} Last check result per question index; null = not checked yet */
 const scoreStateByCarousel = new WeakMap();
@@ -161,11 +162,16 @@ function updateImageLibraryViewer(root, button, pageIndex) {
   const hint = root.querySelector('.js-image-library-flip-hint');
   const prev = root.querySelector('.js-image-library-prev');
   const next = root.querySelector('.js-image-library-next');
+  const zoomImg = root.querySelector('.js-image-library-zoom-image');
+  const zoomTitle = root.querySelector('.js-image-library-zoom-title');
+  const zoomLabel = root.querySelector('.js-image-library-zoom-label');
 
   if (shelf) shelf.classList.add('hidden');
   if (viewer) viewer.classList.remove('hidden');
   if (titleEl) titleEl.textContent = title;
   if (pageEl) pageEl.textContent = `Page ${i + 1} / ${pages.length}`;
+  if (zoomTitle) zoomTitle.textContent = title;
+  if (zoomLabel) zoomLabel.textContent = `Page ${i + 1} / ${pages.length}`;
   if (img) {
     img.setAttribute('src', pages[i]);
     img.setAttribute('alt', `${title} page ${i + 1}`);
@@ -175,6 +181,10 @@ function updateImageLibraryViewer(root, button, pageIndex) {
       img.classList.remove('opacity-0', 'scale-[0.98]');
     });
   }
+  if (zoomImg) {
+    zoomImg.setAttribute('src', pages[i]);
+    zoomImg.setAttribute('alt', `${title} page ${i + 1} enlarged`);
+  }
   if (hint) {
     hint.textContent =
       pages.length > 1 ? `Page ${i + 1} of ${pages.length}` : '';
@@ -183,7 +193,18 @@ function updateImageLibraryViewer(root, button, pageIndex) {
   if (next) next.disabled = i === pages.length - 1;
 }
 
+function setImageLibraryZoom(root, open) {
+  const overlay = root?.querySelector('.js-image-library-zoom-overlay');
+  if (!overlay) return;
+  overlay.classList.toggle('hidden', !open);
+  if (open) {
+    const close = overlay.querySelector('.js-image-library-zoom-close');
+    if (close) close.focus();
+  }
+}
+
 function closeImageLibraryViewer(root) {
+  setImageLibraryZoom(root, false);
   const viewer = root?.querySelector('.js-image-library-viewer');
   const shelf = root?.querySelector('.js-image-library-shelf');
   if (viewer) viewer.classList.add('hidden');
@@ -289,6 +310,27 @@ function handleClick(e) {
   if (libraryClose) {
     const root = libraryClose.closest('.js-image-library');
     closeImageLibraryViewer(root);
+    return;
+  }
+
+  const libraryZoom = e.target.closest('.js-image-library-zoom');
+  if (libraryZoom) {
+    const root = libraryZoom.closest('.js-image-library');
+    setImageLibraryZoom(root, true);
+    return;
+  }
+
+  const libraryZoomClose = e.target.closest('.js-image-library-zoom-close');
+  if (libraryZoomClose) {
+    const root = libraryZoomClose.closest('.js-image-library');
+    setImageLibraryZoom(root, false);
+    return;
+  }
+
+  const libraryZoomOverlay = e.target.closest('.js-image-library-zoom-overlay');
+  if (libraryZoomOverlay && e.target === libraryZoomOverlay) {
+    const root = libraryZoomOverlay.closest('.js-image-library');
+    setImageLibraryZoom(root, false);
     return;
   }
 
@@ -449,9 +491,20 @@ export function bindModuleInteractions(container) {
   if (!container) return;
   const prev = handlerByEl.get(container);
   if (prev) container.removeEventListener('click', prev);
+  const prevKey = keyHandlerByEl.get(container);
+  if (prevKey) container.removeEventListener('keydown', prevKey);
   const fn = handleClick;
+  const keyFn = (e) => {
+    if (e.key !== 'Escape') return;
+    container.querySelectorAll('.js-image-library-zoom-overlay:not(.hidden)').forEach((overlay) => {
+      const root = overlay.closest('.js-image-library');
+      setImageLibraryZoom(root, false);
+    });
+  };
   container.addEventListener('click', fn);
+  container.addEventListener('keydown', keyFn);
   handlerByEl.set(container, fn);
+  keyHandlerByEl.set(container, keyFn);
   initKnowledgeCarousels(container);
   initVideoCarousels(container);
   initImageLibraries(container);
