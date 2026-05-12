@@ -40,11 +40,12 @@
             0% { transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px); }
             100% { transform: perspective(500px) rotateX(60deg) translateY(0px) translateZ(-200px); }
         }
-        /* Persistent map HUD (telemetry + ladder) */
+        /* HUD disabled — restore when ready
         .hud-ladder-active {
             color: #EA580C;
             filter: drop-shadow(0 0 8px rgba(234, 88, 12, 0.8));
         }
+        */
     </style>
 </head>
 <body class="bg-slate-100 text-slate-800 h-full flex flex-col overflow-hidden relative select-none font-sans antialiased" oncontextmenu="return false;">
@@ -118,6 +119,7 @@
                         <div id="html-layer" class="absolute inset-0 hidden overflow-y-auto p-12 bg-slate-50 z-0">
                         </div>
 
+                        <!-- HUD disabled (telemetry readout + architecture ladder) — restore when ready
                         <div id="map-hud" class="absolute inset-0 pointer-events-none z-20 transition-opacity duration-500 opacity-0" aria-live="polite">
                             <div id="telemetry-readout" class="absolute bottom-24 left-8 text-xs font-mono text-gpc-green/80 leading-relaxed space-y-0.5 max-w-md"></div>
                             <div id="architecture-ladder" class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col items-end gap-8">
@@ -126,6 +128,7 @@
                                 <span id="hud-ladder-wave" class="text-[11px] font-bold tracking-[0.35em] text-slate-500 transition-colors duration-300">WAVE</span>
                             </div>
                         </div>
+                        -->
 
                         <div id="map-controls" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex z-20 transition-opacity duration-300 w-max">
                             <div class="bg-white/90 backdrop-blur-md border border-slate-200 rounded-full px-6 py-3 shadow-floating flex items-center gap-6">
@@ -161,7 +164,9 @@
         let navOrder = [];
         let pageContent = {};
 
+        /* HUD disabled — restore when ready
         const HUD_LADDER_IDS = { IP: 'hud-ladder-ip', ETH: 'hud-ladder-eth', WAVE: 'hud-ladder-wave' };
+        */
 
         function escapeHtml(str) {
             if (str == null) return '';
@@ -172,6 +177,7 @@
                 .replace(/"/g, '&quot;');
         }
 
+        /* HUD disabled — restore when ready
         function telemetryLabel(key) {
             return String(key || '')
                 .replace(/_/g, ' ')
@@ -180,10 +186,6 @@
                 .toUpperCase();
         }
 
-        /**
-         * Persistent HUD: ladder + terminal-style readout from data.telemetry.
-         * Fades out when no telemetry (e.g. Case Studies, Products).
-         */
         function updateTelemetryHud(data) {
             const hud = document.getElementById('map-hud');
             const readout = document.getElementById('telemetry-readout');
@@ -222,6 +224,7 @@
                 el.classList.toggle('text-slate-500', !active);
             });
         }
+        */
 
         /** Full section list (wholesale + enterprise views merged). */
         function getFilteredNavOrder() {
@@ -295,13 +298,16 @@
                         { label: 'Network Footprint', value: '20,000+ Mi', color: 'text-gpc-green' },
                         { label: 'Tower Backhaul', value: '650+', color: 'text-gpc-orange' },
                         { label: 'Core Capacity', value: 'Up to 400G', color: 'text-slate-900' }
-                    ],
+                    ]
+                    /* HUD disabled — restore when ready
+                    ,
                     telemetry: {
                         layer: 'WAVE',
                         status: 'L1 TRANSPORT',
                         latency: '<1ms/100mi',
                         capacity: '400G STD'
                     }
+                    */
                 };
                 // Ensure guest is always the very first item in the nav
                 if (!navOrder.includes('guest')) navOrder.unshift('guest');
@@ -408,7 +414,7 @@
                 renderHTMLContent(viewId, htmlLayer);
             }
 
-            updateTelemetryHud(data);
+            // updateTelemetryHud(data); // HUD disabled — restore when ready
         }
 
         // --- HTML CONTENT RENDERER ---
