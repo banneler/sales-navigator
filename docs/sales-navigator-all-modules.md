@@ -1925,11 +1925,16 @@ video_carousel:
     src: assets/UC/work-better-wherever.mp4
     poster: assets/UC/work-better-wherever.png
 five_minute_summary: |
-  - **The Microsoft Teams Play:** We have two motions. "Embedded UC" puts our app inside Teams and saves them the MS Teams Phone license. "Ascend with Teams" uses the native MS dialer and *does* require the MS Teams Phone license. Do not blend these pitches.
-  - **The Bundle:** Our platform (powered by Intermedia) includes enterprise calling, SMS/MMS, HD meetings, and AI recaps on a 99.999% uptime foundation.
-  - **The Plan Ladder:** Five tiers — **Resource Line** (one concurrent endpoint, no apps; for front-desk, lobby, and conference-room phones that just need to ring), **Express** (voice only), **Essentials** (adds video up to 25 + AI recap + call recording), **Pro** (adds inbound Call Center + CRM integrations + video to 100), **Enterprise** (Pro + video to 200 + 200 GB storage). Pick by **workload**, not company size — plans **mix and match per user**, so most multi-site customers run a *blend* (Resource Lines at lobby phones, Express at reception, Pro for sales, Enterprise at HQ).
-  - **Contact Center:** We sell an omnichannel CX add-on (Voice, SMS, chat). Licensing is concurrent, meaning they only pay for the maximum number of agents logged in at the same time, not a named license for every single employee. Note: UC Pro and Enterprise already include *inbound* Call Center features (queueing, supervisor monitor/whisper/barge); the dedicated **CCaaS** product is the separate omnichannel SKU.
-  - **Legacy:** We still support SIP and PRI for customers who aren't ready to move fully to the cloud, but the goal is always to pivot to UCaaS.
+  - **What you’re selling:** Cloud UC (Intermedia) — voice, SMS/MMS, HD meetings, AI recaps; **99.999%** uptime line.
+  - **Seat / plan ladder:** Match **workload**, not company size; tiers **mix per user**. Typical blend: lobby/resource lines + reception Express + floor Pro + HQ Enterprise.
+    - **Resource Line** — one concurrent endpoint, no apps (lobby, conference room, front desk that only needs to ring).
+    - **Express** — voice only.
+    - **Essentials** — voice + video (25), AI recap, recording.
+    - **Pro** — adds inbound call center features, CRM integrations, video (100).
+    - **Enterprise** — Pro + video (200) + **200 GB** storage.
+  - **Contact center:** **CCaaS** = omnichannel add-on (voice, SMS, chat), **concurrent** agent seats. **UC Pro/Enterprise** already include strong **inbound** queue/supervisor tooling — CCaaS is the separate omnichannel product when they need that scope.
+  - **Microsoft Teams (two paths — don’t blend in one pitch):** **Embedded UC** — GPC dial pad inside Teams; **no** MS Teams Phone license. **Ascend with Teams** (Direct Routing) — native Teams dialer; **MS Teams Phone license required**. Customer picks the experience; **SE validates.**
+  - **Legacy:** SIP/PRI still available; steer toward UCaaS over time.
 knowledge_checks:
   - question: "A prospect wants to add external calling to Microsoft Teams. They think they need to buy Microsoft's 'Teams Phone' add-on license for every user. Are they right?"
     options:
