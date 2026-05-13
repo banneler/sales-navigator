@@ -205,7 +205,7 @@ Rules:
 - Do not invent generic telecom advice unrelated to those sources.
 - If the answer is not in the excerpt, say you are "still routing that packet" and suggest they talk to an SE.
 
-GPC training context (module excerpt when available):
+GPC training context:
 ${corpus}`;
 
     const contents = messages.map((msg) => ({
