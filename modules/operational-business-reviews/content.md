@@ -111,6 +111,10 @@ The deliverable is a **front/back trifold insert** ("the Slick") with four compo
 3. **NOC History & Feedback Loop:** 12-month performance snapshot and holistic partnership feedback loop.
 4. **Strategic Roadmap:** Planned upgrades, upcoming renewal sync, and GPC solution highlights.
 
+<div class="obr-slick-sample-wrap">
+<img src="assets/obr/obr-slick-sample.jpg" alt="Sample OBR slick: Network Agility and Roadmap spread (trifold-style layout with billing snapshot, maps, and performance check-in)" width="1024" height="602" loading="lazy" decoding="async" />
+</div>
+
 ## Success Criteria — memorize the three
 
 - **Zero Fire Drills** — every asset is ready and handed to Marketing by **Business Day 14**.

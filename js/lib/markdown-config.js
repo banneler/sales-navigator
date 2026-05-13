@@ -9,6 +9,7 @@ marked.use({ gfm: true, breaks: true });
  */
 export const MARKDOWN_PURIFY_CONFIG = {
   ADD_ATTR: [
+    'class',
     'target',
     'rel',
     'viewBox',

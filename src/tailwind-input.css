@@ -134,6 +134,30 @@
   border: 1px solid rgb(226 232 240 / 0.95);
   box-shadow: 0 1px 2px rgb(15 23 42 / 0.06);
 }
+/* OBR slick hero: edge-to-edge inside section card (offsets p-6 / md:p-8) */
+.module-markdown-body .obr-slick-sample-wrap {
+  margin-top: 1.25rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  width: calc(100% + 3rem);
+  max-width: none;
+}
+@media (min-width: 768px) {
+  .module-markdown-body .obr-slick-sample-wrap {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    width: calc(100% + 4rem);
+  }
+}
+.module-markdown-body .obr-slick-sample-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
 
 /* 3D Flip Cards */
 .perspective-1000 {

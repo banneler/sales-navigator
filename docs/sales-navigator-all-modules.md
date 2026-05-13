@@ -6,7 +6,7 @@ Single export in manifest order. **Canonical training source for each module is 
 
 - [Getting started (`getting-started`)](#getting-started-getting-started)
 - [Sales Rules of Engagement (`sales-rules-of-engagement`)](#sales-rules-of-engagement-sales-rules-of-engagement)
-- [Sales Process & Salesforce (`sales-process-and-salesforce`)](#sales-process-salesforce-sales-process-and-salesforce)
+- [Salesforce (`sales-process-and-salesforce`)](#salesforce-sales-process-and-salesforce)
 - [Sales Operations & Approvals (`sales-operations-and-approvals`)](#sales-operations-approvals-sales-operations-and-approvals)
 - [Portfolio & Business Capabilities (`portfolio-and-business-capabilities`)](#portfolio-business-capabilities-portfolio-and-business-capabilities)
 - [Connectivity & Access (`product-connectivity`)](#connectivity-access-product-connectivity)
@@ -86,7 +86,7 @@ With appreciation,
 
 ## Where to go next
 
-- When you're ready to leave the tour behind, open **Sales Rules of Engagement** for pipeline protection and idle windows, or **Sales Process & Salesforce** if you want the CRM motion first.
+- When you're ready to leave the tour behind, open **Sales Rules of Engagement** for pipeline protection and idle windows, or **Salesforce** if you want the CRM motion first.
 - Product depth lives under **Connectivity & Access onward** in the sidebar; collapse the rail with the **chevron** whenever you want more reading room.
 - **Fiber path** in the header is your progress ribbon across modules—same chrome as the rest of the hub, just focused on what you've visited and what's next.
 <!-- prettier-ignore-end -->
@@ -382,14 +382,14 @@ Patterns that undermine the ROE:
 
 ---
 
-<a id="sales-process-salesforce-sales-process-and-salesforce"></a>
+<a id="salesforce-sales-process-and-salesforce"></a>
 
-# Sales Process & Salesforce (`sales-process-and-salesforce`)
+# Salesforce (`sales-process-and-salesforce`)
 
 <!-- prettier-ignore-start -->
 ---
 id: "sales-process-and-salesforce"
-title: "Sales Process & Salesforce"
+title: "Salesforce"
 summary: "Pipeline hygiene. Approvals. Clean handoffs."
 sensitivity: "internal"
 sales_trio_guidelines_only: true
@@ -442,13 +442,11 @@ five_minute_flow:
     - title: "Multi-site"
       caption: "Video → 30 min live"
 five_minute_summary: |
-  - **Work this in order:** This is not a cram module. Follow the sequence—Salesforce 101, Check In 1, GPC Solution, then multi-site—because each step builds the next live selling habit.
   - **Convert to Opportunity:** Always create the opportunity upon lead conversion. Skipping this to "keep your pipeline clean" actually breaks reporting and stalls the approval flow later.
   - **The Contract Signer:** Set the Contract Signer on the GPC Solution early—before it ever hits Approval Pending. Trying to append it at the 11th hour will block your DocuSign envelope.
   - **DocuSign prep:** Every single recipient on a DocuSign envelope must exist as a Contact on the account first. No exceptions.
   - **Closed Lost:** Never delete a Closed Lost record. That history is critical for forecasting and future re-engagement campaigns.
   - **Three Contact Roles are mandatory on every Closed-Won Solution:** Project Contact, Billing Contact, and Property Manager / On-Site Manager. Skip them and you don't fail the close—you stall the install, because the project team can't reach the building and the bill lands in the wrong inbox.
-  - **Costing Routing has three flags** that change the routing path: **Strategic Build** (geographic), **Zone Parent** (multi-site structural), and **Reusable** (procedural). Different flags, different rules—and Reusable is **not allowed** under a Zone Parent.
 
 your_coaches:
   coaches:
@@ -818,6 +816,21 @@ video_sections:
       - Unfavorable investment always requires manager review.
       - Product line issues route to the Product Manager.
       - Dark fiber requires manager and CRO review.
+  - heading: Costing Routing Paths
+    intro: 'Costing routing is not the same thing as approval requirements. It determines which technical/costing team reviews the Solution Site.'
+    body: |
+      [Costing Routing Quick Reference Guide — 11/23](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Costing%20Routing%20Quick%20Reference%20Guide%20-%201123.pdf?csf=1&web=1&e=Ta1aBx)
+
+      ![Costing Routing Paths diagram showing how Solution Site Type, Services, and products route review](assets/sales-ops/costing-routing-paths.png)
+
+      Use this as the rep translation of the QRG:
+
+      - **Site Type starts the path.** Strategic Build, Build Fiber, All On-Net, and Off-Net do not route the same way.
+      - **Services refine the path.** New service routing differs by SIA, DIA, Voice, Wave, Ethernet, SIP, UC, and other product combinations.
+      - **Automation applies costs when the guide says it can.** Some paths complete systematically; others route to OSP, Network Engineering, IPE, BSOL, or Off-Net review.
+      - **New + Existing on one Solution Site follows New.** Do not assume mixed service selections split cleanly into two independent paths.
+      - **Multiple services follow the deepest review.** If one selected service needs heavier review, that path drives the routing.
+      - **Manual Validation skips automation.** Use it for real exceptions, not as a comfort click.
   - heading: Change Order vs MAC
     intro: 'How much is changing, and has billing started? Wrong path = rework—the PDFs have every click and screenshot.'
     body: |
@@ -852,7 +865,8 @@ video_sections:
       - Very small CRC/BCC changes may go to businesscare@gpcom.com instead of Salesforce.
       - The MAC guide calls out no AE commission for those narrow Business Care changes.
 five_minute_summary: |
-  - **Start with the trigger:** What changed, has billing started, and does the deal still fit the automated path? Those three questions point you to the right guide.
+  - **Approval triggers:** Discounting, product exceptions, payback, churn, CapEx / net investment, and unfavorable economics are why approvals exist. They protect margin, investment discipline, and operational promises.
+  - **Process-flow triggers:** What changed and has billing started? Those questions point you to Change Order, MAC, Cancellation, or Disconnect.
   - Use Approval History on the GPC Solution to approve, reject, or recall. Put the Solution ID on every form and attachment so Operations can match documents to the right workflow.
   - Change Orders are for post-signature changes before billing starts. MACs are for changes to active billing contracts.
   - Use Cancellation before billing when all services are coming out; use Disconnect after billing.
@@ -901,9 +915,11 @@ discovery_questions:
 
 ## Overview
 
-This module is your routing map for deals that need approval or change after the customer says yes. Start with the business trigger, then use the reference guides for the click-by-click workflow.
+This module has two different jobs. **Approval triggers** decide whether the business needs extra review because of discounting, product rules, payback, churn, CapEx / net investment, or unfavorable economics. **Process-flow triggers** decide what workflow to use when something changes, especially whether billing has started.
 
 - GPC Solution: the core object where approvals, pricing, and technical scoping live.
+- Approval Requirements Matrix: the business review lens for discounting, product, payback, churn, and investment thresholds.
+- Costing Routing QRG: the routing lens for which technical/costing teams review a Solution Site.
 - Change Order: a pre-billing modification, such as changing port speed before install.
 - MAC: a Move-Add-Change on a live billing service.
 - Manual Validation: an exception path that breaks automation. Use it sparingly.
@@ -1107,7 +1123,7 @@ Use this as the rep's mental map:
 ---
 id: product-connectivity
 title: Connectivity & Access
-summary: DIA vs SIA. Ethernet. Beating Starlink.
+summary: Internet access. Transport. Layer 2 vs Layer 3.
 sensitivity: internal
 reference_files:
   - label: Product Collateral (connectivity & access)
@@ -1120,9 +1136,9 @@ discovery_questions:
   - 'How are sites connected today—shared broadband, MPLS, Ethernet, or SD-WAN—and when do those contracts renew?'
 five_minute_summary: |
   - **SIA vs DIA:** Standard Internet (SIA) is for flexible, cost-sensitive needs on shared infrastructure. Dedicated Internet (DIA) is mandatory when they need symmetrical bandwidth, SLA-grade operations, and guaranteed throughput.
-  - **Managed Ethernet:** This is for private, Layer 2 connectivity between physical sites. It is an entirely different conversation than internet access.
-  - **Wavelength:** High-capacity optical transport for data centers and massive hubs. Do not pitch this as a default upgrade for a standard branch office.
-  - **The Starlink play:** Do not dismiss LEO satellite. Instead, anchor on the physics: fiber will always win on latency, weather reliability, and the true cost of downtime.
+  - **Transport vs. Internet:** Transport moves customer traffic privately between locations or networks. Internet access connects the customer to the public IP world.
+  - **Layer 2 vs. Layer 3:** Layer 2 Ethernet feels like extending the customer’s LAN between sites. Layer 3/IP routes traffic between networks and is where internet service lives.
+  - **Optical capacity:** Fiber optic transport and wavelength services are high-capacity optical paths for data centers, hubs, and heavy replication workloads—not the default branch-office answer.
 knowledge_checks:
   - question: "A regional accounting firm needs to reliably upload massive tax files to the cloud. Which access product do you pitch?"
     options:
@@ -1140,13 +1156,13 @@ knowledge_checks:
     correct_index: 1
     explanation: "Ethernet is for private Layer 2 transport between physical locations."
 
-  - question: "A prospect says they are just going to buy Starlink for their main office because it's cheaper and fast. How do you respond?"
+  - question: "A customer wants two buildings to behave like they are on the same private network without sending traffic over the public internet. What product family are you likely discussing?"
     options:
-      - "Dismiss the comparison and tell them satellite is not a serious business option."
-      - "Acknowledge the use case, then anchor on latency, weather resilience, and SLA-backed reliability."
-      - "Match the hardware cost verbally so the conversation stays focused on price."
-    correct_index: 1
-    explanation: "Never attack the competitor emotionally. Attack the physics of satellite latency and the lack of an enterprise SLA."
+      - "Layer 2 Ethernet transport."
+      - "Standard Internet Access."
+      - "Public Wi-Fi with a VPN client."
+    correct_index: 0
+    explanation: "Layer 2 Ethernet transport is for private site-to-site connectivity. Internet access is Layer 3/IP service to the public internet, even when it is delivered over fiber."
 
 scenarios:
   - title: The SIA Squeeze
@@ -1203,8 +1219,8 @@ Your network shouldn't be the reason your video calls drop or your cloud apps la
 I completely understand watching the budget. However, because you run a heavy VoIP environment, SIA will leave you with the same dropped calls you have today. We need the symmetrical guarantee of DIA to actually solve your problem.
 :::
 
-::: flip ["Starlink gets 150Mbps down, why should I pay more for your 100M fiber?"]
-Speed tests don't run businesses—latency does. Satellite inherently struggles with latency and weather fade. If your team is running cloud apps or voice, that delay is going to cause major friction. Fiber gives you the physical reliability and an actual SLA.
+::: flip ["I just need internet between my two offices."]
+Clarify the word "internet." If they mean public web access at both locations, talk SIA or DIA. If they mean private traffic between sites, you are in a transport conversation.
 :::
 
 ::: flip ["We use VPNs over our internet to connect our offices. Why buy Ethernet?"]
@@ -1236,35 +1252,24 @@ VPNs over public internet are subject to public internet traffic jams. Managed E
 
 **One sentence that captures the choice:** SIA is GPC's high-quality shared Internet—DIA is GPC's enterprise-grade dedicated Internet.
 
-**Fiber vs. Starlink — latency band you can quote on a whiteboard** (per Fiber vs Starlink battle card—always pivot peak Mbps to **latency consistency**):
+**Core definitions — the words reps need to hear clearly**
 
-| Application need | Typical latency requirement |
-| --- | --- |
-| Video calls | <50 ms |
-| VoIP | <150 ms |
-| POS | <100 ms |
-| VPN | <100 ms |
-| Cloud apps | <100 ms |
-| Remote support | <100 ms |
+- **Transport:** A private connection that moves customer traffic between places—site to site, site to data center, or site to carrier/cloud handoff. The buyer is usually asking for control, privacy, performance, or predictable paths.
+- **Fiber optic / optical:** The physical medium and optical service layer that carries light over glass. In sales language, use "fiber" for access conversations and "optical transport" or "wavelength" when the buyer needs very high-capacity point-to-point paths.
+- **Layer 2 Ethernet:** A private Ethernet service that extends the customer’s network between locations. The customer usually manages the IP addressing/routing above it, while GPC provides the Ethernet path.
+- **Layer 3 / IP:** Routed networking. IP decides how packets move between networks; internet access is a Layer 3/IP service because traffic routes into the public internet.
+- **Internet:** Public IP connectivity to the broader internet. SIA and DIA are internet access products, not private site-to-site transport.
 
-Typical **fiber** one-way latency band: **~5–15 ms.** Typical **Starlink** band in the same card: **~21–30 ms**—that's the gap that kills real-time apps when conditions aren't perfect.
+**Ethernet service types — how the acronyms differ**
 
-**Fiber vs. 5G — capability split** (from Fiber vs 5G one-sheet—5G wins portability; fiber wins always-on business grade):
-
-| Capability | Fiber | 5G |
+| Term | Plain-English meaning | Customer use case |
 | --- | --- | --- |
-| Supports business growth + high bandwidth | ✓ |  |
-| Reliability (less interference from weather / network / obstacles) | ✓ |  |
-| High level of security | ✓ |  |
-| Portability and flexibility |  | ✓ |
-| Lower up-front costs |  | ✓ |
+| **E-Line** | Point-to-point Ethernet between two locations | Connect HQ to a data center or a major branch |
+| **E-LAN** | Multipoint Ethernet where several sites participate in the same private Ethernet domain | Many sites need private any-to-any communication |
+| **EPL** | Ethernet Private Line; dedicated point-to-point Ethernet with less customer VLAN sharing | High-control, high-performance private connection |
+| **EVPL** | Ethernet Virtual Private Line; point-to-point Ethernet using VLAN-based separation | Similar point-to-point need with more flexible/shared infrastructure |
 
-This is also why **5G Wireless Backup** belongs **behind** primary fiber—not as a full-time substitute when the customer needs symmetric, low-jitter, all-hours performance.
-
-**Beating Starlink (LEO Satellite):**
-- **The Physics:** LEO is better than legacy satellite, but it still cannot match the consistent low-latency profile of a local fiber network—use the table above when a rep reaches for a number.
-- **The Weather:** "Rain fade" is a physical reality for satellite. Heavy cloud cover or storms will degrade the signal.
-- **The SLA:** Starlink is best-effort. GPC fiber is backed by an enterprise Service Level Agreement and a local 24/7 NOC.
+**The rep translation:** if the customer is asking, "How do I get to the internet?" think SIA/DIA. If they are asking, "How do my locations talk privately?" think Ethernet/transport. If they are asking, "How do I move huge volumes between hubs?" think optical/wavelength.
 
 **Wavelength vs Ethernet:**
 - Ethernet is typically sold in sub-10G increments and is highly flexible for multi-site WANs.
@@ -1281,7 +1286,7 @@ This is also why **5G Wireless Backup** belongs **behind** primary fiber—not a
 ---
 id: "product-security-and-sd-wan"
 title: "Security & SD-WAN"
-summary: "Managed edge. DDoS mitigation. Multi-site SD-WAN."
+summary: "Threat protection. Resilient WAN. Managed operations."
 sensitivity: "public"
 reference_files:
   - label: "Product Collateral (security & SD-WAN)"
@@ -1293,11 +1298,10 @@ discovery_questions:
   - "Have you experienced a security incident, ransomware event, or DDoS attack? Who manages your firewalls today?"
   - "Do you need always-on DDoS mitigation (proactive) or is business-hours coverage acceptable—and what's the cost of an attack outside those windows?"
 five_minute_summary: |
-  - **Pace yourself:** This module is a qualification map, not a design guide. Learn the product lane, the risk trigger, and when to pull in an SE.
-  - **Managed Security:** We offer FortiGate managed edge firewalls and a broader Managed Network Security (MNS) umbrella that includes SIEM, assessments, and email security.
-  - **DDoS Protection:** Be clear on the tiers. Proactive offers 24/7 automatic mitigation, while On-Demand is limited to weekday business hours.
-  - **SD-WAN:** Powered by VeloCloud for multi-site deployments (requiring at least one site on GPC fiber). Advanced firewall features are optional and must be explicitly quoted.
-  - **Engineering Handoffs:** Bring in an SE early for high availability setups, BGP routing, or highly regulated security environments.
+  - **Security is risk reduction:** Customers buy managed security because outages, ransomware, bad firewall policy, and unmanaged edge devices create business risk—not because they love appliances.
+  - **Firewall vs. security program:** A firewall controls traffic at the edge. A broader managed security program adds monitoring, policy management, visibility, assessment, and response discipline.
+  - **DDoS is availability protection:** Distributed attacks try to overwhelm a public-facing service or circuit. The sales question is not "Do you have DDoS?"—it is "What happens if customers cannot reach you?"
+  - **SD-WAN is control over the WAN:** It steers traffic across multiple access paths, prioritizes critical apps, improves visibility, and can reduce reliance on legacy private networks.
 
 knowledge_checks:
   - question: "How does DDoS Protection proactive differ from on-demand for mitigation windows?"
@@ -1308,37 +1312,37 @@ knowledge_checks:
     correct_index: 2
     explanation: "On-demand is not 24×7 mitigation on that SKU. If the customer has overnight or weekend exposure, qualify the risk before they buy the cheaper tier."
 
-  - question: "What must be true for the standard SD-WAN positioning in this module?"
+  - question: "What customer problem usually makes SD-WAN worth discussing?"
     options:
-      - "A single home office on any broadband connection with no GPC fiber anchor."
-      - "A DDoS proactive service on every circuit before SD-WAN can be discussed."
-      - "A multi-site WAN footprint with at least one site anchored on GPC fiber."
-    correct_index: 2
-    explanation: "The standard SD-WAN story starts with a multi-site footprint and at least one GPC fiber site. That anchor lets us manage the WAN instead of just selling router software."
+      - "They have multiple sites, mixed access paths, or critical apps that need better routing and visibility."
+      - "They need a faster public website but do not care how branch traffic is routed."
+      - "They want a cheaper firewall but have no branch connectivity or application performance issue."
+    correct_index: 0
+    explanation: "SD-WAN is valuable when the customer needs control over how traffic moves across sites and access paths. The business story is uptime, app performance, and operational visibility."
 
-  - question: "What should you avoid promising on SD-WAN without SE review?"
+  - question: "Why should reps be careful when a customer asks whether SD-WAN includes advanced security?"
     options:
       - "Every advanced security line in collateral is included in the base SKU."
-      - "Feature parity against a competitor platform without validating the design."
-      - "Either of those promises, plus rushed MPLS migration claims, need SE review."
-    correct_index: 2
-    explanation: "Do not treat base SD-WAN as full NGFW, and do not promise an overnight MPLS cutover without a plan. SE review protects the scope before it becomes a customer commitment."
-
-  - question: "What does Managed Network Security (MNS) represent relative to Managed Firewall alone?"
-    options:
-      - "MNS is the broader umbrella for firewall management, SIEM, assessments, email security, and related scope."
-      - "MNS is simply a new logo for Managed Firewall with no extra conversation to qualify."
-      - "MNS is the WAN design that replaces SD-WAN whenever a customer has multiple sites."
-    correct_index: 0
-    explanation: "Lead with MNS when the buyer needs broader managed security operations, not just a managed edge firewall. Scope determines whether the conversation stays narrow or expands."
-
-  - question: "What is an accurate statement about Managed Firewall in this module?"
-    options:
-      - "It guarantees compliance certification by itself without review."
-      - "It is Fortinet-based managed edge protection with SOC monitoring and SE-validated performance expectations."
-      - "It never includes 24/7 monitoring."
+      - "SD-WAN and security are related, but not every firewall or threat-prevention control is automatically included."
+      - "Security features are irrelevant once the customer has multiple sites."
     correct_index: 1
-    explanation: "Managed Firewall is a Fortinet and SOC-monitored story, but compliance and throughput claims need approved artifacts. Do not turn a managed firewall into an unsupported certification promise."
+    explanation: "SD-WAN and security overlap, but they are not the same thing. Confirm what security capabilities are included before the customer hears 'SD-WAN solves all firewall needs.'"
+
+  - question: "What does a broader managed security conversation add beyond a firewall?"
+    options:
+      - "Monitoring, policy management, visibility, assessments, and response discipline around the customer's risk."
+      - "A lower-cost firewall label with no change in monitoring or operational responsibility."
+      - "A WAN replacement that removes the need to discuss security policy or incidents."
+    correct_index: 0
+    explanation: "A firewall is a control point; managed security is the operating model around risk. The more the customer lacks time, tools, or staff, the more that operating model matters."
+
+  - question: "What is the sales value of a managed firewall?"
+    options:
+      - "It guarantees compliance certification by itself without any customer process change."
+      - "It gives the customer a managed edge control with monitoring, policy support, and fewer break-fix burdens."
+      - "It removes the need to ask about applications, users, locations, and risk."
+    correct_index: 1
+    explanation: "The value is not just the box. It is having a managed control point, visibility, and operational support so the customer is not alone when policy or threats change."
 
   - question: "When a customer wants always-on DDoS mitigation but selected on-demand for price, what should you do?"
     options:
@@ -1348,21 +1352,21 @@ knowledge_checks:
     correct_index: 2
     explanation: "Match the DDoS SKU to the customer’s real uptime need. A cheaper tier can become expensive fast if an attack lands outside the covered window."
 
-  - question: "For SD-WAN discovery, what should you confirm regarding security features?"
+  - question: "For SD-WAN discovery, what should you clarify about security?"
     options:
-      - "Assume IDS/IPS and every NGFW line on collateral are in the base SD-WAN SKU."
-      - "Security features are irrelevant to SD-WAN."
-      - "Confirm whether NGFW, IDS, and related lines are base scope or optional add-ons."
+      - "Assume every firewall and threat-prevention capability is included by default."
+      - "Ignore security because SD-WAN is only about saving money on access."
+      - "Clarify which security controls are included, optional, or better handled as a separate managed security scope."
     correct_index: 2
-    explanation: "Map each RFP security line to a quoted SKU before you commit. This keeps base SD-WAN from becoming an accidental full-security promise."
+    explanation: "SD-WAN improves traffic steering and visibility, but security still needs scope. Clarifying controls keeps the design honest and prevents accidental overpromises."
 
-  - question: "When should you engage SE/security early per this module?"
+  - question: "When does the conversation need technical validation before you quote?"
     options:
-      - "For complex routing, HA, BGP/ASN DDoS, regulated environments, or high-scale needs."
+      - "For complex routing, high availability, BGP/ASN DDoS, regulated environments, or high-scale needs."
       - "Never; sales owns firewall, BGP, and compliance design without technical review."
       - "Only after signature, when the customer has already accepted the SOW."
     correct_index: 0
-    explanation: "Complex, regulated, or high-scale designs need SE/security early. The handoff is not a weakness; it keeps the quote credible."
+    explanation: "Complex, regulated, or high-scale designs need technical validation before they become customer promises. That keeps the quote credible and avoids walking back scope later."
 
   - question: "What is sound positioning for the SD-WAN platform vs competitors?"
     options:
@@ -1410,16 +1414,16 @@ roleplay:
 ## At a glance
 
 - **Managed security:** **Managed Firewall** (FortiGate, SOC-monitored) plus **MNS** when SIEM, assessments, email security, or broader scope matter—match SKU to the buyer’s real need.
-- **DDoS:** **Proactive** = 24×7 automated mitigation; **on-demand** mitigation window is **weekdays 8–17** on that SKU—never let a customer assume overnight coverage they did not buy.
-- **SD-WAN (VeloCloud):** Standard story needs **≥1 site on GPC fiber** and a **multi-site** WAN footprint; **NGFW/IDS lines are optional add-ons**, not bundled in base—confirm with **SE/quoting** every time.
-- **When to pull SE early:** HA/BGP, regulated environments, high-scale DC, mixed-vendor firewall ops, or **BGP/ASN DDoS** designs.
+- **DDoS:** Availability protection for public-facing services and circuits. The key question is the cost of being unreachable during an attack.
+- **SD-WAN:** A software-defined way to steer traffic, prioritize applications, and manage multiple access paths across sites.
+- **Security scope:** SD-WAN, firewall, DDoS, and managed security solve related but different problems. Define the risk before naming the product.
 
 ---
 
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-We don't just connect your sites; we secure and optimize them. With our managed firewalls, automated DDoS protection, and intelligent SD-WAN, we prioritize your most critical apps and stop threats at the edge—all monitored 24/7 by our security team so you don't have to.
+We help customers keep their network available, controlled, and visible. Security protects the edge and reduces threat risk; SD-WAN makes the WAN easier to steer and manage. Together, they turn "the network is down" into a managed business problem instead of a scramble.
 :::
 
 ---
@@ -1472,56 +1476,37 @@ No—next-gen firewall and IDS/IPS are optional add-ons, not bundled in base Vel
 
 ## Technical Deep Dive [deep]
 
-**SD-WAN (VeloCloud) qualifiers:**
-- Minimum: ≥1 site on GPC fiber + multi-site WAN footprint
-- Off-net US branches can participate via any Internet transport
-- Business rule: at least one site on GPC fiber required
-- NGFW and IDS/IPS lines are optional add-ons—not included in base SD-WAN SKU; confirm with SE/quoting on every quote
+**Security — what it is in customer language**
 
-**SD-WAN commercial framing:** SD-WAN MRC sits **between SIA and DIA** at comparable speeds — often less than the MPLS it replaces. **Internet bandwidth is purchased separately** from the SD-WAN overlay; that split is worth flagging in every quote so the customer sees the full stack. Current rate cards live in **Sales Resources** (protected) — pull with quoting, never from memory. Proof point from the financial-services use-case set: one advisory shop saw **~60% savings on public broadband vs. private network services** after SD-WAN—cite with care; SE validates on every financial narrative.
+Security is the discipline of reducing the chance that a bad event becomes a business outage, data loss, fraud event, or public embarrassment. The buyer usually feels it as "we do not have enough people watching this," "our firewall rules are a mess," "audit/compliance is getting harder," or "we cannot afford ransomware downtime."
 
-**Managed Firewall — Fortinet platform tiers** (from the Managed Firewall datasheet—**SE picks the model**; don't quote throughput as a contractual guarantee without approved collateral):
+**Firewall — the edge control point**
 
-| Tier | Office platforms | Firewall throughput | IPS throughput |
-| --- | --- | --- | --- |
-| Small Office | FG-30G | 4 Gbps | 800 Mbps |
-| Medium Office | FG-50G | 5 Gbps | 2.25 Gbps |
-| Large Office | FG-70G | 10 Gbps | 2.5 Gbps |
-| Hub/HQ Office | FG-90G | 28 Gbps | 4.5 Gbps |
+A firewall inspects and controls traffic moving in and out of the network. The value to the customer is policy control, segmentation, threat filtering, VPN access, logging, and fewer unmanaged changes at the edge. Managed firewall adds operational help: monitoring, policy support, and someone accountable when rules, threats, or locations change.
 
-| Tier | Data center platforms | Firewall throughput | IPS throughput |
-| --- | --- | --- | --- |
-| Small DC | FG-100F | 20 Gbps | 2.6 Gbps |
-| Medium DC | FG-120G | 39 Gbps | 5.3 Gbps |
-| Large DC | FG-400F | 79.5 Gbps | 12 Gbps |
+**Managed security — the operating model**
 
-**Managed Firewall:** FortiGate-based edge + SOC monitoring on top of this hardware ladder. Compliance and real-world throughput still route through **SE + approved sheets**.
+Managed security is broader than a firewall. It can include managing existing customer gear, monitoring logs, reviewing policy, scanning for vulnerabilities, assessing architecture, and helping the customer prioritize what to fix. Lead here when the buyer lacks time, tools, or staff to run security well.
 
-**MNS (Managed Network Security) — six components** (umbrella; match SKU to what the buyer actually runs today):
+**DDoS — availability protection**
 
-1. **Managed Firewall** — fully managed Fortinet NGFW, 24×7 monitoring, threat detection, VPN access, optional zero-trust.
-2. **Firewall Management** — 24×7 management of **their existing** firewalls across **Cisco, Fortinet, Palo Alto**, and more.
-3. **Firewall Plus with Managed SIEM** — data aggregation, threat prioritization, log retention, actionable insight.
-4. **Firewall & Enterprise Security Assessments** — architecture / policy review, vulnerability findings, remediation roadmap.
-5. **Vulnerability Scanning** — scheduled active + passive monitoring with expert interpretation.
-6. **Managed Email Security** — AI-driven threat and DLP coverage for platforms like Microsoft 365 and Slack.
+A distributed denial-of-service attack tries to make an internet-facing service unreachable by flooding it with traffic. The customer impact is simple: customers cannot reach the site, phones or apps may degrade, and revenue or trust takes a hit. The key discovery question is, "What is the cost if this service is unavailable after hours?"
 
-**DDoS Protection — Proactive vs. On-Demand** (from the DDoS product sheet—**never** let a customer assume 24×7 mitigation on the wrong SKU):
+**SD-WAN — control over how traffic moves**
 
-| Feature | Proactive DDoS | On-Demand DDoS |
-| --- | --- | --- |
-| Monitoring portal + traffic analysis | ✓ | ✓ |
-| 24×7 automated monitoring + notifications | ✓ | ✓ |
-| **Mitigation** | **24×7 automated mitigation** | **Mitigation weekdays 8 am–5 pm only** |
-| Bandwidth thresholds per customer | ✓ | ✓ |
-| Bandwidth range | 10 Mbps – 100 Gbps | 10 Mbps – 100 Gbps |
-| BGP FlowSpec + TMS | ✓ | BGP FlowSpec only |
+SD-WAN is not "a fancy router." It is software-defined control over WAN traffic: which apps get priority, which access path traffic uses, what happens when a circuit degrades, and how IT sees performance across sites. The value shows up as better app experience, faster issue isolation, easier branch management, and a path away from expensive legacy private networks.
 
-**The line that saves your renewal:** e-commerce at 2 a.m. needs **Proactive**. A brick-and-mortar shop whose web ordering is mostly business-hours *might* be fine on **On-Demand**—document the trade-off in writing before signature.
+**How the pieces relate**
 
-**Handoffs:** SE/security for HA, BGP/ASN DDoS, mixed-vendor firewall management, regulated environments, unusual scale. Pricing PDFs are internal until quoting validates.
+| Customer pain | Conversation lane |
+| --- | --- |
+| "Our apps are slow between sites." | SD-WAN / WAN design |
+| "We do not know what traffic is allowed at the edge." | Firewall policy |
+| "We do not have staff to monitor or manage security." | Managed security |
+| "If our public site goes down, we lose money." | DDoS availability |
+| "The RFP assumes everything is included." | Scope each security control before quoting |
 
-**Vertical fit:** retail stores, regional healthcare, community banking, insurance brokers, government, education, manufacturing—any multi-site business with VoIP/SaaS pain.
+**Rep rule:** diagnose the risk first, then name the product. If you start with gear, the customer hears a SKU. If you start with business risk, the customer hears why it matters.
 <!-- prettier-ignore-end -->
 
 ---
@@ -1868,7 +1853,6 @@ video_carousel:
     src: assets/UC/work-better-wherever.mp4
     poster: assets/UC/work-better-wherever.png
 five_minute_summary: |
-  - **Pace yourself:** Treat this as three connected conversations: UC plan ladder, Teams path, then Contact Center scope. You do not have to design the solution alone.
   - **What you’re selling:** Cloud UC (Intermedia) — voice, SMS/MMS, HD meetings, AI recaps; **99.999%** uptime line.
   - **Seat / plan ladder:** Match **workload**, not company size; tiers **mix per user**. Typical blend: lobby/resource lines + reception Express + floor Pro + HQ Enterprise.
     - **Resource Line** — one concurrent endpoint, no apps (lobby, conference room, front desk that only needs to ring).
@@ -1877,7 +1861,9 @@ five_minute_summary: |
     - **Pro** — adds inbound call center features, CRM integrations, video (100).
     - **Enterprise** — Pro + video (200) + **200 GB** storage.
   - **Contact center:** **CCaaS** = omnichannel add-on (voice, SMS, chat), **concurrent** agent seats. **UC Pro/Enterprise** already include strong **inbound** queue/supervisor tooling — CCaaS is the separate omnichannel product when they need that scope.
-  - **Microsoft Teams (two paths — don’t blend in one pitch):** **Embedded UC** — GPC dial pad inside Teams; **no** MS Teams Phone license. **Ascend with Teams** (Direct Routing) — native Teams dialer; **MS Teams Phone license required**. Customer picks the experience; **SE validates.**
+  - **Microsoft Teams (two paths — don’t blend in one pitch):** Customer picks the experience; **SE validates.**
+    - **Embedded UC:** GPC dial pad inside Teams; **no** MS Teams Phone license.
+    - **Ascend with Teams / Direct Routing:** Native Teams dialer; **MS Teams Phone license required**.
   - **Legacy:** SIP/PRI still available; steer toward UCaaS over time.
 knowledge_checks:
   - question: "A prospect wants to add external calling to Microsoft Teams. They think they need to buy Microsoft's 'Teams Phone' add-on license for every user. Are they right?"
@@ -1991,7 +1977,9 @@ roleplay:
 ## At a glance
 
 - **UCaaS Platform:** 100+ business voice features, SMS, chat, HD meetings. 99.999% uptime.
-- **MS Teams Integration:** Two paths, two licensing stories. **Embedded UC** puts a GPC dial pad inside Teams and can avoid the MS Teams Phone license; **Direct Routing / native Teams dialing** requires that license. SE validates the path before you promise the experience.
+- **MS Teams Integration:** Two paths, two licensing stories. SE validates the path before you promise the experience.
+  - **Embedded UC:** GPC dial pad inside Teams; can avoid the MS Teams Phone license.
+  - **Direct Routing / native Teams dialing:** Uses the native Teams dialer; MS Teams Phone license required.
 - **Contact Center:** Omnichannel (Voice, SMS, Chat). Concurrent licensing model.
 - **AI Features:** AI call recaps, sentiment analysis, and supervisor-assist tools are built-in.
 
@@ -2155,7 +2143,6 @@ discovery_questions:
   - "Are you running SaaS applications like O365, Salesforce, or cloud ERP? Where are those workloads hosted?"
   - "What does your current vendor do when there's a service issue—do they have local field technicians or is everything remote?"
 five_minute_summary: |
-  - **Pace yourself:** Learn the framework first, then pick the one card that matches the customer’s named alternative. The gallery is a lookup tool, not a memorization assignment.
   - **The Framework:** Map competitor weaknesses to GPC strengths using business risk and proof points (local support, NOC, redundancy). Avoid generic claims of superiority.
   - **Avoid Landmines:** Never make personal attacks or use absolutes. Verify battle-card stats with marketing before sharing externally, and bring in SEs early for architecture discussions.
   - **Handling Objections:** When countering LEO satellite or price pressure, anchor the conversation on uptime, latency, and the total cost of downtime rather than just price or speed.
@@ -2658,6 +2645,10 @@ The deliverable is a **front/back trifold insert** ("the Slick") with four compo
 2. **Strategic Billing:** Totals and expirations, featuring the **"Modernization"** and **"Performance Spotlight"** levers.
 3. **NOC History & Feedback Loop:** 12-month performance snapshot and holistic partnership feedback loop.
 4. **Strategic Roadmap:** Planned upgrades, upcoming renewal sync, and GPC solution highlights.
+
+<div class="obr-slick-sample-wrap">
+<img src="assets/obr/obr-slick-sample.jpg" alt="Sample OBR slick: Network Agility and Roadmap spread (trifold-style layout with billing snapshot, maps, and performance check-in)" width="1024" height="602" loading="lazy" decoding="async" />
+</div>
 
 ## Success Criteria — memorize the three
 
