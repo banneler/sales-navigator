@@ -348,7 +348,7 @@ export function buildRoleplayPanelHtml(meta) {
   if (!rp || !rp.persona || !rp.scenario) return '';
 
   return `
-        <div class="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col w-full" style="height: min(72vh, 720px); max-height: min(72vh, 720px);" data-roleplay-container data-persona="${escapeHtml(rp.persona)}" data-scenario="${escapeHtml(rp.scenario)}" data-goal="${escapeHtml(rp.goal)}">
+        <div class="flex min-h-0 w-full max-h-full flex-1 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm" data-roleplay-container data-persona="${escapeHtml(rp.persona)}" data-scenario="${escapeHtml(rp.scenario)}" data-goal="${escapeHtml(rp.goal)}">
           <div class="bg-slate-50 border-b border-slate-200 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shrink-0">
             <div>
               <p class="text-sm font-bold text-slate-900">Persona: <span class="font-normal text-slate-700">${escapeHtml(rp.persona)}</span></p>
@@ -359,7 +359,7 @@ export function buildRoleplayPanelHtml(meta) {
               <i class="fa-solid fa-play" aria-hidden="true"></i> Start Roleplay
             </button>
           </div>
-          <div class="js-rp-chat-area flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50 hidden">
+          <div class="js-rp-chat-area min-h-0 flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50 hidden">
           </div>
           <div class="js-rp-input-area border-t border-slate-200 p-3 bg-white hidden shrink-0">
             <form class="js-rp-form flex gap-2">

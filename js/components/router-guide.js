@@ -60,7 +60,7 @@ export function mountRouterWelcomeMock(opts) {
     <button type="button" data-router-open class="group flex h-[4.5rem] w-[4.5rem] items-center justify-center overflow-hidden rounded-full bg-slate-900 p-0 shadow-2xl shadow-slate-900/30 ring-2 ring-orange-400/70 transition hover:-translate-y-0.5 hover:ring-orange-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-300" aria-label="Open Router coach" title="Open Router coach">
       <img src="Proposal_Assets/router-fab.png" alt="" width="72" height="72" decoding="async" loading="lazy" class="h-full w-full object-cover transition group-hover:scale-[1.02]" />
     </button>
-    <section data-router-panel class="hidden fixed bottom-28 right-5 flex h-[min(76vh,42rem)] w-[min(92vw,30rem)] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-900/10 sm:right-6 sm:bottom-32" aria-label="Router coach">
+    <section data-router-panel class="hidden fixed bottom-28 left-4 right-4 flex min-h-0 h-[min(76vh,42rem,calc(100dvh-7.5rem))] max-h-[calc(100dvh-7.5rem)] w-auto flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-900/10 sm:left-auto sm:right-6 sm:bottom-32 sm:w-[min(92vw,30rem)]" aria-label="Router coach">
       <header class="flex shrink-0 items-start justify-between gap-3 border-b border-slate-200 bg-slate-900 px-4 py-3 text-white">
         <div class="min-w-0">
           <h2 class="flex items-center gap-2 text-base font-bold">
@@ -134,7 +134,7 @@ export function mountRouterComponent(moduleId) {
     <button type="button" data-router-open class="group flex h-[4.5rem] w-[4.5rem] items-center justify-center overflow-hidden rounded-full bg-slate-900 p-0 shadow-2xl shadow-slate-900/30 ring-2 ring-orange-400/70 transition hover:-translate-y-0.5 hover:ring-orange-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-300" aria-label="Explore with AI Router" title="Explore with AI Router">
       <img src="Proposal_Assets/router-fab.png" alt="" width="72" height="72" decoding="async" loading="lazy" class="h-full w-full object-cover transition group-hover:scale-[1.02]" />
     </button>
-    <section data-router-panel class="hidden fixed bottom-28 right-5 flex h-[min(76vh,42rem)] w-[min(92vw,30rem)] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-900/10 sm:right-6 sm:bottom-32" aria-label="Router AI guide">
+    <section data-router-panel class="hidden fixed bottom-28 left-4 right-4 flex min-h-0 h-[min(76vh,42rem,calc(100dvh-7.5rem))] max-h-[calc(100dvh-7.5rem)] w-auto flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-900/10 sm:left-auto sm:right-6 sm:bottom-32 sm:w-[min(92vw,30rem)]" aria-label="Router AI guide">
       <header class="flex shrink-0 items-start justify-between gap-3 border-b border-slate-200 bg-slate-900 px-4 py-3 text-white">
         <div class="min-w-0">
           <h2 class="flex items-center gap-2 text-base font-bold">
