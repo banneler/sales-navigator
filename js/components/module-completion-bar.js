@@ -33,7 +33,7 @@ export function mountModuleCompletionBar(container, manifest, moduleId) {
   const slot = document.createElement('div');
   slot.setAttribute('data-module-completion-slot', '');
   slot.className =
-    'mt-8 pt-6 border-t border-slate-200/90 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4';
+    'mt-8 pt-6 border-t border-slate-200/90 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pr-24 sm:pr-28';
 
   const next = nextModuleInSidebarOrder(manifest, moduleId);
 
