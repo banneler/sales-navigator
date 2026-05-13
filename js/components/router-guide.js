@@ -1,8 +1,11 @@
 import { escapeHtml } from '../lib/markdown-config.js';
 
 const ROUTER_ROOT_ID = 'router-guide-root';
+const ROUTER_WELCOME_MOCK_ROOT_ID = 'router-welcome-mock-root';
 const ROUTER_GREETING =
   "Router: Routing the 'Why' to your inbox, one packet at a time!";
+const ROUTER_WELCOME_MOCK_GREETING =
+  "Hey there—I'm Router, your pocket coach. On every training module I float down here as a little orb. Tap me when you want a corpus-aware nudge about how a concept lands with customers—think of me as the friendly packet that carries the \"why\" without the homework vibe. ✨";
 
 /**
  * @param {number} status
@@ -36,6 +39,77 @@ export function destroyRouterComponent() {
 }
 
 /**
+ * Remove the welcome-page Router preview (no API). Safe if absent.
+ */
+export function destroyRouterWelcomeMock() {
+  document.getElementById(ROUTER_WELCOME_MOCK_ROOT_ID)?.remove();
+}
+
+/**
+ * Getting Started only: same FAB + panel chrome as the real Router, with a static welcome message (mock / no `/api/router`).
+ * z-[103] keeps the FAB just above the tour dim; the tour raises `#tour-glass-root` on the Router step so the HUD stays readable.
+ * @param {{ onPanelVisibilityChange?: () => void }} [opts]
+ */
+export function mountRouterWelcomeMock(opts) {
+  destroyRouterWelcomeMock();
+
+  const root = document.createElement('div');
+  root.id = ROUTER_WELCOME_MOCK_ROOT_ID;
+  root.className = 'fixed bottom-5 right-5 z-[103]';
+  root.innerHTML = `
+    <button type="button" data-router-open class="group flex h-[4.5rem] w-[4.5rem] items-center justify-center overflow-hidden rounded-full bg-slate-900 p-0 shadow-2xl shadow-slate-900/30 ring-2 ring-orange-400/70 transition hover:-translate-y-0.5 hover:ring-orange-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-300" aria-label="Open Router coach preview" title="Open Router coach preview">
+      <img src="Proposal_Assets/router-fab.png" alt="" width="72" height="72" decoding="async" loading="lazy" class="h-full w-full object-cover transition group-hover:scale-[1.02]" />
+    </button>
+    <section data-router-panel class="hidden fixed bottom-28 right-5 flex h-[min(76vh,42rem)] w-[min(92vw,30rem)] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-900/10 sm:right-6 sm:bottom-32" aria-label="Router coach preview">
+      <header class="flex shrink-0 items-start justify-between gap-3 border-b border-slate-200 bg-slate-900 px-4 py-3 text-white">
+        <div class="min-w-0">
+          <h2 class="flex items-center gap-2 text-base font-bold">
+            <img src="Proposal_Assets/router-fab.png" alt="" width="32" height="32" decoding="async" loading="lazy" class="h-8 w-8 shrink-0 rounded-full object-cover ring-1 ring-white/25" />
+            <span>Router</span>
+          </h2>
+          <p class="mt-0.5 text-xs leading-relaxed text-slate-300">Welcome preview · full Q&amp;A in training modules</p>
+        </div>
+        <button type="button" data-router-close class="rounded-lg border border-white/10 bg-white/10 px-2.5 py-1.5 text-xs font-semibold text-white transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300">Close</button>
+      </header>
+      <div data-router-messages class="flex-1 space-y-3 overflow-y-auto bg-slate-50/80 p-4"></div>
+      <div class="shrink-0 border-t border-slate-200 bg-white px-4 py-3 text-center">
+        <p class="text-[11px] leading-snug text-slate-500">This is a quick hello from the welcome tour. Open any module and the same FAB answers live questions from the GPC training corpus.</p>
+      </div>
+    </section>
+  `;
+  document.body.appendChild(root);
+
+  const openBtn = root.querySelector('[data-router-open]');
+  const closeBtn = root.querySelector('[data-router-close]');
+  const panel = root.querySelector('[data-router-panel]');
+  const messagesEl = root.querySelector('[data-router-messages]');
+
+  function renderMessages() {
+    if (!messagesEl) return;
+    const text = ROUTER_WELCOME_MOCK_GREETING;
+    messagesEl.innerHTML = `
+          <div class="flex justify-start">
+            <div class="bg-white text-slate-800 border border-slate-200 rounded-2xl rounded-bl-none max-w-[88%] px-3.5 py-2.5 text-sm leading-relaxed shadow-sm">
+              ${escapeHtml(text).replace(/\n/g, '<br>')}
+            </div>
+          </div>`;
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  openBtn?.addEventListener('click', () => {
+    panel?.classList.remove('hidden');
+    renderMessages();
+    opts?.onPanelVisibilityChange?.();
+  });
+  closeBtn?.addEventListener('click', () => {
+    panel?.classList.add('hidden');
+    opts?.onPanelVisibilityChange?.();
+  });
+
+  renderMessages();
+}
+
+/**
  * Floating Router coach for active training modules.
  * @param {string} moduleId
  */
@@ -45,6 +119,7 @@ export function mountRouterComponent(moduleId) {
     return;
   }
 
+  destroyRouterWelcomeMock();
   document.getElementById(ROUTER_ROOT_ID)?.remove();
   routerState = {
     moduleId,

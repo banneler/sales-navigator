@@ -3,15 +3,57 @@ import path from 'node:path';
 
 import { gemini20FlashStreamUrl } from './gemini-endpoint.js';
 
-const CORPUS_PATH = path.join(process.cwd(), 'docs', 'gpc-training-corpus-structured.md');
+const FULL_CORPUS_PATH = path.join(process.cwd(), 'docs', 'gpc-training-corpus-structured.md');
+const MODULE_CORPUS_DIR = path.join(process.cwd(), 'docs', 'router-corpus', 'by-module');
 
-/** @type {string | null} */
-let cachedCorpus = null;
+/** @type {Map<string, string>} */
+const corpusCache = new Map();
 
-async function getCorpus() {
-  if (cachedCorpus) return cachedCorpus;
-  cachedCorpus = await readFile(CORPUS_PATH, 'utf8');
-  return cachedCorpus;
+function isCorpusStubMarkdown(text) {
+  return /\n## Corpus stub\b/.test(text) && !/^### `/m.test(text);
+}
+
+async function getFullCorpus() {
+  const key = '__full__';
+  const hit = corpusCache.get(key);
+  if (hit) return hit;
+  const text = await readFile(FULL_CORPUS_PATH, 'utf8');
+  corpusCache.set(key, text);
+  return text;
+}
+
+/**
+ * Loads docs/router-corpus/by-module/{moduleId}.md when present and non-stub.
+ * Corpus stubs or missing paths fall back to the full structured file (cached).
+ *
+ * @param {string} moduleId
+ */
+async function getCorpusForModule(moduleId) {
+  const key = `mod:${moduleId}`;
+  const hit = corpusCache.get(key);
+  if (hit) return hit;
+
+  if (moduleId === 'unknown-module') {
+    const full = await getFullCorpus();
+    corpusCache.set(key, full);
+    return full;
+  }
+
+  try {
+    const slicePath = path.join(MODULE_CORPUS_DIR, `${moduleId}.md`);
+    const slice = await readFile(slicePath, 'utf8');
+    const corpus = isCorpusStubMarkdown(slice) ? await getFullCorpus() : slice;
+    corpusCache.set(key, corpus);
+    if (corpus !== slice) {
+      console.info(`Router corpus: stub slice for "${moduleId}" → full structured corpus`);
+    }
+    return corpus;
+  } catch {
+    console.info(`Router corpus: missing slice for "${moduleId}" → full structured corpus`);
+    const full = await getFullCorpus();
+    corpusCache.set(key, full);
+    return full;
+  }
 }
 
 function sendJson(res, status, body) {
@@ -139,11 +181,12 @@ export default async function handler(req, res) {
       return;
     }
 
-    const corpus = await getCorpus();
     const safeModuleId =
       typeof moduleId === 'string' && /^[a-z0-9-]+$/.test(moduleId)
         ? moduleId
         : 'unknown-module';
+
+    const corpus = await getCorpusForModule(safeModuleId);
 
     const systemPrompt = `You are Router, the GPC Sales Enablement coach.
 
@@ -153,12 +196,12 @@ Persona:
 - Always explain the business "Why" behind the answer. For example, do not just define DIA; explain how its symmetrical SLA protects a customer's cloud-hosting revenue.
 
 Rules:
-- Your primary source of truth is the provided GPC Training Corpus.
-- Do not give generic telecom advice.
-- If the answer is not in the corpus, say you are "still routing that packet" and suggest they talk to an SE.
-- The learner is currently viewing moduleId: ${safeModuleId}. Use that as context, but answer from the corpus.
+- Your primary source of truth is the markdown GPC excerpt below for moduleId=${safeModuleId}. Stay within that excerpt.
+- Some modules fall back to the full library when no excerpt exists yet; infer which case applies by how broad the excerpts look.
+- Do not give generic telecom advice unrelated to those sources.
+- If the answer is not in the excerpt, say you are "still routing that packet" and suggest they talk to an SE.
 
-GPC Training Corpus:
+GPC Training Corpus (module excerpt when available):
 ${corpus}`;
 
     const contents = messages.map((msg) => ({
@@ -193,7 +236,7 @@ ${corpus}`;
         sendJson(res, 429, {
           error: 'gemini_rate_limited',
           userMessage:
-            "Google's Gemini API hit a rate or quota limit (resource exhausted). Wait a minute and try again. Each Router question sends the full GPC corpus, which uses a lot of tokens—if this keeps happening, ask your admin to raise the Gemini quota or we can slim the context. Meanwhile, an SE can help.",
+            "Google's Gemini API hit a rate or quota limit (resource exhausted). Wait a minute and try again. Router now prefers a slim module excerpt when one is bundled; fallback still uses the full library and uses more tokens. If this persists, raise the Gemini quota or narrow the fallback. Meanwhile, an SE can help.",
           details: errorText,
         });
         return;

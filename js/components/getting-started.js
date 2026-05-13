@@ -1,4 +1,8 @@
 import { setRouteModuleId } from '../router.js';
+import {
+  destroyRouterWelcomeMock,
+  mountRouterWelcomeMock,
+} from './router-guide.js';
 import { parseFrontMatter } from '../lib/front-matter.js';
 import { splitMarkdownByH2, parseH2DeepMarker } from '../lib/markdown-sections.js';
 import { parseMarkdownToSafeHtml } from '../lib/markdown-config.js';
@@ -283,12 +287,21 @@ function buildDemoKnowledgeBlock(kc) {
       </div>`;
 }
 
+function isRouterWelcomePanelOpen() {
+  const panel = document.querySelector('#router-welcome-mock-root [data-router-panel]');
+  return !!(panel && !panel.classList.contains('hidden'));
+}
+
 /** @returns {{ left: number; top: number; width: number; height: number } | null} */
 function getSpotlightRect(stepIndex) {
   switch (stepIndex) {
     case 0:
       return null;
     case 1: {
+      const el = document.querySelector('#router-welcome-mock-root [data-router-open]');
+      return el ? rectLike(el.getBoundingClientRect()) : null;
+    }
+    case 2: {
       if (isMobileViewport()) {
         const el = document.getElementById('mobile-menu-btn');
         return el ? rectLike(el.getBoundingClientRect()) : null;
@@ -296,23 +309,23 @@ function getSpotlightRect(stepIndex) {
       const el = document.getElementById('sidebar');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
-    case 2: {
+    case 3: {
       const el = document.querySelector('[data-tour-target="tour-coffee-summary"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
-    case 3: {
+    case 4: {
       const el = document.querySelector('[data-tour-target="tour-welcome-tabs"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
-    case 4: {
+    case 5: {
       const el = document.querySelector('[data-tour-target="tour-scenarios"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
-    case 5: {
+    case 6: {
       const el = document.querySelector('[data-tour-target="tour-knowledge"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
-    case 6: {
+    case 7: {
       if (isMobileViewport()) {
         const el = document.getElementById('mobile-menu-btn');
         return el ? rectLike(el.getBoundingClientRect()) : null;
@@ -320,11 +333,11 @@ function getSpotlightRect(stepIndex) {
       const el = document.querySelector('[data-module-id="map-book"]');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
-    case 7: {
+    case 8: {
       const el = document.getElementById('fiber-path-btn');
       return el ? rectLike(el.getBoundingClientRect()) : null;
     }
-    case 8:
+    case 9:
       return null;
     default:
       return null;
@@ -407,7 +420,7 @@ function findTourCardPositionClearOfSpotlight(spotlight, cardW, cardH, vw, vh, g
  * @returns {Array<{ left: number; top: number; width: number; height: number }>}
  */
 function getTourCardAvoidRects(stepIndex, vw) {
-  if (stepIndex !== 4 || vw >= 1280) return [];
+  if (stepIndex !== 5 || vw >= 1280) return [];
   const el = document.querySelector('[data-tour-target="module-core"]');
   if (!el) return [];
   return [rectLike(el.getBoundingClientRect())];
@@ -451,6 +464,7 @@ export function destroyGettingStartedOverlay() {
     onMainScroll = null;
   }
   removeAllGettingStartedOverlaysFromDom();
+  destroyRouterWelcomeMock();
 }
 
 function isStaleGettingStartedLoad(loadId) {
@@ -514,15 +528,21 @@ function positionGlassCard(hostEl, stepIndex, rect) {
 
   const vw = window.innerWidth;
   const vh = window.innerHeight;
+  const gap = 16;
 
   if (isMobileViewport()) {
     hostEl.style.left = '0';
     hostEl.style.right = '0';
-    hostEl.style.bottom = '0';
-    hostEl.style.top = 'auto';
-    hostEl.style.transform = 'none';
     hostEl.style.width = '100%';
     hostEl.style.maxWidth = 'none';
+    hostEl.style.transform = 'none';
+    if (stepIndex === 1) {
+      hostEl.style.bottom = 'auto';
+      hostEl.style.top = `${gap}px`;
+    } else {
+      hostEl.style.bottom = '0';
+      hostEl.style.top = 'auto';
+    }
     return;
   }
 
@@ -531,7 +551,6 @@ function positionGlassCard(hostEl, stepIndex, rect) {
   hostEl.style.bottom = '';
   hostEl.style.right = 'auto';
 
-  const gap = 16;
   const cardW = Math.min(448, vw - 32);
   const cardH = hostEl.offsetHeight || 380;
   const clampX = (x) => Math.max(gap, Math.min(x, vw - cardW - gap));
@@ -560,14 +579,14 @@ function positionGlassCard(hostEl, stepIndex, rect) {
   const sh = spotlight.height;
 
   /** Coffee Summary, Welcome, Knowledge check: center HUD above spotlight (below only if it fits in the viewport). */
-  if (stepIndex === 2 || stepIndex === 3 || stepIndex === 5) {
+  if (stepIndex === 3 || stepIndex === 4 || stepIndex === 6) {
     const centerX = sx + sw / 2;
     let left = clampX(centerX - cardW / 2);
     const belowTop = sy + sh + gap;
     const belowFits = belowTop + cardH <= vh - gap;
     let top = sy - cardH - gap;
     if (top < gap) {
-      if (stepIndex === 5 && !belowFits) {
+      if (stepIndex === 6 && !belowFits) {
         top = gap;
       } else {
         top = belowTop;
@@ -581,7 +600,7 @@ function positionGlassCard(hostEl, stepIndex, rect) {
       hostEl.style.transform = 'none';
       return;
     }
-    if (top < sy && (stepIndex !== 5 || belowFits)) {
+    if (top < sy && (stepIndex !== 6 || belowFits)) {
       top = clampY(belowTop);
       cardRect = { left, top, width: cardW, height: cardH };
       if (!rectsOverlap(cardRect, spotlight) && !cardOverlapsAny(cardRect, avoidRects)) {
@@ -644,7 +663,7 @@ function positionGlassCard(hostEl, stepIndex, rect) {
     };
   }
 
-  if (stepIndex === 4 && vw < 1280 && avoidRects.length) {
+  if (stepIndex === 5 && vw < 1280 && avoidRects.length) {
     const chosen = { left: best.left, top: best.top, width: cardW, height: cardH };
     if (cardOverlapsAny(chosen, avoidRects)) {
       const hero = avoidRects[0];
@@ -758,6 +777,18 @@ export async function loadGettingStarted(container, manifest) {
         </p>
         <p class="text-slate-600 text-sm mt-3">
           This short tour walks through how the app is organized so you can move through training with confidence.
+        </p>`,
+    },
+    {
+      title: 'Meet Router',
+      icon: 'fa-robot',
+      body: `
+        <p class="text-slate-800 leading-relaxed mb-3">
+          <strong>Router</strong> is your AI coach—a floating orb in the lower-right on training pages. Same idea here on the welcome page (this one is a preview with a ready-made hello).
+        </p>
+        <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
+          <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
+          Tap <strong>Router</strong> to open the panel and read the note. <strong>Next</strong> stays gray until the panel is open.
         </p>`,
     },
     {
@@ -916,23 +947,26 @@ export async function loadGettingStarted(container, manifest) {
     const next = host?.querySelector('.gs-next');
     if (!next) return;
     const blocked =
-      (stepIndex === 4 && !scenarioComplete) ||
-      (stepIndex === 5 && !knowledgeComplete) ||
-      (stepIndex === 7 && !fiberPathComplete);
+      (stepIndex === 1 && !isRouterWelcomePanelOpen()) ||
+      (stepIndex === 5 && !scenarioComplete) ||
+      (stepIndex === 6 && !knowledgeComplete) ||
+      (stepIndex === 8 && !fiberPathComplete);
     next.disabled = blocked;
     next.classList.toggle('opacity-50', blocked);
     next.classList.toggle('cursor-not-allowed', blocked);
     next.title = blocked
-      ? stepIndex === 7 && !fiberPathComplete
-        ? 'Click Fiber path in the header first.'
-        : 'Complete the activity in the highlighted area first.'
+      ? stepIndex === 1 && !isRouterWelcomePanelOpen()
+        ? 'Open Router in the corner first.'
+        : stepIndex === 8 && !fiberPathComplete
+          ? 'Click Fiber path in the header first.'
+          : 'Complete the activity in the highlighted area first.'
       : '';
   }
 
   /** Recompute spotlight hole + glass card after demo content height changes (e.g. coach note). */
   function syncSpotlightAndCard() {
     const r = getSpotlightRect(stepIndex);
-    const skipOverlay = isMobileViewport() && stepIndex >= 2 && stepIndex <= 5;
+    const skipOverlay = isMobileViewport() && stepIndex >= 3 && stepIndex <= 6;
     applySpotlightLayers(overlay, skipOverlay ? null : r);
     const host = glassRoot?.querySelector('.tour-glass-card-host');
     if (host) positionGlassCard(host, stepIndex, r);
@@ -1046,7 +1080,7 @@ export async function loadGettingStarted(container, manifest) {
     const btn = document.getElementById('fiber-path-btn');
     if (!btn) return;
     btn.addEventListener('click', () => {
-      if (stepIndex !== 7) return;
+      if (stepIndex !== 8) return;
       fiberPathComplete = true;
       refreshNextGate();
       scheduleSpotlightReflow();
@@ -1056,11 +1090,18 @@ export async function loadGettingStarted(container, manifest) {
   bindDemoInteractions();
   bindFiberPathTourGate();
 
+  mountRouterWelcomeMock({
+    onPanelVisibilityChange() {
+      refreshNextGate();
+      scheduleSpotlightReflow();
+    },
+  });
+
   function bindCardActions(cardEl) {
     cardEl.querySelector('.gs-next')?.addEventListener('click', () => {
-      if (stepIndex === 4 && !scenarioComplete) return;
-      if (stepIndex === 5 && !knowledgeComplete) return;
-      if (stepIndex === 7 && !fiberPathComplete) return;
+      if (stepIndex === 5 && !scenarioComplete) return;
+      if (stepIndex === 6 && !knowledgeComplete) return;
+      if (stepIndex === 8 && !fiberPathComplete) return;
       if (stepIndex < steps.length - 1) {
         stepIndex += 1;
         render();
@@ -1088,52 +1129,59 @@ export async function loadGettingStarted(container, manifest) {
     const total = steps.length;
     const isLast = stepIndex === total - 1;
     const nextBlocked =
-      (stepIndex === 4 && !scenarioComplete) ||
-      (stepIndex === 5 && !knowledgeComplete) ||
-      (stepIndex === 7 && !fiberPathComplete);
+      (stepIndex === 1 && !isRouterWelcomePanelOpen()) ||
+      (stepIndex === 5 && !scenarioComplete) ||
+      (stepIndex === 6 && !knowledgeComplete) ||
+      (stepIndex === 8 && !fiberPathComplete);
     const nextTitle = nextBlocked
-      ? stepIndex === 7 && !fiberPathComplete
-        ? 'Click Fiber path in the header first.'
-        : 'Complete the activity in the highlighted area first.'
+      ? stepIndex === 1 && !isRouterWelcomePanelOpen()
+        ? 'Open Router in the corner first.'
+        : stepIndex === 8 && !fiberPathComplete
+          ? 'Click Fiber path in the header first.'
+          : 'Complete the activity in the highlighted area first.'
       : '';
 
     const mobileView = isMobileViewport();
 
-    if (stepIndex === 2) {
+    if (glassRoot) {
+      glassRoot.style.zIndex = stepIndex === 1 ? '200' : '';
+    }
+
+    if (stepIndex === 3) {
       document
         .querySelector('[data-tour-target="tour-coffee-summary"]')
         ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
-    if (stepIndex === 3) {
+    if (stepIndex === 4) {
       document
         .querySelector('[data-tour-target="tour-welcome-tabs"]')
         ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
 
-    if (stepIndex === 4) {
+    if (stepIndex === 5) {
       const el = document.querySelector('[data-tour-target="tour-scenarios"]');
       el?.scrollIntoView({ block: mobileView ? 'start' : 'nearest', behavior: 'smooth' });
     }
 
-    if (stepIndex === 5) {
+    if (stepIndex === 6) {
       const el = document.querySelector('[data-tour-target="tour-knowledge"]');
       el?.scrollIntoView({ block: mobileView ? 'start' : 'center', behavior: 'auto' });
     }
 
     const rect = getSpotlightRect(stepIndex);
-    if (mobileView && stepIndex >= 2 && stepIndex <= 5) {
+    if (mobileView && stepIndex >= 3 && stepIndex <= 6) {
       applySpotlightLayers(overlay, null);
     } else {
       applySpotlightLayers(overlay, rect);
     }
 
-    if (stepIndex === 6) {
+    if (stepIndex === 7) {
       document
         .querySelector('[data-module-id="map-book"]')
         ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
 
-    if (stepIndex === 7) {
+    if (stepIndex === 8) {
       document
         .getElementById('fiber-path-btn')
         ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
@@ -1233,6 +1281,7 @@ export async function loadGettingStarted(container, manifest) {
     const moduleCoreEl = container.querySelector('[data-tour-target="module-core"]');
     const coffeeEl = container.querySelector('[data-tour-target="tour-coffee-summary"]');
     const welcomeTabsEl = container.querySelector('[data-tour-target="tour-welcome-tabs"]');
+    const routerMock = document.getElementById('router-welcome-mock-root');
     if (host) resizeObs.observe(host);
     if (sb) resizeObs.observe(sb);
     if (fiberBtn) resizeObs.observe(fiberBtn);
@@ -1241,6 +1290,7 @@ export async function loadGettingStarted(container, manifest) {
     if (moduleCoreEl) resizeObs.observe(moduleCoreEl);
     if (coffeeEl) resizeObs.observe(coffeeEl);
     if (welcomeTabsEl) resizeObs.observe(welcomeTabsEl);
+    if (routerMock) resizeObs.observe(routerMock);
   }
 
   render();

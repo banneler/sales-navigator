@@ -3,7 +3,7 @@
   "outputDirectory": ".",
   "functions": {
     "api/router.js": {
-      "includeFiles": "docs/gpc-training-corpus-structured.md",
+      "includeFiles": "docs/{gpc-training-corpus-structured.md,router-corpus/by-module/**}",
       "maxDuration": 60
     }
   },
