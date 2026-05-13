@@ -846,6 +846,11 @@ function buildVideoSectionsAsTabsHtml(meta) {
     meta.video_sections_tabs_aria_label.trim()
       ? meta.video_sections_tabs_aria_label.trim()
       : 'Topic guides';
+  const heading =
+    typeof meta.video_sections_tabs_heading === 'string' &&
+    meta.video_sections_tabs_heading.trim()
+      ? `<h2 class="text-xl font-bold text-slate-900 tracking-tight">${escapeHtml(meta.video_sections_tabs_heading.trim())}</h2>`
+      : '';
 
   const tabButtons = panels
     .map((p, i) => {
@@ -863,6 +868,7 @@ function buildVideoSectionsAsTabsHtml(meta) {
 
   return `
     <div class="module-video-sections-tabs space-y-6">
+      ${heading}
       <div class="module-sales-trio-shell rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden">
         <div role="tablist" aria-label="${escapeHtml(tablistLabel)}" class="flex flex-wrap border-b border-slate-200 bg-slate-50/90">
           ${tabButtons}

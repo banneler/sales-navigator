@@ -6,6 +6,47 @@ sensitivity: "public"
 reference_files:
   - label: "Product Collateral (security & SD-WAN)"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/Product%20Collateral/Forms/AllItems.aspx?viewid=855b9d9a%2D724a%2D4ba1%2D876e%2D2325aaaf29e5"
+video_sections_as_tabs: true
+video_sections_tabs_heading: "GPC Product Specifics"
+video_sections_tabs_aria_label: "GPC security, DDoS, and SD-WAN product specifics"
+video_sections:
+  - heading: "Managed Firewall"
+    intro: "Use this when the customer needs a managed edge control point, not just advice."
+    body: |
+      **GPC flavor:** Managed Firewall is the practical edge-security offer. It gives the customer firewall hardware/service management, policy support, monitoring, and an accountable operations path.
+
+      - Built around a managed firewall model with FortiGate referenced in the sales motion.
+      - Best fit when the customer lacks IT staff with the training, time, or certifications to configure and support firewalls well.
+      - The customer value is not "a box." It is 24x7x365 monitoring/management, fewer unmanaged changes, and one provider to call when connectivity and security overlap.
+      - Keep scope clean: firewall policy, add-on threat controls, VPN, logging, and support expectations should be validated before they become customer promises.
+  - heading: "Managed Network Security"
+    intro: "Use this when the buyer's problem is broader than one firewall."
+    body: |
+      **GPC flavor:** Managed Network Security (MNS) is the broader managed-security conversation. It is where the customer needs help operating security, not just buying equipment.
+
+      - Use this lane when the customer needs monitoring, visibility, policy management, security assessments, or help prioritizing risk.
+      - MNS can include services around customer-owned gear, SIEM/log visibility, vulnerability or architecture review, and broader security operations support.
+      - The business story is staff relief and discipline: fewer blind spots, fewer finger-pointing moments, and a clearer path when threats or policies change.
+      - Pair with SE/quoting early when the buyer asks for compliance, custom reporting, incident response expectations, or anything that sounds like a managed security program.
+  - heading: "DDoS Protection"
+    intro: "Use this when availability is the risk: websites, public apps, customer portals, voice, or critical circuits."
+    body: |
+      **GPC flavor:** DDoS Protection is the availability offer. It helps keep customer-facing services reachable when hostile traffic tries to overwhelm them.
+
+      - **Proactive** is the always-on positioning: 24x7 mitigation for customers where downtime after hours is not acceptable.
+      - **On-demand** is a lower-touch option with weekday business-hours mitigation windows. Do not let a customer hear "24/7" if they selected on-demand.
+      - Discovery should tie directly to business impact: lost orders, unreachable portals, support calls, reputation damage, or branch disruption.
+      - If the customer mentions BGP/ASN, high-scale public services, regulated environments, or strict uptime commitments, pull in technical validation before quoting.
+  - heading: "SD-WAN"
+    intro: "Use this when the customer needs WAN control, app prioritization, visibility, and managed operations across locations."
+    body: |
+      **GPC flavor:** GPC's SD-WAN motion is built around VMware VeloCloud with Orchestrator visibility and a managed operations model.
+
+      - SD-WAN Orchestrator gives real-time views into access-link and application performance, so the customer can see where traffic is struggling.
+      - It can prioritize important applications and improve real-time traffic such as voice and video, especially across mixed or unreliable access paths.
+      - It supports the multi-transport story: GPC fiber, cable, DSL, T1, wireless, or other access can participate when the design qualifies.
+      - Position the operational value: install, management, troubleshooting, and 24/7 NOC support reduce the customer's day-to-day network burden.
+      - Be explicit on scope: next-gen firewall, IDS/IPS, and advanced security controls are not automatically bundled into base SD-WAN. Validate add-ons with SE/quoting.
 discovery_questions:
   - "How many locations do you have, and which ones are on GPC fiber vs. other broadband or MPLS?"
   - "How are those locations connected today—VPN over shared Internet, MPLS, Ethernet? When does that contract expire?"
