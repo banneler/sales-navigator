@@ -34,7 +34,8 @@ video_sections:
   - heading: "DDoS Protection"
     intro: "Use this when availability is the risk: websites, public apps, customer portals, voice, or critical circuits."
     body: |
-      **On-demand (Business Hours):** Limited to weekday mitigation (8-17). If an attack hits after hours or on a weekend, it remains unmitigated until the next business day. Sell this as an insurance policy based on the customer's cost of downtime.
+      - **Proactive (Always-On):** 24/7/365 automated mitigation for mission-critical apps where downtime at any hour results in immediate revenue or reputation loss.
+      - **On-demand (Business Hours):** Limited to weekday mitigation (8-17). If an attack hits after hours or on a weekend, it remains unmitigated until the next business day. Sell this as an insurance policy based on the customer's cost of downtime.
   - heading: "SD-WAN"
     intro: "Use this when the customer needs WAN control, app prioritization, visibility, and managed operations across locations."
     body: |
