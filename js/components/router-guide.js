@@ -55,12 +55,12 @@ export function mountRouterWelcomeMock(opts) {
 
   const root = document.createElement('div');
   root.id = ROUTER_WELCOME_MOCK_ROOT_ID;
-  root.className = 'fixed bottom-5 right-5 z-[103]';
+  root.className = 'fixed bottom-20 right-5 z-[103]';
   root.innerHTML = `
     <button type="button" data-router-open class="group flex h-[4.5rem] w-[4.5rem] items-center justify-center overflow-hidden rounded-full bg-slate-900 p-0 shadow-2xl shadow-slate-900/30 ring-2 ring-orange-400/70 transition hover:-translate-y-0.5 hover:ring-orange-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-300" aria-label="Open Router coach" title="Open Router coach">
       <img src="Proposal_Assets/router-fab.png" alt="" width="72" height="72" decoding="async" loading="lazy" class="h-full w-full object-cover transition group-hover:scale-[1.02]" />
     </button>
-    <section data-router-panel class="hidden fixed bottom-28 right-5 flex h-[min(76vh,42rem)] w-[min(92vw,30rem)] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-900/10 sm:right-6 sm:bottom-32" aria-label="Router coach">
+    <section data-router-panel class="hidden fixed bottom-44 right-5 flex h-[min(76vh,42rem)] w-[min(92vw,30rem)] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-900/10 sm:right-6 sm:bottom-48" aria-label="Router coach">
       <header class="flex shrink-0 items-start justify-between gap-3 border-b border-slate-200 bg-slate-900 px-4 py-3 text-white">
         <div class="min-w-0">
           <h2 class="flex items-center gap-2 text-base font-bold">
@@ -129,12 +129,12 @@ export function mountRouterComponent(moduleId) {
 
   const root = document.createElement('div');
   root.id = ROUTER_ROOT_ID;
-  root.className = 'fixed bottom-5 right-5 z-[190]';
+  root.className = 'fixed bottom-20 right-5 z-[190]';
   root.innerHTML = `
     <button type="button" data-router-open class="group flex h-[4.5rem] w-[4.5rem] items-center justify-center overflow-hidden rounded-full bg-slate-900 p-0 shadow-2xl shadow-slate-900/30 ring-2 ring-orange-400/70 transition hover:-translate-y-0.5 hover:ring-orange-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-300" aria-label="Explore with AI Router" title="Explore with AI Router">
       <img src="Proposal_Assets/router-fab.png" alt="" width="72" height="72" decoding="async" loading="lazy" class="h-full w-full object-cover transition group-hover:scale-[1.02]" />
     </button>
-    <section data-router-panel class="hidden fixed bottom-28 right-5 flex h-[min(76vh,42rem)] w-[min(92vw,30rem)] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-900/10 sm:right-6 sm:bottom-32" aria-label="Router AI guide">
+    <section data-router-panel class="hidden fixed bottom-44 right-5 flex h-[min(76vh,42rem)] w-[min(92vw,30rem)] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-900/10 sm:right-6 sm:bottom-48" aria-label="Router AI guide">
       <header class="flex shrink-0 items-start justify-between gap-3 border-b border-slate-200 bg-slate-900 px-4 py-3 text-white">
         <div class="min-w-0">
           <h2 class="flex items-center gap-2 text-base font-bold">
