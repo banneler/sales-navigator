@@ -58,6 +58,6 @@ With appreciation,
 
 ## Where to go next
 
-- When you're ready to leave the tour behind, open **Sales Rules of Engagement** for pipeline protection and idle windows, or **Sales Process & Salesforce** if you want the CRM motion first.
+- When you're ready to leave the tour behind, open **Sales Rules of Engagement** for pipeline protection and idle windows, or **Salesforce** if you want the CRM motion first.
 - Product depth lives under **Connectivity & Access onward** in the sidebar; collapse the rail with the **chevron** whenever you want more reading room.
 - **Fiber path** in the header is your progress ribbon across modules—same chrome as the rest of the hub, just focused on what you've visited and what's next.

@@ -6,6 +6,9 @@ import { parseMarkdownToSafeHtml } from '../lib/markdown-config.js';
 const GETTING_STARTED_ID = 'getting-started';
 const OVERLAY_ID = 'getting-started-tour-overlay';
 
+/** Bumped in `destroyGettingStartedOverlay` so in-flight `loadGettingStarted` runs cannot mutate DOM after navigation. */
+let gettingStartedLoadGeneration = 0;
+
 let overlayEl = null;
 let resizeObs = null;
 let onResize = null;
@@ -429,6 +432,7 @@ function removeAllGettingStartedOverlaysFromDom() {
 }
 
 export function destroyGettingStartedOverlay() {
+  gettingStartedLoadGeneration += 1;
   if (resizeObs) {
     try {
       resizeObs.disconnect();
@@ -447,6 +451,10 @@ export function destroyGettingStartedOverlay() {
     onMainScroll = null;
   }
   removeAllGettingStartedOverlaysFromDom();
+}
+
+function isStaleGettingStartedLoad(loadId) {
+  return loadId !== gettingStartedLoadGeneration;
 }
 
 function applySpotlightLayers(root, rect, pad = 8) {
@@ -687,6 +695,7 @@ function positionGlassCard(hostEl, stepIndex, rect) {
  */
 export async function loadGettingStarted(container, manifest) {
   destroyGettingStartedOverlay();
+  const loadId = gettingStartedLoadGeneration;
 
   container.className = 'w-full max-w-[1600px] mx-auto min-h-[200px] px-0';
 
@@ -701,6 +710,7 @@ export async function loadGettingStarted(container, manifest) {
     meta = parsed.meta;
     body = parsed.body;
   } catch (e) {
+    if (isStaleGettingStartedLoad(loadId)) return;
     container.innerHTML = `
       <div class="bg-red-50 border border-red-200 text-red-800 rounded-xl p-6">
         <p class="font-bold">Could not load Getting started content.</p>
@@ -709,6 +719,8 @@ export async function loadGettingStarted(container, manifest) {
     console.error(e);
     return;
   }
+
+  if (isStaleGettingStartedLoad(loadId)) return;
 
   const demo = meta.getting_started_demo;
   if (
@@ -719,6 +731,7 @@ export async function loadGettingStarted(container, manifest) {
     typeof demo.scenario !== 'object' ||
     typeof demo.knowledge_check !== 'object'
   ) {
+    if (isStaleGettingStartedLoad(loadId)) return;
     container.innerHTML = `
       <div class="bg-red-50 border border-red-200 text-red-800 rounded-xl p-6">
         <p class="font-bold">Getting started content is missing <code>getting_started_demo</code> in YAML.</p>
@@ -863,7 +876,11 @@ export async function loadGettingStarted(container, manifest) {
     },
   ];
 
+  if (isStaleGettingStartedLoad(loadId)) return;
+
   container.innerHTML = buildGettingStartedMarkup(meta, body);
+
+  if (isStaleGettingStartedLoad(loadId)) return;
 
   bindGettingStartedMainTabs(container);
   const overlay = document.createElement('div');
@@ -882,6 +899,8 @@ export async function loadGettingStarted(container, manifest) {
     <div data-tour-ring class="fixed rounded-xl pointer-events-none border-2 border-orange-400/95 shadow-[0_0_0_1px_rgba(251,146,60,0.35),0_0_32px_rgba(251,146,60,0.2)] hidden z-[101]"></div>
     <div id="tour-glass-root" class="fixed inset-0 z-[102] pointer-events-none"></div>
   `;
+
+  if (isStaleGettingStartedLoad(loadId)) return;
 
   document.body.appendChild(overlay);
   overlayEl = overlay;

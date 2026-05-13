@@ -1,6 +1,6 @@
 ---
 id: "sales-process-and-salesforce"
-title: "Sales Process & Salesforce"
+title: "Salesforce"
 summary: "Pipeline hygiene. Approvals. Clean handoffs."
 sensitivity: "internal"
 sales_trio_guidelines_only: true
@@ -53,13 +53,11 @@ five_minute_flow:
     - title: "Multi-site"
       caption: "Video → 30 min live"
 five_minute_summary: |
-  - **Work this in order:** This is not a cram module. Follow the sequence—Salesforce 101, Check In 1, GPC Solution, then multi-site—because each step builds the next live selling habit.
   - **Convert to Opportunity:** Always create the opportunity upon lead conversion. Skipping this to "keep your pipeline clean" actually breaks reporting and stalls the approval flow later.
   - **The Contract Signer:** Set the Contract Signer on the GPC Solution early—before it ever hits Approval Pending. Trying to append it at the 11th hour will block your DocuSign envelope.
   - **DocuSign prep:** Every single recipient on a DocuSign envelope must exist as a Contact on the account first. No exceptions.
   - **Closed Lost:** Never delete a Closed Lost record. That history is critical for forecasting and future re-engagement campaigns.
   - **Three Contact Roles are mandatory on every Closed-Won Solution:** Project Contact, Billing Contact, and Property Manager / On-Site Manager. Skip them and you don't fail the close—you stall the install, because the project team can't reach the building and the bill lands in the wrong inbox.
-  - **Costing Routing has three flags** that change the routing path: **Strategic Build** (geographic), **Zone Parent** (multi-site structural), and **Reusable** (procedural). Different flags, different rules—and Reusable is **not allowed** under a Zone Parent.
 
 your_coaches:
   coaches:

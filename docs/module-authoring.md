@@ -98,6 +98,8 @@ Use `games/galactica-1/index.html` or `games/brick-breaker-1/index.html` instead
 
 **Rotation in this repo (product-family modules):** first embed in the sequence uses **Discovery Run** (`portfolio-level-1`), second **Discovery Galaxy** (`galactica-1`), third **Discovery Break** (`brick-breaker-1`), then repeat for the next three modules—so each game template can appear on multiple modules with different `module=` values.
 
+When embedded in Sales-Navigator (`embed=1`), completing a run awards **50 XP** once per **game template + module id** (stored under `localStorage` keys `sn:xp:discovery:*`).
+
 **Operational notes**
 
 - Serve the app from a **local web server** (same as module `content.md` loading); `file://` may block `fetch`.

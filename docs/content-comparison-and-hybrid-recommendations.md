@@ -47,19 +47,21 @@ Both are accurate. The current's voice is what makes reps actually retain the co
 
 When I wrote the proposed document I formalized "Named Landmines" as if it were a new framing. Reading the current carefully, **it already does this — often better, with more cultural texture.** The current's named pitfalls:
 
-| Module | Current's named landmines |
-| --- | --- |
-| Sales ROE | The Cowboy Grab · The Sent Folder Delusion · The Rogue Reassignment · The USAC Trap · The 5-Day Clock · The Duplicate Disaster |
-| Sales Process | The 11th Hour Signer · The 'I'll skip creating the opportunity' trap · The closed/lost deletion |
-| Sales Ops & Approvals | The Pre-Install Pivot · The Orphaned Document · The MAC Mistake · The slow lane (Manual Validation) |
-| Portfolio | The Commodity Trap · The single-throat-to-choke flip · The "too small for an enterprise stack" flip |
-| Connectivity | The SIA Squeeze · The Starlink speed-test trap · The VPN-over-Internet objection |
-| Security/SD-WAN | The "we manage our own Cisco gear" objection · The "our current solution works fine" trap · The NGFW-included assumption |
-| Cloud/Wi-Fi/Backup | The Jittery Cloud · The Fiber-Island Bridge · The Static-IP Trap |
-| UC | The Microsoft Native Trap · The License Blender · The plan-tier landmine (defaulting to Enterprise) |
-| Competitive | The "fiber is fiber" speed-test argument · The Starlink rural-clinic reframe · The "national carrier is cheaper" CFO ask |
-| ABM | Skipping ahead in the ABM sequence · The All-Exec Stack · The Empty Bench |
-| OBR | The 5-Day Promise · The Raw-Dump Reflex · The Modernization Lever |
+
+| Module                | Current's named landmines                                                                                                      |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Sales ROE             | The Cowboy Grab · The Sent Folder Delusion · The Rogue Reassignment · The USAC Trap · The 5-Day Clock · The Duplicate Disaster |
+| Sales Process         | The 11th Hour Signer · The 'I'll skip creating the opportunity' trap · The closed/lost deletion                                |
+| Sales Ops & Approvals | The Pre-Install Pivot · The Orphaned Document · The MAC Mistake · The slow lane (Manual Validation)                            |
+| Portfolio             | The Commodity Trap · The single-throat-to-choke flip · The "too small for an enterprise stack" flip                            |
+| Connectivity          | The SIA Squeeze · The Starlink speed-test trap · The VPN-over-Internet objection                                               |
+| Security/SD-WAN       | The "we manage our own Cisco gear" objection · The "our current solution works fine" trap · The NGFW-included assumption       |
+| Cloud/Wi-Fi/Backup    | The Jittery Cloud · The Fiber-Island Bridge · The Static-IP Trap                                                               |
+| UC                    | The Microsoft Native Trap · The License Blender · The plan-tier landmine (defaulting to Enterprise)                            |
+| Competitive           | The "fiber is fiber" speed-test argument · The Starlink rural-clinic reframe · The "national carrier is cheaper" CFO ask       |
+| ABM                   | Skipping ahead in the ABM sequence · The All-Exec Stack · The Empty Bench                                                      |
+| OBR                   | The 5-Day Promise · The Raw-Dump Reflex · The Modernization Lever                                                              |
+
 
 **Recommendation:** The "Named Landmine" framing is fine to apply consistently, but recognize that the current is already doing it. The proposed's contribution here is **mostly additive examples**, not a structural innovation.
 
@@ -379,22 +381,24 @@ Both belong **below** the welcome content, not in place of it.
 
 ## At-a-glance hybrid plan (the one-page summary)
 
-| Module | Take from current | Take from proposed | Net result |
-| --- | --- | --- | --- |
-| 1. Getting Started | **All of it** — playful welcome + demo-of-the-site UI-pattern showcase + Coffee Summary tone, **preserved verbatim** | Optional appended footer: "where to go next" wayfinding + portfolio-in-deck-order teaser grid | Structural port only — match the front-matter shape of other modules; do **not** rewrite the welcome content |
-| 2. Sales ROE | Voice + 9 KCs + scenarios + 6 named pitfalls | ENA exception by name; 80/20 framing | Surgical edits only |
-| 3. Sales Process & SF | Named coaches + video sections + Conga/DocuSign flow | 9-role Contact Roles enum + Costing Routing & Reusable section | Add 1-2 sections; keep chassis |
-| 4. Sales Ops & Approvals | Tabbed Pre-Approved / Matrix / Change-Order + operational footnotes | Payback × Term grid table; Dark Fiber + Strategic Build rule callouts | Port table + 2 rule callouts |
-| 5. Portfolio | Voice + scenarios + Discovery Run game + roleplay | 10-product grid + Cox comparison table + video-testimonial QR | Add tables + QR call-out |
-| 6. Connectivity & Access | Voice + roleplay + Discovery Galaxy + objection cards | DIA-vs-SIA grid, Starlink latency table, 5G-vs-fiber split, E-Line/E-LAN breakdown | Port 3 tables + E-Line section |
-| 7. Security & SD-WAN | Voice + operational nuance (NGFW optional, BGP/ASN SE) + IT-Director roleplay | Fortinet platform tier table; DDoS Proactive vs. On-Demand table; MNS 6-component breakdown; 60% savings stat | Port 3 tables + 1 proof point |
-| 8. Cloud, Wi-Fi & Backup | **All of it** — gold-standard module | Throttling table at higher precision; AT&T/Verizon-specific throughputs | Surgical edits only |
-| 9. GPC iTV | Voice + roleplay + ISP qualification | "No Equipment Promise" landmine framing | Optional minor edit |
-| 10. UC, Voice & Collab | Brand hierarchy + License Blender + IPN/CRM CTI rule + video carousel + plan-ladder-vs-workload table | Resource Line tier; CC Pro vs. CC Elite breakdown; Yealink phone ladder; UC-for-Teams comparison table | Add 4 missing pieces |
-| 11. Competitive Positioning | Image library + game + framework + Disengage signals | Cox-Charter-Spectrum framing; T-Mobile/Metronet nuance; Allo-leases-from-GPC; 100% referenceable claim; decision tree | Image library stays; add field-reference section below |
-| 12. ABM | Roleplay + scenarios + discovery questions | Door Pull +1 trigger explicit; Master Spreadsheet access permissions | Surgical edits only |
-| 13. OBR | Gantt + Jerry Ehrenberg + email templates + roleplay | Timeline math note (26 → 21 with overlap) | Surgical edit only |
-| 14. Executive Map Book | JS navigation surface as-is | — (proposed content shelved; portable pieces re-homed into Modules 1 + 5) | **No revisions this pass.** Re-evaluate after other 13 ship. Future-state idea parked: HUD-style transport/L2/IP learning layer. |
+
+| Module                      | Take from current                                                                                                    | Take from proposed                                                                                                    | Net result                                                                                                                       |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| 1. Getting Started          | **All of it** — playful welcome + demo-of-the-site UI-pattern showcase + Coffee Summary tone, **preserved verbatim** | Optional appended footer: "where to go next" wayfinding + portfolio-in-deck-order teaser grid                         | Structural port only — match the front-matter shape of other modules; do **not** rewrite the welcome content                     |
+| 2. Sales ROE                | Voice + 9 KCs + scenarios + 6 named pitfalls                                                                         | ENA exception by name; 80/20 framing                                                                                  | Surgical edits only                                                                                                              |
+| 3. Sales Process & SF       | Named coaches + video sections + Conga/DocuSign flow                                                                 | 9-role Contact Roles enum + Costing Routing & Reusable section                                                        | Add 1-2 sections; keep chassis                                                                                                   |
+| 4. Sales Ops & Approvals    | Tabbed Pre-Approved / Matrix / Change-Order + operational footnotes                                                  | Payback × Term grid table; Dark Fiber + Strategic Build rule callouts                                                 | Port table + 2 rule callouts                                                                                                     |
+| 5. Portfolio                | Voice + scenarios + Discovery Run game + roleplay                                                                    | 10-product grid + Cox comparison table + video-testimonial QR                                                         | Add tables + QR call-out                                                                                                         |
+| 6. Connectivity & Access    | Voice + roleplay + Discovery Galaxy + objection cards                                                                | DIA-vs-SIA grid, Starlink latency table, 5G-vs-fiber split, E-Line/E-LAN breakdown                                    | Port 3 tables + E-Line section                                                                                                   |
+| 7. Security & SD-WAN        | Voice + operational nuance (NGFW optional, BGP/ASN SE) + IT-Director roleplay                                        | Fortinet platform tier table; DDoS Proactive vs. On-Demand table; MNS 6-component breakdown; 60% savings stat         | Port 3 tables + 1 proof point                                                                                                    |
+| 8. Cloud, Wi-Fi & Backup    | **All of it** — gold-standard module                                                                                 | Throttling table at higher precision; AT&T/Verizon-specific throughputs                                               | Surgical edits only                                                                                                              |
+| 9. GPC iTV                  | Voice + roleplay + ISP qualification                                                                                 | "No Equipment Promise" landmine framing                                                                               | Optional minor edit                                                                                                              |
+| 10. UC, Voice & Collab      | Brand hierarchy + License Blender + IPN/CRM CTI rule + video carousel + plan-ladder-vs-workload table                | Resource Line tier; CC Pro vs. CC Elite breakdown; Yealink phone ladder; UC-for-Teams comparison table                | Add 4 missing pieces                                                                                                             |
+| 11. Competitive Positioning | Image library + game + framework + Disengage signals                                                                 | Cox-Charter-Spectrum framing; T-Mobile/Metronet nuance; Allo-leases-from-GPC; 100% referenceable claim; decision tree | Image library stays; add field-reference section below                                                                           |
+| 12. ABM                     | Roleplay + scenarios + discovery questions                                                                           | Door Pull +1 trigger explicit; Master Spreadsheet access permissions                                                  | Surgical edits only                                                                                                              |
+| 13. OBR                     | Gantt + Jerry Ehrenberg + email templates + roleplay                                                                 | Timeline math note (26 → 21 with overlap)                                                                             | Surgical edit only                                                                                                               |
+| 14. Executive Map Book      | JS navigation surface as-is                                                                                          | — (proposed content shelved; portable pieces re-homed into Modules 1 + 5)                                             | **No revisions this pass.** Re-evaluate after other 13 ship. Future-state idea parked: HUD-style transport/L2/IP learning layer. |
+
 
 ---
 
@@ -406,7 +410,7 @@ If I were running this rebuild as Sales Enablement, here's the sequence:
 2. **Tables first, voice second.** The proposed's tables are the highest-leverage portable artifact. Port them into the current's existing Technical Deep Dive sections module-by-module. This alone is probably a half-day of editing.
 3. **Adopt source-tagging as a back-of-house discipline.** Every KC in every module gets a hidden `source:` tag pointing at the PDF and page. Learners never see it; editors get an audit trail. Pulls directly from the proposed's structure.
 4. **Three small content gaps to close:**
-    - Costing Routing & Reusable matrix in Module 3 (currently absent in the current).
+  - Costing Routing & Reusable matrix in Module 3 (currently absent in the current).
     - Resource Line as a 5th UC plan tier in Module 10 (currently missing).
     - The "service consolidation" framing for Managed Firewall in Module 11 (currently implicit).
 5. **Leave Module 8 alone.** It's the model.
@@ -422,4 +426,3 @@ The goal is the same product the current already has — but with the proposed's
 If a hiring manager handed me both documents and said "pick one," I'd pick the **current** every time — and then patch the gaps from the proposed. The current was built by someone who has watched real reps lose real deals, and that voice is unfakeable. The proposed reads like a competent product manager who read every PDF carefully. Both are useful. The current is the foundation; the proposed is the editorial input.
 
 The good news: every recommendation in this document is **additive**, not destructive. There is no module where the proposed should fully replace the current. The rebuild is a sharpening pass, not a tear-down.
-

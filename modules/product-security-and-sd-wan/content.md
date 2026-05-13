@@ -1,7 +1,7 @@
 ---
 id: "product-security-and-sd-wan"
 title: "Security & SD-WAN"
-summary: "Managed edge. DDoS mitigation. Multi-site SD-WAN."
+summary: "Threat protection. Resilient WAN. Managed operations."
 sensitivity: "public"
 reference_files:
   - label: "Product Collateral (security & SD-WAN)"
@@ -13,11 +13,10 @@ discovery_questions:
   - "Have you experienced a security incident, ransomware event, or DDoS attack? Who manages your firewalls today?"
   - "Do you need always-on DDoS mitigation (proactive) or is business-hours coverage acceptable—and what's the cost of an attack outside those windows?"
 five_minute_summary: |
-  - **Pace yourself:** This module is a qualification map, not a design guide. Learn the product lane, the risk trigger, and when to pull in an SE.
-  - **Managed Security:** We offer FortiGate managed edge firewalls and a broader Managed Network Security (MNS) umbrella that includes SIEM, assessments, and email security.
-  - **DDoS Protection:** Be clear on the tiers. Proactive offers 24/7 automatic mitigation, while On-Demand is limited to weekday business hours.
-  - **SD-WAN:** Powered by VeloCloud for multi-site deployments (requiring at least one site on GPC fiber). Advanced firewall features are optional and must be explicitly quoted.
-  - **Engineering Handoffs:** Bring in an SE early for high availability setups, BGP routing, or highly regulated security environments.
+  - **Security is risk reduction:** Customers buy managed security because outages, ransomware, bad firewall policy, and unmanaged edge devices create business risk—not because they love appliances.
+  - **Firewall vs. security program:** A firewall controls traffic at the edge. A broader managed security program adds monitoring, policy management, visibility, assessment, and response discipline.
+  - **DDoS is availability protection:** Distributed attacks try to overwhelm a public-facing service or circuit. The sales question is not "Do you have DDoS?"—it is "What happens if customers cannot reach you?"
+  - **SD-WAN is control over the WAN:** It steers traffic across multiple access paths, prioritizes critical apps, improves visibility, and can reduce reliance on legacy private networks.
 
 knowledge_checks:
   - question: "How does DDoS Protection proactive differ from on-demand for mitigation windows?"
@@ -28,37 +27,37 @@ knowledge_checks:
     correct_index: 2
     explanation: "On-demand is not 24×7 mitigation on that SKU. If the customer has overnight or weekend exposure, qualify the risk before they buy the cheaper tier."
 
-  - question: "What must be true for the standard SD-WAN positioning in this module?"
+  - question: "What customer problem usually makes SD-WAN worth discussing?"
     options:
-      - "A single home office on any broadband connection with no GPC fiber anchor."
-      - "A DDoS proactive service on every circuit before SD-WAN can be discussed."
-      - "A multi-site WAN footprint with at least one site anchored on GPC fiber."
-    correct_index: 2
-    explanation: "The standard SD-WAN story starts with a multi-site footprint and at least one GPC fiber site. That anchor lets us manage the WAN instead of just selling router software."
+      - "They have multiple sites, mixed access paths, or critical apps that need better routing and visibility."
+      - "They need a faster public website but do not care how branch traffic is routed."
+      - "They want a cheaper firewall but have no branch connectivity or application performance issue."
+    correct_index: 0
+    explanation: "SD-WAN is valuable when the customer needs control over how traffic moves across sites and access paths. The business story is uptime, app performance, and operational visibility."
 
-  - question: "What should you avoid promising on SD-WAN without SE review?"
+  - question: "Why should reps be careful when a customer asks whether SD-WAN includes advanced security?"
     options:
       - "Every advanced security line in collateral is included in the base SKU."
-      - "Feature parity against a competitor platform without validating the design."
-      - "Either of those promises, plus rushed MPLS migration claims, need SE review."
-    correct_index: 2
-    explanation: "Do not treat base SD-WAN as full NGFW, and do not promise an overnight MPLS cutover without a plan. SE review protects the scope before it becomes a customer commitment."
-
-  - question: "What does Managed Network Security (MNS) represent relative to Managed Firewall alone?"
-    options:
-      - "MNS is the broader umbrella for firewall management, SIEM, assessments, email security, and related scope."
-      - "MNS is simply a new logo for Managed Firewall with no extra conversation to qualify."
-      - "MNS is the WAN design that replaces SD-WAN whenever a customer has multiple sites."
-    correct_index: 0
-    explanation: "Lead with MNS when the buyer needs broader managed security operations, not just a managed edge firewall. Scope determines whether the conversation stays narrow or expands."
-
-  - question: "What is an accurate statement about Managed Firewall in this module?"
-    options:
-      - "It guarantees compliance certification by itself without review."
-      - "It is Fortinet-based managed edge protection with SOC monitoring and SE-validated performance expectations."
-      - "It never includes 24/7 monitoring."
+      - "SD-WAN and security are related, but not every firewall or threat-prevention control is automatically included."
+      - "Security features are irrelevant once the customer has multiple sites."
     correct_index: 1
-    explanation: "Managed Firewall is a Fortinet and SOC-monitored story, but compliance and throughput claims need approved artifacts. Do not turn a managed firewall into an unsupported certification promise."
+    explanation: "SD-WAN and security overlap, but they are not the same thing. Confirm what security capabilities are included before the customer hears 'SD-WAN solves all firewall needs.'"
+
+  - question: "What does a broader managed security conversation add beyond a firewall?"
+    options:
+      - "Monitoring, policy management, visibility, assessments, and response discipline around the customer's risk."
+      - "A lower-cost firewall label with no change in monitoring or operational responsibility."
+      - "A WAN replacement that removes the need to discuss security policy or incidents."
+    correct_index: 0
+    explanation: "A firewall is a control point; managed security is the operating model around risk. The more the customer lacks time, tools, or staff, the more that operating model matters."
+
+  - question: "What is the sales value of a managed firewall?"
+    options:
+      - "It guarantees compliance certification by itself without any customer process change."
+      - "It gives the customer a managed edge control with monitoring, policy support, and fewer break-fix burdens."
+      - "It removes the need to ask about applications, users, locations, and risk."
+    correct_index: 1
+    explanation: "The value is not just the box. It is having a managed control point, visibility, and operational support so the customer is not alone when policy or threats change."
 
   - question: "When a customer wants always-on DDoS mitigation but selected on-demand for price, what should you do?"
     options:
@@ -68,21 +67,21 @@ knowledge_checks:
     correct_index: 2
     explanation: "Match the DDoS SKU to the customer’s real uptime need. A cheaper tier can become expensive fast if an attack lands outside the covered window."
 
-  - question: "For SD-WAN discovery, what should you confirm regarding security features?"
+  - question: "For SD-WAN discovery, what should you clarify about security?"
     options:
-      - "Assume IDS/IPS and every NGFW line on collateral are in the base SD-WAN SKU."
-      - "Security features are irrelevant to SD-WAN."
-      - "Confirm whether NGFW, IDS, and related lines are base scope or optional add-ons."
+      - "Assume every firewall and threat-prevention capability is included by default."
+      - "Ignore security because SD-WAN is only about saving money on access."
+      - "Clarify which security controls are included, optional, or better handled as a separate managed security scope."
     correct_index: 2
-    explanation: "Map each RFP security line to a quoted SKU before you commit. This keeps base SD-WAN from becoming an accidental full-security promise."
+    explanation: "SD-WAN improves traffic steering and visibility, but security still needs scope. Clarifying controls keeps the design honest and prevents accidental overpromises."
 
-  - question: "When should you engage SE/security early per this module?"
+  - question: "When does the conversation need technical validation before you quote?"
     options:
-      - "For complex routing, HA, BGP/ASN DDoS, regulated environments, or high-scale needs."
+      - "For complex routing, high availability, BGP/ASN DDoS, regulated environments, or high-scale needs."
       - "Never; sales owns firewall, BGP, and compliance design without technical review."
       - "Only after signature, when the customer has already accepted the SOW."
     correct_index: 0
-    explanation: "Complex, regulated, or high-scale designs need SE/security early. The handoff is not a weakness; it keeps the quote credible."
+    explanation: "Complex, regulated, or high-scale designs need technical validation before they become customer promises. That keeps the quote credible and avoids walking back scope later."
 
   - question: "What is sound positioning for the SD-WAN platform vs competitors?"
     options:
@@ -130,16 +129,16 @@ roleplay:
 ## At a glance
 
 - **Managed security:** **Managed Firewall** (FortiGate, SOC-monitored) plus **MNS** when SIEM, assessments, email security, or broader scope matter—match SKU to the buyer’s real need.
-- **DDoS:** **Proactive** = 24×7 automated mitigation; **on-demand** mitigation window is **weekdays 8–17** on that SKU—never let a customer assume overnight coverage they did not buy.
-- **SD-WAN (VeloCloud):** Standard story needs **≥1 site on GPC fiber** and a **multi-site** WAN footprint; **NGFW/IDS lines are optional add-ons**, not bundled in base—confirm with **SE/quoting** every time.
-- **When to pull SE early:** HA/BGP, regulated environments, high-scale DC, mixed-vendor firewall ops, or **BGP/ASN DDoS** designs.
+- **DDoS:** Availability protection for public-facing services and circuits. The key question is the cost of being unreachable during an attack.
+- **SD-WAN:** A software-defined way to steer traffic, prioritize applications, and manage multiple access paths across sites.
+- **Security scope:** SD-WAN, firewall, DDoS, and managed security solve related but different problems. Define the risk before naming the product.
 
 ---
 
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-We don't just connect your sites; we secure and optimize them. With our managed firewalls, automated DDoS protection, and intelligent SD-WAN, we prioritize your most critical apps and stop threats at the edge—all monitored 24/7 by our security team so you don't have to.
+We help customers keep their network available, controlled, and visible. Security protects the edge and reduces threat risk; SD-WAN makes the WAN easier to steer and manage. Together, they turn "the network is down" into a managed business problem instead of a scramble.
 :::
 
 ---
@@ -192,53 +191,34 @@ No—next-gen firewall and IDS/IPS are optional add-ons, not bundled in base Vel
 
 ## Technical Deep Dive [deep]
 
-**SD-WAN (VeloCloud) qualifiers:**
-- Minimum: ≥1 site on GPC fiber + multi-site WAN footprint
-- Off-net US branches can participate via any Internet transport
-- Business rule: at least one site on GPC fiber required
-- NGFW and IDS/IPS lines are optional add-ons—not included in base SD-WAN SKU; confirm with SE/quoting on every quote
+**Security — what it is in customer language**
 
-**SD-WAN commercial framing:** SD-WAN MRC sits **between SIA and DIA** at comparable speeds — often less than the MPLS it replaces. **Internet bandwidth is purchased separately** from the SD-WAN overlay; that split is worth flagging in every quote so the customer sees the full stack. Current rate cards live in **Sales Resources** (protected) — pull with quoting, never from memory. Proof point from the financial-services use-case set: one advisory shop saw **~60% savings on public broadband vs. private network services** after SD-WAN—cite with care; SE validates on every financial narrative.
+Security is the discipline of reducing the chance that a bad event becomes a business outage, data loss, fraud event, or public embarrassment. The buyer usually feels it as "we do not have enough people watching this," "our firewall rules are a mess," "audit/compliance is getting harder," or "we cannot afford ransomware downtime."
 
-**Managed Firewall — Fortinet platform tiers** (from the Managed Firewall datasheet—**SE picks the model**; don't quote throughput as a contractual guarantee without approved collateral):
+**Firewall — the edge control point**
 
-| Tier | Office platforms | Firewall throughput | IPS throughput |
-| --- | --- | --- | --- |
-| Small Office | FG-30G | 4 Gbps | 800 Mbps |
-| Medium Office | FG-50G | 5 Gbps | 2.25 Gbps |
-| Large Office | FG-70G | 10 Gbps | 2.5 Gbps |
-| Hub/HQ Office | FG-90G | 28 Gbps | 4.5 Gbps |
+A firewall inspects and controls traffic moving in and out of the network. The value to the customer is policy control, segmentation, threat filtering, VPN access, logging, and fewer unmanaged changes at the edge. Managed firewall adds operational help: monitoring, policy support, and someone accountable when rules, threats, or locations change.
 
-| Tier | Data center platforms | Firewall throughput | IPS throughput |
-| --- | --- | --- | --- |
-| Small DC | FG-100F | 20 Gbps | 2.6 Gbps |
-| Medium DC | FG-120G | 39 Gbps | 5.3 Gbps |
-| Large DC | FG-400F | 79.5 Gbps | 12 Gbps |
+**Managed security — the operating model**
 
-**Managed Firewall:** FortiGate-based edge + SOC monitoring on top of this hardware ladder. Compliance and real-world throughput still route through **SE + approved sheets**.
+Managed security is broader than a firewall. It can include managing existing customer gear, monitoring logs, reviewing policy, scanning for vulnerabilities, assessing architecture, and helping the customer prioritize what to fix. Lead here when the buyer lacks time, tools, or staff to run security well.
 
-**MNS (Managed Network Security) — six components** (umbrella; match SKU to what the buyer actually runs today):
+**DDoS — availability protection**
 
-1. **Managed Firewall** — fully managed Fortinet NGFW, 24×7 monitoring, threat detection, VPN access, optional zero-trust.
-2. **Firewall Management** — 24×7 management of **their existing** firewalls across **Cisco, Fortinet, Palo Alto**, and more.
-3. **Firewall Plus with Managed SIEM** — data aggregation, threat prioritization, log retention, actionable insight.
-4. **Firewall & Enterprise Security Assessments** — architecture / policy review, vulnerability findings, remediation roadmap.
-5. **Vulnerability Scanning** — scheduled active + passive monitoring with expert interpretation.
-6. **Managed Email Security** — AI-driven threat and DLP coverage for platforms like Microsoft 365 and Slack.
+A distributed denial-of-service attack tries to make an internet-facing service unreachable by flooding it with traffic. The customer impact is simple: customers cannot reach the site, phones or apps may degrade, and revenue or trust takes a hit. The key discovery question is, "What is the cost if this service is unavailable after hours?"
 
-**DDoS Protection — Proactive vs. On-Demand** (from the DDoS product sheet—**never** let a customer assume 24×7 mitigation on the wrong SKU):
+**SD-WAN — control over how traffic moves**
 
-| Feature | Proactive DDoS | On-Demand DDoS |
-| --- | --- | --- |
-| Monitoring portal + traffic analysis | ✓ | ✓ |
-| 24×7 automated monitoring + notifications | ✓ | ✓ |
-| **Mitigation** | **24×7 automated mitigation** | **Mitigation weekdays 8 am–5 pm only** |
-| Bandwidth thresholds per customer | ✓ | ✓ |
-| Bandwidth range | 10 Mbps – 100 Gbps | 10 Mbps – 100 Gbps |
-| BGP FlowSpec + TMS | ✓ | BGP FlowSpec only |
+SD-WAN is not "a fancy router." It is software-defined control over WAN traffic: which apps get priority, which access path traffic uses, what happens when a circuit degrades, and how IT sees performance across sites. The value shows up as better app experience, faster issue isolation, easier branch management, and a path away from expensive legacy private networks.
 
-**The line that saves your renewal:** e-commerce at 2 a.m. needs **Proactive**. A brick-and-mortar shop whose web ordering is mostly business-hours *might* be fine on **On-Demand**—document the trade-off in writing before signature.
+**How the pieces relate**
 
-**Handoffs:** SE/security for HA, BGP/ASN DDoS, mixed-vendor firewall management, regulated environments, unusual scale. Pricing PDFs are internal until quoting validates.
+| Customer pain | Conversation lane |
+| --- | --- |
+| "Our apps are slow between sites." | SD-WAN / WAN design |
+| "We do not know what traffic is allowed at the edge." | Firewall policy |
+| "We do not have staff to monitor or manage security." | Managed security |
+| "If our public site goes down, we lose money." | DDoS availability |
+| "The RFP assumes everything is included." | Scope each security control before quoting |
 
-**Vertical fit:** retail stores, regional healthcare, community banking, insurance brokers, government, education, manufacturing—any multi-site business with VoIP/SaaS pain.
+**Rep rule:** diagnose the risk first, then name the product. If you start with gear, the customer hears a SKU. If you start with business risk, the customer hears why it matters.

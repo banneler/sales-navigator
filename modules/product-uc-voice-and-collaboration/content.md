@@ -29,7 +29,6 @@ video_carousel:
     src: assets/UC/work-better-wherever.mp4
     poster: assets/UC/work-better-wherever.png
 five_minute_summary: |
-  - **Pace yourself:** Treat this as three connected conversations: UC plan ladder, Teams path, then Contact Center scope. You do not have to design the solution alone.
   - **What you’re selling:** Cloud UC (Intermedia) — voice, SMS/MMS, HD meetings, AI recaps; **99.999%** uptime line.
   - **Seat / plan ladder:** Match **workload**, not company size; tiers **mix per user**. Typical blend: lobby/resource lines + reception Express + floor Pro + HQ Enterprise.
     - **Resource Line** — one concurrent endpoint, no apps (lobby, conference room, front desk that only needs to ring).
@@ -38,7 +37,9 @@ five_minute_summary: |
     - **Pro** — adds inbound call center features, CRM integrations, video (100).
     - **Enterprise** — Pro + video (200) + **200 GB** storage.
   - **Contact center:** **CCaaS** = omnichannel add-on (voice, SMS, chat), **concurrent** agent seats. **UC Pro/Enterprise** already include strong **inbound** queue/supervisor tooling — CCaaS is the separate omnichannel product when they need that scope.
-  - **Microsoft Teams (two paths — don’t blend in one pitch):** **Embedded UC** — GPC dial pad inside Teams; **no** MS Teams Phone license. **Ascend with Teams** (Direct Routing) — native Teams dialer; **MS Teams Phone license required**. Customer picks the experience; **SE validates.**
+  - **Microsoft Teams (two paths — don’t blend in one pitch):** Customer picks the experience; **SE validates.**
+    - **Embedded UC:** GPC dial pad inside Teams; **no** MS Teams Phone license.
+    - **Ascend with Teams / Direct Routing:** Native Teams dialer; **MS Teams Phone license required**.
   - **Legacy:** SIP/PRI still available; steer toward UCaaS over time.
 knowledge_checks:
   - question: "A prospect wants to add external calling to Microsoft Teams. They think they need to buy Microsoft's 'Teams Phone' add-on license for every user. Are they right?"
@@ -152,7 +153,9 @@ roleplay:
 ## At a glance
 
 - **UCaaS Platform:** 100+ business voice features, SMS, chat, HD meetings. 99.999% uptime.
-- **MS Teams Integration:** Two paths, two licensing stories. **Embedded UC** puts a GPC dial pad inside Teams and can avoid the MS Teams Phone license; **Direct Routing / native Teams dialing** requires that license. SE validates the path before you promise the experience.
+- **MS Teams Integration:** Two paths, two licensing stories. SE validates the path before you promise the experience.
+  - **Embedded UC:** GPC dial pad inside Teams; can avoid the MS Teams Phone license.
+  - **Direct Routing / native Teams dialing:** Uses the native Teams dialer; MS Teams Phone license required.
 - **Contact Center:** Omnichannel (Voice, SMS, Chat). Concurrent licensing model.
 - **AI Features:** AI call recaps, sentiment analysis, and supervisor-assist tools are built-in.
 

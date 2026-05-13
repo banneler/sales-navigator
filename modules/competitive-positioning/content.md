@@ -66,7 +66,6 @@ discovery_questions:
   - "Are you running SaaS applications like O365, Salesforce, or cloud ERP? Where are those workloads hosted?"
   - "What does your current vendor do when there's a service issue—do they have local field technicians or is everything remote?"
 five_minute_summary: |
-  - **Pace yourself:** Learn the framework first, then pick the one card that matches the customer’s named alternative. The gallery is a lookup tool, not a memorization assignment.
   - **The Framework:** Map competitor weaknesses to GPC strengths using business risk and proof points (local support, NOC, redundancy). Avoid generic claims of superiority.
   - **Avoid Landmines:** Never make personal attacks or use absolutes. Verify battle-card stats with marketing before sharing externally, and bring in SEs early for architecture discussions.
   - **Handling Objections:** When countering LEO satellite or price pressure, anchor the conversation on uptime, latency, and the total cost of downtime rather than just price or speed.

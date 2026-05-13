@@ -1,7 +1,7 @@
 ---
 id: product-connectivity
 title: Connectivity & Access
-summary: DIA vs SIA. Ethernet. Beating Starlink.
+summary: Internet access. Transport. Layer 2 vs Layer 3.
 sensitivity: internal
 reference_files:
   - label: Product Collateral (connectivity & access)
@@ -14,9 +14,9 @@ discovery_questions:
   - 'How are sites connected today—shared broadband, MPLS, Ethernet, or SD-WAN—and when do those contracts renew?'
 five_minute_summary: |
   - **SIA vs DIA:** Standard Internet (SIA) is for flexible, cost-sensitive needs on shared infrastructure. Dedicated Internet (DIA) is mandatory when they need symmetrical bandwidth, SLA-grade operations, and guaranteed throughput.
-  - **Managed Ethernet:** This is for private, Layer 2 connectivity between physical sites. It is an entirely different conversation than internet access.
-  - **Wavelength:** High-capacity optical transport for data centers and massive hubs. Do not pitch this as a default upgrade for a standard branch office.
-  - **The Starlink play:** Do not dismiss LEO satellite. Instead, anchor on the physics: fiber will always win on latency, weather reliability, and the true cost of downtime.
+  - **Transport vs. Internet:** Transport moves customer traffic privately between locations or networks. Internet access connects the customer to the public IP world.
+  - **Layer 2 vs. Layer 3:** Layer 2 Ethernet feels like extending the customer’s LAN between sites. Layer 3/IP routes traffic between networks and is where internet service lives.
+  - **Optical capacity:** Fiber optic transport and wavelength services are high-capacity optical paths for data centers, hubs, and heavy replication workloads—not the default branch-office answer.
 knowledge_checks:
   - question: "A regional accounting firm needs to reliably upload massive tax files to the cloud. Which access product do you pitch?"
     options:
@@ -34,13 +34,13 @@ knowledge_checks:
     correct_index: 1
     explanation: "Ethernet is for private Layer 2 transport between physical locations."
 
-  - question: "A prospect says they are just going to buy Starlink for their main office because it's cheaper and fast. How do you respond?"
+  - question: "A customer wants two buildings to behave like they are on the same private network without sending traffic over the public internet. What product family are you likely discussing?"
     options:
-      - "Dismiss the comparison and tell them satellite is not a serious business option."
-      - "Acknowledge the use case, then anchor on latency, weather resilience, and SLA-backed reliability."
-      - "Match the hardware cost verbally so the conversation stays focused on price."
-    correct_index: 1
-    explanation: "Never attack the competitor emotionally. Attack the physics of satellite latency and the lack of an enterprise SLA."
+      - "Layer 2 Ethernet transport."
+      - "Standard Internet Access."
+      - "Public Wi-Fi with a VPN client."
+    correct_index: 0
+    explanation: "Layer 2 Ethernet transport is for private site-to-site connectivity. Internet access is Layer 3/IP service to the public internet, even when it is delivered over fiber."
 
 scenarios:
   - title: The SIA Squeeze
@@ -97,8 +97,8 @@ Your network shouldn't be the reason your video calls drop or your cloud apps la
 I completely understand watching the budget. However, because you run a heavy VoIP environment, SIA will leave you with the same dropped calls you have today. We need the symmetrical guarantee of DIA to actually solve your problem.
 :::
 
-::: flip ["Starlink gets 150Mbps down, why should I pay more for your 100M fiber?"]
-Speed tests don't run businesses—latency does. Satellite inherently struggles with latency and weather fade. If your team is running cloud apps or voice, that delay is going to cause major friction. Fiber gives you the physical reliability and an actual SLA.
+::: flip ["I just need internet between my two offices."]
+Clarify the word "internet." If they mean public web access at both locations, talk SIA or DIA. If they mean private traffic between sites, you are in a transport conversation.
 :::
 
 ::: flip ["We use VPNs over our internet to connect our offices. Why buy Ethernet?"]
@@ -130,35 +130,24 @@ VPNs over public internet are subject to public internet traffic jams. Managed E
 
 **One sentence that captures the choice:** SIA is GPC's high-quality shared Internet—DIA is GPC's enterprise-grade dedicated Internet.
 
-**Fiber vs. Starlink — latency band you can quote on a whiteboard** (per Fiber vs Starlink battle card—always pivot peak Mbps to **latency consistency**):
+**Core definitions — the words reps need to hear clearly**
 
-| Application need | Typical latency requirement |
-| --- | --- |
-| Video calls | <50 ms |
-| VoIP | <150 ms |
-| POS | <100 ms |
-| VPN | <100 ms |
-| Cloud apps | <100 ms |
-| Remote support | <100 ms |
+- **Transport:** A private connection that moves customer traffic between places—site to site, site to data center, or site to carrier/cloud handoff. The buyer is usually asking for control, privacy, performance, or predictable paths.
+- **Fiber optic / optical:** The physical medium and optical service layer that carries light over glass. In sales language, use "fiber" for access conversations and "optical transport" or "wavelength" when the buyer needs very high-capacity point-to-point paths.
+- **Layer 2 Ethernet:** A private Ethernet service that extends the customer’s network between locations. The customer usually manages the IP addressing/routing above it, while GPC provides the Ethernet path.
+- **Layer 3 / IP:** Routed networking. IP decides how packets move between networks; internet access is a Layer 3/IP service because traffic routes into the public internet.
+- **Internet:** Public IP connectivity to the broader internet. SIA and DIA are internet access products, not private site-to-site transport.
 
-Typical **fiber** one-way latency band: **~5–15 ms.** Typical **Starlink** band in the same card: **~21–30 ms**—that's the gap that kills real-time apps when conditions aren't perfect.
+**Ethernet service types — how the acronyms differ**
 
-**Fiber vs. 5G — capability split** (from Fiber vs 5G one-sheet—5G wins portability; fiber wins always-on business grade):
-
-| Capability | Fiber | 5G |
+| Term | Plain-English meaning | Customer use case |
 | --- | --- | --- |
-| Supports business growth + high bandwidth | ✓ |  |
-| Reliability (less interference from weather / network / obstacles) | ✓ |  |
-| High level of security | ✓ |  |
-| Portability and flexibility |  | ✓ |
-| Lower up-front costs |  | ✓ |
+| **E-Line** | Point-to-point Ethernet between two locations | Connect HQ to a data center or a major branch |
+| **E-LAN** | Multipoint Ethernet where several sites participate in the same private Ethernet domain | Many sites need private any-to-any communication |
+| **EPL** | Ethernet Private Line; dedicated point-to-point Ethernet with less customer VLAN sharing | High-control, high-performance private connection |
+| **EVPL** | Ethernet Virtual Private Line; point-to-point Ethernet using VLAN-based separation | Similar point-to-point need with more flexible/shared infrastructure |
 
-This is also why **5G Wireless Backup** belongs **behind** primary fiber—not as a full-time substitute when the customer needs symmetric, low-jitter, all-hours performance.
-
-**Beating Starlink (LEO Satellite):**
-- **The Physics:** LEO is better than legacy satellite, but it still cannot match the consistent low-latency profile of a local fiber network—use the table above when a rep reaches for a number.
-- **The Weather:** "Rain fade" is a physical reality for satellite. Heavy cloud cover or storms will degrade the signal.
-- **The SLA:** Starlink is best-effort. GPC fiber is backed by an enterprise Service Level Agreement and a local 24/7 NOC.
+**The rep translation:** if the customer is asking, "How do I get to the internet?" think SIA/DIA. If they are asking, "How do my locations talk privately?" think Ethernet/transport. If they are asking, "How do I move huge volumes between hubs?" think optical/wavelength.
 
 **Wavelength vs Ethernet:**
 - Ethernet is typically sold in sub-10G increments and is highly flexible for multi-site WANs.

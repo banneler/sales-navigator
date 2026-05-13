@@ -1,0 +1,15 @@
+{
+  "name": "sales-navigator-screenshots",
+  "version": "1.0.0",
+  "private": true,
+  "description": "One-off local screenshot capture for the Sales Navigator static site (not CI).",
+  "type": "module",
+  "scripts": {
+    "capture": "node capture.mjs",
+    "install-browser": "playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.49.1",
+    "serve": "^14.2.4"
+  }
+}

@@ -14,6 +14,7 @@ import { markModuleVisited } from './lib/progress-state.js';
 import { destroyModuleIntroGate } from './components/module-intro-gate.js';
 import { setMainHeaderInternalBadge } from './lib/header-internal-badge.js';
 import { initHandoutPreview } from './lib/handout-links.js';
+import { initDiscoveryGameXpBridge } from './lib/discovery-game-xp-bridge.js';
 import { updateXpDisplays } from './lib/gamification.js';
 import { getSession } from '../lib/auth.js';
 
@@ -40,6 +41,7 @@ async function main() {
     return;
   }
   initHandoutPreview();
+  initDiscoveryGameXpBridge();
   updateXpDisplays();
 
   const manifest = await res.json();

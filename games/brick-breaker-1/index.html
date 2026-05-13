@@ -177,6 +177,7 @@
 
   <script type="module">
     import { loadDiscoveryQuestionsFromModule } from "../_shared/discovery-load.js";
+    import { notifyDiscoveryGameComplete } from "../_shared/discovery-xp-post.js";
 
     let discoveryQuestions = [];
 
@@ -406,6 +407,7 @@
         ol.appendChild(li);
       }
       winModal.classList.remove("hidden");
+      notifyDiscoveryGameComplete("discovery-break");
     }
 
     function updateDiscoveryCount() {

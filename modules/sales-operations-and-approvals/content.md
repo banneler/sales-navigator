@@ -103,6 +103,21 @@ video_sections:
       - Unfavorable investment always requires manager review.
       - Product line issues route to the Product Manager.
       - Dark fiber requires manager and CRO review.
+  - heading: Costing Routing Paths
+    intro: 'Costing routing is not the same thing as approval requirements. It determines which technical/costing team reviews the Solution Site.'
+    body: |
+      [Costing Routing Quick Reference Guide — 11/23](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Costing%20Routing%20Quick%20Reference%20Guide%20-%201123.pdf?csf=1&web=1&e=Ta1aBx)
+
+      ![Costing Routing Paths diagram showing how Solution Site Type, Services, and products route review](assets/sales-ops/costing-routing-paths.png)
+
+      Use this as the rep translation of the QRG:
+
+      - **Site Type starts the path.** Strategic Build, Build Fiber, All On-Net, and Off-Net do not route the same way.
+      - **Services refine the path.** New service routing differs by SIA, DIA, Voice, Wave, Ethernet, SIP, UC, and other product combinations.
+      - **Automation applies costs when the guide says it can.** Some paths complete systematically; others route to OSP, Network Engineering, IPE, BSOL, or Off-Net review.
+      - **New + Existing on one Solution Site follows New.** Do not assume mixed service selections split cleanly into two independent paths.
+      - **Multiple services follow the deepest review.** If one selected service needs heavier review, that path drives the routing.
+      - **Manual Validation skips automation.** Use it for real exceptions, not as a comfort click.
   - heading: Change Order vs MAC
     intro: 'How much is changing, and has billing started? Wrong path = rework—the PDFs have every click and screenshot.'
     body: |
@@ -137,7 +152,8 @@ video_sections:
       - Very small CRC/BCC changes may go to businesscare@gpcom.com instead of Salesforce.
       - The MAC guide calls out no AE commission for those narrow Business Care changes.
 five_minute_summary: |
-  - **Start with the trigger:** What changed, has billing started, and does the deal still fit the automated path? Those three questions point you to the right guide.
+  - **Approval triggers:** Discounting, product exceptions, payback, churn, CapEx / net investment, and unfavorable economics are why approvals exist. They protect margin, investment discipline, and operational promises.
+  - **Process-flow triggers:** What changed and has billing started? Those questions point you to Change Order, MAC, Cancellation, or Disconnect.
   - Use Approval History on the GPC Solution to approve, reject, or recall. Put the Solution ID on every form and attachment so Operations can match documents to the right workflow.
   - Change Orders are for post-signature changes before billing starts. MACs are for changes to active billing contracts.
   - Use Cancellation before billing when all services are coming out; use Disconnect after billing.
@@ -186,9 +202,11 @@ discovery_questions:
 
 ## Overview
 
-This module is your routing map for deals that need approval or change after the customer says yes. Start with the business trigger, then use the reference guides for the click-by-click workflow.
+This module has two different jobs. **Approval triggers** decide whether the business needs extra review because of discounting, product rules, payback, churn, CapEx / net investment, or unfavorable economics. **Process-flow triggers** decide what workflow to use when something changes, especially whether billing has started.
 
 - GPC Solution: the core object where approvals, pricing, and technical scoping live.
+- Approval Requirements Matrix: the business review lens for discounting, product, payback, churn, and investment thresholds.
+- Costing Routing QRG: the routing lens for which technical/costing teams review a Solution Site.
 - Change Order: a pre-billing modification, such as changing port speed before install.
 - MAC: a Move-Add-Change on a live billing service.
 - Manual Validation: an exception path that breaks automation. Use it sparingly.
