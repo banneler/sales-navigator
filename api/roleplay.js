@@ -1,3 +1,5 @@
+import { gemini20FlashStreamUrl } from './gemini-endpoint.js';
+
 export const config = {
   runtime: 'edge',
 };
@@ -51,7 +53,7 @@ Instructions:
       });
     }
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse&key=${apiKey}`, {
+    const response = await fetch(gemini20FlashStreamUrl(apiKey), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

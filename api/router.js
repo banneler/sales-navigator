@@ -1,6 +1,8 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
+import { gemini20FlashStreamUrl } from './gemini-endpoint.js';
+
 const CORPUS_PATH = path.join(process.cwd(), 'docs', 'gpc-training-corpus-structured.md');
 
 /** @type {string | null} */
@@ -55,7 +57,7 @@ function parseGeminiErrorJson(text) {
  * Retries a few times with backoff before failing.
  */
 async function fetchGeminiStreamWithRetry(apiKey, payload) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse&key=${apiKey}`;
+  const url = gemini20FlashStreamUrl(apiKey);
   const maxAttempts = 4;
   let lastText = '';
 
