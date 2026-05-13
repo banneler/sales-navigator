@@ -9,6 +9,7 @@ reference_files:
 video_sections_as_tabs: true
 video_sections_tabs_heading: "GPC Product Specifics"
 video_sections_tabs_aria_label: "GPC security, DDoS, and SD-WAN product specifics"
+video_sections_after_section: "At a glance"
 video_sections:
   - heading: "Managed Firewall"
     intro: "Use this when the customer needs a managed edge control point, not just advice."

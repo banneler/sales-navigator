@@ -868,8 +868,8 @@ function buildVideoSectionsAsTabsHtml(meta) {
 
   return `
     <div class="module-video-sections-tabs space-y-6">
-      ${heading}
       <div class="module-sales-trio-shell rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden">
+        ${heading ? `<div class="px-6 md:px-8 py-5 border-b border-slate-200 bg-white">${heading}</div>` : ''}
         <div role="tablist" aria-label="${escapeHtml(tablistLabel)}" class="flex flex-wrap border-b border-slate-200 bg-slate-50/90">
           ${tabButtons}
         </div>

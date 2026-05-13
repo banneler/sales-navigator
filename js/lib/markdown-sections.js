@@ -492,11 +492,17 @@ function tryRenderSalesTrioTabLayout(sections, meta) {
 
 /**
  * @param {Array<{ title: string | null; markdown: string }>} sections
- * @param {{ moduleId?: string; meta?: Record<string, unknown> }} [opts]
+ * @param {{ moduleId?: string; meta?: Record<string, unknown>; injectedSectionHtml?: string; injectAfterTitle?: string }} [opts]
  */
 export function renderSectionsToHtml(sections, opts = {}) {
   const moduleId = opts.moduleId;
   const meta = opts.meta;
+  const injectedSectionHtml =
+    typeof opts.injectedSectionHtml === 'string' ? opts.injectedSectionHtml : '';
+  const injectAfterTitle =
+    typeof opts.injectAfterTitle === 'string' ? opts.injectAfterTitle.trim().toLowerCase() : '';
+  let didInjectSectionHtml = false;
+
   if (isSalesTrioModule(moduleId)) {
     if (meta && meta.sales_trio_guidelines_only === true) {
       const duo = tryRenderSalesTrioGuidelinesOnlyLayout(sections);
@@ -516,12 +522,22 @@ export function renderSectionsToHtml(sections, opts = {}) {
       const sectionRole = getSectionRole(displayTitle);
       const trailingHtml =
         sectionRole === 'deep' ? buildTechnicalDeepDiveTabsHtml(meta) : '';
-      return renderOneSectionCard(markdown, {
+      const sectionHtml = renderOneSectionCard(markdown, {
         displayTitle,
         useDeepCollapse,
         sectionRole,
         trailingHtml,
       });
+      if (
+        injectedSectionHtml &&
+        injectAfterTitle &&
+        !didInjectSectionHtml &&
+        displayTitle.trim().toLowerCase() === injectAfterTitle
+      ) {
+        didInjectSectionHtml = true;
+        return `${sectionHtml}${injectedSectionHtml}`;
+      }
+      return sectionHtml;
     })
     .join('');
 }
@@ -589,12 +605,21 @@ export function renderModuleDocumentHtml(markdownSource) {
 
   const sections = splitMarkdownByH2(body || '');
   const moduleId = typeof meta.id === 'string' ? meta.id : '';
-  const sectionCardsHtml = renderSectionsToHtml(sections, { moduleId, meta });
   const fiveMinHtml = buildFiveMinuteSummaryHtml(meta);
   const yourCoachesHtml = buildYourCoachesHtml(meta);
   const referenceFilesHtml = buildModuleReferenceFilesHtml(meta);
   const scenariosAsideInner = buildScenariosAsideHtml(meta);
   const videoSectionsHtml = buildVideoSectionsHtml(meta);
+  const videoSectionsAfterSection =
+    typeof meta.video_sections_after_section === 'string'
+      ? meta.video_sections_after_section.trim()
+      : '';
+  const sectionCardsHtml = renderSectionsToHtml(sections, {
+    moduleId,
+    meta,
+    injectedSectionHtml: videoSectionsAfterSection ? videoSectionsHtml : '',
+    injectAfterTitle: videoSectionsAfterSection,
+  });
   const knowledgeCarouselHtml = buildKnowledgeChecksCarouselHtml(meta);
   const roleplayPanelHtml = buildRoleplayPanelHtml(meta);
   const hasRoleplayPanel = Boolean(roleplayPanelHtml);
@@ -610,7 +635,7 @@ export function renderModuleDocumentHtml(markdownSource) {
   const mainColumnInner = `
       ${fiveMinHtml}
       ${yourCoachesHtml}
-      ${videoSectionsHtml}
+      ${videoSectionsAfterSection ? '' : videoSectionsHtml}
       <div class="space-y-6 module-deep-dive">${sectionCardsHtml}</div>
       ${knowledgeCarouselHtml}`;
 
