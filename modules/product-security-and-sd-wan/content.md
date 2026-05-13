@@ -11,24 +11,24 @@ video_sections_tabs_heading: "GPC Product Specifics"
 video_sections_tabs_aria_label: "GPC security, DDoS, and SD-WAN product specifics"
 video_sections_after_section: "At a glance"
 video_sections:
-  - heading: "Managed Firewall"
-    intro: "Use this when the customer needs a managed edge control point, not just advice."
-    body: |
-      **GPC flavor:** Managed Firewall is the practical edge-security offer. It gives the customer firewall hardware/service management, policy support, monitoring, and an accountable operations path.
-
-      - Built around a managed firewall model with FortiGate referenced in the sales motion.
-      - Best fit when the customer lacks IT staff with the training, time, or certifications to configure and support firewalls well.
-      - The customer value is not "a box." It is 24x7x365 monitoring/management, fewer unmanaged changes, and one provider to call when connectivity and security overlap.
-      - Keep scope clean: firewall policy, add-on threat controls, VPN, logging, and support expectations should be validated before they become customer promises.
   - heading: "Managed Network Security"
-    intro: "Use this when the buyer's problem is broader than one firewall."
+    intro: "The comprehensive managed-security ecosystem for customers who need a security program, not just a hardware refresh."
     body: |
-      **GPC flavor:** Managed Network Security (MNS) is the broader managed-security conversation. It is where the customer needs help operating security, not just buying equipment.
+      **GPC flavor:** Managed Network Security (MNS) is our overarching service lane focused on monitoring, visibility, and policy management.
 
-      - Use this lane when the customer needs monitoring, visibility, policy management, security assessments, or help prioritizing risk.
-      - MNS can include services around customer-owned gear, SIEM/log visibility, vulnerability or architecture review, and broader security operations support.
-      - The business story is staff relief and discipline: fewer blind spots, fewer finger-pointing moments, and a clearer path when threats or policies change.
-      - Pair with SE/quoting early when the buyer asks for compliance, custom reporting, incident response expectations, or anything that sounds like a managed security program.
+      - **The Portfolio Umbrella:** This lane covers the security operating model, regardless of hardware origin.
+      - **BYOF (Bring Your Own Firewall):** We take over management and 24/7/365 SOC monitoring of a customer's existing, compatible firewall equipment.
+      - **Operational Discipline:** The value is staff relief—eliminating blind spots and providing a clear path when threats or compliance policies change.
+      - **SOC II Proactive Monitoring:** Every agreement is backed by our SOC to reduce the chance of a "bad event" becoming a business outage.
+  - heading: "Managed Firewall"
+    intro: "A specific hardware-as-a-service solution within the MNS family."
+    body: |
+      **GPC flavor:** Managed Firewall is the turnkey path where GPC provisions and manages the hardware at the edge.
+
+      - **GPC-Provided Hardware:** Built around the FortiGate Next-Generation Firewall, standardized for high performance and SOC integration.
+      - **The "One Provider" Benefit:** Consolidation of the circuit, the equipment, and the SOC support onto a single bill with no finger-pointing.
+      - **Edge Control:** Best for customers who lack the IT staff or CapEx to own and support high-performance firewall hardware in-house.
+      - **Proactive Management:** Includes standardized configuration, patch management, and automated zero-day threat protection.
   - heading: "DDoS Protection"
     intro: "Use this when availability is the risk: websites, public apps, customer portals, voice, or critical circuits."
     body: |
@@ -170,10 +170,10 @@ roleplay:
 
 ## At a glance
 
-- **Managed security:** **Managed Firewall** (FortiGate, SOC-monitored) plus **MNS** when SIEM, assessments, email security, or broader scope matter—match SKU to the buyer’s real need.
+- **Managed security:** **Managed Network Security (MNS)** is the umbrella brand—the managed-security program for monitoring, visibility, policy management, BYOF, and SOC-backed coverage. **Managed Firewall** is the HaaS lane within that family when GPC provisions FortiGate at the edge—match SKU to the buyer’s real need.
 - **DDoS:** Availability protection for public-facing services and circuits. The key question is the cost of being unreachable during an attack.
 - **SD-WAN:** A software-defined way to steer traffic, prioritize applications, and manage multiple access paths across sites.
-- **Security scope:** SD-WAN, firewall, DDoS, and managed security solve related but different problems. Define the risk before naming the product.
+- **Security scope:** SD-WAN, Managed Firewall, DDoS, and the broader **MNS** program solve related but different problems. Define the risk before naming the product.
 
 ---
 
