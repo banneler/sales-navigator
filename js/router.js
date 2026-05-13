@@ -14,6 +14,10 @@ export function setRouteModuleId(id) {
   window.location.hash = id ? `#/module/${id}` : '#/';
 }
 
+export function isExploreRouteModule(id) {
+  return Boolean(id && id !== 'getting-started' && id !== 'map-book');
+}
+
 export function onRouteChange(handler) {
   window.addEventListener('hashchange', handler);
   return () => window.removeEventListener('hashchange', handler);

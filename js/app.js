@@ -1,7 +1,16 @@
-import { getRouteModuleId, onRouteChange, setRouteModuleId } from './router.js';
+import {
+  getRouteModuleId,
+  isExploreRouteModule,
+  onRouteChange,
+  setRouteModuleId,
+} from './router.js';
 import { renderShell, highlightNav } from './components/shell.js';
 import { loadAndRenderModule } from './components/module-host.js';
 import { loadMapBook } from './components/map-book-host.js';
+import {
+  destroyRouterComponent,
+  mountRouterComponent,
+} from './components/router-guide.js';
 import {
   loadGettingStarted,
   destroyGettingStartedOverlay,
@@ -68,6 +77,7 @@ async function main() {
     destroyGettingStartedOverlay();
     destroyProgressMapOverlay();
     destroyModuleIntroGate();
+    destroyRouterComponent();
 
     if (id === MAP_BOOK_MODULE_ID || id === GETTING_STARTED_ID) {
       setMainHeaderInternalBadge(false);
@@ -93,6 +103,7 @@ async function main() {
     } else {
       document.body.classList.remove('map-book-active');
       await loadAndRenderModule(id, host, manifest);
+      if (isExploreRouteModule(id)) mountRouterComponent(id);
     }
     highlightNav(id);
     markModuleVisited(id);

@@ -1,6 +1,11 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": ".",
+  "functions": {
+    "api/router.js": {
+      "includeFiles": "docs/gpc-training-corpus-structured.md"
+    }
+  },
   "rewrites": [
     {
       "source": "/api/auth/:path*",
