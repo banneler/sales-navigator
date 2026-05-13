@@ -60,6 +60,16 @@
         localStorage.removeItem('sn:module-visited:v1');
         localStorage.removeItem('sn:module-completed:v1');
         localStorage.removeItem('sn:xp');
+        try {
+          const keys = [];
+          for (let i = 0; i < localStorage.length; i++) {
+            const k = localStorage.key(i);
+            if (k && k.startsWith('sn:xp:discovery:')) keys.push(k);
+          }
+          keys.forEach((k) => localStorage.removeItem(k));
+        } catch (_) {
+          /* ignore */
+        }
         location.reload();
       }
       globalThis.resetSalesNavigatorGameState = resetSalesNavigatorGameState;
