@@ -105,13 +105,22 @@ export function mountRouterComponent(moduleId) {
         body: JSON.stringify({
           moduleId: routerState.moduleId,
           messages: routerState.messages
-            .filter((message) => message.content !== 'Routing that packet...')
+            .filter(
+              (message) =>
+                message.content !== 'Routing that packet...' &&
+                message.content !== ROUTER_GREETING,
+            )
             .map((message) => ({ role: message.role, content: message.content })),
         }),
       });
 
-      if (!res.ok || !res.body) {
-        throw new Error(`Router returned ${res.status}`);
+      if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(`Router returned ${res.status}: ${errorText}`);
+      }
+
+      if (!res.body) {
+        throw new Error('Router returned an empty response stream.');
       }
 
       const reader = res.body.getReader();
@@ -153,8 +162,10 @@ export function mountRouterComponent(moduleId) {
       renderMessages();
     } catch (error) {
       console.error('Router Error:', error);
+      const detail =
+        error instanceof Error && error.message ? ` Details: ${error.message}` : '';
       responseMessage.content =
-        "I'm still routing that packet. Something dropped in transit, so please try again or talk to an SE.";
+        `I'm still routing that packet. Something dropped in transit, so please try again or talk to an SE.${detail}`;
       renderMessages();
     } finally {
       setLoading(false);

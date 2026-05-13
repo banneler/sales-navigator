@@ -12,28 +12,66 @@ async function getCorpus() {
   return cachedCorpus;
 }
 
-function errorResponse(message, status = 500) {
-  return new Response(JSON.stringify({ error: message }), {
-    status,
-    headers: { 'Content-Type': 'application/json' },
-  });
+function sendJson(res, status, body) {
+  res.statusCode = status;
+  res.setHeader('Content-Type', 'application/json');
+  res.end(JSON.stringify(body));
 }
 
-export default async function handler(req) {
+async function readJsonBody(req) {
+  if (typeof req.json === 'function') return req.json();
+
+  const chunks = [];
+  for await (const chunk of req) {
+    chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
+  }
+
+  const raw = Buffer.concat(chunks).toString('utf8');
+  return raw ? JSON.parse(raw) : {};
+}
+
+async function streamGeminiResponse(geminiResponse, res) {
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    Connection: 'keep-alive',
+  });
+
+  const reader = geminiResponse.body?.getReader();
+  if (!reader) {
+    res.end();
+    return;
+  }
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    res.write(Buffer.from(value));
+  }
+
+  res.end();
+}
+
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
-    return new Response('Method not allowed', { status: 405 });
+    sendJson(res, 405, { error: 'Method not allowed' });
+    return;
   }
 
   try {
-    const { messages, moduleId } = await req.json();
+    const { messages, moduleId } = await readJsonBody(req);
 
     if (!Array.isArray(messages)) {
-      return errorResponse('Missing or invalid messages array', 400);
+      sendJson(res, 400, { error: 'Missing or invalid messages array' });
+      return;
     }
 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      return errorResponse('GEMINI_API_KEY is not configured in the environment variables');
+      sendJson(res, 500, {
+        error: 'GEMINI_API_KEY is not configured in the environment variables',
+      });
+      return;
     }
 
     const corpus = await getCorpus();
@@ -86,18 +124,16 @@ ${corpus}`;
     if (!response.ok) {
       const errorText = await response.text();
       console.error('Gemini Router API Error:', errorText);
-      return errorResponse('Gemini API Error');
+      sendJson(res, 500, { error: 'Gemini API Error', details: errorText });
+      return;
     }
 
-    return new Response(response.body, {
-      headers: {
-        'Content-Type': 'text/event-stream',
-        'Cache-Control': 'no-cache',
-        Connection: 'keep-alive',
-      },
-    });
+    await streamGeminiResponse(response, res);
   } catch (error) {
     console.error('Router API Error:', error);
-    return errorResponse('Internal Server Error');
+    sendJson(res, 500, {
+      error: 'Internal Server Error',
+      details: error instanceof Error ? error.message : String(error),
+    });
   }
 }

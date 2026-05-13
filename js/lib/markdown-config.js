@@ -1,5 +1,5 @@
 import { marked } from 'https://esm.sh/marked@15.0.12';
-import DOMPurify from 'https://esm.sh/dompurify@3.2.2';
+import DOMPurify from 'https://cdn.jsdelivr.net/npm/dompurify@3.2.2/+esm';
 
 marked.use({ gfm: true, breaks: true });
 
