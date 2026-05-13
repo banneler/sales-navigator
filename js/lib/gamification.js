@@ -15,9 +15,11 @@ export function resetXP() {
 }
 
 export function awardXP(amount, reason) {
+  const previousTotal = getXP();
   const newTotal = addXP(amount);
   showXPToast(amount, reason);
   updateXpDisplays(newTotal);
+  showLevelUpCelebrationIfNeeded(previousTotal, newTotal);
 }
 
 function showXPToast(amount, reason) {
@@ -40,6 +42,39 @@ function showXPToast(amount, reason) {
     toast.classList.add('opacity-0', 'transition-opacity', 'duration-500');
     setTimeout(() => toast.remove(), 500);
   }, 3000);
+}
+
+function showLevelUpCelebrationIfNeeded(previousTotal, newTotal) {
+  const previousLevel = Math.floor(previousTotal / 250);
+  const newLevel = Math.floor(newTotal / 250);
+  if (newLevel <= previousLevel) return;
+  showLevelUpCelebration(newLevel);
+}
+
+function showLevelUpCelebration(level) {
+  document.querySelector('.js-level-up-celebration')?.remove();
+
+  const overlay = document.createElement('div');
+  overlay.className = 'js-level-up-celebration level-up-celebration';
+  overlay.setAttribute('role', 'status');
+  overlay.setAttribute('aria-live', 'polite');
+  overlay.innerHTML = `
+    <div class="level-up-burst" aria-hidden="true">
+      <span>🔥</span><span>🔥</span><span>🔥</span><span>🔥</span><span>🔥</span>
+    </div>
+    <div class="level-up-card">
+      <div class="level-up-emoji" aria-hidden="true">🔥</div>
+      <p class="level-up-kicker">Level Up</p>
+      <p class="level-up-title">You hit Level ${level}</p>
+      <p class="level-up-subtitle">${level * 250} XP and climbing</p>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  setTimeout(() => {
+    overlay.classList.add('level-up-celebration-out');
+    setTimeout(() => overlay.remove(), 650);
+  }, 2600);
 }
 
 export function updateXpDisplays(total = getXP()) {
