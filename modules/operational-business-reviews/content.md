@@ -115,7 +115,7 @@ The deliverable is a **front/back trifold insert** ("the Slick") with four compo
 <img src="assets/obr/obr-slick-sample.jpg" alt="Sample OBR slick: Network Agility and Roadmap spread (trifold-style layout with billing snapshot, maps, and performance check-in)" width="1024" height="602" loading="lazy" decoding="async" />
 </div>
 
-## Success Criteria — memorize the three
+## Success Criteria
 
 - **Zero Fire Drills** — every asset is ready and handed to Marketing by **Business Day 14**.
 - **100% Accuracy** — billing locations and network diagrams are fully synchronized.
