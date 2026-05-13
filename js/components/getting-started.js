@@ -287,9 +287,10 @@ function buildDemoKnowledgeBlock(kc) {
       </div>`;
 }
 
-function isRouterWelcomePanelOpen() {
-  const panel = document.querySelector('#router-welcome-mock-root [data-router-panel]');
-  return !!(panel && !panel.classList.contains('hidden'));
+/** Tour gate: FAB has been tapped once (panel may stay open or closed afterward). */
+function isRouterWelcomeFabEngaged() {
+  const root = document.getElementById('router-welcome-mock-root');
+  return root?.getAttribute('data-router-fab-engaged') === 'true';
 }
 
 /** @returns {{ left: number; top: number; width: number; height: number } | null} */
@@ -784,11 +785,11 @@ export async function loadGettingStarted(container, manifest) {
       icon: 'fa-robot',
       body: `
         <p class="text-slate-800 leading-relaxed mb-3">
-          <strong>Router</strong> is your AI coach—a floating orb in the lower-right on training pages. Same idea here on the welcome page (this one is a preview with a ready-made hello).
+          <strong>Router</strong> is your AI coach—a floating orb in the lower-right on training pages. It's the same companion here while you finish getting oriented.
         </p>
         <p class="text-slate-700 text-sm font-medium border border-orange-200/80 bg-orange-50/50 rounded-lg px-3 py-2">
           <i class="fa-solid fa-hand-pointer text-orange-600 mr-1.5" aria-hidden="true"></i>
-          Tap <strong>Router</strong> to open the panel and read the note. <strong>Next</strong> stays gray until the panel is open.
+          Tap <strong>Router's orb</strong> once to say hello—you can close the panel whenever you want. <strong>Next</strong> unlocks after that tap.
         </p>`,
     },
     {
@@ -947,7 +948,7 @@ export async function loadGettingStarted(container, manifest) {
     const next = host?.querySelector('.gs-next');
     if (!next) return;
     const blocked =
-      (stepIndex === 1 && !isRouterWelcomePanelOpen()) ||
+      (stepIndex === 1 && !isRouterWelcomeFabEngaged()) ||
       (stepIndex === 5 && !scenarioComplete) ||
       (stepIndex === 6 && !knowledgeComplete) ||
       (stepIndex === 8 && !fiberPathComplete);
@@ -955,8 +956,8 @@ export async function loadGettingStarted(container, manifest) {
     next.classList.toggle('opacity-50', blocked);
     next.classList.toggle('cursor-not-allowed', blocked);
     next.title = blocked
-      ? stepIndex === 1 && !isRouterWelcomePanelOpen()
-        ? 'Open Router in the corner first.'
+      ? stepIndex === 1 && !isRouterWelcomeFabEngaged()
+        ? "Tap Router's orb once."
         : stepIndex === 8 && !fiberPathComplete
           ? 'Click Fiber path in the header first.'
           : 'Complete the activity in the highlighted area first.'
@@ -1099,6 +1100,7 @@ export async function loadGettingStarted(container, manifest) {
 
   function bindCardActions(cardEl) {
     cardEl.querySelector('.gs-next')?.addEventListener('click', () => {
+      if (stepIndex === 1 && !isRouterWelcomeFabEngaged()) return;
       if (stepIndex === 5 && !scenarioComplete) return;
       if (stepIndex === 6 && !knowledgeComplete) return;
       if (stepIndex === 8 && !fiberPathComplete) return;
@@ -1129,13 +1131,13 @@ export async function loadGettingStarted(container, manifest) {
     const total = steps.length;
     const isLast = stepIndex === total - 1;
     const nextBlocked =
-      (stepIndex === 1 && !isRouterWelcomePanelOpen()) ||
+      (stepIndex === 1 && !isRouterWelcomeFabEngaged()) ||
       (stepIndex === 5 && !scenarioComplete) ||
       (stepIndex === 6 && !knowledgeComplete) ||
       (stepIndex === 8 && !fiberPathComplete);
     const nextTitle = nextBlocked
-      ? stepIndex === 1 && !isRouterWelcomePanelOpen()
-        ? 'Open Router in the corner first.'
+      ? stepIndex === 1 && !isRouterWelcomeFabEngaged()
+        ? "Tap Router's orb once."
         : stepIndex === 8 && !fiberPathComplete
           ? 'Click Fiber path in the header first.'
           : 'Complete the activity in the highlighted area first.'

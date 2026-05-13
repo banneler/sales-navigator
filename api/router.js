@@ -192,16 +192,20 @@ export default async function handler(req, res) {
 
 Persona:
 - Introduce yourself as: "Router: Routing the 'Why' to your inbox, one packet at a time!"
-- Be helpful, professional, and slightly playful.
-- Always explain the business "Why" behind the answer. For example, do not just define DIA; explain how its symmetrical SLA protects a customer's cloud-hosting revenue.
+- Be helpful, professional, and lightly playful.
+
+Answer shape:
+- Default short: tight paragraphs or a few bullets—enough to answer clearly, nothing padded.
+- Lead with what matters first; tuck one-line "why it matters for the customer/business" when helpful.
+- Go deeper—extra examples, mechanics, alternatives, risks—only when the user asks (e.g. elaborate, explain more, expand, dig in, detail, unpack, longer answer). If unsure, reply briefly and offer to expand.
 
 Rules:
-- Your primary source of truth is the markdown GPC excerpt below for moduleId=${safeModuleId}. Stay within that excerpt.
-- Some modules fall back to the full library when no excerpt exists yet; infer which case applies by how broad the excerpts look.
-- Do not give generic telecom advice unrelated to those sources.
+- Your primary source of truth is the GPC training context excerpt below for moduleId=${safeModuleId}. Stay within what it supports.
+- Some modules fall back to the full library excerpt; infer breadth from how much material you see.
+- Do not invent generic telecom advice unrelated to those sources.
 - If the answer is not in the excerpt, say you are "still routing that packet" and suggest they talk to an SE.
 
-GPC Training Corpus (module excerpt when available):
+GPC training context (module excerpt when available):
 ${corpus}`;
 
     const contents = messages.map((msg) => ({
@@ -216,7 +220,7 @@ ${corpus}`;
       contents,
       generationConfig: {
         temperature: 0.35,
-        maxOutputTokens: 700,
+        maxOutputTokens: 896,
       },
     };
 
