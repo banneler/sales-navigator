@@ -20,6 +20,8 @@ video_sections:
       - **BYOF (Bring Your Own Firewall):** We take over management and 24/7/365 SOC monitoring of a customer's existing, compatible firewall equipment.
       - **Operational Discipline:** The value is staff relief—eliminating blind spots and providing a clear path when threats or compliance policies change.
       - **SOC II Proactive Monitoring:** Every agreement is backed by our SOC to reduce the chance of a "bad event" becoming a business outage.
+
+      **Value:** SOC II Proactive Monitoring. We provide the staff relief needed to eliminate blind spots and handle triage so your team doesn't have to.
   - heading: "Managed Firewall"
     intro: "A specific hardware-as-a-service solution within the MNS family."
     body: |
@@ -32,28 +34,18 @@ video_sections:
   - heading: "DDoS Protection"
     intro: "Use this when availability is the risk: websites, public apps, customer portals, voice, or critical circuits."
     body: |
-      **GPC flavor:** DDoS Protection is the availability offer. It helps keep customer-facing services reachable when hostile traffic tries to overwhelm them.
-
-      - **Proactive** is the always-on positioning: 24x7 mitigation for customers where downtime after hours is not acceptable.
-      - **On-demand** is a lower-touch option with weekday business-hours mitigation windows. Do not let a customer hear "24/7" if they selected on-demand.
-      - Discovery should tie directly to business impact: lost orders, unreachable portals, support calls, reputation damage, or branch disruption.
-      - If the customer mentions BGP/ASN, high-scale public services, regulated environments, or strict uptime commitments, pull in technical validation before quoting.
+      **On-demand (Business Hours):** Limited to weekday mitigation (8-17). If an attack hits after hours or on a weekend, it remains unmitigated until the next business day. Sell this as an insurance policy based on the customer's cost of downtime.
   - heading: "SD-WAN"
     intro: "Use this when the customer needs WAN control, app prioritization, visibility, and managed operations across locations."
     body: |
-      **GPC flavor:** GPC's SD-WAN motion is built around VMware VeloCloud with Orchestrator visibility and a managed operations model.
-
-      - SD-WAN Orchestrator gives real-time views into access-link and application performance, so the customer can see where traffic is struggling.
-      - It can prioritize important applications and improve real-time traffic such as voice and video, especially across mixed or unreliable access paths.
-      - It supports the multi-transport story: GPC fiber, cable, DSL, T1, wireless, or other access can participate when the design qualifies.
-      - Position the operational value: install, management, troubleshooting, and 24/7 NOC support reduce the customer's day-to-day network burden.
-      - Be explicit on scope: next-gen firewall, IDS/IPS, and advanced security controls are not automatically bundled into base SD-WAN. Validate add-ons with SE/quoting.
+      **Visibility:** Use the Orchestrator for real-time views into application performance. **Warning:** SD-WAN is NOT a firewall. Advanced security (NGFW/IDS/IPS) are optional add-ons that must be scoped with an SE.
 discovery_questions:
   - "How many locations do you have, and which ones are on GPC fiber vs. other broadband or MPLS?"
   - "How are those locations connected today—VPN over shared Internet, MPLS, Ethernet? When does that contract expire?"
   - "What are your most important applications? Do you use SaaS like O365 or Salesforce, and are they hosted on-prem or in the cloud?"
   - "Have you experienced a security incident, ransomware event, or DDoS attack? Who manages your firewalls today?"
-  - "Do you need always-on DDoS mitigation (proactive) or is business-hours coverage acceptable—and what's the cost of an attack outside those windows?"
+  - "Do you need 24/7 protection, or can your business afford to be offline if a DDoS attack hits on a weekend?"
+  - "If a security alert triggers at 2:00 AM on a Saturday, who is responsible for triaging it, and do they have the tools to stop it immediately?"
 five_minute_summary: |
   - **Security is risk reduction:** Customers buy managed security because outages, ransomware, bad firewall policy, and unmanaged edge devices create business risk—not because they love appliances.
   - **Firewall vs. security program:** A firewall controls traffic at the edge. A broader managed security program adds monitoring, policy management, visibility, assessment, and response discipline.
@@ -204,7 +196,7 @@ We help customers keep their network available, controlled, and visible. Securit
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["We manage our own Cisco gear."]
-GPC's fully managed SD-WAN eliminates upfront CapEx and frees your team from network management. A single monthly charge covers install, management, and 24/7 NOC monitoring — your team gets out of break-fix and back to the business.
+That's where our MNS/BYOF lane fits. We wrap our 24/7/365 SOC monitoring around your existing gear, giving you staff relief without a hardware rip-and-replace.
 :::
 
 ::: flip ["Our current solution works fine."]
@@ -220,7 +212,7 @@ SD-WAN works over any transport—GPC fiber, cable, DSL, T1, or 4G/5G wireless. 
 :::
 
 ::: flip ["The on-demand DDoS is fine—we're not a target."]
-Confirm: on-demand mitigation windows are weekdays 8–17 only. After-hours attacks won't be mitigated until the next business day. If that risk is acceptable, document it; otherwise, align to proactive.
+On-demand is 8-17 weekday coverage only. If you're a target after hours, you're exposed. Let's align the SKU to your actual uptime risk.
 :::
 
 ::: flip ["Is NGFW included in the base SD-WAN SKU?"]
@@ -257,10 +249,9 @@ SD-WAN is not "a fancy router." It is software-defined control over WAN traffic:
 
 | Customer pain | Conversation lane |
 | --- | --- |
-| "Our apps are slow between sites." | SD-WAN / WAN design |
-| "We do not know what traffic is allowed at the edge." | Firewall policy |
-| "We do not have staff to monitor or manage security." | Managed security |
-| "If our public site goes down, we lose money." | DDoS availability |
-| "The RFP assumes everything is included." | Scope each security control before quoting |
+| "Need hardware + 24/7 management" | MNS -> Managed Firewall |
+| "Have gear, need 24/7 monitoring" | MNS -> BYOF |
+| "Site downtime = lost revenue" | DDoS (Proactive vs On-demand) |
+| "Apps are slow between sites" | SD-WAN |
 
 **Rep rule:** diagnose the risk first, then name the product. If you start with gear, the customer hears a SKU. If you start with business risk, the customer hears why it matters.
