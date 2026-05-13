@@ -596,8 +596,16 @@ export function openProgressMap(manifest, currentModuleId, options = {}) {
   bindOpenClicks();
   setupDragToScroll();
 
-  overlay.querySelectorAll('[data-pm-close], [data-pm-close-footer]').forEach((btn) => {
-    btn.addEventListener('click', () => destroyProgressMapOverlay());
+  overlay.querySelector('[data-pm-close]')?.addEventListener('click', () => {
+    destroyProgressMapOverlay();
+  });
+
+  overlay.querySelector('[data-pm-close-footer]')?.addEventListener('click', () => {
+    const nextModuleId = celebrationOpts?.nextModule?.id;
+    if (nextModuleId) {
+      setRouteModuleId(nextModuleId);
+    }
+    destroyProgressMapOverlay();
   });
 
   overlay.querySelector('[data-pm-center]')?.addEventListener('click', centerActiveNode);
