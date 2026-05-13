@@ -214,8 +214,9 @@ export function initRoleplayModal(container) {
   function closeModal() {
     const modal = container.querySelector('#module-roleplay-modal');
     const panel = modal?.querySelector('[data-roleplay-container]');
-    if (modal && panel && shelter) {
-      shelter.appendChild(panel);
+    const currentShelter = container.querySelector('#module-roleplay-shelter');
+    if (modal && panel && currentShelter) {
+      currentShelter.appendChild(panel);
       modal.classList.add('hidden');
     }
     document.body.style.overflow = '';
@@ -228,7 +229,8 @@ export function initRoleplayModal(container) {
   function openModal() {
     const modal = ensureModal();
     const bodyEl = modal.querySelector('#module-roleplay-modal-body');
-    const panel = shelter.querySelector('[data-roleplay-container]');
+    const currentShelter = container.querySelector('#module-roleplay-shelter');
+    const panel = currentShelter?.querySelector('[data-roleplay-container]');
     if (!panel || !bodyEl) return;
     bodyEl.appendChild(panel);
     modal.classList.remove('hidden');

@@ -2339,11 +2339,6 @@ scenarios:
 
       - label: "Match their price verbally to keep the meeting moving."
         feedback: "No improvised commercial commitments—reframe value; use channels."
-
-roleplay:
-  persona: "Entrenched IT Manager"
-  scenario: "Currently with a national carrier who just dropped their price at renewal. Demands a spec-for-spec speed comparison and says local doesn't matter anymore."
-  goal: "Run discovery on application pain, TCO of outages, and local support gaps before presenting any GPC comparison—never lead with price or unverified stats."
 ---
 
 ## Positioning snapshot
@@ -2538,12 +2533,6 @@ scenarios:
         feedback: "**Good.** The bench is how leadership confirms the model is healthy—an empty on-deck list is a Rolling Three failure, not a normal state."
       - label: "Move one of the active accounts to on-deck to free up time."
         feedback: "You don't pause an in-flight 90-day cycle to fill the bench—you find the next three Strategic candidates and queue them."
-
-roleplay:
-  persona: 'Sales Manager in your weekly 1:1; gatekeeper of the Rolling Three slots on the Master Tracking Spreadsheet.'
-  scenario: |
-    You're pitching a regional manufacturer as your next ABM target. The Sales Manager pulls up the Master Tracking Spreadsheet — you currently have **three active accounts** (one wrapping in 21 days) and **two on-deck**, not three. They'll approve a kickoff only if you can defend the Rolling Three math, name a tier-mixed target stack, and confirm a completed Sales Readiness Checklist on demand.
-  goal: 'Defend the slot in SOP language: (1) which active account is wrapping and on what date so the Rolling Three stays at 3 active + 3 on-deck; (2) the **three named targets** at the right tier mix — Manager (Operational/Technical) + Director/VP (Tactical/Strategic) + Executive (Financial/Final Decision Maker), and explicitly **not** all Executive; (3) all six Sales Readiness Checklist items completed (Account Intel, Status, Current Services, Location Scope, Prospecting History, finalized Target List); (4) the named Marketing partner aligned on monthly touchpoints + any planned Door Pulls in the 90 days. The Sales Manager will say no if you can''t produce the checklist on demand — that''s how the Rolling Three stays healthy.'
 ---
 
 ## Why ABM here
@@ -2691,11 +2680,6 @@ scenarios:
         feedback: '**Correct.** This is exactly the Modernization lever the SOP calls out. Catching the error early **and** showing the work converts an awkward audit moment into a trust-building one.'
       - label: Tell the customer about it verbally in the meeting but leave it off the slick.
         feedback: 'Verbal-only loses the receipts. The trifold is the takeaway—if it is not on the slick, it did not happen.'
-
-roleplay:
-  persona: VP of IT at a ~$40M regional logistics company; long-time GPC strategic customer with six locations and a mixed DIA / SIA / SD-WAN footprint.
-  scenario: The CFO is now copy-on every contract renewal and pushing back on "what are we actually getting." The VP of IT wants to defend the relationship at the next quarterly check-in but is buried in tickets and has no consolidated view of network health, billing, or roadmap.
-  goal: 'Use the OBR as the answer. Walk the VP through what the slick will contain (Network Design / Strategic Billing / NOC History / Strategic Roadmap), the 21-business-day cycle, and the Sales Readiness Form data you need from their side. Set the meeting date and lock the Day 14 handoff backwards from there.'
 ---
 
 ## Why OBRs matter

@@ -102,12 +102,6 @@ scenarios:
         feedback: "**Good.** The bench is how leadership confirms the model is healthy—an empty on-deck list is a Rolling Three failure, not a normal state."
       - label: "Move one of the active accounts to on-deck to free up time."
         feedback: "You don't pause an in-flight 90-day cycle to fill the bench—you find the next three Strategic candidates and queue them."
-
-roleplay:
-  persona: 'Sales Manager in your weekly 1:1; gatekeeper of the Rolling Three slots on the Master Tracking Spreadsheet.'
-  scenario: |
-    You're pitching a regional manufacturer as your next ABM target. The Sales Manager pulls up the Master Tracking Spreadsheet — you currently have **three active accounts** (one wrapping in 21 days) and **two on-deck**, not three. They'll approve a kickoff only if you can defend the Rolling Three math, name a tier-mixed target stack, and confirm a completed Sales Readiness Checklist on demand.
-  goal: 'Defend the slot in SOP language: (1) which active account is wrapping and on what date so the Rolling Three stays at 3 active + 3 on-deck; (2) the **three named targets** at the right tier mix — Manager (Operational/Technical) + Director/VP (Tactical/Strategic) + Executive (Financial/Final Decision Maker), and explicitly **not** all Executive; (3) all six Sales Readiness Checklist items completed (Account Intel, Status, Current Services, Location Scope, Prospecting History, finalized Target List); (4) the named Marketing partner aligned on monthly touchpoints + any planned Door Pulls in the 90 days. The Sales Manager will say no if you can''t produce the checklist on demand — that''s how the Rolling Three stays healthy.'
 ---
 
 ## Why ABM here

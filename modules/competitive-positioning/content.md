@@ -197,11 +197,6 @@ scenarios:
 
       - label: "Match their price verbally to keep the meeting moving."
         feedback: "No improvised commercial commitments—reframe value; use channels."
-
-roleplay:
-  persona: "Entrenched IT Manager"
-  scenario: "Currently with a national carrier who just dropped their price at renewal. Demands a spec-for-spec speed comparison and says local doesn't matter anymore."
-  goal: "Run discovery on application pain, TCO of outages, and local support gaps before presenting any GPC comparison—never lead with price or unverified stats."
 ---
 
 ## Positioning snapshot
