@@ -30,6 +30,69 @@ async function readJsonBody(req) {
   return raw ? JSON.parse(raw) : {};
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/** @returns {{ code?: number; message?: string; status?: string } | null} */
+function parseGeminiErrorJson(text) {
+  try {
+    const outer = JSON.parse(text);
+    const err = outer?.error ?? outer;
+    if (!err || typeof err !== 'object') return null;
+    return {
+      code: typeof err.code === 'number' ? err.code : undefined,
+      message: typeof err.message === 'string' ? err.message : undefined,
+      status: typeof err.status === 'string' ? err.status : undefined,
+    };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Gemini can return RESOURCE_EXHAUSTED (429) under burst or quota pressure.
+ * Retries a few times with backoff before failing.
+ */
+async function fetchGeminiStreamWithRetry(apiKey, payload) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse&key=${apiKey}`;
+  const maxAttempts = 4;
+  let lastText = '';
+
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    if (response.ok) return response;
+
+    lastText = await response.text();
+    const nested = parseGeminiErrorJson(lastText);
+    const exhausted =
+      nested?.status === 'RESOURCE_EXHAUSTED' ||
+      nested?.code === 429 ||
+      /resource exhausted|429/i.test(lastText);
+
+    if (exhausted && attempt < maxAttempts - 1) {
+      const waitMs = 1500 * 2 ** attempt;
+      console.warn(`Gemini 429 / exhausted; retry ${attempt + 1}/${maxAttempts - 1} after ${waitMs}ms`);
+      await sleep(waitMs);
+      continue;
+    }
+
+    return { error: true, httpStatus: response.status, body: lastText, parsed: nested };
+  }
+
+  return {
+    error: true,
+    httpStatus: 429,
+    body: lastText,
+    parsed: parseGeminiErrorJson(lastText),
+  };
+}
+
 async function streamGeminiResponse(geminiResponse, res) {
   res.writeHead(200, {
     'Content-Type': 'text/event-stream',
@@ -112,23 +175,37 @@ ${corpus}`;
       },
     };
 
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse&key=${apiKey}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      },
-    );
+    const geminiResult = await fetchGeminiStreamWithRetry(apiKey, payload);
 
-    if (!response.ok) {
-      const errorText = await response.text();
+    if (!(geminiResult instanceof Response)) {
+      const errorText = geminiResult.body || '';
+      const parsed = geminiResult.parsed;
+      const isRateOrQuota =
+        parsed?.code === 429 ||
+        parsed?.status === 'RESOURCE_EXHAUSTED' ||
+        /resource exhausted|429/i.test(errorText);
+
       console.error('Gemini Router API Error:', errorText);
-      sendJson(res, 500, { error: 'Gemini API Error', details: errorText });
+
+      if (isRateOrQuota) {
+        sendJson(res, 429, {
+          error: 'gemini_rate_limited',
+          userMessage:
+            "Google's Gemini API hit a rate or quota limit (resource exhausted). Wait a minute and try again. Each Router question sends the full GPC corpus, which uses a lot of tokens—if this keeps happening, ask your admin to raise the Gemini quota or we can slim the context. Meanwhile, an SE can help.",
+          details: errorText,
+        });
+        return;
+      }
+
+      sendJson(res, 502, {
+        error: 'gemini_error',
+        userMessage: 'The AI service returned an error. Try again in a moment, or talk to an SE.',
+        details: errorText,
+      });
       return;
     }
 
-    await streamGeminiResponse(response, res);
+    await streamGeminiResponse(geminiResult, res);
   } catch (error) {
     console.error('Router API Error:', error);
     sendJson(res, 500, {

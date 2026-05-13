@@ -4,6 +4,29 @@ const ROUTER_ROOT_ID = 'router-guide-root';
 const ROUTER_GREETING =
   "Router: Routing the 'Why' to your inbox, one packet at a time!";
 
+/**
+ * @param {number} status
+ * @param {string} rawText
+ * @returns {string | null}
+ */
+function formatRouterApiError(status, rawText) {
+  try {
+    const j = JSON.parse(rawText);
+    if (typeof j.userMessage === 'string' && j.userMessage.trim()) {
+      return j.userMessage.trim();
+    }
+  } catch {
+    /* ignore */
+  }
+  if (
+    status === 429 ||
+    /RESOURCE_EXHAUSTED|"code":\s*429|resource exhausted/i.test(rawText)
+  ) {
+    return "Google's Gemini API hit a rate or quota limit (resource exhausted). Wait a minute and try again. Router sends the full GPC corpus each time, which uses a lot of tokens—ask your admin about raising quota or slimming context if this keeps happening.";
+  }
+  return null;
+}
+
 /** @type {{ moduleId: string; messages: { role: 'user' | 'assistant'; content: string }[] } | null} */
 let routerState = null;
 
@@ -116,7 +139,12 @@ export function mountRouterComponent(moduleId) {
 
       if (!res.ok) {
         const errorText = await res.text();
-        throw new Error(`Router returned ${res.status}: ${errorText}`);
+        const friendly = formatRouterApiError(res.status, errorText);
+        responseMessage.content =
+          friendly ||
+          `I'm still routing that packet. Something dropped in transit, so please try again or talk to an SE. Details: Router returned ${res.status}: ${errorText}`;
+        renderMessages();
+        return;
       }
 
       if (!res.body) {
