@@ -191,10 +191,10 @@ export function initRoleplayModal(container) {
     modal.setAttribute('aria-modal', 'true');
     modal.setAttribute('aria-labelledby', 'module-roleplay-modal-title');
     modal.className =
-      'fixed inset-0 z-[205] hidden flex min-h-[100dvh] items-center justify-center overflow-y-auto overscroll-y-contain p-3 sm:p-6';
+      'fixed inset-0 z-[205] hidden flex items-center justify-center p-4 sm:p-6';
     modal.innerHTML = `
       <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-[2px]" data-roleplay-modal-dismiss tabindex="-1" aria-hidden="true"></div>
-      <div class="relative z-10 my-2 flex w-full max-w-4xl min-h-0 max-h-[calc(100dvh-2rem)] flex-col overflow-hidden rounded-2xl border border-white/35 bg-white/75 shadow-2xl ring-1 ring-white/20 backdrop-blur-xl backdrop-saturate-150 sm:my-0 sm:max-h-[min(92vh,920px)]">
+      <div class="relative z-10 flex max-h-[min(92vh,920px)] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-white/35 bg-white/75 shadow-2xl ring-1 ring-white/20 backdrop-blur-xl backdrop-saturate-150">
         <div class="flex shrink-0 flex-wrap items-center justify-between gap-3 border-b border-white/45 bg-white/55 px-4 py-3 backdrop-blur-md">
           <h2 id="module-roleplay-modal-title" class="text-lg font-bold text-slate-900">
             AI Roleplay
@@ -204,7 +204,7 @@ export function initRoleplayModal(container) {
             Close
           </button>
         </div>
-        <div id="module-roleplay-modal-body" class="flex min-h-0 flex-1 flex-col overflow-hidden p-3 sm:p-5"></div>
+        <div id="module-roleplay-modal-body" class="min-h-0 flex-1 overflow-y-auto p-3 sm:p-5"></div>
       </div>
     `;
     container.appendChild(modal);
