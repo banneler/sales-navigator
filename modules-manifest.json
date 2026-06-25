@@ -86,9 +86,15 @@
       "category": "Sales"
     },
     {
+      "id": "zoominfo-for-sales",
+      "title": "ZoomInfo for Sales",
+      "order": 14,
+      "category": "Sales"
+    },
+    {
       "id": "map-book",
       "title": "Executive Map Book",
-      "order": 14,
+      "order": 15,
       "category": "Map Book"
     }
   ]
