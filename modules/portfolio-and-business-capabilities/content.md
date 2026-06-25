@@ -20,11 +20,11 @@ discovery_questions:
   - 'As your business expands over the next two years, what is your biggest technology bottleneck?'
   - 'How many sites are in scope today, and who signs off when network, security, or voice designs change?'
 five_minute_summary: |
-  - **Stop selling SKUs:** If you just pitch another internet pipe, we are racing to the bottom on price. Pitch the layered technology partnership.
-  - **What we offer:** Fiber access, private transport, wireless resiliency, cloud connectivity, managed Wi-Fi, security, UC, voice, video, and managed services—one portfolio that can grow with the customer.
-  - **The Stack:** Access and Wireless Backup are the foundation. WAN sits on top. Security protects it. Cloud Connect, Wi-Fi, UC, and video deliver the daily user experience.
-  - **The Anchors:** We win on our resilient Midwest IP reach, Tier-1 and IX relationships, local field teams, and a 24/7 NOC that actually answers the phone.
-  - **Discovery drives design:** You cannot build the right stack until you know their critical apps, site count, and true uptime tolerance.
+  - **Lead with business impact:** Do not stop at speed and price. Find out what the connection supports and what downtime would disrupt.
+  - **What we offer:** Fiber Internet, Managed Ethernet, SD-WAN, Wireless Internet Backup, Cloud Connect, Managed Firewall, video, Managed Wi-Fi, Unified Communications, and DDoS Protection.
+  - **The portfolio story:** GPC helps customers build secure, flexible infrastructure that can scale as their business changes.
+  - **The anchors:** Resilient Midwest IP reach, direct connections with Tier-1 providers and major Internet Exchanges, local support, and 24/7 network monitoring.
+  - **Discovery drives design:** You cannot recommend the right mix until you know their critical apps, site count, cloud reliance, and uptime tolerance.
 knowledge_checks:
   - question: "A prospect asks for your best price on a 500M circuit. What is your immediate next move?"
     options:
@@ -32,7 +32,7 @@ knowledge_checks:
       - "Pivot to discovery: what runs over that circuit, and what breaks if it goes down?"
       - "Decline the price question and say GPC only competes on long-term value."
     correct_index: 1
-    explanation: "If you answer with a price, you are just a commodity. Find the business pain first."
+    explanation: "A price-only answer keeps the deal in commodity territory. First learn what runs over the circuit and what downtime would cost."
 
   - question: "How should you position the GPC product portfolio to a new prospect?"
     options:
@@ -40,15 +40,15 @@ knowledge_checks:
       - "Lead with our most expensive SD-WAN solution to anchor the price high."
       - "As a layered system: access first, then resilience, security, cloud, Wi-Fi, UC, and video."
     correct_index: 2
-    explanation: "Sell the stack. Access is just the enabler for the higher-value UC, Security, and Cloud services."
+    explanation: "Sell the portfolio as a system. Access enables the higher-value services that protect, connect, and support daily operations."
 
   - question: "What are the core differentiators you should anchor your 'Why GPC' story on?"
     options:
       - "The fact that we are cheaper than the national cable providers."
-      - "Resilient Midwest fiber, local support teams, and a true 24/7 NOC."
+      - "Resilient Midwest connectivity, local support, and 24/7 network monitoring."
       - "Our ability to offer month-to-month contracts with no commitment."
     correct_index: 1
-    explanation: "We win on reliability, local presence, and support. We are not the budget option."
+    explanation: "Anchor on the strengths supported by the capability story: reliability, local support, scalable services, and 24/7 monitoring."
 
 scenarios:
   - title: The Commodity Trap
@@ -56,7 +56,7 @@ scenarios:
       An IT Director tells you, "Look, fiber is fiber. Whoever gives me the cheapest 1 Gig dedicated circuit gets the business."
     choices:
       - label: 'Agree, and promise to go to your manager to get special pricing approved to win the logo.'
-        feedback: 'You just lost all your leverage. You are now playing their game, and even if you win, it''s a zero-margin deal.'
+        feedback: 'That keeps the conversation centered on price alone. Before discounting, uncover what the circuit supports and what an outage would disrupt.'
       - label: 'Challenge the premise and re-anchor the discussion on uptime, support, and the cost of downtime.'
         feedback: Correct. Break them out of the commodity mindset and re-anchor on the cost of risk.
 roleplay:
@@ -67,18 +67,18 @@ roleplay:
 
 ## At a glance
 
-- **The Goal:** Elevate the conversation from a telecom vendor to a technology partner.
-- **The Foundation:** GPC's resilient Midwest fiber network and local operating model.
-- **The Portfolio:** Connectivity, transport, wireless backup, cloud paths, managed Wi-Fi, security, UC, video, and managed services.
-- **The Value Add:** We don't just provide the pipe; we help design the stack that keeps sites, apps, and teams working.
-- **The Handoff:** Once discovery reveals multi-site complexity, heavy cloud reliance, or strict compliance needs, bring in a Solutions Engineer to design the stack.
+- **The Goal:** Move the conversation from "internet service" to business infrastructure.
+- **The Foundation:** GPC's resilient Midwest IP network, local support, and 24/7 network monitoring.
+- **The Portfolio:** Fiber Internet, Managed Ethernet, SD-WAN, Wireless Internet Backup, Cloud Connect, Managed Firewall, video, Managed Wi-Fi, Unified Communications, and DDoS Protection.
+- **The Value Add:** GPC brings more than a connection: a scalable portfolio, over a century of experience, and a partnership model built around keeping the business connected.
+- **The Handoff:** When discovery shows multi-site complexity, cloud-critical applications, or strict security needs, slow down and design the right mix instead of quoting a single product.
 
 ---
 
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Most carriers just sell you a pipe and disappear. We build your network as one complete system—fiber access, secure routing, and cloud connectivity—all backed by our local Midwest team and a 24/7 NOC. Our goal is simple: you stop worrying about downtime, and start focusing on your business.
+GPC gives businesses more than internet service. We pair resilient Midwest connectivity with secure, scalable services like cloud paths, managed Wi-Fi, firewall, UC, video, and DDoS protection, all backed by local support and 24/7 network monitoring. The goal is simple: keep your sites, apps, teams, and customers connected as the business grows.
 :::
 
 ---
@@ -102,11 +102,11 @@ Most carriers just sell you a pipe and disappear. We build your network as one c
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["Your competitor is offering the same speed for 20% less."]
-Speed is a commodity; uptime is what you are paying for. When that connection goes down, does their SLA guarantee a local technician, or are you calling an overseas call center? We price for reliability and our 24/7 local NOC.
+Speed is only one part of the decision. Bring the buyer back to reliability, support, and what the connection carries: critical apps, cloud access, customers, and revenue. GPC's story is resilient Midwest connectivity backed by local support and 24/7 monitoring.
 :::
 
 ::: flip ["We prefer to buy our network, security, and voice from different vendors."]
-Managing three different vendors means when something breaks, they all point fingers at each other while you stay offline. We provide a single throat to choke. One unified stack, one support number.
+That can work, but it can also make growth and troubleshooting harder. GPC can bring connectivity, security, cloud access, Wi-Fi, UC, and video into one coordinated portfolio, so the customer has a clearer path to scale and support.
 :::
 
 ::: flip ["We are too small for an enterprise stack."]
@@ -119,25 +119,21 @@ Downtime hurts a small business the same way it hurts an enterprise—sometimes 
 
 ## Portfolio quick reference — capabilities map
 
-**Ten product lines (deck order):** Fiber Internet · Managed Ethernet · SD-WAN · Wireless Internet Backup · Cloud Connect · Managed Firewall · Video (GPC iTV) · Managed Wi‑Fi · Unified Communications · DDoS Protection. Connectivity comes first—everything else stacks on the pipe.
+**Ten product lines from the capability deck:** Fiber Internet · Managed Ethernet · SD-WAN · Wireless Internet Backup · Cloud Connect · Managed Firewall · Video · Managed Wi‑Fi · Unified Communications · DDoS Protection. Connectivity comes first; the rest of the portfolio helps protect, connect, and improve the customer's daily operations.
 
 Use this as the rep's mental map:
 
-- **Access and transport:** Fiber Internet, DIA/SIA, Managed Ethernet, and wavelength-style capacity connect the business.
-- **Resilience:** 5G Wireless Backup and Wireless Broadband protect uptime or bridge fiber timing gaps.
-- **Cloud and site experience:** Cloud Connect stabilizes critical cloud paths; Managed Wi-Fi owns the last 10 feet of the user experience.
-- **Security and WAN:** Managed Firewall, MNS, DDoS, and SD-WAN protect and orchestrate the edge.
-- **Workforce and customer communications:** UC, Contact Center, and iTV support how employees, customers, and guests communicate.
+- **Access and transport:** Fiber Internet and Managed Ethernet connect the business across locations.
+- **Resilience:** Wireless Internet Backup helps keep the business running with automatic failover, professional setup, and 24/7 support.
+- **Cloud and site experience:** Cloud Connect provides secure, reliable, direct connections to leading cloud providers; Managed Wi-Fi supports seamless connectivity for teams and customers.
+- **Security and WAN:** Managed Firewall, DDoS Protection, and SD-WAN help protect the network and improve performance.
+- **Workforce and customer communications:** Unified Communications and video services support how employees, customers, and guests stay connected.
 
-**Light competitive lens:** when coax-heavy incumbents push *speed-for-price*, pull the conversation back to total fit and operating risk:
+**Light positioning lens:** when a buyer pushes *speed-for-price*, pull the discussion back to total business fit:
 
-| Capability | GPC | Cox |
-| --- | --- | --- |
-| Delivery method | 100% fiber | Coax with limited fiber |
-| Symmetrical speeds | Yes | No (limited to fiber only) |
-| Max speeds available | 100 Gbps | 2 Gbps (coax) / 100 Gbps (fiber) |
-| Auto renewals | No | Yes |
-| Professional installation fees | None | $100 |
-| Activation fees | None | $25 / $99 (standard / gateway) |
+- What applications, cloud services, payment systems, or customer experiences depend on this connection?
+- Which sites need secure, scalable connectivity across locations?
+- What happens operationally if the primary connection fails?
+- Where would local support and 24/7 monitoring reduce risk for the customer?
 
-**Don't race them on sticker price.** Buyers comparing GPC to coax-led national providers still care about **symmetry, delivery method, term locks, and install/activation friction**—pull the conversation to total cost and operational fit, not the month-one number alone. Authoritative collateral lives in **Sales Resources**—this table is a memory anchor, not a second source of record.
+**Do not race on sticker price alone.** Use the capability deck to reframe GPC as a local, reliable partner with a broader service portfolio, not just another circuit provider.

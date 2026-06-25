@@ -8,15 +8,15 @@ reference_files:
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
 discovery_questions:
   - "How many screens need TV, and what are the must-have channels for your staff or customers?"
-  - "Who provides your internet right now? (iTV requires GPC fiber or broadband)."
+  - "Who provides your internet right now? (iTV requires GPC Internet)."
   - "Are you open to a streaming app, or do your specific TVs require physical set-top boxes?"
-  - "Who signs off on channel mix, packaging, or pricing before you quote—and how do you verify lineup and rates today?"
-  - "After install, what does success look like for guest vs staff viewing—and who owns support if playback buffers or drops?"
+  - "How many concurrent streams and how much Cloud DVR capacity should be quoted?"
+  - "Is this for a lobby, waiting room, bar, restaurant, or another public viewing area?"
 five_minute_summary: |
   - **What it is:** Streaming TV for business (Cloud DVR, Replay TV, HD channels) that rides directly over their **GPC Internet** connection.
-  - **The Hook:** Keep waiting rooms and breakrooms entertained with local news and sports on a single GPC bill. No messy satellite dishes.
-  - **The Caveat:** It's a streaming-first product, but low-cost set-top boxes are available if their older hardware requires it.
-  - **The Golden Rule:** Never guarantee a specific regional sports network or channel on a first call. Always point to the QR codes and official lineups on SharePoint.
+  - **The Hook:** Keep customers, guests, and staff engaged with popular, local, sports, and HD channels on one GPC bill.
+  - **The Caveat:** GPC iTV Essentials is the base package; every quote also needs the right stream count and DVR selection.
+  - **The Golden Rule:** Do not promise a specific channel from memory. Use the QR code or SharePoint lineup tools before you quote.
 
 knowledge_checks:
   - question: "What is the mandatory prerequisite for selling GPC iTV?"
@@ -35,6 +35,30 @@ knowledge_checks:
     correct_index: 1
     explanation: "Lineups are market-dependent. Always use official SharePoint tools."
 
+  - question: "What must be selected with GPC iTV Essentials?"
+    options:
+      - "A stream count and a DVR product."
+      - "A hosted voice seat and SD-WAN policy."
+      - "Any ISP circuit with enough bandwidth."
+    correct_index: 0
+    explanation: "The pricing materials list Essentials as the base package and require a stream selection plus a DVR product."
+
+  - question: "When is a set-top box part of the conversation?"
+    options:
+      - "Every iTV sale requires one box per TV."
+      - "Some business or TV setups may require set-top boxes, available at a low monthly rate."
+      - "Set-top boxes are only used for residential customers."
+    correct_index: 1
+    explanation: "The product sheet positions iTV as a streaming TV solution, with set-top boxes only when the business or TV setup requires them."
+
+  - question: "What should you remember about discounting iTV?"
+    options:
+      - "Discount it like any other add-on."
+      - "Only discount sports packages."
+      - "The pricing sheets state that the product is not discountable."
+    correct_index: 2
+    explanation: "The East pricing sheets explicitly say GPC iTV is not discountable, so confirm current pricing guidance before making concessions."
+
 scenarios:
   - title: "Waiting room TVs on a competitor ISP"
     situation: |
@@ -47,22 +71,23 @@ scenarios:
 
 roleplay:
   persona: "Frugal retail owner"
-  scenario: "Has two screens in a coffee shop. Wants morning shows and sports but is worried about messy wiring and 'another box fee.'"
-  goal: "Pitch the streaming app, Cloud DVR, and the simplicity of a single GPC bill. Acknowledge that set-top boxes are only required if their TVs aren't compatible."
+  scenario: "Has two screens in a coffee shop. Wants local channels, sports, and replay options but is worried about equipment fees."
+  goal: "Pitch the streaming app, Cloud DVR, Replay TV, and the simplicity of a single GPC bill. Acknowledge that some TV setups may still require set-top boxes at a low monthly rate."
 ---
 
 ## At a glance
 
 - **The Product:** Streaming TV for business (Channels, Cloud DVR, Replay TV) over **GPC Internet**.
 - **The Hardware:** Streaming-first to save on equipment fees, but set-top boxes are available if the site requires them.
-- **The Source of Truth:** Never guess the channel lineup. Use **SharePoint** and the official QR codes for market-specific lineups and rate cards.
+- **The Package Rule:** Essentials is the base package. Add the correct stream count, DVR option, and any channel package the customer qualifies for.
+- **The Source of Truth:** Never guess the channel lineup or rate. Use **SharePoint** and the official QR codes before you quote.
 
 ---
 
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-We deliver HD business TV, local sports, and cloud DVR right over your existing GPC internet connection. It's one reliable streaming service and one simple bill, keeping your breakrooms and lobbies entertained without the hassle of satellite dishes or messy wiring.
+GPC iTV brings popular, local, sports, and HD channels to your business over a GPC Internet connection. You get streaming TV features like Cloud DVR and Replay TV, plus the convenience of one GPC bill for multiple services.
 :::
 
 ---
@@ -83,15 +108,23 @@ We deliver HD business TV, local sports, and cloud DVR right over your existing 
 
 ## Core Benefits
 
-Ditch the massive feature tables. When pitching iTV, hit these four points:
+Keep the pitch simple. iTV is about a better business TV experience without overcomplicating the quote:
 
-1. **Replay TV & Cloud DVR:** Catch-up viewing for busy public areas. They won't miss the game or the morning news.
-2. **Local & Sports:** HD quality for hospitality, retail, and breakrooms. *(Always confirm the local lineup first).*
-3. **Equipment Savings:** Sell the streaming-first model to eliminate clunky hardware. If they *need* a box, we have them for a low monthly rate.
-4. **The Single Bill:** Voice, Internet, and TV all on one clean invoice from one local provider.
+1. **Replay TV & Cloud DVR:** Useful for waiting rooms, lobbies, breakrooms, and other shared spaces where people come and go.
+2. **Local & Sports Channels:** Local events, weather, popular channels, sports channels, and HD quality are the headline features. Always confirm the lineup first.
+3. **Equipment Savings:** Lead with the streaming model. If the business or TV setup needs a set-top box, quote it at the current low monthly rate.
+4. **The Single Bill:** TV can sit alongside other GPC services on one invoice.
+
+## Packaging Notes
+
+1. **Start with Essentials:** GPC iTV Essentials is required as the base package.
+2. **Quote the add-ons deliberately:** The pricing sheets require a stream count and DVR product. Available stream counts run from 3 to 10, and DVR options range from 50 to 300 Cloud DVR hours.
+3. **Use the right commercial package:** Bars, restaurants, and similar facilities may need Entertainment packages tied to seating area.
+4. **Protect margin:** The pricing sheets call out iTV as not discountable. Verify current guidance before discussing exceptions.
 
 ## How to execute
 
 1. **Qualify Access:** iTV is not a standalone product. If they don't have GPC Internet, you are selling a connectivity deal first.
-2. **Don't Guess:** Do not promise specific Regional Sports Networks (RSNs) from memory. Hand them the QR code or use the SharePoint lineup tool.
-3. **Check the Hardware:** Ask what TVs they are using today so you know whether to quote the pure streaming app or include set-top boxes.
+2. **Build the Quote:** Start with Essentials, then add the stream count, Cloud DVR choice, and any channel package required for the use case.
+3. **Don't Guess:** Do not promise specific channels from memory. Hand them the QR code or use the SharePoint lineup tool.
+4. **Check the Hardware:** Ask what TVs they are using today so you know whether the streaming app is enough or set-top boxes should be included.

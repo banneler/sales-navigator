@@ -8,7 +8,7 @@ reference_files:
     sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/Product%20Collateral/Forms/AllItems.aspx?viewid=855b9d9a%2D724a%2D4ba1%2D876e%2D2325aaaf29e5'
 discovery_questions:
   - How are your employees currently making external phone calls when they are working remotely?
-  - 'You mentioned using Microsoft Teams. Are you currently paying for the Teams Phone add-on license, or are you looking for a more cost-effective way to integrate voice?'
+  - 'You mentioned using Microsoft Teams. Which Microsoft voice licenses do you already have, and do users expect to place calls from Teams, the UC app, desk phones, or a mix?'
   - 'For your customer service team, do you have visibility into metrics like hold times, abandoned calls, and agent performance?'
   - Which CRM or service desk tools must voice and contact center data integrate with for screen pops and reporting?
   - 'If Microsoft 365 or Teams has an outage, how do you still need to reach customers and partners by phone?'
@@ -29,26 +29,24 @@ video_carousel:
     src: assets/UC/work-better-wherever.mp4
     poster: assets/UC/work-better-wherever.png
 five_minute_summary: |
-  - **What you’re selling:** Cloud UC (Intermedia) — voice, SMS/MMS, HD meetings, AI recaps; **99.999%** uptime line.
+  - **What you’re selling:** Cloud UC — cloud PBX, SMS/MMS, HD meetings, AI assistant, meeting recap, call recap, and dependable call quality/uptime.
   - **Seat / plan ladder:** Match **workload**, not company size; tiers **mix per user**. Typical blend: lobby/resource lines + reception Express + floor Pro + HQ Enterprise.
-    - **Resource Line** — one concurrent endpoint, no apps (lobby, conference room, front desk that only needs to ring).
+    - **Resource Line** — one concurrent endpoint for a shared phone or common-area line.
     - **Express** — voice only.
     - **Essentials** — voice + video (25), AI recap, recording.
     - **Pro** — adds inbound call center features, CRM integrations, video (100).
     - **Enterprise** — Pro + video (200) + **200 GB** storage.
-  - **Contact center:** **CCaaS** = omnichannel add-on (voice, SMS, chat), **concurrent** agent seats. **UC Pro/Enterprise** already include strong **inbound** queue/supervisor tooling — CCaaS is the separate omnichannel product when they need that scope.
-  - **Microsoft Teams (two paths — don’t blend in one pitch):** Customer picks the experience; **SE validates.**
-    - **Embedded UC:** GPC dial pad inside Teams; **no** MS Teams Phone license.
-    - **Ascend with Teams / Direct Routing:** Native Teams dialer; **MS Teams Phone license required**.
+  - **Contact center:** **CCaaS** = omnichannel contact center (voice, chat, email, SMS/WhatsApp depending on tier/add-ons), licensed by **concurrent** agent seats. **UC Pro/Enterprise** already include strong **inbound** queue/supervisor tooling — CCaaS is the separate product when they need full contact-center scope.
+  - **Microsoft Teams:** UC can add cloud PBX, SMS, and advanced calling into a Teams-centered environment. Do **not** guess the license path; the UC for Teams source calls out an **MSFT Phone System license per user**, and the **SE validates** the final Teams design.
   - **Legacy:** SIP/PRI still available; steer toward UCaaS over time.
 knowledge_checks:
-  - question: "A prospect wants to add external calling to Microsoft Teams. They think they need to buy Microsoft's 'Teams Phone' add-on license for every user. Are they right?"
+  - question: "A prospect wants external calling from Microsoft Teams and asks whether they can skip Microsoft Phone System licensing. What should you say?"
     options:
-      - "No. Embedded UC is the only Teams path we sell, and it never requires a Microsoft Teams Phone license."
-      - "It depends. Embedded UC can avoid the license; Direct Routing/native Teams dialing requires it."
-      - "Yes. Any Teams calling path requires the Microsoft Teams Phone license before GPC can quote."
+      - "Yes. GPC UC for Teams always avoids Microsoft Phone System licensing."
+      - "No. The UC for Teams source calls out an MSFT Phone System license per user; validate the exact Teams design with the SE before quoting."
+      - "Ignore the license question and quote UC first; Microsoft licensing is the customer's problem."
     correct_index: 1
-    explanation: "There are two different technical paths. Never guarantee 'no MS licensing' until an SE validates which path the customer actually wants."
+    explanation: "The source-supported move is to avoid promising a license bypass. Teams voice design and licensing need SE validation before you quote or position savings."
 
   - question: "How is our Contact Center (CCaaS) product licensed?"
     options:
@@ -58,13 +56,13 @@ knowledge_checks:
     correct_index: 1
     explanation: "Concurrent licensing is a massive cost-saver for businesses with shift workers or part-time agents."
 
-  - question: "A customer experiences a complete Microsoft 365 outage and Teams goes down. What happens to their phones if they use our embedded UC solution?"
+  - question: "A customer experiences a complete Microsoft 365 outage and Teams goes down. What continuity point can you make for a UC + Teams customer?"
     options:
       - "Their phones go down completely until Microsoft fixes the issue."
-      - "They can still make and receive calls using our standalone desktop or mobile UC app. We provide continuity when Teams fails."
+      - "The UC mobile app can still be used for calls and SMS, keeping communication channels accessible while Teams is down."
       - "Calls are automatically forwarded to their personal cell phone voicemails."
     correct_index: 1
-    explanation: "Because our voice infrastructure is separate from Microsoft's, a Teams outage doesn't take down their ability to communicate."
+    explanation: "The source specifically positions the UC mobile app as a continuity path for calls and SMS if Teams goes down."
 
   - question: "A 12-person law firm wants UC. Mostly desk-phone client calls, occasional Zoom-style meetings with up to 8 people, no contact center. Which UC plan should you lead with?"
     options:
@@ -104,16 +102,16 @@ knowledge_checks:
       - "Resource Line → UC Express → UC Essentials → UC Pro → UC Enterprise."
       - "UC Express → UC Essentials → UC Pro → UC Enterprise → UC Enterprise+."
     correct_index: 1
-    explanation: "Resource Line is the standalone-endpoint floor (one concurrent line, no apps, for lobby / conference-room / common-area phones). Everything above it scales by video participants, storage, call-center features, and CRM integrations."
+    explanation: "Resource Line is the standalone-endpoint floor for shared or common-area phones. Everything above it scales by apps, video participants, storage, call-center features, and CRM integrations."
     source: "UC Plan Comparison - Internal use only 2026.pdf"
 
-  - question: "A customer needs 40 omnichannel agents with outbound calling, supervisor monitor/whisper/barge, queued callback, and post-call surveys. Which CCaaS tier do you anchor the quote on?"
+  - question: "Which CCaaS tier statement is safest from the current Contact Center plan comparison?"
     options:
-      - "CC Pro — Pro is the default; Elite is just a marketing tier."
-      - "UC Pro's Advanced Hunt Groups — same feature set, lower cost."
-      - "CC Elite — the listed supervisor, outbound, callback, and survey needs point above Pro."
-    correct_index: 2
-    explanation: "Both tiers are concurrent-seat licensed and both are omnichannel-capable, but supervisor coaching, outbound dialer, callback, and post-call surveys are explicit Elite-tier capabilities. Quoting Pro for an outbound-heavy or supervisor-coaching workload creates a feature-gap fight at install."
+      - "Both CC Pro and CC Elite use concurrent seats; several channel and advanced features vary by add-on, included status, or professional services."
+      - "CC Elite is the only tier with supervisor monitor/whisper/barge, reporting, callback, surveys, or outbound dialing."
+      - "CC Pro and UC Pro Advanced Hunt Groups are the same product, so quote whichever is cheaper."
+    correct_index: 0
+    explanation: "The table supports concurrent-seat licensing for both tiers and shows many core contact-center capabilities in both. Scope channels, add-ons, and professional-services items with the SE instead of assuming Elite-only features."
     source: "Contact Center datasheet 050925.pdf"
 
   - question: "A customer is replacing their front-desk receptionist's phone. They want a large color touch screen with on-screen line management. Which Yealink model do you spec?"
@@ -136,35 +134,33 @@ scenarios:
         feedback: Correct. Pivot away from software convenience and anchor on reliability, support, and the specific Teams motion the customer wants.
   - title: The License Blender
     situation: |
-      You're in a Teams discovery meeting and pitch: "We put GPC's app inside Microsoft Teams, you don't need to buy the Teams Phone license, and your users will dial from the native Teams interface just like they always have." The IT director nods.
+      You're in a Teams discovery meeting and pitch: "We put GPC's phone system inside Microsoft Teams, you don't need to worry about Microsoft Phone System licensing, and everyone will dial from Teams exactly like they do today." The IT director nods.
     choices:
       - label: Pitch landed clean. Send the quote.
-        feedback: 'That pitch is internally contradictory and you just promised both motions at once. **Embedded UC** = GPC dial pad inside Teams; no MS Teams Phone license required; user is **not** dialing from the native MS dialer. **Ascend with Teams** (Direct Routing) = native MS dialer; **does** require an MS Teams Phone license per user. The SE will have to walk back one half of your pitch and you''ll lose trust.'
-      - label: 'Pause and disambiguate before quoting: "Do you want users dialing from the native Teams interface — which requires an MS Teams Phone license per user — or do you want a GPC dial pad embedded inside Teams that bypasses the MS license?" Quote the motion they pick.'
-        feedback: 'Correct. The two motions are not interchangeable. Force the customer to pick the experience first, then price the corresponding motion. Never blend them.'
+        feedback: 'That pitch overreaches. The source supports UC for Teams, but it also calls out an MSFT Phone System license per user. The SE will have to walk back the licensing promise, which hurts trust.'
+      - label: 'Pause before quoting: "Let me validate the Teams user experience and Microsoft licensing path with our SE before I price this."'
+        feedback: 'Correct. Keep the value story on cloud PBX, SMS, routing, support, and the Teams-centered workflow, then let the SE validate the tenant and licensing.'
       - label: Promise both and let the SE sort it out in the SOW.
-        feedback: '"No MS license + native MS dialer" is a SOW conflict that can''t be resolved — one of those statements has to come out. The customer will lose confidence the moment the SE clarifies. Disambiguate during discovery, not after the contract.'
+        feedback: 'Microsoft licensing is not a detail to clean up later. Validate it during discovery so the quote and SOW match the actual Teams design.'
 roleplay:
   persona: Operations Manager at a 75-person professional services firm
   scenario: Stuck on an aging on-prem PBX that's out of warranty. The IT team uses Teams for chat and meetings but nobody can make external calls from it. Assumes replacing the PBX means buying new desk phones and a server.
-  goal: 'Position GPC''s cloud UC as the modern replacement—no on-prem server, enterprise-grade features from Teams or the native softphone, and a clear explanation of **Embedded UC** (GPC dial pad inside Teams, no MS Teams Phone license) vs **Ascend with Teams** / Direct Routing (native MS dialer, MS Teams Phone license required)—SE validates the final design.'
+  goal: 'Position GPC''s cloud UC as the modern replacement: no on-prem server, enterprise-grade PBX features, desktop/mobile apps, and a Teams-centered workflow when needed. Be clear that Microsoft Teams licensing and user experience require SE validation before quoting.'
 ---
 
 ## At a glance
 
-- **UCaaS Platform:** 100+ business voice features, SMS, chat, HD meetings. 99.999% uptime.
-- **MS Teams Integration:** Two paths, two licensing stories. SE validates the path before you promise the experience.
-  - **Embedded UC:** GPC dial pad inside Teams; can avoid the MS Teams Phone license.
-  - **Direct Routing / native Teams dialing:** Uses the native Teams dialer; MS Teams Phone license required.
-- **Contact Center:** Omnichannel (Voice, SMS, Chat). Concurrent licensing model.
-- **AI Features:** AI call recaps, sentiment analysis, and supervisor-assist tools are built-in.
+- **UCaaS Platform:** 100+ business voice features, SMS/MMS, chat, HD meetings, and strong call-quality/uptime positioning.
+- **MS Teams Integration:** UC for Teams brings cloud PBX, SMS, and advanced calling into a Teams-centered workflow. SE validates licensing and design before you promise the experience.
+- **Contact Center:** Omnichannel contact center for voice, chat, email, and SMS/WhatsApp depending on tier/add-ons. Licensed by concurrent seats.
+- **AI Features:** AI Assistant, AI Call Recap, AI Meeting Recap, and AI Agent Evaluator support productivity, summaries, sentiment/topic highlights, and coaching workflows.
 
 ---
 
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-We replace aging phone systems with a single, secure cloud platform. Whether your team lives in Microsoft Teams or needs a full customer contact center, we give you voice, SMS, and video meetings with 99.999% uptime, so your team can work from anywhere without dropping the ball.
+We replace aging phone systems with a secure cloud platform for calling, SMS, meetings, and customer conversations. Whether your team works from Microsoft Teams, desk phones, or mobile apps, GPC UC gives them one managed communications experience without keeping an old PBX alive.
 :::
 
 ---
@@ -191,10 +187,10 @@ We replace aging phone systems with a single, secure cloud platform. Whether you
 - **Ascend** — the **application** name (desktop / mobile / Teams add-ins) we sell under the GPC UC umbrella. Safe to mention by name when you're describing the user experience ("the **Ascend** desktop app").
 - **Unite** — the same application, sold direct by **Intermedia**. You will see it in partner collateral and FAQs. **Do not lead with "Unite" externally** — translate it to GPC UC / Ascend for the customer.
 
-**The Teams Embedded Advantage:**
-- Many organizations standardize on Teams for chat and meetings without adopting Teams Phone for enterprise voice, often because native calling changes licensing, PBX features, and support expectations.
-- Our solution (via Intermedia) uses an embedded app approach. It places a dial pad directly inside the Teams interface.
-- Because it is an app and not a Direct Routing setup, the customer avoids the Microsoft Teams Phone license requirement.
+**Microsoft Teams positioning:**
+- Many organizations already use Teams for chat, meetings, and files but still need enterprise-grade PBX features, SMS, desk phones, support, and call routing.
+- UC for Teams brings GPC UC cloud PBX capabilities into that Teams-centered workflow.
+- Do not promise a Microsoft licensing outcome from discovery alone. The UC for Teams source states an **MSFT Phone System license is required per user**, so the SE should validate the tenant, licensing, and user experience before you quote.
 
 <div class="module-plan-ladder my-5 rounded-2xl border border-slate-200/90 bg-white shadow-sm shadow-slate-900/5 overflow-hidden">
 <div class="module-plan-ladder-head border-b border-slate-200/80 bg-gradient-to-br from-slate-50 via-white to-violet-50/40 px-4 py-3.5">
@@ -215,14 +211,14 @@ We replace aging phone systems with a single, secure cloud platform. Whether you
 </div>
 
 **Contact Center (CCaaS):**
-- **UC Pro/Enterprise already include inbound Call Center features** — queueing, hunt groups, wallboards, and Supervisor Monitor/Whisper/Barge — enough to run a small/medium **voice-only** help desk. The dedicated **CCaaS** product is a separate SKU for **omnichannel** workloads (voice + SMS + chat), advanced IVR, deep CRM screen-pops, and concurrent licensing across channels. Don't conflate the two when scoping.
-- Deep integrations with CRMs (Salesforce, Zendesk, HubSpot) for automatic screen pops.
+- **UC Pro/Enterprise already include inbound Call Center features** — queueing, hunt groups, wallboards, and Supervisor Monitor/Whisper/Barge — enough to run a small/medium **voice-only** help desk. The dedicated **CCaaS** product is a separate SKU for **omnichannel** workloads (voice, chat, email, SMS/WhatsApp depending on tier/add-ons), advanced IVR, CRM/WFM integrations, and concurrent agent licensing. Don't conflate the two when scoping.
+- Pre-built CRM integrations include Salesforce, Dynamics, Zendesk, and Slack; custom CRM work may require professional services.
 - "Concurrent" means if they have 50 total employees, but only 10 answer phones at any given time, they only buy 10 licenses.
 - Do not attempt to quote high-volume burst capacity, complex IVR routing, IPN/OffNet ports under an active carrier contract, or CRM CTI integrations on your own. Bring in your SE immediately.
 
 **CC Pro vs. CC Elite — which tier fits:**
 
-The dedicated CCaaS product ships in **two tiers**. Both are concurrent-seat licensed; both are omnichannel-capable (voice / chat / email / SMS / WhatsApp queues, depending on add-ons); both include the standard analytics + reporting stack. CC Elite is the supervisor-heavy / outbound-heavy tier.
+The dedicated CCaaS product ships in **two tiers**. Both are concurrent-seat licensed and can be sold with UC or standalone. The plan comparison shows core contact-center capabilities in both tiers, while several channels and advanced tools vary by add-on, included status, or professional services. Treat the table as a scoping guide, not a shortcut around SE review.
 
 | Capability | CC Pro | CC Elite |
 | --- | --- | --- |
@@ -231,14 +227,20 @@ The dedicated CCaaS product ships in **two tiers**. Both are concurrent-seat lic
 | Pre-built CRM integrations (Salesforce, Dynamics, Zendesk, Slack) | ✓ | ✓ |
 | Real-time + historical reporting, dashboards | ✓ | ✓ |
 | Skill-Based Routing | ✓ | ✓ |
-| Supervisor Monitor / Whisper / Barge-In | — | ✓ |
-| Outbound Voice + Outbound Dialer (scheduled power dialing) | — | ✓ |
-| Geo-Routing + Advanced Rules-Based Routing (Last Agent / Preferred Agent) | — | ✓ |
-| Queued Callback + Queued Voicemail | — | ✓ |
-| Real-Time Customizable Threshold Alerts | — | ✓ |
-| Post-Call Surveys + Call Scripting | — | ✓ |
-| Custom Agent Status + Elastic Demand Support | — | ✓ |
+| Supervisor Monitor / Whisper / Barge-In | ✓ | ✓ |
+| Outbound Voice + Outbound Dialer (scheduled power dialing) | ✓ | ✓ |
+| Geo-Routing + Advanced Rules-Based Routing (Last Agent / Preferred Agent) | ✓ | ✓ |
+| Queued Callback + Queued Voicemail | ✓ | ✓ |
+| Real-Time Customizable Threshold Alerts | ✓ | ✓ |
+| Post-Call Surveys + Call Scripting | ✓ | ✓ |
+| Custom Agent Status + Elastic Demand Support | ✓ | ✓ |
+| Chat Channel Queues | Add-on | Included |
+| WhatsApp Channel Queues | Add-on | Included |
+| Schedule Manager | Add-on | Included |
+| Screen Recording | Add-on | Included |
+| Custom WFM Integration | — | Professional Services |
+| Speech Recognition Integration | — | Included |
 
-**Add-ons available on both tiers (additional cost):** Chat / Email / WhatsApp Channel Queues, Dynamic Notification (Voice/Email/SMS), Schedule Manager, AI Agent Evaluator, Screen Recording, omnichannel Archiving across voice / SMS / chat / email / screen recordings.
+**Add-ons / scoped items:** Email Channel Queues, Dynamic Notification (Voice/Email/SMS), AI Agent Evaluator, archiving, custom CRM integrations, and custom IVR/self-service integrations can add cost or professional-services scope. Validate the final channel mix before quoting.
 
-**Pick CC Elite when** you see outbound calling, supervisor coaching workflows, callback functionality, post-call surveys, or strict SLA threshold alerts on the requirements list. Otherwise CC Pro is the right anchor. **Don't conflate UC Pro's Advanced Hunt Groups with the CCaaS product** — UC Pro is light-call-center for voice-only; CC Pro/Elite is the real omnichannel CCaaS.
+**Pick CC Elite when** the requirements lean toward included chat/WhatsApp channels, Schedule Manager, Screen Recording, Custom WFM, Speech Recognition, or other advanced items shown above Pro in the comparison. **Don't conflate UC Pro's Advanced Hunt Groups with the CCaaS product** — UC Pro is light-call-center for voice-only; CC Pro/Elite is the real omnichannel CCaaS.

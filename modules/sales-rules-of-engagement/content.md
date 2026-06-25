@@ -10,30 +10,30 @@ sensitivity: "public"
 sales_trio_hide_overview: true
 
 five_minute_summary: |
-  - **One source of truth:** Search before you create. Duplicates drive ownership wars. Salesforce is how leadership settles who owns an account (and who gets the commission).
-  - **Idle windows:** On the general path, if there is no qualifying logged activity for the periods below, others may work the account. But don't be a cowboy—always reach out to the listed owner first before you pounce.
+  - **One source of truth:** Salesforce is the official system of record for account disputes. Search by address and name before creating records, and keep activity on the account.
+  - **Idle windows:** For general accounts, no qualifying logged activity can open a path for another rep to work the account. Communicate with the current owner before engaging.
     - **Prospect:** 61+ days.
     - **Customer:** 121+ days.
-    - **Strategic list & USAC/E-Rate:** The 61/121 clocks do not apply here—assume Strategic-style coverage and confirm with leadership before you work the account. **Named carve-out:** **ENA (Education Networks of America) in Indiana** stays with the **Out-State Team** per the ROE—not the usual USAC/Strategic path.
-  - **The 5-day inbound clock:** Assigned an inbound lead by sales or marketing? You have exactly five business days to make first contact and log it in Salesforce. Miss it, and it gets reassigned. (Note: Self-sourced leads do not use this clock).
-  - **Transfers:** Never play admin and reassign an account to yourself. Talk to the incumbent owner, get aligned, and then email your manager and sales leadership for the official sign-off.
+    - **Strategic list & USAC/E-Rate:** These are protected by assignment, not the 61/121-day activity rules. **Named carve-out:** **ENA (Education Networks of America) in Indiana** stays with the **Out-State Team** per the ROE.
+  - **The 5-business-day inbound clock:** Leads assigned by sales or marketing leadership can be reassigned if first contact is not made and logged within five business days. Self-sourced prospecting leads do not use this clock.
+  - **Transfers and edge cases:** Never self-reassign. Align with the current owner, then email your manager and sales leadership. Anything that does not fit the ROE cleanly goes to sales management.
 
 knowledge_checks:
-  - question: "Before creating a new account or contact in Salesforce, what is the mandatory first step?"
+  - question: "Before creating a new account in Salesforce, what is the mandatory first step?"
     options:
       - "Create the account immediately so you can log your notes, then ask Ops to merge duplicates later."
       - "Search Salesforce by name and address to ensure it doesn't already exist."
       - "Check ZoomInfo, and if the data looks clean, automatically import it as a new record."
     correct_index: 1
-    explanation: "Search first. One entity, one account. Duplicates create massive commission headaches down the road."
+    explanation: "Search first by name and address. One entity should have one account record, because duplicates create ownership disputes and messy data."
 
-  - question: "Marketing assigns you a hot inbound lead. How long do you have to make first contact and log it?"
+  - question: "Marketing assigns you an inbound lead. How long do you have to make first contact and log it?"
     options:
       - "5 calendar days."
       - "14 days, since it takes time to properly research the account before reaching out."
       - "5 business days."
     correct_index: 2
-    explanation: "You have exactly five business days for assigned inbound leads. If it isn't logged in Salesforce by then, it can be pulled."
+    explanation: "You have five business days for assigned inbound leads. If initial contact is not made and logged in Salesforce by then, the lead can be reassigned."
 
   - question: "Who holds the authoritative list of Strategic Accounts?"
     options:
@@ -49,7 +49,7 @@ knowledge_checks:
       - "121+ days."
       - "365 days."
     correct_index: 1
-    explanation: "A general Customer account opens after 121+ days with no qualifying logged activity. Even then, use the transfer path instead of grabbing the account cold."
+    explanation: "A general Customer account opens after 121+ days with no qualifying logged activity. Even then, use the transfer path before working the account."
 
   - question: "For a general Prospect account, how many days of zero logged activity must pass before the ROE window opens?"
     options:
@@ -57,7 +57,7 @@ knowledge_checks:
       - "61+ days."
       - "90 days."
     correct_index: 1
-    explanation: "A general Prospect account opens after 61+ days with no qualifying logged activity. The rule protects active prospecting while giving abandoned accounts a path forward."
+    explanation: "A general Prospect account opens after 61+ days with no qualifying logged activity. The rule protects active prospecting while giving inactive accounts a path forward."
 
   - question: "Does the strict five-business-day clock apply to leads you prospect and self-source?"
     options:
@@ -73,23 +73,23 @@ knowledge_checks:
       - "Ask leadership to review the idle account without first contacting the current owner."
       - "Align with the current owner, then email your manager and sales leadership for transfer approval."
     correct_index: 2
-    explanation: "Never reassign an account unilaterally. Get incumbent agreement, then get leadership's blessing."
+    explanation: "Never reassign an account unilaterally. Align with the current owner, then get manager and sales leadership approval."
 
   - question: "How are USAC-funded entities treated under the rules of engagement?"
     options:
       - "They follow the exact same 61/121 rules as any standard general Prospect or Customer."
       - "They are exempt from Salesforce tracking entirely."
-      - "They receive Strategic-style treatment, with named exceptions like ENA in Indiana."
+      - "They receive Strategic-style treatment, with the ENA in Indiana exception."
     correct_index: 2
     explanation: "USAC entities get Strategic-style protection per the ROE, even when they are not on the standard list. Verify with leadership before you work the account."
 
-  - question: "When leadership is settling an account ownership dispute, what is the ONLY evidence that matters?"
+  - question: "When leadership is settling an account ownership dispute, what record carries the weight?"
     options:
       - "Your Outlook 'Sent' folder showing you emailed the prospect."
       - "Logged activity and clean data in Salesforce."
       - "A verbal conversation you had with the customer at a trade show."
     correct_index: 1
-    explanation: "Salesforce is the system of record. If it's not logged there, it didn't happen."
+    explanation: "Salesforce is the official system of record for account disputes. Keep activity and account history there."
 
 scenarios:
 
@@ -97,33 +97,33 @@ scenarios:
 
     situation: |
 
-      You find a juicy general Customer account. It's day 130 of zero logged activity. You want to reach out today. What's your move?
+      You find a general Customer account with 130 days of no logged activity. You want to reach out today. What's your move?
 
     choices:
 
-      - label: "The 121-day window is wide open. Send a cold outreach sequence immediately so you get your foot in the door."
+      - label: "The 121-day window is open. Start outreach immediately so you can begin working the account."
 
-        feedback: "Slow down. Yes, it's open by the numbers, but a blind outreach burns internal bridges. Don't be a cowboy."
+        feedback: "Not yet. The account may be open by the numbers, but the ROE still points you toward communicating with the current owner before engaging."
 
       - label: "Ping the current owner first. If you align (or they ghost you), escalate through the ROE transfer steps with leadership before dialing."
 
-        feedback: "Correct. The idle window creates a path to work the account, not permission to ambush the owner. Align first, then use the approved transfer path."
+        feedback: "Correct. The idle window creates a path to work the account, not permission to bypass the owner. Align first, then use the approved transfer path."
 
   - title: "The 'Sent Folder' Defense"
 
     situation: |
 
-      Marketing assigns you a hot inbound lead on Monday. Next Tuesday (Day 6), a hungry rep flags that it has zero Salesforce activity and asks leadership for it. You argue, "But I emailed them twice from my inbox!"
+      Marketing assigns you an inbound lead on Monday. Next Tuesday, another rep flags that it has zero Salesforce activity and asks leadership for it. You argue, "But I emailed them twice from my inbox!"
 
     choices:
 
       - label: "Forward your sent emails to leadership as proof you are actively working the lead."
 
-        feedback: "Dead wrong. The 'Sent' folder doesn't pay commissions. Assigned inbound leads require a Salesforce log within five business days. The lead gets reassigned."
+        feedback: "That will not protect the lead. Assigned inbound leads require initial contact to be made and logged in Salesforce within five business days, or the lead can be reassigned."
 
       - label: "Admit defeat. You failed to log the activity in Salesforce within 5 business days, so the lead is gone."
 
-        feedback: "Correct. Salesforce is the system of record, so the email only counts when it is logged. Log it or lose it."
+        feedback: "Correct. Salesforce is the system of record, so the email only supports your activity when it is logged there."
 
 reference_files:
 
@@ -134,29 +134,31 @@ reference_files:
 
 ## Overview
 
-ROE exists to **protect pipelines** and **draw clean lines** on who works whom. Whether you are on the Strategic Accounts Team or working a general patch, **Salesforce** is the system of record—full stop.
+ROE exists to protect active work and make account ownership clear. Whether you are on the Strategic Accounts Team or working a general patch, **Salesforce** is the system of record.
 
-- **Search before you create** — One entity, one account. Duplicates waste time and invite disputes.
+- **Search before you create** — Check Salesforce by address and name. One entity should have one account record.
 
-- **Log it or lose it** — Tasks, calls, meetings, emails belong **on the record**. Outlook does not count in an ownership fight.
+- **Log it or lose it** — Tasks, calls, meetings, and emails belong **on the Salesforce record**.
 
-- **Transfer through leadership** — Never self-reassign. Agree with the incumbent, then route through **manager + sales leadership** (per ROE).
+- **Transfer through leadership** — Never self-reassign. Discuss the move with the current owner, then route through **manager + sales leadership** (per ROE).
 
-**General** accounts: **61+** (Prospect) / **121+** (Customer) idle rules. **Strategic** list and **USAC/E-Rate** coverage are stricter—confirm before you chase the logo. **Exception:** ENA (Education Networks of America) in **Indiana** → **Out-State Team** (per ROE).
+**General** accounts use the **61+** day Prospect and **121+** day Customer idle rules. **Strategic** accounts and **USAC/E-Rate** entities are protected by assignment. **Exception:** ENA (Education Networks of America) in **Indiana** → **Out-State Team** (per ROE).
 
 ---
 
 ## Key Guidelines
 
-1. **Search before creating:** One entity, one account. Duplicates are a nightmare to untangle and create ownership disputes. Always search Salesforce before adding records.
+1. **Search before creating:** Search Salesforce by address and name before adding records. Do not create a second account for an existing entity.
 
-2. **Log it or lose it:** Tasks, calls, meetings, or emails must live on the Salesforce record. Your Outlook Sent folder does not count in an ownership dispute.
+2. **Coordinate before adding contacts:** Do not add a contact with an email address that already exists in Salesforce. Coordinate with the current account owner.
 
-3. **Respect idle windows:** Prospect accounts open after **61+** days of no qualifying logged activity; Customer accounts after **121+**. Even when the window is open, reach the listed owner first—no cowboy grabs.
+3. **Log the work:** Tasks, calls, meetings, and emails must live on the Salesforce record. Salesforce is what leadership uses to arbitrate account disputes.
 
-4. **Transfer through leadership:** Never reassign an account in Salesforce unilaterally. Connect with the current owner; once agreed, email your manager and sales leadership for approval and transfer (per ROE).
+4. **Respect idle windows:** Prospect accounts open after **61+** days of no qualifying logged activity; Customer accounts after **121+**. Even when the window is open, communicate with the current owner before engaging.
 
-5. **Assigned inbound leads:** Five business days to make first contact **and** log it in Salesforce. Non-negotiable. That clock does **not** apply the same way to self-sourced leads.
+5. **Transfer through leadership:** Never reassign an account in Salesforce unilaterally. Connect with the current owner; once agreed, email your manager and sales leadership for approval and transfer (per ROE).
+
+6. **Assigned inbound leads:** Five business days to make first contact **and** log it in Salesforce. That clock does **not** apply to self-sourced prospecting leads.
 
 ---
 
@@ -166,37 +168,37 @@ ROE exists to **protect pipelines** and **draw clean lines** on who works whom. 
 
 ::: flip ["I emailed them twice—that counts as activity."]
 
-**The 'Sent Folder' Delusion:** Emailing from Outlook does not protect your account. If it is not logged as a task, call, meeting, or email on the actual record in Salesforce, leadership considers the account abandoned.
+**The Sent Folder Gap:** Emailing from Outlook is not enough. Activity needs to be logged as a task, call, meeting, or email on the Salesforce record.
 
 :::
 
 ::: flip ["The account is 130 days idle—I can just start working it."]
 
-**The Cowboy Grab:** Yes, the window is technically open. No, you don't just start blasting emails. Call the listed owner first. If you need a formal transfer, follow ROE: agree with the owner, then email your manager and sales leadership.
+**The Owner Bypass:** The window may be open, but the ROE still calls out communication with the current owner as best practice. If you need a formal transfer, follow the ROE path: agree with the owner, then email your manager and sales leadership.
 
 :::
 
 ::: flip ["I saw the account was idle, so I just reassigned it to myself."]
 
-**The Rogue Reassignment:** Unilateral owner changes in Salesforce are a massive ROE violation. Align with the current owner, then email your manager and sales leadership for approval—never reassign yourself first.
+**The Rogue Reassignment:** Do not change ownership in Salesforce on your own. Align with the current owner, then email your manager and sales leadership for approval.
 
 :::
 
 ::: flip ["That school district falls under the 61/121 day rules."]
 
-**The USAC Trap:** USAC-funded entities follow Strategic-style treatment, even if they aren't explicitly on the list. Confirm coverage with leadership before assuming they are fair game. **ENA in Indiana** is the named exception—it stays with the **Out-State Team**.
+**The USAC Trap:** USAC- and E-Rate-funded entities are treated as Strategic Accounts, even if they are not explicitly on the named list. **ENA in Indiana** is the named exception; it stays with the **Out-State Team**.
 
 :::
 
 ::: flip ["It's an inbound lead—I'll get to it when my week clears up."]
 
-**The 5-Day Clock:** You have exactly 5 business days to make first contact and log it in Salesforce. That clock is non-negotiable for assigned inbound leads. Drag your feet, and it gets re-routed.
+**The 5-Day Clock:** For assigned inbound leads, initial contact must be made and logged in Salesforce within 5 business days. Miss that window and the lead can be reassigned.
 
 :::
 
 ::: flip ["I'll spin up a new account record so I don't have to chase the current owner."]
 
-**The Duplicate Disaster:** Creating parallel accounts to bypass ownership is a landmine. Search first. If you need access, use the proper transfer path. Duplicates ruin reporting and cause massive commission headaches.
+**The Duplicate Account:** Creating a parallel account to bypass ownership breaks the ROE. Search first. If you need access, use the proper transfer path.
 
 :::
 
@@ -214,7 +216,7 @@ ROE exists to **protect pipelines** and **draw clean lines** on who works whom. 
 
 - Before creating accounts or contacts: search by address and name; do not open a second account for an existing entity; do not add a contact whose email already exists elsewhere without coordinating with that account owner.
 
-- **The 80/20 rule:** Most situations (~**80%**) fit the ROE as written. The rest are edge cases—unique ownership disputes, fuzzy Strategic vs. general boundaries, USAC/E-Rate questions, or anything that feels like *"this doesn't quite match the PDF."* Those go to **sales management case by case**. Do not improvise policy on your own and do not play lawyer with the ROE.
+- **The 80/20 rule:** Most situations (~**80%**) fit the ROE as written. The rest are edge cases: ownership disputes, Strategic vs. general boundaries, USAC/E-Rate questions, or anything that does not match the PDF cleanly. Those go to **sales management case by case**.
 
 ### General accounts (non-Strategic)
 
@@ -223,7 +225,7 @@ Applies to accounts not on the official Strategic Accounts list.
 | Topic | Rule (per ROE) |
 | --- | --- |
 | Customer | Customer status, no logged activity for 121+ days: others may work the account. Best practice: talk to the current owner before engaging, even if the record looks open by the numbers. |
-| Prospect | Prospect status, no logged activity for 61+ days: others may work the account. Keep relevant intel on the record (projects, contract timing). Notation alone is not enough—you need consistent contact (about every 60 days minimum) plus current information. |
+| Prospect | Prospect status, no logged activity for 61+ days: others may work the account. Keep relevant information on the record, such as construction projects or contract dates. Notation alone is not enough; the ROE calls for consistent contact at least every 60 days. |
 | Inbound leads | Assigned by sales or marketing leadership: first contact made and logged within 5 business days, or the lead may be reassigned. Does not apply to self-generated prospecting leads. |
 | Self-sourced | Not subject to the 5-business-day inbound clock. |
 

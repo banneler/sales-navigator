@@ -22,11 +22,11 @@ discovery_questions:
   - 'Are there locations on your footprint—seasonal, satellite, or rural—where fiber isn''t available today, and what are you running there now?'
 five_minute_summary: |
   - **Field order:** Qualify the primary path first, attach resiliency second, then solve the local experience. Cloud Connect, Wi-Fi, Backup, and Broadband are different plays.
-  - **Cloud Connect:** This is not internet. It is a private, predictable, jitter-free path directly from our network to AWS, Azure, or Google Cloud. Pitch it when they run mission-critical SaaS apps.
-  - **Managed Wi-Fi:** We own the last 10 feet of connectivity. It includes guest network separation and fully managed lifecycle support. Never guess AP counts—always require a site survey.
-  - **5G Wireless Backup:** The insurance policy *behind* primary fiber. Cradlepoint X20-5G with automatic failover, automatic reversion, and an optional 8-hour backup battery. The cellular underlay is Verizon/AT&T—heavy users hit a daily throttle after failover, so set expectations.
-  - **5G Wireless Broadband:** Cellular as the *primary* internet path. Two motions: (1) a temporary bridge while a fiber build is in flight, or (2) the long-term answer where fiber isn't available. Same Cradlepoint hardware as Backup, but the carrier hands out a DHCP IP—anything hosted on prem will not be reachable from the internet. Temporary wireless service is **non-commissionable**; you earn the commission once the fiber circuit lights.
-  - **The pitch order & ground rules:** Sell primary fiber first, attach 5G Backup for redundancy, and finish with Managed Wi-Fi for the localized experience. Use 5G Broadband to bridge a fiber install gap or to cover a site fiber can't reach. Wireless is **in-territory only** and **only attaches to SIA / DIA / SD-WAN**—it's not a stand-alone offer. No SLAs: every wireless circuit is "best effort."
+  - **Cloud Connect:** This is not more internet. It is private Layer 2 connectivity over GPC Ethernet into the cloud ecosystem, giving customers a more predictable path to providers like AWS, Azure, Google, Oracle, IBM, SAP, Nutanix, Salesforce, and Alibaba.
+  - **Managed Wi-Fi:** We help own the last 10 feet of the experience. It is engineered around the site, with secure guest/private networks, access point options, installation through maintenance, and usage analytics. Do not quote AP counts from square footage alone.
+  - **5G Wireless Backup:** The insurance policy *behind* primary fiber. It uses a professionally configured Cradlepoint router with automatic failover, automatic reversion, 24/7 NOC monitoring, app prioritization, and optional battery backup. Speeds and throttling depend on usage and wireless conditions, so set expectations.
+  - **5G Wireless Broadband:** Cellular as the *primary* internet path. Two motions: (1) a temporary bridge while a fiber build is in flight, or (2) a permanent broadband plan where fiber is not the answer. The carrier hands out a DHCP IP, so anything hosted on prem will not be reachable from the internet. Temporary wireless service is **non-commissionable**; the customer starts billing at the contracted SIA/DIA rate once wireless is installed.
+  - **The pitch order & ground rules:** Sell primary fiber first, attach 5G Backup for redundancy, and finish with Managed Wi-Fi for the localized experience. Use 5G Broadband to bridge a fiber install gap or to cover a site fiber can't reach. Wireless attaches to new or existing **SIA / DIA / SD-WAN** customers; do not sell outside GPC territory without approval. No SLAs: wireless is "best effort."
 technical_deep_dive_tabs:
   aria_label: "Cloud, Wi-Fi, and 5G technical topics"
   intro: "Use the tabs as product lanes after the core sales story: cloud path, site Wi-Fi, outage backup, or temporary/permanent wireless broadband."
@@ -35,26 +35,27 @@ technical_deep_dive_tabs:
       body: |
         **What it is:** a private path from the GPC network to major cloud providers through an NNI (Network-to-Network Interface).
 
-        - Bypasses the public internet for cloud workloads, which stabilizes latency and reduces jitter.
-        - Best fit when the customer runs mission-critical workloads in AWS, Azure, Google Cloud, or similar environments.
-        - This is not "more internet." It is a private, predictable cloud path layered on top of the access conversation.
+        - Bypasses the public internet for cloud workloads, which makes performance more predictable and mitigates jitter.
+        - Best fit when the customer runs mission-critical workloads in AWS, Azure, Google Cloud, Oracle, IBM, SAP, Nutanix, Salesforce, Alibaba, or similar environments.
+        - Requires both an Ethernet connection and at least one Cloud Connect product. GPC provides the connectivity, not the customer's cloud service.
+        - This is not "more internet." It is a private cloud path layered on top of the access conversation.
     - label: "Managed Wi-Fi"
       body: |
-        **What it is:** GPC-managed wireless coverage for the customer site, including AP hardware, licensing, and NOC support.
+        **What it is:** GPC-managed wireless coverage for the customer site, from installation and turn-up through maintenance.
 
-        - Requires a predictive or physical site survey. Building materials like concrete, metal racks, and glass heavily affect radio frequency performance.
-        - Never guess AP counts from square footage alone. Bad AP math creates dead zones, rework, and angry customers.
-        - Position this as owning the last 10 feet of connectivity: guest separation, managed lifecycle, and a better user experience inside the building.
+        - Engineer the design around current and future needs; do not guess AP counts from square footage alone.
+        - Position this as owning the last 10 feet of connectivity: secure guest/private networks, indoor and outdoor AP options, analytics, branded login capability, and a better user experience inside the building.
+        - Good discovery sounds practical: "Do you have reliable coverage?", "Is the Wi-Fi secure?", and "Who manages it when users complain?"
     - label: "5G Backup"
       body: |
         **What it is:** automatic wireless failover behind the customer's primary GPC wireline circuit (SIA, DIA, or SD-WAN).
 
         - Uses Cradlepoint X20-5G CPE, or E100 LTE on the lower tier, installed and managed by GPC.
         - Cellular underlay is Verizon and/or AT&T through Kajeet; failover typically completes in about a minute.
-        - Optional backup battery supports roughly 8 hours for site-wide power loss.
+        - Optional battery backup can provide up to 8 hours of power to the router during an outage.
         - It is "best effort" with no SLA. The goal is to keep doors open and registers ringing, not replace fiber during a multi-day outage.
 
-        | Daily usage on failover (approx.) | Speed cap after throttle |
+        | Total monthly usage (current product sheet) | Speed after threshold |
         | --- | --- |
         | After **12 GB** | Up to **50 Mbps** |
         | After **20 GB** | Up to **25 Mbps** |
@@ -65,28 +66,28 @@ technical_deep_dive_tabs:
       body: |
         **What it is:** cellular as the primary internet path, not a failover path.
 
-        - Same Cradlepoint X20-5G CPE and Verizon/AT&T underlay through Kajeet as Backup; managed and monitored by GPC.
+        - Uses a professionally configured Cradlepoint router and wireless carrier service; managed by GPC.
         - **Temporary bridge:** wireless covers a new site that must open before the fiber build completes. When fiber turns up, the Cradlepoint re-roles as 5G Backup behind the new SIA/DIA circuit.
         - **Permanent broadband:** wireless is the long-term primary at sites where fiber is not available in footprint, including rural or hard-to-reach edges.
-        - Throughput is typically **up to ~100 Mbps and higher**, but it varies by carrier, location, signal, building penetration, and tower congestion. Never quote it like fiber.
+        - Current permanent Broadband pricing shows **25 Mbps** and **50 Mbps** plans. Bandwidth is still best effort, varies by location and time of day, and Verizon may deprioritize traffic after priority-data thresholds.
         - **No static IP:** the public IP comes from the carrier via DHCP, so on-prem hosted services are not reachable from the internet. If on-prem hosting is in scope, lead with SIA/DIA.
-        - Temporary wireless service is **non-commissionable**; the rep earns commission on the wireline circuit when fiber lights. Permanent Broadband and standalone Backup commission normally.
+        - Temporary wireless service is **non-commissionable**; track the fiber install because the SIA/DIA sale is where the commission lands.
 knowledge_checks:
   - question: "A prospect wants to know how much 15 Wi-Fi Access Points will cost for their new warehouse. What do you do?"
     options:
       - "Look at the pricing sheet for 15 APs and send them a rough estimate."
       - "Assume a warehouse needs double the APs and quote them 30 just to be safe."
-      - "Pause the blind quote and require a proper site survey before AP counts are final."
+      - "Pause the blind quote and get the site engineered before AP counts are final."
     correct_index: 2
-    explanation: "Never guess on Wi-Fi. A warehouse full of metal racks is a nightmare for signal. Survey first, quote second."
+    explanation: "Never guess on Wi-Fi. Coverage depends on the environment and the customer's needs, so engineer the design before quoting AP counts."
 
   - question: "What is the primary technical advantage of Cloud Connect over a standard Dedicated Internet Access (DIA) circuit?"
     options:
       - "Cloud Connect is significantly cheaper than DIA."
-      - "Cloud Connect bypasses the public internet entirely, eliminating variable latency and jitter for cloud workloads."
+      - "Cloud Connect bypasses the public internet, reducing variable latency and jitter for cloud workloads."
       - "Cloud Connect provides built-in DDoS protection for their website."
     correct_index: 1
-    explanation: "DIA still uses the public internet. Cloud Connect is a private, dedicated lane straight to the cloud provider."
+    explanation: "DIA still uses the public internet. Cloud Connect provides private Layer 2 connectivity into the cloud ecosystem."
 
   - question: "A customer says they don't need 5G Backup because they have a cheap coax cable connection from a competitor as their backup. What is your response?"
     options:
@@ -127,8 +128,8 @@ scenarios:
     choices:
       - label: Tell them to upgrade to a 2 Gig DIA circuit to power through the lag.
         feedback: Throwing bandwidth at a latency problem doesn't work. The issue is public internet routing. They need Cloud Connect.
-      - label: Pitch Cloud Connect. Explain that jumping off the public internet and using a private cross-connect will eliminate the routing jitter.
-        feedback: Correct. Private paths solve latency variability. Match the tech to the problem.
+      - label: Pitch Cloud Connect. Explain that jumping off the public internet and using a private cloud path can reduce routing jitter.
+        feedback: Correct. Private paths make cloud performance more predictable. Match the tech to the problem.
   - title: The Fiber-Island Bridge
     situation: |
       A regional grocery chain is opening a 12,000-sq-ft satellite store on the edge of GPC's serviceable footprint. Go-live is 30 days out. The fiber build for that address has a 75-day engineering and trench window. They already have GPC DIA at HQ.
@@ -141,10 +142,10 @@ scenarios:
         feedback: Off-net and unmanaged—GPC has nothing to monitor or warranty, and you have no path to convert to Backup. This gap is exactly what our Wireless Broadband SKU is designed to close.
   - title: The Static-IP Trap
     situation: |
-      A small accounting firm wants to ditch their slow cable internet. They love that 5G Wireless Broadband can install in days instead of waiting for a fiber build. They also self-host a client portal on a server in their back office and need it reachable from the public internet.
+      A small accounting firm wants to ditch their slow cable internet. They like the idea of 5G Wireless Broadband as a faster path than waiting for a fiber build. They also self-host a client portal on a server in their back office and need it reachable from the public internet.
     choices:
       - label: Sell the 5G Wireless Broadband and tell them you'll request a static IP from the carrier as a follow-up.
-        feedback: There is no carrier-provided static IP path on Wireless Broadband—the carrier hands out DHCP. Promising a static IP is a commitment you cannot deliver.
+        feedback: Wireless Broadband uses carrier DHCP, so promising a static IP is a commitment you cannot deliver.
       - label: Walk back from Wireless Broadband. Position SIA or DIA as the right product because they need a static IP for inbound traffic to their on-prem portal—then attach 5G Backup for true path diversity.
         feedback: 'Correct. Static IP is a wireline-only feature in our portfolio. Lead with SIA/DIA when on-prem hosting is in scope, and use 5G as the redundancy layer.'
       - label: Sell them the Wireless Broadband anyway and have Cradlepoint port-forward through the carrier IP.
@@ -158,9 +159,9 @@ roleplay:
 ## At a glance
 
 - **Cloud Connect:** Private transport to hyperscalers (AWS, Azure, GCP). Bypasses public internet routing.
-- **Managed Wi-Fi:** Fully managed edge. Requires a site survey. Do not quote blindly.
+- **Managed Wi-Fi:** Fully managed edge. Engineer the design before quoting AP counts.
 - **5G Wireless Backup:** Automatic failover for primary circuits. True physical diversity compared to a secondary wired connection.
-- **5G Wireless Broadband:** Cellular as the *primary* internet path—either a temporary bridge while a fiber build runs, or the long-term answer where fiber isn't available. Attaches to SIA / DIA / SD-WAN only; in-territory only.
+- **5G Wireless Broadband:** Cellular as the *primary* internet path—either a temporary bridge while a fiber build runs, or the long-term answer where fiber isn't available. Attaches to new or existing SIA / DIA / SD-WAN customers; do not sell outside GPC territory without approval.
 
 ---
 

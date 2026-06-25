@@ -3,54 +3,54 @@ id: "getting-started"
 
 title: "Getting started"
 
-summary: "Quick tour of Sales-Navigator—welcome, Coffee Summary sample, practice scenario, and a light knowledge check."
+summary: "Quick tour of Sales-Navigator: how to use the hub, what to read first, and a sample practice prompt."
 
 sensitivity: "public"
 
 five_minute_summary: |
-  We're glad you're here. This space is built to help you ramp with confidence—alongside teammates who remember their first customer call, their first complex quote, and the questions that used to keep them up at night.
+  Welcome to the team. Use Sales-Navigator as your first stop when you need a refresher, a customer-ready talk track, or the next best module to read.
 
-  - We're genuinely happy you chose to grow your career here—your wins matter to us.
-  - Take training at your pace; come back to any module when you need a refresher or a talk track.
-  - Showing up curious for customers beats memorizing slides—use this hub to prepare, then go have real conversations.
+  - Start with the Coffee Summary when you need the quick version, then use scenarios and module details when a deal needs more depth.
+  - Keep the customer conversation practical: GPC positions reliable fiber connectivity, communications, security, cloud, backup, and managed services around real business needs.
+  - You do not need every answer memorized. Know where to look, ask good questions, and bring in teammates when the opportunity needs another set of eyes.
 
 # Tour sample content (read by the Getting started page only—not the standard module scenarios/KC renderer.)
 getting_started_demo:
   scenario:
-    title: "Where is Waldo?"
+    title: "Start with the customer need"
     situation: |
-      You aren't sure where to find the most recent product collateral for **Unified Communications**. What should you do?
+      A multi-site business says its current network is hard to manage and does not scale well as locations change. What is the strongest first move?
     options:
-      - label: "Send an email to Everyone@gpcom.com and ask where to find it."
+      - label: "Lead with the lowest monthly price before learning what is breaking today."
         correct: false
-      - label: "Check the Sales SharePoint site and look inside Sales Resources."
+      - label: "Ask about current business challenges, then connect the need to scalable, secure connectivity options."
         correct: true
-      - label: "Email, call, and IM Sarah Tinkham relentlessly until she gives it up."
+      - label: "Assume one product fits every site because the customer has the same logo on each building."
         correct: false
-    incorrect_feedback: "Not quite—Waldo is in Sales Resources, not in everyone’s inbox."
-    coach_note: "Official hubs beat broadcast email—Sales Resources is there so you (and Sarah) aren’t playing hide-and-seek."
+    incorrect_feedback: "Not quite. The strongest opening is discovery first, then matching the customer to secure, scalable infrastructure."
+    coach_note: "GPC's portfolio is broad; start with the customer's business problem so the recommendation feels built for them."
   knowledge_check:
-    question: "What is the best Mexican restaurant in Blair, NE?"
+    question: "Which GPC value point is supported in the Getting started source material?"
     options:
-      - label: "El Vallarta Mexican Restaurant"
+      - label: "GPC offers local support, 24/7 network monitoring, and flexible, scalable solutions."
         correct: true
-      - label: "Taco Bell"
+      - label: "GPC only sells one internet product for every business customer."
         correct: false
-      - label: "Justin's leftover tacos in the fridge on floor 2"
+      - label: "GPC's main advantage is avoiding discovery and quoting from memory."
         correct: false
-    incorrect_feedback: "Nice try—unless you’re really craving Justin’s tacos."
-    affirmation_primary: "Blair has spoken—you’ve got great taste."
-    affirmation_secondary: "El Vallarta would be proud."
-    hint: "Not graded—just for fun."
+    incorrect_feedback: "Close, but the source points to local support, 24/7 monitoring, experience, and flexible solutions."
+    affirmation_primary: "Correct. Those are core reasons businesses choose GPC."
+    affirmation_secondary: "Use those points as anchors, then tailor the conversation to the customer."
+    hint: "Look for the broad value points in the source material."
 ---
 
 ## A note from the team
 
 Dear teammate,
 
-Welcome to Great Plains Communications. Whether you're new to telecom or you've carried a bag for years, we're glad you're on the team. Sales-Navigator exists so you spend less time hunting for answers and more time listening to customers—rules of engagement, product depth, competitive positioning, and the workflows that keep deals moving are never more than a few clicks away.
+Welcome to Great Plains Communications. Whether you are new to telecom or have carried a bag for years, Sales-Navigator is here to make the ramp easier. Use it to get oriented, prepare for customer conversations, and find the right module when a deal gets specific.
 
-Nobody expects you to know everything on day one. We do expect you to ask questions, use the resources here, and reach out when a deal needs an extra pair of eyes. That's how we get better together—and how our customers feel the difference between a vendor and a partner.
+Nobody expects you to know everything on day one. We do expect you to ask good questions, use the resources here, and reach out when a customer need deserves more depth. That is how we show up as a partner, not just another provider.
 
 With appreciation,
 
@@ -58,6 +58,6 @@ With appreciation,
 
 ## Where to go next
 
-- When you're ready to leave the tour behind, open **Sales Rules of Engagement** for pipeline protection and idle windows, or **Salesforce** if you want the CRM motion first.
-- Product depth lives under **Connectivity & Access onward** in the sidebar; collapse the rail with the **chevron** whenever you want more reading room.
-- **Fiber path** in the header is your progress ribbon across modules—same chrome as the rest of the hub, just focused on what you've visited and what's next.
+- If you are learning the sales motion, start with **Sales Rules of Engagement** or **Salesforce** before going deep on products.
+- If a customer conversation is coming up, use the product modules to connect business needs with the right part of the GPC portfolio.
+- Use scenarios and knowledge checks as practice, not trivia. They are there to help you rehearse the choices you will make in the field.

@@ -24,7 +24,7 @@ reference_files:
     sharepoint_url: 'https://gpcom.sharepoint.com/:b:/s/SalesforceRoadmap/IQCEYPLtQTCVS7H8aEnrSTrLARzxb0p97NTo17Rj8DeB_gg?e=RyiZUS'
 video_sections:
   - heading: Pre-Approved Fiber
-    intro: 'The shortcut only applies when the deal is genuinely plain-vanilla fiber. If payback or the dollars feel fuzzy, use the normal approval path.'
+    intro: 'The shortcut only applies when the deal is straightforward fiber. If payback or cost impact is uncertain, use the standard order process.'
     body: |
       [Pre-Approved Order Process Quick Reference — 07/23](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)
 
@@ -44,7 +44,7 @@ video_sections:
       - The path cannot cross railroads, streets, grassy areas, or run through buildings.
       - Zip 68102 is excluded.
       - Discounts max at 20% unless the term-based table allows more. For example, a 36-month term allows up to 27%; 27.01% no longer qualifies.
-      - Check product exclusions before you proceed.
+      - Excluded product lines include Colocation, SDWAN, Wireless Internet Broadband, GPC Managed Wi-Fi, On-Prem PBX, Business Security, and Dark Fiber.
   - heading: Approval Requirements Matrix
     intro: 'Payback, discounts, and dollar thresholds live here.'
     body: |
@@ -114,12 +114,12 @@ video_sections:
 
       - **Site Type starts the path.** Strategic Build, Build Fiber, All On-Net, and Off-Net do not route the same way.
       - **Services refine the path.** New service routing differs by SIA, DIA, Voice, Wave, Ethernet, SIP, UC, and other product combinations.
-      - **Automation applies costs when the guide says it can.** Some paths complete systematically; others route to OSP, Network Engineering, IPE, BSOL, or Off-Net review.
+      - **Automation applies costs when the guide says it can.** Some paths complete systematically; others route to the corresponding department for review.
       - **New + Existing on one Solution Site follows New.** Do not assume mixed service selections split cleanly into two independent paths.
       - **Multiple services follow the deepest review.** If one selected service needs heavier review, that path drives the routing.
-      - **Manual Validation skips automation.** Use it for real exceptions, not as a comfort click.
+      - **Manual Validation skips automation.** Use it only when automated routing will not fit the site.
   - heading: Change Order vs MAC
-    intro: 'How much is changing, and has billing started? Wrong path = rework—the PDFs have every click and screenshot.'
+    intro: 'How much is changing, and has billing started? That answer determines the workflow; the PDFs have every click and screenshot.'
     body: |
       [Change Order Process — Sales Team — 03/25](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Change%20Order%20Process%20-%20Sales%20Team%20-%200325.pdf?csf=1&web=1&e=STAe3w) · [Move-Add-Change Processes — Sales Team — 11/23](https://gpcom.sharepoint.com/:b:/r/sites/SalesforceRoadmap/Shared%20Documents/General/2025%20Salesforce%20Training%20Guides%20(Legacy%20BAU%20org)/Move-Add-Change%20Processes%20-%20Sales%20Team%20-%201123.pdf?csf=1&web=1&e=zURGTj)
 
@@ -140,7 +140,7 @@ video_sections:
       4. Keep the GPC Solution number on the document.
       5. Get signatures, upload the signed PDF, and send the package to the right workflow owners.
 
-      Notify the Sales Manager early if MRC, payback, or cost shifts. The guide also calls out PMO, Salesforce Admin, and CRC steps after the signed package is uploaded.
+      Notify the Sales Manager early if the change is significant or has a meaningful impact on MRC, payback, or additional costs. The signed package then goes to the right internal owners: PMO updates the project, Salesforce Administration makes the booking adjustment, and CRC handles billing changes.
 
       MAC path:
 
@@ -149,15 +149,15 @@ video_sections:
       Landmines:
 
       - Pending Billing or 7–10 Day Order can block Admin action until PMO or CRC weighs in.
-      - Very small CRC/BCC changes may go to businesscare@gpcom.com instead of Salesforce.
-      - The MAC guide calls out no AE commission for those narrow Business Care changes.
+      - Specific CRC/BCC add or change examples may go to businesscare@gpcom.com instead of being processed through Salesforce.
+      - The MAC guide calls out no AE commission when those narrow CRC/BCC adds or changes are handled directly.
 five_minute_summary: |
   - **Approval triggers:** Discounting, product exceptions, payback, churn, CapEx / net investment, and unfavorable economics are why approvals exist. They protect margin, investment discipline, and operational promises.
   - **Process-flow triggers:** What changed and has billing started? Those questions point you to Change Order, MAC, Cancellation, or Disconnect.
-  - Use Approval History on the GPC Solution to approve, reject, or recall. Put the Solution ID on every form and attachment so Operations can match documents to the right workflow.
+  - Use Approval History on the GPC Solution to approve, reject, reassign, or recall. Do not remove the GPC Solution number from the Change Order form, and include the Salesforce link when you email the signed package.
   - Change Orders are for post-signature changes before billing starts. MACs are for changes to active billing contracts.
   - Use Cancellation before billing when all services are coming out; use Disconnect after billing.
-  - Request Manual Validation only for real exceptions. It pulls the site out of automated routing and slows the deal down.
+  - Request Manual Validation only for real exceptions. It bypasses automated routing and sends each department through review.
 knowledge_checks:
   - question: "You just moved an opportunity to Closed Won, but the customer suddenly wants to upgrade their internet speed before the circuit is installed. What process do you use?"
     options:
@@ -173,15 +173,15 @@ knowledge_checks:
       - "Only for genuine edge cases and exceptions that require a human to review the site build."
       - "Whenever you want to expedite the deal through the system."
     correct_index: 1
-    explanation: "Manual validation pulls the deal out of the automated fast lane. Use it rarely, or you are intentionally slowing down your own install."
+    explanation: "Manual validation bypasses automated routing and sends each department through review, so it should be reserved for genuine exceptions."
 
-  - question: "You are attaching a custom pricing spreadsheet to the Salesforce record for approval. What must be included on the document?"
+  - question: "You are completing a Change Order form after the customer changes part of a Closed/Won, not-yet-billed contract. What should stay on the form?"
     options:
       - "The VP of Sales' signature."
-      - "The unique Solution ID."
+      - "The GPC Solution number."
       - "The customer's billing account number."
     correct_index: 1
-    explanation: "Without the Solution ID, Operations cannot tie your rogue attachment to the correct workflow. Add the ID."
+    explanation: "The Change Order guide says not to remove the GPC Solution number because it helps Salesforce Admin, PMO, and CRC process the request behind the scenes."
 
 scenarios:
   - title: The Pre-Install Pivot
@@ -191,18 +191,18 @@ scenarios:
       - label: Submit a Move-Add-Change (MAC) ticket since they already signed the contract.
         feedback: 'Incorrect. MACs are only for active, billing services. You need to submit a pre-billing Change Order.'
       - label: Submit a pre-billing Change Order to modify the existing un-installed solution.
-        feedback: Correct. This keeps the install moving without messing up the billing triggers.
+        feedback: Correct. This keeps the request in the pre-billing Change Order workflow instead of sending it through a post-billing MAC process.
 discovery_questions:
-  - 'When a GPC Solution is in approval, how do you track approve, reject, or recall—and who needs to act next?'
+  - 'When a GPC Solution is in approval, how do you approve, reject, reassign, or recall—and who needs to act next?'
   - 'After Closed Won but before billing starts, what kind of change uses a Change Order versus a MAC?'
-  - What must appear on every custom pricing sheet or attachment so Operations can match it to the right solution?
+  - What should stay on the Change Order form, and what link belongs in the signed-package email?
   - When would you use Request Manual Validation—and when should you avoid it?
   - How do you handle a full disconnect versus a speed or service change on an already billing circuit?
 ---
 
 ## Overview
 
-This module has two different jobs. **Approval triggers** decide whether the business needs extra review because of discounting, product rules, payback, churn, CapEx / net investment, or unfavorable economics. **Process-flow triggers** decide what workflow to use when something changes, especially whether billing has started.
+This module has two jobs. **Approval triggers** decide whether the business needs extra review because of discounting, product rules, payback, churn, CapEx / net investment, or unfavorable economics. **Process-flow triggers** decide what workflow to use when something changes, especially whether billing has started.
 
 - GPC Solution: the core object where approvals, pricing, and technical scoping live.
 - Approval Requirements Matrix: the business review lens for discounting, product, payback, churn, and investment thresholds.
@@ -222,11 +222,11 @@ This module has two different jobs. **Approval triggers** decide whether the bus
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["I'll just click Manual Validation to make sure engineering looks at it."]
-The slow lane: manual validation breaks automated routing and makes the deal take longer. Use it only when there is a known, unmappable physical barrier at the site.
+The slow lane: manual validation bypasses automated routing and sends each department through review. Use it only when the site truly needs manual review.
 :::
 
-::: flip ["I attached the pricing sheet, they'll figure it out."]
-The orphaned document: Operations processes hundreds of solutions a week. If the custom pricing sheet or floor plan does not show the GPC Solution ID, the deal can stall while people figure out where it belongs.
+::: flip ["I uploaded the signed form, they'll figure it out."]
+The orphaned document: do not remove the GPC Solution number from the Change Order form, and include the Salesforce link when you email the signed package. That is how Salesforce Admin, PMO, and CRC stay tied to the right request.
 :::
 
 ::: flip ["The customer signed, so I need to submit a MAC to change the order."]
@@ -241,8 +241,8 @@ The MAC mistake: MACs are for active accounts that have already started billing.
 
 Use the reference files as job aids once you know which lane you are in:
 
-- Plain-vanilla new fiber inside the pre-approved rules: start with the Pre-Approved Order Process guide.
+- Straightforward new fiber inside the pre-approved rules: start with the Pre-Approved Order Process guide.
 - Payback, discount, churn, or net investment questions: open the Approval Requirements Matrix.
 - Customer signed but billing has not started: use Change Order.
 - Service is already billing: use MAC, Cancellation, or Disconnect based on what is changing.
-- Site routing looks wrong or physically unmappable: consider Manual Validation, but expect the deal to slow down.
+- Site routing needs an exception review: consider Manual Validation, but expect automated routing to be bypassed.

@@ -1,7 +1,7 @@
 ---
 id: "competitive-positioning"
 title: "Competitive Positioning"
-summary: "Discovery first. Business risk. Undeniable proof."
+summary: "Discovery first. Facts over slogans."
 sensitivity: "public"
 reference_files:
   - label: "Product battle cards"
@@ -60,16 +60,16 @@ video_sections:
         pages:
           - src: "assets/battle-cards/competitive/uc-competitor-battle-card-031226/page-001.png"
 discovery_questions:
-  - "Who answers the phone at 2 a.m. if your primary circuit goes down—and how long does it take them to respond on-site?"
+  - "Who answers the phone if your primary circuit goes down, and how quickly can they respond?"
   - "Which applications break first if upload latency spikes or a circuit drops? What does an hour of downtime cost the business?"
   - "How are your locations connected today—VPN over shared broadband, MPLS, or Ethernet? When does that contract expire?"
   - "Are you running SaaS applications like O365, Salesforce, or cloud ERP? Where are those workloads hosted?"
   - "What does your current vendor do when there's a service issue—do they have local field technicians or is everything remote?"
 five_minute_summary: |
-  - **The Framework:** Map competitor weaknesses to GPC strengths using business risk and proof points (local support, NOC, redundancy). Avoid generic claims of superiority.
-  - **Avoid Landmines:** Never make personal attacks or use absolutes. Verify battle-card stats with marketing before sharing externally, and bring in SEs early for architecture discussions.
-  - **Handling Objections:** When countering LEO satellite or price pressure, anchor the conversation on uptime, latency, and the total cost of downtime rather than just price or speed.
-  - **Using Tech Cards:** Lead with the customer's pain, wrap it in a GPC solution, ask qualifying questions, and provide verified proof.
+  - **The Framework:** Start with the customer's sites, apps, and outage risk. Then map the competitor's pitch to sourced GPC proof: local support, NOC monitoring, redundancy, symmetrical fiber, or service consolidation.
+  - **Avoid Landmines:** Do not use personal attacks, absolutes, or numbers from memory. Use the approved battle cards and keep claims tied to what the source actually says.
+  - **Handling Objections:** Against satellite or price pressure, move the conversation from headline speed or monthly cost to uptime, latency, support, and what downtime does to the business.
+  - **Using Tech Cards:** Lead with the pain, ask the qualifying questions on the card, and only then position the matching GPC solution.
 
 knowledge_checks:
   - question: "Before positioning against a competitor's strength, what should you do first?"
@@ -83,18 +83,10 @@ knowledge_checks:
   - question: "Which behavior is a stated landmine to avoid?"
     options:
       - "Acknowledging where a competitor is legitimately strong"
-      - "Citing battle-card statistics externally without confirming currency with marketing"
+      - "Quoting battle-card numbers from memory or turning them into guarantees"
       - "Using qualifying questions to earn a technical conversation"
     correct_index: 1
-    explanation: "Don't cite stats externally until cleared."
-
-  - question: "When should you engage SE early?"
-    options:
-      - "Only after the customer signs and the implementation team opens the project"
-      - "Never; sales should own topology, security, and feasibility design alone"
-      - "For complex WAN, security, hybrid, regulated, feasibility, or RFP validation"
-    correct_index: 2
-    explanation: "Complex WAN/security/hybrid/regulated/RFP → SE."
+    explanation: "Use the approved cards and source context. A battle-card number is not the same thing as a contractual guarantee."
 
   - question: "What should competitor → GPC responses pair for each angle?"
     options:
@@ -136,14 +128,6 @@ knowledge_checks:
     correct_index: 2
     explanation: "Ops fit—not logo or consumer reviews."
 
-  - question: "What is project manager (PM) engagement used for per the module?"
-    options:
-      - "Replacing all sales discovery on the first call"
-      - "Delivery timelines, construction, and contract alignment"
-      - "Writing competitor press releases"
-    correct_index: 1
-    explanation: "PM = delivery/construction/contract alongside SE."
-
   - question: "Per the Omaha Metro battle card, what is one structural weakness of Allo that GPC reps can lean into?"
     options:
       - "Allo is always the lowest-cost provider, so GPC should avoid the topic."
@@ -156,7 +140,7 @@ knowledge_checks:
   - question: "On a Managed Firewall opportunity, the customer says 'we already have someone doing this.' Per the Managed Firewall battle card, what's the right framing to lead with?"
     options:
       - "Aggressively detail every feature GPC's firewall has that the incumbent's doesn't."
-      - "Service consolidation — fewer vendors, single bill, single point of contact, 24/7 SOC. Don't try to win 'we're better at firewalls than your MSP.'"
+      - "Service consolidation — fewer vendors, single bill, single point of contact, and SOC-backed monitoring. Don't try to win 'we're better at firewalls than your MSP.'"
       - "Drop the topic — if they already have a firewall vendor, the deal is dead."
     correct_index: 1
     explanation: "The Managed Firewall battle card explicitly names 'most customers already have firewalls from someone' as Challenge #1. The defensible pivot is operational simplicity, not feature combat."
@@ -202,7 +186,7 @@ scenarios:
 ## Positioning snapshot
 
 ::: elevator [Elevator Pitch]
-If you're tired of national carriers treating you like an account number when things break, that's where we step in. We own our Midwest fiber, we run a 24/7 NOC, and we dispatch local teams. We don't just compete on price; we compete on keeping your business online.
+If you're tired of national carriers treating you like an account number when things break, that's where we step in. We bring Midwest fiber, local support, and 24/7 NOC monitoring to the conversation. We do not need to win every price comparison; we need to prove why staying online matters.
 :::
 
 
@@ -227,11 +211,11 @@ If you're tired of national carriers treating you like an account number when th
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["The national carrier is cheaper."]
-Tie to TCO: cost of an hour down, support model, redundancy depth, rate stability—not price alone. No verbal exceptions.
+Tie to impact: cost of an hour down, support model, redundancy, and contract stability. Do not make pricing promises in the room.
 :::
 
 ::: flip ["Starlink/satellite is good enough."]
-Acknowledge coverage; pivot to latency, weather risk, SLA for VoIP/telehealth, and predictable symmetrical paths.
+Acknowledge coverage; pivot to latency, weather and obstruction risk, support, and predictable symmetrical paths for VoIP, POS, cloud, and telehealth.
 :::
 
 ::: flip ["We already ran a speed test—your fiber looks the same."]
@@ -251,14 +235,14 @@ Differentiate last mile, routing, peering, and repair SLAs—map to **their** ap
 
 ---
 
-## How We Win — by competitor (field reference)
+## How We Win - by competitor (field reference)
 
-**Truth lives on the battle-card tabs above.** What follows is **quick hits** before you open the card.
+**Truth lives on the battle-card tabs above.** Use these quick hits to choose the right card, not as a replacement for it.
 
 ### National carriers
 
 - **M&A (Cox / Charter / Spectrum):** Stability and continuity—**not** fear, uncertainty, and doubt (FUD) about the acquisition.
-- **Scale:** Symmetrical fiber and footprint vs. coax story—then tie to **their** downtime / latency risk.
+- **Scale:** Symmetrical fiber and local support vs. coax or mega-carrier story—then tie to **their** downtime and latency risk.
 
 ### Omaha metro
 
@@ -273,8 +257,8 @@ Differentiate last mile, routing, peering, and repair SLAs—map to **their** ap
 
 ### Managed Firewall
 
-They already have someone (Challenge #1). Sell **consolidation**—not “we’re better than your MSP.”
+They already have someone (Challenge #1). Sell **consolidation**: Internet, voice, SD-WAN, firewall, and network security on one bill through one provider.
 
 ### 5G Wireless Backup
 
-**Dual-carrier choice, one bill, local + NOC**—vs. another direct-carrier relationship. Card skews **small sites** (see card for verticals).
+Lead with **automatic failover**, critical-app prioritization, NOC monitoring, and best-signal provider selection across Verizon/AT&T-backed service. Card skews **small sites**; confirm fit before positioning it as a backup answer.

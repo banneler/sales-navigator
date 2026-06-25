@@ -25,7 +25,7 @@
         "capacity": "400G STD"
       },
       "title": "The Network",
-      "subtitle": "National Footprint & Coverages",
+      "subtitle": "National Footprint & Coverage",
       "placeholder": "Load National_Map.svg",
       "file": "backbone.png",
       "type": "map",
