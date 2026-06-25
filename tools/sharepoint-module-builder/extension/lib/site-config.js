@@ -37,6 +37,14 @@ export const TOUR_STOPS = [
     navPatterns: [/m\s*&\s*p/i, /methods\s*&\s*procedures/i, /\bmnp\b/i],
   },
   {
+    id: 'sales-processes',
+    label: 'Sales Processes',
+    url: 'https://gpcom.sharepoint.com/sites/gpcSales/Sales%20Process/Forms/AllItems.aspx',
+    purpose:
+      'Sales Process document library — customer forms, process guidelines, and motion-specific folders (ABM, OBR, etc.).',
+    scrollTour: true,
+  },
+  {
     id: 'rate-cards',
     label: 'Rate Cards',
     url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Rate%20Cards.aspx',

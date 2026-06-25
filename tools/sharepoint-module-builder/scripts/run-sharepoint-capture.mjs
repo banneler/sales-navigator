@@ -151,6 +151,71 @@ async function scrollContentTo(page, y) {
   return page.evaluate((targetY) => window.spScrollTo(targetY), y);
 }
 
+/** Map tour stop labels to heading text(s) from live page profile. */
+const HEADING_ALIASES = {
+  'quick links — tools to support every deal': ['sales resources'],
+  'proposal engine': ['proposal engine'],
+  'product collateral': ['product collateral'],
+  'battle cards': ['product battle cards', 'competitive battle cards'],
+  'uc demos': ['uc demos'],
+  'zoominfo resources': ['zoominfo resources'],
+  'product training for sales': ['product training for sales'],
+};
+
+async function scrollToStop(page, stop, profileHeadings = []) {
+  await installScrollHelpers(page);
+  return page.evaluate(
+    ({ label, fallbackY, headings, aliases }) => {
+      const clean = (s) => String(s || '').replace(/\s+/g, ' ').trim();
+      const want = clean(label).toLowerCase();
+      const keys = aliases[want] || [want.replace(/^quick links — /i, '').trim() || want];
+
+      const profileMatch = (headings || [])
+        .filter((h) => {
+          const t = clean(h.text).toLowerCase();
+          return keys.some((k) => t === k || t.includes(k));
+        })
+        .sort((a, b) => b.top - a.top)[0];
+      if (profileMatch) {
+        return window.spScrollTo(Math.max(0, Math.floor(profileMatch.top - 56)));
+      }
+
+      const nodes = [
+        ...document.querySelectorAll(
+          'h1,h2,h3,h4,[role="heading"],[data-automation-id="contentScrollRegion"] h2, [data-automation-id="contentScrollRegion"] h3'
+        ),
+      ];
+
+      const scrollNode = (node) => {
+        const y = Math.max(0, Math.floor(window.spContentY(node) - 56));
+        return window.spScrollTo(y);
+      };
+
+      const pickLastMatch = (pred) => {
+        const matched = nodes.filter((node) => {
+          const t = clean(node.textContent).toLowerCase();
+          return t && t.length <= 100 && pred(t, node);
+        });
+        if (!matched.length) return null;
+        matched.sort((a, b) => window.spContentY(b) - window.spContentY(a));
+        return matched[0];
+      };
+
+      let node = pickLastMatch((t) => keys.some((k) => t === k));
+      if (!node) node = pickLastMatch((t) => keys.some((k) => t.includes(k) && k.length >= 8));
+      if (node) return scrollNode(node);
+
+      return window.spScrollTo(fallbackY);
+    },
+    {
+      label: stop.label,
+      fallbackY: stop.y,
+      headings: profileHeadings,
+      aliases: HEADING_ALIASES,
+    }
+  );
+}
+
 async function preparePageForCapture(page, scrollCfg) {
   const vp = scrollCfg.viewport ?? { width: 1920, height: 1200 };
   await page.setViewportSize(vp);
@@ -382,7 +447,7 @@ async function capturePage(page, stop, pageIndex, scrollCfg, site) {
   for (let i = 0; i < stops.length; i++) {
     const s = stops[i];
     process.stdout.write(`  screenshot ${i + 1}/${stops.length}: ${s.label.slice(0, 60)}…\n`);
-    const actualY = await scrollContentTo(page, s.y);
+    const actualY = await scrollToStop(page, s, profile.headings || []);
     await sleep(scrollCfg.settleMs);
     await hideChrome(page, scrollCfg.hideChromeSelectors);
     await sleep(200);
@@ -416,6 +481,8 @@ async function capturePage(page, stop, pageIndex, scrollCfg, site) {
 
 async function main() {
   const register = process.argv.includes('--register');
+  const onlyArg = process.argv.find((a) => a.startsWith('--only='));
+  const onlyIds = onlyArg ? onlyArg.slice(7).split(',').map((s) => s.trim()).filter(Boolean) : null;
   const { TOUR_STOPS, SCROLL_CAPTURE, SITE } = await loadSiteConfig();
 
   let playwright;
@@ -442,12 +509,33 @@ async function main() {
     pages: [],
   };
 
-  let pageIndex = 0;
-  for (const stop of TOUR_STOPS) {
+  /** @type {Array<object>} */
+  let mergedPages = [];
+  const exportPath = path.join(OUT_DIR, 'capture-export.json');
+  if (onlyIds) {
+    try {
+      const prev = JSON.parse(await fs.readFile(exportPath, 'utf8'));
+      mergedPages = prev.pages || [];
+    } catch {
+      mergedPages = [];
+    }
+  }
+
+  for (let tourIndex = 0; tourIndex < TOUR_STOPS.length; tourIndex++) {
+    const stop = TOUR_STOPS[tourIndex];
+    if (onlyIds && !onlyIds.includes(stop.id)) continue;
     console.log(`\nCapturing: ${stop.label}`);
-    const captured = await capturePage(page, stop, pageIndex, SCROLL_CAPTURE, SITE);
-    exportJson.pages.push(captured);
-    pageIndex++;
+    const captured = await capturePage(page, stop, tourIndex, SCROLL_CAPTURE, SITE);
+    if (onlyIds) {
+      mergedPages = mergedPages.filter((p) => p.id !== stop.id);
+      mergedPages.push(captured);
+    } else {
+      exportJson.pages.push(captured);
+    }
+  }
+
+  if (onlyIds) {
+    exportJson.pages = TOUR_STOPS.map((s) => mergedPages.find((p) => p.id === s.id)).filter(Boolean);
   }
 
   await fs.writeFile(

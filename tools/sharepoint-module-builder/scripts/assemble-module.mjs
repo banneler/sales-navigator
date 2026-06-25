@@ -16,6 +16,7 @@ const ROOT = path.join(SCRIPT_DIR, '..', '..', '..');
 
 const MODULE_ID = 'sales-sharepoint-hub';
 const MODULE_TITLE = 'GPC Sales SharePoint';
+const SITE_HOME_URL = 'https://gpcom.sharepoint.com/sites/gpcSales';
 const ASSET_DIR = 'assets/sharepoint-hub';
 
 /** Rep-facing commentary keyed by page id, then label substring. */
@@ -36,9 +37,18 @@ const TOUR_COMMENTARY = {
   },
   mnps: {
     'quick link': 'Methods & Procedures pages also expose quick links when present — use them the same way as on Sales Resources.',
-    'processes': 'Sales processes and procedures live here: how to run motions, handoffs, and operational steps the org expects reps to follow.',
-    'rules of engagement': 'Rules of Engagement and related SOPs define who owns what in the field — check here before escalating or crossing team lines.',
-    'training resources': 'Training resources under M&Ps supplement product training with process-specific how-tos.',
+    'm&ps overview': 'The M&Ps landing page links into Sales Processes, Rules of Engagement, and Training Resources — start here for operational how-tos.',
+    'sales processes': 'The M&Ps landing page links into Sales Processes, Rules of Engagement, and Training Resources — start here for operational how-tos.',
+    'methods': 'The M&Ps landing page links into Sales Processes, Rules of Engagement, and Training Resources — start here for operational how-tos.',
+    'procedures': 'The M&Ps landing page links into Sales Processes, Rules of Engagement, and Training Resources — start here for operational how-tos.',
+  },
+  'sales-processes': {
+    'sales process': 'The Sales Process library is the repository for approved process documents, customer forms, and guidelines. Always pull from here — not local copies.',
+    'all documents': 'Start in All Documents to browse top-level folders. Each folder groups forms and SOPs for a specific sales motion.',
+    'account based marketing': 'The ABM folder holds account-based marketing process docs and customer-facing forms for that motion.',
+    'operational business review': 'The OBR folder holds operational business review templates, guides, and supporting materials.',
+    'abm': 'The ABM folder holds account-based marketing process docs and customer-facing forms for that motion.',
+    'obr': 'The OBR folder holds operational business review templates, guides, and supporting materials.',
   },
   'rate-cards': {
     'rate cards overview': 'Rate Cards is the pricing authority on gpcSales. Open the live page whenever you quote — screenshots here are orientation only.',
@@ -200,9 +210,12 @@ function buildBodyMarkdown() {
 
 function buildFrontMatter(exportJson, videoSections) {
   const pages = exportJson.pages || [];
-  const refs = pages
-    .filter((p) => p.url)
-    .map((p) => ({ label: p.label, sharepoint_url: p.url }));
+  const refs = [
+    {
+      label: MODULE_TITLE,
+      sharepoint_url: exportJson.site || SITE_HOME_URL,
+    },
+  ];
 
   const fiveMin = pages
     .map((p) => `- **${p.label}:** ${p.purpose}`)
@@ -236,7 +249,7 @@ function buildFrontMatter(exportJson, videoSections) {
   const yaml = `---
 id: ${yamlQuote(MODULE_ID)}
 title: ${yamlQuote(MODULE_TITLE)}
-summary: "Navigate gpcSales SharePoint: Sales home, Sales Resources, M&Ps, and Rate Cards."
+summary: "Navigate gpcSales SharePoint: Sales home, Sales Resources, M&Ps, Sales Processes, and Rate Cards."
 sensitivity: "internal"
 reference_files:
 ${refs.map((r) => `  - label: ${yamlQuote(r.label)}\n    sharepoint_url: ${yamlQuote(r.sharepoint_url)}`).join('\n')}

@@ -48,6 +48,11 @@ export function refineScrollStops(stops, cfg = {}, pageId = '') {
 
   list.sort((a, b) => a.y - b.y);
 
+  if (pageId === 'sales-resources') {
+    // Quick-link tiles can produce false "ZoomInfo" banner stops near the page top.
+    list = list.filter((s) => !(s.kind === 'banner' && /zoominfo/i.test(s.label)));
+  }
+
   const canonical = CANONICAL_SECTIONS[pageId];
   if (canonical) {
     const picked = pickCanonicalSections(list, canonical);
@@ -75,14 +80,19 @@ const CANONICAL_SECTIONS = {
     { pattern: /quick link|tools to support/i, label: 'Quick links — Tools to support every deal' },
     { pattern: /proposal engine/i, label: 'Proposal Engine' },
     { pattern: /product collateral/i, label: 'Product Collateral' },
-    { pattern: /battle cards/i, label: 'Battle Cards' },
-    { pattern: /uc demos/i, label: 'UC Demos' },
-    { pattern: /zoominfo/i, label: 'ZoomInfo Resources' },
-    { pattern: /product training|sales training/i, label: 'Product Training for Sales' },
+    { pattern: /product battle cards/i, label: 'Battle Cards' },
+    { pattern: /^uc demos/i, label: 'UC Demos' },
+    { pattern: /^zoominfo resources/i, label: 'ZoomInfo Resources' },
+    { pattern: /^product training for sales/i, label: 'Product Training for Sales' },
   ],
   mnps: [
     { pattern: /quick link|tools to support/i, label: 'Quick links — Tools to support every deal' },
-    { pattern: /methods|procedures|sales processes|rules of engagement|training resources/i, label: 'Sales processes & procedures' },
+    { pattern: /sales processes|rules of engagement|training resources|methods|procedures/i, label: 'M&Ps overview' },
+  ],
+  'sales-processes': [
+    { pattern: /sales process|all documents/i, label: 'Sales Process library' },
+    { pattern: /account based marketing|\babm\b/i, label: 'Account Based Marketing folder' },
+    { pattern: /operational business review|\bobr\b/i, label: 'Operational Business Review folder' },
   ],
   'rate-cards': [
     { pattern: /quick link|tools to support|rate cards/i, label: 'Rate Cards overview' },
@@ -99,10 +109,14 @@ function pickCanonicalSections(stops, sections) {
   /** @type {typeof stops} */
   const picked = [];
   for (const sec of sections) {
-    const match = stops.find((s) => sec.pattern.test(s.label));
+    const matches = stops.filter((s) => sec.pattern.test(s.label));
+    const match =
+      matches.find((s) => s.kind === 'heading') ||
+      [...matches].filter((s) => s.kind !== 'banner').sort((a, b) => a.y - b.y)[0] ||
+      [...matches].sort((a, b) => a.y - b.y)[0];
     if (match) {
       picked.push({ ...match, label: sec.label });
     }
   }
-  return picked.length ? picked : stops;
+  return picked.sort((a, b) => a.y - b.y);
 }

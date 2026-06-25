@@ -1,21 +1,16 @@
 ---
 id: "sales-sharepoint-hub"
 title: "GPC Sales SharePoint"
-summary: "Navigate gpcSales SharePoint: Sales home, Sales Resources, M&Ps, and Rate Cards."
+summary: "Navigate gpcSales SharePoint: Sales home, Sales Resources, M&Ps, Sales Processes, and Rate Cards."
 sensitivity: "internal"
 reference_files:
-  - label: "Sales home"
+  - label: "GPC Sales SharePoint"
     sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales"
-  - label: "Sales Resources"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx"
-  - label: "M&Ps"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/M%26Ps.aspx"
-  - label: "Rate Cards"
-    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Rate%20Cards.aspx"
 five_minute_summary: |
   - **Sales home:** Main landing page — leadership updates, previous month results, quick links into the rest of the site.
   - **Sales Resources:** Collateral hub — battle cards, product sheets, competitive assets, and deep links by product family (long scroll).
   - **M&Ps:** Methods & Procedures — operational sales playbooks, process docs, and how-to guides for reps.
+  - **Sales Processes:** Sales Process document library — customer forms, process guidelines, and motion-specific folders (ABM, OBR, etc.).
   - **Rate Cards:** Pricing and rate-card library — verify market-specific rates here before quoting.
 video_sections_presentation: scroll_tour
 video_sections_continuous: true
@@ -63,18 +58,24 @@ video_sections:
       - heading: "Quick links"
         commentary: "Methods & Procedures pages also expose quick links when present — use them the same way as on Sales Resources."
         src: "assets/sharepoint-hub/02-quick-links-tools-to-support-every-deal-00.png"
-      - heading: "Sales processes & procedures"
-        commentary: "Sales processes and procedures live here: how to run motions, handoffs, and operational steps the org expects reps to follow."
-        src: "assets/sharepoint-hub/02-sales-processes-procedures-01.png"
+      - heading: "M&Ps overview"
+        commentary: "The M&Ps landing page links into Sales Processes, Rules of Engagement, and Training Resources — start here for operational how-tos."
+        src: "assets/sharepoint-hub/02-m-ps-overview-01.png"
+  - heading: "Sales Processes"
+    intro: "Sales Process document library — customer forms, process guidelines, and motion-specific folders (ABM, OBR, etc.)."
+    scroll_tour:
+      - heading: "Sales Process library"
+        commentary: "The Sales Process library is the repository for approved process documents, customer forms, and guidelines. Always pull from here — not local copies."
+        src: "assets/sharepoint-hub/03-sales-process-library-00.png"
   - heading: "Rate Cards"
     intro: "Pricing and rate-card library — verify market-specific rates here before quoting."
     scroll_tour:
       - heading: "Rate Cards overview"
         commentary: "Rate Cards is the pricing authority on gpcSales. Open the live page whenever you quote — screenshots here are orientation only."
-        src: "assets/sharepoint-hub/03-rate-cards-overview-00.png"
+        src: "assets/sharepoint-hub/04-rate-cards-overview-00.png"
       - heading: "Retail Rate Cards"
         commentary: "Retail rate cards cover customer-facing pricing by market and product. Match the customer’s market before you build a solution or proposal."
-        src: "assets/sharepoint-hub/03-retail-rate-cards-01.png"
+        src: "assets/sharepoint-hub/04-retail-rate-cards-01.png"
 knowledge_checks:
   - question: "Where should a rep look first for leadership results and monthly context?"
     options:

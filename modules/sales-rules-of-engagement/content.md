@@ -129,7 +129,7 @@ reference_files:
 
   - label: "Sales Rules of Engagement (ROE) — Revised August 2025"
 
-    sharepoint_url: "https://gpcom.sharepoint.com/:b:/r/sites/gpcSales/ROE/Sales%20Rules%20of%20Engagement%20(ROE)%20-%20Revised%20August%2025.pdf?csf=1&web=1&e=7aw2jN"
+    sharepoint_url: "https://gpcom.sharepoint.com/sites/gpcSales/ROE/Forms/AllItems.aspx?npsAction=createList"
 ---
 
 ## Overview
