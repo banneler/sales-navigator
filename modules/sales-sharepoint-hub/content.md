@@ -18,62 +18,63 @@ five_minute_summary: |
   - **M&Ps:** Methods & Procedures — operational sales playbooks, process docs, and how-to guides for reps.
   - **Rate Cards:** Pricing and rate-card library — verify market-specific rates here before quoting.
 video_sections_as_tabs: true
+video_sections_presentation: scroll_tour
 video_sections_tabs_aria_label: "SharePoint guided tour"
 video_sections:
   - heading: "Sales home"
     intro: "Main landing page — leadership updates, previous month results, quick links into the rest of the site."
-    image_library:
-      - title: "Quick links — Tools to support every deal"
-        pages:
-          - src: "assets/sharepoint-hub/00-quick-links-tools-to-support-every-deal-00.png"
-      - title: "Monthly sales results"
-        pages:
-          - src: "assets/sharepoint-hub/00-monthly-sales-results-01.png"
-      - title: "Sales events"
-        pages:
-          - src: "assets/sharepoint-hub/00-sales-events-02.png"
+    scroll_tour:
+      - heading: "Quick links"
+        commentary: "Start on the Sales home page. The quick-link strip at the top is the fastest way into high-traffic folders without digging through navigation."
+        src: "assets/sharepoint-hub/00-quick-links-tools-to-support-every-deal-00.png"
+      - heading: "Monthly sales results"
+        commentary: "Leadership posts previous-month results here. Scan this block at the start of the week so you know what numbers and themes leadership is tracking."
+        src: "assets/sharepoint-hub/00-monthly-sales-results-01.png"
+      - heading: "Sales events"
+        commentary: "Sales events, deadlines, and field announcements show up on the home page — check here so you do not miss a SPIFF window or enablement session."
+        src: "assets/sharepoint-hub/00-sales-events-02.png"
   - heading: "Sales Resources"
     intro: "Collateral hub — battle cards, product sheets, competitive assets, and deep links by product family (long scroll)."
-    image_library:
-      - title: "Quick links — Tools to support every deal"
-        pages:
-          - src: "assets/sharepoint-hub/01-quick-links-tools-to-support-every-deal-00.png"
-      - title: "Proposal Engine"
-        pages:
-          - src: "assets/sharepoint-hub/01-proposal-engine-01.png"
-      - title: "Product Collateral"
-        pages:
-          - src: "assets/sharepoint-hub/01-product-collateral-02.png"
-      - title: "Battle Cards"
-        pages:
-          - src: "assets/sharepoint-hub/01-battle-cards-03.png"
-      - title: "UC Demos"
-        pages:
-          - src: "assets/sharepoint-hub/01-uc-demos-04.png"
-      - title: "ZoomInfo Resources"
-        pages:
-          - src: "assets/sharepoint-hub/01-zoominfo-resources-05.png"
-      - title: "Product Training for Sales"
-        pages:
-          - src: "assets/sharepoint-hub/01-product-training-for-sales-06.png"
+    scroll_tour:
+      - heading: "Quick links"
+        commentary: "The blue quick-link tiles are the hub’s front door — jump straight to battle cards, collateral libraries, templates, and other tools reps use every day."
+        src: "assets/sharepoint-hub/01-quick-links-tools-to-support-every-deal-00.png"
+      - heading: "Proposal Engine"
+        commentary: "Proposal Engine builds customer-ready proposals from approved content. Use this instead of rebuilding decks or copying old attachments."
+        src: "assets/sharepoint-hub/01-proposal-engine-01.png"
+      - heading: "Product Collateral"
+        commentary: "Product Collateral is the document library for datasheets, one-pagers, and approved PDFs. Pull from here before sending anything external."
+        src: "assets/sharepoint-hub/01-product-collateral-02.png"
+      - heading: "Battle Cards"
+        commentary: "Battle cards cover both product talk tracks and competitive responses. Review the relevant card before customer calls or RFP work."
+        src: "assets/sharepoint-hub/01-battle-cards-03.png"
+      - heading: "UC Demos"
+        commentary: "UC Demos holds recorded walkthroughs and demo assets for voice and collaboration products — useful when you need a quick refresher."
+        src: "assets/sharepoint-hub/01-uc-demos-04.png"
+      - heading: "ZoomInfo Resources"
+        commentary: "ZoomInfo Resources centralizes prospecting and account-intelligence links tied to your GPC workflow."
+        src: "assets/sharepoint-hub/01-zoominfo-resources-05.png"
+      - heading: "Product Training for Sales"
+        commentary: "Product Training for Sales is the internal enablement shelf — videos and guides meant for reps, not customer-facing send-alongs."
+        src: "assets/sharepoint-hub/01-product-training-for-sales-06.png"
   - heading: "M&Ps"
     intro: "Methods & Procedures — operational sales playbooks, process docs, and how-to guides for reps."
-    image_library:
-      - title: "Quick links — Tools to support every deal"
-        pages:
-          - src: "assets/sharepoint-hub/02-quick-links-tools-to-support-every-deal-00.png"
-      - title: "Sales processes & procedures"
-        pages:
-          - src: "assets/sharepoint-hub/02-sales-processes-procedures-01.png"
+    scroll_tour:
+      - heading: "Quick links"
+        commentary: "Methods & Procedures pages also expose quick links when present — use them the same way as on Sales Resources."
+        src: "assets/sharepoint-hub/02-quick-links-tools-to-support-every-deal-00.png"
+      - heading: "Sales processes & procedures"
+        commentary: "Sales processes and procedures live here: how to run motions, handoffs, and operational steps the org expects reps to follow."
+        src: "assets/sharepoint-hub/02-sales-processes-procedures-01.png"
   - heading: "Rate Cards"
     intro: "Pricing and rate-card library — verify market-specific rates here before quoting."
-    image_library:
-      - title: "Rate Cards overview"
-        pages:
-          - src: "assets/sharepoint-hub/03-rate-cards-overview-00.png"
-      - title: "Retail Rate Cards"
-        pages:
-          - src: "assets/sharepoint-hub/03-retail-rate-cards-01.png"
+    scroll_tour:
+      - heading: "Rate Cards overview"
+        commentary: "Rate Cards is the pricing authority on gpcSales. Open the live page whenever you quote — screenshots here are orientation only."
+        src: "assets/sharepoint-hub/03-rate-cards-overview-00.png"
+      - heading: "Retail Rate Cards"
+        commentary: "Retail rate cards cover customer-facing pricing by market and product. Match the customer’s market before you build a solution or proposal."
+        src: "assets/sharepoint-hub/03-retail-rate-cards-01.png"
 knowledge_checks:
   - question: "Where should a rep look first for leadership results and monthly context?"
     options:
@@ -126,7 +127,7 @@ Sales Resources is a **long single page**. Work top-to-bottom:
 3. **Product collateral** — datasheets and approved customer-facing PDFs.
 4. **Deep links** — jump to product-family folders; do not quote from memory.
 
-Use the screenshot tour in the tabs below as a map. Always open the live SharePoint link when forwarding material.
+Use the guided scroll tour in the tabs below as a map. Always open the live SharePoint link when forwarding material.
 
 ## M&Ps vs Rate Cards
 

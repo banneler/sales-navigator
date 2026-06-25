@@ -18,6 +18,51 @@ const MODULE_ID = 'sales-sharepoint-hub';
 const MODULE_TITLE = 'GPC Sales SharePoint Hub';
 const ASSET_DIR = 'assets/sharepoint-hub';
 
+/** Rep-facing commentary keyed by page id, then label substring. */
+const TOUR_COMMENTARY = {
+  home: {
+    'quick link': 'Start on the Sales home page. The quick-link strip at the top is the fastest way into high-traffic folders without digging through navigation.',
+    'monthly sales results': 'Leadership posts previous-month results here. Scan this block at the start of the week so you know what numbers and themes leadership is tracking.',
+    'sales events': 'Sales events, deadlines, and field announcements show up on the home page — check here so you do not miss a SPIFF window or enablement session.',
+  },
+  'sales-resources': {
+    'quick link': 'The blue quick-link tiles are the hub’s front door — jump straight to battle cards, collateral libraries, templates, and other tools reps use every day.',
+    'proposal engine': 'Proposal Engine builds customer-ready proposals from approved content. Use this instead of rebuilding decks or copying old attachments.',
+    'product collateral': 'Product Collateral is the document library for datasheets, one-pagers, and approved PDFs. Pull from here before sending anything external.',
+    'battle cards': 'Battle cards cover both product talk tracks and competitive responses. Review the relevant card before customer calls or RFP work.',
+    'uc demos': 'UC Demos holds recorded walkthroughs and demo assets for voice and collaboration products — useful when you need a quick refresher.',
+    'zoominfo': 'ZoomInfo Resources centralizes prospecting and account-intelligence links tied to your GPC workflow.',
+    'product training': 'Product Training for Sales is the internal enablement shelf — videos and guides meant for reps, not customer-facing send-alongs.',
+  },
+  mnps: {
+    'quick link': 'Methods & Procedures pages also expose quick links when present — use them the same way as on Sales Resources.',
+    'processes': 'Sales processes and procedures live here: how to run motions, handoffs, and operational steps the org expects reps to follow.',
+    'rules of engagement': 'Rules of Engagement and related SOPs define who owns what in the field — check here before escalating or crossing team lines.',
+    'training resources': 'Training resources under M&Ps supplement product training with process-specific how-tos.',
+  },
+  'rate-cards': {
+    'rate cards overview': 'Rate Cards is the pricing authority on gpcSales. Open the live page whenever you quote — screenshots here are orientation only.',
+    'retail rate cards': 'Retail rate cards cover customer-facing pricing by market and product. Match the customer’s market before you build a solution or proposal.',
+    'wholesale rate cards': 'Wholesale rate cards apply to partner and wholesale motions — use the retail shelf for end-customer quotes unless your deal is explicitly wholesale.',
+  },
+};
+
+function commentaryForStep(pageId, label) {
+  const normalized = String(label || '').toLowerCase();
+  const pageMap = TOUR_COMMENTARY[pageId] || {};
+  for (const [key, text] of Object.entries(pageMap)) {
+    if (normalized.includes(key)) return text;
+  }
+  return `Section captured from live SharePoint: ${label}. Confirm against the current page before customer use.`;
+}
+
+function stepHeading(label, pageId, index) {
+  const text = String(label || '').trim();
+  if (!text || text.length > 80) return index === 0 ? 'Overview' : 'Next section';
+  if (/^quick link/i.test(text)) return 'Quick links';
+  return text;
+}
+
 function yamlQuote(s) {
   return JSON.stringify(String(s));
 }
@@ -66,6 +111,26 @@ function summarizePurpose(page) {
   if (page.skipped) return page.skipReason || 'Not found in navigation';
   const first = inferSectionSummaries(page)[0];
   return first.replace(/\*\*/g, '').slice(0, 120);
+}
+
+function buildScrollTour(page, copiedFiles) {
+  const shots = page.screenshots || [];
+  if (!shots.length) return [];
+
+  return shots
+    .map((s, i) => {
+      const rel = copiedFiles.get(s.filename);
+      if (!rel) return null;
+      const label = String(s.label || `${page.label} ${i + 1}`)
+        .replace(/\s+/g, ' ')
+        .trim();
+      return {
+        heading: stepHeading(label, page.id, i),
+        commentary: commentaryForStep(page.id, label),
+        src: rel,
+      };
+    })
+    .filter(Boolean);
 }
 
 function buildImageLibrary(page, copiedFiles) {
@@ -118,9 +183,9 @@ function buildVideoSections(pages, copiedFiles) {
     .map((p) => ({
       heading: p.label,
       intro: p.purpose,
-      image_library: buildImageLibrary(p, copiedFiles),
+      scroll_tour: buildScrollTour(p, copiedFiles),
     }))
-    .filter((s) => s.image_library.length);
+    .filter((s) => s.scroll_tour.length);
 }
 
 function buildBodyMarkdown(pages) {
@@ -145,7 +210,7 @@ Sales Resources is a **long single page**. Work top-to-bottom:
 3. **Product collateral** — datasheets and approved customer-facing PDFs.
 4. **Deep links** — jump to product-family folders; do not quote from memory.
 
-Use the screenshot tour in the tabs below as a map. Always open the live SharePoint link when forwarding material.
+Use the guided scroll tour in the tabs below as a map. Always open the live SharePoint link when forwarding material.
 
 ## M&Ps vs Rate Cards
 
@@ -207,19 +272,18 @@ ${refs.map((r) => `  - label: ${yamlQuote(r.label)}\n    sharepoint_url: ${yamlQ
 five_minute_summary: |
 ${fiveMin.split('\n').map((l) => `  ${l}`).join('\n')}
 video_sections_as_tabs: true
+video_sections_presentation: scroll_tour
 video_sections_tabs_aria_label: "SharePoint guided tour"
 video_sections:
 ${videoSections
   .map((sec) => {
-    const lib = sec.image_library
+    const tour = sec.scroll_tour
       .map(
-        (item) =>
-          `      - title: ${yamlQuote(item.title)}\n        pages:\n${item.pages
-            .map((pg) => `          - src: ${yamlQuote(pg.src)}`)
-            .join('\n')}`
+        (step) =>
+          `      - heading: ${yamlQuote(step.heading)}\n        commentary: ${yamlQuote(step.commentary)}\n        src: ${yamlQuote(step.src)}`
       )
       .join('\n');
-    return `  - heading: ${yamlQuote(sec.heading)}\n    intro: ${yamlQuote(sec.intro)}\n    image_library:\n${lib}`;
+    return `  - heading: ${yamlQuote(sec.heading)}\n    intro: ${yamlQuote(sec.intro)}\n    scroll_tour:\n${tour}`;
   })
   .join('\n')}
 knowledge_checks:

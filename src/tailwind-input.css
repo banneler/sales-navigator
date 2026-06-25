@@ -75,6 +75,14 @@
   margin: 0.75rem 0;
   color: #64748b;
 }
+
+/* SharePoint / guided scroll tours in video_sections */
+.module-scroll-tour-step:first-child {
+  padding-top: 0;
+}
+.module-scroll-tour-step figure img {
+  display: block;
+}
 .module-markdown-body table {
   width: 100%;
   border-collapse: collapse;

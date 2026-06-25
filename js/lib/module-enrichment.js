@@ -500,6 +500,161 @@ function normalizeImageLibrary(docs) {
   return out;
 }
 
+/**
+ * @param {unknown[]} steps
+ * @returns {{ heading: string; commentary: string; src: string; alt: string }[]}
+ */
+function normalizeScrollTour(steps) {
+  if (!Array.isArray(steps)) return [];
+  /** @type {{ heading: string; commentary: string; src: string; alt: string }[]} */
+  const out = [];
+  for (const step of steps) {
+    const src = typeof step?.src === 'string' ? step.src.trim() : '';
+    if (!SAFE_IMAGE_CAROUSEL_SRC.test(src)) continue;
+    const heading = typeof step?.heading === 'string' ? step.heading.trim() : '';
+    const commentary = typeof step?.commentary === 'string' ? step.commentary.trim() : '';
+    const alt =
+      typeof step?.alt === 'string' && step.alt.trim()
+        ? step.alt.trim()
+        : heading || 'SharePoint screenshot';
+    if (!heading && !commentary) continue;
+    out.push({ heading, commentary, src, alt });
+  }
+  return out;
+}
+
+/**
+ * @param {{ title: string; pages: { src: string; alt: string }[] }[]} docs
+ */
+function scrollTourFromImageLibrary(docs) {
+  return docs
+    .map((doc) => ({
+      heading: doc.title,
+      commentary: '',
+      src: doc.pages[0]?.src || '',
+      alt: doc.pages[0]?.alt || doc.title,
+    }))
+    .filter((step) => step.src);
+}
+
+/**
+ * @param {Record<string, unknown>} section
+ * @param {Record<string, unknown>} meta
+ */
+function sectionUsesScrollTour(section, meta) {
+  if (Array.isArray(section?.scroll_tour) && section.scroll_tour.length > 0) return true;
+  return meta?.video_sections_presentation === 'scroll_tour';
+}
+
+/**
+ * @param {Record<string, unknown>} section
+ * @param {Record<string, unknown>} meta
+ * @returns {{ heading: string; commentary: string; src: string; alt: string }[]}
+ */
+function resolveScrollTourSteps(section, meta) {
+  const explicit = normalizeScrollTour(
+    Array.isArray(section?.scroll_tour) ? section.scroll_tour : []
+  );
+  if (explicit.length) return explicit;
+  if (meta?.video_sections_presentation !== 'scroll_tour') return [];
+  const imageLibrary = normalizeImageLibrary(
+    Array.isArray(section?.image_library) ? section.image_library : []
+  );
+  return scrollTourFromImageLibrary(imageLibrary);
+}
+
+/**
+ * Vertical guided tour: commentary and screenshot stacked top-to-bottom.
+ * @param {{ heading: string; commentary: string; src: string; alt: string }[]} steps
+ */
+function buildScrollTourHtml(steps) {
+  if (!steps.length) return '';
+
+  const blocks = steps
+    .map((step, i) => {
+      const headingHtml = step.heading
+        ? `<h4 class="text-base font-bold text-slate-900 tracking-tight">${escapeHtml(step.heading)}</h4>`
+        : '';
+      const commentaryHtml = step.commentary
+        ? `<p class="text-sm leading-relaxed text-slate-700">${escapeHtml(step.commentary)}</p>`
+        : '';
+      const divider = i > 0 ? ' border-t border-slate-200/80 pt-8' : '';
+      const srcEsc = escapeHtml(step.src);
+      return `<article class="module-scroll-tour-step scroll-mt-6 space-y-3${divider}">
+          ${headingHtml}
+          ${commentaryHtml}
+          <figure class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-sm">
+            <a href="${srcEsc}" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2">
+              <img src="${srcEsc}" alt="${escapeHtml(step.alt)}" class="w-full h-auto bg-white" loading="lazy" decoding="async" />
+            </a>
+          </figure>
+        </article>`;
+    })
+    .join('');
+
+  return `<div class="module-scroll-tour space-y-8 w-full max-w-none">${blocks}</div>`;
+}
+
+/**
+ * Shared inner content for a video/training section (tabs or standalone card).
+ * @param {Record<string, unknown>} section
+ * @param {Record<string, unknown>} meta
+ */
+function buildVideoSectionPanelInner(section, meta) {
+  const introHtml = buildTrainingIntroParagraph(
+    typeof section?.intro === 'string' ? section.intro : ''
+  );
+  const bodyRaw = typeof section?.body === 'string' ? section.body : '';
+  const entries = normalizeVideoItems(
+    Array.isArray(section?.items) ? section.items : []
+  );
+  const imageEntries = normalizeImageItems(
+    Array.isArray(section?.image_items) ? section.image_items : []
+  );
+  const imageLibrary = normalizeImageLibrary(
+    Array.isArray(section?.image_library) ? section.image_library : []
+  );
+  const scrollSteps = sectionUsesScrollTour(section, meta)
+    ? resolveScrollTourSteps(section, meta)
+    : [];
+
+  if (
+    entries.length === 0 &&
+    imageEntries.length === 0 &&
+    imageLibrary.length === 0 &&
+    scrollSteps.length === 0 &&
+    !bodyRaw.trim() &&
+    !introHtml
+  ) {
+    return '';
+  }
+
+  let bodyHtml = '';
+  if (bodyRaw.trim()) {
+    try {
+      bodyHtml = `<div class="module-markdown-body module-section-body-full w-full text-slate-800 mb-6">${parseMarkdownToSafeHtml(bodyRaw)}</div>`;
+    } catch {
+      bodyHtml = '';
+    }
+  }
+
+  if (scrollSteps.length > 0) {
+    return `${introHtml}${bodyHtml}${buildScrollTourHtml(scrollSteps)}`;
+  }
+
+  if (entries.length === 0 && imageEntries.length === 0 && imageLibrary.length === 0) {
+    return `${introHtml}${bodyHtml}`;
+  }
+
+  const carouselHtml =
+    entries.length > 0
+      ? buildVideoCarouselChromeHtml(entries)
+      : imageLibrary.length > 0
+        ? buildImageLibraryHtml(imageLibrary)
+        : buildImageCarouselChromeHtml(imageEntries);
+  return `${introHtml}${bodyHtml}${carouselHtml}`;
+}
+
 function buildTrainingIntroParagraph(intro) {
   if (typeof intro !== 'string' || !intro.trim()) return '';
   return `<p class="text-sm text-slate-600 mb-4">${escapeHtml(intro.trim())}</p>`;
@@ -695,7 +850,7 @@ function buildImageLibraryHtml(docs) {
  * @param {Record<string, unknown>} section
  * @param {number} index
  */
-function buildVideoSectionCardHtml(section, index) {
+function buildVideoSectionCardHtml(section, index, meta = {}) {
   const heading =
     typeof section?.heading === 'string' && section.heading.trim()
       ? section.heading.trim()
@@ -703,59 +858,12 @@ function buildVideoSectionCardHtml(section, index) {
   const sid = `video-section-${index}`;
   const teamsMark = trainingSectionHeadingIsLiveTeamsStyle(heading);
   const shellClasses = `${TRAINING_SECTION_CARD_CLASSES}${teamsMark ? ' relative overflow-hidden' : ''}`;
-  const introHtml = buildTrainingIntroParagraph(
-    typeof section?.intro === 'string' ? section.intro : ''
-  );
-  const entries = normalizeVideoItems(
-    Array.isArray(section?.items) ? section.items : []
-  );
-  const imageEntries = normalizeImageItems(
-    Array.isArray(section?.image_items) ? section.image_items : []
-  );
-  const imageLibrary = normalizeImageLibrary(
-    Array.isArray(section?.image_library) ? section.image_library : []
-  );
-  const bodyRaw = typeof section?.body === 'string' ? section.body : '';
+  const panelInner = buildVideoSectionPanelInner(section, meta);
+  if (!panelInner) return '';
 
-  if (entries.length === 0 && imageEntries.length === 0 && imageLibrary.length === 0) {
-    if (!bodyRaw.trim()) return '';
-    let bodyHtml;
-    try {
-      bodyHtml = parseMarkdownToSafeHtml(bodyRaw);
-    } catch {
-      bodyHtml =
-        '<p class="text-sm text-red-800">Could not render section body.</p>';
-    }
-    const inner = `
-        <h3 id="${sid}" class="text-xl font-bold text-slate-900 mb-4 tracking-tight">${escapeHtml(heading)}</h3>
-        ${introHtml}
-        <div class="module-markdown-body module-section-body-full w-full text-slate-800">${bodyHtml}</div>`;
-    return `
-      <section class="${shellClasses}" aria-labelledby="${sid}">
-        ${wrapTrainingCardInnerWithTeamsWatermark(inner, teamsMark)}
-      </section>`;
-  }
-
-  let bodyBeforeCarousel = '';
-  if (bodyRaw.trim()) {
-    try {
-      bodyBeforeCarousel = `<div class="module-markdown-body module-section-body-full w-full text-slate-800 mb-4">${parseMarkdownToSafeHtml(bodyRaw)}</div>`;
-    } catch {
-      bodyBeforeCarousel = '';
-    }
-  }
-
-  const carouselHtml =
-    entries.length > 0
-      ? buildVideoCarouselChromeHtml(entries)
-      : imageLibrary.length > 0
-        ? buildImageLibraryHtml(imageLibrary)
-        : buildImageCarouselChromeHtml(imageEntries);
   const inner = `
         <h3 id="${sid}" class="text-xl font-bold text-slate-900 mb-4 tracking-tight">${escapeHtml(heading)}</h3>
-        ${introHtml}
-        ${bodyBeforeCarousel}
-        ${carouselHtml}`;
+        ${panelInner}`;
   return `
       <section class="${shellClasses}" aria-labelledby="${sid}">
         ${wrapTrainingCardInnerWithTeamsWatermark(inner, teamsMark)}
@@ -782,50 +890,8 @@ function buildVideoSectionsAsTabsHtml(meta) {
       typeof sec?.heading === 'string' && sec.heading.trim()
         ? sec.heading.trim()
         : `Topic ${i + 1}`;
-    const introHtml = buildTrainingIntroParagraph(
-      typeof sec?.intro === 'string' ? sec.intro : ''
-    );
-    const entries = normalizeVideoItems(
-      Array.isArray(sec?.items) ? sec.items : []
-    );
-    const imageEntries = normalizeImageItems(
-      Array.isArray(sec?.image_items) ? sec.image_items : []
-    );
-    const imageLibrary = normalizeImageLibrary(
-      Array.isArray(sec?.image_library) ? sec.image_library : []
-    );
-    const bodyRaw = typeof sec?.body === 'string' ? sec.body : '';
-
-    let blockHtml = '';
-    if (entries.length === 0 && imageEntries.length === 0 && imageLibrary.length === 0) {
-      if (!bodyRaw.trim() && !introHtml) continue;
-      let bodyHtml = '';
-      if (bodyRaw.trim()) {
-        try {
-          bodyHtml = parseMarkdownToSafeHtml(bodyRaw);
-        } catch {
-          bodyHtml =
-            '<p class="text-sm text-red-800">Could not render section body.</p>';
-        }
-      }
-      blockHtml = `${introHtml}${bodyHtml}`;
-    } else {
-      let bodyBeforeCarousel = '';
-      if (bodyRaw.trim()) {
-        try {
-          bodyBeforeCarousel = `<div class="module-markdown-body w-full max-w-none mb-4">${parseMarkdownToSafeHtml(bodyRaw)}</div>`;
-        } catch {
-          bodyBeforeCarousel = '';
-        }
-      }
-      const carouselHtml =
-        entries.length > 0
-          ? buildVideoCarouselChromeHtml(entries)
-          : imageLibrary.length > 0
-            ? buildImageLibraryHtml(imageLibrary)
-            : buildImageCarouselChromeHtml(imageEntries);
-      blockHtml = `${introHtml}${bodyBeforeCarousel}${carouselHtml}`;
-    }
+    const blockHtml = buildVideoSectionPanelInner(sec, meta);
+    if (!blockHtml) continue;
 
     const tabId = `video-section-tab-${i}`;
     const panelId = `video-section-panel-${i}`;
@@ -884,7 +950,9 @@ function buildVideoSectionsAsTabsHtml(meta) {
  * Wired in {@link renderModuleDocumentHtml}.
  *
  * `video_sections` entries: `heading`, optional `intro` (plain text), optional `items` (same as video_carousel),
- * optional `image_items` (static collateral carousel), optional `body` (markdown for text-only cards or prose before a carousel).
+ * optional `image_items` (static collateral carousel), optional `scroll_tour` (vertical commentary + screenshots),
+ * optional `body` (markdown for text-only cards or prose before a carousel).
+ * Set `video_sections_presentation: scroll_tour` to render `image_library` as a scroll tour fallback.
  * With `video_sections_as_tabs: true`, sections render as tabs inside one card (needs ≥2 sections).
  */
 export function buildVideoSectionsHtml(meta) {
@@ -894,7 +962,7 @@ export function buildVideoSectionsHtml(meta) {
       if (tabbed) return tabbed;
     }
     return meta.video_sections
-      .map((sec, i) => buildVideoSectionCardHtml(sec, i))
+      .map((sec, i) => buildVideoSectionCardHtml(sec, i, meta))
       .filter(Boolean)
       .join('');
   }
