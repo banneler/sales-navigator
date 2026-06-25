@@ -1,4 +1,4 @@
-import { gemini20FlashStreamUrl } from './gemini-endpoint.js';
+import { getGeminiStreamUrl } from './gemini-endpoint.js';
 
 export const config = {
   runtime: 'edge',
@@ -53,7 +53,7 @@ Instructions:
       });
     }
 
-    const response = await fetch(gemini20FlashStreamUrl(apiKey), {
+    const response = await fetch(getGeminiStreamUrl(apiKey), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

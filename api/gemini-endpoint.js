@@ -1,6 +1,6 @@
 /**
- * Gemini Developer API Endpoint for Router.
- * Must stay in sync across all server routes that call Flash Lite with streaming.
+ * Gemini Developer API endpoint for Router and AI Roleplay (streaming).
+ * Model: gemini-3.1-flash-lite (GA; replaces retired gemini-2.0-flash).
  *
  * @see https://ai.google.dev/api/rest
  * @param {string} apiKey
