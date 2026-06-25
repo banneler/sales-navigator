@@ -12,6 +12,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
+import { refineScrollStops } from './refine-scroll-stops.mjs';
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(SCRIPT_DIR, '..', '..', '..');
@@ -150,6 +151,18 @@ async function scrollContentTo(page, y) {
   return page.evaluate((targetY) => window.spScrollTo(targetY), y);
 }
 
+async function preparePageForCapture(page, scrollCfg) {
+  const vp = scrollCfg.viewport ?? { width: 1920, height: 1200 };
+  await page.setViewportSize(vp);
+  const zoom = scrollCfg.pageZoom ?? 1;
+  if (zoom !== 1) {
+    await page.evaluate((z) => {
+      document.documentElement.style.zoom = `${Math.round(z * 100)}%`;
+    }, zoom);
+  }
+  await sleep(500);
+}
+
 async function hideChrome(page, selectors) {
   await page.evaluate((sels) => {
     window.__spRestore = window.__spRestore || [];
@@ -190,7 +203,7 @@ async function profilePage(page) {
         text: clean(node.textContent),
         top: window.spContentY(node),
       }))
-      .filter((h) => h.text.length > 1);
+      .filter((h) => h.text.length > 1 && h.top >= 0);
 
     const links = [...main.querySelectorAll('a[href]')]
       .map((a) => ({ text: clean(a.textContent), href: a.href }))
@@ -201,7 +214,7 @@ async function profilePage(page) {
     const step = Math.floor(window.innerHeight * 0.85);
 
     /** @type {{ y: number; label: string; kind: string }[]} */
-    const stops = [{ y: 0, label: 'Top of page — quick links', kind: 'viewport' }];
+    const stops = [{ y: 0, label: 'Quick links — Tools to support every deal', kind: 'banner' }];
     const usedY = new Set([0]);
 
     const bannerSelectors = [
@@ -215,6 +228,7 @@ async function profilePage(page) {
         const rect = el.getBoundingClientRect();
         if (rect.height < 24 || rect.width < 120) return;
         const y = Math.max(0, Math.floor(window.spContentY(el) - 24));
+        if (y <= 40) return;
         const bucket = Math.floor(y / 40) * 40;
         if (usedY.has(bucket)) return;
         usedY.add(bucket);
@@ -239,6 +253,7 @@ async function profilePage(page) {
         const rect = el.getBoundingClientRect();
         if (rect.height < 40 || rect.height > 700) continue;
         const y = Math.max(0, Math.floor(window.spContentY(el) - 24));
+        if (y <= 40) break;
         stops.push({
           y,
           label: 'Tools to support every deal — quick links',
@@ -248,8 +263,12 @@ async function profilePage(page) {
       }
     }
 
+    const seenHeading = new Set();
     if (headings.length) {
       for (const h of headings) {
+        const key = h.text.toLowerCase();
+        if (seenHeading.has(key)) continue;
+        seenHeading.add(key);
         const y = Math.max(0, Math.floor(h.top - 80));
         const bucket = Math.floor(y / 40) * 40;
         if (usedY.has(bucket)) continue;
@@ -349,11 +368,14 @@ async function capturePage(page, stop, pageIndex, scrollCfg, site) {
     await sleep(1500);
   }
 
+  await preparePageForCapture(page, scrollCfg);
   await scrollContentTo(page, 0);
   await sleep(800);
 
   const profile = await profilePage(page);
-  const stops = profile.scrollStops?.length ? profile.scrollStops : [{ y: 0, label: 'Top', kind: 'viewport' }];
+  const rawStops = profile.scrollStops?.length ? profile.scrollStops : [{ y: 0, label: 'Top', kind: 'viewport' }];
+  const stops = refineScrollStops(rawStops, scrollCfg, stop.id);
+  console.log(`  ${rawStops.length} raw stops → ${stops.length} after dedupe`);
 
   /** @type {Array<{filename:string,label:string,scrollY:number,kind:string}>} */
   const screenshots = [];

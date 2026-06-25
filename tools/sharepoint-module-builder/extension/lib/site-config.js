@@ -49,8 +49,16 @@ export const TOUR_STOPS = [
 ];
 
 export const SCROLL_CAPTURE = {
+  /** Playwright viewport before screenshots (wide = more context per shot) */
+  viewport: { width: 1920, height: 1200 },
+  /** Zoom out in Chrome so more page fits in each screenshot (0.75 = 75%) */
+  pageZoom: 0.75,
+  /** Minimum vertical gap between stops, as a fraction of viewport height */
+  minScrollGapRatio: 0.42,
+  maxStops: 12,
+  skipHeadingMinLength: 96,
   /** ms to wait after scroll before screenshot */
-  settleMs: 650,
+  settleMs: 750,
   /** fallback viewport steps when no headings found */
   viewportStepRatio: 0.85,
   maxViewportSteps: 24,

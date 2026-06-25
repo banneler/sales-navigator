@@ -23,66 +23,54 @@ video_sections:
   - heading: "Sales home"
     intro: "Main landing page — leadership updates, previous month results, quick links into the rest of the site."
     image_library:
-      - title: "Top of page — quick links"
+      - title: "Quick links — Tools to support every deal"
         pages:
-          - src: "assets/sharepoint-hub/00-top-of-page-quick-links-00.png"
-      - title: "APRIL SALES RESULTS"
+          - src: "assets/sharepoint-hub/00-quick-links-tools-to-support-every-deal-00.png"
+      - title: "Monthly sales results"
         pages:
-          - src: "assets/sharepoint-hub/00-april-sales-results-01.png"
-      - title: "SALES EVENTS"
+          - src: "assets/sharepoint-hub/00-monthly-sales-results-01.png"
+      - title: "Sales events"
         pages:
           - src: "assets/sharepoint-hub/00-sales-events-02.png"
   - heading: "Sales Resources"
     intro: "Collateral hub — battle cards, product sheets, competitive assets, and deep links by product family (long scroll)."
     image_library:
-      - title: "Top of page — quick links"
+      - title: "Quick links — Tools to support every deal"
         pages:
-          - src: "assets/sharepoint-hub/01-top-of-page-quick-links-00.png"
-      - title: "Tools to support every deal — quick links"
-        pages:
-          - src: "assets/sharepoint-hub/01-tools-to-support-every-deal-quick-links-01.png"
-      - title: "Sales Resources"
-        pages:
-          - src: "assets/sharepoint-hub/01-sales-resources-02.png"
-      - title: "Welcome to your one-stop destination for sales resources and customer-facing materials. From product"
-        pages:
-          - src: "assets/sharepoint-hub/01-welcome-to-your-one-stop-destination-for-sales-resources-and-03.png"
+          - src: "assets/sharepoint-hub/01-quick-links-tools-to-support-every-deal-00.png"
       - title: "Proposal Engine"
         pages:
-          - src: "assets/sharepoint-hub/01-proposal-engine-04.png"
+          - src: "assets/sharepoint-hub/01-proposal-engine-01.png"
       - title: "Product Collateral"
         pages:
-          - src: "assets/sharepoint-hub/01-product-collateral-05.png"
-      - title: "Product Battle Cards"
+          - src: "assets/sharepoint-hub/01-product-collateral-02.png"
+      - title: "Battle Cards"
         pages:
-          - src: "assets/sharepoint-hub/01-product-battle-cards-06.png"
+          - src: "assets/sharepoint-hub/01-battle-cards-03.png"
       - title: "UC Demos"
         pages:
-          - src: "assets/sharepoint-hub/01-uc-demos-07.png"
+          - src: "assets/sharepoint-hub/01-uc-demos-04.png"
       - title: "ZoomInfo Resources"
         pages:
-          - src: "assets/sharepoint-hub/01-zoominfo-resources-08.png"
-      - title: "Product & Sales Training - For Internal Use Only"
-        pages:
-          - src: "assets/sharepoint-hub/01-product-sales-training-for-internal-use-only-09.png"
+          - src: "assets/sharepoint-hub/01-zoominfo-resources-05.png"
       - title: "Product Training for Sales"
         pages:
-          - src: "assets/sharepoint-hub/01-product-training-for-sales-10.png"
+          - src: "assets/sharepoint-hub/01-product-training-for-sales-06.png"
   - heading: "M&Ps"
     intro: "Methods & Procedures — operational sales playbooks, process docs, and how-to guides for reps."
     image_library:
-      - title: "Top of page — quick links"
+      - title: "Quick links — Tools to support every deal"
         pages:
-          - src: "assets/sharepoint-hub/02-top-of-page-quick-links-00.png"
-      - title: "Sales Processes"
+          - src: "assets/sharepoint-hub/02-quick-links-tools-to-support-every-deal-00.png"
+      - title: "Sales processes & procedures"
         pages:
-          - src: "assets/sharepoint-hub/02-sales-processes-01.png"
+          - src: "assets/sharepoint-hub/02-sales-processes-procedures-01.png"
   - heading: "Rate Cards"
     intro: "Pricing and rate-card library — verify market-specific rates here before quoting."
     image_library:
-      - title: "Top of page — quick links"
+      - title: "Rate Cards overview"
         pages:
-          - src: "assets/sharepoint-hub/03-top-of-page-quick-links-00.png"
+          - src: "assets/sharepoint-hub/03-rate-cards-overview-00.png"
       - title: "Retail Rate Cards"
         pages:
           - src: "assets/sharepoint-hub/03-retail-rate-cards-01.png"
@@ -125,7 +113,7 @@ Use **Sales Resources** for *what to say*; use **Rate Cards** for *what to quote
 ## Sales home — what to notice first
 
 - Main landing page — leadership updates, previous month results, quick links into the rest of the site.
-- **Sections spotted:** Sales - Home · APRIL SALES RESULTS · SALES EVENTS
+- **Sections spotted:** 96 Seat UC for 3 Locations · APRIL SALES RESULTS · SALES EVENTS
 
 Look for **previous month results** and leadership commentary near the top of the home page before you dive into collateral folders.
 
