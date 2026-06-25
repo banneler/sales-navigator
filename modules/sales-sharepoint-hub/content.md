@@ -23,45 +23,78 @@ video_sections:
   - heading: "Sales home"
     intro: "Main landing page — leadership updates, previous month results, quick links into the rest of the site."
     image_library:
-      - title: "Sales home"
+      - title: "Top of page — quick links"
         pages:
-          - src: "assets/sharepoint-hub/00-sales-home-00.png"
-          - src: "assets/sharepoint-hub/00-april-sales-results-01.png"
-          - src: "assets/sharepoint-hub/00-sales-events-02.png"
+          - src: "assets/sharepoint-hub/00-top-of-page-quick-links-00.png"
+      - title: "Sales - Home"
+        pages:
+          - src: "assets/sharepoint-hub/00-sales-home-01.png"
+      - title: "APRIL SALES RESULTS"
+        pages:
+          - src: "assets/sharepoint-hub/00-april-sales-results-02.png"
+      - title: "SALES EVENTS"
+        pages:
+          - src: "assets/sharepoint-hub/00-sales-events-03.png"
   - heading: "Sales Resources"
     intro: "Collateral hub — battle cards, product sheets, competitive assets, and deep links by product family (long scroll)."
     image_library:
+      - title: "Top of page — quick links"
+        pages:
+          - src: "assets/sharepoint-hub/01-top-of-page-quick-links-00.png"
+      - title: "Tools to support every deal — quick links"
+        pages:
+          - src: "assets/sharepoint-hub/01-tools-to-support-every-deal-quick-links-01.png"
       - title: "Sales Resources"
         pages:
-          - src: "assets/sharepoint-hub/01-sales-resources-00.png"
-          - src: "assets/sharepoint-hub/01-welcome-to-your-one-stop-destination-for-sales-resources-and-01.png"
-          - src: "assets/sharepoint-hub/01-proposal-engine-02.png"
-          - src: "assets/sharepoint-hub/01-product-collateral-03.png"
-          - src: "assets/sharepoint-hub/01-product-collateral-04.png"
-          - src: "assets/sharepoint-hub/01-product-battle-cards-05.png"
-          - src: "assets/sharepoint-hub/01-competitive-battle-cards-06.png"
+          - src: "assets/sharepoint-hub/01-sales-resources-02.png"
+      - title: "Welcome to your one-stop destination for sales resources and customer-facing materials. From product"
+        pages:
+          - src: "assets/sharepoint-hub/01-welcome-to-your-one-stop-destination-for-sales-resources-and-03.png"
+      - title: "Proposal Engine"
+        pages:
+          - src: "assets/sharepoint-hub/01-proposal-engine-04.png"
+      - title: "Product Collateral"
+        pages:
+          - src: "assets/sharepoint-hub/01-product-collateral-05.png"
+      - title: "Product Battle Cards"
+        pages:
+          - src: "assets/sharepoint-hub/01-product-battle-cards-06.png"
+      - title: "UC Demos"
+        pages:
           - src: "assets/sharepoint-hub/01-uc-demos-07.png"
+      - title: "ZoomInfo Resources"
+        pages:
           - src: "assets/sharepoint-hub/01-zoominfo-resources-08.png"
-          - src: "assets/sharepoint-hub/01-zoominfo-resources-09.png"
-          - src: "assets/sharepoint-hub/01-product-sales-training-for-internal-use-only-10.png"
-          - src: "assets/sharepoint-hub/01-product-training-for-sales-11.png"
-          - src: "assets/sharepoint-hub/01-product-training-for-sales-12.png"
+      - title: "Product & Sales Training - For Internal Use Only"
+        pages:
+          - src: "assets/sharepoint-hub/01-product-sales-training-for-internal-use-only-09.png"
+      - title: "Product Training for Sales"
+        pages:
+          - src: "assets/sharepoint-hub/01-product-training-for-sales-10.png"
   - heading: "M&Ps"
     intro: "Methods & Procedures — operational sales playbooks, process docs, and how-to guides for reps."
     image_library:
-      - title: "M&Ps"
+      - title: "Top of page — quick links"
         pages:
-          - src: "assets/sharepoint-hub/02-sales-methods-procedures-00.png"
-          - src: "assets/sharepoint-hub/02-sales-processes-01.png"
-          - src: "assets/sharepoint-hub/02-training-resources-02.png"
+          - src: "assets/sharepoint-hub/02-top-of-page-quick-links-00.png"
+      - title: "Sales - Methods & Procedures"
+        pages:
+          - src: "assets/sharepoint-hub/02-sales-methods-procedures-01.png"
+      - title: "Sales Processes"
+        pages:
+          - src: "assets/sharepoint-hub/02-sales-processes-02.png"
   - heading: "Rate Cards"
     intro: "Pricing and rate-card library — verify market-specific rates here before quoting."
     image_library:
-      - title: "Rate Cards"
+      - title: "Top of page — quick links"
         pages:
-          - src: "assets/sharepoint-hub/03-sales-rate-cards-00.png"
-          - src: "assets/sharepoint-hub/03-retail-rate-cards-01.png"
-          - src: "assets/sharepoint-hub/03-wholesale-rate-cards-02.png"
+          - src: "assets/sharepoint-hub/03-top-of-page-quick-links-00.png"
+      - title: "Sales - Rate Cards"
+        pages:
+          - src: "assets/sharepoint-hub/03-sales-rate-cards-01.png"
+      - title: "Retail Rate Cards"
+        pages:
+          - src: "assets/sharepoint-hub/03-retail-rate-cards-02.png"
 knowledge_checks:
   - question: "Where should a rep look first for leadership results and monthly context?"
     options:
@@ -109,9 +142,10 @@ Look for **previous month results** and leadership commentary near the top of th
 
 Sales Resources is a **long single page**. Work top-to-bottom:
 
-1. **Battle cards** — product and competitive talk tracks before external meetings.
-2. **Product collateral** — datasheets and approved customer-facing PDFs.
-3. **Deep links** — jump to product-family folders; do not quote from memory.
+1. **Blue quick-link strip** — at the very top; jump-off tiles to Proposal Engine, collateral folders, battle cards, and other high-traffic tools.
+2. **Battle cards** — product and competitive talk tracks before external meetings.
+3. **Product collateral** — datasheets and approved customer-facing PDFs.
+4. **Deep links** — jump to product-family folders; do not quote from memory.
 
 Use the screenshot tour in the tabs below as a map. Always open the live SharePoint link when forwarding material.
 

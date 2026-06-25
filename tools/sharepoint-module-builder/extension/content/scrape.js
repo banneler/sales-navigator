@@ -98,14 +98,61 @@ function collectWebPartTitles(root) {
   return [...new Set(titles)].slice(0, 80);
 }
 
+function collectBannerStops(root) {
+  /** @type {Array<{ y: number; label: string; kind: 'banner' | 'viewport' }>} */
+  const stops = [];
+
+  stops.push({ y: 0, label: 'Top of page — quick links', kind: 'viewport' });
+
+  const bannerSelectors = [
+    '[data-sp-feature-tag*="QuickLinks"]',
+    '[data-automation-id*="QuickLinks"]',
+    '[data-sp-feature-tag*="Hero"]',
+    '.ms-QuickLinks',
+  ];
+  for (const sel of bannerSelectors) {
+    root.querySelectorAll(sel).forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.height < 24 || rect.width < 120) return;
+      const y = Math.max(0, Math.floor(rect.top + window.scrollY - 24));
+      const links = [...el.querySelectorAll('a')]
+        .map((a) => cleanText(a.textContent))
+        .filter(Boolean);
+      const label =
+        links.length > 0
+          ? `Quick links — ${links.slice(0, 5).join(', ')}`
+          : cleanText(el.textContent).slice(0, 120) || 'Quick links banner';
+      stops.push({ y, label, kind: 'banner' });
+    });
+  }
+
+  if (stops.length === 1) {
+    for (const el of root.querySelectorAll('div, section, article')) {
+      const text = cleanText(el.textContent);
+      if (!/tools to support every deal|now live/i.test(text)) continue;
+      const rect = el.getBoundingClientRect();
+      if (rect.height < 40 || rect.height > 700) continue;
+      const y = Math.max(0, Math.floor(rect.top + window.scrollY - 24));
+      stops.push({
+        y,
+        label: 'Tools to support every deal — quick links',
+        kind: 'banner',
+      });
+      break;
+    }
+  }
+
+  return stops;
+}
+
 function planScrollStops(root, options = {}) {
   const maxSteps = options.maxViewportSteps ?? 24;
   const ratio = options.viewportStepRatio ?? 0.85;
   const headings = collectHeadings(root).filter((h) => h.top > 40);
 
-  /** @type {Array<{ y: number; label: string; kind: 'heading' | 'viewport' }>} */
-  const stops = [];
-  const usedY = new Set();
+  /** @type {Array<{ y: number; label: string; kind: 'heading' | 'viewport' | 'banner' }>} */
+  const stops = [...collectBannerStops(root)];
+  const usedY = new Set(stops.map((s) => Math.floor(s.y / 40) * 40));
 
   for (const h of headings) {
     const y = Math.max(0, Math.floor(h.top - 80));

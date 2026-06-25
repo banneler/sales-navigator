@@ -181,17 +181,74 @@ async function profilePage(page) {
 
     const docHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
     const step = Math.floor(window.innerHeight * 0.85);
-    const stops = headings.length
-      ? headings.map((h) => ({
-          y: Math.max(0, Math.floor(h.top - 80)),
-          label: h.text,
-          kind: 'heading',
-        }))
-      : Array.from({ length: Math.min(24, Math.ceil(docHeight / step)) }, (_, i) => ({
-          y: i * step,
-          label: `Section ${i + 1}`,
-          kind: 'viewport',
-        }));
+
+    /** @type {{ y: number; label: string; kind: string }[]} */
+    const stops = [{ y: 0, label: 'Top of page — quick links', kind: 'viewport' }];
+    const usedY = new Set([0]);
+
+    const bannerSelectors = [
+      '[data-sp-feature-tag*="QuickLinks"]',
+      '[data-automation-id*="QuickLinks"]',
+      '[data-sp-feature-tag*="Hero"]',
+      '.ms-QuickLinks',
+    ];
+    for (const sel of bannerSelectors) {
+      main.querySelectorAll(sel).forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.height < 24 || rect.width < 120) return;
+        const y = Math.max(0, Math.floor(rect.top + window.scrollY - 24));
+        const bucket = Math.floor(y / 40) * 40;
+        if (usedY.has(bucket)) return;
+        usedY.add(bucket);
+        const links = [...el.querySelectorAll('a')]
+          .map((a) => clean(a.textContent))
+          .filter(Boolean);
+        stops.push({
+          y,
+          label:
+            links.length > 0
+              ? `Quick links — ${links.slice(0, 5).join(', ')}`
+              : clean(el.textContent).slice(0, 120) || 'Quick links banner',
+          kind: 'banner',
+        });
+      });
+    }
+
+    if (stops.length === 1) {
+      for (const el of main.querySelectorAll('div, section, article')) {
+        const text = clean(el.textContent);
+        if (!/tools to support every deal|now live/i.test(text)) continue;
+        const rect = el.getBoundingClientRect();
+        if (rect.height < 40 || rect.height > 700) continue;
+        const y = Math.max(0, Math.floor(rect.top + window.scrollY - 24));
+        stops.push({
+          y,
+          label: 'Tools to support every deal — quick links',
+          kind: 'banner',
+        });
+        break;
+      }
+    }
+
+    if (headings.length) {
+      for (const h of headings) {
+        const y = Math.max(0, Math.floor(h.top - 80));
+        const bucket = Math.floor(y / 40) * 40;
+        if (usedY.has(bucket)) continue;
+        usedY.add(bucket);
+        stops.push({ y, label: h.text, kind: 'heading' });
+      }
+    } else {
+      for (let i = 0; i < Math.min(24, Math.ceil(docHeight / step)); i++) {
+        const y = i * step;
+        const bucket = Math.floor(y / 40) * 40;
+        if (usedY.has(bucket)) continue;
+        usedY.add(bucket);
+        stops.push({ y, label: `Section ${i + 1}`, kind: 'viewport' });
+      }
+    }
+
+    stops.sort((a, b) => a.y - b.y);
 
     return {
       url: location.href,
@@ -199,7 +256,7 @@ async function profilePage(page) {
       headings,
       links,
       bodyPreview: clean(main.innerText).slice(0, 4000),
-      scrollStops: stops.slice(0, 24),
+      scrollStops: stops.slice(0, 26),
     };
   });
 }
@@ -273,6 +330,9 @@ async function capturePage(page, stop, pageIndex, scrollCfg, site) {
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 120000 });
     await sleep(1500);
   }
+
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await sleep(800);
 
   const profile = await profilePage(page);
   const stops = profile.scrollStops?.length ? profile.scrollStops : [{ y: 0, label: 'Top', kind: 'viewport' }];

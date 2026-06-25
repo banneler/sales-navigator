@@ -72,16 +72,20 @@ function buildImageLibrary(page, copiedFiles) {
   const shots = page.screenshots || [];
   if (!shots.length) return [];
 
-  const pages = shots
-    .map((s) => {
+  return shots
+    .map((s, i) => {
       const rel = copiedFiles.get(s.filename);
       if (!rel) return null;
-      return { src: rel, caption: s.label };
+      const title = String(s.label || `${page.label} ${i + 1}`)
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 100);
+      return {
+        title: title || page.label,
+        pages: [{ src: rel, caption: s.label }],
+      };
     })
     .filter(Boolean);
-
-  if (!pages.length) return [];
-  return [{ title: page.label, pages }];
 }
 
 async function copyScreenshots(captureDir, pages) {
@@ -136,9 +140,10 @@ Look for **previous month results** and leadership commentary near the top of th
 
 Sales Resources is a **long single page**. Work top-to-bottom:
 
-1. **Battle cards** — product and competitive talk tracks before external meetings.
-2. **Product collateral** — datasheets and approved customer-facing PDFs.
-3. **Deep links** — jump to product-family folders; do not quote from memory.
+1. **Blue quick-link strip** — at the very top; jump-off tiles to Proposal Engine, collateral folders, battle cards, and other high-traffic tools.
+2. **Battle cards** — product and competitive talk tracks before external meetings.
+3. **Product collateral** — datasheets and approved customer-facing PDFs.
+4. **Deep links** — jump to product-family folders; do not quote from memory.
 
 Use the screenshot tour in the tabs below as a map. Always open the live SharePoint link when forwarding material.
 
