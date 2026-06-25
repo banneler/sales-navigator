@@ -32,7 +32,7 @@
   "content_scripts": [
     {
       "matches": ["https://gpcom.sharepoint.com/*"],
-      "js": ["content/scrape.js"],
+      "js": ["lib/scroll-root-browser.js", "content/scrape.js"],
       "run_at": "document_idle"
     }
   ]

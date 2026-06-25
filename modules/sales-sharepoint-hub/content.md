@@ -26,15 +26,12 @@ video_sections:
       - title: "Top of page — quick links"
         pages:
           - src: "assets/sharepoint-hub/00-top-of-page-quick-links-00.png"
-      - title: "Sales - Home"
-        pages:
-          - src: "assets/sharepoint-hub/00-sales-home-01.png"
       - title: "APRIL SALES RESULTS"
         pages:
-          - src: "assets/sharepoint-hub/00-april-sales-results-02.png"
+          - src: "assets/sharepoint-hub/00-april-sales-results-01.png"
       - title: "SALES EVENTS"
         pages:
-          - src: "assets/sharepoint-hub/00-sales-events-03.png"
+          - src: "assets/sharepoint-hub/00-sales-events-02.png"
   - heading: "Sales Resources"
     intro: "Collateral hub — battle cards, product sheets, competitive assets, and deep links by product family (long scroll)."
     image_library:
@@ -77,24 +74,18 @@ video_sections:
       - title: "Top of page — quick links"
         pages:
           - src: "assets/sharepoint-hub/02-top-of-page-quick-links-00.png"
-      - title: "Sales - Methods & Procedures"
-        pages:
-          - src: "assets/sharepoint-hub/02-sales-methods-procedures-01.png"
       - title: "Sales Processes"
         pages:
-          - src: "assets/sharepoint-hub/02-sales-processes-02.png"
+          - src: "assets/sharepoint-hub/02-sales-processes-01.png"
   - heading: "Rate Cards"
     intro: "Pricing and rate-card library — verify market-specific rates here before quoting."
     image_library:
       - title: "Top of page — quick links"
         pages:
           - src: "assets/sharepoint-hub/03-top-of-page-quick-links-00.png"
-      - title: "Sales - Rate Cards"
-        pages:
-          - src: "assets/sharepoint-hub/03-sales-rate-cards-01.png"
       - title: "Retail Rate Cards"
         pages:
-          - src: "assets/sharepoint-hub/03-retail-rate-cards-02.png"
+          - src: "assets/sharepoint-hub/03-retail-rate-cards-01.png"
 knowledge_checks:
   - question: "Where should a rep look first for leadership results and monthly context?"
     options:

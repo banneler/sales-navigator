@@ -51,7 +51,7 @@ function collectHeadings(root) {
     out.push({
       level: tag,
       text,
-      top: rect.top + window.scrollY,
+      top: typeof spContentY === 'function' ? spContentY(node) : rect.top + window.scrollY,
       id: node.id || null,
     });
   });
@@ -114,7 +114,7 @@ function collectBannerStops(root) {
     root.querySelectorAll(sel).forEach((el) => {
       const rect = el.getBoundingClientRect();
       if (rect.height < 24 || rect.width < 120) return;
-      const y = Math.max(0, Math.floor(rect.top + window.scrollY - 24));
+      const y = Math.max(0, Math.floor((typeof spContentY === 'function' ? spContentY(el) : rect.top + window.scrollY) - 24));
       const links = [...el.querySelectorAll('a')]
         .map((a) => cleanText(a.textContent))
         .filter(Boolean);
@@ -132,7 +132,7 @@ function collectBannerStops(root) {
       if (!/tools to support every deal|now live/i.test(text)) continue;
       const rect = el.getBoundingClientRect();
       if (rect.height < 40 || rect.height > 700) continue;
-      const y = Math.max(0, Math.floor(rect.top + window.scrollY - 24));
+      const y = Math.max(0, Math.floor((typeof spContentY === 'function' ? spContentY(el) : rect.top + window.scrollY) - 24));
       stops.push({
         y,
         label: 'Tools to support every deal — quick links',
@@ -163,10 +163,10 @@ function planScrollStops(root, options = {}) {
   }
 
   if (stops.length < 2) {
-    const docHeight = Math.max(
-      document.documentElement.scrollHeight,
-      document.body?.scrollHeight || 0
-    );
+    const docHeight =
+      typeof spScrollHeight === 'function'
+        ? spScrollHeight()
+        : Math.max(document.documentElement.scrollHeight, document.body?.scrollHeight || 0);
     const step = Math.floor(window.innerHeight * ratio);
     for (let y = 0, n = 0; y < docHeight && n < maxSteps; y += step, n++) {
       stops.push({ y, label: `Section ${n + 1}`, kind: 'viewport' });
@@ -201,7 +201,11 @@ function profilePage() {
 }
 
 function scrollToY(y) {
-  window.scrollTo({ top: y, left: 0, behavior: 'auto' });
+  if (typeof spScrollTo === 'function') {
+    spScrollTo(y);
+  } else {
+    window.scrollTo({ top: y, left: 0, behavior: 'auto' });
+  }
 }
 
 /** @type {(() => void) | null} */

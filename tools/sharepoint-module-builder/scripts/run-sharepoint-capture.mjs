@@ -133,6 +133,23 @@ async function getPage(context) {
   return context.newPage();
 }
 
+const SCROLL_ROOT_SCRIPT = path.join(SCRIPT_DIR, '../extension/lib/scroll-root-browser.js');
+
+/** @type {string | null} */
+let scrollRootScriptSource = null;
+
+async function installScrollHelpers(page) {
+  if (!scrollRootScriptSource) {
+    scrollRootScriptSource = await fs.readFile(SCROLL_ROOT_SCRIPT, 'utf8');
+  }
+  await page.evaluate(scrollRootScriptSource);
+}
+
+async function scrollContentTo(page, y) {
+  await installScrollHelpers(page);
+  return page.evaluate((targetY) => window.spScrollTo(targetY), y);
+}
+
 async function hideChrome(page, selectors) {
   await page.evaluate((sels) => {
     window.__spRestore = window.__spRestore || [];
@@ -155,6 +172,7 @@ async function restoreChrome(page) {
 }
 
 async function profilePage(page) {
+  await installScrollHelpers(page);
   await page.waitForFunction(
     () => document.body && document.body.innerText.length > 20,
     { timeout: 60000 }
@@ -170,7 +188,7 @@ async function profilePage(page) {
     const headings = [...main.querySelectorAll('h1,h2,h3,h4,[role="heading"]')]
       .map((node) => ({
         text: clean(node.textContent),
-        top: node.getBoundingClientRect().top + window.scrollY,
+        top: window.spContentY(node),
       }))
       .filter((h) => h.text.length > 1);
 
@@ -179,7 +197,7 @@ async function profilePage(page) {
       .filter((l) => l.text && l.href.includes('gpcom.sharepoint.com'))
       .slice(0, 200);
 
-    const docHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+    const docHeight = window.spScrollHeight();
     const step = Math.floor(window.innerHeight * 0.85);
 
     /** @type {{ y: number; label: string; kind: string }[]} */
@@ -196,7 +214,7 @@ async function profilePage(page) {
       main.querySelectorAll(sel).forEach((el) => {
         const rect = el.getBoundingClientRect();
         if (rect.height < 24 || rect.width < 120) return;
-        const y = Math.max(0, Math.floor(rect.top + window.scrollY - 24));
+        const y = Math.max(0, Math.floor(window.spContentY(el) - 24));
         const bucket = Math.floor(y / 40) * 40;
         if (usedY.has(bucket)) return;
         usedY.add(bucket);
@@ -220,7 +238,7 @@ async function profilePage(page) {
         if (!/tools to support every deal|now live/i.test(text)) continue;
         const rect = el.getBoundingClientRect();
         if (rect.height < 40 || rect.height > 700) continue;
-        const y = Math.max(0, Math.floor(rect.top + window.scrollY - 24));
+        const y = Math.max(0, Math.floor(window.spContentY(el) - 24));
         stops.push({
           y,
           label: 'Tools to support every deal — quick links',
@@ -331,7 +349,7 @@ async function capturePage(page, stop, pageIndex, scrollCfg, site) {
     await sleep(1500);
   }
 
-  await page.evaluate(() => window.scrollTo(0, 0));
+  await scrollContentTo(page, 0);
   await sleep(800);
 
   const profile = await profilePage(page);
@@ -342,7 +360,7 @@ async function capturePage(page, stop, pageIndex, scrollCfg, site) {
   for (let i = 0; i < stops.length; i++) {
     const s = stops[i];
     process.stdout.write(`  screenshot ${i + 1}/${stops.length}: ${s.label.slice(0, 60)}…\n`);
-    await page.evaluate((y) => window.scrollTo(0, y), s.y);
+    const actualY = await scrollContentTo(page, s.y);
     await sleep(scrollCfg.settleMs);
     await hideChrome(page, scrollCfg.hideChromeSelectors);
     await sleep(200);
@@ -353,7 +371,7 @@ async function capturePage(page, stop, pageIndex, scrollCfg, site) {
     screenshots.push({
       filename,
       label: s.label,
-      scrollY: s.y,
+      scrollY: actualY,
       kind: s.kind,
     });
   }
