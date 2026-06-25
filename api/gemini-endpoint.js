@@ -6,5 +6,6 @@
  * @param {string} apiKey
  * @returns {string} The formatted SSE URL
  */
-export const getGeminiStreamUrl = (apiKey) => 
-  `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:streamGenerateContent?alt=sse&key=${apiKey}`;
+export function getGeminiStreamUrl(apiKey) {
+  return `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:streamGenerateContent?alt=sse&key=${apiKey}`;
+}
