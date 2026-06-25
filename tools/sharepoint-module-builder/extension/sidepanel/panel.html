@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SharePoint Module Builder</title>
+    <link rel="stylesheet" href="panel.css" />
+  </head>
+  <body>
+    <header>
+      <h1>SharePoint Module Builder</h1>
+      <p class="lede">Uses your logged-in Chrome session on <strong>gpcom.sharepoint.com</strong>.</p>
+    </header>
+
+    <section class="card">
+      <h2>Capture tour</h2>
+      <ol class="tour-list">
+        <li><strong>Sales home</strong> — previous month results &amp; quick links</li>
+        <li><strong>Sales Resources</strong> — long-scroll collateral hub</li>
+        <li><strong>M&amp;Ps</strong> — discovered from site nav</li>
+        <li><strong>Rate Cards</strong> — discovered from site nav</li>
+      </ol>
+      <div class="actions">
+        <button type="button" id="run-tour" class="primary">Run full capture tour</button>
+        <button type="button" id="capture-current">Capture current tab only</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Progress</h2>
+      <div id="status" class="status">Idle — open a SharePoint tab, then start capture.</div>
+      <div id="log" class="log" aria-live="polite"></div>
+    </section>
+
+    <section class="card">
+      <h2>Export</h2>
+      <p class="hint">Download immediately after capture (screenshots stay in extension memory until then).</p>
+      <button type="button" id="download-bundle" class="primary" disabled>Download capture bundle</button>
+      <p class="hint mono">~/Downloads/gpc-sharepoint-capture/</p>
+    </section>
+
+    <section class="card">
+      <h2>Assemble in repo</h2>
+      <pre class="mono cmd">npm run sp:assemble-module -- \
+  ~/Downloads/gpc-sharepoint-capture</pre>
+    </section>
+
+    <script type="module" src="panel.js"></script>
+  </body>
+</html>

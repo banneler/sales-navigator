@@ -80,9 +80,15 @@
       "category": "Sales"
     },
     {
+      "id": "sales-sharepoint-hub",
+      "title": "GPC Sales SharePoint Hub",
+      "order": 13,
+      "category": "Sales"
+    },
+    {
       "id": "map-book",
       "title": "Executive Map Book",
-      "order": 13,
+      "order": 14,
       "category": "Map Book"
     }
   ]

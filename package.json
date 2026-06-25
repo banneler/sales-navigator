@@ -7,6 +7,8 @@
     "dev:css": "tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind.css --watch",
     "build:handouts": "node scripts/build-handouts.mjs",
     "corpus:router-modules": "node scripts/build-router-module-corpus.mjs",
+    "sp:assemble-module": "node tools/sharepoint-module-builder/scripts/assemble-module.mjs",
+    "sp:capture": "node tools/sharepoint-module-builder/scripts/run-sharepoint-capture.mjs",
     "content:shuffle-kc": "python3 scripts/shuffle-knowledge-checks.py",
     "docs:extract-intermedia-uc": "sh -c 'if [ -x .venv-extract/bin/python ]; then exec .venv-extract/bin/python scripts/extract_intermedia_uc.py; else exec python3 scripts/extract_intermedia_uc.py; fi'",
     "auth:migrate": "auth migrate --config lib/auth-server.js --yes"
@@ -14,6 +16,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "md-to-pdf": "^5.2.4",
+    "playwright": "^1.52.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17"
   },
