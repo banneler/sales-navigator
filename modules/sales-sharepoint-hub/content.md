@@ -1,6 +1,6 @@
 ---
 id: "sales-sharepoint-hub"
-title: "GPC Sales SharePoint Hub"
+title: "GPC Sales SharePoint"
 summary: "Navigate gpcSales SharePoint: Sales home, Sales Resources, M&Ps, and Rate Cards."
 sensitivity: "internal"
 reference_files:
@@ -17,8 +17,8 @@ five_minute_summary: |
   - **Sales Resources:** Collateral hub — battle cards, product sheets, competitive assets, and deep links by product family (long scroll).
   - **M&Ps:** Methods & Procedures — operational sales playbooks, process docs, and how-to guides for reps.
   - **Rate Cards:** Pricing and rate-card library — verify market-specific rates here before quoting.
-video_sections_as_tabs: true
 video_sections_presentation: scroll_tour
+video_sections_continuous: true
 video_sections_tabs_aria_label: "SharePoint guided tour"
 video_sections:
   - heading: "Sales home"
@@ -99,42 +99,6 @@ knowledge_checks:
     explanation: "Rate Cards and the formal quote path are the pricing authority."
 ---
 
-
-## How the main areas differ
-
-| Area | What lives here | When reps use it |
-| --- | --- | --- |
-| **Sales home** | Main landing page — leadership updates, previous month results, quick links into the rest of the site. | Start of week — results, announcements, navigation |
-| **Sales Resources** | Collateral hub — battle cards, product sheets, competitive assets, and deep links by product family (long scroll). | Before customer calls — battle cards, datasheets, competitive assets |
-| **M&Ps** | Methods & Procedures — operational sales playbooks, process docs, and how-to guides for reps. | Process questions — sales playbooks, procedures, training how-tos |
-| **Rate Cards** | Pricing and rate-card library — verify market-specific rates here before quoting. | Before quoting — verify market-specific pricing |
-
-Use **Sales Resources** for *what to say*; use **Rate Cards** for *what to quote*; check **M&Ps** for *how to run the process*; read **Sales home** for *what leadership is tracking now*.
-
-## Sales home — what to notice first
-
-- Main landing page — leadership updates, previous month results, quick links into the rest of the site.
-- **Sections spotted:** 96 Seat UC for 3 Locations · APRIL SALES RESULTS · SALES EVENTS
-
-Look for **previous month results** and leadership commentary near the top of the home page before you dive into collateral folders.
-
-## Sales Resources — guided scroll
-
-Sales Resources is a **long single page**. Work top-to-bottom:
-
-1. **Blue quick-link strip** — at the very top; jump-off tiles to Proposal Engine, collateral folders, battle cards, and other high-traffic tools.
-2. **Battle cards** — product and competitive talk tracks before external meetings.
-3. **Product collateral** — datasheets and approved customer-facing PDFs.
-4. **Deep links** — jump to product-family folders; do not quote from memory.
-
-Use the guided scroll tour in the tabs below as a map. Always open the live SharePoint link when forwarding material.
-
-## M&Ps vs Rate Cards
-
-- **M&Ps (Methods & Procedures):** operational playbooks — sales processes, procedures, and training resources. Check here when you need the approved *how* for a motion.
-- **Rate Cards:** pricing authority — verify market, term, and product-specific rates before you quote or build a solution.
-
-If a link moved, use SharePoint search inside **gpcSales** rather than bookmarking stale paths.
 
 ## Reference discipline
 

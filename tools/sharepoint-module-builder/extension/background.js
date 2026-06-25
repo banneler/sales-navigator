@@ -173,7 +173,7 @@ function initExport() {
     capturedAt: new Date().toISOString(),
     moduleDraft: {
       id: 'sales-sharepoint-hub',
-      title: 'GPC Sales SharePoint Hub',
+      title: 'GPC Sales SharePoint',
       category: 'Sales',
     },
     pages: [],

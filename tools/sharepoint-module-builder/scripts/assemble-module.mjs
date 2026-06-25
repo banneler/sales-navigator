@@ -15,7 +15,7 @@ const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(SCRIPT_DIR, '..', '..', '..');
 
 const MODULE_ID = 'sales-sharepoint-hub';
-const MODULE_TITLE = 'GPC Sales SharePoint Hub';
+const MODULE_TITLE = 'GPC Sales SharePoint';
 const ASSET_DIR = 'assets/sharepoint-hub';
 
 /** Rep-facing commentary keyed by page id, then label substring. */
@@ -188,37 +188,8 @@ function buildVideoSections(pages, copiedFiles) {
     .filter((s) => s.scroll_tour.length);
 }
 
-function buildBodyMarkdown(pages) {
-  const home = pages.find((p) => p.id === 'home');
-  const homeLines = home ? inferSectionSummaries(home) : [];
-
+function buildBodyMarkdown() {
   return `
-${compareSectionsBlock(pages)}
-
-## Sales home — what to notice first
-
-${homeLines.map((l) => `- ${l}`).join('\n')}
-
-Look for **previous month results** and leadership commentary near the top of the home page before you dive into collateral folders.
-
-## Sales Resources — guided scroll
-
-Sales Resources is a **long single page**. Work top-to-bottom:
-
-1. **Blue quick-link strip** — at the very top; jump-off tiles to Proposal Engine, collateral folders, battle cards, and other high-traffic tools.
-2. **Battle cards** — product and competitive talk tracks before external meetings.
-3. **Product collateral** — datasheets and approved customer-facing PDFs.
-4. **Deep links** — jump to product-family folders; do not quote from memory.
-
-Use the guided scroll tour in the tabs below as a map. Always open the live SharePoint link when forwarding material.
-
-## M&Ps vs Rate Cards
-
-- **M&Ps (Methods & Procedures):** operational playbooks — sales processes, procedures, and training resources. Check here when you need the approved *how* for a motion.
-- **Rate Cards:** pricing authority — verify market, term, and product-specific rates before you quote or build a solution.
-
-If a link moved, use SharePoint search inside **gpcSales** rather than bookmarking stale paths.
-
 ## Reference discipline
 
 - Treat SharePoint as the **system of record** for customer-facing numbers and PDFs.
@@ -271,8 +242,8 @@ reference_files:
 ${refs.map((r) => `  - label: ${yamlQuote(r.label)}\n    sharepoint_url: ${yamlQuote(r.sharepoint_url)}`).join('\n')}
 five_minute_summary: |
 ${fiveMin.split('\n').map((l) => `  ${l}`).join('\n')}
-video_sections_as_tabs: true
 video_sections_presentation: scroll_tour
+video_sections_continuous: true
 video_sections_tabs_aria_label: "SharePoint guided tour"
 video_sections:
 ${videoSections
@@ -336,7 +307,7 @@ async function main() {
 
   const copiedFiles = await copyScreenshots(captureDir, pages);
   const videoSections = buildVideoSections(pages, copiedFiles);
-  const body = buildBodyMarkdown(pages);
+  const body = buildBodyMarkdown();
   const frontMatter = buildFrontMatter(exportJson, videoSections);
   const content = `${frontMatter}\n${body}\n`;
 

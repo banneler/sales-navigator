@@ -438,7 +438,7 @@ async function main() {
     version: 1,
     site: SITE.baseUrl,
     capturedAt: new Date().toISOString(),
-    moduleDraft: { id: 'sales-sharepoint-hub', title: 'GPC Sales SharePoint Hub', category: 'Sales' },
+    moduleDraft: { id: 'sales-sharepoint-hub', title: 'GPC Sales SharePoint', category: 'Sales' },
     pages: [],
   };
 

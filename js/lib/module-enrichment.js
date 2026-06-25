@@ -596,6 +596,48 @@ function buildScrollTourHtml(steps) {
 }
 
 /**
+ * One uninterrupted scroll: each video_section becomes an area (heading + intro + steps).
+ * @param {Record<string, unknown>} meta
+ */
+function buildContinuousScrollTourHtml(meta) {
+  const sections = meta.video_sections;
+  if (!Array.isArray(sections) || sections.length === 0) return '';
+
+  const shellLabel =
+    typeof meta.video_sections_tabs_aria_label === 'string' &&
+    meta.video_sections_tabs_aria_label.trim()
+      ? meta.video_sections_tabs_aria_label.trim()
+      : 'Guided tour';
+
+  const parts = sections
+    .map((sec, i) => {
+      const heading =
+        typeof sec?.heading === 'string' && sec.heading.trim() ? sec.heading.trim() : '';
+      const sid = `scroll-tour-area-${i}`;
+      const areaDivider = i > 0 ? ' border-t-2 border-slate-200/90 pt-10 mt-10' : '';
+      const headingHtml = heading
+        ? `<h3 id="${sid}" class="text-xl font-bold text-slate-900 tracking-tight mb-2">${escapeHtml(heading)}</h3>`
+        : '';
+      const introHtml = buildTrainingIntroParagraph(
+        typeof sec?.intro === 'string' ? sec.intro : ''
+      );
+      const steps = resolveScrollTourSteps(sec, meta);
+      const tourHtml = steps.length ? buildScrollTourHtml(steps) : '';
+      if (!headingHtml && !introHtml && !tourHtml) return '';
+      const labelled = heading ? ` aria-labelledby="${sid}"` : '';
+      return `<section class="module-scroll-tour-area${areaDivider}"${labelled}>${headingHtml}${introHtml}${tourHtml}</section>`;
+    })
+    .filter(Boolean);
+
+  if (!parts.length) return '';
+
+  return `
+      <section class="${TRAINING_SECTION_CARD_CLASSES} module-scroll-tour-shell" aria-label="${escapeHtml(shellLabel)}">
+        <div class="module-scroll-tour-continuous w-full max-w-none">${parts.join('')}</div>
+      </section>`;
+}
+
+/**
  * Shared inner content for a video/training section (tabs or standalone card).
  * @param {Record<string, unknown>} section
  * @param {Record<string, unknown>} meta
@@ -953,10 +995,15 @@ function buildVideoSectionsAsTabsHtml(meta) {
  * optional `image_items` (static collateral carousel), optional `scroll_tour` (vertical commentary + screenshots),
  * optional `body` (markdown for text-only cards or prose before a carousel).
  * Set `video_sections_presentation: scroll_tour` to render `image_library` as a scroll tour fallback.
+ * Set `video_sections_continuous: true` to merge all sections into one vertical tour (no tabs).
  * With `video_sections_as_tabs: true`, sections render as tabs inside one card (needs ≥2 sections).
  */
 export function buildVideoSectionsHtml(meta) {
   if (Array.isArray(meta.video_sections) && meta.video_sections.length > 0) {
+    if (meta.video_sections_continuous === true) {
+      const continuous = buildContinuousScrollTourHtml(meta);
+      if (continuous) return continuous;
+    }
     if (meta.video_sections_as_tabs === true) {
       const tabbed = buildVideoSectionsAsTabsHtml(meta);
       if (tabbed) return tabbed;
