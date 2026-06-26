@@ -618,14 +618,10 @@ function buildContinuousScrollTourHtml(meta) {
       const headingHtml = heading
         ? `<h3 id="${sid}" class="text-xl font-bold text-slate-900 tracking-tight mb-2">${escapeHtml(heading)}</h3>`
         : '';
-      const introHtml = buildTrainingIntroParagraph(
-        typeof sec?.intro === 'string' ? sec.intro : ''
-      );
-      const steps = resolveScrollTourSteps(sec, meta);
-      const tourHtml = steps.length ? buildScrollTourHtml(steps) : '';
-      if (!headingHtml && !introHtml && !tourHtml) return '';
+      const panelInner = buildVideoSectionPanelInner(sec, meta);
+      if (!headingHtml && !panelInner) return '';
       const labelled = heading ? ` aria-labelledby="${sid}"` : '';
-      return `<section class="module-scroll-tour-area${areaDivider}"${labelled}>${headingHtml}${introHtml}${tourHtml}</section>`;
+      return `<section class="module-scroll-tour-area${areaDivider}"${labelled}>${headingHtml}${panelInner}</section>`;
     })
     .filter(Boolean);
 

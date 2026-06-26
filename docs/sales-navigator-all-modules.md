@@ -2982,6 +2982,11 @@ video_sections_presentation: scroll_tour
 video_sections_continuous: true
 video_sections_tabs_aria_label: "Proposal generator tour"
 video_sections:
+  - heading: "Intro"
+    intro: "Watch this first for a quick orientation to the Proposal Generator — then scroll through the step-by-step tour below."
+    items:
+      - title: "Proposal Generator intro"
+        src: "assets/enterprise-proposals/intro-video.mp4"
   - heading: "Proposal Generator"
     intro: "Walk the app top to bottom — properties, content, pricing, compile, and handoff."
     scroll_tour:
