@@ -16,6 +16,19 @@ const ROOT = path.join(SCRIPT_DIR, '..');
 const SOURCE = path.join(ROOT, 'docs', 'gpc-training-corpus-structured.md');
 const OUTDIR = path.join(ROOT, 'docs', 'router-corpus', 'by-module');
 
+/** Modules authored in Sales-Navigator (SharePoint / ZoomInfo) instead of desktop PDF tree. */
+const NATIVE_MODULE_CORPUS = {
+  'sales-sharepoint-hub': {
+    modulePath: path.join(ROOT, 'modules', 'sales-sharepoint-hub', 'content.md'),
+    capturePath: path.join(process.env.HOME || '', 'Downloads', 'gpc-sharepoint-capture', 'capture-export.json'),
+  },
+  'zoominfo-for-sales': {
+    modulePath: path.join(ROOT, 'modules', 'zoominfo-for-sales', 'content.md'),
+    supplementPath: path.join(ROOT, '.zoominfo-corpus', 'extracted.md'),
+    manifestPath: path.join(ROOT, '.zoominfo-corpus', 'manifest.json'),
+  },
+};
+
 /**
  * Parse ### `Some path.pdf`-delimited chunks (everything from each header onward).
  */
@@ -288,14 +301,98 @@ function assignModules(title) {
 }
 
 function preambleForModule(moduleId) {
+  const native = NATIVE_MODULE_CORPUS[moduleId];
+  const sourceNote = native
+    ? 'Includes live module content from Sales-Navigator (SharePoint / ZoomInfo), not only the desktop PDF extraction tree.'
+    : 'Subset of docs/gpc-training-corpus-structured.md. Answers must stay grounded only in sections below.';
+
   return [
     `<!-- Generated for Router (${moduleId}) — regenerate with: npm run corpus:router-modules -->`,
     '',
     `# GPC training corpus excerpt (module: ${moduleId})`,
     '',
-    'Subset of docs/gpc-training-corpus-structured.md. Answers must stay grounded only in sections below.',
+    sourceNote,
     '',
   ].join('\n');
+}
+
+async function readOptional(filePath) {
+  try {
+    return await fs.readFile(filePath, 'utf8');
+  } catch {
+    return null;
+  }
+}
+
+function summarizeSharePointCapture(exportJson) {
+  const pages = exportJson?.pages || [];
+  if (!pages.length) return '';
+
+  const lines = ['## SharePoint capture export (live site)', '', `Captured: ${exportJson.capturedAt || 'unknown'}`, ''];
+  for (const page of pages) {
+    lines.push(`### ${page.label}`, '');
+    if (page.url) lines.push(`URL: ${page.url}`);
+    if (page.purpose) lines.push(`Purpose: ${page.purpose}`);
+    const headings = (page.profile?.headings || []).map((h) => h.text).filter(Boolean);
+    if (headings.length) lines.push(`Headings: ${headings.join(' · ')}`);
+    const preview = page.profile?.bodyPreview;
+    if (preview) lines.push('', preview.slice(0, 1200));
+    lines.push('');
+  }
+  return lines.join('\n').trimEnd();
+}
+
+async function buildNativeModuleCorpus(moduleId, config) {
+  /** @type {string[]} */
+  const parts = [];
+
+  const moduleMd = await readOptional(config.modulePath);
+  if (moduleMd) {
+    parts.push('## Sales-Navigator module content', '', moduleMd.trimEnd());
+  }
+
+  if (config.capturePath) {
+    const raw = await readOptional(config.capturePath);
+    if (raw) {
+      try {
+        const summary = summarizeSharePointCapture(JSON.parse(raw));
+        if (summary) parts.push(summary);
+      } catch {
+        /* ignore bad json */
+      }
+    }
+  }
+
+  if (config.supplementPath) {
+    const supplement = await readOptional(config.supplementPath);
+    if (supplement) {
+      parts.push('## ZoomInfo job aids (SharePoint PDF text)', '', supplement.trimEnd());
+    }
+  }
+
+  if (config.manifestPath) {
+    const raw = await readOptional(config.manifestPath);
+    if (raw) {
+      try {
+        const manifest = JSON.parse(raw);
+        const names = (manifest.items || []).map((i) => i.name).filter(Boolean);
+        if (names.length) {
+          parts.push(
+            '## ZoomInfo Resources library index',
+            '',
+            `Library: ${manifest.listTitle || 'ZoomInfo Resources'}`,
+            '',
+            ...names.map((n) => `- ${n}`)
+          );
+        }
+      } catch {
+        /* ignore */
+      }
+    }
+  }
+
+  if (!parts.length) return [corpusStubMarkdown(moduleId)];
+  return parts;
 }
 
 function corpusStubMarkdown(moduleId) {
@@ -336,6 +433,10 @@ async function main() {
 
   for (const mid of manifestIds) {
     if (!buckets.has(mid)) buckets.set(mid, [corpusStubMarkdown(mid)]);
+  }
+
+  for (const [mid, config] of Object.entries(NATIVE_MODULE_CORPUS)) {
+    buckets.set(mid, await buildNativeModuleCorpus(mid, config));
   }
 
   await fs.mkdir(OUTDIR, { recursive: true });

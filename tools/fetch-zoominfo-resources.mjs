@@ -108,6 +108,7 @@ async function main() {
   }
 
   console.log(`\nWrote ${OUT_DIR}`);
+  if (typeof browser.disconnect === 'function') await browser.disconnect();
 }
 
 main().catch((e) => {

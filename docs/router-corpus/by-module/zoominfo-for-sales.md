@@ -1,3 +1,18 @@
+<!-- Generated for Router (zoominfo-for-sales) — regenerate with: npm run corpus:router-modules -->
+
+# GPC training corpus excerpt (module: zoominfo-for-sales)
+
+Includes live module content from Sales-Navigator (SharePoint / ZoomInfo), not only the desktop PDF extraction tree.
+
+## Extracted content
+
+
+## Sales-Navigator module content
+
+
+
+
+
 ---
 id: "zoominfo-for-sales"
 title: "ZoomInfo"
@@ -361,3 +376,636 @@ Use the SharePoint library for screenshots and click-by-click steps. Each guide 
 | RFP Scoops | [Setting Up RFP Scoops using Advanced Search](https://gpcom.sharepoint.com/sites/gpcSales/ZoomInfo%20Resources/Setting%20Up%20RFP%20Scoops%20using%20Advanced%20Search.pdf) |
 
 **Live help on SharePoint:** Sales Resources also links **ZoomInfo Open Office Hours**, **ZI Copilot Knowledge Base**, and **ZoomInfo University** — use those when the job aid does not cover your question.
+
+
+## ZoomInfo job aids (SharePoint PDF text)
+
+
+
+
+
+# ZoomInfo training corpus
+
+## Deleting and Resaving Intent Searches.pdf (7 pages)
+
+1
+How to Delete and Resave 
+Intent Searches in ZoomInfo
+1
+Navigate to https://app.zoominfo.com/#/apps/home-page
+
+2
+2
+Click "Intent".
+3
+Click "Open Search".
+
+3
+4
+Click "Saved Intent Searches".
+5
+Click here.
+
+4
+6
+Click "Delete Search".
+7
+Click "Intent".
+
+5
+8
+Click here.
+9
+Click the "Type in location" field.
+
+6
+10
+Type in the location you are searching for intent for.
+11
+Click "Save & Subscribe".
+12
+Name your saved search something that makes sense.
+
+7
+13
+Ensure the "Turn on alert notifications" is showing blue. Click "Save".
+
+## Identifying UC Opportunities Using ZoomInfo WebSights.pdf (7 pages)
+
+Made with Scribe - https://scribehow.com
+1
+Identifying UC Opportunities via
+WebSights
+Learn how to filter visitor data by location and specific page URL within the ZoomInfo
+WebSights tool to identify companies showing buying signals for the UC product. This
+guide will show you how to filter, save and revisit your custom search criteria for
+quick access to targeted visitor insights.
+1
+Log in to ZoomInfo
+
+Made with Scribe - https://scribehow.com
+2
+2
+Click "Signals" to toggle open the Signals navigation
+3
+Click "WebSights"
+
+Made with Scribe - https://scribehow.com
+3
+4
+Click the "Country, State or City" field and start typing the state you wish to filter
+for; you will start seeing cities populate in a menu underneath; select the city you
+wish to filter for
+5
+Go to "Webpage(s) URL". Click the "Enter page URL" field and start typing "unified"
+in the box
+
+Made with Scribe - https://scribehow.com
+4
+6
+Select "business/unified-communications" from the drop-down menu that
+appears
+7
+OPTIONAL: Under "Time", change the time to view the visitors from the past 24
+hours, past week, etc.
+
+Made with Scribe - https://scribehow.com
+5
+8
+Click "Apply Filters"
+9
+Click "Save Search"
+
+Made with Scribe - https://scribehow.com
+6
+10
+In the "Save as a New Search" field, enter a name that makes sense for your
+search criteria; for example: "Greensburg UC page visits"
+11
+Click "Save"
+
+Made with Scribe - https://scribehow.com
+7
+12
+To revisit your saved search, click the down arrow next to "My Searches"
+13
+Click the name of the search you want to pull back up
+
+## Identifying UC Opportunities using ZoomInfo Intent Signals.pdf (7 pages)
+
+1
+Identifying UC Opportunities using 
+Intent Searches
+Learn how to filter and save a targeted intent search to monitor UC interest in a
+specific geographic area. This guide helps you streamline your prospecting by setting
+up automated alerts for companies showing interest in UCaaS.
+1
+Log in to ZoomInfo
+
+2
+2
+Toggle open the "Signals" navigation and click "Intent"
+3
+Click "Intent" to open up that section
+
+3
+4
+Under "Telecom", click the "Unified Communications as a Service (UCaaS)" field.
+You should only have boxes next to this one and VoIP selected in the Intent filters
+5
+If you wish to change the date range for the intent signals, click the drop-down
+under "Date Range" and pick the time range you wish to filter for
+
+4
+6
+Click "Apply" to apply the intent filters
+7
+Click "Location" in the Filters section
+
+5
+8
+Click the "Type in location" field and type the city and/or state you wish to filter for
+and hit "Enter"
+9
+Click "Save & Subscribe"
+
+6
+10
+Choose a name for the search that makes it clear what you were searching for;
+Click "Save"
+11
+To revisit your search, click "Open Search"
+
+7
+12
+Click "Saved Intent Searches"
+13
+Choose the name of the search you wish to open; this will pull up your search in
+the Intent search
+
+## Personalizing Exported Data in ZoomInfo.pdf (4 pages)
+
+1
+Personalizing Exported Data in ZoomInfo
+1
+Navigate to https://app.zoominfo.com/#/apps/home-page
+2
+Click your initials.
+
+2
+3
+Click "Settings"
+4
+Click "Customization"
+
+3
+5
+Click "Export to CSV"
+6
+Make any changes to the contact information you want exported. Then click
+"Save".
+
+4
+7
+Want to personalize the company information you want exported? Click "Company
+Search" and make your changes. Then click "Save".
+
+## Searching for Companies Using Advanced Search.pdf (6 pages)
+
+1
+Searching for Companies using 
+Advanced Search
+Learn how to use filters to search for businesses using ZoomInfo's Advanced Search.
+This includes how to save the search so you receive email notifications and can pull it
+back up in the future.
+1
+Log in to ZoomInfo.
+
+2
+2
+Click "Advanced Search"
+3
+Click "Locations" to set the geographic areas you wish to search.
+
+3
+4
+Click the "Country, State or City" field. Enter the name of the city and state you
+wish to search. Note: You can also set the state here and enter a ZIP code in the
+box below that field.
+5
+Click "Companies" ONLY IF you are not already on the Companies tab.
+
+4
+6
+Click the "+" next to Industry to open the Industry filters.
+7
+Click the "Search for an industry" field. Start typing the name of the industry you
+wish to search for.
+
+5
+8
+A dropdown menu will appear. Click the box next to the industry you wish to filter
+for.
+9
+Click "Save & Subscribe" to save your search criteria.
+
+6
+10
+Name the search something that makes it clear what it will show. For example:
+Elkhart IN Healthcare Companies.
+Click "Weekly" to set the notification frequency to weekly, or you can leave it as
+daily.
+11
+Click "Save"
+
+## Searching for Companies Using Specific Technologies.pdf (6 pages)
+
+1
+Search for Companies Using Specific
+Technologies
+1
+Navigate to https://app.zoominfo.com/#/apps/home-page
+
+2
+2
+Click "Advanced Search"
+3
+Click here.
+
+3
+4
+Click the "e.g. New York" field and enter your target locations.
+5
+Click "Technologies"
+
+4
+6
+Click "Advanced search"
+7
+Click "Set Criteria"
+
+5
+8
+Click the "Search technologies" field.
+9
+Search for Avaya IP Office, Avaya Aura and Avaya Definity.
+
+6
+10
+Click the boxes next to each technology after you have searched for them to add
+them to the box above.
+11
+Click "Add Technologies". This will show businesses in that location
+
+## Setting Up RFP Scoops using Advanced Search.pdf (8 pages)
+
+1
+Setting Up Automated RFP Scoops for
+your Sales Territory
+Learn how to configure custom search alerts in ZoomInfo to track RFP opportunities
+within specific geographic regions. This guide helps you automate the process of
+staying updated on relevant business developments.
+1
+Navigate to https://app.zoominfo.com/#/apps/home-page
+
+2
+2
+Click Advanced Search.
+3
+Click Locations.
+
+3
+4
+Click the e.g. New York field and enter your sales territory. You can also use the
+ZIP code section to do this.
+5
+Click Scoops.
+
+4
+6
+Click More scoops filters.
+7
+Click the Select topics field.
+
+5
+8
+Type RFP.
+9
+Click the box next to Request for Proposal (RFP).
+
+6
+10
+In Scoops Departments, select departments relevant to Internet connectivity.
+Some options include Information Technology, Operations and Engineering
+and Technical.
+11
+Click Save & Subscribe and name the search something that makes what the
+criteria are very clear. For example, NE and IN RFP Scoops tells exactly which
+territories and scoops are included in the search.
+
+7
+12
+Click Scoops to add scoops to the notifications.
+13
+Update the frequency on which you'd like to receive the notification.
+
+8
+14
+Click Save.
+
+## Updating Email Alerts in ZoomInfo.pdf (4 pages)
+
+Made with Scribe - https://scribehow.com
+1
+Updating Email Alerts in ZoomInfo
+1
+Navigate to https://app.zoominfo.com/#/apps/home-page
+
+Made with Scribe - https://scribehow.com
+2
+2
+Click "Alerts"
+3
+Click "Email Alerts"
+
+Made with Scribe - https://scribehow.com
+3
+4
+Click the drop-down under Frequency and select "Weekly"
+5
+A pop-up will appear saying the alert was edited successfully. Click the X to close
+out that box.
+
+Made with Scribe - https://scribehow.com
+4
+6
+If changes are not showing the next time you are in that screen, press Ctrl + Shift
++ R to do a hard refresh on your browser. (Cmd + Shift + R on Mac)
+
+## Upload a List and View Contacts 022626.pdf (7 pages)
+
+Made with Scribe - https://scribehow.com
+1
+Upload Contacts to ZoomInfo Lists
+1
+Navigate to https://app.zoominfo.com/#/apps/home-page
+
+Made with Scribe - https://scribehow.com
+2
+2
+Click here.
+3
+Click "Lists"
+
+Made with Scribe - https://scribehow.com
+3
+4
+Click "Upload Lists"
+5
+Click "Next"
+
+Made with Scribe - https://scribehow.com
+4
+6
+Click "Upload CSV". The File Explorer on your computer will pop up. Navigate to
+the spreadsheet you wish to upload and select "OK".
+7
+Click "Next"
+
+Made with Scribe - https://scribehow.com
+5
+8
+Click the drop-down arrow next to "Select a field".
+9
+Choose the fields from the drop-downs that align with the ZoomInfo fields in the
+left column.
+
+Made with Scribe - https://scribehow.com
+6
+10
+Click "Submit"
+11
+Click "Open List"
+
+Made with Scribe - https://scribehow.com
+7
+12
+Click "Open in Contact Search"
+
+## Uploading CSV Lists to ZoomInfo.pdf (5 pages)
+
+Made with Scribe - https://scribehow.com
+1
+How to Upload a CSV to ZoomInfo Lists
+1
+Click "Lists"
+
+Made with Scribe - https://scribehow.com
+2
+2
+Click "Upload Lists"
+3
+Click "Next"
+
+Made with Scribe - https://scribehow.com
+3
+4
+Click "Upload CSV" and browse for the file you wish to upload; it must be in CSV
+format
+5
+Click "Next"
+
+Made with Scribe - https://scribehow.com
+4
+6
+Use the drop-down boxes to match fields from your CSV file to ZoomInfo data
+fields
+7
+Click "Submit"
+
+Made with Scribe - https://scribehow.com
+5
+8
+Click "Close"
+9
+Click the link of the list you just created to open it in Advanced Search
+
+## Uploading Target Account List.pdf (3 pages)
+
+Made with Scribe - https://scribehow.com
+1
+Upload Target Market Lists in ZoomInfo
+Learn how to upload your target market lists to ZoomInfo to refine your prospecting
+efforts. This guide will walk you through the steps to efficiently import your data and
+customize your market settings for better results.
+1
+Navigate to https://app.zoominfo.com/#/apps/home-page
+
+Made with Scribe - https://scribehow.com
+2
+2
+Click "Target Market Settings"
+3
+Click "Edit settings"
+
+Made with Scribe - https://scribehow.com
+3
+4
+Click "Upload list"
+5
+Click "Upload CSV" and navigate to the file you wish to upload
+
+## Using Advanced Search to Identify Businesses in a Specific Office Building.pdf (4 pages)
+
+Made with Scribe - https://scribehow.com
+1
+Using Advanced Search to Identify
+Businesses in a Specific Office Building
+Learn how to effectively narrow down your company search within the ZoomInfo
+platform using specific office building addresses.
+1
+Log in to ZoomInfo.
+
+Made with Scribe - https://scribehow.com
+2
+2
+Click "Advanced Search"
+3
+Click "Locations" tab.
+
+Made with Scribe - https://scribehow.com
+3
+4
+Click the "e.g. New York" field and enter the city the office building is in.
+5
+Click the "Street" field. Enter the full address of the office building.
+
+Made with Scribe - https://scribehow.com
+4
+6
+Click "Companies" to view all companies showing a location in that building.
+
+## Using Advanced Search to Identify Businesses on a Specific Street.pdf (4 pages)
+
+Made with Scribe - https://scribehow.com
+1
+How to Filter Companies by Specific
+Street in ZoomInfo
+Learn how to narrow down your prospect list by specifying city and street name. This
+guide helps you leverage advanced search filters to find companies in targeted
+locations efficiently.
+1
+Log in to ZoomInfo.
+
+Made with Scribe - https://scribehow.com
+2
+2
+Click "Advanced Search"
+3
+Click "Locations"
+
+Made with Scribe - https://scribehow.com
+3
+4
+Click the "e.g. New York" field. Enter the city name you want to search in.
+5
+Click the "Street" field. Enter the street you are searching for. For example,
+"Regency Pkwy" or "S 97th St".
+
+Made with Scribe - https://scribehow.com
+4
+6
+Click "Companies" if you are not already showing company results. This will
+provide a list of companies with any office along that street.
+
+## WebSights Filtering and Scrolling.pdf (5 pages)
+
+Made with Scribe - https://scribehow.com
+1
+How to Filter and Scroll Through 
+WebSights Data in the WebSights Tab
+1
+Log in to ZoomInfo and navigate to the WebSights tab
+
+Made with Scribe - https://scribehow.com
+2
+2
+Like other sections, the filters available are located on the left-hand side of the
+screen
+3
+Set the filters as you need them. To filter by visited web pages of our site, click the
+"Enter page URL" field
+
+Made with Scribe - https://scribehow.com
+3
+4
+Type "business"
+5
+Click "business/"
+
+Made with Scribe - https://scribehow.com
+4
+6
+Click "Apply Filters" after every time you adjust the filters.
+7
+Click the numbers under the Unique Visits column to get a quick view of all the
+pages visited by that particular company
+
+Made with Scribe - https://scribehow.com
+5
+8
+Click the arrow buttons to scroll through each company listed in the filtered list
+
+
+## ZoomInfo Resources library index
+
+
+
+
+
+Library: ZoomInfo Resources
+
+
+
+
+
+- Upload a List and View Contacts 022626.pdf
+
+
+- Deleting and Resaving Intent Searches.pdf
+
+
+- Searching for Companies Using Specific Technologies.pdf
+
+
+- Uploading Target Account List.pdf
+
+
+- Uploading CSV Lists to ZoomInfo.pdf
+
+
+- Updating Email Alerts in ZoomInfo.pdf
+
+
+- Personalizing Exported Data in ZoomInfo.pdf
+
+
+- WebSights Filtering and Scrolling.pdf
+
+
+- Identifying UC Opportunities Using ZoomInfo WebSights.pdf
+
+
+- Identifying UC Opportunities using ZoomInfo Intent Signals.pdf
+
+
+- Using Advanced Search to Identify Businesses on a Specific Street.pdf
+
+
+- Using Advanced Search to Identify Businesses in a Specific Office Building.pdf
+
+
+- Searching for Companies Using Advanced Search.pdf
+
+
+- Setting Up RFP Scoops using Advanced Search.pdf
