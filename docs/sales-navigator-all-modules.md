@@ -15,11 +15,11 @@ Single export in manifest order. **Canonical training source for each module is 
 - [GPC iTV for Business (`product-itv`)](#gpc-itv-for-business-product-itv)
 - [UC, Voice & Collaboration (`product-uc-voice-and-collaboration`)](#uc-voice-collaboration-product-uc-voice-and-collaboration)
 - [Competitive Positioning (`competitive-positioning`)](#competitive-positioning-competitive-positioning)
-- [Account Based Marketing (`account-based-marketing`)](#account-based-marketing-account-based-marketing)
-- [Operational Business Reviews (`operational-business-reviews`)](#operational-business-reviews-operational-business-reviews)
 - [GPC Sales SharePoint (`sales-sharepoint-hub`)](#gpc-sales-sharepoint-sales-sharepoint-hub)
 - [ZoomInfo (`zoominfo-for-sales`)](#zoominfo-zoominfo-for-sales)
-- [Self-Serve Proposal Generator (`enterprise-proposals`)](#self-serve-proposal-generator-enterprise-proposals)
+- [Proposal Generator (`enterprise-proposals`)](#proposal-generator-enterprise-proposals)
+- [Account Based Marketing (`account-based-marketing`)](#account-based-marketing-account-based-marketing)
+- [Operational Business Reviews (`operational-business-reviews`)](#operational-business-reviews-operational-business-reviews)
 - [Executive Map Book (`map-book`)](#executive-map-book-map-book)
 
 ---
@@ -2447,323 +2447,6 @@ Lead with **automatic failover**, critical-app prioritization, NOC monitoring, a
 
 ---
 
-<a id="account-based-marketing-account-based-marketing"></a>
-
-# Account Based Marketing (`account-based-marketing`)
-
-<!-- prettier-ignore-start -->
----
-id: "account-based-marketing"
-title: "Account Based Marketing"
-summary: "C-level targeting. 90-day sprints. Marketing air cover."
-sensitivity: "internal"
-reference_files:
-  - label: "Account Based Marketing — SharePoint folder (SOP, tracking, collateral)"
-    sharepoint_url: "https://gpcom.sharepoint.com/:f:/r/sites/gpcSales/Sales%20Process/Account%20Based%20Marketing%20-%20ABM?csf=1&web=1&e=ZSvfY4"
-discovery_questions:
-  - 'Does this account meet the **Strategic** threshold to justify a 90-day ABM cycle, or is it a transactional opportunity that''s better suited to the standard sequence?'
-  - 'Do I have **three identifiable targets across Manager, Director/VP, and Executive tiers** at this account today — and not all Executive? If not, what''s my plan to surface them in week one?'
-  - 'Where does this account fit in my **Rolling Three**? Am I filling an on-deck slot, or proposing to displace an active cycle?'
-  - 'Have I completed all six Sales Readiness Checklist items (Account Intel, Status, Current Services, Location Scope, Prospecting History, finalized Target List) before requesting kickoff?'
-  - 'Which **Marketing partner** owns the air cover for this account, and have we aligned on the monthly touchpoint cadence + any planned **Door Pulls** in the 90-day window?'
-five_minute_summary: |
-  - **Why ABM:** Top logos don't move because someone sent more cadence emails—they move when **the right buyers** keep seeing **one consistent GPC story** between your conversations.
-  - **Sales** owns the account: who matters (tiered targets, not a single hero exec), the tempo of outreach, and the integrity of kickoff—so Marketing isn't inventing context from thin air.
-  - **Marketing** owns **air cover**: coordinated touches that reinforce what Sales is saying, timed to the play—not a generic newsletter blast that arrives a random week after your last call.
-  - **It's deliberately joint:** when both sides run the same 90-day motion, you avoid the classic failure mode—reps grinding alone at the C-suite while **brand and field feel like two different companies.**
-  - **Leadership keeps the model honest** (bench, kickoff discipline, shared visibility) so the program stays strategic—not a pile of heroic one-offs. Cadence, Door Pulls, and tracking live in the SOP and sections below.
-
-knowledge_checks:
-  - question: "How many ABM accounts should an Account Representative run concurrently per the SOP?"
-    options:
-      - "As many as the rep can manage—no defined cap"
-      - "Three active accounts at any time, with three on-deck ready to backfill (the Rolling Three)"
-      - "One account at a time until it closes"
-    correct_index: 1
-    explanation: "Three concurrent active accounts + three on-deck = the Rolling Three pipeline model."
-
-  - question: "How are the three concurrent ABM accounts kicked off per the SOP?"
-    options:
-      - "All three start on the same day for momentum"
-      - "Whenever the rep has free calendar time"
-      - "On a 30-day stagger: Account A Month 1, Account B Month 2, Account C Month 3"
-    correct_index: 2
-    explanation: "Staggered 30-day kickoff ensures one account is always in the high-intensity opening phase while others are mid- or late-cycle."
-
-  - question: "Can all ABM targets at an account be executive-level decision makers?"
-    options:
-      - "No—the SOP forbids all-executive stacks; mix Manager, Director/VP, and Executive"
-      - "Yes—executives close deals, so they're the only targets that matter"
-      - "Only at Strategic accounts above a certain revenue threshold"
-    correct_index: 0
-    explanation: "The tier hierarchy is Manager (Operational/Technical) + Director/VP (Tactical/Strategic) + Executive (Financial/Final Decision Maker). Single-threading at the top is exactly what the mix is designed to prevent."
-
-  - question: "Which items belong on the Sales Readiness Checklist that the rep brings to ABM kickoff?"
-    options:
-      - "Only the target list—everything else can be figured out in the meeting"
-      - "A draft proposal and a contract template"
-      - "Account Intel, Status (Customer vs Prospect), Current Services, Location Scope, Prospecting History, and the finalized Target List"
-    correct_index: 2
-    explanation: "Walking in cold (no checklist) is the fastest way to lose a Marketing partner and stretch the 90-day cycle."
-
-  - question: "How often should marketing run ABM coordination touchpoints in the SOP model?"
-    options:
-      - "Three touchpoints every week regardless of sales activity"
-      - "One touchpoint every 30 days, with +1 added when Sales runs a physical Door Pull"
-      - "Only one touchpoint at the end of the 90-day cycle"
-    correct_index: 1
-    explanation: "Monthly marketing coordination; +1 brochure-leave-behind when Sales executes a Door Pull. The Door Pull is the named SOP trigger for the extra marketing touch."
-
-  - question: "Who may edit the Master Tracking Spreadsheet per the ABM operating model?"
-    options:
-      - "Any account rep working an Active ABM account may edit their own row."
-      - "Marketing and Sales Leadership only—everyone else is view-only."
-      - "Sales Operations owns the spreadsheet; Marketing is view-only."
-    correct_index: 1
-    explanation: "The master file stays authoritative when only Marketing and Sales Leadership hold edit rights. Reps who need a change route it through those owners—no shadow copies, no self-edit."
-    source: "ABM SOP (Master Tracking Spreadsheet — permissions)"
-
-scenarios:
-  - title: "Skipping ahead in the ABM sequence"
-    situation: |
-      A rep wants to jump straight to **meeting ask** in week two because they already know the CTO. Leadership asks whether that aligns with the ABM playbook.
-    choices:
-      - label: "Yes—relationships always override the sequence."
-        feedback: "Relationships matter, but the sequence keeps marketing air cover and messaging aligned. Exceptions should be explicit, not silent skips."
-      - label: "Coach them to stay on-sequence unless leadership documents an exception, so air cover and reporting stay intact."
-        feedback: "**Good.** The SOP sequence is the shared contract across sales and marketing."
-      - label: "Tell them to restart the sequence from touch one."
-        feedback: "Restarting isn't always required—focus on documented exceptions and alignment with marketing."
-
-  - title: "The All-Exec Stack"
-    situation: |
-      A rep insists their three ABM targets at a strategic logo should be the **CFO, CIO, and CEO**—their logic: *"executives decide, why waste touches on managers?"*
-    choices:
-      - label: "Approve it—executives are the highest-leverage targets."
-        feedback: "The SOP explicitly forbids all-Executive target lists. Single-threading at the top is exactly the failure mode the tiered mix is designed to prevent."
-      - label: "Rebuild the target list before kickoff so the mix includes at least one Manager (Operational/Technical) and one Director/VP alongside the Executive."
-        feedback: "**Good.** That's the SOP's tier hierarchy—and the only way the play survives an executive change."
-      - label: "Approve it but add a fourth target as a 'just-in-case' backstop."
-        feedback: "More targets doesn't fix the tier problem—the SOP requires the **mix**, not just the count."
-
-  - title: "The Empty Bench"
-    situation: |
-      A rep is running three active ABM accounts hard but has **zero on-deck**. Account A wraps in April with nothing queued for May. The Sales Manager spots the gap in the Master Tracking Spreadsheet review.
-    choices:
-      - label: "Wait until April closes, then start sourcing the next account."
-        feedback: "That's the pipeline drought the Rolling Three exists to prevent. On-deck is part of the job, not an afterthought."
-      - label: "Surface it immediately to the Sales Manager; queue three on-deck accounts so May has a ready kickoff."
-        feedback: "**Good.** The bench is how leadership confirms the model is healthy—an empty on-deck list is a Rolling Three failure, not a normal state."
-      - label: "Move one of the active accounts to on-deck to free up time."
-        feedback: "You don't pause an in-flight 90-day cycle to fill the bench—you find the next three Strategic candidates and queue them."
----
-
-## Why ABM here
-
-Account-based programs work when sales and marketing agree on cadence, targets, and who owns what. This module tracks the ABM SOP: a ninety-day, coordinated motion on strategic accounts—reps carrying the personal outreach, marketing providing air cover—so the people who matter keep hearing one consistent story from GPC.
-
-Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a named executive target—and what do I bring to kickoff?*
-
-## Before the 90-day clock starts
-
-The **Kickoff meeting** officially starts the 90-day clock. **Marketing, your Sales Manager, and the Account Representative** are in the room. Walk in with the **Sales Readiness Checklist** complete—not "we'll figure it out together":
-
-- **Account Intel** — comprehensive research and general background on the account.
-- **Status** — current Customer vs Prospect.
-- **Current Services** — what they buy today and where (if applicable / known).
-- **Location Scope** — density and geographic diversity of the account's locations.
-- **Prospecting History** — audit of prior attempts (calls, emails, LinkedIn, physical drop-ins).
-- **Target List** — finalized **3–5 specific targets** with roles and the tier mix below.
-
-A cold kickoff with no checklist is the fastest way to burn a Marketing partner—and the cycle goes long.
-
-### Target stack (mandatory mix)
-
-**Multi-threaded engagement is mandatory.** **Minimum 3 targets** per account, **5 ideal**. Targets **cannot all be Executive level**. The required mix:
-
-1. **Manager** (Operational / Technical)
-2. **Director / VP** (Tactical / Strategic)
-3. **Executive** (Financial / Final Decision Maker)
-
-One executive leaving the company shouldn't end the play. That's why the SOP forbids the all-exec stack.
-
-## The Rolling Three (active + on-deck)
-
-You manage **three concurrent ABM accounts** on a staggered cadence: one in the opening sprint, one mid-cycle, one finishing. Behind them sit **three on-deck accounts** queued for the next kickoff:
-
-- **Account A** — Month 1 kickoff
-- **Account B** — Month 2 kickoff
-- **Account C** — Month 3 kickoff
-- **On-deck (×3)** — ready to onboard immediately as actives complete
-
-As Account A wraps in April, the first on-deck account onboards for a **May** kickoff. The **Master Tracking Spreadsheet** enforces the model—it's where leadership confirms the bench is healthy. An empty on-deck list is a **Rolling Three failure**, not a normal state. **Permissions:** only **Marketing** and **Sales Leadership** may edit the master file; account reps and the broader team are **view-only** so the Active / On-Deck counts stay authoritative.
-
-## 90-day sequence
-
-![ABM process: 90-day sales and marketing coordination (reference Gantt)](assets/gantt/abm-90-day-sequence.png)
-<!-- prettier-ignore-end -->
-
----
-
-<a id="operational-business-reviews-operational-business-reviews"></a>
-
-# Operational Business Reviews (`operational-business-reviews`)
-
-<!-- prettier-ignore-start -->
----
-id: "operational-business-reviews"
-title: "Operational Business Reviews"
-summary: "21-day cycle. Day-14 handoff. Single Packet. No Raw Dump."
-sensitivity: "internal"
-reference_files:
-  - label: 'Operational Business Reviews — SOP & Sales Readiness Form (SharePoint)'
-    sharepoint_url: "https://gpcom.sharepoint.com/:f:/r/sites/gpcSales/Sales%20Process/Operational%20Business%20Review%20-%20OBR?csf=1&web=1&e=EbAsNB"
-discovery_questions:
-  - When was the last time you walked your strategic accounts through their full network footprint, billing structure, and 12-month performance picture in a single conversation?
-  - 'How do you currently surface contract expirations and renewal sync windows on your top accounts—before the customer''s procurement team asks?'
-  - When something goes wrong at a strategic account, how does your team translate raw NOC ticket history into something the customer's executive sponsor can act on?
-  - Which of your top accounts has billing or service-address data that has not been audited for accuracy in the last twelve months?
-  - 'If your customer''s exec sponsor walked into the room tomorrow asking "what is next on the roadmap with GPC," how confident are you in the answer—on paper?'
-five_minute_summary: |
-  - **Why OBRs:** Strategic accounts deserve **one credible story** in the room—how footprint, billing, performance, and roadmap connect—not a collage of orphan spreadsheets and slides.
-  - **Sales** sets the bar: relationship ownership, audited sites and services, and a readiness handoff the rest of the org can run with (not a "dump it over the fence" moment).
-  - **Engineering and NOC** anchor **what's actually built and how it behaves**; **finance / billing** keeps the money picture aligned with reality so you're not arguing two different truths with the customer.
-  - **Marketing** steps in **after** that scrub: design and narrative so an executive leaves with something they can hold—not a rescue mission piecing together raw CID exports.
-  - **The through-line is partnership.** Clean handoffs mean no fire drills; messy handoffs mean the customer feels our chaos. The sections and SOP below spell out *how* we keep the chain intact.
-
-knowledge_checks:
-  - question: "How many business days does the OBR cycle run, from initiation through the meeting itself?"
-    options:
-      - "14 business days"
-      - "21 business days"
-      - "30 business days"
-    correct_index: 1
-    explanation: "The SOP defines a 21-business-day cycle, ending with the OBR Meeting on Day 21."
-
-  - question: "\"Zero Fire Drills\" is one of the OBR's three Success Criteria. What does it mean operationally?"
-    options:
-      - "No support tickets can be open on the customer's circuits during OBR week."
-      - "The OBR meeting cannot be rescheduled."
-      - "Every asset is ready and handed to Marketing by Business Day 14."
-    correct_index: 2
-    explanation: "\"Zero Fire Drills\" is the SOP's name for the Business Day 14 handoff milestone—seven business days before the meeting, Marketing has everything they need."
-
-  - question: "Marketing will not begin design until the \"Single Packet\" handoff arrives. What must that single email contain?"
-    options:
-      - "A raw export from the billing platform plus a verbal walkthrough."
-      - "A calendar invite for the OBR meeting and the customer's logo."
-      - "The completed OBR Sales Readiness Form (with scrubbed data tables) and the finalized Visio diagram (verified)."
-    correct_index: 2
-    explanation: "Marketing requires one packet, audited and complete. Sending pieces separately—or sending raw data—violates the Single Packet rule and stops the design clock."
-
-  - question: "The SOP enforces a \"No Raw Dump\" rule. What is the stated rationale?"
-    options:
-      - "Raw billing data violates customer NDAs."
-      - "Marketing is for design, not data entry or CID deciphering. Sales owns the scrub."
-      - "The Visio software cannot ingest raw exports."
-    correct_index: 1
-    explanation: "Verbatim from §3 of the SOP—Sales must scrub and audit data before handoff. Marketing receives audited, plain-English data, not internal catalog soup."
-
-  - question: "When you audit billing during OBR prep, the SOP names two specific \"sales levers\" the slick should surface. Which pair?"
-    options:
-      - "\"Discount\" and \"Bundle\""
-      - "\"Modernization\" and \"Performance Spotlight\""
-      - "\"Renewal\" and \"Cross-sell\""
-    correct_index: 1
-    explanation: "Strategic Billing on the slick features the \"Modernization\" lever (e.g., upgrade an aging tier) and the \"Performance Spotlight\" lever (showcase services performing well). Surface both."
-
-scenarios:
-  - title: The 5-Day Promise
-    situation: |
-      An account rep promises the customer a **printed OBR deck in five business days**. Delivery points to the **21-business-day SOP**.
-    choices:
-      - label: Tell the customer five days is the standard.
-        feedback: 'The SOP cycle is 21 business days for a reason—Design (Jerry, 10 days), Data Collection (Jill / NOC, 5 days), Marketing Design (Sarah, 5 days), and Final Prep (3 days). A five-day promise breaks the Zero-Fire-Drills criterion before the cycle even starts.'
-      - label: Reset expectations to the 21-business-day cycle (or document a leadership-approved exception path) before committing a date.
-        feedback: '**Correct.** The SOP exists so Sales, Engineering, NOC, and Marketing all quote the same timeline. Exceptions go through your manager, not the customer-facing meeting date.'
-      - label: Skip the Marketing Design phase to save time and hand the rep an unbranded slick.
-        feedback: 'Skipping the Marketing Design phase strips the slick of the Final Review step and the brand consistency that makes the trifold readable. Use a documented fast-track only.'
-  - title: The Raw-Dump Reflex
-    situation: |
-      Friday afternoon. The OBR meeting is fourteen business days out. The rep has just exported the customer's billing detail to a CSV, attached it to an email titled "Billing for [Customer]," and is about to add Sarah to the To: line.
-    choices:
-      - label: Hit send—Marketing can sort the spreadsheet on Monday.
-        feedback: 'That is the **Raw Dump** the SOP exists to prevent. Marketing is for design, not data entry. The slick comes back wrong, or it comes back late.'
-      - label: 'Pause. Complete the Sales Readiness Form, translate catalog codes to plain English, attach the finalized Visio diagram, and send **one email** containing the Single Packet.'
-        feedback: '**Correct.** Sales owns the scrub. One packet, one email, complete data—Marketing starts the design clock immediately.'
-      - label: Send the CSV now and the Visio later when it is ready.
-        feedback: 'Two emails is not a Single Packet. Marketing will not begin design until the complete packet arrives—any partial send stops the clock and risks the Day 14 handoff.'
-  - title: The Modernization Lever
-    situation: |
-      During the billing audit for a Strategic account, the rep discovers the customer has been paying for a **100M Fiber DIA** circuit at a site that was upgraded to **1G** last year but never re-tiered in billing.
-    choices:
-      - label: Quietly fix the billing internally before the OBR so it does not come up.
-        feedback: 'Half right. Fix it, yes—but the SOP says to **surface** the proactive fix during the OBR. "Presenting an internal fix during the OBR proves proactive account management." Hiding it forfeits the trust dividend.'
-      - label: 'Surface it on the slick under **Strategic Billing** as a Modernization lever: "Tier corrected from 100M to 1G; back-credit applied; current rate aligned with as-deployed service."'
-        feedback: '**Correct.** This is exactly the Modernization lever the SOP calls out. Catching the error early **and** showing the work converts an awkward audit moment into a trust-building one.'
-      - label: Tell the customer about it verbally in the meeting but leave it off the slick.
-        feedback: 'Verbal-only loses the receipts. The trifold is the takeaway—if it is not on the slick, it did not happen.'
----
-
-## Why OBRs matter
-
-Operational Business Reviews turn **network reality, financial signals, and partnership history** into a single executive conversation that the customer's CFO *and* VP-IT can both act on. Reps win when the **prep process is predictable**—this module trains the SOP, not just the slide deck.
-
-## The OBR Slick — what we deliver
-
-The deliverable is a **front/back trifold insert** ("the Slick") with four components:
-
-1. **Network Design:** High-fidelity "Current vs. Future State" Visio, verified against billing data.
-2. **Strategic Billing:** Totals and expirations, featuring the **"Modernization"** and **"Performance Spotlight"** levers.
-3. **NOC History & Feedback Loop:** 12-month performance snapshot and holistic partnership feedback loop.
-4. **Strategic Roadmap:** Planned upgrades, upcoming renewal sync, and GPC solution highlights.
-
-<div class="obr-slick-sample-wrap">
-<img src="assets/obr/obr-slick-sample.jpg" alt="Sample OBR slick: Network Agility and Roadmap spread (trifold-style layout with billing snapshot, maps, and performance check-in)" width="1024" height="602" loading="lazy" decoding="async" />
-</div>
-
-## Success Criteria
-
-- **Zero Fire Drills** — every asset is ready and handed to Marketing by **Business Day 14**.
-- **100% Accuracy** — billing locations and network diagrams are fully synchronized.
-- **Client Value** — the customer leaves the meeting with a clear understanding of their network health and our roadmap.
-
-## The 21-business-day OBR cycle
-
-![OBR process: 21-business-day strategic cycle (reference Gantt)](assets/gantt/obr-21-day-cycle.png)
-
-| Phase | Interval | Owner | Action |
-|---|---|---|---|
-| **Initiation** | Day 1 | Account Rep | Schedule the OBR. |
-| **Data Recon** | 3 days | Account Rep | Audit of locations, addresses, and upgrades. |
-| **Design Phase** | 10 days | **Jerry Ehrenberg** | Network Design (with kickoff call). |
-| **Data Collection** | 5 days | **Jill / NOC** | Billing & NOC data generation. |
-| **Marketing Design** | 5 days | **Sarah** → Account Team Final Review | Professional formatting and branding. |
-| **Final Prep** | 3 days | Sarah → Account Rep | Printing, pickup, and trifold insertion. |
-| **The Meeting** | **Day 21** | Account Team | OBR Meeting. |
-
-## Data Hygiene & the Single Packet
-
-### The "No Raw Dump" rule
-
-Sales must scrub and audit all data before handoff. **Marketing is for design, not data entry or CID deciphering.** Translate internal catalog codes into plain-English service descriptions (e.g., `100M Fiber DIA`).
-
-### Proactive billing wins
-
-Audit for address, tier, and MRC errors early. Presenting an internal fix during the OBR proves proactive account management—surface the correction on the slick under the **Modernization** lever instead of quietly burying it.
-
-### The Single Packet handoff
-
-Marketing will not begin design until **one email** contains **both** of the following:
-
-1. The completed **OBR Sales Readiness Form** (with scrubbed data tables).
-2. The finalized **Visio diagram** (verified).
-
-Partial sends do not start the clock.
-<!-- prettier-ignore-end -->
-
----
-
 <a id="gpc-sales-sharepoint-sales-sharepoint-hub"></a>
 
 # GPC Sales SharePoint (`sales-sharepoint-hub`)
@@ -3253,19 +2936,19 @@ Use the SharePoint library for screenshots and click-by-click steps. Each guide 
 
 ---
 
-<a id="self-serve-proposal-generator-enterprise-proposals"></a>
+<a id="proposal-generator-enterprise-proposals"></a>
 
-# Self-Serve Proposal Generator (`enterprise-proposals`)
+# Proposal Generator (`enterprise-proposals`)
 
 <!-- prettier-ignore-start -->
 ---
 id: "enterprise-proposals"
-title: "Self-Serve Proposal Generator"
+title: "Proposal Generator"
 summary: "Assemble RFP PDFs. Import Salesforce pricing. Compile and ship."
 sensitivity: "internal"
 sales_trio_guidelines_only: true
 reference_files:
-  - label: "Self-Serve Proposal Generator (live app)"
+  - label: "Proposal Generator (live app)"
     sharepoint_url: "https://enterprise-proposals.vercel.app"
   - label: "Salesforce report — Enterprise Proposals – Quick Import"
     sharepoint_url: "https://gpcom.lightning.force.com/lightning/r/Report/00OKZ000000HxGf2AK/view"
@@ -3283,7 +2966,7 @@ five_minute_flow:
     - title: "Save & proofing"
       caption: ".spec handoff"
 five_minute_summary: |
-  - **What it is:** The **Self-Serve Proposal Generator** builds customer-facing proposal PDFs in the browser — cover letter, stock GPC slides, pricing tables, references, and optional custom content — without stitching Word docs by hand.
+  - **What it is:** The **Proposal Generator** builds customer-facing proposal PDFs in the browser — cover letter, stock GPC slides, pricing tables, references, and optional custom content — without stitching Word docs by hand.
   - **Start with properties:** RFP/proposal name, business name, and sales rep feed the title page and snippet tokens (`{RFP}`, `{BIZ}`). Names truncate at **33 characters** on the title slide.
   - **Structure the deck:** Use **Proposal Elements** to check sections on/off and **drag to reorder**. Orange-bordered items are editable (cover, custom pages, pricing, etc.); eye icons preview stock PDFs.
   - **Price it:** Import a **Salesforce CSV** from the *Enterprise Proposals – Quick Import* report (filter by Solution Number) or enter locations and product lines manually. Promotions, NRCs, and multiple pricing options are supported.
@@ -3299,7 +2982,7 @@ video_sections_presentation: scroll_tour
 video_sections_continuous: true
 video_sections_tabs_aria_label: "Proposal generator tour"
 video_sections:
-  - heading: "Self-Serve Proposal Generator"
+  - heading: "Proposal Generator"
     intro: "Walk the app top to bottom — properties, content, pricing, compile, and handoff."
     scroll_tour:
       - heading: "Main layout"
@@ -3426,7 +3109,7 @@ scenarios:
 
 ## Overview
 
-The **Self-Serve Proposal Generator** (`https://enterprise-proposals.vercel.app`) is GPC’s browser-based tool for assembling **enterprise RFP/RFQ response PDFs**. Reps combine:
+The **Proposal Generator** (`https://enterprise-proposals.vercel.app`) is GPC’s browser-based tool for assembling **enterprise RFP/RFQ response PDFs**. Reps combine:
 
 - **Proposal properties** (customer names, rep, dates)
 - **Stock marketing slides** (Why GPC, NOC, product overviews, etc.)
@@ -3529,6 +3212,323 @@ When checked in Proposal Elements, these stock PDFs append in your chosen order:
 | Standard Internet Access (SIA) | Product overview |
 
 Marketing updates stock PDFs and snippets centrally; reps consume them through the live app — you do not edit stock files in the generator.
+<!-- prettier-ignore-end -->
+
+---
+
+<a id="account-based-marketing-account-based-marketing"></a>
+
+# Account Based Marketing (`account-based-marketing`)
+
+<!-- prettier-ignore-start -->
+---
+id: "account-based-marketing"
+title: "Account Based Marketing"
+summary: "C-level targeting. 90-day sprints. Marketing air cover."
+sensitivity: "internal"
+reference_files:
+  - label: "Account Based Marketing — SharePoint folder (SOP, tracking, collateral)"
+    sharepoint_url: "https://gpcom.sharepoint.com/:f:/r/sites/gpcSales/Sales%20Process/Account%20Based%20Marketing%20-%20ABM?csf=1&web=1&e=ZSvfY4"
+discovery_questions:
+  - 'Does this account meet the **Strategic** threshold to justify a 90-day ABM cycle, or is it a transactional opportunity that''s better suited to the standard sequence?'
+  - 'Do I have **three identifiable targets across Manager, Director/VP, and Executive tiers** at this account today — and not all Executive? If not, what''s my plan to surface them in week one?'
+  - 'Where does this account fit in my **Rolling Three**? Am I filling an on-deck slot, or proposing to displace an active cycle?'
+  - 'Have I completed all six Sales Readiness Checklist items (Account Intel, Status, Current Services, Location Scope, Prospecting History, finalized Target List) before requesting kickoff?'
+  - 'Which **Marketing partner** owns the air cover for this account, and have we aligned on the monthly touchpoint cadence + any planned **Door Pulls** in the 90-day window?'
+five_minute_summary: |
+  - **Why ABM:** Top logos don't move because someone sent more cadence emails—they move when **the right buyers** keep seeing **one consistent GPC story** between your conversations.
+  - **Sales** owns the account: who matters (tiered targets, not a single hero exec), the tempo of outreach, and the integrity of kickoff—so Marketing isn't inventing context from thin air.
+  - **Marketing** owns **air cover**: coordinated touches that reinforce what Sales is saying, timed to the play—not a generic newsletter blast that arrives a random week after your last call.
+  - **It's deliberately joint:** when both sides run the same 90-day motion, you avoid the classic failure mode—reps grinding alone at the C-suite while **brand and field feel like two different companies.**
+  - **Leadership keeps the model honest** (bench, kickoff discipline, shared visibility) so the program stays strategic—not a pile of heroic one-offs. Cadence, Door Pulls, and tracking live in the SOP and sections below.
+
+knowledge_checks:
+  - question: "How many ABM accounts should an Account Representative run concurrently per the SOP?"
+    options:
+      - "As many as the rep can manage—no defined cap"
+      - "Three active accounts at any time, with three on-deck ready to backfill (the Rolling Three)"
+      - "One account at a time until it closes"
+    correct_index: 1
+    explanation: "Three concurrent active accounts + three on-deck = the Rolling Three pipeline model."
+
+  - question: "How are the three concurrent ABM accounts kicked off per the SOP?"
+    options:
+      - "All three start on the same day for momentum"
+      - "Whenever the rep has free calendar time"
+      - "On a 30-day stagger: Account A Month 1, Account B Month 2, Account C Month 3"
+    correct_index: 2
+    explanation: "Staggered 30-day kickoff ensures one account is always in the high-intensity opening phase while others are mid- or late-cycle."
+
+  - question: "Can all ABM targets at an account be executive-level decision makers?"
+    options:
+      - "No—the SOP forbids all-executive stacks; mix Manager, Director/VP, and Executive"
+      - "Yes—executives close deals, so they're the only targets that matter"
+      - "Only at Strategic accounts above a certain revenue threshold"
+    correct_index: 0
+    explanation: "The tier hierarchy is Manager (Operational/Technical) + Director/VP (Tactical/Strategic) + Executive (Financial/Final Decision Maker). Single-threading at the top is exactly what the mix is designed to prevent."
+
+  - question: "Which items belong on the Sales Readiness Checklist that the rep brings to ABM kickoff?"
+    options:
+      - "Only the target list—everything else can be figured out in the meeting"
+      - "A draft proposal and a contract template"
+      - "Account Intel, Status (Customer vs Prospect), Current Services, Location Scope, Prospecting History, and the finalized Target List"
+    correct_index: 2
+    explanation: "Walking in cold (no checklist) is the fastest way to lose a Marketing partner and stretch the 90-day cycle."
+
+  - question: "How often should marketing run ABM coordination touchpoints in the SOP model?"
+    options:
+      - "Three touchpoints every week regardless of sales activity"
+      - "One touchpoint every 30 days, with +1 added when Sales runs a physical Door Pull"
+      - "Only one touchpoint at the end of the 90-day cycle"
+    correct_index: 1
+    explanation: "Monthly marketing coordination; +1 brochure-leave-behind when Sales executes a Door Pull. The Door Pull is the named SOP trigger for the extra marketing touch."
+
+  - question: "Who may edit the Master Tracking Spreadsheet per the ABM operating model?"
+    options:
+      - "Any account rep working an Active ABM account may edit their own row."
+      - "Marketing and Sales Leadership only—everyone else is view-only."
+      - "Sales Operations owns the spreadsheet; Marketing is view-only."
+    correct_index: 1
+    explanation: "The master file stays authoritative when only Marketing and Sales Leadership hold edit rights. Reps who need a change route it through those owners—no shadow copies, no self-edit."
+    source: "ABM SOP (Master Tracking Spreadsheet — permissions)"
+
+scenarios:
+  - title: "Skipping ahead in the ABM sequence"
+    situation: |
+      A rep wants to jump straight to **meeting ask** in week two because they already know the CTO. Leadership asks whether that aligns with the ABM playbook.
+    choices:
+      - label: "Yes—relationships always override the sequence."
+        feedback: "Relationships matter, but the sequence keeps marketing air cover and messaging aligned. Exceptions should be explicit, not silent skips."
+      - label: "Coach them to stay on-sequence unless leadership documents an exception, so air cover and reporting stay intact."
+        feedback: "**Good.** The SOP sequence is the shared contract across sales and marketing."
+      - label: "Tell them to restart the sequence from touch one."
+        feedback: "Restarting isn't always required—focus on documented exceptions and alignment with marketing."
+
+  - title: "The All-Exec Stack"
+    situation: |
+      A rep insists their three ABM targets at a strategic logo should be the **CFO, CIO, and CEO**—their logic: *"executives decide, why waste touches on managers?"*
+    choices:
+      - label: "Approve it—executives are the highest-leverage targets."
+        feedback: "The SOP explicitly forbids all-Executive target lists. Single-threading at the top is exactly the failure mode the tiered mix is designed to prevent."
+      - label: "Rebuild the target list before kickoff so the mix includes at least one Manager (Operational/Technical) and one Director/VP alongside the Executive."
+        feedback: "**Good.** That's the SOP's tier hierarchy—and the only way the play survives an executive change."
+      - label: "Approve it but add a fourth target as a 'just-in-case' backstop."
+        feedback: "More targets doesn't fix the tier problem—the SOP requires the **mix**, not just the count."
+
+  - title: "The Empty Bench"
+    situation: |
+      A rep is running three active ABM accounts hard but has **zero on-deck**. Account A wraps in April with nothing queued for May. The Sales Manager spots the gap in the Master Tracking Spreadsheet review.
+    choices:
+      - label: "Wait until April closes, then start sourcing the next account."
+        feedback: "That's the pipeline drought the Rolling Three exists to prevent. On-deck is part of the job, not an afterthought."
+      - label: "Surface it immediately to the Sales Manager; queue three on-deck accounts so May has a ready kickoff."
+        feedback: "**Good.** The bench is how leadership confirms the model is healthy—an empty on-deck list is a Rolling Three failure, not a normal state."
+      - label: "Move one of the active accounts to on-deck to free up time."
+        feedback: "You don't pause an in-flight 90-day cycle to fill the bench—you find the next three Strategic candidates and queue them."
+---
+
+## Why ABM here
+
+Account-based programs work when sales and marketing agree on cadence, targets, and who owns what. This module tracks the ABM SOP: a ninety-day, coordinated motion on strategic accounts—reps carrying the personal outreach, marketing providing air cover—so the people who matter keep hearing one consistent story from GPC.
+
+Use it in onboarding to answer: *What do we actually do in weeks 1–12 for a named executive target—and what do I bring to kickoff?*
+
+## Before the 90-day clock starts
+
+The **Kickoff meeting** officially starts the 90-day clock. **Marketing, your Sales Manager, and the Account Representative** are in the room. Walk in with the **Sales Readiness Checklist** complete—not "we'll figure it out together":
+
+- **Account Intel** — comprehensive research and general background on the account.
+- **Status** — current Customer vs Prospect.
+- **Current Services** — what they buy today and where (if applicable / known).
+- **Location Scope** — density and geographic diversity of the account's locations.
+- **Prospecting History** — audit of prior attempts (calls, emails, LinkedIn, physical drop-ins).
+- **Target List** — finalized **3–5 specific targets** with roles and the tier mix below.
+
+A cold kickoff with no checklist is the fastest way to burn a Marketing partner—and the cycle goes long.
+
+### Target stack (mandatory mix)
+
+**Multi-threaded engagement is mandatory.** **Minimum 3 targets** per account, **5 ideal**. Targets **cannot all be Executive level**. The required mix:
+
+1. **Manager** (Operational / Technical)
+2. **Director / VP** (Tactical / Strategic)
+3. **Executive** (Financial / Final Decision Maker)
+
+One executive leaving the company shouldn't end the play. That's why the SOP forbids the all-exec stack.
+
+## The Rolling Three (active + on-deck)
+
+You manage **three concurrent ABM accounts** on a staggered cadence: one in the opening sprint, one mid-cycle, one finishing. Behind them sit **three on-deck accounts** queued for the next kickoff:
+
+- **Account A** — Month 1 kickoff
+- **Account B** — Month 2 kickoff
+- **Account C** — Month 3 kickoff
+- **On-deck (×3)** — ready to onboard immediately as actives complete
+
+As Account A wraps in April, the first on-deck account onboards for a **May** kickoff. The **Master Tracking Spreadsheet** enforces the model—it's where leadership confirms the bench is healthy. An empty on-deck list is a **Rolling Three failure**, not a normal state. **Permissions:** only **Marketing** and **Sales Leadership** may edit the master file; account reps and the broader team are **view-only** so the Active / On-Deck counts stay authoritative.
+
+## 90-day sequence
+
+![ABM process: 90-day sales and marketing coordination (reference Gantt)](assets/gantt/abm-90-day-sequence.png)
+<!-- prettier-ignore-end -->
+
+---
+
+<a id="operational-business-reviews-operational-business-reviews"></a>
+
+# Operational Business Reviews (`operational-business-reviews`)
+
+<!-- prettier-ignore-start -->
+---
+id: "operational-business-reviews"
+title: "Operational Business Reviews"
+summary: "21-day cycle. Day-14 handoff. Single Packet. No Raw Dump."
+sensitivity: "internal"
+reference_files:
+  - label: 'Operational Business Reviews — SOP & Sales Readiness Form (SharePoint)'
+    sharepoint_url: "https://gpcom.sharepoint.com/:f:/r/sites/gpcSales/Sales%20Process/Operational%20Business%20Review%20-%20OBR?csf=1&web=1&e=EbAsNB"
+discovery_questions:
+  - When was the last time you walked your strategic accounts through their full network footprint, billing structure, and 12-month performance picture in a single conversation?
+  - 'How do you currently surface contract expirations and renewal sync windows on your top accounts—before the customer''s procurement team asks?'
+  - When something goes wrong at a strategic account, how does your team translate raw NOC ticket history into something the customer's executive sponsor can act on?
+  - Which of your top accounts has billing or service-address data that has not been audited for accuracy in the last twelve months?
+  - 'If your customer''s exec sponsor walked into the room tomorrow asking "what is next on the roadmap with GPC," how confident are you in the answer—on paper?'
+five_minute_summary: |
+  - **Why OBRs:** Strategic accounts deserve **one credible story** in the room—how footprint, billing, performance, and roadmap connect—not a collage of orphan spreadsheets and slides.
+  - **Sales** sets the bar: relationship ownership, audited sites and services, and a readiness handoff the rest of the org can run with (not a "dump it over the fence" moment).
+  - **Engineering and NOC** anchor **what's actually built and how it behaves**; **finance / billing** keeps the money picture aligned with reality so you're not arguing two different truths with the customer.
+  - **Marketing** steps in **after** that scrub: design and narrative so an executive leaves with something they can hold—not a rescue mission piecing together raw CID exports.
+  - **The through-line is partnership.** Clean handoffs mean no fire drills; messy handoffs mean the customer feels our chaos. The sections and SOP below spell out *how* we keep the chain intact.
+
+knowledge_checks:
+  - question: "How many business days does the OBR cycle run, from initiation through the meeting itself?"
+    options:
+      - "14 business days"
+      - "21 business days"
+      - "30 business days"
+    correct_index: 1
+    explanation: "The SOP defines a 21-business-day cycle, ending with the OBR Meeting on Day 21."
+
+  - question: "\"Zero Fire Drills\" is one of the OBR's three Success Criteria. What does it mean operationally?"
+    options:
+      - "No support tickets can be open on the customer's circuits during OBR week."
+      - "The OBR meeting cannot be rescheduled."
+      - "Every asset is ready and handed to Marketing by Business Day 14."
+    correct_index: 2
+    explanation: "\"Zero Fire Drills\" is the SOP's name for the Business Day 14 handoff milestone—seven business days before the meeting, Marketing has everything they need."
+
+  - question: "Marketing will not begin design until the \"Single Packet\" handoff arrives. What must that single email contain?"
+    options:
+      - "A raw export from the billing platform plus a verbal walkthrough."
+      - "A calendar invite for the OBR meeting and the customer's logo."
+      - "The completed OBR Sales Readiness Form (with scrubbed data tables) and the finalized Visio diagram (verified)."
+    correct_index: 2
+    explanation: "Marketing requires one packet, audited and complete. Sending pieces separately—or sending raw data—violates the Single Packet rule and stops the design clock."
+
+  - question: "The SOP enforces a \"No Raw Dump\" rule. What is the stated rationale?"
+    options:
+      - "Raw billing data violates customer NDAs."
+      - "Marketing is for design, not data entry or CID deciphering. Sales owns the scrub."
+      - "The Visio software cannot ingest raw exports."
+    correct_index: 1
+    explanation: "Verbatim from §3 of the SOP—Sales must scrub and audit data before handoff. Marketing receives audited, plain-English data, not internal catalog soup."
+
+  - question: "When you audit billing during OBR prep, the SOP names two specific \"sales levers\" the slick should surface. Which pair?"
+    options:
+      - "\"Discount\" and \"Bundle\""
+      - "\"Modernization\" and \"Performance Spotlight\""
+      - "\"Renewal\" and \"Cross-sell\""
+    correct_index: 1
+    explanation: "Strategic Billing on the slick features the \"Modernization\" lever (e.g., upgrade an aging tier) and the \"Performance Spotlight\" lever (showcase services performing well). Surface both."
+
+scenarios:
+  - title: The 5-Day Promise
+    situation: |
+      An account rep promises the customer a **printed OBR deck in five business days**. Delivery points to the **21-business-day SOP**.
+    choices:
+      - label: Tell the customer five days is the standard.
+        feedback: 'The SOP cycle is 21 business days for a reason—Design (Jerry, 10 days), Data Collection (Jill / NOC, 5 days), Marketing Design (Sarah, 5 days), and Final Prep (3 days). A five-day promise breaks the Zero-Fire-Drills criterion before the cycle even starts.'
+      - label: Reset expectations to the 21-business-day cycle (or document a leadership-approved exception path) before committing a date.
+        feedback: '**Correct.** The SOP exists so Sales, Engineering, NOC, and Marketing all quote the same timeline. Exceptions go through your manager, not the customer-facing meeting date.'
+      - label: Skip the Marketing Design phase to save time and hand the rep an unbranded slick.
+        feedback: 'Skipping the Marketing Design phase strips the slick of the Final Review step and the brand consistency that makes the trifold readable. Use a documented fast-track only.'
+  - title: The Raw-Dump Reflex
+    situation: |
+      Friday afternoon. The OBR meeting is fourteen business days out. The rep has just exported the customer's billing detail to a CSV, attached it to an email titled "Billing for [Customer]," and is about to add Sarah to the To: line.
+    choices:
+      - label: Hit send—Marketing can sort the spreadsheet on Monday.
+        feedback: 'That is the **Raw Dump** the SOP exists to prevent. Marketing is for design, not data entry. The slick comes back wrong, or it comes back late.'
+      - label: 'Pause. Complete the Sales Readiness Form, translate catalog codes to plain English, attach the finalized Visio diagram, and send **one email** containing the Single Packet.'
+        feedback: '**Correct.** Sales owns the scrub. One packet, one email, complete data—Marketing starts the design clock immediately.'
+      - label: Send the CSV now and the Visio later when it is ready.
+        feedback: 'Two emails is not a Single Packet. Marketing will not begin design until the complete packet arrives—any partial send stops the clock and risks the Day 14 handoff.'
+  - title: The Modernization Lever
+    situation: |
+      During the billing audit for a Strategic account, the rep discovers the customer has been paying for a **100M Fiber DIA** circuit at a site that was upgraded to **1G** last year but never re-tiered in billing.
+    choices:
+      - label: Quietly fix the billing internally before the OBR so it does not come up.
+        feedback: 'Half right. Fix it, yes—but the SOP says to **surface** the proactive fix during the OBR. "Presenting an internal fix during the OBR proves proactive account management." Hiding it forfeits the trust dividend.'
+      - label: 'Surface it on the slick under **Strategic Billing** as a Modernization lever: "Tier corrected from 100M to 1G; back-credit applied; current rate aligned with as-deployed service."'
+        feedback: '**Correct.** This is exactly the Modernization lever the SOP calls out. Catching the error early **and** showing the work converts an awkward audit moment into a trust-building one.'
+      - label: Tell the customer about it verbally in the meeting but leave it off the slick.
+        feedback: 'Verbal-only loses the receipts. The trifold is the takeaway—if it is not on the slick, it did not happen.'
+---
+
+## Why OBRs matter
+
+Operational Business Reviews turn **network reality, financial signals, and partnership history** into a single executive conversation that the customer's CFO *and* VP-IT can both act on. Reps win when the **prep process is predictable**—this module trains the SOP, not just the slide deck.
+
+## The OBR Slick — what we deliver
+
+The deliverable is a **front/back trifold insert** ("the Slick") with four components:
+
+1. **Network Design:** High-fidelity "Current vs. Future State" Visio, verified against billing data.
+2. **Strategic Billing:** Totals and expirations, featuring the **"Modernization"** and **"Performance Spotlight"** levers.
+3. **NOC History & Feedback Loop:** 12-month performance snapshot and holistic partnership feedback loop.
+4. **Strategic Roadmap:** Planned upgrades, upcoming renewal sync, and GPC solution highlights.
+
+<div class="obr-slick-sample-wrap">
+<img src="assets/obr/obr-slick-sample.jpg" alt="Sample OBR slick: Network Agility and Roadmap spread (trifold-style layout with billing snapshot, maps, and performance check-in)" width="1024" height="602" loading="lazy" decoding="async" />
+</div>
+
+## Success Criteria
+
+- **Zero Fire Drills** — every asset is ready and handed to Marketing by **Business Day 14**.
+- **100% Accuracy** — billing locations and network diagrams are fully synchronized.
+- **Client Value** — the customer leaves the meeting with a clear understanding of their network health and our roadmap.
+
+## The 21-business-day OBR cycle
+
+![OBR process: 21-business-day strategic cycle (reference Gantt)](assets/gantt/obr-21-day-cycle.png)
+
+| Phase | Interval | Owner | Action |
+|---|---|---|---|
+| **Initiation** | Day 1 | Account Rep | Schedule the OBR. |
+| **Data Recon** | 3 days | Account Rep | Audit of locations, addresses, and upgrades. |
+| **Design Phase** | 10 days | **Jerry Ehrenberg** | Network Design (with kickoff call). |
+| **Data Collection** | 5 days | **Jill / NOC** | Billing & NOC data generation. |
+| **Marketing Design** | 5 days | **Sarah** → Account Team Final Review | Professional formatting and branding. |
+| **Final Prep** | 3 days | Sarah → Account Rep | Printing, pickup, and trifold insertion. |
+| **The Meeting** | **Day 21** | Account Team | OBR Meeting. |
+
+## Data Hygiene & the Single Packet
+
+### The "No Raw Dump" rule
+
+Sales must scrub and audit all data before handoff. **Marketing is for design, not data entry or CID deciphering.** Translate internal catalog codes into plain-English service descriptions (e.g., `100M Fiber DIA`).
+
+### Proactive billing wins
+
+Audit for address, tier, and MRC errors early. Presenting an internal fix during the OBR proves proactive account management—surface the correction on the slick under the **Modernization** lever instead of quietly burying it.
+
+### The Single Packet handoff
+
+Marketing will not begin design until **one email** contains **both** of the following:
+
+1. The completed **OBR Sales Readiness Form** (with scrubbed data tables).
+2. The finalized **Visio diagram** (verified).
+
+Partial sends do not start the clock.
 <!-- prettier-ignore-end -->
 
 ---

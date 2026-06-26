@@ -68,32 +68,32 @@
       "category": "Sales"
     },
     {
-      "id": "account-based-marketing",
-      "title": "Account Based Marketing",
-      "order": 11,
-      "category": "Sales"
-    },
-    {
-      "id": "operational-business-reviews",
-      "title": "Operational Business Reviews",
-      "order": 12,
-      "category": "Sales"
-    },
-    {
       "id": "sales-sharepoint-hub",
       "title": "GPC Sales SharePoint",
-      "order": 13,
+      "order": 11,
       "category": "Sales"
     },
     {
       "id": "zoominfo-for-sales",
       "title": "ZoomInfo",
-      "order": 14,
+      "order": 12,
       "category": "Sales"
     },
     {
       "id": "enterprise-proposals",
-      "title": "Self-Serve Proposal Generator",
+      "title": "Proposal Generator",
+      "order": 13,
+      "category": "Sales"
+    },
+    {
+      "id": "account-based-marketing",
+      "title": "Account Based Marketing",
+      "order": 14,
+      "category": "Sales"
+    },
+    {
+      "id": "operational-business-reviews",
+      "title": "Operational Business Reviews",
       "order": 15,
       "category": "Sales"
     },

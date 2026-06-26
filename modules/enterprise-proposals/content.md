@@ -1,11 +1,11 @@
 ---
 id: "enterprise-proposals"
-title: "Self-Serve Proposal Generator"
+title: "Proposal Generator"
 summary: "Assemble RFP PDFs. Import Salesforce pricing. Compile and ship."
 sensitivity: "internal"
 sales_trio_guidelines_only: true
 reference_files:
-  - label: "Self-Serve Proposal Generator (live app)"
+  - label: "Proposal Generator (live app)"
     sharepoint_url: "https://enterprise-proposals.vercel.app"
   - label: "Salesforce report — Enterprise Proposals – Quick Import"
     sharepoint_url: "https://gpcom.lightning.force.com/lightning/r/Report/00OKZ000000HxGf2AK/view"
@@ -23,7 +23,7 @@ five_minute_flow:
     - title: "Save & proofing"
       caption: ".spec handoff"
 five_minute_summary: |
-  - **What it is:** The **Self-Serve Proposal Generator** builds customer-facing proposal PDFs in the browser — cover letter, stock GPC slides, pricing tables, references, and optional custom content — without stitching Word docs by hand.
+  - **What it is:** The **Proposal Generator** builds customer-facing proposal PDFs in the browser — cover letter, stock GPC slides, pricing tables, references, and optional custom content — without stitching Word docs by hand.
   - **Start with properties:** RFP/proposal name, business name, and sales rep feed the title page and snippet tokens (`{RFP}`, `{BIZ}`). Names truncate at **33 characters** on the title slide.
   - **Structure the deck:** Use **Proposal Elements** to check sections on/off and **drag to reorder**. Orange-bordered items are editable (cover, custom pages, pricing, etc.); eye icons preview stock PDFs.
   - **Price it:** Import a **Salesforce CSV** from the *Enterprise Proposals – Quick Import* report (filter by Solution Number) or enter locations and product lines manually. Promotions, NRCs, and multiple pricing options are supported.
@@ -39,7 +39,7 @@ video_sections_presentation: scroll_tour
 video_sections_continuous: true
 video_sections_tabs_aria_label: "Proposal generator tour"
 video_sections:
-  - heading: "Self-Serve Proposal Generator"
+  - heading: "Proposal Generator"
     intro: "Walk the app top to bottom — properties, content, pricing, compile, and handoff."
     scroll_tour:
       - heading: "Main layout"
@@ -166,7 +166,7 @@ scenarios:
 
 ## Overview
 
-The **Self-Serve Proposal Generator** (`https://enterprise-proposals.vercel.app`) is GPC’s browser-based tool for assembling **enterprise RFP/RFQ response PDFs**. Reps combine:
+The **Proposal Generator** (`https://enterprise-proposals.vercel.app`) is GPC’s browser-based tool for assembling **enterprise RFP/RFQ response PDFs**. Reps combine:
 
 - **Proposal properties** (customer names, rep, dates)
 - **Stock marketing slides** (Why GPC, NOC, product overviews, etc.)

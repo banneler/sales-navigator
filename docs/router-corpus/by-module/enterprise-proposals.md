@@ -15,12 +15,12 @@ Includes live module content from Sales-Navigator (SharePoint / ZoomInfo), not o
 
 ---
 id: "enterprise-proposals"
-title: "Self-Serve Proposal Generator"
+title: "Proposal Generator"
 summary: "Assemble RFP PDFs. Import Salesforce pricing. Compile and ship."
 sensitivity: "internal"
 sales_trio_guidelines_only: true
 reference_files:
-  - label: "Self-Serve Proposal Generator (live app)"
+  - label: "Proposal Generator (live app)"
     sharepoint_url: "https://enterprise-proposals.vercel.app"
   - label: "Salesforce report — Enterprise Proposals – Quick Import"
     sharepoint_url: "https://gpcom.lightning.force.com/lightning/r/Report/00OKZ000000HxGf2AK/view"
