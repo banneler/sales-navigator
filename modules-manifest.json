@@ -92,9 +92,15 @@
       "category": "Sales"
     },
     {
+      "id": "enterprise-proposals",
+      "title": "Self-Serve Proposal Generator",
+      "order": 15,
+      "category": "Sales"
+    },
+    {
       "id": "map-book",
       "title": "Executive Map Book",
-      "order": 15,
+      "order": 16,
       "category": "Map Book"
     }
   ]

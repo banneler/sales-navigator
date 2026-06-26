@@ -27,6 +27,9 @@ const NATIVE_MODULE_CORPUS = {
     supplementPath: path.join(ROOT, '.zoominfo-corpus', 'extracted.md'),
     manifestPath: path.join(ROOT, '.zoominfo-corpus', 'manifest.json'),
   },
+  'enterprise-proposals': {
+    modulePath: path.join(ROOT, 'modules', 'enterprise-proposals', 'content.md'),
+  },
 };
 
 /**
