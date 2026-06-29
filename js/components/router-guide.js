@@ -3,7 +3,7 @@ import { escapeHtml } from '../lib/markdown-config.js';
 const ROUTER_ROOT_ID = 'router-guide-root';
 const ROUTER_WELCOME_MOCK_ROOT_ID = 'router-welcome-mock-root';
 const ROUTER_GREETING =
-  "Router here—ask me how this module lands with a customer.";
+  "Router: Routing the 'Why' to your inbox, one packet at a time!";
 const ROUTER_WELCOME_MOCK_GREETING =
   "Hey—I'm Router, your pocket-sized coach orb. Tap me anytime for GPC-Context aware nudges on how things land with customers—the \"why\" in a light packet without the binder vibe. ✨";
 
@@ -141,7 +141,7 @@ export function mountRouterComponent(moduleId) {
             <img src="Proposal_Assets/router-fab.png" alt="" width="32" height="32" decoding="async" loading="lazy" class="h-8 w-8 shrink-0 rounded-full object-cover ring-1 ring-white/25" />
             <span>Router</span>
           </h2>
-          <p class="mt-0.5 text-xs leading-relaxed text-slate-300">Ask Router · trained on this module</p>
+          <p class="mt-0.5 text-xs leading-relaxed text-slate-300">Explore with AI · GPC-Context aware coach</p>
         </div>
         <button type="button" data-router-close class="rounded-lg border border-white/10 bg-white/10 px-2.5 py-1.5 text-xs font-semibold text-white transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300">Close</button>
       </header>

@@ -774,10 +774,10 @@ export async function loadGettingStarted(container, manifest) {
       icon: 'fa-compass',
       body: `
         <p class="text-slate-800 leading-relaxed">
-          <strong>Sales-Navigator</strong> is your GPC sales cheat sheet—modules, practice scenarios, and quick checks before you walk into a meeting.
+          <strong>Sales-Navigator</strong> is your interactive training hub for GPC sales onboarding—modules, practice scenarios, and knowledge checks in one place.
         </p>
         <p class="text-slate-600 text-sm mt-3">
-          This short tour shows where to go when a deal gets specific.
+          This short tour walks through how the app is organized so you can move through training with confidence.
         </p>`,
     },
     {
@@ -819,7 +819,7 @@ export async function loadGettingStarted(container, manifest) {
       icon: 'fa-mug-hot',
       body: `
         <p class="text-slate-800 leading-relaxed mb-3">
-          Most modules open with a <strong>Coffee Summary</strong>—the bullets worth skimming before a call, not the whole module.
+          Most modules open with a <strong>Coffee Summary</strong>—a quick scan of the ideas worth remembering before you dive into the full narrative.
         </p>
         <ul class="list-disc pl-5 text-slate-700 space-y-${mobile ? '1.5' : '2'} text-sm">
           <li>Use it to <strong>prep fast</strong> before a call or internal huddle.</li>
@@ -831,7 +831,7 @@ export async function loadGettingStarted(container, manifest) {
       icon: 'fa-handshake',
       body: `
         <p class="text-slate-800 leading-relaxed mb-3">
-          The <strong>body</strong> of a module is where the useful detail lives—letters, guidelines, deep dives, and (on this page) tabs for <strong>what happens next</strong>.
+          The <strong>body</strong> of a module is where the story lives—letters, guidelines, deep dives, and (on this page) tabs for <strong>what happens next</strong>.
         </p>
         <ul class="list-disc pl-5 text-slate-700 space-y-${mobile ? '1.5' : '2'} text-sm">
           <li>Elsewhere in the catalog you will see <strong>section cards</strong> for each major topic.</li>
@@ -868,7 +868,7 @@ export async function loadGettingStarted(container, manifest) {
       body: mapBook
         ? `
         <p class="text-slate-800 leading-relaxed mb-3">
-          <strong>${escapeHtml(mapBook.title)}</strong> is the map book you would open in a C-suite meeting—footprint, reach, and proof points.
+          <strong>${escapeHtml(mapBook.title)}</strong> is a digital version of our printed map book—a backdrop for executive customer conversations about footprint, reach, and strategy.
         </p>
         <p class="text-slate-600 text-sm">
           ${mobile ? 'Open the <strong><i class="fa-solid fa-bars text-xs" aria-hidden="true"></i> menu</strong> and tap it to view' : 'Open it from the sidebar for'} full-width maps and executive views.
