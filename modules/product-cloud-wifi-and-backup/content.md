@@ -141,7 +141,7 @@ scenarios:
       - label: 'Use 5G Wireless Broadband as a temporary bridge, then convert it to Backup behind the new wireline circuit.'
         feedback: 'Correct. Bridge the install gap with wireless, then convert to Backup at fiber turn-up. Two things to remember: the bridge period is non-commissionable (your commission lands on the SIA/DIA when fiber lights), and the store cannot host inbound services on the wireless DHCP IP during the bridge.'
       - label: Sell them a cheap consumer cellular hotspot as a stopgap and circle back when fiber's ready.
-        feedback: Off-net and unmanaged—GPC has nothing to monitor or warranty, and you have no path to convert to Backup. That is the gap Wireless Broadband exists for: managed bridge now, then convert to Backup when fiber lands.
+        feedback: 'Off-net and unmanaged—GPC has nothing to monitor or warranty, and you have no path to convert to Backup. That is the gap Wireless Broadband exists for: managed bridge now, then convert to Backup when fiber lands.'
   - title: The Static-IP Trap
     situation: |
       A small accounting firm wants to ditch their slow cable internet. They like the idea of 5G Wireless Broadband as a faster path than waiting for a fiber build. They also self-host a client portal on a server in their back office and need it reachable from the public internet.
