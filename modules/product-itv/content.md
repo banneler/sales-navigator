@@ -106,6 +106,38 @@ GPC iTV brings local channels, sports, HD, Cloud DVR, and Replay TV to business 
 
 ---
 
+## Objection Handling
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+::: flip ["Can we add iTV to the TVs we already have on another ISP?"]
+iTV rides **GPC Internet**—it is not a standalone add-on on a competitor circuit. Qualify access first, then bundle iTV on the GPC connection they need anyway.
+:::
+
+::: flip ["I need ESPN and the local channel on every screen—guarantee it in writing."]
+Lineups are market-dependent and change. Do not promise channels from memory. Use the SharePoint lineup tools or QR code to verify availability in their market before you quote or sign.
+:::
+
+::: flip ["Netflix and YouTube are cheaper—why pay for business TV?"]
+Business TV is licensed for public viewing in lobbies, bars, waiting rooms, and breakrooms. Consumer streaming accounts are not built for commercial display, local/sports carriage, or shared-screen use cases iTV is designed for.
+:::
+
+::: flip ["Do we need a set-top box on every TV?"]
+Lead with the streaming app to keep equipment costs down. Set-top boxes are available at a low monthly rate when the TV or business setup requires them—ask what hardware they have today before you assume one box per screen.
+:::
+
+::: flip ["Can you discount iTV if we take three locations?"]
+The pricing sheets call out iTV as **not discountable**. Quote Essentials plus the correct stream count, DVR, and any required channel package at list—verify current guidance before discussing exceptions.
+:::
+
+::: flip ["We only need the base package—Essentials should cover everything."]
+Essentials is the required base, but every quote still needs a **stream count** and **DVR product**. Bars and restaurants may also need Entertainment packages tied to seating area—build the quote deliberately, not from the package name alone.
+:::
+
+</div>
+
+---
+
 ## Core Benefits
 
 Keep the pitch simple. iTV is about a better business TV experience without overcomplicating the quote:

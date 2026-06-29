@@ -1871,6 +1871,38 @@ We make sure your team can actually reach the cloud without the public internet 
 
 ---
 
+## Objection Handling
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+::: flip ["Our 1 Gig DIA is enough for AWS—we don't need Cloud Connect."]
+DIA still rides the public internet. If cloud workloads show afternoon jitter or routing spikes, Cloud Connect is the private Layer 2 path into the hyperscaler—not more bandwidth, a more predictable route. It requires Ethernet plus a Cloud Connect SKU.
+:::
+
+::: flip ["We already have a cheap cable line as backup."]
+Cable and fiber often share poles, trenches, or building entry. If a truck hits the pole, both can fail together. **5G Wireless Backup** adds true physical path diversity with managed failover, NOC monitoring, and app prioritization—set honest best-effort speed expectations up front.
+:::
+
+::: flip ["Just tell me what 15 Wi-Fi APs will cost."]
+Never quote AP counts from square footage alone. Coverage depends on layout, materials, user density, and guest vs. private needs. Pause the blind quote and get the site engineered before AP counts are final.
+:::
+
+::: flip ["Let's skip fiber and use 5G as our primary internet—we need a static IP for our server."]
+Wireless Broadband uses carrier DHCP, so on-prem services are not reliably reachable from the internet. If they host inbound traffic, lead with **SIA or DIA** for the static IP, then attach **5G Backup** for redundancy—not cellular as primary.
+:::
+
+::: flip ["Wireless backup should have the same SLA as our fiber."]
+Wireless is **best effort** with no SLA. Position it as the insurance policy that keeps registers, scheduling, and critical apps alive during an outage—not a fiber replacement for multi-day events. Document usage tiers and static-IP behavior during failover.
+:::
+
+::: flip ["Can't we open the new store on a consumer hotspot until fiber is ready?"]
+GPC **Wireless Broadband** is the managed bridge: Cradlepoint installed and monitored by GPC, then re-roled as Backup when fiber lights. Consumer hotspots are off-net, unwarrantied, and do not convert cleanly into the GPC stack.
+:::
+
+</div>
+
+---
+
 ## Technical Deep Dive [deep]
 
 Start with the sales sequence before the specs: qualify the primary path, decide whether resiliency, cloud performance, site experience, or a fiber timing gap is the pain, then use the tab that matches the customer problem.
@@ -1987,6 +2019,38 @@ GPC iTV brings local channels, sports, HD, Cloud DVR, and Replay TV to business 
     sandbox="allow-scripts allow-same-origin"
     style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 10.5; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
   ></iframe>
+</div>
+
+---
+
+## Objection Handling
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+::: flip ["Can we add iTV to the TVs we already have on another ISP?"]
+iTV rides **GPC Internet**—it is not a standalone add-on on a competitor circuit. Qualify access first, then bundle iTV on the GPC connection they need anyway.
+:::
+
+::: flip ["I need ESPN and the local channel on every screen—guarantee it in writing."]
+Lineups are market-dependent and change. Do not promise channels from memory. Use the SharePoint lineup tools or QR code to verify availability in their market before you quote or sign.
+:::
+
+::: flip ["Netflix and YouTube are cheaper—why pay for business TV?"]
+Business TV is licensed for public viewing in lobbies, bars, waiting rooms, and breakrooms. Consumer streaming accounts are not built for commercial display, local/sports carriage, or shared-screen use cases iTV is designed for.
+:::
+
+::: flip ["Do we need a set-top box on every TV?"]
+Lead with the streaming app to keep equipment costs down. Set-top boxes are available at a low monthly rate when the TV or business setup requires them—ask what hardware they have today before you assume one box per screen.
+:::
+
+::: flip ["Can you discount iTV if we take three locations?"]
+The pricing sheets call out iTV as **not discountable**. Quote Essentials plus the correct stream count, DVR, and any required channel package at list—verify current guidance before discussing exceptions.
+:::
+
+::: flip ["We only need the base package—Essentials should cover everything."]
+Essentials is the required base, but every quote still needs a **stream count** and **DVR product**. Bars and restaurants may also need Entertainment packages tied to seating area—build the quote deliberately, not from the package name alone.
+:::
+
 </div>
 
 ---
@@ -2199,6 +2263,38 @@ We replace aging phone systems with a secure cloud platform for calling, SMS, me
     sandbox="allow-scripts allow-same-origin"
     style="width: 100%; border: 0; display: block; aspect-ratio: 16 / 13; height: auto; max-height: min(88vh, 44rem); background: #f1f5f9;"
   ></iframe>
+</div>
+
+---
+
+## Objection Handling
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+::: flip ["We'll just use Microsoft's native calling plan—one vendor is easier."]
+Microsoft can cover chat and meetings, but voice operations still need routing, porting, support, and uptime discipline. Pivot to who owns dropped calls, number ports, and outages—then position the right GPC UC or UC for Teams path with SE validation on licensing and design.
+:::
+
+::: flip ["We already pay for Teams—why do we need Phone System licenses too?"]
+Do not promise a licensing bypass. The UC for Teams source calls out an **MSFT Phone System license per user**. Keep the value story on cloud PBX, SMS, routing, and support, then let the SE validate the tenant before you quote.
+:::
+
+::: flip ["We need a contact center—just put everyone on UC Enterprise."]
+Scope the workload first. **UC Pro/Enterprise** can run a voice-only inbound queue; **CCaaS** is the separate omnichannel product for chat, email, SMS/WhatsApp, advanced IVR, and concurrent agent licensing. Conflating the two at quote time creates an install fight—bring in the SE.
+:::
+
+::: flip ["Replacing our PBX means buying new desk phones and a server."]
+Position cloud UC as the server replacement: desktop and mobile apps, optional desk phones by role, and no on-prem PBX to maintain. Match phone models to the job—reception may need a touch-screen desk phone; back-office staff may not.
+:::
+
+::: flip ["We're only 12 people—why not put everyone on the top tier?"]
+Match **workload**, not headcount. A small firm with mostly desk calls and occasional 8-person meetings fits **Essentials** better than Enterprise. Reserve higher tiers for larger meetings, CRM-integrated desks, or inbound call-center features they will actually use.
+:::
+
+::: flip ["Can't you just quote the port, IVR, and Salesforce integration now?"]
+Pause when you see IPN/OffNet ports under an active carrier contract, multi-level IVR, or CRM CTI integrations. Those are SE-scoped items—promising them from discovery alone forces a walk-back after signature.
+:::
+
 </div>
 
 ---

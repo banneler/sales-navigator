@@ -179,6 +179,38 @@ We replace aging phone systems with a secure cloud platform for calling, SMS, me
 
 ---
 
+## Objection Handling
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+::: flip ["We'll just use Microsoft's native calling plan—one vendor is easier."]
+Microsoft can cover chat and meetings, but voice operations still need routing, porting, support, and uptime discipline. Pivot to who owns dropped calls, number ports, and outages—then position the right GPC UC or UC for Teams path with SE validation on licensing and design.
+:::
+
+::: flip ["We already pay for Teams—why do we need Phone System licenses too?"]
+Do not promise a licensing bypass. The UC for Teams source calls out an **MSFT Phone System license per user**. Keep the value story on cloud PBX, SMS, routing, and support, then let the SE validate the tenant before you quote.
+:::
+
+::: flip ["We need a contact center—just put everyone on UC Enterprise."]
+Scope the workload first. **UC Pro/Enterprise** can run a voice-only inbound queue; **CCaaS** is the separate omnichannel product for chat, email, SMS/WhatsApp, advanced IVR, and concurrent agent licensing. Conflating the two at quote time creates an install fight—bring in the SE.
+:::
+
+::: flip ["Replacing our PBX means buying new desk phones and a server."]
+Position cloud UC as the server replacement: desktop and mobile apps, optional desk phones by role, and no on-prem PBX to maintain. Match phone models to the job—reception may need a touch-screen desk phone; back-office staff may not.
+:::
+
+::: flip ["We're only 12 people—why not put everyone on the top tier?"]
+Match **workload**, not headcount. A small firm with mostly desk calls and occasional 8-person meetings fits **Essentials** better than Enterprise. Reserve higher tiers for larger meetings, CRM-integrated desks, or inbound call-center features they will actually use.
+:::
+
+::: flip ["Can't you just quote the port, IVR, and Salesforce integration now?"]
+Pause when you see IPN/OffNet ports under an active carrier contract, multi-level IVR, or CRM CTI integrations. Those are SE-scoped items—promising them from discovery alone forces a walk-back after signature.
+:::
+
+</div>
+
+---
+
 ## Technical Deep Dive [deep]
 
 **Brand hierarchy you'll hear in the field**

@@ -189,6 +189,38 @@ We make sure your team can actually reach the cloud without the public internet 
 
 ---
 
+## Objection Handling
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+::: flip ["Our 1 Gig DIA is enough for AWS—we don't need Cloud Connect."]
+DIA still rides the public internet. If cloud workloads show afternoon jitter or routing spikes, Cloud Connect is the private Layer 2 path into the hyperscaler—not more bandwidth, a more predictable route. It requires Ethernet plus a Cloud Connect SKU.
+:::
+
+::: flip ["We already have a cheap cable line as backup."]
+Cable and fiber often share poles, trenches, or building entry. If a truck hits the pole, both can fail together. **5G Wireless Backup** adds true physical path diversity with managed failover, NOC monitoring, and app prioritization—set honest best-effort speed expectations up front.
+:::
+
+::: flip ["Just tell me what 15 Wi-Fi APs will cost."]
+Never quote AP counts from square footage alone. Coverage depends on layout, materials, user density, and guest vs. private needs. Pause the blind quote and get the site engineered before AP counts are final.
+:::
+
+::: flip ["Let's skip fiber and use 5G as our primary internet—we need a static IP for our server."]
+Wireless Broadband uses carrier DHCP, so on-prem services are not reliably reachable from the internet. If they host inbound traffic, lead with **SIA or DIA** for the static IP, then attach **5G Backup** for redundancy—not cellular as primary.
+:::
+
+::: flip ["Wireless backup should have the same SLA as our fiber."]
+Wireless is **best effort** with no SLA. Position it as the insurance policy that keeps registers, scheduling, and critical apps alive during an outage—not a fiber replacement for multi-day events. Document usage tiers and static-IP behavior during failover.
+:::
+
+::: flip ["Can't we open the new store on a consumer hotspot until fiber is ready?"]
+GPC **Wireless Broadband** is the managed bridge: Cradlepoint installed and monitored by GPC, then re-roled as Backup when fiber lights. Consumer hotspots are off-net, unwarrantied, and do not convert cleanly into the GPC stack.
+:::
+
+</div>
+
+---
+
 ## Technical Deep Dive [deep]
 
 Start with the sales sequence before the specs: qualify the primary path, decide whether resiliency, cloud performance, site experience, or a fiber timing gap is the pain, then use the tab that matches the customer problem.
