@@ -174,7 +174,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-We help customers keep their network available, controlled, and visible. Security protects the edge and reduces threat risk; SD-WAN makes the WAN easier to steer and manage. Together, they turn "the network is down" into a managed business problem instead of a scramble.
+We help customers keep the network available, controlled, and visible. Security protects the edge and reduces threat risk; SD-WAN makes the WAN easier to steer and manage. Outages and alerts get handled with a plan, not by the customer's IT person guessing at 2 a.m.
 :::
 
 ---

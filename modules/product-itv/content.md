@@ -14,7 +14,7 @@ discovery_questions:
   - "Is this for a lobby, waiting room, bar, restaurant, or another public viewing area?"
 five_minute_summary: |
   - **What it is:** Streaming TV for business (Cloud DVR, Replay TV, HD channels) that rides directly over their **GPC Internet** connection.
-  - **The Hook:** Keep customers, guests, and staff engaged with popular, local, sports, and HD channels on one GPC bill.
+  - **The Hook:** Lobby TVs, sports, local channels, and shared screens over the GPC Internet they already need. Verify the lineup before you promise a channel.
   - **The Caveat:** GPC iTV Essentials is the base package; every quote also needs the right stream count and DVR selection.
   - **The Golden Rule:** Do not promise a specific channel from memory. Use the QR code or SharePoint lineup tools before you quote.
 
@@ -87,7 +87,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-GPC iTV brings popular, local, sports, and HD channels to your business over a GPC Internet connection. You get streaming TV features like Cloud DVR and Replay TV, plus the convenience of one GPC bill for multiple services.
+GPC iTV brings local channels, sports, HD, Cloud DVR, and Replay TV to business screens over a GPC Internet connection. It rides the circuit they already need: one provider, one bill, and no channel promises until you verify the lineup.
 :::
 
 ---

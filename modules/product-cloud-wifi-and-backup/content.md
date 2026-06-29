@@ -24,7 +24,7 @@ five_minute_summary: |
   - **Field order:** Qualify the primary path first, attach resiliency second, then solve the local experience. Cloud Connect, Wi-Fi, Backup, and Broadband are different plays.
   - **Cloud Connect:** This is not more internet. It is private Layer 2 connectivity over GPC Ethernet into the cloud ecosystem, giving customers a more predictable path to providers like AWS, Azure, Google, Oracle, IBM, SAP, Nutanix, Salesforce, and Alibaba.
   - **Managed Wi-Fi:** We help own the last 10 feet of the experience. It is engineered around the site, with secure guest/private networks, access point options, installation through maintenance, and usage analytics. Do not quote AP counts from square footage alone.
-  - **5G Wireless Backup:** The insurance policy *behind* primary fiber. It uses a professionally configured Cradlepoint router with automatic failover, automatic reversion, 24/7 NOC monitoring, app prioritization, and optional battery backup. Speeds and throttling depend on usage and wireless conditions, so set expectations.
+  - **5G Wireless Backup:** The insurance policy *behind* primary fiber. It uses a professionally configured Cradlepoint router with automatic failover, automatic reversion, 24/7 NOC monitoring, app prioritization, and optional battery backup. Speeds and usage thresholds depend on the current product sheet and wireless conditions, so set expectations before signature.
   - **5G Wireless Broadband:** Cellular as the *primary* internet path. Two motions: (1) a temporary bridge while a fiber build is in flight, or (2) a permanent broadband plan where fiber is not the answer. The carrier hands out a DHCP IP, so anything hosted on prem will not be reachable from the internet. Temporary wireless service is **non-commissionable**; the customer starts billing at the contracted SIA/DIA rate once wireless is installed.
   - **The pitch order & ground rules:** Sell primary fiber first, attach 5G Backup for redundancy, and finish with Managed Wi-Fi for the localized experience. Use 5G Broadband to bridge a fiber install gap or to cover a site fiber can't reach. Wireless attaches to new or existing **SIA / DIA / SD-WAN** customers; do not sell outside GPC territory without approval. No SLAs: wireless is "best effort."
 technical_deep_dive_tabs:
@@ -55,6 +55,8 @@ technical_deep_dive_tabs:
         - Optional battery backup can provide up to 8 hours of power to the router during an outage.
         - It is "best effort" with no SLA. The goal is to keep doors open and registers ringing, not replace fiber during a multi-day outage.
 
+        Usage tiers may reduce wireless throughput during extended failover. Use the current product sheet for the active thresholds; the table below is a training guide, not a customer-facing SLA.
+
         | Total monthly usage (current product sheet) | Speed after threshold |
         | --- | --- |
         | After **12 GB** | Up to **50 Mbps** |
@@ -69,7 +71,7 @@ technical_deep_dive_tabs:
         - Uses a professionally configured Cradlepoint router and wireless carrier service; managed by GPC.
         - **Temporary bridge:** wireless covers a new site that must open before the fiber build completes. When fiber turns up, the Cradlepoint re-roles as 5G Backup behind the new SIA/DIA circuit.
         - **Permanent broadband:** wireless is the long-term primary at sites where fiber is not available in footprint, including rural or hard-to-reach edges.
-        - Current permanent Broadband pricing shows **25 Mbps** and **50 Mbps** plans. Bandwidth is still best effort, varies by location and time of day, and Verizon may deprioritize traffic after priority-data thresholds.
+        - Current permanent Broadband pricing shows **25 Mbps** and **50 Mbps** plans. Bandwidth is still best effort, varies by location and time of day, and carrier priority-data thresholds can change by product sheet.
         - **No static IP:** the public IP comes from the carrier via DHCP, so on-prem hosted services are not reachable from the internet. If on-prem hosting is in scope, lead with SIA/DIA.
         - Temporary wireless service is **non-commissionable**; track the fiber install because the SIA/DIA sale is where the commission lands.
 knowledge_checks:
@@ -139,7 +141,7 @@ scenarios:
       - label: 'Use 5G Wireless Broadband as a temporary bridge, then convert it to Backup behind the new wireline circuit.'
         feedback: 'Correct. Bridge the install gap with wireless, then convert to Backup at fiber turn-up. Two things to remember: the bridge period is non-commissionable (your commission lands on the SIA/DIA when fiber lights), and the store cannot host inbound services on the wireless DHCP IP during the bridge.'
       - label: Sell them a cheap consumer cellular hotspot as a stopgap and circle back when fiber's ready.
-        feedback: Off-net and unmanaged—GPC has nothing to monitor or warranty, and you have no path to convert to Backup. This gap is exactly what our Wireless Broadband SKU is designed to close.
+        feedback: Off-net and unmanaged—GPC has nothing to monitor or warranty, and you have no path to convert to Backup. That is the gap Wireless Broadband exists for: managed bridge now, then convert to Backup when fiber lands.
   - title: The Static-IP Trap
     situation: |
       A small accounting firm wants to ditch their slow cable internet. They like the idea of 5G Wireless Broadband as a faster path than waiting for a fiber build. They also self-host a client portal on a server in their back office and need it reachable from the public internet.

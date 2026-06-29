@@ -8,7 +8,7 @@ summary: "Quick tour of Sales-Navigator: how to use the hub, what to read first,
 sensitivity: "public"
 
 five_minute_summary: |
-  Welcome to the team. Use Sales-Navigator as your first stop when you need a refresher, a customer-ready talk track, or the next best module to read.
+  New here or rusty? Start with Sales-Navigator when you need a refresher, a customer-ready talk track, or the next best module to read.
 
   - Start with the Coffee Summary when you need the quick version, then use scenarios and module details when a deal needs more depth.
   - Keep the customer conversation practical: GPC positions reliable fiber connectivity, communications, security, cloud, backup, and managed services around real business needs.
@@ -32,13 +32,13 @@ getting_started_demo:
   knowledge_check:
     question: "Which GPC value point is supported in the Getting started source material?"
     options:
-      - label: "GPC offers local support, 24/7 network monitoring, and flexible, scalable solutions."
+      - label: "GPC offers local support, a 24/7 NOC, and a portfolio that can grow from one site to multi-site."
         correct: true
       - label: "GPC only sells one internet product for every business customer."
         correct: false
       - label: "GPC's main advantage is avoiding discovery and quoting from memory."
         correct: false
-    incorrect_feedback: "Close, but the source points to local support, 24/7 monitoring, experience, and flexible solutions."
+    incorrect_feedback: "Close, but the source points to local support, 24/7 monitoring, experience, and a portfolio that can grow with the account."
     affirmation_primary: "Correct. Those are core reasons businesses choose GPC."
     affirmation_secondary: "Use those points as anchors, then tailor the conversation to the customer."
     hint: "Look for the broad value points in the source material."

@@ -5,7 +5,7 @@ Use with the **Play module intro** control in the opening preview modal. Target 
 **Editor's note (consistency pass):**
 
 - Openings alternate slightly ("In this module," "Here's the focus," "This one is about") so playback back-to-back does not sound copy-pasted.
-- Every script uses **second person** and ends with a **soft invitation** to continue—no UI language ("click," "button").
+- Every script uses **second person** and ends with a direct next step—no UI language ("click," "button").
 - **You'll learn** / **you'll see** / **you'll leave with** are rotated for rhythm; closes use a small set of phrases, not identical sign-offs.
 - Acronyms: expanded **once** where needed for voice; dense stacks (SIEM, DDoS) shortened or folded into plain language where possible.
 - **GPC** and **Salesforce** are used as proper names; product names match the module content.
@@ -24,7 +24,7 @@ Use with the **Play module intro** control in the opening preview modal. Target 
 
 **Script**
 
-In competitive deals, you earn the right to compare—not by attacking, but by discovering first. Here's the focus: map every GPC claim to what the customer already told you. You'll lead with questions—who answers at 2 a.m. when a circuit fails, which apps break first when latency spikes, what an hour of downtime actually costs—then match those answers to local fiber, a 24/7 NOC, owned redundancy, and a portfolio that runs from access through security and apps. You'll recognize the landmines: no personal disparagement, no unverified battle-card stats in front of a customer until marketing clears them, and no absolutes. For satellite and metro comparisons, anchor on reliability, latency, and the total cost of downtime—not a speed test alone. When you're ready, step in and turn the pressure into a story that fits their reality.
+Don't lead with the battle card. Lead with the customer's outage story, app stack, sites, and support pain, then compare. In this module, you'll map every GPC claim to what the buyer already told you: who answers at 2 a.m., which apps break first, and what an hour of downtime costs. Then you tie those answers to local fiber, a 24/7 NOC, redundancy, and a portfolio that runs from access through security and apps. You'll also learn the landmines: no personal shots, no battle-card numbers from memory, and no absolutes. For satellite and metro comparisons, anchor on reliability, latency, and total cost of downtime, not a speed test alone. Skim the Coffee Summary, then run the scenarios.
 
 ---
 
@@ -40,7 +40,7 @@ In competitive deals, you earn the right to compare—not by attacking, but by d
 
 **Script**
 
-This one is about earning the right to be more than a carrier. GPC isn't just an ISP—it's a layered technology partner built on a resilient Midwest fiber network. You'll learn to lead with outcomes rather than a feature list, then map the offer as one integrated system: access and wireless backup as the foundation, WAN on top, a security layer, and unified communications, Cloud Connect, and Wi-Fi at the edge. You'll anchor the "why GPC" case with Midwest IP reach, Tier-1 and IX relationships, local teams, and a 24/7 NOC. Discovery ties it together—sites, critical apps, uptime tolerance, and cloud or voice moves—so the stack you recommend reflects their actual operations, not a catalog. When it suits you, settle in and build a story you can deliver with quiet confidence.
+This one is about earning the right to be more than a circuit vendor. GPC starts with Midwest fiber, then layers in backup, WAN, security, UC, Cloud Connect, and Wi-Fi where the customer actually needs them. You'll learn to lead with outcomes instead of a feature list: what runs on the network, what breaks during downtime, which sites matter most, and where cloud or voice changes are heading. The "why GPC" case is practical: Midwest IP reach, Tier-1 and IX relationships, local teams, and a 24/7 NOC. Discovery ties it together so the stack you recommend reflects their operation, not a catalog. Read the Coffee Summary, then practice the commodity-trap scenario.
 
 ---
 
@@ -56,7 +56,7 @@ This one is about earning the right to be more than a carrier. GPC isn't just an
 
 **Script**
 
-Everything downstream—voice, security, and cloud—depends on how you match access technology to the workload in front of you. In this module you'll keep four products in the right mental boxes. Standard Internet Access fits flexible, cost-sensitive needs on shared infrastructure. Dedicated Internet Access earns the conversation when the customer needs symmetrical bandwidth, SLA-grade operations, or stronger protection against denial-of-service risk. Managed Ethernet provides private Layer 2 connectivity between sites—a different conversation than Internet access entirely. And Wavelength moves high-capacity optical traffic between data centers and hubs when discovery supports it, not as a default upgrade for every branch. You'll compare fiber to satellite on reliability and latency without dismissing their constraints, and you'll treat internal pricing as internal—always quote through standard tools. Move forward when you want a tighter access story and cleaner handoffs.
+Everything downstream—voice, security, and cloud—depends on matching access to the workload in front of you. In this module, you'll keep four products in the right boxes. Standard Internet Access fits flexible, cost-sensitive needs on shared infrastructure. Dedicated Internet Access earns the conversation when uploads, voice, video, or cloud apps need dedicated symmetrical bandwidth and stronger service commitments. Managed Ethernet is private Layer 2 connectivity between sites, not public internet. Wavelength moves high-capacity optical traffic between data centers and hubs when discovery supports it, not as a default branch upgrade. You'll compare fiber to satellite on reliability and latency without dismissing constraints, and you'll keep pricing inside the approved quote path. Use the scenarios to tighten the access story.
 
 ---
 
@@ -65,14 +65,14 @@ Everything downstream—voice, security, and cloud—depends on how you match ac
 
 |              |                       |
 | ------------ | --------------------- |
-| **title**    | Cloud, Wi-Fi & Backup |
+| **title**    | Cloud, Wi-Fi, 5G Backup & Broadband |
 | **words**    | ~141                  |
 | **~seconds** | ~60                   |
 
 
 **Script**
 
-When uptime and cloud performance decide whether you win, the story has to match what you can actually stand behind. This module walks through three products that extend the value of GPC fiber access. Cloud Connect gives SaaS-heavy businesses a private, predictable path to AWS, Azure, Google, and other platforms—no more Internet-only jitter for critical workloads—and you'll align cross-connects and diversity with a solutions engineer before you over-promise. Managed Wi-Fi covers the last ten feet with a fully managed lifecycle, guest and corporate separation, and an integrated firewall and security stack—without quoting access point counts before a site survey. And 5G Wireless Backup keeps the business running during outages with automatic failover, automatic fail-back, NOC monitoring, and optional battery protection. Whenever you're ready, continue and build a conversation you can defend in front of engineering and the customer.
+When uptime and cloud performance decide whether you win, the story has to match what you can stand behind. This module walks through products that extend the value of GPC fiber access. Cloud Connect gives SaaS-heavy businesses a private, predictable path to AWS, Azure, Google, and other platforms, with cross-connects and diversity validated by a solutions engineer. Managed Wi-Fi covers the last ten feet with site-based design, guest and private networks, and support from install through maintenance. Do not quote access point counts from square footage. 5G Backup keeps critical apps online during outages. 5G Broadband is the primary cellular path for a fiber timing gap or a site fiber cannot reach. Use the technical tabs before you quote the edge cases.
 
 ---
 
@@ -88,7 +88,7 @@ When uptime and cloud performance decide whether you win, the story has to match
 
 **Script**
 
-In security and SD-WAN, one fuzzy line item can unwind trust before the ink is dry. Here's the focus: match product to risk, and know when to pull specialists in early. You'll learn how Managed Firewall—FortiGate-based, SOC-monitored—sits alongside Managed Network Security, the broader umbrella that can include SIEM, assessments, and email security depending on scope. You'll see why DDoS proactive protection runs 24/7 automatic mitigation while on-demand mitigation is limited to weekday business hours—and why that distinction must be explicit before signature. You'll qualify SD-WAN for multi-site designs with at least one GPC fiber site, and you'll stop assuming advanced firewall features are in the base quote until solutions engineering confirms. You'll leave with clear handoff triggers for complex routing, high availability, and regulated environments. Step through when you're ready to move from buzzwords to a scope you can actually quote.
+In security and SD-WAN, one fuzzy line item can wreck trust before the ink is dry. Match product to risk, and pull specialists in early when scope gets complex. You'll learn how Managed Firewall, FortiGate-based and SOC-monitored, sits alongside Managed Network Security, the broader lane that can include SIEM, assessments, and email security depending on scope. You'll see why DDoS proactive protection runs 24/7 automatic mitigation while on-demand mitigation is limited to weekday business hours. That distinction has to be clear before signature. You'll qualify SD-WAN for multi-site designs with at least one GPC fiber site, and you'll stop assuming advanced firewall features are in the base quote until solutions engineering confirms. Run the checks so the scope you quote is the scope we can deliver.
 
 ---
 
@@ -104,7 +104,7 @@ In security and SD-WAN, one fuzzy line item can unwind trust before the ink is d
 
 **Script**
 
-Voice, messaging, meetings, and contact center often land in the same conversation as Microsoft Teams—and a licensing surprise is easier to address before signature than after. This module keeps the story accurate. You'll learn how GPC's cloud platform bundles enterprise calling, SMS and MMS, HD video meetings with AI recaps, contact center, and file sharing on a 99.999% uptime foundation backed by Triple Guard Security. You'll clarify that Microsoft Teams and Phone System licenses are purchased separately from GPC's cloud PBX, so customers see the joint picture early. For contact center, you'll respect concurrent licensing for Pro and Elite tiers and hand burst capacity to account executive and pricing—not a napkin estimate. For customers not ready for full UC, you'll touch SIP, PRI, and analog paths with the right discovery. Continue when you're ready and keep renewals out of awkward territory.
+Voice, messaging, meetings, and contact center often land in the same conversation as Microsoft Teams, and licensing surprises are easier to handle before signature. This module keeps the story accurate. You'll learn how GPC UC positions cloud PBX, SMS and MMS, HD meetings, select AI-assisted features, and contact center options without guessing tier details or SLA language. For Teams, the source calls out an MSFT Phone System license per user, so the SE validates the tenant, licensing path, and user experience before you quote. For contact center, you'll respect concurrent licensing for Pro and Elite tiers and hand burst capacity to account executive and pricing, not a napkin estimate. For customers not ready for full UC, you'll touch SIP, PRI, and analog paths with the right discovery. Run the Teams scenarios before you pitch the license path.
 
 ---
 
@@ -120,7 +120,7 @@ Voice, messaging, meetings, and contact center often land in the same conversati
 
 **Script**
 
-When more than one seller touches the same account, unclear rules waste time and erode trust. The Sales Rules of Engagement protect everyone's pipeline and keep Salesforce the system of record when disputes arise. In this module you'll build three habits that cover most situations: search before you create—duplicates are the hardest violations to unwind; log meaningful activity on the record in Salesforce, not just your sent folder; and transfer accounts through leadership—connect with the owner, then email your manager and sales leadership—never unilaterally. You'll understand the idle windows—sixty-one days for Prospect accounts, a hundred twenty-one for Customers on the general path—plus the five-business-day clock for assigned inbound leads, separate from leads you self-source. You'll see how Strategic and USAC accounts follow different treatment, and why escalation belongs with your manager and Salesforce timelines—not side deals. Work through the lessons at your pace until the rules feel automatic.
+When more than one seller touches the same account, unclear rules waste time and erode trust. The Sales Rules of Engagement protect pipeline and keep Salesforce as the system of record. Build three habits: search before you create, log real activity on the account record, and transfer through leadership instead of self-reassigning. You'll learn the idle windows: sixty-one days for Prospect accounts and a hundred twenty-one for Customers on the general path. You'll also see that notes alone do not protect an account; tasks, calls, meetings, and emails logged in Salesforce do. Assigned inbound leads have a five-business-day clock, separate from self-sourced leads. Strategic and USAC or E-Rate accounts follow different treatment, and escalation belongs with your manager and Salesforce history. Work the checks until the rules feel automatic.
 
 ---
 
@@ -136,7 +136,7 @@ When more than one seller touches the same account, unclear rules waste time and
 
 **Script**
 
-Getting a deal right in Salesforce is as important as winning it—and the wrong path at the wrong stage can stall billing, delay installation, and create customer escalations. This module helps you navigate the key distinctions. You'll use Approval History on the GPC Solution to approve, reject, reassign, or recall with comments your reviewers can trust—and include the Solution ID on every form and attachment. You'll separate a change order, which applies after Closed Won but before billing starts, from Move-Add-Change work on a live contract, and from Disconnect when services come out entirely. You'll understand when Request Manual Validation pulls a site out of automated routing for deeper review—and why that option is for genuine exceptions, not a default. Settle in and work the material so your deals move cleanly from approval to installed revenue.
+Getting a deal right in Salesforce is as important as winning it. The wrong path can stall billing, delay installation, and create customer escalations. This module starts with the lane: new deal, post-signature change, live-service change, or full removal. You'll use Approval History on the GPC Solution to approve, reject, reassign, or recall with comments reviewers can trust. You'll separate Change Order before billing from MAC on live services, Customer Move for relocations, Cancellation before billing when everything comes out, and Disconnect after billing. You'll also learn that Net Investment approvals stack, and Manual Validation is for real exceptions, not a safety click. Work the scenarios so the deal moves cleanly from approval to installed revenue.
 
 ---
 
@@ -163,7 +163,7 @@ A clean Salesforce rhythm turns leads into opportunities, signed agreements, and
   {"module_id": "competitive-positioning", "title": "Competitive Positioning", "approx_words": 139, "approx_seconds": 60},
   {"module_id": "portfolio-and-business-capabilities", "title": "Portfolio & Business Capabilities", "approx_words": 134, "approx_seconds": 57},
   {"module_id": "product-connectivity", "title": "Connectivity & Access", "approx_words": 138, "approx_seconds": 59},
-  {"module_id": "product-cloud-wifi-and-backup", "title": "Cloud, Wi-Fi & Backup", "approx_words": 141, "approx_seconds": 60},
+  {"module_id": "product-cloud-wifi-and-backup", "title": "Cloud, Wi-Fi, 5G Backup & Broadband", "approx_words": 141, "approx_seconds": 60},
   {"module_id": "product-security-and-sd-wan", "title": "Security & SD-WAN", "approx_words": 144, "approx_seconds": 62},
   {"module_id": "product-uc-voice-and-collaboration", "title": "UC, Voice & Collaboration", "approx_words": 143, "approx_seconds": 61},
   {"module_id": "sales-rules-of-engagement", "title": "Sales Rules of Engagement", "approx_words": 141, "approx_seconds": 60},

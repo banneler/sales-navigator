@@ -8,7 +8,7 @@ reference_files:
     sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
 video_sections:
   - heading: Business Performance with Fiber Connectivity
-    intro: Use this capabilities presentation to frame the portfolio as business infrastructure, not a commodity pipe.
+    intro: Use this capabilities presentation to get off price-per-meg and talk about what the network carries.
     items:
       - title: Accelerating Business Performance with Fiber Connectivity
         src: assets/capabilities/accelerating-business-performance-with-fiber-connectivity.mp4
@@ -40,7 +40,7 @@ knowledge_checks:
       - "Lead with our most expensive SD-WAN solution to anchor the price high."
       - "As a layered system: access first, then resilience, security, cloud, Wi-Fi, UC, and video."
     correct_index: 2
-    explanation: "Sell the portfolio as a system. Access enables the higher-value services that protect, connect, and support daily operations."
+    explanation: "Sell it as a stack: fiber first, then backup, security, cloud, Wi-Fi, UC, and video. Each layer only matters if access is solid."
 
   - question: "What are the core differentiators you should anchor your 'Why GPC' story on?"
     options:
@@ -62,15 +62,15 @@ scenarios:
 roleplay:
   persona: Skeptical CFO at a mid-size Midwest manufacturer
   scenario: Just sat through two carrier pitches that sounded identical. Asks point-blank why GPC is different before walking out of the room.
-  goal: 'Deliver a one-sentence ''why GPC'' answer grounded in outcomes and partnership, then anchor the conversation on the comprehensive suite of services and offer the capability deck as a concrete next step.'
+  goal: 'Deliver a one-sentence ''why GPC'' answer grounded in business impact, then walk through the GPC stack and offer the capability deck as a concrete next step.'
 ---
 
 ## At a glance
 
-- **The Goal:** Move the conversation from "internet service" to business infrastructure.
+- **The Goal:** Stop letting the buyer treat you like a circuit vendor. Talk about what runs on the network and what downtime costs.
 - **The Foundation:** GPC's resilient Midwest IP network, local support, and 24/7 network monitoring.
 - **The Portfolio:** Fiber Internet, Managed Ethernet, SD-WAN, Wireless Internet Backup, Cloud Connect, Managed Firewall, video, Managed Wi-Fi, Unified Communications, and DDoS Protection.
-- **The Value Add:** GPC brings more than a connection: a scalable portfolio, over a century of experience, and a partnership model built around keeping the business connected.
+- **The Value Add:** GPC brings more than a connection: a portfolio that can grow with the account, regional operating experience, and local teams who answer when something breaks.
 - **The Handoff:** When discovery shows multi-site complexity, cloud-critical applications, or strict security needs, slow down and design the right mix instead of quoting a single product.
 
 ---
@@ -78,7 +78,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-GPC gives businesses more than internet service. We pair resilient Midwest connectivity with secure, scalable services like cloud paths, managed Wi-Fi, firewall, UC, video, and DDoS protection, all backed by local support and 24/7 network monitoring. The goal is simple: keep your sites, apps, teams, and customers connected as the business grows.
+We are not just selling a pipe. Fiber gets you in the door; backup, firewall, cloud paths, Wi-Fi, voice, video, and DDoS protection are how you grow the account. The goal is simple: keep sites, apps, teams, and customers connected as the business grows.
 :::
 
 ---
@@ -106,7 +106,7 @@ Speed is only one part of the decision. Bring the buyer back to reliability, sup
 :::
 
 ::: flip ["We prefer to buy our network, security, and voice from different vendors."]
-That can work, but it can also make growth and troubleshooting harder. GPC can bring connectivity, security, cloud access, Wi-Fi, UC, and video into one coordinated portfolio, so the customer has a clearer path to scale and support.
+That can work, but it can also make growth and troubleshooting harder. GPC can bring connectivity, security, cloud access, Wi-Fi, UC, and video into one stack, so the customer knows who owns the fix.
 :::
 
 ::: flip ["We are too small for an enterprise stack."]
@@ -125,7 +125,7 @@ Use this as the rep's mental map:
 
 - **Access and transport:** Fiber Internet and Managed Ethernet connect the business across locations.
 - **Resilience:** Wireless Internet Backup helps keep the business running with automatic failover, professional setup, and 24/7 support.
-- **Cloud and site experience:** Cloud Connect provides secure, reliable, direct connections to leading cloud providers; Managed Wi-Fi supports seamless connectivity for teams and customers.
+- **Cloud and site experience:** Cloud Connect gives customers a more predictable path to cloud providers; Managed Wi-Fi fixes dead zones and guest Wi-Fi headaches inside the building.
 - **Security and WAN:** Managed Firewall, DDoS Protection, and SD-WAN help protect the network and improve performance.
 - **Workforce and customer communications:** Unified Communications and video services support how employees, customers, and guests stay connected.
 
@@ -136,4 +136,4 @@ Use this as the rep's mental map:
 - What happens operationally if the primary connection fails?
 - Where would local support and 24/7 monitoring reduce risk for the customer?
 
-**Do not race on sticker price alone.** Use the capability deck to reframe GPC as a local, reliable partner with a broader service portfolio, not just another circuit provider.
+**Do not race on sticker price alone.** Use the capability deck to show GPC as the local provider behind the circuit, the backup, the security layer, and the services riding above the network.

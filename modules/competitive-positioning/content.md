@@ -78,7 +78,7 @@ knowledge_checks:
       - "Lead with your best battle-card stat regardless of their stack"
       - "Assume their network is always inferior to yours"
     correct_index: 0
-    explanation: "Discovery before claims—then map fit."
+    explanation: "Run discovery on apps, sites, and outage risk first, then tie battle-card proof to what the customer already told you."
 
   - question: "Which behavior is a stated landmine to avoid?"
     options:
@@ -94,7 +94,7 @@ knowledge_checks:
       - "Personal attacks on the competitor's executives"
       - "Their pitch, the customer’s business risk, and proof GPC can support"
     correct_index: 2
-    explanation: "Truth + risk + proof—not slogans."
+    explanation: "Pair the competitor's pitch with the customer's business risk, then use sourced GPC proof instead of a tagline."
 
   - question: "Against fiber vs LEO satellite interest, what reframe beats a speed-test-only debate?"
     options:
@@ -102,7 +102,7 @@ knowledge_checks:
       - "Reliability, latency, weather/obstruction risk, and operational support for business apps"
       - "Ignore their interest and refuse to discuss satellite"
     correct_index: 1
-    explanation: "Business outcomes—not Mbps alone."
+    explanation: "Reframe speed-test talk around uptime, latency, weather or obstruction risk, and what downtime does to the business."
 
   - question: "What does the framework say about personal disparagement of competitors?"
     options:
@@ -110,7 +110,7 @@ knowledge_checks:
       - "Avoid it—stay factual and customer-centric"
       - "Require it in every competitive meeting"
     correct_index: 1
-    explanation: "Landmines forbid personal attacks."
+    explanation: "Personal attacks are a landmine. Stay factual, customer-centric, and tied to the buyer's actual operating risk."
 
   - question: "For SD-WAN battle-card use, what must you verify before citing awards or ratings?"
     options:
@@ -118,7 +118,7 @@ knowledge_checks:
       - "Year and scope—confirm accuracy before external claims"
       - "Only the competitor's stock price"
     correct_index: 1
-    explanation: "Verify scope/year before external use."
+    explanation: "Confirm year and scope on the battle card before you cite awards, ratings, or numbers externally."
 
   - question: "What dimensions help compare operators during metro/local competition beyond headline price?"
     options:
@@ -126,7 +126,7 @@ knowledge_checks:
       - "Consumer review themes that do not map to the buyer’s business sites"
       - "Install quality, support model, redundancy, fiber depth vs pocketed coverage, and rate stability"
     correct_index: 2
-    explanation: "Ops fit—not logo or consumer reviews."
+    explanation: "Compare install quality, support model, redundancy, fiber depth, and rate stability, not logo size or consumer-review noise."
 
   - question: "Per the Omaha Metro battle card, what is one structural weakness of Allo that GPC reps can lean into?"
     options:
@@ -253,7 +253,7 @@ Differentiate last mile, routing, peering, and repair SLAs—map to **their** ap
 
 ### Reference line (Omaha Metro)
 
-**“We have a diverse, 100% referenceable customer base.”** Line up **1–2 named refs** in their vertical first.
+**“We maintain reference customers across multiple verticals.”** Line up **1–2 named refs** in their vertical first before you say it in the room.
 
 ### Managed Firewall
 

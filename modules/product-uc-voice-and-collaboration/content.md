@@ -29,7 +29,7 @@ video_carousel:
     src: assets/UC/work-better-wherever.mp4
     poster: assets/UC/work-better-wherever.png
 five_minute_summary: |
-  - **What you’re selling:** Cloud UC — cloud PBX, SMS/MMS, HD meetings, AI assistant, meeting recap, call recap, and dependable call quality/uptime.
+  - **What you’re selling:** Cloud UC — cloud PBX, SMS/MMS, HD meetings, select AI-assisted features, and dependable call quality/uptime positioning. Confirm tier-specific AI and SLA language before quoting.
   - **Seat / plan ladder:** Match **workload**, not company size; tiers **mix per user**. Typical blend: lobby/resource lines + reception Express + floor Pro + HQ Enterprise.
     - **Resource Line** — one concurrent endpoint for a shared phone or common-area line.
     - **Express** — voice only.
@@ -150,10 +150,10 @@ roleplay:
 
 ## At a glance
 
-- **UCaaS Platform:** 100+ business voice features, SMS/MMS, chat, HD meetings, and strong call-quality/uptime positioning.
-- **MS Teams Integration:** UC for Teams brings cloud PBX, SMS, and advanced calling into a Teams-centered workflow. SE validates licensing and design before you promise the experience.
+- **UCaaS Platform:** Full PBX feature set varies by tier, with SMS/MMS, chat, HD meetings, and strong call-quality/uptime positioning. Confirm exact feature counts and SLA language before customer-facing use.
+- **MS Teams Integration:** UC for Teams brings cloud PBX, SMS, and advanced calling into a Teams-centered workflow. The source calls out an MSFT Phone System license per user; SE validates licensing and design before you promise the experience.
 - **Contact Center:** Omnichannel contact center for voice, chat, email, and SMS/WhatsApp depending on tier/add-ons. Licensed by concurrent seats.
-- **AI Features:** AI Assistant, AI Call Recap, AI Meeting Recap, and AI Agent Evaluator support productivity, summaries, sentiment/topic highlights, and coaching workflows.
+- **AI Features:** AI Assistant, AI Call Recap, AI Meeting Recap, and AI Agent Evaluator can support productivity, summaries, sentiment/topic highlights, and coaching workflows on select tiers or add-ons. Scope before quoting.
 
 ---
 

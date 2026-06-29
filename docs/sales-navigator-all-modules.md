@@ -39,7 +39,7 @@ summary: "Quick tour of Sales-Navigator: how to use the hub, what to read first,
 sensitivity: "public"
 
 five_minute_summary: |
-  Welcome to the team. Use Sales-Navigator as your first stop when you need a refresher, a customer-ready talk track, or the next best module to read.
+  New here or rusty? Start with Sales-Navigator when you need a refresher, a customer-ready talk track, or the next best module to read.
 
   - Start with the Coffee Summary when you need the quick version, then use scenarios and module details when a deal needs more depth.
   - Keep the customer conversation practical: GPC positions reliable fiber connectivity, communications, security, cloud, backup, and managed services around real business needs.
@@ -63,13 +63,13 @@ getting_started_demo:
   knowledge_check:
     question: "Which GPC value point is supported in the Getting started source material?"
     options:
-      - label: "GPC offers local support, 24/7 network monitoring, and flexible, scalable solutions."
+      - label: "GPC offers local support, a 24/7 NOC, and a portfolio that can grow from one site to multi-site."
         correct: true
       - label: "GPC only sells one internet product for every business customer."
         correct: false
       - label: "GPC's main advantage is avoiding discovery and quoting from memory."
         correct: false
-    incorrect_feedback: "Close, but the source points to local support, 24/7 monitoring, experience, and flexible solutions."
+    incorrect_feedback: "Close, but the source points to local support, 24/7 monitoring, experience, and a portfolio that can grow with the account."
     affirmation_primary: "Correct. Those are core reasons businesses choose GPC."
     affirmation_secondary: "Use those points as anchors, then tailor the conversation to the customer."
     hint: "Look for the broad value points in the source material."
@@ -114,10 +114,11 @@ sales_trio_hide_overview: true
 
 five_minute_summary: |
   - **One source of truth:** Salesforce is the official system of record for account disputes. Search by address and name before creating records, and keep activity on the account.
-  - **Idle windows:** For general accounts, no qualifying logged activity can open a path for another rep to work the account. Communicate with the current owner before engaging.
+  - **Idle windows:** For general accounts, no logged Salesforce touch—task, call, meeting, or email on the account record—can open a path for another rep to work the account. Communicate with the current owner before engaging.
     - **Prospect:** 61+ days.
     - **Customer:** 121+ days.
-    - **Strategic list & USAC/E-Rate:** These are protected by assignment, not the 61/121-day activity rules. **Named carve-out:** **ENA (Education Networks of America) in Indiana** stays with the **Out-State Team** per the ROE.
+    - **Stay active before the window opens:** Prospects need logged contact at least every ~60 days. A note or project flag helps the record, but it does not protect ownership by itself.
+    - **Strategic list & USAC/E-Rate:** These are protected by assignment, not the 61/121-day activity rules. If you are not on the Strategic Accounts team, assume general rules unless leadership confirms coverage. **Named carve-out:** **ENA (Education Networks of America) in Indiana** stays with the **Out-State Team** per the ROE.
   - **The 5-business-day inbound clock:** Leads assigned by sales or marketing leadership can be reassigned if first contact is not made and logged within five business days. Self-sourced prospecting leads do not use this clock.
   - **Transfers and edge cases:** Never self-reassign. Align with the current owner, then email your manager and sales leadership. Anything that does not fit the ROE cleanly goes to sales management.
 
@@ -152,7 +153,7 @@ knowledge_checks:
       - "121+ days."
       - "365 days."
     correct_index: 1
-    explanation: "A general Customer account opens after 121+ days with no qualifying logged activity. Even then, use the transfer path before working the account."
+    explanation: "A general Customer account opens after 121+ days with no logged Salesforce task, call, meeting, or email on the account record. Even then, use the transfer path before working the account."
 
   - question: "For a general Prospect account, how many days of zero logged activity must pass before the ROE window opens?"
     options:
@@ -160,7 +161,15 @@ knowledge_checks:
       - "61+ days."
       - "90 days."
     correct_index: 1
-    explanation: "A general Prospect account opens after 61+ days with no qualifying logged activity. The rule protects active prospecting while giving inactive accounts a path forward."
+    explanation: "A general Prospect account opens after 61+ days with no logged Salesforce task, call, meeting, or email on the account record. The rule protects active prospecting while giving inactive accounts a path forward."
+
+  - question: "A rep adds a detailed Chatter note about a Q3 construction project, but there has been no logged call, meeting, task, or email in 58 days. Is the Prospect account protected?"
+    options:
+      - "Yes. Any detailed note protects the account because it shows intent."
+      - "No. Notes help the record, but logged contact is what protects activity under the ROE."
+      - "Only if the note includes expected MRC."
+    correct_index: 1
+    explanation: "The notation trap is treating account intel like account activity. Notes and project flags are useful, but they do not replace logged contact on the Salesforce record."
 
   - question: "Does the strict five-business-day clock apply to leads you prospect and self-source?"
     options:
@@ -184,7 +193,7 @@ knowledge_checks:
       - "They are exempt from Salesforce tracking entirely."
       - "They receive Strategic-style treatment, with the ENA in Indiana exception."
     correct_index: 2
-    explanation: "USAC entities get Strategic-style protection per the ROE, even when they are not on the standard list. Verify with leadership before you work the account."
+    explanation: "Entities that use or are eligible for USAC/E-Rate funding get Strategic-style protection per the ROE, even when they are not on the standard list. Verify with leadership before you work the account; ENA in Indiana stays with the Out-State Team."
 
   - question: "When leadership is settling an account ownership dispute, what record carries the weight?"
     options:
@@ -224,9 +233,9 @@ scenarios:
 
         feedback: "That will not protect the lead. Assigned inbound leads require initial contact to be made and logged in Salesforce within five business days, or the lead can be reassigned."
 
-      - label: "Admit defeat. You failed to log the activity in Salesforce within 5 business days, so the lead is gone."
+      - label: "Own the miss, log the history, and treat it as a Salesforce discipline lesson instead of arguing from your Sent folder."
 
-        feedback: "Correct. Salesforce is the system of record, so the email only supports your activity when it is logged there."
+        feedback: "Correct. Assigned inbound leads require first contact to be made and logged in Salesforce within five business days. Outlook alone does not reset the clock, so get the touch onto the record and let leadership apply the ROE."
 
 reference_files:
 
@@ -243,7 +252,7 @@ ROE exists to protect active work and make account ownership clear. Whether you 
 
 - **Log it or lose it** — Tasks, calls, meetings, and emails belong **on the Salesforce record**.
 
-- **Transfer through leadership** — Never self-reassign. Discuss the move with the current owner, then route through **manager + sales leadership** (per ROE).
+- **Transfer through leadership** — Never self-reassign. Discuss the move with the current owner, then route through **manager + sales leadership** (per ROE). If the owner does not respond, document the outreach and escalate instead of changing ownership yourself.
 
 **General** accounts use the **61+** day Prospect and **121+** day Customer idle rules. **Strategic** accounts and **USAC/E-Rate** entities are protected by assignment. **Exception:** ENA (Education Networks of America) in **Indiana** → **Out-State Team** (per ROE).
 
@@ -257,11 +266,13 @@ ROE exists to protect active work and make account ownership clear. Whether you 
 
 3. **Log the work:** Tasks, calls, meetings, and emails must live on the Salesforce record. Salesforce is what leadership uses to arbitrate account disputes.
 
-4. **Respect idle windows:** Prospect accounts open after **61+** days of no qualifying logged activity; Customer accounts after **121+**. Even when the window is open, communicate with the current owner before engaging.
+4. **Respect idle windows:** Prospect accounts open after **61+** days with no logged Salesforce task, call, meeting, or email; Customer accounts after **121+**. Even when the window is open, communicate with the current owner before engaging.
 
-5. **Transfer through leadership:** Never reassign an account in Salesforce unilaterally. Connect with the current owner; once agreed, email your manager and sales leadership for approval and transfer (per ROE).
+5. **Avoid the notation trap:** Notes, Chatter updates, construction intel, and contract dates improve the record, but they do not protect ownership unless there is logged contact on the account.
 
-6. **Assigned inbound leads:** Five business days to make first contact **and** log it in Salesforce. That clock does **not** apply to self-sourced prospecting leads.
+6. **Transfer through leadership:** Never reassign an account in Salesforce unilaterally. Connect with the current owner; once agreed, email your manager and sales leadership for approval and transfer (per ROE). If the owner does not respond within a reasonable window, document the outreach and escalate.
+
+7. **Assigned inbound leads:** Five business days to make first contact **and** log it in Salesforce. That clock does **not** apply to self-sourced prospecting leads.
 
 ---
 
@@ -277,7 +288,13 @@ ROE exists to protect active work and make account ownership clear. Whether you 
 
 ::: flip ["The account is 130 days idle—I can just start working it."]
 
-**The Owner Bypass:** The window may be open, but the ROE still calls out communication with the current owner as best practice. If you need a formal transfer, follow the ROE path: agree with the owner, then email your manager and sales leadership.
+**The Owner Bypass:** The window may be open, but the ROE still calls out communication with the current owner as best practice. If you need a formal transfer, follow the ROE path: align with the owner, then email your manager and sales leadership. If the owner does not respond, document your outreach and escalate.
+
+::::
+
+:::: flip ["I left a detailed note—that keeps the account mine."]
+
+**The Notation Trap:** Notes and project flags help the next rep understand the account, but they do not reset the idle clock. Protect the account with logged contact: task, call, meeting, or email on the Salesforce record.
 
 :::
 
@@ -289,7 +306,7 @@ ROE exists to protect active work and make account ownership clear. Whether you 
 
 ::: flip ["That school district falls under the 61/121 day rules."]
 
-**The USAC Trap:** USAC- and E-Rate-funded entities are treated as Strategic Accounts, even if they are not explicitly on the named list. **ENA in Indiana** is the named exception; it stays with the **Out-State Team**.
+**The USAC Trap:** Entities that use or are eligible for USAC/E-Rate funding are treated as Strategic Accounts, even if they are not explicitly on the named list. **ENA in Indiana** is the named exception; it stays with the **Out-State Team**.
 
 :::
 
@@ -327,8 +344,8 @@ Applies to accounts not on the official Strategic Accounts list.
 
 | Topic | Rule (per ROE) |
 | --- | --- |
-| Customer | Customer status, no logged activity for 121+ days: others may work the account. Best practice: talk to the current owner before engaging, even if the record looks open by the numbers. |
-| Prospect | Prospect status, no logged activity for 61+ days: others may work the account. Keep relevant information on the record, such as construction projects or contract dates. Notation alone is not enough; the ROE calls for consistent contact at least every 60 days. |
+| Customer | Customer status, no logged Salesforce task, call, meeting, or email for 121+ days: others may work the account. Best practice: talk to the current owner before engaging, even if the record looks open by the numbers. |
+| Prospect | Prospect status, no logged Salesforce task, call, meeting, or email for 61+ days: others may work the account. Keep relevant information on the record, such as construction projects or contract dates. Notation alone is not enough; the ROE calls for consistent contact at least every 60 days. |
 | Inbound leads | Assigned by sales or marketing leadership: first contact made and logged within 5 business days, or the lead may be reassigned. Does not apply to self-generated prospecting leads. |
 | Self-sourced | Not subject to the 5-business-day inbound clock. |
 
@@ -356,7 +373,7 @@ To move an account from another sales representative:
 
 2. Once agreed, email your manager and sales leadership for approval and transfer (per ROE).
 
-Do not change ownership unilaterally in Salesforce to force a deal.
+If the owner does not respond within a reasonable window (for example, 3–5 business days) or disagrees, document your outreach in Salesforce and escalate to your manager with dates. Do not self-reassign or change ownership unilaterally in Salesforce to force a deal.
 
 ### When to escalate
 
@@ -365,6 +382,8 @@ Use sales management (with Salesforce history as your evidence) when:
 - The situation is an edge case or does not fit the ROE cleanly (~20% of cases).
 
 - You have a transfer dispute or unclear ownership.
+
+- The current owner does not respond to a transfer request, or the owner disagrees with your read of the ROE.
 
 - The boundary is unclear: 
 
@@ -723,7 +742,6 @@ title: Sales Operations & Approvals
 summary: GPC Solutions. Change Orders vs MACs.
 sensitivity: internal
 sales_trio_hide_deep_dive: true
-sales_trio_hide_guidelines: true
 video_sections_as_tabs: true
 video_sections_tabs_aria_label: 'Pre-Approved, matrix, and change-order guides'
 reference_files:
@@ -743,13 +761,13 @@ reference_files:
     sharepoint_url: 'https://gpcom.sharepoint.com/:b:/s/SalesforceRoadmap/IQCEYPLtQTCVS7H8aEnrSTrLARzxb0p97NTo17Rj8DeB_gg?e=RyiZUS'
 video_sections:
   - heading: Pre-Approved Fiber
-    intro: 'The shortcut only applies when the deal is straightforward fiber. If payback or cost impact is uncertain, use the standard order process.'
+    intro: 'The shortcut only applies when the deal is straightforward fiber. If any criterion fails, exit the shortcut and use the standard approval path.'
     body: |
       [Pre-Approved Order Process Quick Reference — 07/23](https://gpcom.sharepoint.com/sites/SalesforceRoadmap/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29%2FPre-Approved%20Order%20Process%20Quick%20Reference%20Guide%20-%200723.pdf&parent=%2Fsites%2FSalesforceRoadmap%2FShared%20Documents%2FGeneral%2F2025%20Salesforce%20Training%20Guides%20%28Legacy%20BAU%20org%29)
 
       Use the pre-approved path only when the deal stays inside a narrow lane:
 
-      - Channel, Enterprise, or Wholesale AE
+      - Channel, Enterprise, or Wholesale AE. All other reps use the standard order path unless Sales Ops confirms eligibility.
       - 36-month term or longer
       - Build Fiber or On-Net Fiber sites only; no copper or coax
       - New logo, renewal, or upgrade
@@ -761,9 +779,10 @@ video_sections:
       - MRC must be at least $150 per site.
       - Service must be within 500 feet of the fiber line, not just the vault.
       - The path cannot cross railroads, streets, grassy areas, or run through buildings.
-      - Zip 68102 is excluded.
+      - Zip 68102 is excluded because of internal build/routing rules; use the standard order path if the site falls there.
       - Discounts max at 20% unless the term-based table allows more. For example, a 36-month term allows up to 27%; 27.01% no longer qualifies.
       - Excluded product lines include Colocation, SDWAN, Wireless Internet Broadband, GPC Managed Wi-Fi, On-Prem PBX, Business Security, and Dark Fiber.
+      - If even one criterion fails, do not force the shortcut. Move to the Approval Requirements Matrix or the standard order path.
   - heading: Approval Requirements Matrix
     intro: 'Payback, discounts, and dollar thresholds live here.'
     body: |
@@ -806,7 +825,7 @@ video_sections:
 
       **Product-discount bypass:** Wholesale Bulk Process is not evaluated against the Product Discount requirement.
 
-      Net investment approval bands:
+      Net investment approval bands stack. At $76k, Manager and CRO both apply; at $501k, Manager, CRO, CFO, and CEO all apply.
 
       | Net investment | Approval path |
       | --- | --- |
@@ -820,6 +839,7 @@ video_sections:
 
       - Churn over 10% requires manager and CRO review.
       - Unfavorable investment always requires manager review.
+      - Zone Parent opportunities evaluate Net Investment at the parent opportunity level, not one child site at a time.
       - Product line issues route to the Product Manager.
       - Dark fiber requires manager and CRO review.
   - heading: Costing Routing Paths
@@ -848,6 +868,7 @@ video_sections:
       | --- | --- |
       | Change part of a Closed/Won contract before billing | Change Order |
       | Change part of an active billing contract | MAC |
+      | Move the customer to a new physical location | Customer Move procedure |
       | Remove all services before billing | Cancellation |
       | Remove all services after billing | Disconnect |
 
@@ -857,9 +878,9 @@ video_sections:
       2. Go to Conga Files → Change Order.
       3. Generate the Word document and describe the affected sites, the reason for the change, and the exact service changes.
       4. Keep the GPC Solution number on the document.
-      5. Get signatures, upload the signed PDF, and send the package to the right workflow owners.
+      5. Get signatures, upload the signed PDF, and email the signed PDF plus GPC Solution link to Sales Manager when required, PMO, Salesforce Administration, and CRC.
 
-      Notify the Sales Manager early if the change is significant or has a meaningful impact on MRC, payback, or additional costs. The signed package then goes to the right internal owners: PMO updates the project, Salesforce Administration makes the booking adjustment, and CRC handles billing changes.
+      Notify the Sales Manager early if the change is significant or has a meaningful impact on MRC, payback, or additional costs. PMO updates the project, Salesforce Administration makes the booking adjustment, and CRC handles billing changes.
 
       MAC path:
 
@@ -867,13 +888,14 @@ video_sections:
 
       Landmines:
 
-      - Pending Billing or 7–10 Day Order can block Admin action until PMO or CRC weighs in.
+      - Pending Billing or 7–10 Day Order can block Admin action until PMO or CRC weighs in. Flag that status in the Change Order email so nobody treats it like a routine booking adjustment.
       - Specific CRC/BCC add or change examples may go to businesscare@gpcom.com instead of being processed through Salesforce.
       - The MAC guide calls out no AE commission when those narrow CRC/BCC adds or changes are handled directly.
 five_minute_summary: |
+  - **Pick your lane first:** New deal → pre-approved fiber or Approval Requirements Matrix. Post-signature change → Change Order before billing, MAC after billing. Full removal → Cancellation before billing, Disconnect after billing.
   - **Approval triggers:** Discounting, product exceptions, payback, churn, CapEx / net investment, and unfavorable economics are why approvals exist. They protect margin, investment discipline, and operational promises.
-  - **Process-flow triggers:** What changed and has billing started? Those questions point you to Change Order, MAC, Cancellation, or Disconnect.
-  - Use Approval History on the GPC Solution to approve, reject, reassign, or recall. Do not remove the GPC Solution number from the Change Order form, and include the Salesforce link when you email the signed package.
+  - **Approval History path:** GPC Solution → Related List Quick Links → Approval History → Approve / Reject / Reassign / Recall. Add comments so the next reviewer knows what changed.
+  - Do not remove the GPC Solution number from the Change Order form, and include the Salesforce link when you email the signed package.
   - Change Orders are for post-signature changes before billing starts. MACs are for changes to active billing contracts.
   - Use Cancellation before billing when all services are coming out; use Disconnect after billing.
   - Request Manual Validation only for real exceptions. It bypasses automated routing and sends each department through review.
@@ -902,6 +924,38 @@ knowledge_checks:
     correct_index: 1
     explanation: "The Change Order guide says not to remove the GPC Solution number because it helps Salesforce Admin, PMO, and CRC process the request behind the scenes."
 
+  - question: "A deal has $76k in Net Investment. Which approval logic is correct?"
+    options:
+      - "Only CRO approval is needed because $76k falls in the CRO band."
+      - "Manager and CRO both apply because Net Investment thresholds stack."
+      - "No approval is needed if the customer signed a 60-month term."
+    correct_index: 1
+    explanation: "Net Investment thresholds are cumulative. At $76k, the deal has crossed both the $50k Manager threshold and the $75k CRO threshold."
+
+  - question: "A 36-month opportunity has 16-month payback but a 29% term-based discount. What should you check?"
+    options:
+      - "Payback only. If one column passes, the whole deal auto-approves."
+      - "Discount only. Payback does not matter once the customer signs 36 months."
+      - "Both. A 36-month term allows payback up to 18 months but discount only up to 27% before approval is required."
+    correct_index: 2
+    explanation: "The matrix is not a one-column eyeball test. Payback, discount, churn, product rules, and investment thresholds each need their own check."
+
+  - question: "Which product line always requires Manager and CRO review under the matrix?"
+    options:
+      - "Dark Fiber."
+      - "Standard Internet Access."
+      - "Managed Wi-Fi."
+    correct_index: 0
+    explanation: "Dark Fiber is an explicit matrix trigger for Manager and CRO review. Bring approval and technical resources in early."
+
+  - question: "A customer wants to relocate an active billing service to a new physical address. Which lane should you use?"
+    options:
+      - "Customer Move procedure."
+      - "Pre-approved fiber shortcut."
+      - "Cancellation, because the old address is going away."
+    correct_index: 0
+    explanation: "Physical relocation is a Customer Move scenario. Do not force it into the narrow Change Order form or treat it as a full disconnect without checking the MAC/Customer Move guidance."
+
 scenarios:
   - title: The Pre-Install Pivot
     situation: |
@@ -911,6 +965,22 @@ scenarios:
         feedback: 'Incorrect. MACs are only for active, billing services. You need to submit a pre-billing Change Order.'
       - label: Submit a pre-billing Change Order to modify the existing un-installed solution.
         feedback: Correct. This keeps the request in the pre-billing Change Order workflow instead of sending it through a post-billing MAC process.
+  - title: The Two-Column Deal
+    situation: |
+      Your 36-month fiber deal has clean payback at 16 months, but the term-based discount is 29%. The rep says, "Payback is green, so approvals should auto-clear."
+    choices:
+      - label: Agree. Passing payback means the deal is clean.
+        feedback: Incorrect. The matrix checks more than one column. A 36-month term supports payback up to 18 months, but term-based discount auto-approval stops at 27%.
+      - label: Check each trigger separately and route approval for the discount exception.
+        feedback: Correct. Payback can pass while discounting still needs review. Do not let one green column hide another exception.
+  - title: The $501k Build
+    situation: |
+      A multi-site build rolls up to $501k Net Investment at the parent opportunity. The AE asks if CEO approval replaces the lower approvals.
+    choices:
+      - label: Route only to the CEO because the deal crossed the top threshold.
+        feedback: Incorrect. Net Investment thresholds stack; the lower approval layers still apply.
+      - label: Route Manager, CRO, CFO, and CEO because cumulative approval thresholds all apply.
+        feedback: Correct. At $501k, the deal needs the full approval chain, and parent-level aggregation matters.
 discovery_questions:
   - 'When a GPC Solution is in approval, how do you approve, reject, reassign, or recall—and who needs to act next?'
   - 'After Closed Won but before billing starts, what kind of change uses a Change Order versus a MAC?'
@@ -934,6 +1004,20 @@ This module has two jobs. **Approval triggers** decide whether the business need
 
 ## Key Guidelines
 
+1. **Start with the lane:** New deal, post-signature change, live-service change, or full removal. The workflow changes based on that answer.
+
+2. **Use Approval History on the GPC Solution:** Related List Quick Links → Approval History → Approve / Reject / Reassign / Recall. Add comments so the next person knows what changed.
+
+3. **Pre-approved fiber is narrow:** Channel, Enterprise, and Wholesale AEs can use it only when every criterion passes. If one criterion fails, use the standard approval path.
+
+4. **Matrix triggers stack:** Payback, discounts, churn, product rules, unfavorable investment, and Net Investment thresholds all stand on their own. A green payback column does not erase a discount or CapEx exception.
+
+5. **Net Investment is cumulative:** $50k+ Manager, $75k+ CRO, $100k+ CFO, and $500k+ CEO approvals stack. Zone Parent opportunities should be evaluated at the parent level.
+
+6. **Change Order vs MAC:** Change Order is post-signature before billing. MAC is for active billing services. Full removal before billing is Cancellation; full removal after billing is Disconnect.
+
+7. **Manual Validation is an exception path:** It bypasses automated routing and sends departments through review. Use it when automation truly does not fit, not as a safety click.
+
 ---
 
 ## Common Landmines
@@ -951,6 +1035,18 @@ The orphaned document: do not remove the GPC Solution number from the Change Ord
 ::: flip ["The customer signed, so I need to submit a MAC to change the order."]
 The MAC mistake: MACs are for active accounts that have already started billing. If the service is not billing yet, use a Change Order so the request lands with the right team.
 :::
+
+:::: flip ["One matrix column is green, so the whole deal is approved."]
+The one-column trap: payback, discounts, churn, product rules, and Net Investment each need their own check. One passing column does not erase another approval trigger.
+::::
+
+:::: flip ["Dark Fiber is just another fiber product, so the normal shortcut should work."]
+The Dark Fiber exception: Dark Fiber requires Manager and CRO review and early Sales Engineering involvement. Do not push it through the pre-approved fiber shortcut.
+::::
+
+:::: flip ["The site is moving, so I'll just cancel the old service and start over."]
+The move mismatch: a physical relocation belongs in the Customer Move procedure. Use Cancellation or Disconnect only when all services are actually coming out.
+::::
 
 </div>
 
@@ -984,7 +1080,7 @@ reference_files:
     sharepoint_url: 'https://gpcom.sharepoint.com/sites/gpcSales/SitePages/Sales%20Resources.aspx'
 video_sections:
   - heading: Business Performance with Fiber Connectivity
-    intro: Use this capabilities presentation to frame the portfolio as business infrastructure, not a commodity pipe.
+    intro: Use this capabilities presentation to get off price-per-meg and talk about what the network carries.
     items:
       - title: Accelerating Business Performance with Fiber Connectivity
         src: assets/capabilities/accelerating-business-performance-with-fiber-connectivity.mp4
@@ -1016,7 +1112,7 @@ knowledge_checks:
       - "Lead with our most expensive SD-WAN solution to anchor the price high."
       - "As a layered system: access first, then resilience, security, cloud, Wi-Fi, UC, and video."
     correct_index: 2
-    explanation: "Sell the portfolio as a system. Access enables the higher-value services that protect, connect, and support daily operations."
+    explanation: "Sell it as a stack: fiber first, then backup, security, cloud, Wi-Fi, UC, and video. Each layer only matters if access is solid."
 
   - question: "What are the core differentiators you should anchor your 'Why GPC' story on?"
     options:
@@ -1038,15 +1134,15 @@ scenarios:
 roleplay:
   persona: Skeptical CFO at a mid-size Midwest manufacturer
   scenario: Just sat through two carrier pitches that sounded identical. Asks point-blank why GPC is different before walking out of the room.
-  goal: 'Deliver a one-sentence ''why GPC'' answer grounded in outcomes and partnership, then anchor the conversation on the comprehensive suite of services and offer the capability deck as a concrete next step.'
+  goal: 'Deliver a one-sentence ''why GPC'' answer grounded in business impact, then walk through the GPC stack and offer the capability deck as a concrete next step.'
 ---
 
 ## At a glance
 
-- **The Goal:** Move the conversation from "internet service" to business infrastructure.
+- **The Goal:** Stop letting the buyer treat you like a circuit vendor. Talk about what runs on the network and what downtime costs.
 - **The Foundation:** GPC's resilient Midwest IP network, local support, and 24/7 network monitoring.
 - **The Portfolio:** Fiber Internet, Managed Ethernet, SD-WAN, Wireless Internet Backup, Cloud Connect, Managed Firewall, video, Managed Wi-Fi, Unified Communications, and DDoS Protection.
-- **The Value Add:** GPC brings more than a connection: a scalable portfolio, over a century of experience, and a partnership model built around keeping the business connected.
+- **The Value Add:** GPC brings more than a connection: a portfolio that can grow with the account, regional operating experience, and local teams who answer when something breaks.
 - **The Handoff:** When discovery shows multi-site complexity, cloud-critical applications, or strict security needs, slow down and design the right mix instead of quoting a single product.
 
 ---
@@ -1054,7 +1150,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-GPC gives businesses more than internet service. We pair resilient Midwest connectivity with secure, scalable services like cloud paths, managed Wi-Fi, firewall, UC, video, and DDoS protection, all backed by local support and 24/7 network monitoring. The goal is simple: keep your sites, apps, teams, and customers connected as the business grows.
+We are not just selling a pipe. Fiber gets you in the door; backup, firewall, cloud paths, Wi-Fi, voice, video, and DDoS protection are how you grow the account. The goal is simple: keep sites, apps, teams, and customers connected as the business grows.
 :::
 
 ---
@@ -1082,7 +1178,7 @@ Speed is only one part of the decision. Bring the buyer back to reliability, sup
 :::
 
 ::: flip ["We prefer to buy our network, security, and voice from different vendors."]
-That can work, but it can also make growth and troubleshooting harder. GPC can bring connectivity, security, cloud access, Wi-Fi, UC, and video into one coordinated portfolio, so the customer has a clearer path to scale and support.
+That can work, but it can also make growth and troubleshooting harder. GPC can bring connectivity, security, cloud access, Wi-Fi, UC, and video into one stack, so the customer knows who owns the fix.
 :::
 
 ::: flip ["We are too small for an enterprise stack."]
@@ -1101,7 +1197,7 @@ Use this as the rep's mental map:
 
 - **Access and transport:** Fiber Internet and Managed Ethernet connect the business across locations.
 - **Resilience:** Wireless Internet Backup helps keep the business running with automatic failover, professional setup, and 24/7 support.
-- **Cloud and site experience:** Cloud Connect provides secure, reliable, direct connections to leading cloud providers; Managed Wi-Fi supports seamless connectivity for teams and customers.
+- **Cloud and site experience:** Cloud Connect gives customers a more predictable path to cloud providers; Managed Wi-Fi fixes dead zones and guest Wi-Fi headaches inside the building.
 - **Security and WAN:** Managed Firewall, DDoS Protection, and SD-WAN help protect the network and improve performance.
 - **Workforce and customer communications:** Unified Communications and video services support how employees, customers, and guests stay connected.
 
@@ -1112,7 +1208,7 @@ Use this as the rep's mental map:
 - What happens operationally if the primary connection fails?
 - Where would local support and 24/7 monitoring reduce risk for the customer?
 
-**Do not race on sticker price alone.** Use the capability deck to reframe GPC as a local, reliable partner with a broader service portfolio, not just another circuit provider.
+**Do not race on sticker price alone.** Use the capability deck to show GPC as the local provider behind the circuit, the backup, the security layer, and the services riding above the network.
 <!-- prettier-ignore-end -->
 
 ---
@@ -1213,7 +1309,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Your network should match how the business actually works. GPC can support cost-sensitive internet access, dedicated symmetrical internet for critical applications, private Ethernet between locations, and high-capacity optical transport for the largest data movement needs.
+Before we quote access, let's pin down what breaks when upload chokes or a circuit drops. GPC can support cost-sensitive internet access, dedicated symmetrical internet for critical applications, private Ethernet between locations, and high-capacity optical transport for the largest data movement needs.
 :::
 
 ---
@@ -1237,7 +1333,7 @@ Your network should match how the business actually works. GPC can support cost-
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["DIA is too expensive, I just want the SIA."]
-I understand the budget concern. Before we quote the lowest-cost option, let's look at what is causing the pain. If voice, video, cloud backups, or other critical apps need consistent upload, low latency, and dedicated bandwidth, DIA is the product designed for that job.
+I understand the budget concern. Before we quote the lowest-cost option, let's look at what is causing the pain. If voice, video, cloud backups, or other critical apps need consistent upload, low latency, and dedicated bandwidth, DIA is the right SKU—not shared best-effort.
 :::
 
 ::: flip ["I just need internet between my two offices."]
@@ -1492,7 +1588,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-We help customers keep their network available, controlled, and visible. Security protects the edge and reduces threat risk; SD-WAN makes the WAN easier to steer and manage. Together, they turn "the network is down" into a managed business problem instead of a scramble.
+We help customers keep the network available, controlled, and visible. Security protects the edge and reduces threat risk; SD-WAN makes the WAN easier to steer and manage. Outages and alerts get handled with a plan, not by the customer's IT person guessing at 2 a.m.
 :::
 
 ---
@@ -1610,7 +1706,7 @@ five_minute_summary: |
   - **Field order:** Qualify the primary path first, attach resiliency second, then solve the local experience. Cloud Connect, Wi-Fi, Backup, and Broadband are different plays.
   - **Cloud Connect:** This is not more internet. It is private Layer 2 connectivity over GPC Ethernet into the cloud ecosystem, giving customers a more predictable path to providers like AWS, Azure, Google, Oracle, IBM, SAP, Nutanix, Salesforce, and Alibaba.
   - **Managed Wi-Fi:** We help own the last 10 feet of the experience. It is engineered around the site, with secure guest/private networks, access point options, installation through maintenance, and usage analytics. Do not quote AP counts from square footage alone.
-  - **5G Wireless Backup:** The insurance policy *behind* primary fiber. It uses a professionally configured Cradlepoint router with automatic failover, automatic reversion, 24/7 NOC monitoring, app prioritization, and optional battery backup. Speeds and throttling depend on usage and wireless conditions, so set expectations.
+  - **5G Wireless Backup:** The insurance policy *behind* primary fiber. It uses a professionally configured Cradlepoint router with automatic failover, automatic reversion, 24/7 NOC monitoring, app prioritization, and optional battery backup. Speeds and usage thresholds depend on the current product sheet and wireless conditions, so set expectations before signature.
   - **5G Wireless Broadband:** Cellular as the *primary* internet path. Two motions: (1) a temporary bridge while a fiber build is in flight, or (2) a permanent broadband plan where fiber is not the answer. The carrier hands out a DHCP IP, so anything hosted on prem will not be reachable from the internet. Temporary wireless service is **non-commissionable**; the customer starts billing at the contracted SIA/DIA rate once wireless is installed.
   - **The pitch order & ground rules:** Sell primary fiber first, attach 5G Backup for redundancy, and finish with Managed Wi-Fi for the localized experience. Use 5G Broadband to bridge a fiber install gap or to cover a site fiber can't reach. Wireless attaches to new or existing **SIA / DIA / SD-WAN** customers; do not sell outside GPC territory without approval. No SLAs: wireless is "best effort."
 technical_deep_dive_tabs:
@@ -1641,6 +1737,8 @@ technical_deep_dive_tabs:
         - Optional battery backup can provide up to 8 hours of power to the router during an outage.
         - It is "best effort" with no SLA. The goal is to keep doors open and registers ringing, not replace fiber during a multi-day outage.
 
+        Usage tiers may reduce wireless throughput during extended failover. Use the current product sheet for the active thresholds; the table below is a training guide, not a customer-facing SLA.
+
         | Total monthly usage (current product sheet) | Speed after threshold |
         | --- | --- |
         | After **12 GB** | Up to **50 Mbps** |
@@ -1655,7 +1753,7 @@ technical_deep_dive_tabs:
         - Uses a professionally configured Cradlepoint router and wireless carrier service; managed by GPC.
         - **Temporary bridge:** wireless covers a new site that must open before the fiber build completes. When fiber turns up, the Cradlepoint re-roles as 5G Backup behind the new SIA/DIA circuit.
         - **Permanent broadband:** wireless is the long-term primary at sites where fiber is not available in footprint, including rural or hard-to-reach edges.
-        - Current permanent Broadband pricing shows **25 Mbps** and **50 Mbps** plans. Bandwidth is still best effort, varies by location and time of day, and Verizon may deprioritize traffic after priority-data thresholds.
+        - Current permanent Broadband pricing shows **25 Mbps** and **50 Mbps** plans. Bandwidth is still best effort, varies by location and time of day, and carrier priority-data thresholds can change by product sheet.
         - **No static IP:** the public IP comes from the carrier via DHCP, so on-prem hosted services are not reachable from the internet. If on-prem hosting is in scope, lead with SIA/DIA.
         - Temporary wireless service is **non-commissionable**; track the fiber install because the SIA/DIA sale is where the commission lands.
 knowledge_checks:
@@ -1725,7 +1823,7 @@ scenarios:
       - label: 'Use 5G Wireless Broadband as a temporary bridge, then convert it to Backup behind the new wireline circuit.'
         feedback: 'Correct. Bridge the install gap with wireless, then convert to Backup at fiber turn-up. Two things to remember: the bridge period is non-commissionable (your commission lands on the SIA/DIA when fiber lights), and the store cannot host inbound services on the wireless DHCP IP during the bridge.'
       - label: Sell them a cheap consumer cellular hotspot as a stopgap and circle back when fiber's ready.
-        feedback: Off-net and unmanaged—GPC has nothing to monitor or warranty, and you have no path to convert to Backup. This gap is exactly what our Wireless Broadband SKU is designed to close.
+        feedback: Off-net and unmanaged—GPC has nothing to monitor or warranty, and you have no path to convert to Backup. That is the gap Wireless Broadband exists for: managed bridge now, then convert to Backup when fiber lands.
   - title: The Static-IP Trap
     situation: |
       A small accounting firm wants to ditch their slow cable internet. They like the idea of 5G Wireless Broadband as a faster path than waiting for a fiber build. They also self-host a client portal on a server in their back office and need it reachable from the public internet.
@@ -1801,7 +1899,7 @@ discovery_questions:
   - "Is this for a lobby, waiting room, bar, restaurant, or another public viewing area?"
 five_minute_summary: |
   - **What it is:** Streaming TV for business (Cloud DVR, Replay TV, HD channels) that rides directly over their **GPC Internet** connection.
-  - **The Hook:** Keep customers, guests, and staff engaged with popular, local, sports, and HD channels on one GPC bill.
+  - **The Hook:** Lobby TVs, sports, local channels, and shared screens over the GPC Internet they already need. Verify the lineup before you promise a channel.
   - **The Caveat:** GPC iTV Essentials is the base package; every quote also needs the right stream count and DVR selection.
   - **The Golden Rule:** Do not promise a specific channel from memory. Use the QR code or SharePoint lineup tools before you quote.
 
@@ -1874,7 +1972,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-GPC iTV brings popular, local, sports, and HD channels to your business over a GPC Internet connection. You get streaming TV features like Cloud DVR and Replay TV, plus the convenience of one GPC bill for multiple services.
+GPC iTV brings local channels, sports, HD, Cloud DVR, and Replay TV to business screens over a GPC Internet connection. It rides the circuit they already need: one provider, one bill, and no channel promises until you verify the lineup.
 :::
 
 ---
@@ -1955,7 +2053,7 @@ video_carousel:
     src: assets/UC/work-better-wherever.mp4
     poster: assets/UC/work-better-wherever.png
 five_minute_summary: |
-  - **What you’re selling:** Cloud UC — cloud PBX, SMS/MMS, HD meetings, AI assistant, meeting recap, call recap, and dependable call quality/uptime.
+  - **What you’re selling:** Cloud UC — cloud PBX, SMS/MMS, HD meetings, select AI-assisted features, and dependable call quality/uptime positioning. Confirm tier-specific AI and SLA language before quoting.
   - **Seat / plan ladder:** Match **workload**, not company size; tiers **mix per user**. Typical blend: lobby/resource lines + reception Express + floor Pro + HQ Enterprise.
     - **Resource Line** — one concurrent endpoint for a shared phone or common-area line.
     - **Express** — voice only.
@@ -2076,10 +2174,10 @@ roleplay:
 
 ## At a glance
 
-- **UCaaS Platform:** 100+ business voice features, SMS/MMS, chat, HD meetings, and strong call-quality/uptime positioning.
-- **MS Teams Integration:** UC for Teams brings cloud PBX, SMS, and advanced calling into a Teams-centered workflow. SE validates licensing and design before you promise the experience.
+- **UCaaS Platform:** Full PBX feature set varies by tier, with SMS/MMS, chat, HD meetings, and strong call-quality/uptime positioning. Confirm exact feature counts and SLA language before customer-facing use.
+- **MS Teams Integration:** UC for Teams brings cloud PBX, SMS, and advanced calling into a Teams-centered workflow. The source calls out an MSFT Phone System license per user; SE validates licensing and design before you promise the experience.
 - **Contact Center:** Omnichannel contact center for voice, chat, email, and SMS/WhatsApp depending on tier/add-ons. Licensed by concurrent seats.
-- **AI Features:** AI Assistant, AI Call Recap, AI Meeting Recap, and AI Agent Evaluator support productivity, summaries, sentiment/topic highlights, and coaching workflows.
+- **AI Features:** AI Assistant, AI Call Recap, AI Meeting Recap, and AI Agent Evaluator can support productivity, summaries, sentiment/topic highlights, and coaching workflows on select tiers or add-ons. Scope before quoting.
 
 ---
 
@@ -2259,7 +2357,7 @@ knowledge_checks:
       - "Lead with your best battle-card stat regardless of their stack"
       - "Assume their network is always inferior to yours"
     correct_index: 0
-    explanation: "Discovery before claims—then map fit."
+    explanation: "Run discovery on apps, sites, and outage risk first, then tie battle-card proof to what the customer already told you."
 
   - question: "Which behavior is a stated landmine to avoid?"
     options:
@@ -2275,7 +2373,7 @@ knowledge_checks:
       - "Personal attacks on the competitor's executives"
       - "Their pitch, the customer’s business risk, and proof GPC can support"
     correct_index: 2
-    explanation: "Truth + risk + proof—not slogans."
+    explanation: "Pair the competitor's pitch with the customer's business risk, then use sourced GPC proof instead of a tagline."
 
   - question: "Against fiber vs LEO satellite interest, what reframe beats a speed-test-only debate?"
     options:
@@ -2283,7 +2381,7 @@ knowledge_checks:
       - "Reliability, latency, weather/obstruction risk, and operational support for business apps"
       - "Ignore their interest and refuse to discuss satellite"
     correct_index: 1
-    explanation: "Business outcomes—not Mbps alone."
+    explanation: "Reframe speed-test talk around uptime, latency, weather or obstruction risk, and what downtime does to the business."
 
   - question: "What does the framework say about personal disparagement of competitors?"
     options:
@@ -2291,7 +2389,7 @@ knowledge_checks:
       - "Avoid it—stay factual and customer-centric"
       - "Require it in every competitive meeting"
     correct_index: 1
-    explanation: "Landmines forbid personal attacks."
+    explanation: "Personal attacks are a landmine. Stay factual, customer-centric, and tied to the buyer's actual operating risk."
 
   - question: "For SD-WAN battle-card use, what must you verify before citing awards or ratings?"
     options:
@@ -2299,7 +2397,7 @@ knowledge_checks:
       - "Year and scope—confirm accuracy before external claims"
       - "Only the competitor's stock price"
     correct_index: 1
-    explanation: "Verify scope/year before external use."
+    explanation: "Confirm year and scope on the battle card before you cite awards, ratings, or numbers externally."
 
   - question: "What dimensions help compare operators during metro/local competition beyond headline price?"
     options:
@@ -2307,7 +2405,7 @@ knowledge_checks:
       - "Consumer review themes that do not map to the buyer’s business sites"
       - "Install quality, support model, redundancy, fiber depth vs pocketed coverage, and rate stability"
     correct_index: 2
-    explanation: "Ops fit—not logo or consumer reviews."
+    explanation: "Compare install quality, support model, redundancy, fiber depth, and rate stability, not logo size or consumer-review noise."
 
   - question: "Per the Omaha Metro battle card, what is one structural weakness of Allo that GPC reps can lean into?"
     options:
@@ -2434,7 +2532,7 @@ Differentiate last mile, routing, peering, and repair SLAs—map to **their** ap
 
 ### Reference line (Omaha Metro)
 
-**“We have a diverse, 100% referenceable customer base.”** Line up **1–2 named refs** in their vertical first.
+**“We maintain reference customers across multiple verticals.”** Line up **1–2 named refs** in their vertical first before you say it in the room.
 
 ### Managed Firewall
 

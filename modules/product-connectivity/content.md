@@ -89,7 +89,7 @@ roleplay:
 ## Pitch
 
 ::: elevator [Elevator Pitch]
-Your network should match how the business actually works. GPC can support cost-sensitive internet access, dedicated symmetrical internet for critical applications, private Ethernet between locations, and high-capacity optical transport for the largest data movement needs.
+Before we quote access, let's pin down what breaks when upload chokes or a circuit drops. GPC can support cost-sensitive internet access, dedicated symmetrical internet for critical applications, private Ethernet between locations, and high-capacity optical transport for the largest data movement needs.
 :::
 
 ---
@@ -113,7 +113,7 @@ Your network should match how the business actually works. GPC can support cost-
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 ::: flip ["DIA is too expensive, I just want the SIA."]
-I understand the budget concern. Before we quote the lowest-cost option, let's look at what is causing the pain. If voice, video, cloud backups, or other critical apps need consistent upload, low latency, and dedicated bandwidth, DIA is the product designed for that job.
+I understand the budget concern. Before we quote the lowest-cost option, let's look at what is causing the pain. If voice, video, cloud backups, or other critical apps need consistent upload, low latency, and dedicated bandwidth, DIA is the right SKU—not shared best-effort.
 :::
 
 ::: flip ["I just need internet between my two offices."]
