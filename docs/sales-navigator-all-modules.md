@@ -290,9 +290,9 @@ ROE exists to protect active work and make account ownership clear. Whether you 
 
 **The Owner Bypass:** The window may be open, but the ROE still calls out communication with the current owner as best practice. If you need a formal transfer, follow the ROE path: align with the owner, then email your manager and sales leadership. If the owner does not respond, document your outreach and escalate.
 
-::::
+:::
 
-:::: flip ["I left a detailed note—that keeps the account mine."]
+::: flip ["I left a detailed note—that keeps the account mine."]
 
 **The Notation Trap:** Notes and project flags help the next rep understand the account, but they do not reset the idle clock. Protect the account with logged contact: task, call, meeting, or email on the Salesforce record.
 
@@ -1036,17 +1036,17 @@ The orphaned document: do not remove the GPC Solution number from the Change Ord
 The MAC mistake: MACs are for active accounts that have already started billing. If the service is not billing yet, use a Change Order so the request lands with the right team.
 :::
 
-:::: flip ["One matrix column is green, so the whole deal is approved."]
+::: flip ["One matrix column is green, so the whole deal is approved."]
 The one-column trap: payback, discounts, churn, product rules, and Net Investment each need their own check. One passing column does not erase another approval trigger.
-::::
+:::
 
-:::: flip ["Dark Fiber is just another fiber product, so the normal shortcut should work."]
+::: flip ["Dark Fiber is just another fiber product, so the normal shortcut should work."]
 The Dark Fiber exception: Dark Fiber requires Manager and CRO review and early Sales Engineering involvement. Do not push it through the pre-approved fiber shortcut.
-::::
+:::
 
-:::: flip ["The site is moving, so I'll just cancel the old service and start over."]
+::: flip ["The site is moving, so I'll just cancel the old service and start over."]
 The move mismatch: a physical relocation belongs in the Customer Move procedure. Use Cancellation or Disconnect only when all services are actually coming out.
-::::
+:::
 
 </div>
 
@@ -2984,6 +2984,8 @@ Video training (CoPilot sessions) lives on **Sales Resources** on SharePoint. Th
 
 ## Common Landmines
 
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
 ::: flip ["The static Intent search"]
 You moved territories but kept last year's Intent search. **Delete and resave** with the new location, clear naming, and alerts on — or you will chase intent in the wrong cities.
 :::
@@ -3007,6 +3009,8 @@ RFP automation requires the **Scoops** tab and RFP topic filters — a generic i
 ::: flip ["Forgotten Save & Subscribe"]
 A brilliant filter you never saved is a one-time stunt. **Save & Subscribe** with a name future-you will recognize.
 :::
+
+</div>
 
 ## Job aid index [deep]
 
@@ -3273,6 +3277,8 @@ Enable **location subtotals** for multi-site deals when you want per-site totals
 
 ## Common Landmines
 
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
 ::: flip ["Bracket placeholders left in snippets"]
 Snippets ship with `[fill this in]` instructions. The app **will not compile** until every `[bracket]` is replaced. Search cover letter and custom pages before you click Compile.
 :::
@@ -3296,6 +3302,8 @@ Long RFP or business names truncate on the title page. Shorten in properties bef
 ::: flip ["TOC enabled without titles"]
 With **Table of Contents** checked, every custom text page needs a **document title** and every custom PDF needs a **section name** — or compile fails.
 :::
+
+</div>
 
 ## Stock slides reference [deep]
 

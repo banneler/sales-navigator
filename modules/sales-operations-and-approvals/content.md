@@ -298,17 +298,17 @@ The orphaned document: do not remove the GPC Solution number from the Change Ord
 The MAC mistake: MACs are for active accounts that have already started billing. If the service is not billing yet, use a Change Order so the request lands with the right team.
 :::
 
-:::: flip ["One matrix column is green, so the whole deal is approved."]
+::: flip ["One matrix column is green, so the whole deal is approved."]
 The one-column trap: payback, discounts, churn, product rules, and Net Investment each need their own check. One passing column does not erase another approval trigger.
-::::
+:::
 
-:::: flip ["Dark Fiber is just another fiber product, so the normal shortcut should work."]
+::: flip ["Dark Fiber is just another fiber product, so the normal shortcut should work."]
 The Dark Fiber exception: Dark Fiber requires Manager and CRO review and early Sales Engineering involvement. Do not push it through the pre-approved fiber shortcut.
-::::
+:::
 
-:::: flip ["The site is moving, so I'll just cancel the old service and start over."]
+::: flip ["The site is moving, so I'll just cancel the old service and start over."]
 The move mismatch: a physical relocation belongs in the Customer Move procedure. Use Cancellation or Disconnect only when all services are actually coming out.
-::::
+:::
 
 </div>
 

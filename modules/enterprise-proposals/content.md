@@ -232,6 +232,8 @@ Enable **location subtotals** for multi-site deals when you want per-site totals
 
 ## Common Landmines
 
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
 ::: flip ["Bracket placeholders left in snippets"]
 Snippets ship with `[fill this in]` instructions. The app **will not compile** until every `[bracket]` is replaced. Search cover letter and custom pages before you click Compile.
 :::
@@ -255,6 +257,8 @@ Long RFP or business names truncate on the title page. Shorten in properties bef
 ::: flip ["TOC enabled without titles"]
 With **Table of Contents** checked, every custom text page needs a **document title** and every custom PDF needs a **section name** — or compile fails.
 :::
+
+</div>
 
 ## Stock slides reference [deep]
 

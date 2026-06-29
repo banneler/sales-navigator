@@ -187,9 +187,9 @@ ROE exists to protect active work and make account ownership clear. Whether you 
 
 **The Owner Bypass:** The window may be open, but the ROE still calls out communication with the current owner as best practice. If you need a formal transfer, follow the ROE path: align with the owner, then email your manager and sales leadership. If the owner does not respond, document your outreach and escalate.
 
-::::
+:::
 
-:::: flip ["I left a detailed note—that keeps the account mine."]
+::: flip ["I left a detailed note—that keeps the account mine."]
 
 **The Notation Trap:** Notes and project flags help the next rep understand the account, but they do not reset the idle clock. Protect the account with logged contact: task, call, meeting, or email on the Salesforce record.
 

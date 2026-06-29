@@ -315,6 +315,8 @@ Video training (CoPilot sessions) lives on **Sales Resources** on SharePoint. Th
 
 ## Common Landmines
 
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
 ::: flip ["The static Intent search"]
 You moved territories but kept last year's Intent search. **Delete and resave** with the new location, clear naming, and alerts on — or you will chase intent in the wrong cities.
 :::
@@ -338,6 +340,8 @@ RFP automation requires the **Scoops** tab and RFP topic filters — a generic i
 ::: flip ["Forgotten Save & Subscribe"]
 A brilliant filter you never saved is a one-time stunt. **Save & Subscribe** with a name future-you will recognize.
 :::
+
+</div>
 
 ## Job aid index [deep]
 
