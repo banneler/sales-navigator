@@ -2,8 +2,11 @@ import {
   getSession,
   signIn,
   signInMagicLink,
-  signUp,
 } from '../lib/auth.js';
+import {
+  ALLOWED_EMAIL_DOMAIN_MESSAGE,
+  isAllowedEmail,
+} from '../lib/auth-email-domain.js';
 
 function callbackUrl() {
   const params = new URLSearchParams(window.location.search);
@@ -19,23 +22,8 @@ function callbackUrl() {
 
 const form = document.getElementById('login-form');
 const magicForm = document.getElementById('magic-form');
-const modeToggle = document.getElementById('mode-toggle');
-const nameField = document.getElementById('field-name');
-const submitBtn = document.getElementById('submit-btn');
 const errEl = document.getElementById('auth-error');
 const infoEl = document.getElementById('auth-info');
-
-let mode = 'signin';
-
-function setMode(next) {
-  mode = next;
-  const isSignUp = mode === 'signup';
-  nameField.classList.toggle('hidden', !isSignUp);
-  submitBtn.textContent = isSignUp ? 'Create account' : 'Sign in';
-  modeToggle.textContent = isSignUp
-    ? 'Already have an account? Sign in'
-    : 'Need an account? Sign up';
-}
 
 function showError(msg) {
   errEl.textContent = msg || '';
@@ -47,11 +35,11 @@ function showInfo(msg) {
   infoEl.classList.toggle('hidden', !msg);
 }
 
-modeToggle.addEventListener('click', (e) => {
-  e.preventDefault();
-  e.stopPropagation();
-  setMode(mode === 'signin' ? 'signup' : 'signin');
-});
+function requireAllowedEmail(email) {
+  if (isAllowedEmail(email)) return true;
+  showError(ALLOWED_EMAIL_DOMAIN_MESSAGE);
+  return false;
+}
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -59,26 +47,22 @@ form.addEventListener('submit', async (e) => {
   showInfo('');
   const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value;
-  const name = document.getElementById('name').value.trim() || 'User';
+  const submitBtn = document.getElementById('submit-btn');
 
   if (!email || !password) {
     showError('Email and password are required.');
     return;
   }
+  if (!requireAllowedEmail(email)) return;
 
   const label = submitBtn.textContent;
   submitBtn.disabled = true;
   submitBtn.textContent = 'Please wait…';
   try {
-    let result;
-    if (mode === 'signup') {
-      result = await signUp(email, password, name);
-    } else {
-      result = await signIn(email, password);
-    }
-    console.log('[auth]', mode, result);
+    const result = await signIn(email, password);
+    console.log('[auth] sign-in', result);
     if (result.error) {
-      showError(result.error.message || 'Could not ' + mode.replace('sign', 'sign ') + '.');
+      showError(result.error.message || 'Could not sign in.');
       return;
     }
     window.location.replace(callbackUrl());
@@ -100,6 +84,8 @@ magicForm.addEventListener('submit', async (e) => {
     showError('Enter your email for the magic link.');
     return;
   }
+  if (!requireAllowedEmail(email)) return;
+
   const magicSubmit = document.getElementById('magic-submit');
   const magicLabel = magicSubmit.textContent;
   magicSubmit.disabled = true;
@@ -120,8 +106,6 @@ magicForm.addEventListener('submit', async (e) => {
     magicSubmit.textContent = magicLabel;
   }
 });
-
-setMode('signin');
 
 getSession().then((session) => {
   if (session?.user) window.location.replace(callbackUrl());

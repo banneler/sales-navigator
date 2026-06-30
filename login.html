@@ -31,21 +31,14 @@
           <form id="login-form" class="space-y-5">
             <div>
               <h2 class="text-lg font-semibold text-slate-900">Email &amp; password</h2>
-              <p class="text-sm text-slate-500 mt-1">Use your work email and password.</p>
-            </div>
-
-            <div id="field-name" class="hidden space-y-2">
-              <label for="name" class="block text-sm font-medium text-slate-700">Name</label>
-              <input id="name" name="name" type="text" autocomplete="name"
-                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30"
-                placeholder="Your name">
+              <p class="text-sm text-slate-500 mt-1">Use your <strong>@gpcom.com</strong> work email.</p>
             </div>
 
             <div class="space-y-2">
               <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
               <input id="email" name="email" type="email" autocomplete="email" required
                 class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30"
-                placeholder="you@company.com">
+                placeholder="you@gpcom.com">
             </div>
 
             <div class="space-y-2">
@@ -62,11 +55,6 @@
           </form>
 
           <p id="auth-error" class="hidden rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700 font-medium" role="alert"></p>
-
-          <button type="button" id="mode-toggle"
-            class="w-full cursor-pointer rounded-lg py-2 text-center text-sm font-medium text-orange-700 hover:bg-orange-50 hover:text-orange-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400">
-            Need an account? Sign up
-          </button>
         </div>
 
         <div class="relative">
@@ -81,12 +69,12 @@
         <form id="magic-form" class="space-y-4">
           <div>
             <h2 class="text-lg font-semibold text-slate-900">Magic link</h2>
-            <p class="text-sm text-slate-500 mt-1">We’ll email you a one-time sign-in link.</p>
+            <p class="text-sm text-slate-500 mt-1">We’ll email a one-time sign-in link to your <strong>@gpcom.com</strong> address.</p>
           </div>
           <div class="flex flex-col sm:flex-row gap-2">
             <input id="magic-email" name="magic-email" type="email" autocomplete="email" required
               class="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-slate-900 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30"
-              placeholder="you@company.com">
+              placeholder="you@gpcom.com">
             <button type="submit" id="magic-submit"
               class="rounded-lg bg-slate-800 hover:bg-slate-900 text-white font-semibold py-2 px-4 whitespace-nowrap transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400">
               Email link
