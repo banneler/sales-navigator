@@ -2,6 +2,7 @@ import {
   getSession,
   signIn,
   signInMagicLink,
+  signUp,
 } from '../lib/auth.js';
 import {
   ALLOWED_EMAIL_DOMAIN_MESSAGE,
@@ -22,8 +23,23 @@ function callbackUrl() {
 
 const form = document.getElementById('login-form');
 const magicForm = document.getElementById('magic-form');
+const modeToggle = document.getElementById('mode-toggle');
+const nameField = document.getElementById('field-name');
+const submitBtn = document.getElementById('submit-btn');
 const errEl = document.getElementById('auth-error');
 const infoEl = document.getElementById('auth-info');
+
+let mode = 'signin';
+
+function setMode(next) {
+  mode = next;
+  const isSignUp = mode === 'signup';
+  nameField.classList.toggle('hidden', !isSignUp);
+  submitBtn.textContent = isSignUp ? 'Create account' : 'Sign in';
+  modeToggle.textContent = isSignUp
+    ? 'Already have an account? Sign in'
+    : 'Need an account? Sign up';
+}
 
 function showError(msg) {
   errEl.textContent = msg || '';
@@ -41,13 +57,19 @@ function requireAllowedEmail(email) {
   return false;
 }
 
+modeToggle.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  setMode(mode === 'signin' ? 'signup' : 'signin');
+});
+
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   showError('');
   showInfo('');
   const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value;
-  const submitBtn = document.getElementById('submit-btn');
+  const name = document.getElementById('name').value.trim() || 'User';
 
   if (!email || !password) {
     showError('Email and password are required.');
@@ -59,10 +81,15 @@ form.addEventListener('submit', async (e) => {
   submitBtn.disabled = true;
   submitBtn.textContent = 'Please wait…';
   try {
-    const result = await signIn(email, password);
-    console.log('[auth] sign-in', result);
+    let result;
+    if (mode === 'signup') {
+      result = await signUp(email, password, name);
+    } else {
+      result = await signIn(email, password);
+    }
+    console.log('[auth]', mode, result);
     if (result.error) {
-      showError(result.error.message || 'Could not sign in.');
+      showError(result.error.message || 'Could not ' + mode.replace('sign', 'sign ') + '.');
       return;
     }
     window.location.replace(callbackUrl());
@@ -106,6 +133,8 @@ magicForm.addEventListener('submit', async (e) => {
     magicSubmit.textContent = magicLabel;
   }
 });
+
+setMode('signin');
 
 getSession().then((session) => {
   if (session?.user) window.location.replace(callbackUrl());

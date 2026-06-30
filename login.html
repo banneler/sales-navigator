@@ -34,6 +34,13 @@
               <p class="text-sm text-slate-500 mt-1">Use your <strong>@gpcom.com</strong> work email.</p>
             </div>
 
+            <div id="field-name" class="hidden space-y-2">
+              <label for="name" class="block text-sm font-medium text-slate-700">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name"
+                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/30"
+                placeholder="Your name">
+            </div>
+
             <div class="space-y-2">
               <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
               <input id="email" name="email" type="email" autocomplete="email" required
@@ -55,6 +62,11 @@
           </form>
 
           <p id="auth-error" class="hidden rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700 font-medium" role="alert"></p>
+
+          <button type="button" id="mode-toggle"
+            class="w-full cursor-pointer rounded-lg py-2 text-center text-sm font-medium text-orange-700 hover:bg-orange-50 hover:text-orange-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400">
+            Need an account? Sign up
+          </button>
         </div>
 
         <div class="relative">
